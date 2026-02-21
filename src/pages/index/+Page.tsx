@@ -231,6 +231,17 @@ export default function Page() {
             Data
           </span>
           <h2 class="font-semibold text-3xl tracking-tight">Current snapshot</h2>
+          <p class="mt-3 text-muted-foreground text-sm">
+            Data cached from the official{" "}
+            <a
+              href="https://gitlab.com/cable-mc/cobblemon"
+              class="text-foreground underline hover:no-underline"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Cobblemon GitLab repository
+            </a>
+          </p>
         </div>
 
         <div class="grid gap-px border border-border bg-border">

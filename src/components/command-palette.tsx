@@ -276,7 +276,7 @@ export default function CommandPalette() {
           placeholder="Try: lucario moves | lucario spawn | moves trickroom"
         />
 
-        <div class="grid max-h-[500px] min-h-[400px]">
+        <div class="grid max-h-[500px] min-h-[400px] grid-cols-[280px_1fr]">
           <div class="overflow-y-auto border-border border-r">
             <Show
               when={!loadError()}

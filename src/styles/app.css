@@ -229,22 +229,22 @@ input::-ms-clear {
   @keyframes flyUpAndScale {
     from {
       opacity: 0;
-      transform: translate(-50%, -48%) scale(0.98);
+      transform: translate(0px, 100px) scale(0.97);
     }
     to {
       opacity: 1;
-      transform: translate(-50%, -50%) scale(1);
+      transform: translate(0px, 0px) scale(1);
     }
   }
 
   @keyframes flyUpAndScaleExit {
     from {
       opacity: 1;
-      transform: translate(-50%, -50%) scale(1);
+      transform: translate(0px, 0px) scale(1);
     }
     to {
       opacity: 0;
-      transform: translate(-50%, -48%) scale(0.98);
+      transform: translate(0px, 50px) scale(0.97);
     }
   }
 
