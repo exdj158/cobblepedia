@@ -39,6 +39,7 @@ import {
   formatConditionChips,
   formatEggGroup,
   formatMoveSource,
+  sortMovesForTab,
   titleCaseFromId,
 } from "@/data/formatters"
 import { resolveQuery } from "@/data/query-engine"
@@ -570,8 +571,8 @@ function MovesFacetQuickview(props: {
     const tab = activeTab()
     const normalizedMoveQuery = moveQuery().toLowerCase().trim()
 
-    return detail.moves
-      .filter((move) => {
+    return sortMovesForTab(
+      detail.moves.filter((move) => {
         if (tab !== "all" && move.sourceType !== tab) {
           return false
         }
@@ -582,8 +583,9 @@ function MovesFacetQuickview(props: {
 
         const target = `${move.moveName} ${move.moveId}`.toLowerCase()
         return target.includes(normalizedMoveQuery)
-      })
-      .slice(0, 40)
+      }),
+      tab
+    ).slice(0, 40)
   })
 
   return (

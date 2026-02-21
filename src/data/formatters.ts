@@ -1,6 +1,16 @@
-import type { MoveSourceType } from "@/data/cobblemon-types"
+import type { MoveSourceType, ParsedMove } from "@/data/cobblemon-types"
 
 const PUNCTUATION_EXCEPT_HYPHEN_REGEX = /[^\p{L}\p{N}\s-]/gu
+
+const MOVE_SOURCE_ORDER: Record<MoveSourceType, number> = {
+  level: 0,
+  egg: 1,
+  tm: 2,
+  tutor: 3,
+  legacy: 4,
+  special: 5,
+  form_change: 6,
+}
 
 export function normalizeSearchText(value: string): string {
   return value
@@ -51,6 +61,33 @@ export function formatMoveSource(sourceType: MoveSourceType, sourceValue: number
   if (sourceType === "legacy") return "Legacy"
   if (sourceType === "special") return "Special"
   return "Form Change"
+}
+
+export function sortMovesForTab(moves: ParsedMove[], tab: "all" | MoveSourceType): ParsedMove[] {
+  return [...moves].sort((left, right) => {
+    if (tab === "all") {
+      const sourceOrderDiff =
+        MOVE_SOURCE_ORDER[left.sourceType] - MOVE_SOURCE_ORDER[right.sourceType]
+      if (sourceOrderDiff !== 0) {
+        return sourceOrderDiff
+      }
+    }
+
+    if (left.sourceType === "level" && right.sourceType === "level") {
+      const leftLevel = left.sourceValue ?? Number.POSITIVE_INFINITY
+      const rightLevel = right.sourceValue ?? Number.POSITIVE_INFINITY
+      if (leftLevel !== rightLevel) {
+        return leftLevel - rightLevel
+      }
+    }
+
+    const nameDiff = left.moveName.localeCompare(right.moveName)
+    if (nameDiff !== 0) {
+      return nameDiff
+    }
+
+    return left.moveId.localeCompare(right.moveId)
+  })
 }
 
 export function parsePokemonRef(raw: string): {

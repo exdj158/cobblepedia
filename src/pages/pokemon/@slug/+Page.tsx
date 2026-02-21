@@ -7,6 +7,7 @@ import {
   formatConditionChips,
   formatEggGroup,
   formatMoveSource,
+  sortMovesForTab,
   titleCaseFromId,
 } from "@/data/formatters"
 import { cn } from "@/utils/cn"
@@ -385,13 +386,15 @@ function MovesSection(props: { moves: PokemonDetailRecord["moves"] }) {
     const query = searchQuery().toLowerCase().trim()
     const tab = activeTab()
 
-    return props.moves.filter((move) => {
+    const visibleMoves = props.moves.filter((move) => {
       if (tab !== "all" && move.sourceType !== tab) return false
       if (!query) return true
       return (
         move.moveName.toLowerCase().includes(query) || move.moveId.toLowerCase().includes(query)
       )
     })
+
+    return sortMovesForTab(visibleMoves, tab)
   })
 
   return (
