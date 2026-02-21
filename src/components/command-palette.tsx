@@ -13,7 +13,7 @@ import {
   Switch,
 } from "solid-js"
 import {
-  Command,
+  CommandDialog,
   CommandEmpty,
   CommandInput,
   CommandItem,
@@ -42,6 +42,7 @@ import {
   titleCaseFromId,
 } from "@/data/formatters"
 import { resolveQuery } from "@/data/query-engine"
+import { cn } from "@/utils/cn"
 
 const MOVE_TABS = ["all", "level", "egg", "tm", "tutor"] as const
 type MoveTab = (typeof MOVE_TABS)[number]
@@ -56,7 +57,6 @@ export default function CommandPalette() {
   const [moveLearners, setMoveLearners] = createSignal<MoveLearnersIndex | null>(null)
   const [loadError, setLoadError] = createSignal<string | null>(null)
 
-  let dialogRef: HTMLDialogElement | undefined
   let inputRef: HTMLInputElement | undefined
 
   const dataReady = createMemo(() => {
@@ -135,29 +135,6 @@ export default function CommandPalette() {
   )
 
   createEffect(() => {
-    const dialog = dialogRef
-    if (!dialog) {
-      return
-    }
-
-    if (isOpen()) {
-      if (!dialog.open) {
-        dialog.showModal()
-      }
-
-      queueMicrotask(() => {
-        inputRef?.focus()
-        inputRef?.select()
-      })
-      return
-    }
-
-    if (dialog.open) {
-      dialog.close()
-    }
-  })
-
-  createEffect(() => {
     if (!isOpen() || dataReady()) {
       return
     }
@@ -174,6 +151,16 @@ export default function CommandPalette() {
       })
   })
 
+  // Focus input when dialog opens
+  createEffect(() => {
+    if (isOpen()) {
+      queueMicrotask(() => {
+        inputRef?.focus()
+        inputRef?.select()
+      })
+    }
+  })
+
   useHotkeys([
     [
       "meta+k",
@@ -187,12 +174,6 @@ export default function CommandPalette() {
       (event?: KeyboardEvent) => {
         event?.preventDefault()
         openPalette()
-      },
-    ],
-    [
-      "escape",
-      () => {
-        closePalette()
       },
     ],
   ])
@@ -219,16 +200,26 @@ export default function CommandPalette() {
 
   function closePalette() {
     setIsOpen(false)
+    setQuery("")
+    setActiveIndex(0)
   }
 
-  function executeResult(result: PaletteResult | null) {
+  function executeResult(result: PaletteResult | null, openInNewTab = false) {
     if (!result) {
       return
     }
 
+    const navigate = (url: string) => {
+      if (openInNewTab) {
+        window.open(url, "_blank")
+      } else {
+        window.location.assign(url)
+      }
+    }
+
     if (result.slug) {
       closePalette()
-      window.location.assign(`/pokemon/${result.slug}`)
+      navigate(`/pokemon/${result.slug}`)
       return
     }
 
@@ -236,7 +227,7 @@ export default function CommandPalette() {
       const firstLearner = moveLearners()?.[result.moveId]?.learners[0]
       if (firstLearner) {
         closePalette()
-        window.location.assign(`/pokemon/${firstLearner.slug}`)
+        navigate(`/pokemon/${firstLearner.slug}`)
       }
     }
   }
@@ -262,98 +253,94 @@ export default function CommandPalette() {
 
     if (event.key === "Enter") {
       event.preventDefault()
-      executeResult(activeResult())
+      const openInNewTab = event.shiftKey
+      executeResult(activeResult(), openInNewTab)
       return
-    }
-
-    if (event.key === "Escape") {
-      event.preventDefault()
-      closePalette()
     }
   }
 
   return (
-    <dialog
-      ref={dialogRef}
-      class="palette-dialog"
-      aria-label="Cobblepedia command palette"
-      onClose={closePalette}
-      onCancel={(event) => {
-        event.preventDefault()
-        closePalette()
+    <CommandDialog
+      open={isOpen()}
+      onOpenChange={(open) => {
+        if (!open) closePalette()
       }}
+      class="!max-w-[900px] !w-[90vw] !p-0 !overflow-hidden"
     >
-      <div
-        class="palette-shell"
-        role="dialog"
-        aria-modal="true"
-        aria-label="Cobblepedia command palette"
-      >
-        <Command>
-          <CommandInput
-            ref={inputRef}
-            value={query()}
-            onValueChange={setQuery}
-            onKeyDown={onQueryKeyDown}
-            placeholder="Try: lucario moves | lucario spawn | moves trickroom"
-          />
+      <div class="flex flex-col bg-card">
+        <CommandInput
+          ref={inputRef}
+          value={query()}
+          onValueChange={setQuery}
+          onKeyDown={onQueryKeyDown}
+          placeholder="Try: lucario moves | lucario spawn | moves trickroom"
+        />
 
-          <div class="palette-main">
-            <div class="palette-results">
+        <div class="grid max-h-[500px] min-h-[400px]">
+          <div class="overflow-y-auto border-border border-r">
+            <Show
+              when={!loadError()}
+              fallback={
+                <div class="p-12 text-center text-muted-foreground text-sm">
+                  Failed to load index: {loadError()}
+                </div>
+              }
+            >
               <Show
-                when={!loadError()}
-                fallback={<div class="palette-status">Failed to load index: {loadError()}</div>}
+                when={dataReady()}
+                fallback={
+                  <div class="p-12 text-center text-muted-foreground text-sm">
+                    Loading search index...
+                  </div>
+                }
               >
-                <Show
-                  when={dataReady()}
-                  fallback={<div class="palette-status">Loading search index...</div>}
-                >
-                  <CommandList>
-                    <Show
-                      when={results().length > 0}
-                      fallback={
-                        <CommandEmpty>Try `lucario evolution` or `moves trickroom`.</CommandEmpty>
-                      }
-                    >
-                      <For each={results()}>
-                        {(result, index) => (
-                          <CommandItem
-                            value={result.id}
-                            classList={{ "is-active": index() === activeIndex() }}
-                            onPointerMove={() => setActiveIndex(index())}
-                            onClick={() => executeResult(result)}
-                          >
-                            <div class="command-item-content">
-                              <div class="command-item-title">{result.title}</div>
-                              <div class="command-item-subtitle">{result.subtitle}</div>
-                            </div>
-                          </CommandItem>
-                        )}
-                      </For>
-                    </Show>
-                  </CommandList>
-                </Show>
+                <CommandList class="p-2">
+                  <Show
+                    when={results().length > 0}
+                    fallback={
+                      <CommandEmpty class="py-6 text-center text-sm">
+                        Try `lucario evolution` or `moves trickroom`.
+                      </CommandEmpty>
+                    }
+                  >
+                    <For each={results()}>
+                      {(result, index) => (
+                        <CommandItem
+                          value={result.id}
+                          class={cn(
+                            "mb-0.5 flex cursor-pointer flex-col gap-1 border-transparent border-l-2 p-3 transition-colors",
+                            index() === activeIndex() && "border-l-foreground bg-secondary"
+                          )}
+                          onPointerMove={() => setActiveIndex(index())}
+                          onClick={() => executeResult(result)}
+                        >
+                          <div class="font-medium text-sm">{result.title}</div>
+                          <div class="text-muted-foreground text-xs">{result.subtitle}</div>
+                        </CommandItem>
+                      )}
+                    </For>
+                  </Show>
+                </CommandList>
               </Show>
-            </div>
-
-            <div class="palette-preview">
-              <QuickviewPanel
-                result={activeResult()}
-                pokemonDetail={activePokemonDetail()}
-                moveEntry={activeMoveEntry()}
-                loadingPokemon={activePokemonDetail.loading}
-              />
-            </div>
+            </Show>
           </div>
 
-          <div class="palette-footer">
-            <span>Enter to open Pokemon page</span>
-            <span>Esc to close</span>
-            <span>Cmd/Ctrl+K to open</span>
+          <div class="hidden overflow-y-auto p-5 lg:block">
+            <QuickviewPanel
+              result={activeResult()}
+              pokemonDetail={activePokemonDetail()}
+              moveEntry={activeMoveEntry()}
+              loadingPokemon={activePokemonDetail.loading}
+            />
           </div>
-        </Command>
+        </div>
+
+        <div class="flex items-center justify-between border-border border-t bg-secondary px-5 py-3">
+          <span class="text-muted-foreground text-xs">Enter to open</span>
+          <span class="text-muted-foreground text-xs">Esc to close</span>
+        </div>
       </div>
-    </dialog>
+    </CommandDialog>
   )
 }
 
@@ -367,9 +354,9 @@ function QuickviewPanel(props: {
     <Show
       when={props.result}
       fallback={
-        <div class="quickview-empty">
-          <p>Quickview</p>
-          <p>Type a query to preview details instantly.</p>
+        <div class="flex h-full flex-col items-center justify-center gap-2 border border-border border-dashed p-10 text-center text-muted-foreground">
+          <p class="font-medium text-foreground">Quickview</p>
+          <p class="text-sm">Type to preview details.</p>
         </div>
       }
     >
@@ -422,11 +409,17 @@ function PokemonOverviewQuickview(props: {
   return (
     <Show
       when={!props.loading}
-      fallback={<div class="quickview-status">Loading Pokemon details...</div>}
+      fallback={
+        <div class="p-12 text-center text-muted-foreground text-sm">Loading Pokemon details...</div>
+      }
     >
       <Show
         when={props.detail}
-        fallback={<div class="quickview-status">Pokemon details unavailable.</div>}
+        fallback={
+          <div class="p-12 text-center text-muted-foreground text-sm">
+            Pokemon details unavailable.
+          </div>
+        }
       >
         {(detailSignal) => {
           const detail = detailSignal()
@@ -436,60 +429,81 @@ function PokemonOverviewQuickview(props: {
           const spawnHints = detail.spawnEntries.slice(0, 3)
 
           return (
-            <div class="quickview-stack">
-              <div class="quickview-header">
-                <h3>
-                  {detail.name} <span>#{detail.dexNumber}</span>
+            <div class="flex flex-col gap-6">
+              <div class="border-border border-b pb-4">
+                <h3 class="mb-1 font-semibold text-lg">
+                  {detail.name}{" "}
+                  <span class="font-normal text-muted-foreground">#{detail.dexNumber}</span>
                 </h3>
-                <p>{detail.types.map((type) => titleCaseFromId(type)).join(" / ")}</p>
+                <p class="text-muted-foreground text-sm">
+                  {detail.types.map((type) => titleCaseFromId(type)).join(" / ")}
+                </p>
               </div>
 
-              <section>
-                <h4>Abilities</h4>
-                <div class="chip-row">
+              <div>
+                <h4 class="mb-3 font-semibold text-muted-foreground text-xs uppercase tracking-wider">
+                  Abilities
+                </h4>
+                <div class="flex flex-wrap gap-2">
                   <For each={detail.abilities}>
                     {(ability) => (
-                      <span class="chip">
+                      <span class="border border-border bg-secondary px-2.5 py-1 text-xs">
                         {ability.hidden ? `${ability.label} (Hidden)` : ability.label}
                       </span>
                     )}
                   </For>
                 </div>
-              </section>
+              </div>
 
-              <section>
-                <h4>Egg Groups</h4>
-                <div class="chip-row">
+              <div>
+                <h4 class="mb-3 font-semibold text-muted-foreground text-xs uppercase tracking-wider">
+                  Egg Groups
+                </h4>
+                <div class="flex flex-wrap gap-2">
                   <For each={detail.eggGroups}>
-                    {(group) => <span class="chip">{formatEggGroup(group)}</span>}
+                    {(group) => (
+                      <span class="border border-border bg-secondary px-2.5 py-1 text-xs">
+                        {formatEggGroup(group)}
+                      </span>
+                    )}
                   </For>
                 </div>
-              </section>
+              </div>
 
-              <section>
-                <h4>Evolution</h4>
-                <p>
+              <div>
+                <h4 class="mb-3 font-semibold text-muted-foreground text-xs uppercase tracking-wider">
+                  Evolution
+                </h4>
+                <p class="text-muted-foreground text-sm">
                   Pre: {detail.preEvolution ? titleCaseFromId(detail.preEvolution.slug) : "None"} ·
                   Next: {nextEvolutions.length > 0 ? nextEvolutions.join(", ") : "None"}
                 </p>
-              </section>
+              </div>
 
-              <section>
-                <h4>Spawn Summary</h4>
+              <div>
+                <h4 class="mb-3 font-semibold text-muted-foreground text-xs uppercase tracking-wider">
+                  Spawn Summary
+                </h4>
                 <Show
                   when={spawnHints.length > 0}
-                  fallback={<p>No spawn entries available for this snapshot.</p>}
+                  fallback={
+                    <p class="text-muted-foreground text-sm">
+                      No spawn entries available for this snapshot.
+                    </p>
+                  }
                 >
-                  <For each={spawnHints}>
-                    {(entry) => (
-                      <p>
-                        {titleCaseFromId(entry.bucket)} · {entry.levelText ?? "-"} ·{" "}
-                        {titleCaseFromId(entry.spawnablePositionType)}
-                      </p>
-                    )}
-                  </For>
+                  <div class="space-y-1">
+                    <For each={spawnHints}>
+                      {(entry) => (
+                        <p class="text-muted-foreground text-sm">
+                          {titleCaseFromId(entry.bucket)} · {entry.levelText ?? "-"} ·{" "}
+                          {titleCaseFromId(entry.spawnablePositionType)}
+                        </p>
+                      )}
+                    </For>
+                  </div>
                 </Show>
-              </section>
+              </div>
             </div>
           )
         }}
@@ -505,24 +519,34 @@ function EggGroupFacetQuickview(props: {
   return (
     <Show
       when={!props.loading}
-      fallback={<div class="quickview-status">Loading egg groups...</div>}
+      fallback={
+        <div class="p-12 text-center text-muted-foreground text-sm">Loading egg groups...</div>
+      }
     >
       <Show
         when={props.detail}
-        fallback={<div class="quickview-status">Pokemon details unavailable.</div>}
+        fallback={
+          <div class="p-12 text-center text-muted-foreground text-sm">
+            Pokemon details unavailable.
+          </div>
+        }
       >
         {(detailSignal) => {
           const detail = detailSignal()
           return (
-            <div class="quickview-stack">
-              <div class="quickview-header">
-                <h3>{detail.name} Egg Groups</h3>
-                <p>Breeding categories for this species.</p>
+            <div class="flex flex-col gap-6">
+              <div class="border-border border-b pb-4">
+                <h3 class="mb-1 font-semibold text-lg">{detail.name} Egg Groups</h3>
+                <p class="text-muted-foreground text-sm">Breeding categories for this species.</p>
               </div>
 
-              <div class="chip-row">
+              <div class="flex flex-wrap gap-2">
                 <For each={detail.eggGroups}>
-                  {(group) => <span class="chip">{formatEggGroup(group)}</span>}
+                  {(group) => (
+                    <span class="border border-border bg-secondary px-2.5 py-1 text-sm">
+                      {formatEggGroup(group)}
+                    </span>
+                  )}
                 </For>
               </div>
             </div>
@@ -587,32 +611,44 @@ function MovesFacetQuickview(props: {
   })
 
   return (
-    <Show when={!props.loading} fallback={<div class="quickview-status">Loading move list...</div>}>
+    <Show
+      when={!props.loading}
+      fallback={
+        <div class="p-12 text-center text-muted-foreground text-sm">Loading move list...</div>
+      }
+    >
       <Show
         when={props.detail}
-        fallback={<div class="quickview-status">Pokemon details unavailable.</div>}
+        fallback={
+          <div class="p-12 text-center text-muted-foreground text-sm">
+            Pokemon details unavailable.
+          </div>
+        }
       >
         {(detailSignal) => {
           const detail = detailSignal()
 
           return (
-            <div class="quickview-stack">
-              <div class="quickview-header">
-                <h3>{detail.name} Moves</h3>
-                <p>Filter by source and search inside move names.</p>
+            <div class="flex flex-col gap-5">
+              <div class="border-border border-b pb-4">
+                <h3 class="mb-1 font-semibold text-lg">{detail.name} Moves</h3>
+                <p class="text-muted-foreground text-sm">
+                  Filter by source and search inside move names.
+                </p>
               </div>
 
-              <div class="chip-row" role="tablist" aria-label="Move source tabs">
+              <div class="flex flex-wrap gap-2">
                 <For each={MOVE_TABS}>
                   {(tab) => (
                     <button
                       type="button"
                       role="tab"
-                      classList={{
-                        chip: true,
-                        "chip-active": activeTab() === tab,
-                      }}
-                      aria-selected={activeTab() === tab}
+                      class={cn(
+                        "border px-2.5 py-1 text-xs transition-colors",
+                        activeTab() === tab
+                          ? "border-foreground bg-foreground text-background"
+                          : "border-border bg-secondary hover:border-muted-foreground"
+                      )}
                       onClick={() => setActiveTab(tab)}
                     >
                       {tab === "all" ? "All" : titleCaseFromId(tab)} ({counts()[tab]})
@@ -622,22 +658,24 @@ function MovesFacetQuickview(props: {
               </div>
 
               <input
-                class="quickview-input"
+                class="w-full border border-border bg-secondary px-3 py-2 text-sm outline-none placeholder:text-muted-foreground focus:border-muted-foreground"
                 value={moveQuery()}
                 onInput={(event) => setMoveQuery(event.currentTarget.value)}
                 placeholder="Search move names"
               />
 
-              <ul class="quickview-list">
+              <div class="flex max-h-[300px] flex-col gap-2 overflow-y-auto">
                 <For each={filteredMoves()}>
                   {(move) => (
-                    <li>
-                      <span>{move.moveName}</span>
-                      <span>{formatMoveSource(move.sourceType, move.sourceValue)}</span>
-                    </li>
+                    <div class="flex items-center justify-between border-border border-b py-2 last:border-0">
+                      <span class="text-sm">{move.moveName}</span>
+                      <span class="text-muted-foreground text-xs">
+                        {formatMoveSource(move.sourceType, move.sourceValue)}
+                      </span>
+                    </div>
                   )}
                 </For>
-              </ul>
+              </div>
             </div>
           )
         }}
@@ -653,45 +691,61 @@ function SpawnFacetQuickview(props: {
   return (
     <Show
       when={!props.loading}
-      fallback={<div class="quickview-status">Loading spawn rows...</div>}
+      fallback={
+        <div class="p-12 text-center text-muted-foreground text-sm">Loading spawn rows...</div>
+      }
     >
       <Show
         when={props.detail}
-        fallback={<div class="quickview-status">Pokemon details unavailable.</div>}
+        fallback={
+          <div class="p-12 text-center text-muted-foreground text-sm">
+            Pokemon details unavailable.
+          </div>
+        }
       >
         {(detailSignal) => {
           const detail = detailSignal()
           return (
-            <div class="quickview-stack">
-              <div class="quickview-header">
-                <h3>{detail.name} Spawn</h3>
-                <p>Bucket, level, position, and condition highlights.</p>
+            <div class="flex flex-col gap-5">
+              <div class="border-border border-b pb-4">
+                <h3 class="mb-1 font-semibold text-lg">{detail.name} Spawn</h3>
+                <p class="text-muted-foreground text-sm">
+                  Bucket, level, position, and condition highlights.
+                </p>
               </div>
 
               <Show
                 when={detail.spawnEntries.length > 0}
-                fallback={<div class="quickview-status">No spawn entries for this species.</div>}
+                fallback={
+                  <div class="p-12 text-center text-muted-foreground text-sm">
+                    No spawn entries for this species.
+                  </div>
+                }
               >
-                <ul class="quickview-list quickview-list-spawns">
+                <div class="flex max-h-[400px] flex-col gap-3 overflow-y-auto">
                   <For each={detail.spawnEntries.slice(0, 16)}>
                     {(entry) => (
-                      <li>
-                        <div>
-                          <strong>{titleCaseFromId(entry.bucket)}</strong>
-                          <span>
+                      <div class="border-border border-b py-3 last:border-0">
+                        <div class="mb-2 flex items-center justify-between">
+                          <span class="font-medium">{titleCaseFromId(entry.bucket)}</span>
+                          <span class="text-muted-foreground text-sm">
                             {entry.levelText ?? "-"} ·{" "}
                             {titleCaseFromId(entry.spawnablePositionType)}
                           </span>
                         </div>
-                        <div class="chip-row">
+                        <div class="flex flex-wrap gap-1">
                           <For each={formatConditionChips(entry.condition).slice(0, 3)}>
-                            {(chip) => <span class="chip">{chip}</span>}
+                            {(chip) => (
+                              <span class="border border-border bg-secondary px-2 py-0.5 text-xs">
+                                {chip}
+                              </span>
+                            )}
                           </For>
                         </div>
-                      </li>
+                      </div>
                     )}
                   </For>
-                </ul>
+                </div>
               </Show>
             </div>
           )
@@ -708,50 +762,70 @@ function EvolutionFacetQuickview(props: {
   return (
     <Show
       when={!props.loading}
-      fallback={<div class="quickview-status">Loading evolution family...</div>}
+      fallback={
+        <div class="p-12 text-center text-muted-foreground text-sm">
+          Loading evolution family...
+        </div>
+      }
     >
       <Show
         when={props.detail}
-        fallback={<div class="quickview-status">Pokemon details unavailable.</div>}
+        fallback={
+          <div class="p-12 text-center text-muted-foreground text-sm">
+            Pokemon details unavailable.
+          </div>
+        }
       >
         {(detailSignal) => {
           const detail = detailSignal()
           const family = detail.evolutionFamily
 
           return (
-            <div class="quickview-stack">
-              <div class="quickview-header">
-                <h3>{detail.name} Evolution</h3>
-                <p>Full family edges and readable requirements.</p>
+            <div class="flex flex-col gap-5">
+              <div class="border-border border-b pb-4">
+                <h3 class="mb-1 font-semibold text-lg">{detail.name} Evolution</h3>
+                <p class="text-muted-foreground text-sm">
+                  Full family edges and readable requirements.
+                </p>
               </div>
 
-              <div class="chip-row">
+              <div class="flex flex-wrap gap-2">
                 <For each={family.members}>
-                  {(member) => <span class="chip">{member.name}</span>}
+                  {(member) => (
+                    <span class="border border-border bg-secondary px-2.5 py-1 text-sm">
+                      {member.name}
+                    </span>
+                  )}
                 </For>
               </div>
 
-              <ul class="quickview-list">
+              <div class="flex max-h-[400px] flex-col gap-3 overflow-y-auto">
                 <For each={family.edges}>
                   {(edge) => (
-                    <li>
-                      <div>
-                        <strong>
-                          {titleCaseFromId(edge.fromSlug)} {" -> "} {titleCaseFromId(edge.toSlug)}
-                        </strong>
-                        <span>{titleCaseFromId(edge.method)}</span>
+                    <div class="border-border border-b py-3 last:border-0">
+                      <div class="mb-2">
+                        <span class="font-medium">
+                          {titleCaseFromId(edge.fromSlug)} → {titleCaseFromId(edge.toSlug)}
+                        </span>
+                        <span class="ml-2 text-muted-foreground text-sm">
+                          {titleCaseFromId(edge.method)}
+                        </span>
                       </div>
                       <Show when={edge.requirementText.length > 0}>
-                        <div class="chip-row">
+                        <div class="flex flex-wrap gap-1">
                           <For each={edge.requirementText}>
-                            {(text) => <span class="chip">{text}</span>}
+                            {(text) => (
+                              <span class="border border-border bg-secondary px-2 py-0.5 text-xs">
+                                {text}
+                              </span>
+                            )}
                           </For>
                         </div>
                       </Show>
-                    </li>
+                    </div>
                   )}
                 </For>
-              </ul>
+              </div>
             </div>
           )
         }}
@@ -764,27 +838,35 @@ function MoveLearnersQuickview(props: { entry: MoveLearnerEntryRecord | null }) 
   return (
     <Show
       when={props.entry}
-      fallback={<div class="quickview-status">Move details unavailable.</div>}
+      fallback={
+        <div class="p-12 text-center text-muted-foreground text-sm">Move details unavailable.</div>
+      }
     >
       {(entrySignal) => {
         const entry = entrySignal()
         return (
-          <div class="quickview-stack">
-            <div class="quickview-header">
-              <h3>{entry.moveName}</h3>
-              <p>{entry.learners.length} Pokemon can learn this move.</p>
+          <div class="flex flex-col gap-5">
+            <div class="border-border border-b pb-4">
+              <h3 class="mb-1 font-semibold text-lg">{entry.moveName}</h3>
+              <p class="text-muted-foreground text-sm">
+                {entry.learners.length} Pokemon can learn this move.
+              </p>
             </div>
 
-            <ul class="quickview-list">
+            <div class="flex max-h-[400px] flex-col gap-2 overflow-y-auto">
               <For each={entry.learners.slice(0, 30)}>
                 {(learner) => (
-                  <li>
-                    <a href={`/pokemon/${learner.slug}`}>{learner.name}</a>
-                    <span>{learner.methods.map((method) => sourceLabel(method)).join(", ")}</span>
-                  </li>
+                  <div class="flex items-center justify-between border-border border-b py-2 last:border-0">
+                    <a href={`/pokemon/${learner.slug}`} class="text-sm hover:underline">
+                      {learner.name}
+                    </a>
+                    <span class="text-muted-foreground text-xs">
+                      {learner.methods.map((method) => sourceLabel(method)).join(", ")}
+                    </span>
+                  </div>
                 )}
               </For>
-            </ul>
+            </div>
           </div>
         )
       }}
@@ -792,8 +874,8 @@ function MoveLearnersQuickview(props: { entry: MoveLearnerEntryRecord | null }) 
   )
 }
 
-function sourceLabel(sourceType: MoveSourceType): string {
-  return formatMoveSource(sourceType, null)
+function sourceLabel(sourceType: string): string {
+  return formatMoveSource(sourceType as MoveSourceType, null)
 }
 
 function resolveResultFacet(result: PaletteResult): QueryFacet | null {

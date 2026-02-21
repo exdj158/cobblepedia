@@ -14,11 +14,20 @@
       "!devreference1/**/*",
       "!.tmp-cobblemon/**/*",
       "!src/data/generated/**/*",
+      "!src/styles/**/*.css",
       "!**/*.js",
       "!**/*.cjs",
       "!**/*.mjs",
       "!src/route-tree.gen.ts"
     ]
+  },
+  "css": {
+    "parser": {
+      "cssModules": true
+    },
+    "linter": {
+      "enabled": false
+    }
   },
   "linter": {
     "enabled": true,

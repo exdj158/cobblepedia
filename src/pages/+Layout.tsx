@@ -6,28 +6,36 @@ import "@/styles/app.css"
 
 useMetadata.setGlobalDefaults({
   title: getTitle("Home"),
-  description: "Keyboard-first Cobblemon encyclopedia.",
+  description: "Fast, comprehensive Cobblemon reference.",
 })
 
 export default function RootLayout(props: FlowProps) {
+  const openPalette = () => {
+    window.dispatchEvent(new CustomEvent("cobblepedia:open-palette"))
+  }
+
   return (
-    <div class="app-shell">
-      <header class="app-header">
-        <a href="/" class="brand-link">
-          Cobblepedia
-        </a>
-        <button
-          type="button"
-          class="palette-trigger"
-          onClick={() => {
-            window.dispatchEvent(new CustomEvent("cobblepedia:open-palette"))
-          }}
-        >
-          Open Palette <kbd>Cmd</kbd>+<kbd>K</kbd>
-        </button>
+    <div class="min-h-screen bg-background">
+      <header class="sticky top-0 z-40 border-border border-b bg-background">
+        <div class="mx-auto flex h-14 max-w-6xl items-center justify-between px-4 sm:px-6 lg:px-8">
+          <a href="/" class="flex items-center gap-2 font-medium text-sm">
+            <span class="font-mono text-muted-foreground text-xs">CP._</span>
+            <span>Cobblepedia</span>
+          </a>
+          <button
+            type="button"
+            class="flex items-center gap-2 border border-border px-3 py-1.5 text-muted-foreground text-xs transition-colors hover:border-muted-foreground hover:text-foreground"
+            onClick={openPalette}
+          >
+            <span>Search</span>
+            <kbd class="bg-secondary px-1.5 py-0.5 font-mono">Cmd</kbd>
+            <span>+</span>
+            <kbd class="bg-secondary px-1.5 py-0.5 font-mono">K</kbd>
+          </button>
+        </div>
       </header>
 
-      <main class="app-main">{props.children}</main>
+      <main class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">{props.children}</main>
       <CommandPalette />
     </div>
   )

@@ -132,6 +132,33 @@ Resolution order:
 - Prioritize readability and scan speed.
 - Keep copy practical and concise.
 - Do not mirror prompt adjectives as literal UI marketing copy.
+- **Use Tailwind CSS classes only** - never create custom BEM-style CSS classes (e.g., `.pokemon-card`, `.stat-value`).
+- Compose styles using Tailwind utility classes with the `cn()` helper.
+- Keep custom CSS in `app.css` limited to: CSS variables, animations, and scrollbar utilities only.
+
+### Tailwind CSS Setup
+
+The project uses Tailwind CSS v4 with the following setup:
+
+- Base configuration in `src/styles/app.css` with custom theme tokens and animations
+- Kobalte UI components for accessible primitives (Dialog, etc.)
+- Custom animations: `flyUpAndScale`, `fadeIn`, `flyUp`, etc.
+- Utility classes defined via `@utility` in `app.css`
+
+### Component Patterns
+
+- Use `cn()` utility from `@/utils/cn` (combines clsx + tailwind-merge)
+- Copy shadcn patterns from `devreference1/src/components/ui/` when needed
+- Dialog components use Kobalte for accessibility and animations
+- Command palette uses `cmdk-solid` wrapped in Dialog for proper animations
+
+### Animation Guidelines
+
+- Subtle, purposeful animations only (inspired by better-auth.com)
+- Use existing animation tokens from `app.css`:
+  - `--animate-flyUpAndScale` for dialogs
+  - `--animate-fadeIn`/`--animate-fadeOut` for overlays
+- Respect `prefers-reduced-motion` media query
 
 ## 10) Quality Bar
 
@@ -191,3 +218,12 @@ Done means all are true:
 - Keyboard-first UX works end-to-end.
 - Pokemon page has moves, egg groups, spawns, evolution data.
 - Lint and type checks pass.
+
+## 15) Icon Management (iconmate)
+
+Use `iconmate --help` to explore available commands. Common workflow:
+
+- Search: `iconmate iconify <search-term>` (e.g., `iconmate iconify arrow`)
+- Add: `iconmate add <set:icon>` (e.g., `iconmate add lucide:arrow-right`)
+
+For detailed help on a specific subcommand, run `iconmate <command> --help` (e.g., `iconmate iconify --help`).
