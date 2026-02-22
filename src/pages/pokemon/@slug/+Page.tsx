@@ -1,8 +1,8 @@
-import { createMemo, createResource, createSignal, For, Show } from "solid-js"
+import { useKeyboard } from "bagon-hooks"
+import { createEffect, createMemo, createResource, createSignal, For, Show } from "solid-js"
 import { useMetadata } from "vike-metadata-solid"
 import { usePageContext } from "vike-solid/usePageContext"
 import { IconBox, IconEgg } from "@/assets/icons"
-import { PokemonModelPreview } from "@/components/pokemon-model-preview"
 import { PokemonSprite } from "@/components/pokemon-sprite"
 import { RideableCategoryIcon, RideableClassIcon } from "@/components/rideable-icons"
 import type {
@@ -21,13 +21,14 @@ import {
 } from "@/data/formatters"
 import pokemonDexNavData from "@/data/generated/pokemon-dex-nav.json"
 import { formatRideableCategory, parseRideableSummaryFromSpecies } from "@/data/rideable"
+import { getPokemonOfficialArtworkUrl } from "@/lib/pokeapi-artwork"
 import { useLeaderNavigationHotkeys } from "@/lib/use-leader-navigation-hotkeys"
 import { cn } from "@/utils/cn"
 import getTitle from "@/utils/get-title"
 
 const PAGE_MOVE_TABS = ["all", "level", "egg", "tm", "tutor"] as const
 type PageMoveTab = (typeof PAGE_MOVE_TABS)[number]
-type ArtworkView = "official" | "shiny" | "model"
+type ArtworkView = "official" | "shiny"
 
 const POKEMON_DEX_NAV = pokemonDexNavData as PokemonDexNavItem[]
 const POKEMON_DEX_NAV_INDEX_BY_SLUG = new Map<string, number>()
@@ -149,10 +150,169 @@ function PokemonDetailView(props: {
   next: PokemonDexNavItem | null
 }) {
   const detail = () => props.detail
-  const primaryType = () => detail().types[0] || "normal"
+  const [activeView, setActiveView] = createSignal<ArtworkView>("official")
+  const [selectedFormSlug, setSelectedFormSlug] = createSignal<string | null>(null)
+  const [artworkFailed, setArtworkFailed] = createSignal(false)
+
+  const availableForms = createMemo(() => detail().forms)
+
+  const selectedForm = createMemo(() => {
+    const slug = selectedFormSlug()
+    if (!slug) {
+      return null
+    }
+
+    return availableForms().find((form) => form.slug === slug) ?? null
+  })
+
+  const formOptions = createMemo(() => {
+    return [
+      {
+        slug: null,
+        label: "Base",
+        battleOnly: false,
+      },
+      ...availableForms().map((form) => ({
+        slug: form.slug,
+        label: form.name,
+        battleOnly: form.battleOnly,
+      })),
+    ]
+  })
+
+  const hasForms = createMemo(() => availableForms().length > 0)
+
+  const activeTypes = createMemo(() => {
+    const form = selectedForm()
+    if (form && form.types.length > 0) {
+      return form.types
+    }
+
+    return detail().types
+  })
+
+  const activeAbilities = createMemo(() => {
+    const form = selectedForm()
+    if (form && form.abilities.length > 0) {
+      return form.abilities
+    }
+
+    return detail().abilities
+  })
+
+  const activeBaseStats = createMemo(() => {
+    const form = selectedForm()
+    if (form && Object.keys(form.baseStats).length > 0) {
+      return form.baseStats
+    }
+
+    return detail().baseStats
+  })
+
+  const activeMoves = createMemo(() => {
+    const form = selectedForm()
+    if (form && form.moves.length > 0) {
+      return form.moves
+    }
+
+    return detail().moves
+  })
+
+  const activeHeight = createMemo(() => {
+    const form = selectedForm()
+    return form?.height ?? detail().height
+  })
+
+  const activeWeight = createMemo(() => {
+    const form = selectedForm()
+    return form?.weight ?? detail().weight
+  })
+
+  const activeCatchRate = createMemo(() => {
+    const form = selectedForm()
+    return form?.catchRate ?? detail().catchRate
+  })
+
+  const activeEggCycles = createMemo(() => {
+    const form = selectedForm()
+    return form?.eggCycles ?? detail().eggCycles
+  })
+
+  const activeBaseFriendship = createMemo(() => {
+    const form = selectedForm()
+    return form?.baseFriendship ?? detail().baseFriendship
+  })
+
+  const displayName = createMemo(() => {
+    const form = selectedForm()
+    if (!form) {
+      return detail().name
+    }
+
+    return `${detail().name} (${form.name})`
+  })
+
+  const primaryType = () => activeTypes()[0] || "normal"
   const typeColor = () => getTypeColor(primaryType())
   const rideableSummary = createMemo(() => parseRideableSummaryFromSpecies(detail().rawSpecies))
-  const [activeView, setActiveView] = createSignal<ArtworkView>("official")
+  const artworkUrl = createMemo(() =>
+    getPokemonOfficialArtworkUrl(detail().dexNumber, activeView() === "shiny", selectedFormSlug())
+  )
+
+  createEffect(() => {
+    detail().slug
+    const requestedFormSlug = readSelectedFormSlugFromUrl()
+    const matchesForm = detail().forms.some((form) => form.slug === requestedFormSlug)
+    setSelectedFormSlug(matchesForm ? requestedFormSlug : null)
+  })
+
+  createEffect(() => {
+    detail().dexNumber
+    selectedFormSlug()
+    activeView()
+    setArtworkFailed(false)
+  })
+
+  const selectForm = (nextFormSlug: string | null) => {
+    setSelectedFormSlug(nextFormSlug)
+    syncSelectedFormSlug(nextFormSlug)
+  }
+
+  const shiftFormSelection = (offset: number) => {
+    const options = formOptions()
+    const currentSlug = selectedFormSlug()
+    const currentIndex = options.findIndex((option) => option.slug === currentSlug)
+    if (currentIndex < 0) {
+      return
+    }
+
+    const nextIndex = currentIndex + offset
+    if (nextIndex < 0 || nextIndex >= options.length) {
+      return
+    }
+
+    selectForm(options[nextIndex]?.slug ?? null)
+  }
+
+  useKeyboard({
+    onKeyDown: (event) => {
+      if (!hasForms() || isEditableTarget(event.target)) {
+        return
+      }
+
+      const key = event.key.toLowerCase()
+      if (key === "h" || event.key === "[") {
+        event.preventDefault()
+        shiftFormSelection(-1)
+        return
+      }
+
+      if (key === "l" || event.key === "]") {
+        event.preventDefault()
+        shiftFormSelection(1)
+      }
+    },
+  })
 
   const leaderHotkeys = useLeaderNavigationHotkeys({
     onPrevious: () => {
@@ -173,7 +333,7 @@ function PokemonDetailView(props: {
       <nav class="mb-4 flex items-center justify-between gap-4">
         <DexNavCard pokemon={props.previous} direction="previous" />
 
-        <div class="flex items-center gap-1.5 text-muted-foreground">
+        <div class="flex flex-wrap items-center justify-center gap-1.5 text-muted-foreground">
           <span class="hidden text-xs sm:inline">Leader</span>
           <kbd class="hidden border border-border bg-secondary px-1.5 py-0.5 font-mono text-[10px] sm:inline">
             Space
@@ -202,10 +362,70 @@ function PokemonDetailView(props: {
               </span>
             </div>
 
-            <h1 class="font-semibold text-3xl tracking-tight sm:text-4xl">{detail().name}</h1>
+            <h1 class="font-semibold text-3xl tracking-tight sm:text-4xl">{displayName()}</h1>
+
+            <Show when={hasForms()}>
+              <div class="flex flex-col gap-1.5">
+                <div class="flex items-center gap-2">
+                  <span class="text-muted-foreground text-xs uppercase tracking-wide">Forms</span>
+                  <div class="flex items-center gap-1 text-[10px] text-muted-foreground">
+                    <kbd class="border border-border bg-secondary px-1 py-0.5 font-mono">H</kbd>
+                    <span>/</span>
+                    <kbd class="border border-border bg-secondary px-1 py-0.5 font-mono">L</kbd>
+                  </div>
+                </div>
+                <div class="flex flex-wrap items-center gap-1.5">
+                  <For each={formOptions()}>
+                    {(option, index) => {
+                      const isActive = () => selectedFormSlug() === option.slug
+                      const position = index()
+                      const total = formOptions().length
+
+                      return (
+                        <button
+                          type="button"
+                          class={cn(
+                            "group relative inline-flex items-center gap-1.5 border px-3 py-1.5 font-medium text-xs transition-all",
+                            isActive()
+                              ? "border-foreground bg-foreground text-background shadow-sm"
+                              : "border-border bg-card text-muted-foreground hover:border-muted-foreground hover:bg-secondary/50 hover:text-foreground"
+                          )}
+                          onClick={() => selectForm(option.slug)}
+                        >
+                          <span>{option.label}</span>
+                          <Show when={option.battleOnly}>
+                            <span
+                              class={cn(
+                                "font-mono text-[9px] uppercase tracking-wider",
+                                isActive() ? "text-background/70" : "text-muted-foreground/70"
+                              )}
+                            >
+                              Battle
+                            </span>
+                          </Show>
+
+                          {/* Keyboard shortcut indicator */}
+                          <Show when={!isActive() && (position === 0 || position === total - 1)}>
+                            <span
+                              aria-hidden="true"
+                              class={cn(
+                                "pointer-events-none absolute -top-1.5 -right-1.5 flex h-4 w-4 items-center justify-center rounded-full border font-mono text-[9px] opacity-0 transition-opacity group-hover:opacity-100",
+                                "border-border bg-secondary text-muted-foreground"
+                              )}
+                            >
+                              {position === 0 ? "H" : "L"}
+                            </span>
+                          </Show>
+                        </button>
+                      )
+                    }}
+                  </For>
+                </div>
+              </div>
+            </Show>
 
             <div class="flex flex-wrap gap-2">
-              <For each={detail().types}>
+              <For each={activeTypes()}>
                 {(type) => (
                   <a
                     href={`/types/${type}`}
@@ -232,20 +452,20 @@ function PokemonDetailView(props: {
             <div class="mt-2 flex flex-wrap gap-4 text-sm">
               <div class="flex items-center gap-1.5">
                 <span class="text-muted-foreground">Height:</span>
-                <span class="font-mono">{detail().height ?? "—"}</span>
+                <span class="font-mono">{activeHeight() ?? "—"}</span>
               </div>
               <div class="flex items-center gap-1.5">
                 <span class="text-muted-foreground">Weight:</span>
-                <span class="font-mono">{detail().weight ?? "—"}</span>
+                <span class="font-mono">{activeWeight() ?? "—"}</span>
               </div>
               <div class="flex items-center gap-1.5">
                 <span class="text-muted-foreground">Catch:</span>
-                <span class="font-mono">{detail().catchRate ?? "—"}</span>
+                <span class="font-mono">{activeCatchRate() ?? "—"}</span>
               </div>
             </div>
           </div>
 
-          {/* Right: Artwork/Model Display */}
+          {/* Right: Artwork Display */}
           <div class="flex flex-col items-center gap-3 sm:items-end">
             {/* View Toggle */}
             <div class="flex items-center border border-border bg-secondary/50">
@@ -259,51 +479,32 @@ function PokemonDetailView(props: {
                 onClick={() => setActiveView("shiny")}
                 label="Shiny"
               />
-              <ViewToggleButton
-                active={activeView() === "model"}
-                onClick={() => setActiveView("model")}
-                label="3D"
-              />
             </div>
 
             {/* Artwork Display - Compact */}
             <div class="relative h-40 w-40 overflow-hidden border border-border bg-secondary/30 sm:h-44 sm:w-44">
-              <Show when={activeView() === "official"}>
-                <div class="flex h-full w-full items-center justify-center p-2">
-                  <img
-                    src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${detail().dexNumber}.png`}
-                    alt={`${detail().name} official artwork`}
-                    class="h-full w-full object-contain"
-                    loading="eager"
-                    decoding="async"
-                    referrerPolicy="no-referrer"
-                    onError={(e) => {
-                      const target = e.currentTarget
-                      target.style.display = "none"
-                    }}
-                  />
-                </div>
-              </Show>
-
-              <Show when={activeView() === "shiny"}>
-                <div class="flex h-full w-full flex-col items-center justify-center gap-2 p-2">
-                  <div class="text-3xl">✨</div>
-                  <p class="text-center text-muted-foreground text-xs">
-                    Shiny artwork
-                    <br />
-                    coming soon
-                  </p>
-                </div>
-              </Show>
-
-              <Show when={activeView() === "model"}>
-                <div class="h-full w-full">
-                  <PokemonModelPreview
-                    slug={detail().slug}
-                    dexNumber={detail().dexNumber}
-                    name={detail().name}
-                  />
-                </div>
+              <Show
+                when={!artworkFailed() ? artworkUrl() : null}
+                fallback={
+                  <div class="flex h-full w-full flex-col items-center justify-center gap-2 p-2 text-center">
+                    <div class="text-2xl">🖼️</div>
+                    <p class="text-muted-foreground text-xs">Artwork unavailable for this view.</p>
+                  </div>
+                }
+              >
+                {(url) => (
+                  <div class="flex h-full w-full items-center justify-center p-2">
+                    <img
+                      src={url()}
+                      alt={`${displayName()} ${activeView()} artwork`}
+                      class="h-full w-full object-contain"
+                      loading="eager"
+                      decoding="async"
+                      referrerPolicy="no-referrer"
+                      onError={() => setArtworkFailed(true)}
+                    />
+                  </div>
+                )}
               </Show>
             </div>
           </div>
@@ -324,7 +525,7 @@ function PokemonDetailView(props: {
               <h2 class="font-semibold">Base Stats</h2>
             </div>
             <div class="p-4">
-              <For each={Object.entries(detail().baseStats)}>
+              <For each={Object.entries(activeBaseStats())}>
                 {([stat, value]) => (
                   <div class="mb-3 last:mb-0">
                     <div class="mb-1 flex items-center justify-between text-sm">
@@ -353,17 +554,24 @@ function PokemonDetailView(props: {
               <h2 class="font-semibold">Abilities</h2>
             </div>
             <div class="divide-y divide-border">
-              <For each={detail().abilities}>
+              <For each={activeAbilities()}>
                 {(ability) => (
                   <div class="flex items-center justify-between px-4 py-3">
                     <a href={`/abilities/${ability.id}`} class="hover:underline">
                       {ability.label}
                     </a>
-                    {ability.hidden && (
-                      <span class="border border-border bg-secondary px-2 py-0.5 text-muted-foreground text-xs">
-                        Hidden
-                      </span>
-                    )}
+                    <span
+                      class={cn(
+                        "border px-2 py-0.5 text-xs",
+                        ability.slot === "first" &&
+                          "border-foreground/20 bg-foreground/10 text-foreground",
+                        ability.slot === "second" && "border-info/40 bg-info/10 text-info",
+                        ability.slot === "hidden" &&
+                          "border-border bg-secondary text-muted-foreground"
+                      )}
+                    >
+                      {formatAbilitySlot(ability.slot)}
+                    </span>
                   </div>
                 )}
               </For>
@@ -404,19 +612,19 @@ function PokemonDetailView(props: {
                 <span class="mb-1 block font-mono text-muted-foreground text-xs uppercase">
                   Egg Cycles
                 </span>
-                <span class="font-mono text-lg">{detail().eggCycles ?? "—"}</span>
+                <span class="font-mono text-lg">{activeEggCycles() ?? "—"}</span>
               </div>
               <div class="bg-card p-4">
                 <span class="mb-1 block font-mono text-muted-foreground text-xs uppercase">
                   Base Friendship
                 </span>
-                <span class="font-mono text-lg">{detail().baseFriendship ?? "—"}</span>
+                <span class="font-mono text-lg">{activeBaseFriendship() ?? "—"}</span>
               </div>
               <div class="bg-card p-4">
                 <span class="mb-1 block font-mono text-muted-foreground text-xs uppercase">
                   Catch Rate
                 </span>
-                <span class="font-mono text-lg">{detail().catchRate ?? "—"}</span>
+                <span class="font-mono text-lg">{activeCatchRate() ?? "—"}</span>
               </div>
             </div>
           </section>
@@ -424,7 +632,7 @@ function PokemonDetailView(props: {
 
         {/* Right Column - Moves, Spawns, Evolution */}
         <div class="space-y-6">
-          <MovesSection moves={detail().moves} />
+          <MovesSection moves={activeMoves()} activeFormName={selectedForm()?.name ?? null} />
 
           {/* Spawn Locations */}
           <section class="border border-border bg-card">
@@ -587,6 +795,18 @@ function PokemonDetailView(props: {
               &lt; / ,
             </kbd>
             <span>Previous Pokemon</span>
+            <Show when={hasForms()}>
+              <>
+                <kbd class="border border-border bg-secondary px-1.5 py-0.5 font-mono text-[10px]">
+                  H
+                </kbd>
+                <span>Previous Form</span>
+                <kbd class="border border-border bg-secondary px-1.5 py-0.5 font-mono text-[10px]">
+                  L
+                </kbd>
+                <span>Next Form</span>
+              </>
+            </Show>
             <kbd class="border border-border bg-secondary px-1.5 py-0.5 font-mono text-[10px]">
               Esc
             </kbd>
@@ -726,7 +946,10 @@ function RideableHeroTag(props: { summary: RideableSummaryRecord; slug: string }
   )
 }
 
-function MovesSection(props: { moves: PokemonDetailRecord["moves"] }) {
+function MovesSection(props: {
+  moves: PokemonDetailRecord["moves"]
+  activeFormName: string | null
+}) {
   const [activeTab, setActiveTab] = createSignal<PageMoveTab>("all")
   const [searchQuery, setSearchQuery] = createSignal("")
 
@@ -765,6 +988,13 @@ function MovesSection(props: { moves: PokemonDetailRecord["moves"] }) {
         <div class="flex items-center gap-2">
           <span class="text-muted-foreground">✦</span>
           <h2 class="font-semibold">Moveset</h2>
+          <Show when={props.activeFormName}>
+            {(formName) => (
+              <span class="border border-border bg-background px-2 py-0.5 font-mono text-[10px] text-muted-foreground uppercase">
+                {formName()}
+              </span>
+            )}
+          </Show>
         </div>
         <span class="font-mono text-muted-foreground text-xs">{counts().all} total</span>
       </div>
@@ -911,4 +1141,66 @@ function formatStatName(stat: string): string {
     speed: "Speed",
   }
   return names[stat] || titleCaseFromId(stat)
+}
+
+function formatAbilitySlot(slot: PokemonDetailRecord["abilities"][number]["slot"]): string {
+  if (slot === "first") {
+    return "First"
+  }
+
+  if (slot === "second") {
+    return "Second"
+  }
+
+  return "Hidden"
+}
+
+function readSelectedFormSlugFromUrl(): string | null {
+  if (typeof window === "undefined") {
+    return null
+  }
+
+  const queryValue = new URLSearchParams(window.location.search).get("form")
+  if (!queryValue) {
+    return null
+  }
+
+  const normalized = queryValue.trim().toLowerCase()
+  return normalized.length > 0 ? normalized : null
+}
+
+function syncSelectedFormSlug(formSlug: string | null) {
+  if (typeof window === "undefined") {
+    return
+  }
+
+  const url = new URL(window.location.href)
+  if (formSlug) {
+    url.searchParams.set("form", formSlug)
+  } else {
+    url.searchParams.delete("form")
+  }
+
+  const nextUrl = `${url.pathname}${url.search}${url.hash}`
+  window.history.replaceState(null, "", nextUrl)
+}
+
+function isEditableTarget(target: EventTarget | null): boolean {
+  if (!(target instanceof Element)) {
+    return false
+  }
+
+  if (target instanceof HTMLInputElement || target instanceof HTMLTextAreaElement) {
+    return true
+  }
+
+  if (target instanceof HTMLSelectElement) {
+    return true
+  }
+
+  if (target instanceof HTMLElement && target.isContentEditable) {
+    return true
+  }
+
+  return Boolean(target.closest("[contenteditable='true']"))
 }

@@ -277,11 +277,11 @@ export default function Page() {
               </div>
               <div class="bg-card p-6">
                 <span class="mb-2 block font-mono text-muted-foreground text-xs uppercase">
-                  Species
+                  Playable
                 </span>
-                <span class="font-mono text-xl">{meta()?.speciesCount}</span>
+                <span class="font-mono text-xl">{meta()?.implementedSpeciesCount}</span>
                 <span class="mt-1 block text-muted-foreground text-sm">
-                  {meta()?.implementedSpeciesCount} implemented
+                  of {meta()?.speciesCount} total
                 </span>
               </div>
               <div class="bg-card p-6">

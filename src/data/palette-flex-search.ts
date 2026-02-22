@@ -1,0 +1,389 @@
+import { Index } from "flexsearch"
+import type {
+  AbilityIndex,
+  MoveLearnersIndex,
+  PaletteResult,
+  PokemonListItem,
+} from "@/data/cobblemon-types"
+import {
+  canonicalId,
+  formatEggGroup,
+  normalizeSearchText,
+  titleCaseFromId,
+} from "@/data/formatters"
+
+type PaletteSearchEntityType = "pokemon" | "move" | "ability" | "type" | "egg-group"
+
+type PaletteSearchDoc = {
+  id: string
+  entityType: PaletteSearchEntityType
+  title: string
+  normalizedTitle: string
+  canonicalTitle: string
+  aliases: string[]
+  canonicalAliases: string[]
+  searchText: string
+  result: PaletteResult
+}
+
+type PaletteFlexSearchParams = {
+  pokemonList: PokemonListItem[]
+  moveLearners: MoveLearnersIndex
+  abilityIndex: AbilityIndex
+}
+
+export type PaletteFlexSearch = {
+  search: (query: string, limit?: number) => PaletteResult[]
+}
+
+const DEFAULT_LIMIT = 90
+
+const ENTITY_SCORE_BONUS: Record<PaletteSearchEntityType, number> = {
+  pokemon: 30,
+  move: 24,
+  ability: 20,
+  type: 14,
+  "egg-group": 14,
+}
+
+export function createPaletteFlexSearch(params: PaletteFlexSearchParams): PaletteFlexSearch {
+  const docs = buildPaletteSearchDocs(params)
+  const index = new Index({ tokenize: "full" })
+
+  docs.forEach((doc, position) => {
+    index.add(position, doc.searchText)
+  })
+
+  return {
+    search: (query: string, limit = DEFAULT_LIMIT) => {
+      const normalizedQuery = normalizeSearchText(query)
+      if (!normalizedQuery) {
+        return []
+      }
+
+      const canonicalQuery = canonicalId(normalizedQuery)
+      const queryTokens = normalizedQuery.split(" ").filter(Boolean)
+      const rawMatches = index.search(normalizedQuery, Math.max(limit * 3, 120))
+      const matchPositions = Array.isArray(rawMatches)
+        ? rawMatches
+            .map((value) => (typeof value === "number" ? value : Number(value)))
+            .filter((value) => Number.isInteger(value) && value >= 0)
+        : []
+
+      const scoredMatches = matchPositions
+        .map((matchPosition, rank) => {
+          const doc = docs[matchPosition]
+          if (!doc) {
+            return null
+          }
+
+          const score = scoreSearchDoc(doc, normalizedQuery, canonicalQuery, queryTokens, rank)
+          return {
+            doc,
+            score,
+          }
+        })
+        .filter((entry): entry is { doc: PaletteSearchDoc; score: number } => Boolean(entry))
+        .sort((left, right) => right.score - left.score)
+
+      const dedupedResults = new Map<string, PaletteResult>()
+
+      for (const entry of scoredMatches) {
+        if (dedupedResults.has(entry.doc.id)) {
+          continue
+        }
+
+        dedupedResults.set(entry.doc.id, {
+          ...entry.doc.result,
+          score: entry.score,
+        })
+
+        if (dedupedResults.size >= limit) {
+          break
+        }
+      }
+
+      return Array.from(dedupedResults.values())
+    },
+  }
+}
+
+function buildPaletteSearchDocs(params: PaletteFlexSearchParams): PaletteSearchDoc[] {
+  const docs: PaletteSearchDoc[] = []
+
+  for (const pokemon of params.pokemonList) {
+    const pokemonTypes = pokemon.types.map((type) => titleCaseFromId(type)).join(" / ")
+    const aliases = uniqueNormalized([
+      pokemon.name,
+      pokemon.slug,
+      ...pokemon.aliases,
+      ...pokemon.types,
+      ...pokemon.eggGroups,
+      "pokemon",
+    ])
+
+    docs.push(
+      createDoc({
+        id: `pokemon-overview:${pokemon.slug}`,
+        entityType: "pokemon",
+        title: pokemon.name,
+        aliases,
+        searchTextParts: [pokemon.name, pokemon.slug, ...pokemon.aliases, pokemonTypes, "pokemon"],
+        result: {
+          id: `pokemon-overview:${pokemon.slug}`,
+          type: "pokemon-overview",
+          title: pokemon.name,
+          subtitle: `#${pokemon.dexNumber} ${pokemonTypes}`,
+          slug: pokemon.slug,
+          moveId: null,
+          facet: null,
+          score: 0,
+        },
+      })
+    )
+  }
+
+  const moveEntries = Object.values(params.moveLearners)
+  for (const move of moveEntries) {
+    const learnerCount = move.learners.length
+    const aliases = uniqueNormalized([move.moveName, move.moveId, move.type ?? "", "move", "moves"])
+
+    docs.push(
+      createDoc({
+        id: `move:${move.moveId}`,
+        entityType: "move",
+        title: move.moveName,
+        aliases,
+        searchTextParts: [
+          move.moveName,
+          move.moveId,
+          move.type ?? "",
+          move.category ?? "",
+          move.shortDescription ?? "",
+          "move",
+          "moves",
+        ],
+        result: {
+          id: `move:${move.moveId}`,
+          type: "move-learners",
+          title: move.moveName,
+          subtitle: `${learnerCount} learners`,
+          slug: null,
+          moveId: move.moveId,
+          facet: null,
+          score: 0,
+        },
+      })
+    )
+  }
+
+  for (const ability of Object.values(params.abilityIndex)) {
+    const aliases = uniqueNormalized([
+      ability.name,
+      ability.abilityId,
+      ability.shortDescription ?? "",
+      ability.description ?? "",
+      "ability",
+      "abilities",
+    ])
+
+    docs.push(
+      createDoc({
+        id: `ability:${ability.abilityId}`,
+        entityType: "ability",
+        title: ability.name,
+        aliases,
+        searchTextParts: [
+          ability.name,
+          ability.abilityId,
+          ability.shortDescription ?? "",
+          ability.description ?? "",
+          "ability",
+          "abilities",
+        ],
+        result: {
+          id: `ability:${ability.abilityId}`,
+          type: "ability-entry",
+          title: ability.name,
+          subtitle: `Ability - ${ability.pokemon.length} Pokemon`,
+          slug: null,
+          moveId: null,
+          abilityId: ability.abilityId,
+          facet: null,
+          score: 0,
+          url: `/abilities/${ability.abilityId}`,
+        },
+      })
+    )
+  }
+
+  const typeCounts = new Map<string, number>()
+  const eggGroupCounts = new Map<string, number>()
+
+  for (const pokemon of params.pokemonList) {
+    for (const typeId of pokemon.types) {
+      typeCounts.set(typeId, (typeCounts.get(typeId) ?? 0) + 1)
+    }
+
+    for (const eggGroupId of pokemon.eggGroups) {
+      eggGroupCounts.set(eggGroupId, (eggGroupCounts.get(eggGroupId) ?? 0) + 1)
+    }
+  }
+
+  for (const [typeId, count] of typeCounts.entries()) {
+    const title = titleCaseFromId(typeId)
+    docs.push(
+      createDoc({
+        id: `type:${typeId}`,
+        entityType: "type",
+        title,
+        aliases: uniqueNormalized([title, typeId, "type", "types"]),
+        searchTextParts: [title, typeId, "type", "types"],
+        result: {
+          id: `type:${typeId}`,
+          type: "type-entry",
+          title,
+          subtitle: `Type - ${count} Pokemon`,
+          slug: null,
+          moveId: null,
+          typeId,
+          facet: null,
+          score: 0,
+          url: `/types/${typeId}`,
+        },
+      })
+    )
+  }
+
+  for (const [eggGroupId, count] of eggGroupCounts.entries()) {
+    const title = formatEggGroup(eggGroupId)
+    docs.push(
+      createDoc({
+        id: `egg-group:${eggGroupId}`,
+        entityType: "egg-group",
+        title,
+        aliases: uniqueNormalized([title, eggGroupId, "egg", "egg group", "egg groups"]),
+        searchTextParts: [title, eggGroupId, "egg group", "egg groups"],
+        result: {
+          id: `egg-group:${eggGroupId}`,
+          type: "egg-group-entry",
+          title,
+          subtitle: `Egg Group - ${count} Pokemon`,
+          slug: null,
+          moveId: null,
+          eggGroupId,
+          facet: null,
+          score: 0,
+          url: `/egg-groups/${eggGroupId}`,
+        },
+      })
+    )
+  }
+
+  return docs
+}
+
+function createDoc(params: {
+  id: string
+  entityType: PaletteSearchEntityType
+  title: string
+  aliases: string[]
+  searchTextParts: string[]
+  result: PaletteResult
+}): PaletteSearchDoc {
+  const normalizedTitle = normalizeSearchText(params.title)
+  const normalizedAliases = uniqueNormalized([normalizedTitle, ...params.aliases])
+  const canonicalAliases = uniqueCanonical(normalizedAliases)
+
+  return {
+    id: params.id,
+    entityType: params.entityType,
+    title: params.title,
+    normalizedTitle,
+    canonicalTitle: canonicalId(normalizedTitle),
+    aliases: normalizedAliases,
+    canonicalAliases,
+    searchText: normalizeSearchText(params.searchTextParts.filter(Boolean).join(" ")),
+    result: params.result,
+  }
+}
+
+function scoreSearchDoc(
+  doc: PaletteSearchDoc,
+  normalizedQuery: string,
+  canonicalQuery: string,
+  queryTokens: string[],
+  rank: number
+): number {
+  let score = Math.max(0, 140 - rank * 2)
+
+  if (doc.normalizedTitle === normalizedQuery) {
+    score += 700
+  }
+
+  if (doc.aliases.includes(normalizedQuery)) {
+    score += 560
+  }
+
+  if (doc.canonicalTitle === canonicalQuery) {
+    score += 460
+  }
+
+  if (doc.canonicalAliases.includes(canonicalQuery)) {
+    score += 380
+  }
+
+  if (doc.normalizedTitle.startsWith(normalizedQuery)) {
+    score += 320
+  }
+
+  if (doc.aliases.some((alias) => alias.startsWith(normalizedQuery))) {
+    score += 260
+  }
+
+  if (doc.normalizedTitle.includes(normalizedQuery)) {
+    score += 160
+  }
+
+  if (doc.searchText.includes(normalizedQuery)) {
+    score += 120
+  }
+
+  for (const token of queryTokens) {
+    if (doc.searchText.includes(token)) {
+      score += 35
+    }
+  }
+
+  score += ENTITY_SCORE_BONUS[doc.entityType]
+
+  return score
+}
+
+function uniqueNormalized(values: string[]): string[] {
+  const set = new Set<string>()
+
+  for (const value of values) {
+    const normalized = normalizeSearchText(value)
+    if (!normalized) {
+      continue
+    }
+    set.add(normalized)
+  }
+
+  return Array.from(set)
+}
+
+function uniqueCanonical(values: string[]): string[] {
+  const set = new Set<string>()
+
+  for (const value of values) {
+    const normalized = canonicalId(value)
+    if (!normalized) {
+      continue
+    }
+    set.add(normalized)
+  }
+
+  return Array.from(set)
+}

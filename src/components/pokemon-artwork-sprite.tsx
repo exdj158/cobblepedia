@@ -1,23 +1,8 @@
-import { createEffect, createSignal, Show } from "solid-js"
-import { fetchPokemonArtworkUrl } from "@/lib/pokeapi-artwork"
+import { Show } from "solid-js"
+import { getPokemonOfficialArtworkUrl } from "@/lib/pokeapi-artwork"
 
-export function PokemonArtworkSprite(props: { dexNumber: number; name: string }) {
-  const [artworkUrl, setArtworkUrl] = createSignal<string | null>(null)
-  let requestVersion = 0
-
-  const fetchArtwork = async () => {
-    const currentVersion = ++requestVersion
-    const url = await fetchPokemonArtworkUrl(props.dexNumber)
-    if (currentVersion !== requestVersion) {
-      return
-    }
-    setArtworkUrl(url)
-  }
-
-  createEffect(() => {
-    props.dexNumber
-    void fetchArtwork()
-  })
+export function PokemonArtworkSprite(props: { dexNumber: number; name: string; shiny?: boolean }) {
+  const artworkUrl = () => getPokemonOfficialArtworkUrl(props.dexNumber, Boolean(props.shiny))
 
   return (
     <Show
@@ -31,7 +16,7 @@ export function PokemonArtworkSprite(props: { dexNumber: number; name: string })
       {(url) => (
         <img
           src={url()}
-          alt={`${props.name} official artwork`}
+          alt={`${props.name} ${props.shiny ? "shiny" : "official"} artwork`}
           class="h-full w-full object-contain p-1"
           loading="lazy"
           decoding="async"

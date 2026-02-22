@@ -173,11 +173,13 @@ function MoveDetailView(props: { entry: MoveLearnerEntryRecord }) {
       }
 
       const eggGroups = getLearnerEggGroups(learner)
+      const formNames = learner.forms.map((form) => form.name)
 
       return (
         learner.name.toLowerCase().includes(query) ||
         learner.slug.toLowerCase().includes(query) ||
         String(learner.dexNumber).includes(query) ||
+        formNames.some((formName) => formName.toLowerCase().includes(query)) ||
         eggGroups.some((group) => {
           return (
             group.toLowerCase().includes(query) ||
@@ -302,7 +304,7 @@ function MoveDetailView(props: { entry: MoveLearnerEntryRecord }) {
                     <td class="px-4 py-2.5">
                       <div class="space-y-1.5">
                         <a
-                          href={`/pokemon/${learner.slug}`}
+                          href={resolveMoveLearnerHref(learner)}
                           class="inline-flex items-center gap-2 hover:underline"
                         >
                           <PokemonSprite
@@ -326,6 +328,26 @@ function MoveDetailView(props: { entry: MoveLearnerEntryRecord }) {
                             )}
                           </For>
                         </div>
+
+                        <Show when={learner.forms.length > 0}>
+                          <div class="flex flex-wrap gap-1">
+                            <Show when={!learner.baseAvailable}>
+                              <span class="border border-border bg-secondary/70 px-2 py-0.5 font-mono text-[10px] text-muted-foreground uppercase tracking-wider">
+                                Form Only
+                              </span>
+                            </Show>
+                            <For each={learner.forms}>
+                              {(form) => (
+                                <a
+                                  href={`/pokemon/${learner.slug}?form=${encodeURIComponent(form.slug)}`}
+                                  class="border border-border bg-secondary/40 px-2 py-0.5 text-[10px] text-muted-foreground hover:border-muted-foreground hover:text-foreground"
+                                >
+                                  {form.name}
+                                </a>
+                              )}
+                            </For>
+                          </div>
+                        </Show>
                       </div>
                     </td>
                     <td class="px-4 py-2.5">
@@ -452,4 +474,17 @@ function formatLearnerMethodLabel(
   }
 
   return "Level"
+}
+
+function resolveMoveLearnerHref(learner: MoveLearnerEntryRecord["learners"][number]): string {
+  if (learner.baseAvailable || learner.forms.length === 0) {
+    return `/pokemon/${learner.slug}`
+  }
+
+  const primaryForm = learner.forms[0]
+  if (!primaryForm) {
+    return `/pokemon/${learner.slug}`
+  }
+
+  return `/pokemon/${learner.slug}?form=${encodeURIComponent(primaryForm.slug)}`
 }

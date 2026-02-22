@@ -4,7 +4,14 @@ export type MoveSourceType = "level" | "egg" | "tm" | "tutor" | "legacy" | "spec
 
 export type AbilitySlot = "first" | "second" | "hidden"
 
-export type SearchResultType = "pokemon-overview" | "pokemon-facet" | "move-learners"
+export type SearchResultType =
+  | "pokemon-overview"
+  | "pokemon-facet"
+  | "move-learners"
+  | "ability-entry"
+  | "type-entry"
+  | "egg-group-entry"
+  | "primary-page"
 
 export type MetaRecord = {
   upstreamUrl: string
@@ -38,6 +45,7 @@ export type ParsedMove = {
   sourceType: MoveSourceType
   sourceValue: number | null
   fromForm: string | null
+  fromFormSlug: string | null
 }
 
 export type EvolutionRequirementRecord = {
@@ -107,7 +115,18 @@ export type PokemonFormRecord = {
   name: string
   slug: string
   aspects: string[]
+  labels: string[]
   types: string[]
+  maleRatio: number | null
+  height: number | null
+  weight: number | null
+  catchRate: number | null
+  baseExperienceYield: number | null
+  baseFriendship: number | null
+  eggCycles: number | null
+  baseStats: Record<string, number>
+  evYield: Record<string, number>
+  battleOnly: boolean
   abilities: PokemonAbility[]
   moves: ParsedMove[]
   evolutions: EvolutionEdgeRecord[]
@@ -166,6 +185,11 @@ export type MoveLearnerRecord = {
   methods: MoveSourceType[]
   eggGroups: string[]
   levelUpLevels: number[]
+  baseAvailable: boolean
+  forms: {
+    name: string
+    slug: string
+  }[]
 }
 
 export type MoveLearnerEntryRecord = {
@@ -191,6 +215,7 @@ export type AbilityPokemonRecord = {
   slots: AbilitySlot[]
   formSlots: {
     formName: string
+    formSlug: string
     slots: AbilitySlot[]
   }[]
 }
@@ -230,6 +255,17 @@ export type RideableMonRecord = {
   behaviours: RideableBehaviourRecord[]
 }
 
+export type PokemonTypeEntryRecord = {
+  id: string
+  slug: string
+  formSlug: string | null
+  formName: string | null
+  name: string
+  dexNumber: number
+  implemented: boolean
+  types: string[]
+}
+
 export type SearchDocument = {
   id: string
   resultType: SearchResultType
@@ -252,11 +288,17 @@ export type PaletteResult = {
   subtitle: string
   slug: string | null
   moveId: string | null
+  abilityId?: string | null
+  typeId?: string | null
+  eggGroupId?: string | null
   facet: QueryFacet | null
   score: number
+  url?: string
 }
 
 export type ResolvedIntent =
+  | "primary-pages"
+  | "mixed-search"
   | "move-learners"
   | "pokemon-facet"
   | "pokemon-overview"

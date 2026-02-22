@@ -164,7 +164,7 @@ function AbilityDetailView(props: { entry: AbilityEntryRecord }) {
                     <tr class="hover:bg-secondary/40">
                       <td class="px-4 py-2.5">
                         <a
-                          href={`/pokemon/${pokemon.slug}`}
+                          href={resolvePokemonAbilityHref(pokemon)}
                           class="inline-flex items-center gap-2 hover:underline"
                         >
                           <PokemonSprite
@@ -205,9 +205,12 @@ function AbilityDetailView(props: { entry: AbilityEntryRecord }) {
                             <div class="flex flex-wrap justify-end gap-1">
                               <For each={resolveFormAbilitySlots(pokemon)}>
                                 {(formSlot) => (
-                                  <span class="border border-border bg-secondary/60 px-2 py-0.5 text-[10px] text-muted-foreground">
+                                  <a
+                                    href={`/pokemon/${pokemon.slug}?form=${encodeURIComponent(formSlot.formSlug)}`}
+                                    class="border border-border bg-secondary/60 px-2 py-0.5 text-[10px] text-muted-foreground hover:border-muted-foreground hover:text-foreground"
+                                  >
                                     {formSlot.formName}: {formatAbilitySlotList(formSlot.slots)}
-                                  </span>
+                                  </a>
                                 )}
                               </For>
                             </div>
@@ -264,8 +267,25 @@ function resolveFormAbilitySlots(
 
   return pokemon.formSlots.filter(
     (formSlot) =>
-      Boolean(formSlot.formName) && Array.isArray(formSlot.slots) && formSlot.slots.length > 0
+      Boolean(formSlot.formName) &&
+      Boolean(formSlot.formSlug) &&
+      Array.isArray(formSlot.slots) &&
+      formSlot.slots.length > 0
   )
+}
+
+function resolvePokemonAbilityHref(pokemon: AbilityEntryRecord["pokemon"][number]): string {
+  const baseSlots = resolveAbilitySlots(pokemon)
+  if (baseSlots.length > 0) {
+    return `/pokemon/${pokemon.slug}`
+  }
+
+  const firstFormSlot = resolveFormAbilitySlots(pokemon)[0]
+  if (!firstFormSlot) {
+    return `/pokemon/${pokemon.slug}`
+  }
+
+  return `/pokemon/${pokemon.slug}?form=${encodeURIComponent(firstFormSlot.formSlug)}`
 }
 
 function resolveEffectiveAbilitySlots(

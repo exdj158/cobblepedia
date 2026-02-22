@@ -14,6 +14,7 @@ import type {
   PokemonDexNavItem,
   PokemonFormRecord,
   PokemonListItem,
+  PokemonTypeEntryRecord,
   RideableMonRecord,
   SearchDocument,
   SpawnEntryRecord,
@@ -110,6 +111,8 @@ type ShowdownData = {
 type MoveLearnerBuildEntry = {
   methods: Set<MoveSourceType>
   levelUpLevels: Set<number>
+  baseAvailable: boolean
+  forms: Map<string, string>
 }
 
 type MoveLearnersBuildMap = Map<string, Map<string, MoveLearnerBuildEntry>>
@@ -167,6 +170,7 @@ async function main() {
 
   const pokemonList = buildPokemonList(detailsBySlug)
   const pokemonDexNav = buildPokemonDexNav(pokemonList)
+  const pokemonTypeEntries = buildPokemonTypeEntries(detailsBySlug)
   const moveLearners = buildMoveLearnersIndex(detailsBySlug, moveLearnersBuild, showdownData.moves)
   const abilityIndex = buildAbilityIndex(detailsBySlug, showdownData.abilities)
   const rideableMons = buildRideableMons(detailsBySlug)
@@ -197,6 +201,7 @@ async function main() {
     meta,
     pokemonList,
     pokemonDexNav,
+    pokemonTypeEntries,
     moveLearners,
     abilityIndex,
     rideableMons,
@@ -610,6 +615,7 @@ function buildPokemonDetailRecord(params: {
     moveEntries: params.moveEntries,
     sourceLabel: speciesFile.slug,
     fromForm: null,
+    fromFormSlug: null,
   })
   addMovesToLearnerIndex(params.moveLearnersBuild, speciesFile.slug, baseMoves)
 
@@ -764,6 +770,7 @@ function parseForms(
       moveEntries: params.moveEntries,
       sourceLabel: `${params.speciesSlug}:${formName}`,
       fromForm: formName,
+      fromFormSlug: formSlug,
     })
     addMovesToLearnerIndex(params.moveLearnersBuild, params.speciesSlug, formMoves)
 
@@ -778,7 +785,21 @@ function parseForms(
       aspects: Array.isArray(rawForm.aspects)
         ? rawForm.aspects.filter((aspect): aspect is string => typeof aspect === "string")
         : [],
+      labels: Array.isArray(rawForm.labels)
+        ? rawForm.labels.filter((label): label is string => typeof label === "string")
+        : [],
       types: formTypes,
+      maleRatio: typeof rawForm.maleRatio === "number" ? rawForm.maleRatio : null,
+      height: typeof rawForm.height === "number" ? rawForm.height : null,
+      weight: typeof rawForm.weight === "number" ? rawForm.weight : null,
+      catchRate: typeof rawForm.catchRate === "number" ? rawForm.catchRate : null,
+      baseExperienceYield:
+        typeof rawForm.baseExperienceYield === "number" ? rawForm.baseExperienceYield : null,
+      baseFriendship: typeof rawForm.baseFriendship === "number" ? rawForm.baseFriendship : null,
+      eggCycles: typeof rawForm.eggCycles === "number" ? rawForm.eggCycles : null,
+      baseStats: isRecord(rawForm.baseStats) ? toNumericRecord(rawForm.baseStats) : {},
+      evYield: isRecord(rawForm.evYield) ? toNumericRecord(rawForm.evYield) : {},
+      battleOnly: Boolean(rawForm.battleOnly),
       abilities: formAbilities,
       moves: formMoves,
       evolutions: formEvolutions,
@@ -799,6 +820,7 @@ function parseMoveList(
     moveEntries: ShowdownData["moves"]
     sourceLabel: string
     fromForm: string | null
+    fromFormSlug: string | null
   }
 ): ParsedMove[] {
   if (!Array.isArray(rawMoves)) {
@@ -834,7 +856,7 @@ function parseMoveList(
       throw new Error(`Unsupported move source prefix \`${prefixRaw}\` in ${params.sourceLabel}`)
     }
 
-    const dedupeKey = `${moveId}::${parsedPrefix.sourceType}::${parsedPrefix.sourceValue ?? ""}::${params.fromForm ?? ""}`
+    const dedupeKey = `${moveId}::${parsedPrefix.sourceType}::${parsedPrefix.sourceValue ?? ""}::${params.fromFormSlug ?? ""}`
     if (seen.has(dedupeKey)) {
       continue
     }
@@ -848,6 +870,7 @@ function parseMoveList(
       sourceType: parsedPrefix.sourceType,
       sourceValue: parsedPrefix.sourceValue,
       fromForm: params.fromForm,
+      fromFormSlug: params.fromFormSlug,
     })
   }
 
@@ -1072,6 +1095,58 @@ function buildPokemonDexNav(pokemonList: PokemonListItem[]): PokemonDexNavItem[]
     })
 }
 
+function buildPokemonTypeEntries(
+  detailsBySlug: Map<string, PokemonDetailRecord>
+): PokemonTypeEntryRecord[] {
+  const entries: PokemonTypeEntryRecord[] = []
+
+  for (const detail of detailsBySlug.values()) {
+    entries.push({
+      id: detail.slug,
+      slug: detail.slug,
+      formSlug: null,
+      formName: null,
+      name: detail.name,
+      dexNumber: detail.dexNumber,
+      implemented: detail.implemented,
+      types: detail.types,
+    })
+
+    for (const form of detail.forms) {
+      entries.push({
+        id: `${detail.slug}::${form.slug}`,
+        slug: detail.slug,
+        formSlug: form.slug,
+        formName: form.name,
+        name: `${detail.name} (${form.name})`,
+        dexNumber: detail.dexNumber,
+        implemented: detail.implemented,
+        types: form.types.length > 0 ? form.types : detail.types,
+      })
+    }
+  }
+
+  return entries.sort((left, right) => {
+    if (left.dexNumber !== right.dexNumber) {
+      return left.dexNumber - right.dexNumber
+    }
+
+    if (left.slug !== right.slug) {
+      return left.slug.localeCompare(right.slug)
+    }
+
+    if (!left.formName && right.formName) {
+      return -1
+    }
+
+    if (left.formName && !right.formName) {
+      return 1
+    }
+
+    return (left.formName ?? "").localeCompare(right.formName ?? "")
+  })
+}
+
 function buildMoveLearnersIndex(
   detailsBySlug: Map<string, PokemonDetailRecord>,
   moveLearnersBuild: MoveLearnersBuildMap,
@@ -1100,6 +1175,13 @@ function buildMoveLearnersIndex(
           ),
           eggGroups: [...detail.eggGroups].sort((left, right) => left.localeCompare(right)),
           levelUpLevels: Array.from(learnerBuild.levelUpLevels).sort((left, right) => left - right),
+          baseAvailable: learnerBuild.baseAvailable,
+          forms: Array.from(learnerBuild.forms.entries())
+            .map(([formSlug, formName]) => ({
+              name: formName,
+              slug: formSlug,
+            }))
+            .sort((left, right) => left.name.localeCompare(right.name)),
         }
       })
       .filter((learner): learner is NonNullable<typeof learner> => learner !== null)
@@ -1148,7 +1230,13 @@ function buildAbilityIndex(
         name: string
         dexNumber: number
         baseSlots: Set<AbilitySlot>
-        formSlots: Map<string, Set<AbilitySlot>>
+        formSlots: Map<
+          string,
+          {
+            formName: string
+            slots: Set<AbilitySlot>
+          }
+        >
       }
     >
   >()
@@ -1160,7 +1248,10 @@ function buildAbilityIndex(
       hidden: boolean
       slot: AbilitySlot
     },
-    formName: string | null
+    form: {
+      name: string
+      slug: string
+    } | null
   ) => {
     if (!ability.id) {
       return
@@ -1177,11 +1268,14 @@ function buildAbilityIndex(
 
     const existing = pokemonMap.get(detail.slug)
     if (existing) {
-      if (formName) {
-        if (!existing.formSlots.has(formName)) {
-          existing.formSlots.set(formName, new Set())
+      if (form) {
+        if (!existing.formSlots.has(form.slug)) {
+          existing.formSlots.set(form.slug, {
+            formName: form.name,
+            slots: new Set<AbilitySlot>(),
+          })
         }
-        existing.formSlots.get(formName)?.add(ability.slot)
+        existing.formSlots.get(form.slug)?.slots.add(ability.slot)
       } else {
         existing.baseSlots.add(ability.slot)
       }
@@ -1189,9 +1283,18 @@ function buildAbilityIndex(
     }
 
     const baseSlots = new Set<AbilitySlot>()
-    const formSlots = new Map<string, Set<AbilitySlot>>()
-    if (formName) {
-      formSlots.set(formName, new Set<AbilitySlot>([ability.slot]))
+    const formSlots = new Map<
+      string,
+      {
+        formName: string
+        slots: Set<AbilitySlot>
+      }
+    >()
+    if (form) {
+      formSlots.set(form.slug, {
+        formName: form.name,
+        slots: new Set<AbilitySlot>([ability.slot]),
+      })
     } else {
       baseSlots.add(ability.slot)
     }
@@ -1212,7 +1315,10 @@ function buildAbilityIndex(
 
     for (const form of detail.forms) {
       for (const ability of form.abilities) {
-        registerAbility(detail, ability, form.name)
+        registerAbility(detail, ability, {
+          name: form.name,
+          slug: form.slug,
+        })
       }
     }
   }
@@ -1227,9 +1333,10 @@ function buildAbilityIndex(
       .map((entry) => {
         const slots = sortAbilitySlots(Array.from(entry.baseSlots))
         const formSlots = Array.from(entry.formSlots.entries())
-          .map(([formName, slotSet]) => ({
-            formName,
-            slots: sortAbilitySlots(Array.from(slotSet)),
+          .map(([formSlug, formEntry]) => ({
+            formName: formEntry.formName,
+            formSlug,
+            slots: sortAbilitySlots(Array.from(formEntry.slots)),
           }))
           .sort((left, right) => left.formName.localeCompare(right.formName))
 
@@ -1379,6 +1486,7 @@ async function writeArtifacts(params: {
   meta: MetaRecord
   pokemonList: PokemonListItem[]
   pokemonDexNav: PokemonDexNavItem[]
+  pokemonTypeEntries: PokemonTypeEntryRecord[]
   moveLearners: MoveLearnersIndex
   abilityIndex: AbilityIndex
   rideableMons: RideableMonRecord[]
@@ -1391,6 +1499,10 @@ async function writeArtifacts(params: {
   await writeJsonFile(path.join(GENERATED_ROOT, "meta.json"), params.meta)
   await writeJsonFile(path.join(GENERATED_ROOT, "pokemon-list.json"), params.pokemonList)
   await writeJsonFile(path.join(GENERATED_ROOT, "pokemon-dex-nav.json"), params.pokemonDexNav)
+  await writeJsonFile(
+    path.join(GENERATED_ROOT, "pokemon-type-entries.json"),
+    params.pokemonTypeEntries
+  )
   await writeJsonFile(path.join(GENERATED_ROOT, "move-learners.json"), params.moveLearners)
   await writeJsonFile(path.join(GENERATED_ROOT, "ability-index.json"), params.abilityIndex)
   await writeJsonFile(path.join(GENERATED_ROOT, "rideable-mons.json"), params.rideableMons)
@@ -1625,6 +1737,8 @@ function addMovesToLearnerIndex(
       learnersMap.set(slug, {
         methods: new Set<MoveSourceType>(),
         levelUpLevels: new Set<number>(),
+        baseAvailable: false,
+        forms: new Map<string, string>(),
       })
     }
 
@@ -1637,6 +1751,12 @@ function addMovesToLearnerIndex(
 
     if (move.sourceType === "level" && typeof move.sourceValue === "number") {
       learnerBuild.levelUpLevels.add(move.sourceValue)
+    }
+
+    if (move.fromFormSlug && move.fromForm) {
+      learnerBuild.forms.set(move.fromFormSlug, move.fromForm)
+    } else {
+      learnerBuild.baseAvailable = true
     }
   }
 }

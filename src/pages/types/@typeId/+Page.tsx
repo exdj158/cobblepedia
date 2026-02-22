@@ -1,7 +1,8 @@
 import { createEffect, createMemo, createResource, createSignal, For, Show } from "solid-js"
 import { useMetadata } from "vike-metadata-solid"
 import { DualTypeSelector } from "@/components/dual-type-selector"
-import { loadPokemonList } from "@/data/data-loader"
+import { PokemonSprite } from "@/components/pokemon-sprite"
+import { loadPokemonTypeEntries } from "@/data/data-loader"
 import { canonicalId, titleCaseFromId } from "@/data/formatters"
 import {
   categorizeMatchups,
@@ -64,7 +65,7 @@ export default function Page() {
 }
 
 export function TypesPageView(props: { initialType?: string }) {
-  const [pokemonList] = createResource(loadPokemonList)
+  const [pokemonTypeEntries] = createResource(loadPokemonTypeEntries)
 
   const initialPrimary = canonicalId(props.initialType ?? "")
   const initialSecondary =
@@ -99,10 +100,10 @@ export function TypesPageView(props: { initialType?: string }) {
   const typeColor = createMemo(() => TYPE_COLORS[primaryType()] ?? "#888888")
 
   const availableTypes = createMemo(() => {
-    const list = pokemonList() ?? []
+    const list = pokemonTypeEntries() ?? []
     const set = new Set<string>()
-    for (const pokemon of list) {
-      for (const type of pokemon.types) {
+    for (const entry of list) {
+      for (const type of entry.types) {
         set.add(type)
       }
     }
@@ -146,15 +147,15 @@ export function TypesPageView(props: { initialType?: string }) {
   }
 
   const filteredPokemon = createMemo(() => {
-    const list = pokemonList() ?? []
+    const list = pokemonTypeEntries() ?? []
     const currentType = primaryType()
     const secondary = secondaryType()
     if (!currentType) return []
 
-    return list.filter((pokemon) => {
-      if (!pokemon.implemented) return false
-      if (!pokemon.types.includes(currentType)) return false
-      if (secondary && !pokemon.types.includes(secondary)) return false
+    return list.filter((entry) => {
+      if (!entry.implemented) return false
+      if (!entry.types.includes(currentType)) return false
+      if (secondary && !entry.types.includes(secondary)) return false
       return true
     })
   })
@@ -185,7 +186,7 @@ export function TypesPageView(props: { initialType?: string }) {
 
   return (
     <div class="mx-auto max-w-6xl px-4 py-8 sm:px-6 lg:px-8">
-      <Show when={!pokemonList.loading} fallback={<LoadingState />}>
+      <Show when={!pokemonTypeEntries.loading} fallback={<LoadingState />}>
         <Show when={!isUnknownType()} fallback={<UnknownTypeState typeId={primaryType()} />}>
           <div class="space-y-8">
             <section class="border border-border bg-card p-4">
@@ -235,7 +236,7 @@ export function TypesPageView(props: { initialType?: string }) {
                         </h1>
                       </div>
                       <p class="text-muted-foreground text-sm">
-                        {filteredPokemon().length} Pokemon
+                        {filteredPokemon().length} Matches
                         <Show when={secondaryType()}>
                           <span> with both types</span>
                         </Show>
@@ -311,17 +312,31 @@ export function TypesPageView(props: { initialType?: string }) {
                     <For each={filteredPokemon()}>
                       {(pokemon) => (
                         <a
-                          href={`/pokemon/${pokemon.slug}`}
+                          href={buildPokemonTypeEntryHref(pokemon.slug, pokemon.formSlug)}
                           class="group flex items-center gap-3 border border-border bg-card p-3 transition-colors hover:border-muted-foreground"
                         >
                           <span class="font-mono text-muted-foreground text-xs">
                             #{String(pokemon.dexNumber).padStart(3, "0")}
                           </span>
 
+                          <PokemonSprite
+                            dexNumber={pokemon.dexNumber}
+                            name={pokemon.name}
+                            class="h-8 w-8"
+                            imageClass="h-6 w-6"
+                          />
+
                           <div class="min-w-0 flex-1">
                             <p class="truncate font-medium text-sm group-hover:text-foreground">
                               {pokemon.name}
                             </p>
+                            <Show when={pokemon.formName}>
+                              {(formName) => (
+                                <p class="truncate text-muted-foreground text-xs">
+                                  Form: {formName()}
+                                </p>
+                              )}
+                            </Show>
                           </div>
 
                           <div class="flex items-center gap-1">
@@ -542,4 +557,12 @@ function sortTypes(types: string[]): string[] {
 
     return left.localeCompare(right)
   })
+}
+
+function buildPokemonTypeEntryHref(slug: string, formSlug: string | null): string {
+  if (!formSlug) {
+    return `/pokemon/${slug}`
+  }
+
+  return `/pokemon/${slug}?form=${encodeURIComponent(formSlug)}`
 }

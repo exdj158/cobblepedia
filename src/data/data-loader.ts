@@ -5,6 +5,7 @@ import type {
   PokemonDetailRecord,
   PokemonDexNavItem,
   PokemonListItem,
+  PokemonTypeEntryRecord,
   RideableMonRecord,
   SearchDocument,
 } from "@/data/cobblemon-types"
@@ -12,6 +13,7 @@ import type {
 let searchIndexPromise: Promise<SearchDocument[]> | null = null
 let pokemonListPromise: Promise<PokemonListItem[]> | null = null
 let pokemonDexNavPromise: Promise<PokemonDexNavItem[]> | null = null
+let pokemonTypeEntriesPromise: Promise<PokemonTypeEntryRecord[]> | null = null
 let moveLearnersPromise: Promise<MoveLearnersIndex> | null = null
 let abilityIndexPromise: Promise<AbilityIndex> | null = null
 let rideableMonsPromise: Promise<RideableMonRecord[]> | null = null
@@ -59,6 +61,16 @@ export function loadPokemonDexNav(): Promise<PokemonDexNavItem[]> {
   }
 
   return pokemonDexNavPromise
+}
+
+export function loadPokemonTypeEntries(): Promise<PokemonTypeEntryRecord[]> {
+  if (!pokemonTypeEntriesPromise) {
+    pokemonTypeEntriesPromise = import("./generated/pokemon-type-entries.json").then(
+      (module) => module.default as PokemonTypeEntryRecord[]
+    )
+  }
+
+  return pokemonTypeEntriesPromise
 }
 
 export function loadMoveLearners(): Promise<MoveLearnersIndex> {

@@ -16,11 +16,14 @@ import { PokemonSprite } from "@/components/pokemon-sprite"
 import {
   CommandDialog,
   CommandEmpty,
+  CommandGroup,
   CommandInput,
   CommandItem,
   CommandList,
 } from "@/components/ui/command"
 import type {
+  AbilityEntryRecord,
+  AbilityIndex,
   MoveLearnerEntryRecord,
   MoveLearnersIndex,
   MoveSourceType,
@@ -28,9 +31,11 @@ import type {
   PokemonDetailRecord,
   PokemonListItem,
   QueryFacet,
+  QueryResolution,
   SearchDocument,
 } from "@/data/cobblemon-types"
 import {
+  loadAbilityIndex,
   loadMoveLearners,
   loadPokemonDetail,
   loadPokemonList,
@@ -43,11 +48,42 @@ import {
   sortMovesForTab,
   titleCaseFromId,
 } from "@/data/formatters"
+import { createPaletteFlexSearch } from "@/data/palette-flex-search"
 import { resolveQuery } from "@/data/query-engine"
 import { cn } from "@/utils/cn"
 
 const MOVE_TABS = ["all", "level", "egg", "tm", "tutor"] as const
 type MoveTab = (typeof MOVE_TABS)[number]
+
+const PRIMARY_PAGES: Array<{
+  id: string
+  title: string
+  subtitle: string
+  url: string
+  icon: string
+}> = [
+  {
+    id: "page:rideable",
+    title: "Rideable Mons",
+    subtitle: "Browse Pokemon that can be ridden",
+    url: "/rideable-mons",
+    icon: "RI",
+  },
+  {
+    id: "page:types",
+    title: "Types",
+    subtitle: "Explore type matchups and effectiveness",
+    url: "/types",
+    icon: "TY",
+  },
+  {
+    id: "page:egg-groups",
+    title: "Egg Groups",
+    subtitle: "Explore breeding compatibility",
+    url: "/egg-groups",
+    icon: "EG",
+  },
+]
 
 export default function CommandPalette() {
   const [isOpen, setIsOpen] = createSignal(false)
@@ -57,27 +93,124 @@ export default function CommandPalette() {
   const [searchIndex, setSearchIndex] = createSignal<SearchDocument[] | null>(null)
   const [pokemonList, setPokemonList] = createSignal<PokemonListItem[] | null>(null)
   const [moveLearners, setMoveLearners] = createSignal<MoveLearnersIndex | null>(null)
+  const [abilityIndex, setAbilityIndex] = createSignal<AbilityIndex | null>(null)
   const [loadError, setLoadError] = createSignal<string | null>(null)
 
   let inputRef: HTMLInputElement | undefined
 
   const dataReady = createMemo(() => {
-    return searchIndex() !== null && pokemonList() !== null && moveLearners() !== null
+    return (
+      searchIndex() !== null &&
+      pokemonList() !== null &&
+      moveLearners() !== null &&
+      abilityIndex() !== null
+    )
   })
 
-  const resolution = createMemo(() => {
+  const primaryPageResults = createMemo((): PaletteResult[] => {
+    const currentQuery = query().trim().toLowerCase()
+
+    // Show primary pages when query is empty or starts with > or /
+    if (!currentQuery || currentQuery.startsWith(">") || currentQuery.startsWith("/")) {
+      const searchTerm = currentQuery.replace(/^[>/]/, "").trim()
+
+      return PRIMARY_PAGES.filter((page) => {
+        if (!searchTerm) return true
+        return (
+          page.title.toLowerCase().includes(searchTerm) ||
+          page.subtitle.toLowerCase().includes(searchTerm) ||
+          page.id.toLowerCase().includes(searchTerm)
+        )
+      }).map((page) => ({
+        id: page.id,
+        type: "primary-page" as const,
+        title: page.title,
+        subtitle: page.subtitle,
+        slug: null,
+        moveId: null,
+        facet: null,
+        score: 1000,
+        url: page.url,
+      }))
+    }
+
+    return []
+  })
+
+  const isShowingPrimaryPagesOnly = createMemo(() => {
+    const currentQuery = query().trim()
+    // When query is empty or starts with / or >, show only primary pages
+    return !currentQuery || currentQuery.startsWith("/") || currentQuery.startsWith(">")
+  })
+
+  const flexSearch = createMemo(() => {
+    const list = pokemonList()
+    const moves = moveLearners()
+    const abilities = abilityIndex()
+
+    if (!list || !moves || !abilities) {
+      return null
+    }
+
+    return createPaletteFlexSearch({
+      pokemonList: list,
+      moveLearners: moves,
+      abilityIndex: abilities,
+    })
+  })
+
+  const resolution = createMemo<QueryResolution>(() => {
+    const currentQuery = query().trim()
+    const primaryPages = primaryPageResults()
+
+    // When showing primary pages only, don't include search results
+    if (isShowingPrimaryPagesOnly()) {
+      return {
+        intent: "primary-pages" as const,
+        normalizedQuery: currentQuery.replace(/^[>/]/, "").trim(),
+        results: primaryPages,
+      }
+    }
+
     if (!dataReady()) {
       return {
         intent: "fuzzy-fallback" as const,
         normalizedQuery: "",
-        results: [] as PaletteResult[],
+        results: [],
       }
     }
 
-    return resolveQuery(query(), searchIndex() ?? [], pokemonList() ?? [], moveLearners() ?? {})
+    const parserResolution = resolveQuery(
+      query(),
+      searchIndex() ?? [],
+      pokemonList() ?? [],
+      moveLearners() ?? {}
+    )
+
+    const parserResults =
+      parserResolution.intent === "fuzzy-fallback"
+        ? []
+        : parserResolution.results.map((result) => ({
+            ...result,
+            score: result.score + 500,
+          }))
+
+    const entityResults = flexSearch()?.search(currentQuery, 90) ?? []
+    const mergedResults = mergeResultsById([...parserResults, ...entityResults], 90)
+
+    if (mergedResults.length > 0) {
+      return {
+        intent: "mixed-search" as const,
+        normalizedQuery: currentQuery,
+        results: mergedResults,
+      }
+    }
+
+    return parserResolution
   })
 
   const results = createMemo(() => resolution().results)
+  const groupedResults = createMemo(() => groupPaletteResults(results()))
   const pokemonDexBySlug = createMemo(() => {
     const map = new Map<string, number>()
 
@@ -126,6 +259,17 @@ export default function CommandPalette() {
     return index[result.moveId] ?? null
   })
 
+  const activeAbilityEntry = createMemo<AbilityEntryRecord | null>(() => {
+    const result = activeResult()
+    const index = abilityIndex()
+
+    if (!result || result.type !== "ability-entry" || !result.abilityId || !index) {
+      return null
+    }
+
+    return index[result.abilityId] ?? null
+  })
+
   createEffect(
     on(results, (nextResults) => {
       if (nextResults.length === 0) {
@@ -145,11 +289,12 @@ export default function CommandPalette() {
       return
     }
 
-    void Promise.all([loadSearchIndex(), loadPokemonList(), loadMoveLearners()])
-      .then(([nextSearchIndex, nextPokemonList, nextMoveLearners]) => {
+    void Promise.all([loadSearchIndex(), loadPokemonList(), loadMoveLearners(), loadAbilityIndex()])
+      .then(([nextSearchIndex, nextPokemonList, nextMoveLearners, nextAbilityIndex]) => {
         setSearchIndex(nextSearchIndex)
         setPokemonList(nextPokemonList)
         setMoveLearners(nextMoveLearners)
+        setAbilityIndex(nextAbilityIndex)
       })
       .catch((error: unknown) => {
         const message = error instanceof Error ? error.message : "Failed to load index"
@@ -224,6 +369,12 @@ export default function CommandPalette() {
       }
     }
 
+    if (result.url) {
+      closePalette()
+      navigate(result.url)
+      return
+    }
+
     if (result.slug) {
       closePalette()
       navigate(`/pokemon/${result.slug}`)
@@ -237,9 +388,12 @@ export default function CommandPalette() {
   }
 
   function onCommandKeyDown(event: KeyboardEvent) {
-    if (event.key === "Enter" && event.shiftKey) {
+    if (event.key === "Enter") {
       event.preventDefault()
-      executeResult(activeResult(), true)
+      const result = activeResult()
+      if (result) {
+        executeResult(result, event.shiftKey)
+      }
       return
     }
   }
@@ -253,6 +407,7 @@ export default function CommandPalette() {
       onOpenChange={(open) => {
         if (!open) closePalette()
       }}
+      shouldFilter={false}
       class="!max-w-[900px] !w-[90vw] !p-0 !overflow-hidden"
     >
       <div class="flex flex-col bg-card">
@@ -260,7 +415,7 @@ export default function CommandPalette() {
           ref={inputRef}
           value={query()}
           onValueChange={setQuery}
-          placeholder="Try: lucario moves | lucario spawn | moves trickroom"
+          placeholder="Search Pokemon, moves, abilities, types, egg groups..."
         />
 
         <div class="grid h-[500px] min-h-[400px] grid-cols-[280px_1fr] overflow-hidden">
@@ -274,7 +429,7 @@ export default function CommandPalette() {
               }
             >
               <Show
-                when={dataReady()}
+                when={isShowingPrimaryPagesOnly() || dataReady()}
                 fallback={
                   <div class="p-12 text-center text-muted-foreground text-sm">
                     Loading search index...
@@ -286,46 +441,58 @@ export default function CommandPalette() {
                     when={results().length > 0}
                     fallback={
                       <CommandEmpty class="py-6 text-center text-sm">
-                        Try `lucario evolution` or `moves trickroom`.
+                        {isShowingPrimaryPagesOnly()
+                          ? "No pages found. Try a different search."
+                          : "Try `lucario evolution` or `moves trickroom`."}
                       </CommandEmpty>
                     }
                   >
-                    <For each={results()}>
-                      {(result) => (
-                        <CommandItem
-                          value={result.id}
-                          class={cn(
-                            "flex cursor-pointer items-center gap-2 border-transparent border-l-2 p-3 transition-colors aria-selected:border-l-foreground aria-selected:bg-secondary aria-selected:text-foreground"
-                          )}
-                          onSelect={() => executeResult(result)}
-                        >
-                          <Show
-                            when={
-                              result.slug ? (pokemonDexBySlug().get(result.slug) ?? null) : null
-                            }
-                            fallback={
-                              <div class="flex h-10 w-10 shrink-0 items-center justify-center border border-border bg-secondary/40 font-mono text-[10px] text-muted-foreground uppercase">
-                                {result.type === "move-learners" ? "MV" : "PK"}
-                              </div>
-                            }
-                          >
-                            {(dexNumber) => (
-                              <PokemonSprite
-                                dexNumber={dexNumber()}
-                                name={result.title}
-                                class="h-10 w-10"
-                                imageClass="h-7 w-7"
-                              />
-                            )}
-                          </Show>
+                    <For each={groupedResults()}>
+                      {(group) => (
+                        <CommandGroup heading={group.heading}>
+                          <For each={group.results}>
+                            {(result) => (
+                              <CommandItem
+                                value={result.id}
+                                class={cn(
+                                  "flex cursor-pointer items-center gap-2 border-transparent border-l-2 p-3 transition-colors aria-selected:border-l-foreground aria-selected:bg-secondary aria-selected:text-foreground"
+                                )}
+                                onSelect={() => {
+                                  executeResult(result)
+                                }}
+                              >
+                                <Show
+                                  when={
+                                    result.slug
+                                      ? (pokemonDexBySlug().get(result.slug) ?? null)
+                                      : null
+                                  }
+                                  fallback={
+                                    <div class="flex h-10 w-10 shrink-0 items-center justify-center border border-border bg-secondary/40 font-mono text-[10px] text-muted-foreground uppercase">
+                                      {resolveResultIcon(result)}
+                                    </div>
+                                  }
+                                >
+                                  {(dexNumber) => (
+                                    <PokemonSprite
+                                      dexNumber={dexNumber()}
+                                      name={result.title}
+                                      class="h-10 w-10"
+                                      imageClass="h-7 w-7"
+                                    />
+                                  )}
+                                </Show>
 
-                          <div class="min-w-0">
-                            <div class="truncate font-medium text-sm">{result.title}</div>
-                            <div class="truncate text-muted-foreground text-xs">
-                              {result.subtitle}
-                            </div>
-                          </div>
-                        </CommandItem>
+                                <div class="min-w-0">
+                                  <div class="truncate font-medium text-sm">{result.title}</div>
+                                  <div class="truncate text-muted-foreground text-xs">
+                                    {result.subtitle}
+                                  </div>
+                                </div>
+                              </CommandItem>
+                            )}
+                          </For>
+                        </CommandGroup>
                       )}
                     </For>
                   </Show>
@@ -339,13 +506,15 @@ export default function CommandPalette() {
               result={activeResult()}
               pokemonDetail={activePokemonDetail()}
               moveEntry={activeMoveEntry()}
+              abilityEntry={activeAbilityEntry()}
+              pokemonList={pokemonList()}
               loadingPokemon={activePokemonDetail.loading}
             />
           </div>
         </div>
 
         <div class="flex items-center justify-between border-border border-t bg-secondary px-5 py-3">
-          <span class="text-muted-foreground text-xs">Enter to open</span>
+          <span class="text-muted-foreground text-xs">Enter to open · / or &gt; for pages</span>
           <span class="text-muted-foreground text-xs">Esc to close</span>
         </div>
       </div>
@@ -357,6 +526,8 @@ function QuickviewPanel(props: {
   result: PaletteResult | null
   pokemonDetail: PokemonDetailRecord | null | undefined
   moveEntry: MoveLearnerEntryRecord | null
+  abilityEntry: AbilityEntryRecord | null
+  pokemonList: PokemonListItem[] | null
   loadingPokemon: boolean
 }) {
   return (
@@ -375,8 +546,24 @@ function QuickviewPanel(props: {
 
         return (
           <Switch>
+            <Match when={result().type === "primary-page"}>
+              <PrimaryPageQuickview result={result()} />
+            </Match>
+
             <Match when={result().type === "move-learners"}>
               <MoveLearnersQuickview entry={props.moveEntry} />
+            </Match>
+
+            <Match when={result().type === "ability-entry"}>
+              <AbilityEntryQuickview entry={props.abilityEntry} />
+            </Match>
+
+            <Match when={result().type === "type-entry"}>
+              <TypeEntryQuickview result={result()} pokemonList={props.pokemonList} />
+            </Match>
+
+            <Match when={result().type === "egg-group-entry"}>
+              <EggGroupEntryQuickview result={result()} pokemonList={props.pokemonList} />
             </Match>
 
             <Match when={facet() === "moves"}>
@@ -868,7 +1055,7 @@ function MoveLearnersQuickview(props: { entry: MoveLearnerEntryRecord | null }) 
                 {(learner) => (
                   <div class="flex items-center justify-between gap-2 border-border border-b py-2 last:border-0">
                     <a
-                      href={`/pokemon/${learner.slug}`}
+                      href={resolveMoveLearnerHref(learner)}
                       class="flex min-w-0 items-center gap-2 hover:underline"
                     >
                       <PokemonSprite
@@ -879,9 +1066,17 @@ function MoveLearnersQuickview(props: { entry: MoveLearnerEntryRecord | null }) 
                       />
                       <span class="truncate text-sm">{learner.name}</span>
                     </a>
-                    <span class="text-muted-foreground text-xs">
-                      {learner.methods.map((method) => sourceLabel(method)).join(", ")}
-                    </span>
+                    <div class="text-right text-muted-foreground text-xs">
+                      <div>{learner.methods.map((method) => sourceLabel(method)).join(", ")}</div>
+                      <Show when={learner.forms.length > 0}>
+                        <div class="mt-0.5">
+                          <Show when={!learner.baseAvailable}>
+                            <span class="mr-1 uppercase">Form Only</span>
+                          </Show>
+                          <span>{learner.forms.map((form) => form.name).join(", ")}</span>
+                        </div>
+                      </Show>
+                    </div>
                   </div>
                 )}
               </For>
@@ -893,8 +1088,329 @@ function MoveLearnersQuickview(props: { entry: MoveLearnerEntryRecord | null }) 
   )
 }
 
+function AbilityEntryQuickview(props: { entry: AbilityEntryRecord | null }) {
+  return (
+    <Show
+      when={props.entry}
+      fallback={
+        <div class="p-12 text-center text-muted-foreground text-sm">
+          Ability details unavailable.
+        </div>
+      }
+    >
+      {(entrySignal) => {
+        const entry = entrySignal()
+
+        return (
+          <div class="flex flex-col gap-5">
+            <div class="border-border border-b pb-4">
+              <h3 class="mb-1 font-semibold text-lg">{entry.name}</h3>
+              <p class="text-muted-foreground text-sm">
+                {entry.description || entry.shortDescription || "No ability description available."}
+              </p>
+              <p class="mt-2 text-muted-foreground text-xs">
+                {entry.pokemon.length} Pokemon can have this ability.
+              </p>
+            </div>
+
+            <div class="flex max-h-[400px] flex-col gap-2 overflow-y-auto">
+              <For each={entry.pokemon.slice(0, 30)}>
+                {(pokemon) => (
+                  <a
+                    href={`/pokemon/${pokemon.slug}`}
+                    class="flex items-center justify-between gap-2 border-border border-b py-2 last:border-0 hover:underline"
+                  >
+                    <div class="flex min-w-0 items-center gap-2">
+                      <PokemonSprite
+                        dexNumber={pokemon.dexNumber}
+                        name={pokemon.name}
+                        class="h-8 w-8"
+                        imageClass="h-6 w-6"
+                      />
+                      <span class="truncate text-sm">{pokemon.name}</span>
+                    </div>
+                    <span class="text-muted-foreground text-xs">
+                      {pokemon.hidden ? "Hidden" : "Regular"}
+                    </span>
+                  </a>
+                )}
+              </For>
+            </div>
+          </div>
+        )
+      }}
+    </Show>
+  )
+}
+
+function TypeEntryQuickview(props: {
+  result: PaletteResult
+  pokemonList: PokemonListItem[] | null
+}) {
+  const typeId = createMemo(() => props.result.typeId ?? "")
+
+  const matchingPokemon = createMemo(() => {
+    const currentType = typeId()
+    if (!currentType) {
+      return []
+    }
+
+    return (props.pokemonList ?? []).filter((pokemon) => {
+      return pokemon.implemented && pokemon.types.includes(currentType)
+    })
+  })
+
+  return (
+    <div class="flex flex-col gap-5">
+      <div class="border-border border-b pb-4">
+        <h3 class="mb-1 font-semibold text-lg">{props.result.title}</h3>
+        <p class="text-muted-foreground text-sm">Type explorer with matchup and Pokemon list.</p>
+        <p class="mt-2 text-muted-foreground text-xs">{matchingPokemon().length} Pokemon found.</p>
+      </div>
+
+      <div class="flex max-h-[380px] flex-col gap-2 overflow-y-auto">
+        <For each={matchingPokemon().slice(0, 30)}>
+          {(pokemon) => (
+            <a
+              href={`/pokemon/${pokemon.slug}`}
+              class="flex items-center justify-between gap-2 border-border border-b py-2 last:border-0 hover:underline"
+            >
+              <div class="flex min-w-0 items-center gap-2">
+                <PokemonSprite
+                  dexNumber={pokemon.dexNumber}
+                  name={pokemon.name}
+                  class="h-8 w-8"
+                  imageClass="h-6 w-6"
+                />
+                <span class="truncate text-sm">{pokemon.name}</span>
+              </div>
+              <span class="text-muted-foreground text-xs">#{pokemon.dexNumber}</span>
+            </a>
+          )}
+        </For>
+      </div>
+    </div>
+  )
+}
+
+function EggGroupEntryQuickview(props: {
+  result: PaletteResult
+  pokemonList: PokemonListItem[] | null
+}) {
+  const eggGroupId = createMemo(() => props.result.eggGroupId ?? "")
+
+  const matchingPokemon = createMemo(() => {
+    const currentGroup = eggGroupId()
+    if (!currentGroup) {
+      return []
+    }
+
+    return (props.pokemonList ?? []).filter((pokemon) => {
+      return pokemon.implemented && pokemon.eggGroups.includes(currentGroup)
+    })
+  })
+
+  return (
+    <div class="flex flex-col gap-5">
+      <div class="border-border border-b pb-4">
+        <h3 class="mb-1 font-semibold text-lg">{props.result.title}</h3>
+        <p class="text-muted-foreground text-sm">Egg group explorer and compatibility list.</p>
+        <p class="mt-2 text-muted-foreground text-xs">{matchingPokemon().length} Pokemon found.</p>
+      </div>
+
+      <div class="flex max-h-[380px] flex-col gap-2 overflow-y-auto">
+        <For each={matchingPokemon().slice(0, 30)}>
+          {(pokemon) => (
+            <a
+              href={`/pokemon/${pokemon.slug}`}
+              class="flex items-center justify-between gap-2 border-border border-b py-2 last:border-0 hover:underline"
+            >
+              <div class="flex min-w-0 items-center gap-2">
+                <PokemonSprite
+                  dexNumber={pokemon.dexNumber}
+                  name={pokemon.name}
+                  class="h-8 w-8"
+                  imageClass="h-6 w-6"
+                />
+                <span class="truncate text-sm">{pokemon.name}</span>
+              </div>
+              <span class="text-muted-foreground text-xs">#{pokemon.dexNumber}</span>
+            </a>
+          )}
+        </For>
+      </div>
+    </div>
+  )
+}
+
+function PrimaryPageQuickview(props: { result: PaletteResult }) {
+  const pageInfo = createMemo(() => PRIMARY_PAGES.find((p) => p.id === props.result.id))
+
+  return (
+    <Show
+      when={pageInfo()}
+      fallback={
+        <div class="p-12 text-center text-muted-foreground text-sm">
+          Page information unavailable.
+        </div>
+      }
+    >
+      {(info) => (
+        <div class="flex flex-col gap-5">
+          <div class="border-border border-b pb-4">
+            <div class="mb-3 flex items-center gap-3">
+              <div class="flex h-12 w-12 items-center justify-center border border-border bg-secondary/40 font-mono text-muted-foreground text-sm">
+                {info().icon}
+              </div>
+              <div>
+                <h3 class="font-semibold text-lg">{info().title}</h3>
+                <p class="text-muted-foreground text-sm">{info().subtitle}</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="space-y-3">
+            <p class="text-muted-foreground text-sm">Press Enter to navigate to this page.</p>
+
+            <div class="flex items-center gap-2 text-muted-foreground text-xs">
+              <span class="font-mono">URL:</span>
+              <code class="border border-border bg-secondary px-2 py-1">{info().url}</code>
+            </div>
+          </div>
+
+          <div class="border-border border-t pt-4">
+            <p class="font-mono text-muted-foreground text-xs uppercase tracking-wide">
+              Quick Tips
+            </p>
+            <ul class="mt-2 space-y-1 text-muted-foreground text-sm">
+              <li>
+                • Type <code class="rounded bg-secondary px-1">/</code> or{" "}
+                <code class="rounded bg-secondary px-1">&gt;</code> to filter pages
+              </li>
+              <li>• Search normally to find Pokemon and data entries</li>
+              <li>• Use arrow keys to navigate results</li>
+            </ul>
+          </div>
+        </div>
+      )}
+    </Show>
+  )
+}
+
 function sourceLabel(sourceType: string): string {
   return formatMoveSource(sourceType as MoveSourceType, null)
+}
+
+function resolveMoveLearnerHref(learner: MoveLearnerEntryRecord["learners"][number]): string {
+  if (learner.baseAvailable || learner.forms.length === 0) {
+    return `/pokemon/${learner.slug}`
+  }
+
+  const primaryForm = learner.forms[0]
+  if (!primaryForm) {
+    return `/pokemon/${learner.slug}`
+  }
+
+  return `/pokemon/${learner.slug}?form=${encodeURIComponent(primaryForm.slug)}`
+}
+
+function mergeResultsById(results: PaletteResult[], limit: number): PaletteResult[] {
+  const deduped = new Map<string, PaletteResult>()
+
+  for (const result of results) {
+    const existing = deduped.get(result.id)
+    if (!existing || result.score > existing.score) {
+      deduped.set(result.id, result)
+    }
+  }
+
+  return Array.from(deduped.values())
+    .sort((left, right) => {
+      if (right.score !== left.score) {
+        return right.score - left.score
+      }
+
+      return left.title.localeCompare(right.title)
+    })
+    .slice(0, limit)
+}
+
+function groupPaletteResults(
+  results: PaletteResult[]
+): Array<{ key: string; heading: string; results: PaletteResult[] }> {
+  const groups = new Map<string, { key: string; heading: string; results: PaletteResult[] }>()
+
+  for (const result of results) {
+    const descriptor = resolveResultGroupDescriptor(result)
+    const existing = groups.get(descriptor.key)
+
+    if (existing) {
+      existing.results.push(result)
+      continue
+    }
+
+    groups.set(descriptor.key, {
+      key: descriptor.key,
+      heading: descriptor.heading,
+      results: [result],
+    })
+  }
+
+  const groupOrder = ["pages", "pokemon", "moves", "abilities", "types", "egg-groups"]
+
+  return groupOrder
+    .map((key) => groups.get(key))
+    .filter((group): group is { key: string; heading: string; results: PaletteResult[] } =>
+      Boolean(group)
+    )
+}
+
+function resolveResultGroupDescriptor(result: PaletteResult): { key: string; heading: string } {
+  if (result.type === "primary-page") {
+    return { key: "pages", heading: "Pages" }
+  }
+
+  if (result.type === "pokemon-overview" || result.type === "pokemon-facet") {
+    return { key: "pokemon", heading: "Pokemon" }
+  }
+
+  if (result.type === "move-learners") {
+    return { key: "moves", heading: "Moves" }
+  }
+
+  if (result.type === "ability-entry") {
+    return { key: "abilities", heading: "Abilities" }
+  }
+
+  if (result.type === "type-entry") {
+    return { key: "types", heading: "Types" }
+  }
+
+  return { key: "egg-groups", heading: "Egg Groups" }
+}
+
+function resolveResultIcon(result: PaletteResult): string {
+  if (result.type === "primary-page") {
+    return PRIMARY_PAGES.find((page) => page.id === result.id)?.icon ?? "PG"
+  }
+
+  if (result.type === "move-learners") {
+    return "MV"
+  }
+
+  if (result.type === "ability-entry") {
+    return "AB"
+  }
+
+  if (result.type === "type-entry") {
+    return "TY"
+  }
+
+  if (result.type === "egg-group-entry") {
+    return "EG"
+  }
+
+  return "PK"
 }
 
 function resolveResultFacet(result: PaletteResult): QueryFacet | null {

@@ -18,19 +18,9 @@ export default function RootLayout(props: FlowProps) {
     <div class="min-h-screen bg-background">
       <header class="sticky top-0 z-40 border-border border-b bg-background">
         <div class="mx-auto flex h-14 max-w-6xl items-center justify-between px-4 sm:px-6 lg:px-8">
-          <div class="flex items-center gap-4">
-            <a href="/" class="flex items-center gap-2 font-medium text-sm">
-              <span class="font-mono text-muted-foreground text-xs">CP._</span>
-              <span>Cobblepedia</span>
-            </a>
-
-            <a
-              href="/rideable-mons"
-              class="hidden border border-border bg-secondary/40 px-2.5 py-1 font-mono text-[11px] text-muted-foreground uppercase tracking-wide transition-colors hover:border-muted-foreground hover:text-foreground sm:inline-flex"
-            >
-              Rideable Mons
-            </a>
-          </div>
+          <a href="/" class="flex items-center gap-2 font-medium text-sm">
+            <span>Cobblepedia</span>
+          </a>
 
           <button
             type="button"
