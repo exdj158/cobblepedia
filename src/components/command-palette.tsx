@@ -61,6 +61,7 @@ const PRIMARY_PAGES: Array<{
   subtitle: string
   url: string
   icon: string
+  image?: string
 }> = [
   {
     id: "page:rideable",
@@ -68,6 +69,7 @@ const PRIMARY_PAGES: Array<{
     subtitle: "Browse Pokemon that can be ridden",
     url: "/rideable-mons",
     icon: "RI",
+    image: "/imgs/rideable-mons.jpg",
   },
   {
     id: "page:types",
@@ -82,6 +84,7 @@ const PRIMARY_PAGES: Array<{
     subtitle: "Explore breeding compatibility",
     url: "/egg-groups",
     icon: "EG",
+    image: "/imgs/egggroups.jpg",
   },
 ]
 
@@ -467,11 +470,7 @@ export default function CommandPalette() {
                                       ? (pokemonDexBySlug().get(result.slug) ?? null)
                                       : null
                                   }
-                                  fallback={
-                                    <div class="flex h-10 w-10 shrink-0 items-center justify-center border border-border bg-secondary/40 font-mono text-[10px] text-muted-foreground uppercase">
-                                      {resolveResultIcon(result)}
-                                    </div>
-                                  }
+                                  fallback={<PrimaryPageIcon result={result} />}
                                 >
                                   {(dexNumber) => (
                                     <PokemonSprite
@@ -1259,9 +1258,17 @@ function PrimaryPageQuickview(props: { result: PaletteResult }) {
         <div class="flex flex-col gap-5">
           <div class="border-border border-b pb-4">
             <div class="mb-3 flex items-center gap-3">
-              <div class="flex h-12 w-12 items-center justify-center border border-border bg-secondary/40 font-mono text-muted-foreground text-sm">
-                {info().icon}
-              </div>
+              {info().image ? (
+                <img
+                  src={info().image}
+                  alt={info().title}
+                  class="h-12 w-12 rounded-md border border-border object-cover"
+                />
+              ) : (
+                <div class="flex h-12 w-12 items-center justify-center border border-border bg-secondary/40 font-mono text-muted-foreground text-sm">
+                  {info().icon}
+                </div>
+              )}
               <div>
                 <h3 class="font-semibold text-lg">{info().title}</h3>
                 <p class="text-muted-foreground text-sm">{info().subtitle}</p>
@@ -1387,6 +1394,30 @@ function resolveResultGroupDescriptor(result: PaletteResult): { key: string; hea
   }
 
   return { key: "egg-groups", heading: "Egg Groups" }
+}
+
+function PrimaryPageIcon(props: { result: PaletteResult }) {
+  const pageInfo = createMemo(() => PRIMARY_PAGES.find((p) => p.id === props.result.id))
+
+  return (
+    <Show when={pageInfo()}>
+      {(info) => (
+        <>
+          {info().image ? (
+            <img
+              src={info().image}
+              alt={info().title}
+              class="h-10 w-10 shrink-0 rounded-md border border-border object-cover"
+            />
+          ) : (
+            <div class="flex h-10 w-10 shrink-0 items-center justify-center border border-border bg-secondary/40 font-mono text-[10px] text-muted-foreground uppercase">
+              {resolveResultIcon(props.result)}
+            </div>
+          )}
+        </>
+      )}
+    </Show>
+  )
 }
 
 function resolveResultIcon(result: PaletteResult): string {

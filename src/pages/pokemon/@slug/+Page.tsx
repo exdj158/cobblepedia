@@ -11,7 +11,7 @@ import {
   IconSword,
   IconZap,
 } from "@/assets/icons"
-import { PokemonSprite } from "@/components/pokemon-sprite"
+import { EvolutionFamilyFlow } from "@/components/evolution-family-flow"
 import { RideableCategoryIcon, RideableClassIcon } from "@/components/rideable-icons"
 import type {
   MoveSourceType,
@@ -707,7 +707,7 @@ function PokemonDetailView(props: {
           </section>
         </div>
 
-        {/* Right Column - Moves, Spawns, Evolution */}
+        {/* Right Column - Moves, Spawns */}
         <div class="space-y-6">
           <MovesSection moves={activeMoves()} activeFormName={selectedForm()?.name ?? null} />
 
@@ -776,77 +776,23 @@ function PokemonDetailView(props: {
               </div>
             </Show>
           </section>
-
-          {/* Evolution Family */}
-          <section class="border border-border bg-card">
-            <div class="flex items-center gap-2 border-border border-b bg-secondary px-4 py-3">
-              <IconArrowRight class="h-4 w-4 text-muted-foreground" />
-              <h2 class="font-semibold">Evolution Family</h2>
-            </div>
-            <div class="p-4">
-              <div class="mb-4 flex flex-wrap gap-2">
-                <For each={detail().evolutionFamily.members}>
-                  {(member) => (
-                    <a
-                      href={`/pokemon/${member.slug}`}
-                      class={cn(
-                        "inline-flex items-center gap-2 border px-3 py-1 text-sm transition-colors",
-                        member.slug === detail().slug
-                          ? "border-foreground bg-foreground text-background"
-                          : "border-border bg-secondary hover:border-muted-foreground"
-                      )}
-                    >
-                      <PokemonSprite
-                        dexNumber={member.dexNumber}
-                        name={member.name}
-                        class={cn(
-                          "h-7 w-7",
-                          member.slug === detail().slug
-                            ? "border-background/30 bg-background/15"
-                            : "border-border bg-secondary/50"
-                        )}
-                        imageClass="h-5 w-5"
-                      />
-                      <span>{member.name}</span>
-                    </a>
-                  )}
-                </For>
-              </div>
-              <Show when={detail().evolutionFamily.edges.length > 0}>
-                <div class="space-y-2">
-                  <For each={detail().evolutionFamily.edges}>
-                    {(edge) => (
-                      <div class="flex items-center justify-between border-border border-b pb-2 last:border-0 last:pb-0">
-                        <div class="flex items-center gap-2 text-sm">
-                          <span>{titleCaseFromId(edge.fromSlug)}</span>
-                          <span class="text-muted-foreground">→</span>
-                          <span>{titleCaseFromId(edge.toSlug)}</span>
-                        </div>
-                        <div class="text-right">
-                          <span class="text-muted-foreground text-sm">
-                            {titleCaseFromId(edge.method)}
-                          </span>
-                          <Show when={edge.requirementText.length > 0}>
-                            <div class="mt-1 flex flex-wrap justify-end gap-1">
-                              <For each={edge.requirementText}>
-                                {(text) => (
-                                  <span class="border border-border bg-secondary px-2 py-0.5 text-xs">
-                                    {text}
-                                  </span>
-                                )}
-                              </For>
-                            </div>
-                          </Show>
-                        </div>
-                      </div>
-                    )}
-                  </For>
-                </div>
-              </Show>
-            </div>
-          </section>
         </div>
       </div>
+
+      <section class="mt-6 border border-border bg-card">
+        <div class="flex items-center gap-2 border-border border-b bg-secondary px-4 py-3">
+          <IconArrowRight class="h-4 w-4 text-muted-foreground" />
+          <h2 class="font-semibold">Evolution Family</h2>
+        </div>
+        <Show
+          when={detail().evolutionFamily.members.length > 0}
+          fallback={
+            <p class="p-4 text-muted-foreground text-sm">No evolution family data available.</p>
+          }
+        >
+          <EvolutionFamilyFlow family={detail().evolutionFamily} activeSlug={detail().slug} />
+        </Show>
+      </section>
 
       <Show when={leaderHotkeys.leaderActive()}>
         <div class="pointer-events-none fixed right-4 bottom-4 z-50 w-80 max-w-[calc(100vw-2rem)] border border-border bg-card/95 shadow-lg backdrop-blur-sm">
