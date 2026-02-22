@@ -1,7 +1,8 @@
 import { createMemo, createResource, createSignal, For, Show } from "solid-js"
 import { useMetadata } from "vike-metadata-solid"
 import { usePageContext } from "vike-solid/usePageContext"
-import type { AbilityEntryRecord } from "@/data/cobblemon-types"
+import { PokemonSprite } from "@/components/pokemon-sprite"
+import type { AbilityEntryRecord, AbilitySlot } from "@/data/cobblemon-types"
 import { loadAbilityIndex } from "@/data/data-loader"
 import { canonicalId } from "@/data/formatters"
 import { cn } from "@/utils/cn"
@@ -65,14 +66,28 @@ function AbilityDetailView(props: { entry: AbilityEntryRecord }) {
     }
 
     if (nextFilter === "hidden") {
-      return props.entry.pokemon.filter((pokemon) => pokemon.hidden)
+      return props.entry.pokemon.filter((pokemon) =>
+        resolveEffectiveAbilitySlots(pokemon).includes("hidden")
+      )
     }
 
-    return props.entry.pokemon.filter((pokemon) => !pokemon.hidden)
+    return props.entry.pokemon.filter((pokemon) =>
+      resolveEffectiveAbilitySlots(pokemon).some((slot) => slot !== "hidden")
+    )
   })
 
   const hiddenCount = createMemo(
-    () => props.entry.pokemon.filter((pokemon) => pokemon.hidden).length
+    () =>
+      props.entry.pokemon.filter((pokemon) =>
+        resolveEffectiveAbilitySlots(pokemon).includes("hidden")
+      ).length
+  )
+
+  const regularCount = createMemo(
+    () =>
+      props.entry.pokemon.filter((pokemon) =>
+        resolveEffectiveAbilitySlots(pokemon).some((slot) => slot !== "hidden")
+      ).length
   )
 
   return (
@@ -98,6 +113,9 @@ function AbilityDetailView(props: { entry: AbilityEntryRecord }) {
             Short: {props.entry.shortDescription}
           </p>
         </Show>
+        <p class="mt-2 text-muted-foreground text-xs">
+          Slot badges show base species slots. Form-only slots are listed with form tags.
+        </p>
       </header>
 
       <section class="border border-border bg-card">
@@ -112,7 +130,7 @@ function AbilityDetailView(props: { entry: AbilityEntryRecord }) {
               onClick={() => setFilter("all")}
             />
             <FilterButton
-              label={`Regular (${props.entry.pokemon.length - hiddenCount()})`}
+              label={`Regular (${regularCount()})`}
               active={filter() === "regular"}
               onClick={() => setFilter("regular")}
             />
@@ -145,21 +163,56 @@ function AbilityDetailView(props: { entry: AbilityEntryRecord }) {
                   {(pokemon) => (
                     <tr class="hover:bg-secondary/40">
                       <td class="px-4 py-2.5">
-                        <a href={`/pokemon/${pokemon.slug}`} class="hover:underline">
-                          #{String(pokemon.dexNumber).padStart(3, "0")} {pokemon.name}
+                        <a
+                          href={`/pokemon/${pokemon.slug}`}
+                          class="inline-flex items-center gap-2 hover:underline"
+                        >
+                          <PokemonSprite
+                            dexNumber={pokemon.dexNumber}
+                            name={pokemon.name}
+                            class="h-8 w-8"
+                            imageClass="h-6 w-6"
+                          />
+                          <span>
+                            #{String(pokemon.dexNumber).padStart(3, "0")} {pokemon.name}
+                          </span>
                         </a>
                       </td>
                       <td class="px-4 py-2.5 text-right">
-                        <span
-                          class={cn(
-                            "border px-2 py-0.5 text-xs",
-                            pokemon.hidden
-                              ? "border-border bg-secondary text-muted-foreground"
-                              : "border-foreground/20 bg-foreground/10 text-foreground"
-                          )}
-                        >
-                          {pokemon.hidden ? "Hidden" : "Regular"}
-                        </span>
+                        <div class="flex flex-col items-end gap-1">
+                          <div class="flex justify-end gap-1">
+                            <Show
+                              when={resolveAbilitySlots(pokemon).length > 0}
+                              fallback={
+                                <span class="border border-border bg-secondary px-2 py-0.5 text-muted-foreground text-xs">
+                                  Form Only
+                                </span>
+                              }
+                            >
+                              <For each={resolveAbilitySlots(pokemon)}>
+                                {(slot) => (
+                                  <span
+                                    class={cn("border px-2 py-0.5 text-xs", slotBadgeClass(slot))}
+                                  >
+                                    {formatAbilitySlot(slot)}
+                                  </span>
+                                )}
+                              </For>
+                            </Show>
+                          </div>
+
+                          <Show when={resolveFormAbilitySlots(pokemon).length > 0}>
+                            <div class="flex flex-wrap justify-end gap-1">
+                              <For each={resolveFormAbilitySlots(pokemon)}>
+                                {(formSlot) => (
+                                  <span class="border border-border bg-secondary/60 px-2 py-0.5 text-[10px] text-muted-foreground">
+                                    {formSlot.formName}: {formatAbilitySlotList(formSlot.slots)}
+                                  </span>
+                                )}
+                              </For>
+                            </div>
+                          </Show>
+                        </div>
                       </td>
                     </tr>
                   )}
@@ -188,4 +241,71 @@ function FilterButton(props: { label: string; active: boolean; onClick: () => vo
       {props.label}
     </button>
   )
+}
+
+function resolveAbilitySlots(pokemon: AbilityEntryRecord["pokemon"][number]): AbilitySlot[] {
+  if (Array.isArray(pokemon.slots) && pokemon.slots.length > 0) {
+    return pokemon.slots
+  }
+
+  if (Array.isArray(pokemon.formSlots) && pokemon.formSlots.length > 0) {
+    return []
+  }
+
+  return pokemon.hidden ? ["hidden"] : ["first"]
+}
+
+function resolveFormAbilitySlots(
+  pokemon: AbilityEntryRecord["pokemon"][number]
+): AbilityEntryRecord["pokemon"][number]["formSlots"] {
+  if (!Array.isArray(pokemon.formSlots)) {
+    return []
+  }
+
+  return pokemon.formSlots.filter(
+    (formSlot) =>
+      Boolean(formSlot.formName) && Array.isArray(formSlot.slots) && formSlot.slots.length > 0
+  )
+}
+
+function resolveEffectiveAbilitySlots(
+  pokemon: AbilityEntryRecord["pokemon"][number]
+): AbilitySlot[] {
+  const slots = new Set<AbilitySlot>(resolveAbilitySlots(pokemon))
+
+  for (const formSlot of resolveFormAbilitySlots(pokemon)) {
+    for (const slot of formSlot.slots) {
+      slots.add(slot)
+    }
+  }
+
+  return Array.from(slots)
+}
+
+function formatAbilitySlotList(slots: AbilitySlot[]): string {
+  return slots.map((slot) => formatAbilitySlot(slot)).join(" + ")
+}
+
+function formatAbilitySlot(slot: AbilitySlot): string {
+  if (slot === "first") {
+    return "First"
+  }
+
+  if (slot === "second") {
+    return "Second"
+  }
+
+  return "Hidden"
+}
+
+function slotBadgeClass(slot: AbilitySlot): string {
+  if (slot === "first") {
+    return "border-foreground/20 bg-foreground/10 text-foreground"
+  }
+
+  if (slot === "second") {
+    return "border-info/40 bg-info/10 text-info"
+  }
+
+  return "border-border bg-secondary text-muted-foreground"
 }

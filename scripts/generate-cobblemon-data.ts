@@ -4,6 +4,7 @@ import path from "node:path"
 import JSZip from "jszip"
 import type {
   AbilityIndex,
+  AbilitySlot,
   EvolutionEdgeRecord,
   MetaRecord,
   MoveLearnersIndex,
@@ -586,11 +587,7 @@ function buildPokemonDetailRecord(params: {
     .filter((value): value is string => typeof value === "string" && value.length > 0)
     .map((value) => value.toLowerCase())
 
-  const abilities = Array.isArray(raw.abilities)
-    ? raw.abilities
-        .map((ability) => (typeof ability === "string" ? formatAbilityId(ability) : null))
-        .filter((ability): ability is ReturnType<typeof formatAbilityId> => ability !== null)
-    : []
+  const abilities = parseAbilityList(raw.abilities)
 
   const eggGroups = Array.isArray(raw.eggGroups)
     ? raw.eggGroups.filter((group): group is string => typeof group === "string")
@@ -693,6 +690,41 @@ function buildPokemonDetailRecord(params: {
   return detail
 }
 
+function parseAbilityList(rawAbilities: unknown): PokemonDetailRecord["abilities"] {
+  if (!Array.isArray(rawAbilities)) {
+    return []
+  }
+
+  const parsed: PokemonDetailRecord["abilities"] = []
+  const seen = new Set<string>()
+  let nextRegularSlot: AbilitySlot = "first"
+
+  for (const rawAbility of rawAbilities) {
+    if (typeof rawAbility !== "string") {
+      continue
+    }
+
+    const normalized = formatAbilityId(rawAbility)
+    const slot: AbilitySlot = normalized.hidden ? "hidden" : nextRegularSlot
+    if (!normalized.hidden && nextRegularSlot === "first") {
+      nextRegularSlot = "second"
+    }
+
+    const dedupeKey = `${normalized.id}:${slot}`
+    if (seen.has(dedupeKey)) {
+      continue
+    }
+
+    seen.add(dedupeKey)
+    parsed.push({
+      ...normalized,
+      slot,
+    })
+  }
+
+  return parsed
+}
+
 function parseForms(
   rawForms: unknown,
   params: {
@@ -725,11 +757,7 @@ function parseForms(
       .filter((value): value is string => typeof value === "string" && value.length > 0)
       .map((value) => value.toLowerCase())
 
-    const formAbilities = Array.isArray(rawForm.abilities)
-      ? rawForm.abilities
-          .map((ability) => (typeof ability === "string" ? formatAbilityId(ability) : null))
-          .filter((ability): ability is ReturnType<typeof formatAbilityId> => ability !== null)
-      : []
+    const formAbilities = parseAbilityList(rawForm.abilities)
 
     const formMoves = parseMoveList(rawForm.moves, {
       moveNames: params.moveNames,
@@ -1119,7 +1147,8 @@ function buildAbilityIndex(
         slug: string
         name: string
         dexNumber: number
-        hidden: boolean
+        baseSlots: Set<AbilitySlot>
+        formSlots: Map<string, Set<AbilitySlot>>
       }
     >
   >()
@@ -1129,7 +1158,9 @@ function buildAbilityIndex(
     ability: {
       id: string
       hidden: boolean
-    }
+      slot: AbilitySlot
+    },
+    formName: string | null
   ) => {
     if (!ability.id) {
       return
@@ -1146,26 +1177,42 @@ function buildAbilityIndex(
 
     const existing = pokemonMap.get(detail.slug)
     if (existing) {
-      existing.hidden = existing.hidden && ability.hidden
+      if (formName) {
+        if (!existing.formSlots.has(formName)) {
+          existing.formSlots.set(formName, new Set())
+        }
+        existing.formSlots.get(formName)?.add(ability.slot)
+      } else {
+        existing.baseSlots.add(ability.slot)
+      }
       return
+    }
+
+    const baseSlots = new Set<AbilitySlot>()
+    const formSlots = new Map<string, Set<AbilitySlot>>()
+    if (formName) {
+      formSlots.set(formName, new Set<AbilitySlot>([ability.slot]))
+    } else {
+      baseSlots.add(ability.slot)
     }
 
     pokemonMap.set(detail.slug, {
       slug: detail.slug,
       name: detail.name,
       dexNumber: detail.dexNumber,
-      hidden: ability.hidden,
+      baseSlots,
+      formSlots,
     })
   }
 
   for (const detail of detailsBySlug.values()) {
     for (const ability of detail.abilities) {
-      registerAbility(detail, ability)
+      registerAbility(detail, ability, null)
     }
 
     for (const form of detail.forms) {
       for (const ability of form.abilities) {
-        registerAbility(detail, ability)
+        registerAbility(detail, ability, form.name)
       }
     }
   }
@@ -1176,13 +1223,33 @@ function buildAbilityIndex(
     return left.localeCompare(right)
   })) {
     const abilityInfo = abilityMap.get(abilityId)
-    const pokemon = Array.from(pokemonMap.values()).sort((left, right) => {
-      if (left.dexNumber !== right.dexNumber) {
-        return left.dexNumber - right.dexNumber
-      }
+    const pokemon = Array.from(pokemonMap.values())
+      .map((entry) => {
+        const slots = sortAbilitySlots(Array.from(entry.baseSlots))
+        const formSlots = Array.from(entry.formSlots.entries())
+          .map(([formName, slotSet]) => ({
+            formName,
+            slots: sortAbilitySlots(Array.from(slotSet)),
+          }))
+          .sort((left, right) => left.formName.localeCompare(right.formName))
 
-      return left.slug.localeCompare(right.slug)
-    })
+        return {
+          slug: entry.slug,
+          name: entry.name,
+          dexNumber: entry.dexNumber,
+          hidden:
+            slots.includes("hidden") || formSlots.some((form) => form.slots.includes("hidden")),
+          slots,
+          formSlots,
+        }
+      })
+      .sort((left, right) => {
+        if (left.dexNumber !== right.dexNumber) {
+          return left.dexNumber - right.dexNumber
+        }
+
+        return left.slug.localeCompare(right.slug)
+      })
 
     index[abilityId] = {
       abilityId,
@@ -1194,6 +1261,13 @@ function buildAbilityIndex(
   }
 
   return index
+}
+
+function sortAbilitySlots(slots: AbilitySlot[]): AbilitySlot[] {
+  const order: AbilitySlot[] = ["first", "second", "hidden"]
+  return Array.from(new Set(slots)).sort(
+    (left, right) => order.indexOf(left) - order.indexOf(right)
+  )
 }
 
 function buildRideableMons(detailsBySlug: Map<string, PokemonDetailRecord>): RideableMonRecord[] {

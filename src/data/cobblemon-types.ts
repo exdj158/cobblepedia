@@ -2,6 +2,8 @@ export type QueryFacet = "egg-group" | "moves" | "spawn" | "evolution"
 
 export type MoveSourceType = "level" | "egg" | "tm" | "tutor" | "legacy" | "special" | "form_change"
 
+export type AbilitySlot = "first" | "second" | "hidden"
+
 export type SearchResultType = "pokemon-overview" | "pokemon-facet" | "move-learners"
 
 export type MetaRecord = {
@@ -19,6 +21,7 @@ export type PokemonAbility = {
   id: string
   label: string
   hidden: boolean
+  slot: AbilitySlot
 }
 
 export type PokemonRef = {
@@ -185,6 +188,11 @@ export type AbilityPokemonRecord = {
   name: string
   dexNumber: number
   hidden: boolean
+  slots: AbilitySlot[]
+  formSlots: {
+    formName: string
+    slots: AbilitySlot[]
+  }[]
 }
 
 export type AbilityEntryRecord = {

@@ -810,7 +810,7 @@ function MovesSection(props: { moves: PokemonDetailRecord["moves"] }) {
             </tr>
           </thead>
           <tbody class="divide-y divide-border">
-            <For each={filteredMoves().slice(0, 50)}>
+            <For each={filteredMoves()}>
               {(move) => (
                 <tr class="hover:bg-secondary/50">
                   <td class="px-4 py-2.5">
@@ -830,12 +830,6 @@ function MovesSection(props: { moves: PokemonDetailRecord["moves"] }) {
           </tbody>
         </table>
       </div>
-
-      <Show when={filteredMoves().length > 50}>
-        <div class="border-border border-t px-4 py-2 text-center text-muted-foreground text-xs">
-          +{filteredMoves().length - 50} more moves
-        </div>
-      </Show>
     </section>
   )
 }
@@ -862,20 +856,22 @@ function MoveTypeBadge(props: { type: string | null }) {
     return <span class="text-muted-foreground text-xs">-</span>
   }
 
-  const color = getTypeColor(props.type)
+  const typeId = props.type.toLowerCase()
+  const color = getTypeColor(typeId)
 
   return (
-    <span
-      class="inline-flex items-center gap-1 border px-2 py-0.5 font-mono text-[10px] uppercase tracking-wider"
+    <a
+      href={`/types/${typeId}`}
+      class="inline-flex items-center gap-1 border px-2 py-0.5 font-mono text-[10px] uppercase tracking-wider transition-opacity hover:opacity-80"
       style={{
         "border-color": `${color}66`,
         "background-color": `${color}1a`,
         color,
       }}
     >
-      <TypeIcon type={props.type} />
-      {titleCaseFromId(props.type)}
-    </span>
+      <TypeIcon type={typeId} />
+      {titleCaseFromId(typeId)}
+    </a>
   )
 }
 
