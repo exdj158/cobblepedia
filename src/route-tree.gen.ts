@@ -16,9 +16,11 @@ const pageRoutes = [
   "/abilities/@abilityId",
   "/dashboard",
   "/dashboard/settings",
+  "/egg-groups",
   "/egg-groups/@eggGroupId",
   "/moves/@moveId",
   "/pokemon/@slug",
+  "/rideable-mons",
   "/types",
   "/types/@typeId"
 ] as const;

@@ -5,6 +5,7 @@ import type {
   PokemonDetailRecord,
   PokemonDexNavItem,
   PokemonListItem,
+  RideableMonRecord,
   SearchDocument,
 } from "@/data/cobblemon-types"
 
@@ -13,6 +14,7 @@ let pokemonListPromise: Promise<PokemonListItem[]> | null = null
 let pokemonDexNavPromise: Promise<PokemonDexNavItem[]> | null = null
 let moveLearnersPromise: Promise<MoveLearnersIndex> | null = null
 let abilityIndexPromise: Promise<AbilityIndex> | null = null
+let rideableMonsPromise: Promise<RideableMonRecord[]> | null = null
 let metaPromise: Promise<MetaRecord> | null = null
 
 const pokemonDetailModules = import.meta.glob<{ default: PokemonDetailRecord }>(
@@ -77,6 +79,16 @@ export function loadAbilityIndex(): Promise<AbilityIndex> {
   }
 
   return abilityIndexPromise
+}
+
+export function loadRideableMons(): Promise<RideableMonRecord[]> {
+  if (!rideableMonsPromise) {
+    rideableMonsPromise = import("./generated/rideable-mons.json").then(
+      (module) => module.default as RideableMonRecord[]
+    )
+  }
+
+  return rideableMonsPromise
 }
 
 export function loadMeta(): Promise<MetaRecord> {

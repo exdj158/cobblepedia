@@ -1,9 +1,12 @@
-import { createMemo, createResource, createSignal, For, Show } from "solid-js"
+import { createEffect, createMemo, createResource, createSignal, For, Show } from "solid-js"
 import { useMetadata } from "vike-metadata-solid"
 import { usePageContext } from "vike-solid/usePageContext"
+import { IconEgg } from "@/assets/icons"
+import { DualEggGroupSelector } from "@/components/dual-egg-group-selector"
+import { PokemonSprite } from "@/components/pokemon-sprite"
 import type { MoveLearnerEntryRecord, MoveSourceType } from "@/data/cobblemon-types"
 import { loadMoveLearners } from "@/data/data-loader"
-import { canonicalId, formatMoveSource } from "@/data/formatters"
+import { canonicalId, formatEggGroup, formatMoveSource, titleCaseFromId } from "@/data/formatters"
 import { cn } from "@/utils/cn"
 import getTitle from "@/utils/get-title"
 
@@ -19,6 +22,28 @@ const METHOD_FILTERS = [
 ] as const
 
 type MethodFilter = (typeof METHOD_FILTERS)[number]
+
+const MOVE_TYPE_COLORS: Record<string, string> = {
+  normal: "#A8A878",
+  fire: "#F08030",
+  water: "#6890F0",
+  electric: "#F8D030",
+  grass: "#78C850",
+  ice: "#98D8D8",
+  fighting: "#C03028",
+  poison: "#A040A0",
+  ground: "#E0C068",
+  flying: "#A890F0",
+  psychic: "#F85888",
+  bug: "#A8B820",
+  rock: "#B8A038",
+  ghost: "#705898",
+  dragon: "#7038F8",
+  dark: "#705848",
+  steel: "#B8B8D0",
+  fairy: "#EE99AC",
+  stellar: "#fb7185",
+}
 
 export default function Page() {
   const pageContext = usePageContext()
@@ -71,6 +96,48 @@ function NotFoundState(props: { moveId: string }) {
 function MoveDetailView(props: { entry: MoveLearnerEntryRecord }) {
   const [activeMethod, setActiveMethod] = createSignal<MethodFilter>("all")
   const [search, setSearch] = createSignal("")
+  const [selectedEggGroups, setSelectedEggGroups] = createSignal<string[]>([])
+
+  const moveTypeId = createMemo(() => canonicalId(props.entry.type ?? ""))
+  const moveTypeColor = createMemo(() => MOVE_TYPE_COLORS[moveTypeId()] ?? "#888888")
+
+  const availableEggGroups = createMemo(() => {
+    const groups = new Set<string>()
+
+    for (const learner of props.entry.learners) {
+      for (const group of getLearnerEggGroups(learner)) {
+        groups.add(group)
+      }
+    }
+
+    return Array.from(groups).sort((left, right) => {
+      return formatEggGroup(left).localeCompare(formatEggGroup(right))
+    })
+  })
+
+  createEffect(() => {
+    const validGroups = new Set(availableEggGroups())
+    const filtered = selectedEggGroups().filter((group) => validGroups.has(group))
+
+    if (filtered.length !== selectedEggGroups().length) {
+      setSelectedEggGroups(filtered)
+    }
+  })
+
+  const handleEggGroupChange = (eggGroups: string[]) => {
+    const validGroups = new Set(availableEggGroups())
+    const normalized = eggGroups
+      .map((group) => canonicalId(group))
+      .map((normalizedGroup) => {
+        return availableEggGroups().find((group) => canonicalId(group) === normalizedGroup) ?? null
+      })
+      .filter((group): group is string => Boolean(group))
+      .filter((group, index, list) => list.indexOf(group) === index)
+      .filter((group) => validGroups.has(group))
+      .slice(0, 2)
+
+    setSelectedEggGroups(normalized)
+  }
 
   const counts = createMemo(() => ({
     all: props.entry.learners.length,
@@ -87,9 +154,17 @@ function MoveDetailView(props: { entry: MoveLearnerEntryRecord }) {
   const filteredLearners = createMemo(() => {
     const query = search().trim().toLowerCase()
     const method = activeMethod()
+    const eggGroupFilter = selectedEggGroups()
 
     return props.entry.learners.filter((learner) => {
       if (method !== "all" && !learner.methods.includes(method as MoveSourceType)) {
+        return false
+      }
+
+      if (
+        eggGroupFilter.length > 0 &&
+        !eggGroupFilter.every((group) => getLearnerEggGroups(learner).includes(group))
+      ) {
         return false
       }
 
@@ -97,17 +172,25 @@ function MoveDetailView(props: { entry: MoveLearnerEntryRecord }) {
         return true
       }
 
+      const eggGroups = getLearnerEggGroups(learner)
+
       return (
         learner.name.toLowerCase().includes(query) ||
         learner.slug.toLowerCase().includes(query) ||
-        String(learner.dexNumber).includes(query)
+        String(learner.dexNumber).includes(query) ||
+        eggGroups.some((group) => {
+          return (
+            group.toLowerCase().includes(query) ||
+            formatEggGroup(group).toLowerCase().includes(query)
+          )
+        })
       )
     })
   })
 
   return (
     <div class="space-y-6">
-      <header class="border border-border bg-card p-6">
+      <header class="border bg-card p-6" style={{ "border-color": moveTypeColor() }}>
         <p class="mb-2 font-mono text-muted-foreground text-xs uppercase tracking-wide">
           Move: {props.entry.moveId}
         </p>
@@ -131,6 +214,24 @@ function MoveDetailView(props: { entry: MoveLearnerEntryRecord }) {
         <p class="mt-2 text-muted-foreground text-sm">
           {props.entry.learners.length} Pokemon can learn this move.
         </p>
+
+        <div class="mt-4 grid gap-2 sm:grid-cols-2 lg:grid-cols-4">
+          <StatBadge
+            label="Type"
+            value={formatMoveTypeLabel(props.entry.type)}
+            accentColor={moveTypeColor()}
+            emphasized
+          />
+          <StatBadge label="Category" value={formatMoveCategory(props.entry.category)} />
+          <StatBadge
+            label="Damage"
+            value={formatMoveDamage(props.entry.basePower, props.entry.category)}
+          />
+          <StatBadge
+            label="Accuracy"
+            value={formatMoveAccuracy(props.entry.accuracy, props.entry.alwaysHits)}
+          />
+        </div>
       </header>
 
       <section class="border border-border bg-card">
@@ -158,10 +259,32 @@ function MoveDetailView(props: { entry: MoveLearnerEntryRecord }) {
           <input
             type="text"
             class="w-full border border-border bg-background px-3 py-2 text-sm outline-none placeholder:text-muted-foreground focus:border-muted-foreground"
-            placeholder="Filter Pokemon by name, slug, or dex..."
+            placeholder="Filter Pokemon by name, slug, dex, or egg group..."
             value={search()}
             onInput={(event) => setSearch(event.currentTarget.value)}
           />
+
+          <div class="mt-3 space-y-2">
+            <div class="flex items-center justify-between">
+              <p class="font-mono text-muted-foreground text-xs uppercase tracking-wide">
+                Egg Group Filter
+              </p>
+              <Show when={selectedEggGroups().length > 0}>
+                <button
+                  type="button"
+                  class="text-muted-foreground text-xs underline underline-offset-2 hover:text-foreground"
+                  onClick={() => setSelectedEggGroups([])}
+                >
+                  Clear
+                </button>
+              </Show>
+            </div>
+            <DualEggGroupSelector
+              availableEggGroups={availableEggGroups()}
+              selectedEggGroups={selectedEggGroups()}
+              onChange={handleEggGroupChange}
+            />
+          </div>
         </div>
 
         <div class="max-h-[560px] overflow-auto">
@@ -177,16 +300,40 @@ function MoveDetailView(props: { entry: MoveLearnerEntryRecord }) {
                 {(learner) => (
                   <tr class="hover:bg-secondary/40">
                     <td class="px-4 py-2.5">
-                      <a href={`/pokemon/${learner.slug}`} class="hover:underline">
-                        #{String(learner.dexNumber).padStart(3, "0")} {learner.name}
-                      </a>
+                      <div class="space-y-1.5">
+                        <a
+                          href={`/pokemon/${learner.slug}`}
+                          class="inline-flex items-center gap-2 hover:underline"
+                        >
+                          <PokemonSprite
+                            dexNumber={learner.dexNumber}
+                            name={learner.name}
+                            class="h-8 w-8"
+                            imageClass="h-6 w-6"
+                          />
+                          <span>
+                            #{String(learner.dexNumber).padStart(3, "0")} {learner.name}
+                          </span>
+                        </a>
+
+                        <div class="flex flex-wrap gap-1">
+                          <For each={getLearnerEggGroups(learner)}>
+                            {(group) => (
+                              <span class="inline-flex items-center gap-1 border border-border bg-secondary px-2 py-0.5 font-mono text-[10px] text-muted-foreground uppercase tracking-wider">
+                                <IconEgg class="h-3 w-3" />
+                                {formatEggGroup(group)}
+                              </span>
+                            )}
+                          </For>
+                        </div>
+                      </div>
                     </td>
                     <td class="px-4 py-2.5">
                       <div class="flex justify-end gap-1">
                         <For each={learner.methods}>
                           {(method) => (
                             <span class="border border-border bg-secondary px-2 py-0.5 text-muted-foreground text-xs">
-                              {formatMoveSource(method, null)}
+                              {formatLearnerMethodLabel(learner, method)}
                             </span>
                           )}
                         </For>
@@ -215,4 +362,94 @@ function formatMoveSourceLabel(filter: MethodFilter): string {
   }
 
   return formatMoveSource(filter, null)
+}
+
+function StatBadge(props: {
+  label: string
+  value: string
+  accentColor?: string
+  emphasized?: boolean
+}) {
+  return (
+    <div
+      class={cn("border bg-secondary/40 px-3 py-2", props.emphasized && "bg-secondary/60")}
+      style={props.accentColor ? { "border-color": props.accentColor } : undefined}
+    >
+      <p class="font-mono text-[10px] text-muted-foreground uppercase tracking-wide">
+        {props.label}
+      </p>
+      <p
+        class={cn("mt-0.5 font-medium text-sm", props.emphasized && "font-semibold")}
+        style={props.emphasized && props.accentColor ? { color: props.accentColor } : undefined}
+      >
+        {props.value}
+      </p>
+    </div>
+  )
+}
+
+function formatMoveTypeLabel(type: string | null): string {
+  const normalized = canonicalId(type ?? "")
+  return normalized ? titleCaseFromId(normalized) : "Unknown"
+}
+
+function formatMoveCategory(category: string | null): string {
+  const normalized = canonicalId(category ?? "")
+  if (!normalized) {
+    return "-"
+  }
+
+  return titleCaseFromId(normalized)
+}
+
+function formatMoveDamage(basePower: number | null, category: string | null): string {
+  const normalizedCategory = canonicalId(category ?? "")
+
+  if (typeof basePower !== "number" || !Number.isFinite(basePower) || basePower <= 0) {
+    return normalizedCategory === "status" ? "-" : "Varies"
+  }
+
+  return String(basePower)
+}
+
+function formatMoveAccuracy(accuracy: number | null, alwaysHits: boolean): string {
+  if (alwaysHits) {
+    return "Always"
+  }
+
+  if (typeof accuracy !== "number" || !Number.isFinite(accuracy)) {
+    return "-"
+  }
+
+  return `${accuracy}%`
+}
+
+function getLearnerEggGroups(learner: MoveLearnerEntryRecord["learners"][number]): string[] {
+  return Array.isArray(learner.eggGroups)
+    ? learner.eggGroups.filter((group): group is string => typeof group === "string")
+    : []
+}
+
+function getLearnerLevelUpLevels(learner: MoveLearnerEntryRecord["learners"][number]): number[] {
+  return Array.isArray(learner.levelUpLevels)
+    ? learner.levelUpLevels
+        .filter((level): level is number => typeof level === "number" && Number.isFinite(level))
+        .sort((left, right) => left - right)
+    : []
+}
+
+function formatLearnerMethodLabel(
+  learner: MoveLearnerEntryRecord["learners"][number],
+  method: MoveSourceType
+): string {
+  if (method !== "level") {
+    return formatMoveSource(method, null)
+  }
+
+  const levels = getLearnerLevelUpLevels(learner)
+  if (levels.length > 0) {
+    return `Level ${levels.join(", ")}`
+  }
+
+  return "Level"
 }

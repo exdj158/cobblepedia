@@ -31,6 +31,7 @@ export type ParsedMove = {
   raw: string
   moveId: string
   moveName: string
+  type: string | null
   sourceType: MoveSourceType
   sourceValue: number | null
   fromForm: string | null
@@ -160,11 +161,18 @@ export type MoveLearnerRecord = {
   name: string
   dexNumber: number
   methods: MoveSourceType[]
+  eggGroups: string[]
+  levelUpLevels: number[]
 }
 
 export type MoveLearnerEntryRecord = {
   moveId: string
   moveName: string
+  type: string | null
+  category: string | null
+  basePower: number | null
+  accuracy: number | null
+  alwaysHits: boolean
   shortDescription: string | null
   description: string | null
   learners: MoveLearnerRecord[]
@@ -188,6 +196,31 @@ export type AbilityEntryRecord = {
 }
 
 export type AbilityIndex = Record<string, AbilityEntryRecord>
+
+export type RideableBehaviourRecord = {
+  category: string
+  key: string
+  classId: string
+}
+
+export type RideableSummaryRecord = {
+  seatCount: number
+  categories: string[]
+  classes: string[]
+  behaviours: RideableBehaviourRecord[]
+}
+
+export type RideableMonRecord = {
+  slug: string
+  name: string
+  dexNumber: number
+  implemented: boolean
+  types: string[]
+  seatCount: number
+  categories: string[]
+  classes: string[]
+  behaviours: RideableBehaviourRecord[]
+}
 
 export type SearchDocument = {
   id: string

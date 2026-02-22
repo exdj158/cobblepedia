@@ -481,7 +481,7 @@ function EmptySelectionState(props: { availableTypes: string[] }) {
         Use the selector above to explore type effectiveness and Pokemon.
       </p>
       <div class="flex flex-wrap justify-center gap-2">
-        <For each={props.availableTypes.slice(0, 6)}>
+        <For each={props.availableTypes}>
           {(type) => (
             <a
               href={`/types/${type}`}

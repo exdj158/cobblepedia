@@ -1,5 +1,5 @@
 import { createMemo, createSignal, For } from "solid-js"
-import { IconX } from "@/assets/icons"
+import { IconBox, IconX } from "@/assets/icons"
 
 const TYPE_COLORS: Record<string, string> = {
   normal: "#A8A878",
@@ -122,6 +122,7 @@ export function DualTypeSelector(props: DualTypeSelectorProps) {
                   color: TYPE_COLORS[type] ?? "#888888",
                 }}
               >
+                <IconBox class="h-3 w-3" />
                 <span class="font-mono text-[10px] opacity-60">
                   {index() === 0 ? "PRIMARY" : "SECONDARY"}
                 </span>
@@ -168,13 +169,7 @@ export function DualTypeSelector(props: DualTypeSelectorProps) {
                   onMouseDown={(event) => event.preventDefault()}
                   onClick={() => addType(option.value)}
                 >
-                  <span
-                    class="h-2 w-2 border"
-                    style={{
-                      "background-color": option.color,
-                      "border-color": option.color,
-                    }}
-                  />
+                  <IconBox class="h-3.5 w-3.5" style={{ color: option.color }} />
                   <span class="font-mono">{option.label}</span>
                 </button>
               )}

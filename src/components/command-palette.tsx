@@ -12,6 +12,7 @@ import {
   Show,
   Switch,
 } from "solid-js"
+import { PokemonSprite } from "@/components/pokemon-sprite"
 import {
   CommandDialog,
   CommandEmpty,
@@ -77,6 +78,16 @@ export default function CommandPalette() {
   })
 
   const results = createMemo(() => resolution().results)
+  const pokemonDexBySlug = createMemo(() => {
+    const map = new Map<string, number>()
+
+    for (const pokemon of pokemonList() ?? []) {
+      map.set(pokemon.slug, pokemon.dexNumber)
+    }
+
+    return map
+  })
+
   const activeResult = createMemo(() => {
     const current = results()
     if (current.length === 0) {
@@ -284,12 +295,36 @@ export default function CommandPalette() {
                         <CommandItem
                           value={result.id}
                           class={cn(
-                            "flex cursor-pointer flex-col gap-1 border-transparent border-l-2 p-3 transition-colors aria-selected:border-l-foreground aria-selected:bg-secondary aria-selected:text-foreground"
+                            "flex cursor-pointer items-center gap-2 border-transparent border-l-2 p-3 transition-colors aria-selected:border-l-foreground aria-selected:bg-secondary aria-selected:text-foreground"
                           )}
                           onSelect={() => executeResult(result)}
                         >
-                          <div class="font-medium text-sm">{result.title}</div>
-                          <div class="text-muted-foreground text-xs">{result.subtitle}</div>
+                          <Show
+                            when={
+                              result.slug ? (pokemonDexBySlug().get(result.slug) ?? null) : null
+                            }
+                            fallback={
+                              <div class="flex h-10 w-10 shrink-0 items-center justify-center border border-border bg-secondary/40 font-mono text-[10px] text-muted-foreground uppercase">
+                                {result.type === "move-learners" ? "MV" : "PK"}
+                              </div>
+                            }
+                          >
+                            {(dexNumber) => (
+                              <PokemonSprite
+                                dexNumber={dexNumber()}
+                                name={result.title}
+                                class="h-10 w-10"
+                                imageClass="h-7 w-7"
+                              />
+                            )}
+                          </Show>
+
+                          <div class="min-w-0">
+                            <div class="truncate font-medium text-sm">{result.title}</div>
+                            <div class="truncate text-muted-foreground text-xs">
+                              {result.subtitle}
+                            </div>
+                          </div>
                         </CommandItem>
                       )}
                     </For>
@@ -831,9 +866,18 @@ function MoveLearnersQuickview(props: { entry: MoveLearnerEntryRecord | null }) 
             <div class="flex max-h-[400px] flex-col gap-2 overflow-y-auto">
               <For each={entry.learners.slice(0, 30)}>
                 {(learner) => (
-                  <div class="flex items-center justify-between border-border border-b py-2 last:border-0">
-                    <a href={`/pokemon/${learner.slug}`} class="text-sm hover:underline">
-                      {learner.name}
+                  <div class="flex items-center justify-between gap-2 border-border border-b py-2 last:border-0">
+                    <a
+                      href={`/pokemon/${learner.slug}`}
+                      class="flex min-w-0 items-center gap-2 hover:underline"
+                    >
+                      <PokemonSprite
+                        dexNumber={learner.dexNumber}
+                        name={learner.name}
+                        class="h-8 w-8"
+                        imageClass="h-6 w-6"
+                      />
+                      <span class="truncate text-sm">{learner.name}</span>
                     </a>
                     <span class="text-muted-foreground text-xs">
                       {learner.methods.map((method) => sourceLabel(method)).join(", ")}

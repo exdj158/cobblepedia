@@ -1,8 +1,16 @@
 import { createMemo, createResource, createSignal, For, Show } from "solid-js"
 import { useMetadata } from "vike-metadata-solid"
 import { usePageContext } from "vike-solid/usePageContext"
+import { IconBox, IconEgg } from "@/assets/icons"
 import { PokemonModelPreview } from "@/components/pokemon-model-preview"
-import type { MoveSourceType, PokemonDetailRecord, PokemonDexNavItem } from "@/data/cobblemon-types"
+import { PokemonSprite } from "@/components/pokemon-sprite"
+import { RideableCategoryIcon, RideableClassIcon } from "@/components/rideable-icons"
+import type {
+  MoveSourceType,
+  PokemonDetailRecord,
+  PokemonDexNavItem,
+  RideableSummaryRecord,
+} from "@/data/cobblemon-types"
 import { loadPokemonDetail } from "@/data/data-loader"
 import {
   formatConditionChips,
@@ -12,6 +20,7 @@ import {
   titleCaseFromId,
 } from "@/data/formatters"
 import pokemonDexNavData from "@/data/generated/pokemon-dex-nav.json"
+import { formatRideableCategory, parseRideableSummaryFromSpecies } from "@/data/rideable"
 import { useLeaderNavigationHotkeys } from "@/lib/use-leader-navigation-hotkeys"
 import { cn } from "@/utils/cn"
 import getTitle from "@/utils/get-title"
@@ -142,6 +151,7 @@ function PokemonDetailView(props: {
   const detail = () => props.detail
   const primaryType = () => detail().types[0] || "normal"
   const typeColor = () => getTypeColor(primaryType())
+  const rideableSummary = createMemo(() => parseRideableSummaryFromSpecies(detail().rawSpecies))
   const [activeView, setActiveView] = createSignal<ArtworkView>("official")
 
   const leaderHotkeys = useLeaderNavigationHotkeys({
@@ -211,6 +221,12 @@ function PokemonDetailView(props: {
                 )}
               </For>
             </div>
+
+            <Show when={rideableSummary()}>
+              {(summarySignal) => (
+                <RideableHeroTag summary={summarySignal()} slug={detail().slug} />
+              )}
+            </Show>
 
             {/* Quick stats row */}
             <div class="mt-2 flex flex-wrap gap-4 text-sm">
@@ -370,13 +386,14 @@ function PokemonDetailView(props: {
                     {(group) => (
                       <a
                         href={`/egg-groups/${group}`}
-                        class="border px-2.5 py-0.5 font-medium text-xs uppercase tracking-wider transition-colors hover:bg-secondary/60"
+                        class="inline-flex items-center gap-1.5 border px-2.5 py-0.5 font-medium text-xs uppercase tracking-wider transition-colors hover:bg-secondary/60"
                         style={{
                           "border-color": `${getEggGroupColor(group)}40`,
                           "background-color": `${getEggGroupColor(group)}15`,
                           color: getEggGroupColor(group),
                         }}
                       >
+                        <EggGroupIcon group={group} />
                         {formatEggGroup(group)}
                       </a>
                     )}
@@ -488,13 +505,24 @@ function PokemonDetailView(props: {
                     <a
                       href={`/pokemon/${member.slug}`}
                       class={cn(
-                        "border px-3 py-1 text-sm transition-colors",
+                        "inline-flex items-center gap-2 border px-3 py-1 text-sm transition-colors",
                         member.slug === detail().slug
                           ? "border-foreground bg-foreground text-background"
                           : "border-border bg-secondary hover:border-muted-foreground"
                       )}
                     >
-                      {member.name}
+                      <PokemonSprite
+                        dexNumber={member.dexNumber}
+                        name={member.name}
+                        class={cn(
+                          "h-7 w-7",
+                          member.slug === detail().slug
+                            ? "border-background/30 bg-background/15"
+                            : "border-border bg-secondary/50"
+                        )}
+                        imageClass="h-5 w-5"
+                      />
+                      <span>{member.name}</span>
                     </a>
                   )}
                 </For>
@@ -649,33 +677,52 @@ function DexNavCard(props: { pokemon: PokemonDexNavItem | null; direction: "prev
 }
 
 function TypeIcon(props: { type: string }) {
-  // Simple circle indicator for type
-  const colors: Record<string, string> = {
-    normal: "#A8A878",
-    fire: "#F08030",
-    water: "#6890F0",
-    electric: "#F8D030",
-    grass: "#78C850",
-    ice: "#98D8D8",
-    fighting: "#C03028",
-    poison: "#A040A0",
-    ground: "#E0C068",
-    flying: "#A890F0",
-    psychic: "#F85888",
-    bug: "#A8B820",
-    rock: "#B8A038",
-    ghost: "#705898",
-    dragon: "#7038F8",
-    dark: "#705848",
-    steel: "#B8B8D0",
-    fairy: "#EE99AC",
-  }
+  return <IconBox class="h-3.5 w-3.5" style={{ color: getTypeColor(props.type) }} />
+}
+
+function EggGroupIcon(props: { group: string }) {
+  return <IconEgg class="h-3.5 w-3.5" style={{ color: getEggGroupColor(props.group) }} />
+}
+
+function RideableHeroTag(props: { summary: RideableSummaryRecord; slug: string }) {
+  const rideableQueryHref = createMemo(
+    () => `/rideable-mons?query=${encodeURIComponent(props.slug)}`
+  )
+
+  const seatLabel = createMemo(() =>
+    props.summary.seatCount === 1 ? "1 seat" : `${props.summary.seatCount} seats`
+  )
 
   return (
-    <span
-      class="h-2 w-2"
-      style={{ "background-color": colors[props.type.toLowerCase()] || "#888" }}
-    />
+    <div class="mt-2">
+      <a
+        href={rideableQueryHref()}
+        class="inline-flex flex-wrap items-center gap-x-3 gap-y-1 border border-success/30 bg-success/10 px-2.5 py-1.5 text-xs transition-colors hover:border-success/60 hover:bg-success/15"
+      >
+        <span class="font-semibold text-success uppercase tracking-wider">Mountable</span>
+
+        <div class="flex flex-wrap items-center gap-1.5">
+          <For each={props.summary.behaviours}>
+            {(behaviour) => (
+              <span class="inline-flex items-center gap-1 border border-border bg-background/60 px-1.5 py-0.5 text-[11px]">
+                <RideableCategoryIcon
+                  category={behaviour.category}
+                  class="h-3 w-3 text-muted-foreground"
+                />
+                <RideableClassIcon classId={behaviour.classId} class="h-3 w-3" />
+                <span class="text-muted-foreground">
+                  {formatRideableCategory(behaviour.category)}
+                </span>
+                <span class="text-muted-foreground/60">/</span>
+                <span>{titleCaseFromId(behaviour.classId)}</span>
+              </span>
+            )}
+          </For>
+        </div>
+
+        <span class="text-muted-foreground">· {seatLabel()}</span>
+      </a>
+    </div>
   )
 }
 
@@ -698,8 +745,14 @@ function MovesSection(props: { moves: PokemonDetailRecord["moves"] }) {
     const visibleMoves = props.moves.filter((move) => {
       if (tab !== "all" && move.sourceType !== tab) return false
       if (!query) return true
+
+      const moveType = move.type ?? ""
+
       return (
-        move.moveName.toLowerCase().includes(query) || move.moveId.toLowerCase().includes(query)
+        move.moveName.toLowerCase().includes(query) ||
+        move.moveId.toLowerCase().includes(query) ||
+        moveType.toLowerCase().includes(query) ||
+        titleCaseFromId(moveType).toLowerCase().includes(query)
       )
     })
 
@@ -752,6 +805,7 @@ function MovesSection(props: { moves: PokemonDetailRecord["moves"] }) {
           <thead class="sticky top-0 bg-secondary">
             <tr>
               <th class="px-4 py-2 text-left font-medium text-muted-foreground">Move</th>
+              <th class="px-4 py-2 text-right font-medium text-muted-foreground">Type</th>
               <th class="px-4 py-2 text-right font-medium text-muted-foreground">Source</th>
             </tr>
           </thead>
@@ -763,6 +817,9 @@ function MovesSection(props: { moves: PokemonDetailRecord["moves"] }) {
                     <a href={`/moves/${move.moveId}`} class="hover:underline">
                       {move.moveName}
                     </a>
+                  </td>
+                  <td class="px-4 py-2.5 text-right">
+                    <MoveTypeBadge type={move.type} />
                   </td>
                   <td class="px-4 py-2.5 text-right">
                     <SourceBadge type={move.sourceType} value={move.sourceValue} />
@@ -796,6 +853,28 @@ function SourceBadge(props: { type: MoveSourceType; value: number | null }) {
       class={cn("border px-2 py-0.5 text-xs", colors[props.type] || "border-border bg-secondary")}
     >
       {formatMoveSource(props.type, props.value)}
+    </span>
+  )
+}
+
+function MoveTypeBadge(props: { type: string | null }) {
+  if (!props.type) {
+    return <span class="text-muted-foreground text-xs">-</span>
+  }
+
+  const color = getTypeColor(props.type)
+
+  return (
+    <span
+      class="inline-flex items-center gap-1 border px-2 py-0.5 font-mono text-[10px] uppercase tracking-wider"
+      style={{
+        "border-color": `${color}66`,
+        "background-color": `${color}1a`,
+        color,
+      }}
+    >
+      <TypeIcon type={props.type} />
+      {titleCaseFromId(props.type)}
     </span>
   )
 }

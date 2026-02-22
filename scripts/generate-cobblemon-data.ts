@@ -13,6 +13,7 @@ import type {
   PokemonDexNavItem,
   PokemonFormRecord,
   PokemonListItem,
+  RideableMonRecord,
   SearchDocument,
   SpawnEntryRecord,
 } from "../src/data/cobblemon-types"
@@ -26,6 +27,7 @@ import {
   parsePokemonRef,
   titleCaseFromId,
 } from "../src/data/formatters"
+import { parseRideableSummary } from "../src/data/rideable"
 
 const PROJECT_ROOT = path.resolve(import.meta.dir, "..")
 const DEFAULT_UPSTREAM_ROOT = path.resolve(PROJECT_ROOT, ".tmp-cobblemon")
@@ -84,6 +86,11 @@ type ShowdownData = {
     string,
     {
       name: string
+      type: string | null
+      category: string | null
+      basePower: number | null
+      accuracy: number | null
+      alwaysHits: boolean
       shortDescription: string | null
       description: string | null
     }
@@ -98,6 +105,13 @@ type ShowdownData = {
   >
   learnsetCount: number
 }
+
+type MoveLearnerBuildEntry = {
+  methods: Set<MoveSourceType>
+  levelUpLevels: Set<number>
+}
+
+type MoveLearnersBuildMap = Map<string, Map<string, MoveLearnerBuildEntry>>
 
 await main()
 
@@ -124,7 +138,7 @@ async function main() {
     warnings: spawnWarnings,
   })
 
-  const moveLearnersBuild = new Map<string, Map<string, Set<MoveSourceType>>>()
+  const moveLearnersBuild: MoveLearnersBuildMap = new Map()
 
   const detailsBySlug = new Map<string, PokemonDetailRecord>()
   for (const speciesFile of rawSpecies) {
@@ -132,6 +146,7 @@ async function main() {
       speciesFile,
       speciesLookup,
       moveNames: showdownData.moveNames,
+      moveEntries: showdownData.moves,
       spawnEntries: spawnBySlug.get(speciesFile.slug) ?? [],
       moveLearnersBuild,
     })
@@ -153,6 +168,7 @@ async function main() {
   const pokemonDexNav = buildPokemonDexNav(pokemonList)
   const moveLearners = buildMoveLearnersIndex(detailsBySlug, moveLearnersBuild, showdownData.moves)
   const abilityIndex = buildAbilityIndex(detailsBySlug, showdownData.abilities)
+  const rideableMons = buildRideableMons(detailsBySlug)
   const searchIndex = buildSearchIndex(pokemonList, moveLearners)
 
   if (searchIndex.some((doc) => doc.resultType === "pokemon-overview" && !doc.implemented)) {
@@ -182,6 +198,7 @@ async function main() {
     pokemonDexNav,
     moveLearners,
     abilityIndex,
+    rideableMons,
     searchIndex,
     detailsBySlug,
   })
@@ -301,6 +318,11 @@ async function loadShowdownData(): Promise<ShowdownData> {
     string,
     {
       name: string
+      type: string | null
+      category: string | null
+      basePower: number | null
+      accuracy: number | null
+      alwaysHits: boolean
       shortDescription: string | null
       description: string | null
     }
@@ -314,9 +336,28 @@ async function loadShowdownData(): Promise<ShowdownData> {
     const moveName = moveEntry && typeof moveEntry.name === "string" ? moveEntry.name : null
     const resolvedName = textName ?? moveName ?? titleCaseFromId(moveId)
 
+    const moveType =
+      moveEntry && typeof moveEntry.type === "string" ? canonicalId(moveEntry.type) : null
+    const moveCategory =
+      moveEntry && typeof moveEntry.category === "string" ? canonicalId(moveEntry.category) : null
+    const basePower =
+      moveEntry && typeof moveEntry.basePower === "number" && Number.isFinite(moveEntry.basePower)
+        ? moveEntry.basePower
+        : null
+
+    const accuracyRaw = moveEntry?.accuracy
+    const accuracy =
+      typeof accuracyRaw === "number" && Number.isFinite(accuracyRaw) ? accuracyRaw : null
+    const alwaysHits = accuracyRaw === true
+
     moveNames.set(moveId, resolvedName)
     moveEntries.set(moveId, {
       name: resolvedName,
+      type: moveType,
+      category: moveCategory,
+      basePower,
+      accuracy,
+      alwaysHits,
       shortDescription: typeof textEntry?.shortDesc === "string" ? textEntry.shortDesc : null,
       description: typeof textEntry?.desc === "string" ? textEntry.desc : null,
     })
@@ -530,8 +571,9 @@ function buildPokemonDetailRecord(params: {
   speciesFile: RawSpeciesFile
   speciesLookup: Map<string, string>
   moveNames: Map<string, string>
+  moveEntries: ShowdownData["moves"]
   spawnEntries: SpawnEntryRecord[]
-  moveLearnersBuild: Map<string, Map<string, Set<MoveSourceType>>>
+  moveLearnersBuild: MoveLearnersBuildMap
 }): PokemonDetailRecord {
   const { speciesFile } = params
   const raw = speciesFile.data
@@ -568,6 +610,7 @@ function buildPokemonDetailRecord(params: {
 
   const baseMoves = parseMoveList(raw.moves, {
     moveNames: params.moveNames,
+    moveEntries: params.moveEntries,
     sourceLabel: speciesFile.slug,
     fromForm: null,
   })
@@ -577,6 +620,7 @@ function buildPokemonDetailRecord(params: {
     speciesSlug: speciesFile.slug,
     speciesName: name,
     moveNames: params.moveNames,
+    moveEntries: params.moveEntries,
     speciesLookup: params.speciesLookup,
     aliasSet: aliases,
     moveLearnersBuild: params.moveLearnersBuild,
@@ -655,9 +699,10 @@ function parseForms(
     speciesSlug: string
     speciesName: string
     moveNames: Map<string, string>
+    moveEntries: ShowdownData["moves"]
     speciesLookup: Map<string, string>
     aliasSet: Set<string>
-    moveLearnersBuild: Map<string, Map<string, Set<MoveSourceType>>>
+    moveLearnersBuild: MoveLearnersBuildMap
   }
 ): PokemonFormRecord[] {
   if (!Array.isArray(rawForms)) {
@@ -688,6 +733,7 @@ function parseForms(
 
     const formMoves = parseMoveList(rawForm.moves, {
       moveNames: params.moveNames,
+      moveEntries: params.moveEntries,
       sourceLabel: `${params.speciesSlug}:${formName}`,
       fromForm: formName,
     })
@@ -722,6 +768,7 @@ function parseMoveList(
   rawMoves: unknown,
   params: {
     moveNames: Map<string, string>
+    moveEntries: ShowdownData["moves"]
     sourceLabel: string
     fromForm: string | null
   }
@@ -745,11 +792,14 @@ function parseMoveList(
 
     const moveId = moveIdRaw.trim().toLowerCase()
     const moveName = params.moveNames.get(moveId)
+    const moveEntry = params.moveEntries.get(moveId)
     if (!moveName) {
       throw new Error(
         `Move id in species moves is not resolvable in move map: ${moveId} (${params.sourceLabel})`
       )
     }
+
+    const moveType = moveEntry?.type ?? null
 
     const parsedPrefix = parseMovePrefix(prefixRaw)
     if (!parsedPrefix) {
@@ -766,6 +816,7 @@ function parseMoveList(
       raw: rawMove,
       moveId,
       moveName,
+      type: moveType,
       sourceType: parsedPrefix.sourceType,
       sourceValue: parsedPrefix.sourceValue,
       fromForm: params.fromForm,
@@ -995,7 +1046,7 @@ function buildPokemonDexNav(pokemonList: PokemonListItem[]): PokemonDexNavItem[]
 
 function buildMoveLearnersIndex(
   detailsBySlug: Map<string, PokemonDetailRecord>,
-  moveLearnersBuild: Map<string, Map<string, Set<MoveSourceType>>>,
+  moveLearnersBuild: MoveLearnersBuildMap,
   moveMap: ShowdownData["moves"]
 ): MoveLearnersIndex {
   const entries = Array.from(moveLearnersBuild.entries()).sort(([leftMove], [rightMove]) => {
@@ -1006,7 +1057,7 @@ function buildMoveLearnersIndex(
 
   for (const [moveId, learnersMap] of entries) {
     const learners = Array.from(learnersMap.entries())
-      .map(([slug, methods]) => {
+      .map(([slug, learnerBuild]) => {
         const detail = detailsBySlug.get(slug)
         if (!detail) {
           return null
@@ -1016,7 +1067,11 @@ function buildMoveLearnersIndex(
           slug,
           name: detail.name,
           dexNumber: detail.dexNumber,
-          methods: Array.from(methods).sort((left, right) => left.localeCompare(right)),
+          methods: Array.from(learnerBuild.methods).sort((left, right) =>
+            left.localeCompare(right)
+          ),
+          eggGroups: [...detail.eggGroups].sort((left, right) => left.localeCompare(right)),
+          levelUpLevels: Array.from(learnerBuild.levelUpLevels).sort((left, right) => left - right),
         }
       })
       .filter((learner): learner is NonNullable<typeof learner> => learner !== null)
@@ -1038,6 +1093,11 @@ function buildMoveLearnersIndex(
     index[moveId] = {
       moveId,
       moveName: moveInfo?.name ?? moveName,
+      type: moveInfo?.type ?? null,
+      category: moveInfo?.category ?? null,
+      basePower: moveInfo?.basePower ?? null,
+      accuracy: moveInfo?.accuracy ?? null,
+      alwaysHits: moveInfo?.alwaysHits ?? false,
       shortDescription: moveInfo?.shortDescription ?? null,
       description: moveInfo?.description ?? null,
       learners,
@@ -1136,6 +1196,37 @@ function buildAbilityIndex(
   return index
 }
 
+function buildRideableMons(detailsBySlug: Map<string, PokemonDetailRecord>): RideableMonRecord[] {
+  return Array.from(detailsBySlug.values())
+    .filter((detail) => detail.implemented)
+    .map((detail) => {
+      const summary = parseRideableSummary(detail.rawSpecies.riding)
+      if (!summary) {
+        return null
+      }
+
+      return {
+        slug: detail.slug,
+        name: detail.name,
+        dexNumber: detail.dexNumber,
+        implemented: detail.implemented,
+        types: detail.types,
+        seatCount: summary.seatCount,
+        categories: summary.categories,
+        classes: summary.classes,
+        behaviours: summary.behaviours,
+      }
+    })
+    .filter((entry): entry is RideableMonRecord => entry !== null)
+    .sort((left, right) => {
+      if (left.dexNumber !== right.dexNumber) {
+        return left.dexNumber - right.dexNumber
+      }
+
+      return left.slug.localeCompare(right.slug)
+    })
+}
+
 function buildSearchIndex(
   pokemonList: PokemonListItem[],
   moveLearners: MoveLearnersIndex
@@ -1216,6 +1307,7 @@ async function writeArtifacts(params: {
   pokemonDexNav: PokemonDexNavItem[]
   moveLearners: MoveLearnersIndex
   abilityIndex: AbilityIndex
+  rideableMons: RideableMonRecord[]
   searchIndex: SearchDocument[]
   detailsBySlug: Map<string, PokemonDetailRecord>
 }) {
@@ -1227,6 +1319,7 @@ async function writeArtifacts(params: {
   await writeJsonFile(path.join(GENERATED_ROOT, "pokemon-dex-nav.json"), params.pokemonDexNav)
   await writeJsonFile(path.join(GENERATED_ROOT, "move-learners.json"), params.moveLearners)
   await writeJsonFile(path.join(GENERATED_ROOT, "ability-index.json"), params.abilityIndex)
+  await writeJsonFile(path.join(GENERATED_ROOT, "rideable-mons.json"), params.rideableMons)
   await writeJsonFile(path.join(GENERATED_ROOT, "search-index.json"), params.searchIndex)
 
   const sortedDetails = Array.from(params.detailsBySlug.entries()).sort(([left], [right]) => {
@@ -1440,13 +1533,13 @@ function resolvePokemonSlug(baseId: string, speciesLookup: Map<string, string>):
 }
 
 function addMovesToLearnerIndex(
-  moveLearnersBuild: Map<string, Map<string, Set<MoveSourceType>>>,
+  moveLearnersBuild: MoveLearnersBuildMap,
   slug: string,
   moves: ParsedMove[]
 ) {
   for (const move of moves) {
     if (!moveLearnersBuild.has(move.moveId)) {
-      moveLearnersBuild.set(move.moveId, new Map<string, Set<MoveSourceType>>())
+      moveLearnersBuild.set(move.moveId, new Map<string, MoveLearnerBuildEntry>())
     }
 
     const learnersMap = moveLearnersBuild.get(move.moveId)
@@ -1455,10 +1548,22 @@ function addMovesToLearnerIndex(
     }
 
     if (!learnersMap.has(slug)) {
-      learnersMap.set(slug, new Set<MoveSourceType>())
+      learnersMap.set(slug, {
+        methods: new Set<MoveSourceType>(),
+        levelUpLevels: new Set<number>(),
+      })
     }
 
-    learnersMap.get(slug)?.add(move.sourceType)
+    const learnerBuild = learnersMap.get(slug)
+    if (!learnerBuild) {
+      continue
+    }
+
+    learnerBuild.methods.add(move.sourceType)
+
+    if (move.sourceType === "level" && typeof move.sourceValue === "number") {
+      learnerBuild.levelUpLevels.add(move.sourceValue)
+    }
   }
 }
 
