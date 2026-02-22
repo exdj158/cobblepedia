@@ -108,23 +108,34 @@
   "evolutionFamily": {
     "members": [
       {
+        "nodeId": "vanillite",
         "slug": "vanillite",
         "name": "Vanillite",
-        "dexNumber": 582
+        "dexNumber": 582,
+        "formSlug": null,
+        "formName": null
       },
       {
+        "nodeId": "vanillish",
         "slug": "vanillish",
         "name": "Vanillish",
-        "dexNumber": 583
+        "dexNumber": 583,
+        "formSlug": null,
+        "formName": null
       },
       {
+        "nodeId": "vanilluxe",
         "slug": "vanilluxe",
         "name": "Vanilluxe",
-        "dexNumber": 584
+        "dexNumber": 584,
+        "formSlug": null,
+        "formName": null
       }
     ],
     "edges": [
       {
+        "fromNodeId": "vanillish",
+        "toNodeId": "vanilluxe",
         "fromSlug": "vanillish",
         "toSlug": "vanilluxe",
         "method": "level_up",
@@ -133,6 +144,8 @@
         ]
       },
       {
+        "fromNodeId": "vanillite",
+        "toNodeId": "vanillish",
         "fromSlug": "vanillite",
         "toSlug": "vanillish",
         "method": "level_up",

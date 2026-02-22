@@ -71,27 +71,34 @@
   "evolutionFamily": {
     "members": [
       {
+        "nodeId": "petilil",
         "slug": "petilil",
         "name": "Petilil",
-        "dexNumber": 548
+        "dexNumber": 548,
+        "formSlug": null,
+        "formName": null
       },
       {
+        "nodeId": "lilligant",
         "slug": "lilligant",
         "name": "Lilligant",
-        "dexNumber": 549
+        "dexNumber": 549,
+        "formSlug": null,
+        "formName": null
+      },
+      {
+        "nodeId": "lilligant-hisui",
+        "slug": "lilligant",
+        "name": "Lilligant",
+        "dexNumber": 549,
+        "formSlug": "lilligant-hisui",
+        "formName": "Hisui"
       }
     ],
     "edges": [
       {
-        "fromSlug": "petilil",
-        "toSlug": "lilligant",
-        "method": "item_interact",
-        "requirementText": [
-          "Use Sun Stone",
-          "Biome Evolution/regional/petilil Hisuibiome"
-        ]
-      },
-      {
+        "fromNodeId": "petilil",
+        "toNodeId": "lilligant",
         "fromSlug": "petilil",
         "toSlug": "lilligant",
         "method": "item_interact",
@@ -100,12 +107,35 @@
         ]
       },
       {
+        "fromNodeId": "petilil",
+        "toNodeId": "lilligant",
         "fromSlug": "petilil",
         "toSlug": "lilligant",
         "method": "item_interact",
         "requirementText": [
           "Use Sun Stone",
-          "Biome Evolution/regional/petilil Unovabiome"
+          "Biome Evolution Regional Petilil Unovabiome"
+        ]
+      },
+      {
+        "fromNodeId": "petilil",
+        "toNodeId": "lilligant-hisui",
+        "fromSlug": "petilil",
+        "toSlug": "lilligant",
+        "method": "item_interact",
+        "requirementText": [
+          "Use Sun Stone",
+          "Biome Evolution Regional Petilil Hisuibiome"
+        ]
+      },
+      {
+        "fromNodeId": "petilil",
+        "toNodeId": "lilligant-hisui",
+        "fromSlug": "petilil",
+        "toSlug": "lilligant",
+        "method": "item_interact",
+        "requirementText": [
+          "Use Sun Stone"
         ]
       }
     ],

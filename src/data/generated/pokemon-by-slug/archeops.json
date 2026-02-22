@@ -65,18 +65,26 @@
   "evolutionFamily": {
     "members": [
       {
+        "nodeId": "archen",
         "slug": "archen",
         "name": "Archen",
-        "dexNumber": 566
+        "dexNumber": 566,
+        "formSlug": null,
+        "formName": null
       },
       {
+        "nodeId": "archeops",
         "slug": "archeops",
         "name": "Archeops",
-        "dexNumber": 567
+        "dexNumber": 567,
+        "formSlug": null,
+        "formName": null
       }
     ],
     "edges": [
       {
+        "fromNodeId": "archen",
+        "toNodeId": "archeops",
         "fromSlug": "archen",
         "toSlug": "archeops",
         "method": "level_up",

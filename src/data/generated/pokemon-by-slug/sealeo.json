@@ -114,23 +114,34 @@
   "evolutionFamily": {
     "members": [
       {
+        "nodeId": "spheal",
         "slug": "spheal",
         "name": "Spheal",
-        "dexNumber": 363
+        "dexNumber": 363,
+        "formSlug": null,
+        "formName": null
       },
       {
+        "nodeId": "sealeo",
         "slug": "sealeo",
         "name": "Sealeo",
-        "dexNumber": 364
+        "dexNumber": 364,
+        "formSlug": null,
+        "formName": null
       },
       {
+        "nodeId": "walrein",
         "slug": "walrein",
         "name": "Walrein",
-        "dexNumber": 365
+        "dexNumber": 365,
+        "formSlug": null,
+        "formName": null
       }
     ],
     "edges": [
       {
+        "fromNodeId": "sealeo",
+        "toNodeId": "walrein",
         "fromSlug": "sealeo",
         "toSlug": "walrein",
         "method": "level_up",
@@ -139,6 +150,8 @@
         ]
       },
       {
+        "fromNodeId": "spheal",
+        "toNodeId": "sealeo",
         "fromSlug": "spheal",
         "toSlug": "sealeo",
         "method": "level_up",

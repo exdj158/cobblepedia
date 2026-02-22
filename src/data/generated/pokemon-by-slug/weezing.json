@@ -71,18 +71,34 @@
   "evolutionFamily": {
     "members": [
       {
+        "nodeId": "koffing",
         "slug": "koffing",
         "name": "Koffing",
-        "dexNumber": 109
+        "dexNumber": 109,
+        "formSlug": null,
+        "formName": null
       },
       {
+        "nodeId": "weezing",
         "slug": "weezing",
         "name": "Weezing",
-        "dexNumber": 110
+        "dexNumber": 110,
+        "formSlug": null,
+        "formName": null
+      },
+      {
+        "nodeId": "weezing-galar",
+        "slug": "weezing",
+        "name": "Weezing",
+        "dexNumber": 110,
+        "formSlug": "weezing-galar",
+        "formName": "Galar"
       }
     ],
     "edges": [
       {
+        "fromNodeId": "koffing",
+        "toNodeId": "weezing",
         "fromSlug": "koffing",
         "toSlug": "weezing",
         "method": "level_up",
@@ -91,21 +107,35 @@
         ]
       },
       {
+        "fromNodeId": "koffing",
+        "toNodeId": "weezing",
         "fromSlug": "koffing",
         "toSlug": "weezing",
         "method": "level_up",
         "requirementText": [
           "Level 35+",
-          "Biome Evolution/regional/koffing Galarbiome"
+          "Biome Evolution Regional Koffing Kantobiome"
         ]
       },
       {
+        "fromNodeId": "koffing",
+        "toNodeId": "weezing-galar",
         "fromSlug": "koffing",
         "toSlug": "weezing",
         "method": "level_up",
         "requirementText": [
           "Level 35+",
-          "Biome Evolution/regional/koffing Kantobiome"
+          "Biome Evolution Regional Koffing Galarbiome"
+        ]
+      },
+      {
+        "fromNodeId": "koffing",
+        "toNodeId": "weezing-galar",
+        "fromSlug": "koffing",
+        "toSlug": "weezing",
+        "method": "level_up",
+        "requirementText": [
+          "Level 35+"
         ]
       }
     ],

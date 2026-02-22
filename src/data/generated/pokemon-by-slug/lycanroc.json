@@ -74,18 +74,42 @@
   "evolutionFamily": {
     "members": [
       {
+        "nodeId": "rockruff",
         "slug": "rockruff",
         "name": "Rockruff",
-        "dexNumber": 744
+        "dexNumber": 744,
+        "formSlug": null,
+        "formName": null
       },
       {
+        "nodeId": "lycanroc",
         "slug": "lycanroc",
         "name": "Lycanroc",
-        "dexNumber": 745
+        "dexNumber": 745,
+        "formSlug": null,
+        "formName": null
+      },
+      {
+        "nodeId": "lycanroc-dusk",
+        "slug": "lycanroc",
+        "name": "Lycanroc",
+        "dexNumber": 745,
+        "formSlug": "lycanroc-dusk",
+        "formName": "Dusk"
+      },
+      {
+        "nodeId": "lycanroc-midnight",
+        "slug": "lycanroc",
+        "name": "Lycanroc",
+        "dexNumber": 745,
+        "formSlug": "lycanroc-midnight",
+        "formName": "Midnight"
       }
     ],
     "edges": [
       {
+        "fromNodeId": "rockruff",
+        "toNodeId": "lycanroc",
         "fromSlug": "rockruff",
         "toSlug": "lycanroc",
         "method": "level_up",
@@ -95,21 +119,25 @@
         ]
       },
       {
-        "fromSlug": "rockruff",
-        "toSlug": "lycanroc",
-        "method": "level_up",
-        "requirementText": [
-          "Level 25+",
-          "Time: Night"
-        ]
-      },
-      {
+        "fromNodeId": "rockruff",
+        "toNodeId": "lycanroc-dusk",
         "fromSlug": "rockruff",
         "toSlug": "lycanroc",
         "method": "level_up",
         "requirementText": [
           "Level 25+",
           "Time: Dusk"
+        ]
+      },
+      {
+        "fromNodeId": "rockruff",
+        "toNodeId": "lycanroc-midnight",
+        "fromSlug": "rockruff",
+        "toSlug": "lycanroc",
+        "method": "level_up",
+        "requirementText": [
+          "Level 25+",
+          "Time: Night"
         ]
       }
     ],

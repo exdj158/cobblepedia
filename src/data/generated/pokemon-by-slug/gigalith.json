@@ -68,29 +68,42 @@
   "evolutionFamily": {
     "members": [
       {
+        "nodeId": "roggenrola",
         "slug": "roggenrola",
         "name": "Roggenrola",
-        "dexNumber": 524
+        "dexNumber": 524,
+        "formSlug": null,
+        "formName": null
       },
       {
+        "nodeId": "boldore",
         "slug": "boldore",
         "name": "Boldore",
-        "dexNumber": 525
+        "dexNumber": 525,
+        "formSlug": null,
+        "formName": null
       },
       {
+        "nodeId": "gigalith",
         "slug": "gigalith",
         "name": "Gigalith",
-        "dexNumber": 526
+        "dexNumber": 526,
+        "formSlug": null,
+        "formName": null
       }
     ],
     "edges": [
       {
+        "fromNodeId": "boldore",
+        "toNodeId": "gigalith",
         "fromSlug": "boldore",
         "toSlug": "gigalith",
         "method": "trade",
         "requirementText": []
       },
       {
+        "fromNodeId": "roggenrola",
+        "toNodeId": "boldore",
         "fromSlug": "roggenrola",
         "toSlug": "boldore",
         "method": "level_up",

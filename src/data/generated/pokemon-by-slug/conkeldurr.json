@@ -68,29 +68,42 @@
   "evolutionFamily": {
     "members": [
       {
+        "nodeId": "timburr",
         "slug": "timburr",
         "name": "Timburr",
-        "dexNumber": 532
+        "dexNumber": 532,
+        "formSlug": null,
+        "formName": null
       },
       {
+        "nodeId": "gurdurr",
         "slug": "gurdurr",
         "name": "Gurdurr",
-        "dexNumber": 533
+        "dexNumber": 533,
+        "formSlug": null,
+        "formName": null
       },
       {
+        "nodeId": "conkeldurr",
         "slug": "conkeldurr",
         "name": "Conkeldurr",
-        "dexNumber": 534
+        "dexNumber": 534,
+        "formSlug": null,
+        "formName": null
       }
     ],
     "edges": [
       {
+        "fromNodeId": "gurdurr",
+        "toNodeId": "conkeldurr",
         "fromSlug": "gurdurr",
         "toSlug": "conkeldurr",
         "method": "trade",
         "requirementText": []
       },
       {
+        "fromNodeId": "timburr",
+        "toNodeId": "gurdurr",
         "fromSlug": "timburr",
         "toSlug": "gurdurr",
         "method": "level_up",

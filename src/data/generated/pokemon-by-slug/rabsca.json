@@ -63,18 +63,26 @@
   "evolutionFamily": {
     "members": [
       {
+        "nodeId": "rellor",
         "slug": "rellor",
         "name": "Rellor",
-        "dexNumber": 953
+        "dexNumber": 953,
+        "formSlug": null,
+        "formName": null
       },
       {
+        "nodeId": "rabsca",
         "slug": "rabsca",
         "name": "Rabsca",
-        "dexNumber": 954
+        "dexNumber": 954,
+        "formSlug": null,
+        "formName": null
       }
     ],
     "edges": [
       {
+        "fromNodeId": "rellor",
+        "toNodeId": "rabsca",
         "fromSlug": "rellor",
         "toSlug": "rabsca",
         "method": "level_up",

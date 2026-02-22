@@ -107,31 +107,49 @@
   "evolutionFamily": {
     "members": [
       {
+        "nodeId": "voltorb",
         "slug": "voltorb",
         "name": "Voltorb",
-        "dexNumber": 100
+        "dexNumber": 100,
+        "formSlug": null,
+        "formName": null
       },
       {
+        "nodeId": "electrode",
         "slug": "electrode",
         "name": "Electrode",
-        "dexNumber": 101
+        "dexNumber": 101,
+        "formSlug": null,
+        "formName": null
+      },
+      {
+        "nodeId": "electrode-hisui",
+        "slug": "electrode",
+        "name": "Electrode",
+        "dexNumber": 101,
+        "formSlug": "electrode-hisui",
+        "formName": "Hisui"
       }
     ],
     "edges": [
       {
-        "fromSlug": "voltorb",
-        "toSlug": "electrode",
-        "method": "item_interact",
-        "requirementText": [
-          "Use Leaf Stone"
-        ]
-      },
-      {
+        "fromNodeId": "voltorb",
+        "toNodeId": "electrode",
         "fromSlug": "voltorb",
         "toSlug": "electrode",
         "method": "level_up",
         "requirementText": [
           "Level 30+"
+        ]
+      },
+      {
+        "fromNodeId": "voltorb",
+        "toNodeId": "electrode-hisui",
+        "fromSlug": "voltorb",
+        "toSlug": "electrode",
+        "method": "item_interact",
+        "requirementText": [
+          "Use Leaf Stone"
         ]
       }
     ],

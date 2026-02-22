@@ -103,23 +103,34 @@
   "evolutionFamily": {
     "members": [
       {
+        "nodeId": "tepig",
         "slug": "tepig",
         "name": "Tepig",
-        "dexNumber": 498
+        "dexNumber": 498,
+        "formSlug": null,
+        "formName": null
       },
       {
+        "nodeId": "pignite",
         "slug": "pignite",
         "name": "Pignite",
-        "dexNumber": 499
+        "dexNumber": 499,
+        "formSlug": null,
+        "formName": null
       },
       {
+        "nodeId": "emboar",
         "slug": "emboar",
         "name": "Emboar",
-        "dexNumber": 500
+        "dexNumber": 500,
+        "formSlug": null,
+        "formName": null
       }
     ],
     "edges": [
       {
+        "fromNodeId": "pignite",
+        "toNodeId": "emboar",
         "fromSlug": "pignite",
         "toSlug": "emboar",
         "method": "level_up",
@@ -128,6 +139,8 @@
         ]
       },
       {
+        "fromNodeId": "tepig",
+        "toNodeId": "pignite",
         "fromSlug": "tepig",
         "toSlug": "pignite",
         "method": "level_up",

@@ -69,18 +69,26 @@
   "evolutionFamily": {
     "members": [
       {
+        "nodeId": "stufful",
         "slug": "stufful",
         "name": "Stufful",
-        "dexNumber": 759
+        "dexNumber": 759,
+        "formSlug": null,
+        "formName": null
       },
       {
+        "nodeId": "bewear",
         "slug": "bewear",
         "name": "Bewear",
-        "dexNumber": 760
+        "dexNumber": 760,
+        "formSlug": null,
+        "formName": null
       }
     ],
     "edges": [
       {
+        "fromNodeId": "stufful",
+        "toNodeId": "bewear",
         "fromSlug": "stufful",
         "toSlug": "bewear",
         "method": "level_up",

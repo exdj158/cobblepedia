@@ -63,18 +63,26 @@
   "evolutionFamily": {
     "members": [
       {
+        "nodeId": "sandygast",
         "slug": "sandygast",
         "name": "Sandygast",
-        "dexNumber": 769
+        "dexNumber": 769,
+        "formSlug": null,
+        "formName": null
       },
       {
+        "nodeId": "palossand",
         "slug": "palossand",
         "name": "Palossand",
-        "dexNumber": 770
+        "dexNumber": 770,
+        "formSlug": null,
+        "formName": null
       }
     ],
     "edges": [
       {
+        "fromNodeId": "sandygast",
+        "toNodeId": "palossand",
         "fromSlug": "sandygast",
         "toSlug": "palossand",
         "method": "level_up",

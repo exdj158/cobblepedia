@@ -100,18 +100,26 @@
   "evolutionFamily": {
     "members": [
       {
+        "nodeId": "dewpider",
         "slug": "dewpider",
         "name": "Dewpider",
-        "dexNumber": 751
+        "dexNumber": 751,
+        "formSlug": null,
+        "formName": null
       },
       {
+        "nodeId": "araquanid",
         "slug": "araquanid",
         "name": "Araquanid",
-        "dexNumber": 752
+        "dexNumber": 752,
+        "formSlug": null,
+        "formName": null
       }
     ],
     "edges": [
       {
+        "fromNodeId": "dewpider",
+        "toNodeId": "araquanid",
         "fromSlug": "dewpider",
         "toSlug": "araquanid",
         "method": "level_up",

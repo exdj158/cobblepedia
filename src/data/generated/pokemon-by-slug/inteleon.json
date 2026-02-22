@@ -65,23 +65,34 @@
   "evolutionFamily": {
     "members": [
       {
+        "nodeId": "sobble",
         "slug": "sobble",
         "name": "Sobble",
-        "dexNumber": 816
+        "dexNumber": 816,
+        "formSlug": null,
+        "formName": null
       },
       {
+        "nodeId": "drizzile",
         "slug": "drizzile",
         "name": "Drizzile",
-        "dexNumber": 817
+        "dexNumber": 817,
+        "formSlug": null,
+        "formName": null
       },
       {
+        "nodeId": "inteleon",
         "slug": "inteleon",
         "name": "Inteleon",
-        "dexNumber": 818
+        "dexNumber": 818,
+        "formSlug": null,
+        "formName": null
       }
     ],
     "edges": [
       {
+        "fromNodeId": "drizzile",
+        "toNodeId": "inteleon",
         "fromSlug": "drizzile",
         "toSlug": "inteleon",
         "method": "level_up",
@@ -90,6 +101,8 @@
         ]
       },
       {
+        "fromNodeId": "sobble",
+        "toNodeId": "drizzile",
         "fromSlug": "sobble",
         "toSlug": "drizzile",
         "method": "level_up",

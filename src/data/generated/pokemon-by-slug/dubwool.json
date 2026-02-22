@@ -68,18 +68,26 @@
   "evolutionFamily": {
     "members": [
       {
+        "nodeId": "wooloo",
         "slug": "wooloo",
         "name": "Wooloo",
-        "dexNumber": 831
+        "dexNumber": 831,
+        "formSlug": null,
+        "formName": null
       },
       {
+        "nodeId": "dubwool",
         "slug": "dubwool",
         "name": "Dubwool",
-        "dexNumber": 832
+        "dexNumber": 832,
+        "formSlug": null,
+        "formName": null
       }
     ],
     "edges": [
       {
+        "fromNodeId": "wooloo",
+        "toNodeId": "dubwool",
         "fromSlug": "wooloo",
         "toSlug": "dubwool",
         "method": "level_up",

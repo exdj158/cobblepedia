@@ -73,31 +73,50 @@
   "evolutionFamily": {
     "members": [
       {
+        "nodeId": "slowpoke",
         "slug": "slowpoke",
         "name": "Slowpoke",
-        "dexNumber": 79
+        "dexNumber": 79,
+        "formSlug": null,
+        "formName": null
       },
       {
+        "nodeId": "slowbro",
         "slug": "slowbro",
         "name": "Slowbro",
-        "dexNumber": 80
+        "dexNumber": 80,
+        "formSlug": null,
+        "formName": null
       },
       {
+        "nodeId": "slowbro-galar",
+        "slug": "slowbro",
+        "name": "Slowbro",
+        "dexNumber": 80,
+        "formSlug": "slowbro-galar",
+        "formName": "Galar"
+      },
+      {
+        "nodeId": "slowking",
         "slug": "slowking",
         "name": "Slowking",
-        "dexNumber": 199
+        "dexNumber": 199,
+        "formSlug": null,
+        "formName": null
+      },
+      {
+        "nodeId": "slowking-galar",
+        "slug": "slowking",
+        "name": "Slowking",
+        "dexNumber": 199,
+        "formSlug": "slowking-galar",
+        "formName": "Galar"
       }
     ],
     "edges": [
       {
-        "fromSlug": "slowpoke",
-        "toSlug": "slowbro",
-        "method": "item_interact",
-        "requirementText": [
-          "Use Galarica Cuff"
-        ]
-      },
-      {
+        "fromNodeId": "slowpoke",
+        "toNodeId": "slowbro",
         "fromSlug": "slowpoke",
         "toSlug": "slowbro",
         "method": "level_up",
@@ -106,19 +125,33 @@
         ]
       },
       {
+        "fromNodeId": "slowpoke",
+        "toNodeId": "slowbro-galar",
         "fromSlug": "slowpoke",
-        "toSlug": "slowking",
+        "toSlug": "slowbro",
         "method": "item_interact",
         "requirementText": [
-          "Use Galarica Wreath"
+          "Use Galarica Cuff"
         ]
       },
       {
+        "fromNodeId": "slowpoke",
+        "toNodeId": "slowking",
         "fromSlug": "slowpoke",
         "toSlug": "slowking",
         "method": "trade",
         "requirementText": [
           "Hold Kings Rock"
+        ]
+      },
+      {
+        "fromNodeId": "slowpoke",
+        "toNodeId": "slowking-galar",
+        "fromSlug": "slowpoke",
+        "toSlug": "slowking",
+        "method": "item_interact",
+        "requirementText": [
+          "Use Galarica Wreath"
         ]
       }
     ],

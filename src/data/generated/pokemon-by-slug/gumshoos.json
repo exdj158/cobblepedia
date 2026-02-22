@@ -68,18 +68,26 @@
   "evolutionFamily": {
     "members": [
       {
+        "nodeId": "yungoos",
         "slug": "yungoos",
         "name": "Yungoos",
-        "dexNumber": 734
+        "dexNumber": 734,
+        "formSlug": null,
+        "formName": null
       },
       {
+        "nodeId": "gumshoos",
         "slug": "gumshoos",
         "name": "Gumshoos",
-        "dexNumber": 735
+        "dexNumber": 735,
+        "formSlug": null,
+        "formName": null
       }
     ],
     "edges": [
       {
+        "fromNodeId": "yungoos",
+        "toNodeId": "gumshoos",
         "fromSlug": "yungoos",
         "toSlug": "gumshoos",
         "method": "level_up",

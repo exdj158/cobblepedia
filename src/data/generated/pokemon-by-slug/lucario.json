@@ -72,18 +72,26 @@
   "evolutionFamily": {
     "members": [
       {
+        "nodeId": "riolu",
         "slug": "riolu",
         "name": "Riolu",
-        "dexNumber": 447
+        "dexNumber": 447,
+        "formSlug": null,
+        "formName": null
       },
       {
+        "nodeId": "lucario",
         "slug": "lucario",
         "name": "Lucario",
-        "dexNumber": 448
+        "dexNumber": 448,
+        "formSlug": null,
+        "formName": null
       }
     ],
     "edges": [
       {
+        "fromNodeId": "riolu",
+        "toNodeId": "lucario",
         "fromSlug": "riolu",
         "toSlug": "lucario",
         "method": "level_up",

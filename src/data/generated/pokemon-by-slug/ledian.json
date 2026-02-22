@@ -69,18 +69,26 @@
   "evolutionFamily": {
     "members": [
       {
+        "nodeId": "ledyba",
         "slug": "ledyba",
         "name": "Ledyba",
-        "dexNumber": 165
+        "dexNumber": 165,
+        "formSlug": null,
+        "formName": null
       },
       {
+        "nodeId": "ledian",
         "slug": "ledian",
         "name": "Ledian",
-        "dexNumber": 166
+        "dexNumber": 166,
+        "formSlug": null,
+        "formName": null
       }
     ],
     "edges": [
       {
+        "fromNodeId": "ledyba",
+        "toNodeId": "ledian",
         "fromSlug": "ledyba",
         "toSlug": "ledian",
         "method": "level_up",

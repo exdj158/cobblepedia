@@ -109,18 +109,26 @@
   "evolutionFamily": {
     "members": [
       {
+        "nodeId": "stunky",
         "slug": "stunky",
         "name": "Stunky",
-        "dexNumber": 434
+        "dexNumber": 434,
+        "formSlug": null,
+        "formName": null
       },
       {
+        "nodeId": "skuntank",
         "slug": "skuntank",
         "name": "Skuntank",
-        "dexNumber": 435
+        "dexNumber": 435,
+        "formSlug": null,
+        "formName": null
       }
     ],
     "edges": [
       {
+        "fromNodeId": "stunky",
+        "toNodeId": "skuntank",
         "fromSlug": "stunky",
         "toSlug": "skuntank",
         "method": "level_up",

@@ -63,18 +63,26 @@
   "evolutionFamily": {
     "members": [
       {
+        "nodeId": "nymble",
         "slug": "nymble",
         "name": "Nymble",
-        "dexNumber": 919
+        "dexNumber": 919,
+        "formSlug": null,
+        "formName": null
       },
       {
+        "nodeId": "lokix",
         "slug": "lokix",
         "name": "Lokix",
-        "dexNumber": 920
+        "dexNumber": 920,
+        "formSlug": null,
+        "formName": null
       }
     ],
     "edges": [
       {
+        "fromNodeId": "nymble",
+        "toNodeId": "lokix",
         "fromSlug": "nymble",
         "toSlug": "lokix",
         "method": "level_up",

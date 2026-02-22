@@ -121,7 +121,7 @@
       ],
       "requirementText": [
         "Level 36+",
-        "Biome Evolution/regional/dewott Hisuibiome"
+        "Biome Evolution Regional Dewott Hisuibiome"
       ],
       "requirements": [
         {
@@ -134,7 +134,7 @@
         },
         {
           "variant": "biome",
-          "text": "Biome Evolution/regional/dewott Hisuibiome",
+          "text": "Biome Evolution Regional Dewott Hisuibiome",
           "raw": {
             "variant": "biome",
             "biomeCondition": "#cobblemon:evolution/regional/dewott_hisuibiome"
@@ -167,23 +167,42 @@
   "evolutionFamily": {
     "members": [
       {
+        "nodeId": "oshawott",
         "slug": "oshawott",
         "name": "Oshawott",
-        "dexNumber": 501
+        "dexNumber": 501,
+        "formSlug": null,
+        "formName": null
       },
       {
+        "nodeId": "dewott",
         "slug": "dewott",
         "name": "Dewott",
-        "dexNumber": 502
+        "dexNumber": 502,
+        "formSlug": null,
+        "formName": null
       },
       {
+        "nodeId": "samurott",
         "slug": "samurott",
         "name": "Samurott",
-        "dexNumber": 503
+        "dexNumber": 503,
+        "formSlug": null,
+        "formName": null
+      },
+      {
+        "nodeId": "samurott-hisui",
+        "slug": "samurott",
+        "name": "Samurott",
+        "dexNumber": 503,
+        "formSlug": "samurott-hisui",
+        "formName": "Hisui"
       }
     ],
     "edges": [
       {
+        "fromNodeId": "dewott",
+        "toNodeId": "samurott",
         "fromSlug": "dewott",
         "toSlug": "samurott",
         "method": "level_up",
@@ -192,24 +211,40 @@
         ]
       },
       {
+        "fromNodeId": "dewott",
+        "toNodeId": "samurott",
         "fromSlug": "dewott",
         "toSlug": "samurott",
         "method": "level_up",
         "requirementText": [
           "Level 36+",
-          "Biome Evolution/regional/dewott Hisuibiome"
+          "Biome Evolution Regional Dewott Unovabiome"
         ]
       },
       {
+        "fromNodeId": "dewott",
+        "toNodeId": "samurott-hisui",
         "fromSlug": "dewott",
         "toSlug": "samurott",
         "method": "level_up",
         "requirementText": [
           "Level 36+",
-          "Biome Evolution/regional/dewott Unovabiome"
+          "Biome Evolution Regional Dewott Hisuibiome"
         ]
       },
       {
+        "fromNodeId": "dewott",
+        "toNodeId": "samurott-hisui",
+        "fromSlug": "dewott",
+        "toSlug": "samurott",
+        "method": "level_up",
+        "requirementText": [
+          "Level 36+"
+        ]
+      },
+      {
+        "fromNodeId": "oshawott",
+        "toNodeId": "dewott",
         "fromSlug": "oshawott",
         "toSlug": "dewott",
         "method": "level_up",
@@ -1914,7 +1949,7 @@
           ],
           "requirementText": [
             "Level 36+",
-            "Biome Evolution/regional/dewott Unovabiome"
+            "Biome Evolution Regional Dewott Unovabiome"
           ],
           "requirements": [
             {
@@ -1927,7 +1962,7 @@
             },
             {
               "variant": "biome",
-              "text": "Biome Evolution/regional/dewott Unovabiome",
+              "text": "Biome Evolution Regional Dewott Unovabiome",
               "raw": {
                 "variant": "biome",
                 "biomeCondition": "#cobblemon:evolution/regional/dewott_unovabiome"

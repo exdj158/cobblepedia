@@ -68,18 +68,26 @@
   "evolutionFamily": {
     "members": [
       {
+        "nodeId": "gossifleur",
         "slug": "gossifleur",
         "name": "Gossifleur",
-        "dexNumber": 829
+        "dexNumber": 829,
+        "formSlug": null,
+        "formName": null
       },
       {
+        "nodeId": "eldegoss",
         "slug": "eldegoss",
         "name": "Eldegoss",
-        "dexNumber": 830
+        "dexNumber": 830,
+        "formSlug": null,
+        "formName": null
       }
     ],
     "edges": [
       {
+        "fromNodeId": "gossifleur",
+        "toNodeId": "eldegoss",
         "fromSlug": "gossifleur",
         "toSlug": "eldegoss",
         "method": "level_up",

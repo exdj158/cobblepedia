@@ -68,18 +68,26 @@
   "evolutionFamily": {
     "members": [
       {
+        "nodeId": "blitzle",
         "slug": "blitzle",
         "name": "Blitzle",
-        "dexNumber": 522
+        "dexNumber": 522,
+        "formSlug": null,
+        "formName": null
       },
       {
+        "nodeId": "zebstrika",
         "slug": "zebstrika",
         "name": "Zebstrika",
-        "dexNumber": 523
+        "dexNumber": 523,
+        "formSlug": null,
+        "formName": null
       }
     ],
     "edges": [
       {
+        "fromNodeId": "blitzle",
+        "toNodeId": "zebstrika",
         "fromSlug": "blitzle",
         "toSlug": "zebstrika",
         "method": "level_up",

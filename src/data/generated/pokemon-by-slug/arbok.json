@@ -69,18 +69,26 @@
   "evolutionFamily": {
     "members": [
       {
+        "nodeId": "ekans",
         "slug": "ekans",
         "name": "Ekans",
-        "dexNumber": 23
+        "dexNumber": 23,
+        "formSlug": null,
+        "formName": null
       },
       {
+        "nodeId": "arbok",
         "slug": "arbok",
         "name": "Arbok",
-        "dexNumber": 24
+        "dexNumber": 24,
+        "formSlug": null,
+        "formName": null
       }
     ],
     "edges": [
       {
+        "fromNodeId": "ekans",
+        "toNodeId": "arbok",
         "fromSlug": "ekans",
         "toSlug": "arbok",
         "method": "level_up",

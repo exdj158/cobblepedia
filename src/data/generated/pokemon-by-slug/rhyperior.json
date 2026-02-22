@@ -70,23 +70,34 @@
   "evolutionFamily": {
     "members": [
       {
+        "nodeId": "rhyhorn",
         "slug": "rhyhorn",
         "name": "Rhyhorn",
-        "dexNumber": 111
+        "dexNumber": 111,
+        "formSlug": null,
+        "formName": null
       },
       {
+        "nodeId": "rhydon",
         "slug": "rhydon",
         "name": "Rhydon",
-        "dexNumber": 112
+        "dexNumber": 112,
+        "formSlug": null,
+        "formName": null
       },
       {
+        "nodeId": "rhyperior",
         "slug": "rhyperior",
         "name": "Rhyperior",
-        "dexNumber": 464
+        "dexNumber": 464,
+        "formSlug": null,
+        "formName": null
       }
     ],
     "edges": [
       {
+        "fromNodeId": "rhydon",
+        "toNodeId": "rhyperior",
         "fromSlug": "rhydon",
         "toSlug": "rhyperior",
         "method": "trade",
@@ -95,6 +106,8 @@
         ]
       },
       {
+        "fromNodeId": "rhyhorn",
+        "toNodeId": "rhydon",
         "fromSlug": "rhyhorn",
         "toSlug": "rhydon",
         "method": "level_up",

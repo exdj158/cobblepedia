@@ -108,18 +108,26 @@
   "evolutionFamily": {
     "members": [
       {
+        "nodeId": "cubchoo",
         "slug": "cubchoo",
         "name": "Cubchoo",
-        "dexNumber": 613
+        "dexNumber": 613,
+        "formSlug": null,
+        "formName": null
       },
       {
+        "nodeId": "beartic",
         "slug": "beartic",
         "name": "Beartic",
-        "dexNumber": 614
+        "dexNumber": 614,
+        "formSlug": null,
+        "formName": null
       }
     ],
     "edges": [
       {
+        "fromNodeId": "cubchoo",
+        "toNodeId": "beartic",
         "fromSlug": "cubchoo",
         "toSlug": "beartic",
         "method": "level_up",

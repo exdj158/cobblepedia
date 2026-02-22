@@ -71,23 +71,34 @@
   "evolutionFamily": {
     "members": [
       {
+        "nodeId": "aron",
         "slug": "aron",
         "name": "Aron",
-        "dexNumber": 304
+        "dexNumber": 304,
+        "formSlug": null,
+        "formName": null
       },
       {
+        "nodeId": "lairon",
         "slug": "lairon",
         "name": "Lairon",
-        "dexNumber": 305
+        "dexNumber": 305,
+        "formSlug": null,
+        "formName": null
       },
       {
+        "nodeId": "aggron",
         "slug": "aggron",
         "name": "Aggron",
-        "dexNumber": 306
+        "dexNumber": 306,
+        "formSlug": null,
+        "formName": null
       }
     ],
     "edges": [
       {
+        "fromNodeId": "aron",
+        "toNodeId": "lairon",
         "fromSlug": "aron",
         "toSlug": "lairon",
         "method": "level_up",
@@ -96,6 +107,8 @@
         ]
       },
       {
+        "fromNodeId": "lairon",
+        "toNodeId": "aggron",
         "fromSlug": "lairon",
         "toSlug": "aggron",
         "method": "level_up",

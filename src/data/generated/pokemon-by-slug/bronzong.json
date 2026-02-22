@@ -69,18 +69,26 @@
   "evolutionFamily": {
     "members": [
       {
+        "nodeId": "bronzor",
         "slug": "bronzor",
         "name": "Bronzor",
-        "dexNumber": 436
+        "dexNumber": 436,
+        "formSlug": null,
+        "formName": null
       },
       {
+        "nodeId": "bronzong",
         "slug": "bronzong",
         "name": "Bronzong",
-        "dexNumber": 437
+        "dexNumber": 437,
+        "formSlug": null,
+        "formName": null
       }
     ],
     "edges": [
       {
+        "fromNodeId": "bronzor",
+        "toNodeId": "bronzong",
         "fromSlug": "bronzor",
         "toSlug": "bronzong",
         "method": "level_up",

@@ -104,12 +104,12 @@
       ],
       "requirementText": [
         "Use Leaf Stone",
-        "Biome Evolution/regional/exeggcute Alolabiome"
+        "Biome Evolution Regional Exeggcute Alolabiome"
       ],
       "requirements": [
         {
           "variant": "biome",
-          "text": "Biome Evolution/regional/exeggcute Alolabiome",
+          "text": "Biome Evolution Regional Exeggcute Alolabiome",
           "raw": {
             "variant": "biome",
             "biomeCondition": "#cobblemon:evolution/regional/exeggcute_alolabiome"
@@ -139,18 +139,34 @@
   "evolutionFamily": {
     "members": [
       {
+        "nodeId": "exeggcute",
         "slug": "exeggcute",
         "name": "Exeggcute",
-        "dexNumber": 102
+        "dexNumber": 102,
+        "formSlug": null,
+        "formName": null
       },
       {
+        "nodeId": "exeggutor",
         "slug": "exeggutor",
         "name": "Exeggutor",
-        "dexNumber": 103
+        "dexNumber": 103,
+        "formSlug": null,
+        "formName": null
+      },
+      {
+        "nodeId": "exeggutor-alola",
+        "slug": "exeggutor",
+        "name": "Exeggutor",
+        "dexNumber": 103,
+        "formSlug": "exeggutor-alola",
+        "formName": "Alola"
       }
     ],
     "edges": [
       {
+        "fromNodeId": "exeggcute",
+        "toNodeId": "exeggutor",
         "fromSlug": "exeggcute",
         "toSlug": "exeggutor",
         "method": "item_interact",
@@ -159,21 +175,35 @@
         ]
       },
       {
+        "fromNodeId": "exeggcute",
+        "toNodeId": "exeggutor",
         "fromSlug": "exeggcute",
         "toSlug": "exeggutor",
         "method": "item_interact",
         "requirementText": [
           "Use Leaf Stone",
-          "Biome Evolution/regional/exeggcute Alolabiome"
+          "Biome Evolution Regional Exeggcute Kantobiome"
         ]
       },
       {
+        "fromNodeId": "exeggcute",
+        "toNodeId": "exeggutor-alola",
         "fromSlug": "exeggcute",
         "toSlug": "exeggutor",
         "method": "item_interact",
         "requirementText": [
           "Use Leaf Stone",
-          "Biome Evolution/regional/exeggcute Kantobiome"
+          "Biome Evolution Regional Exeggcute Alolabiome"
+        ]
+      },
+      {
+        "fromNodeId": "exeggcute",
+        "toNodeId": "exeggutor-alola",
+        "fromSlug": "exeggcute",
+        "toSlug": "exeggutor",
+        "method": "item_interact",
+        "requirementText": [
+          "Use Leaf Stone"
         ]
       }
     ],
@@ -1553,12 +1583,12 @@
           ],
           "requirementText": [
             "Use Leaf Stone",
-            "Biome Evolution/regional/exeggcute Kantobiome"
+            "Biome Evolution Regional Exeggcute Kantobiome"
           ],
           "requirements": [
             {
               "variant": "biome",
-              "text": "Biome Evolution/regional/exeggcute Kantobiome",
+              "text": "Biome Evolution Regional Exeggcute Kantobiome",
               "raw": {
                 "variant": "biome",
                 "biomeCondition": "#cobblemon:evolution/regional/exeggcute_kantobiome"

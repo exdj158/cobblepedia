@@ -109,18 +109,26 @@
   "evolutionFamily": {
     "members": [
       {
+        "nodeId": "shellos",
         "slug": "shellos",
         "name": "Shellos",
-        "dexNumber": 422
+        "dexNumber": 422,
+        "formSlug": null,
+        "formName": null
       },
       {
+        "nodeId": "gastrodon",
         "slug": "gastrodon",
         "name": "Gastrodon",
-        "dexNumber": 423
+        "dexNumber": 423,
+        "formSlug": null,
+        "formName": null
       }
     ],
     "edges": [
       {
+        "fromNodeId": "shellos",
+        "toNodeId": "gastrodon",
         "fromSlug": "shellos",
         "toSlug": "gastrodon",
         "method": "level_up",

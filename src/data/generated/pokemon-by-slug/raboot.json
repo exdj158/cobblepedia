@@ -107,23 +107,34 @@
   "evolutionFamily": {
     "members": [
       {
+        "nodeId": "scorbunny",
         "slug": "scorbunny",
         "name": "Scorbunny",
-        "dexNumber": 813
+        "dexNumber": 813,
+        "formSlug": null,
+        "formName": null
       },
       {
+        "nodeId": "raboot",
         "slug": "raboot",
         "name": "Raboot",
-        "dexNumber": 814
+        "dexNumber": 814,
+        "formSlug": null,
+        "formName": null
       },
       {
+        "nodeId": "cinderace",
         "slug": "cinderace",
         "name": "Cinderace",
-        "dexNumber": 815
+        "dexNumber": 815,
+        "formSlug": null,
+        "formName": null
       }
     ],
     "edges": [
       {
+        "fromNodeId": "raboot",
+        "toNodeId": "cinderace",
         "fromSlug": "raboot",
         "toSlug": "cinderace",
         "method": "level_up",
@@ -132,6 +143,8 @@
         ]
       },
       {
+        "fromNodeId": "scorbunny",
+        "toNodeId": "raboot",
         "fromSlug": "scorbunny",
         "toSlug": "raboot",
         "method": "level_up",

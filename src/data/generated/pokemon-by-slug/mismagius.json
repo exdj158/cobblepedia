@@ -62,18 +62,26 @@
   "evolutionFamily": {
     "members": [
       {
+        "nodeId": "misdreavus",
         "slug": "misdreavus",
         "name": "Misdreavus",
-        "dexNumber": 200
+        "dexNumber": 200,
+        "formSlug": null,
+        "formName": null
       },
       {
+        "nodeId": "mismagius",
         "slug": "mismagius",
         "name": "Mismagius",
-        "dexNumber": 429
+        "dexNumber": 429,
+        "formSlug": null,
+        "formName": null
       }
     ],
     "edges": [
       {
+        "fromNodeId": "misdreavus",
+        "toNodeId": "mismagius",
         "fromSlug": "misdreavus",
         "toSlug": "mismagius",
         "method": "item_interact",

@@ -103,23 +103,34 @@
   "evolutionFamily": {
     "members": [
       {
+        "nodeId": "deino",
         "slug": "deino",
         "name": "Deino",
-        "dexNumber": 633
+        "dexNumber": 633,
+        "formSlug": null,
+        "formName": null
       },
       {
+        "nodeId": "zweilous",
         "slug": "zweilous",
         "name": "Zweilous",
-        "dexNumber": 634
+        "dexNumber": 634,
+        "formSlug": null,
+        "formName": null
       },
       {
+        "nodeId": "hydreigon",
         "slug": "hydreigon",
         "name": "Hydreigon",
-        "dexNumber": 635
+        "dexNumber": 635,
+        "formSlug": null,
+        "formName": null
       }
     ],
     "edges": [
       {
+        "fromNodeId": "deino",
+        "toNodeId": "zweilous",
         "fromSlug": "deino",
         "toSlug": "zweilous",
         "method": "level_up",
@@ -128,6 +139,8 @@
         ]
       },
       {
+        "fromNodeId": "zweilous",
+        "toNodeId": "hydreigon",
         "fromSlug": "zweilous",
         "toSlug": "hydreigon",
         "method": "level_up",

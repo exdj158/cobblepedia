@@ -69,18 +69,26 @@
   "evolutionFamily": {
     "members": [
       {
+        "nodeId": "shroodle",
         "slug": "shroodle",
         "name": "Shroodle",
-        "dexNumber": 944
+        "dexNumber": 944,
+        "formSlug": null,
+        "formName": null
       },
       {
+        "nodeId": "grafaiai",
         "slug": "grafaiai",
         "name": "Grafaiai",
-        "dexNumber": 945
+        "dexNumber": 945,
+        "formSlug": null,
+        "formName": null
       }
     ],
     "edges": [
       {
+        "fromNodeId": "shroodle",
+        "toNodeId": "grafaiai",
         "fromSlug": "shroodle",
         "toSlug": "grafaiai",
         "method": "level_up",

@@ -109,23 +109,34 @@
   "evolutionFamily": {
     "members": [
       {
+        "nodeId": "pidgey",
         "slug": "pidgey",
         "name": "Pidgey",
-        "dexNumber": 16
+        "dexNumber": 16,
+        "formSlug": null,
+        "formName": null
       },
       {
+        "nodeId": "pidgeotto",
         "slug": "pidgeotto",
         "name": "Pidgeotto",
-        "dexNumber": 17
+        "dexNumber": 17,
+        "formSlug": null,
+        "formName": null
       },
       {
+        "nodeId": "pidgeot",
         "slug": "pidgeot",
         "name": "Pidgeot",
-        "dexNumber": 18
+        "dexNumber": 18,
+        "formSlug": null,
+        "formName": null
       }
     ],
     "edges": [
       {
+        "fromNodeId": "pidgeotto",
+        "toNodeId": "pidgeot",
         "fromSlug": "pidgeotto",
         "toSlug": "pidgeot",
         "method": "level_up",
@@ -134,6 +145,8 @@
         ]
       },
       {
+        "fromNodeId": "pidgey",
+        "toNodeId": "pidgeotto",
         "fromSlug": "pidgey",
         "toSlug": "pidgeotto",
         "method": "level_up",

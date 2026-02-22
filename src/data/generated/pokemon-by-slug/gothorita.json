@@ -108,23 +108,34 @@
   "evolutionFamily": {
     "members": [
       {
+        "nodeId": "gothita",
         "slug": "gothita",
         "name": "Gothita",
-        "dexNumber": 574
+        "dexNumber": 574,
+        "formSlug": null,
+        "formName": null
       },
       {
+        "nodeId": "gothorita",
         "slug": "gothorita",
         "name": "Gothorita",
-        "dexNumber": 575
+        "dexNumber": 575,
+        "formSlug": null,
+        "formName": null
       },
       {
+        "nodeId": "gothitelle",
         "slug": "gothitelle",
         "name": "Gothitelle",
-        "dexNumber": 576
+        "dexNumber": 576,
+        "formSlug": null,
+        "formName": null
       }
     ],
     "edges": [
       {
+        "fromNodeId": "gothita",
+        "toNodeId": "gothorita",
         "fromSlug": "gothita",
         "toSlug": "gothorita",
         "method": "level_up",
@@ -133,6 +144,8 @@
         ]
       },
       {
+        "fromNodeId": "gothorita",
+        "toNodeId": "gothitelle",
         "fromSlug": "gothorita",
         "toSlug": "gothitelle",
         "method": "level_up",

@@ -63,23 +63,34 @@
   "evolutionFamily": {
     "members": [
       {
+        "nodeId": "fuecoco",
         "slug": "fuecoco",
         "name": "Fuecoco",
-        "dexNumber": 909
+        "dexNumber": 909,
+        "formSlug": null,
+        "formName": null
       },
       {
+        "nodeId": "crocalor",
         "slug": "crocalor",
         "name": "Crocalor",
-        "dexNumber": 910
+        "dexNumber": 910,
+        "formSlug": null,
+        "formName": null
       },
       {
+        "nodeId": "skeledirge",
         "slug": "skeledirge",
         "name": "Skeledirge",
-        "dexNumber": 911
+        "dexNumber": 911,
+        "formSlug": null,
+        "formName": null
       }
     ],
     "edges": [
       {
+        "fromNodeId": "crocalor",
+        "toNodeId": "skeledirge",
         "fromSlug": "crocalor",
         "toSlug": "skeledirge",
         "method": "level_up",
@@ -88,6 +99,8 @@
         ]
       },
       {
+        "fromNodeId": "fuecoco",
+        "toNodeId": "crocalor",
         "fromSlug": "fuecoco",
         "toSlug": "crocalor",
         "method": "level_up",

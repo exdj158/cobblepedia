@@ -109,18 +109,26 @@
   "evolutionFamily": {
     "members": [
       {
+        "nodeId": "golett",
         "slug": "golett",
         "name": "Golett",
-        "dexNumber": 622
+        "dexNumber": 622,
+        "formSlug": null,
+        "formName": null
       },
       {
+        "nodeId": "golurk",
         "slug": "golurk",
         "name": "Golurk",
-        "dexNumber": 623
+        "dexNumber": 623,
+        "formSlug": null,
+        "formName": null
       }
     ],
     "edges": [
       {
+        "fromNodeId": "golett",
+        "toNodeId": "golurk",
         "fromSlug": "golett",
         "toSlug": "golurk",
         "method": "level_up",

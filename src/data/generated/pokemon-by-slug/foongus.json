@@ -99,18 +99,26 @@
   "evolutionFamily": {
     "members": [
       {
+        "nodeId": "foongus",
         "slug": "foongus",
         "name": "Foongus",
-        "dexNumber": 590
+        "dexNumber": 590,
+        "formSlug": null,
+        "formName": null
       },
       {
+        "nodeId": "amoonguss",
         "slug": "amoonguss",
         "name": "Amoonguss",
-        "dexNumber": 591
+        "dexNumber": 591,
+        "formSlug": null,
+        "formName": null
       }
     ],
     "edges": [
       {
+        "fromNodeId": "foongus",
+        "toNodeId": "amoonguss",
         "fromSlug": "foongus",
         "toSlug": "amoonguss",
         "method": "level_up",

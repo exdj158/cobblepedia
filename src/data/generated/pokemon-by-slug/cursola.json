@@ -67,18 +67,26 @@
   "evolutionFamily": {
     "members": [
       {
+        "nodeId": "corsola",
         "slug": "corsola",
         "name": "Corsola",
-        "dexNumber": 222
+        "dexNumber": 222,
+        "formSlug": null,
+        "formName": null
       },
       {
+        "nodeId": "cursola",
         "slug": "cursola",
         "name": "Cursola",
-        "dexNumber": 864
+        "dexNumber": 864,
+        "formSlug": null,
+        "formName": null
       }
     ],
     "edges": [
       {
+        "fromNodeId": "corsola",
+        "toNodeId": "cursola",
         "fromSlug": "corsola",
         "toSlug": "cursola",
         "method": "level_up",

@@ -69,18 +69,26 @@
   "evolutionFamily": {
     "members": [
       {
+        "nodeId": "bunnelby",
         "slug": "bunnelby",
         "name": "Bunnelby",
-        "dexNumber": 659
+        "dexNumber": 659,
+        "formSlug": null,
+        "formName": null
       },
       {
+        "nodeId": "diggersby",
         "slug": "diggersby",
         "name": "Diggersby",
-        "dexNumber": 660
+        "dexNumber": 660,
+        "formSlug": null,
+        "formName": null
       }
     ],
     "edges": [
       {
+        "fromNodeId": "bunnelby",
+        "toNodeId": "diggersby",
         "fromSlug": "bunnelby",
         "toSlug": "diggersby",
         "method": "level_up",

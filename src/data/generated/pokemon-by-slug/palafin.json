@@ -67,18 +67,26 @@
   "evolutionFamily": {
     "members": [
       {
+        "nodeId": "finizen",
         "slug": "finizen",
         "name": "Finizen",
-        "dexNumber": 963
+        "dexNumber": 963,
+        "formSlug": null,
+        "formName": null
       },
       {
+        "nodeId": "palafin",
         "slug": "palafin",
         "name": "Palafin",
-        "dexNumber": 964
+        "dexNumber": 964,
+        "formSlug": null,
+        "formName": null
       }
     ],
     "edges": [
       {
+        "fromNodeId": "finizen",
+        "toNodeId": "palafin",
         "fromSlug": "finizen",
         "toSlug": "palafin",
         "method": "level_up",

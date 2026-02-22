@@ -109,18 +109,26 @@
   "evolutionFamily": {
     "members": [
       {
+        "nodeId": "buneary",
         "slug": "buneary",
         "name": "Buneary",
-        "dexNumber": 427
+        "dexNumber": 427,
+        "formSlug": null,
+        "formName": null
       },
       {
+        "nodeId": "lopunny",
         "slug": "lopunny",
         "name": "Lopunny",
-        "dexNumber": 428
+        "dexNumber": 428,
+        "formSlug": null,
+        "formName": null
       }
     ],
     "edges": [
       {
+        "fromNodeId": "buneary",
+        "toNodeId": "lopunny",
         "fromSlug": "buneary",
         "toSlug": "lopunny",
         "method": "level_up",

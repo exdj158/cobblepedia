@@ -69,18 +69,26 @@
   "evolutionFamily": {
     "members": [
       {
+        "nodeId": "stantler",
         "slug": "stantler",
         "name": "Stantler",
-        "dexNumber": 234
+        "dexNumber": 234,
+        "formSlug": null,
+        "formName": null
       },
       {
+        "nodeId": "wyrdeer",
         "slug": "wyrdeer",
         "name": "Wyrdeer",
-        "dexNumber": 899
+        "dexNumber": 899,
+        "formSlug": null,
+        "formName": null
       }
     ],
     "edges": [
       {
+        "fromNodeId": "stantler",
+        "toNodeId": "wyrdeer",
         "fromSlug": "stantler",
         "toSlug": "wyrdeer",
         "method": "level_up",

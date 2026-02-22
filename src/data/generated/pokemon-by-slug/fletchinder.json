@@ -103,23 +103,34 @@
   "evolutionFamily": {
     "members": [
       {
+        "nodeId": "fletchling",
         "slug": "fletchling",
         "name": "Fletchling",
-        "dexNumber": 661
+        "dexNumber": 661,
+        "formSlug": null,
+        "formName": null
       },
       {
+        "nodeId": "fletchinder",
         "slug": "fletchinder",
         "name": "Fletchinder",
-        "dexNumber": 662
+        "dexNumber": 662,
+        "formSlug": null,
+        "formName": null
       },
       {
+        "nodeId": "talonflame",
         "slug": "talonflame",
         "name": "Talonflame",
-        "dexNumber": 663
+        "dexNumber": 663,
+        "formSlug": null,
+        "formName": null
       }
     ],
     "edges": [
       {
+        "fromNodeId": "fletchinder",
+        "toNodeId": "talonflame",
         "fromSlug": "fletchinder",
         "toSlug": "talonflame",
         "method": "level_up",
@@ -128,6 +139,8 @@
         ]
       },
       {
+        "fromNodeId": "fletchling",
+        "toNodeId": "fletchinder",
         "fromSlug": "fletchling",
         "toSlug": "fletchinder",
         "method": "level_up",

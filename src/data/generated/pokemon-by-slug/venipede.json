@@ -109,23 +109,34 @@
   "evolutionFamily": {
     "members": [
       {
+        "nodeId": "venipede",
         "slug": "venipede",
         "name": "Venipede",
-        "dexNumber": 543
+        "dexNumber": 543,
+        "formSlug": null,
+        "formName": null
       },
       {
+        "nodeId": "whirlipede",
         "slug": "whirlipede",
         "name": "Whirlipede",
-        "dexNumber": 544
+        "dexNumber": 544,
+        "formSlug": null,
+        "formName": null
       },
       {
+        "nodeId": "scolipede",
         "slug": "scolipede",
         "name": "Scolipede",
-        "dexNumber": 545
+        "dexNumber": 545,
+        "formSlug": null,
+        "formName": null
       }
     ],
     "edges": [
       {
+        "fromNodeId": "venipede",
+        "toNodeId": "whirlipede",
         "fromSlug": "venipede",
         "toSlug": "whirlipede",
         "method": "level_up",
@@ -134,6 +145,8 @@
         ]
       },
       {
+        "fromNodeId": "whirlipede",
+        "toNodeId": "scolipede",
         "fromSlug": "whirlipede",
         "toSlug": "scolipede",
         "method": "level_up",

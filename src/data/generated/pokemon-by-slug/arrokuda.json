@@ -98,18 +98,26 @@
   "evolutionFamily": {
     "members": [
       {
+        "nodeId": "arrokuda",
         "slug": "arrokuda",
         "name": "Arrokuda",
-        "dexNumber": 846
+        "dexNumber": 846,
+        "formSlug": null,
+        "formName": null
       },
       {
+        "nodeId": "barraskewda",
         "slug": "barraskewda",
         "name": "Barraskewda",
-        "dexNumber": 847
+        "dexNumber": 847,
+        "formSlug": null,
+        "formName": null
       }
     ],
     "edges": [
       {
+        "fromNodeId": "arrokuda",
+        "toNodeId": "barraskewda",
         "fromSlug": "arrokuda",
         "toSlug": "barraskewda",
         "method": "level_up",

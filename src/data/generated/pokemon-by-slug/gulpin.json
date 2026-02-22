@@ -108,18 +108,26 @@
   "evolutionFamily": {
     "members": [
       {
+        "nodeId": "gulpin",
         "slug": "gulpin",
         "name": "Gulpin",
-        "dexNumber": 316
+        "dexNumber": 316,
+        "formSlug": null,
+        "formName": null
       },
       {
+        "nodeId": "swalot",
         "slug": "swalot",
         "name": "Swalot",
-        "dexNumber": 317
+        "dexNumber": 317,
+        "formSlug": null,
+        "formName": null
       }
     ],
     "edges": [
       {
+        "fromNodeId": "gulpin",
+        "toNodeId": "swalot",
         "fromSlug": "gulpin",
         "toSlug": "swalot",
         "method": "level_up",

@@ -96,23 +96,34 @@
   "evolutionFamily": {
     "members": [
       {
+        "nodeId": "honedge",
         "slug": "honedge",
         "name": "Honedge",
-        "dexNumber": 679
+        "dexNumber": 679,
+        "formSlug": null,
+        "formName": null
       },
       {
+        "nodeId": "doublade",
         "slug": "doublade",
         "name": "Doublade",
-        "dexNumber": 680
+        "dexNumber": 680,
+        "formSlug": null,
+        "formName": null
       },
       {
+        "nodeId": "aegislash",
         "slug": "aegislash",
         "name": "Aegislash",
-        "dexNumber": 681
+        "dexNumber": 681,
+        "formSlug": null,
+        "formName": null
       }
     ],
     "edges": [
       {
+        "fromNodeId": "doublade",
+        "toNodeId": "aegislash",
         "fromSlug": "doublade",
         "toSlug": "aegislash",
         "method": "item_interact",
@@ -121,6 +132,8 @@
         ]
       },
       {
+        "fromNodeId": "honedge",
+        "toNodeId": "doublade",
         "fromSlug": "honedge",
         "toSlug": "doublade",
         "method": "level_up",

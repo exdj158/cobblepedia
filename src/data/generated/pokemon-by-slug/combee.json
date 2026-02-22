@@ -70,7 +70,7 @@
       ],
       "requirementText": [
         "Level 21+",
-        "Property gender=female"
+        "Female only"
       ],
       "requirements": [
         {
@@ -83,7 +83,7 @@
         },
         {
           "variant": "properties",
-          "text": "Property gender=female",
+          "text": "Female only",
           "raw": {
             "variant": "properties",
             "target": "gender=female"
@@ -116,24 +116,32 @@
   "evolutionFamily": {
     "members": [
       {
+        "nodeId": "combee",
         "slug": "combee",
         "name": "Combee",
-        "dexNumber": 415
+        "dexNumber": 415,
+        "formSlug": null,
+        "formName": null
       },
       {
+        "nodeId": "vespiquen",
         "slug": "vespiquen",
         "name": "Vespiquen",
-        "dexNumber": 416
+        "dexNumber": 416,
+        "formSlug": null,
+        "formName": null
       }
     ],
     "edges": [
       {
+        "fromNodeId": "combee",
+        "toNodeId": "vespiquen",
         "fromSlug": "combee",
         "toSlug": "vespiquen",
         "method": "level_up",
         "requirementText": [
           "Level 21+",
-          "Property gender=female"
+          "Female only"
         ]
       }
     ],

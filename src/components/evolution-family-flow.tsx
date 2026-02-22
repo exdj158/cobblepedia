@@ -12,6 +12,7 @@ import { PokemonSprite } from "./pokemon-sprite"
 type EvolutionFamilyFlowProps = {
   family: EvolutionFamilyRecord
   activeSlug: string
+  activeFormSlug?: string | null
 }
 
 type EvolutionFlowNode = DiagflowNode<EvolutionFamilyMemberRecord>
@@ -39,29 +40,50 @@ function formatMethodLabel(method: string): string {
 }
 
 export function EvolutionFamilyFlow(props: EvolutionFamilyFlowProps) {
+  const activeNodeId = createMemo(() => {
+    const exact = props.family.members.find(
+      (member) =>
+        member.slug === props.activeSlug &&
+        (member.formSlug ?? null) === (props.activeFormSlug ?? null)
+    )
+    if (exact) {
+      return exact.nodeId
+    }
+
+    const base = props.family.members.find(
+      (member) => member.slug === props.activeSlug && member.formSlug === null
+    )
+    if (base) {
+      return base.nodeId
+    }
+
+    const fallback = props.family.members.find((member) => member.slug === props.activeSlug)
+    return fallback?.nodeId ?? props.activeSlug
+  })
+
   const nodes = createMemo<EvolutionFlowNode[]>(() =>
     props.family.members.map((member) => ({
-      id: member.slug,
+      id: member.nodeId,
       data: member,
     }))
   )
 
   const edges = createMemo<EvolutionFlowEdge[]>(() =>
     props.family.edges.map((edge, index) => ({
-      id: `${edge.fromSlug}-${edge.toSlug}-${index}`,
-      from: edge.fromSlug,
-      to: edge.toSlug,
+      id: `${edge.fromNodeId}-${edge.toNodeId}-${index}`,
+      from: edge.fromNodeId,
+      to: edge.toNodeId,
       data: edge,
     }))
   )
 
   const maxLabelWidth = createMemo(() => {
-    let maxWidth = 180
+    let maxWidth = 196
     for (const edge of props.family.edges) {
       const method = formatMethodLabel(edge.method)
-      const reqs = edge.requirementText.join(" ")
-      const text = `${method} ${reqs}`.trim()
-      const estimatedWidth = text.length * 6.5 + 48
+      const requirements = formatRequirementSummary(edge.method, edge.requirementText)
+      const text = requirements ? `${method} ${requirements}` : method
+      const estimatedWidth = text.length * 6.35 + (requirements ? 64 : 38)
       maxWidth = Math.max(maxWidth, estimatedWidth)
     }
     return maxWidth
@@ -75,168 +97,232 @@ export function EvolutionFamilyFlow(props: EvolutionFamilyFlowProps) {
       options: {
         nodeWidth: 186,
         nodeHeight: 92,
-        columnGap: Math.max(200, maxLabelWidth() + 40),
+        columnGap: Math.max(220, maxLabelWidth() + 56),
         rowGap: 46,
         minHeight: 188,
+        paddingX: 12,
+        paddingY: 12,
       },
     })
   )
 
   return (
-    <div>
-      <div class="overflow-x-auto pb-1">
-        <div
-          class="relative mx-auto min-w-fit"
-          style={{
-            width: `${layout().width}px`,
-            height: `${layout().height}px`,
-          }}
+    <div class="overflow-x-auto">
+      <div
+        class="relative mx-auto min-w-fit"
+        style={{
+          width: `${layout().width}px`,
+          height: `${layout().height}px`,
+        }}
+      >
+        <svg
+          class="pointer-events-none absolute inset-0 h-full w-full"
+          viewBox={`0 0 ${layout().width} ${layout().height}`}
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+          aria-hidden="true"
         >
-          <svg
-            class="pointer-events-none absolute inset-0 h-full w-full"
-            viewBox={`0 0 ${layout().width} ${layout().height}`}
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-            aria-hidden="true"
-          >
-            <For each={layout().edges}>
-              {(edge) => {
-                const isActiveEdge = edge.from === props.activeSlug || edge.to === props.activeSlug
-
-                return (
-                  <g>
-                    <path
-                      d={edge.path}
-                      class={cn(
-                        "fill-none stroke-border/70",
-                        isActiveEdge ? "stroke-foreground/70" : "stroke-border/70"
-                      )}
-                      stroke-width={2.5}
-                      stroke-linecap="round"
-                    />
-                    <circle
-                      cx={edge.start.x}
-                      cy={edge.start.y}
-                      r={1.8}
-                      class={cn(
-                        "fill-border/75",
-                        isActiveEdge ? "fill-foreground/70" : "fill-border/75"
-                      )}
-                    />
-                    <circle
-                      cx={edge.end.x}
-                      cy={edge.end.y}
-                      r={2.1}
-                      class={cn(
-                        "fill-border/75",
-                        isActiveEdge ? "fill-foreground/75" : "fill-border/75"
-                      )}
-                    />
-                  </g>
-                )
-              }}
-            </For>
-          </svg>
-
           <For each={layout().edges}>
             {(edge) => {
-              const isActiveEdge = edge.from === props.activeSlug || edge.to === props.activeSlug
-              const requirementSummary = summarizeRequirements(edge.data.requirementText)
+              const isActiveEdge = edge.from === activeNodeId() || edge.to === activeNodeId()
 
               return (
-                <div
-                  class="absolute z-10 -translate-x-1/2 -translate-y-1/2"
-                  style={{
-                    left: `${edge.label.x}px`,
-                    top: `${edge.label.y}px`,
-                  }}
-                >
-                  <div
+                <g>
+                  <path
+                    d={edge.path}
                     class={cn(
-                      "flex items-center gap-2 rounded-full border px-3 py-1.5",
-                      isActiveEdge
-                        ? "border-foreground/30 bg-background"
-                        : "border-border/60 bg-background/90"
+                      "fill-none stroke-border/70",
+                      isActiveEdge ? "stroke-foreground/70" : "stroke-border/70"
                     )}
-                    title={edge.data.requirementText.join(", ") || undefined}
-                  >
-                    <span class="whitespace-nowrap font-medium text-[10px] leading-none">
-                      {formatMethodLabel(edge.data.method)}
+                    stroke-width={2.5}
+                    stroke-linecap="round"
+                  />
+                  <circle
+                    cx={edge.start.x}
+                    cy={edge.start.y}
+                    r={1.8}
+                    class={cn(
+                      "fill-border/75",
+                      isActiveEdge ? "fill-foreground/70" : "fill-border/75"
+                    )}
+                  />
+                  <circle
+                    cx={edge.end.x}
+                    cy={edge.end.y}
+                    r={2.1}
+                    class={cn(
+                      "fill-border/75",
+                      isActiveEdge ? "fill-foreground/75" : "fill-border/75"
+                    )}
+                  />
+                </g>
+              )
+            }}
+          </For>
+        </svg>
+
+        <For each={layout().edges}>
+          {(edge) => {
+            const isActiveEdge = edge.from === activeNodeId() || edge.to === activeNodeId()
+            const requirementSummary = formatRequirementSummary(
+              edge.data.method,
+              edge.data.requirementText
+            )
+
+            return (
+              <div
+                class="absolute z-10 -translate-x-1/2 -translate-y-1/2"
+                style={{
+                  left: `${edge.label.x}px`,
+                  top: `${edge.label.y}px`,
+                }}
+              >
+                <div
+                  class={cn(
+                    "flex items-center gap-2 rounded-full border px-3 py-1.5",
+                    isActiveEdge
+                      ? "border-foreground/30 bg-background"
+                      : "border-border/60 bg-background/90"
+                  )}
+                  title={edge.data.requirementText.join(", ") || undefined}
+                >
+                  <span class="whitespace-nowrap font-medium text-[10px] leading-none">
+                    {formatMethodLabel(edge.data.method)}
+                  </span>
+                  <Show when={requirementSummary}>
+                    <span class="h-3 w-px bg-border/60" />
+                    <span class="whitespace-nowrap text-[10px] text-muted-foreground leading-none">
+                      {requirementSummary}
                     </span>
-                    <Show when={requirementSummary}>
-                      <span class="h-3 w-px bg-border/60" />
-                      <span class="whitespace-nowrap text-[10px] text-muted-foreground leading-none">
-                        {requirementSummary}
+                  </Show>
+                </div>
+              </div>
+            )
+          }}
+        </For>
+
+        <For each={layout().nodes}>
+          {(node) => {
+            const isActiveNode = node.id === activeNodeId()
+
+            return (
+              <a
+                href={toEvolutionMemberHref(node.data)}
+                class={cn(
+                  "group absolute z-20 flex items-center gap-3 border px-3 py-2 transition-all",
+                  isActiveNode
+                    ? "border-foreground bg-foreground text-background"
+                    : "border-border bg-card hover:border-muted-foreground hover:bg-secondary/25"
+                )}
+                style={{
+                  left: `${node.x}px`,
+                  top: `${node.y}px`,
+                  width: `${node.width}px`,
+                  height: `${node.height}px`,
+                }}
+                aria-current={isActiveNode ? "page" : undefined}
+              >
+                <PokemonSprite
+                  dexNumber={node.data.dexNumber}
+                  slug={node.data.slug}
+                  formSlug={node.data.formSlug}
+                  formName={node.data.formName}
+                  name={
+                    node.data.formName
+                      ? `${node.data.name} (${node.data.formName})`
+                      : node.data.name
+                  }
+                  class={cn(
+                    "h-10 w-10",
+                    isActiveNode
+                      ? "border-background/40 bg-background/20"
+                      : "border-border bg-secondary/40"
+                  )}
+                  imageClass="h-8 w-8"
+                />
+
+                <div class="min-w-0">
+                  <p class="truncate font-medium text-sm leading-tight">{node.data.name}</p>
+                  <p
+                    class={cn(
+                      "mt-1 truncate font-mono text-[10px] uppercase tracking-wider",
+                      isActiveNode ? "text-background/80" : "text-muted-foreground"
+                    )}
+                  >
+                    #{String(node.data.dexNumber).padStart(4, "0")}
+                    <Show when={node.data.formName}>
+                      <span
+                        class={cn("ml-1", isActiveNode ? "text-background/80" : "text-foreground")}
+                      >
+                        {node.data.formName}
                       </span>
                     </Show>
-                  </div>
+                  </p>
                 </div>
-              )
-            }}
-          </For>
-
-          <For each={layout().nodes}>
-            {(node) => {
-              const isActiveNode = node.id === props.activeSlug
-
-              return (
-                <a
-                  href={`/pokemon/${node.id}`}
-                  class={cn(
-                    "group absolute z-20 flex items-center gap-3 border px-3 py-2 transition-all",
-                    isActiveNode
-                      ? "border-foreground bg-foreground text-background"
-                      : "border-border bg-card hover:border-muted-foreground hover:bg-secondary/25"
-                  )}
-                  style={{
-                    left: `${node.x}px`,
-                    top: `${node.y}px`,
-                    width: `${node.width}px`,
-                    height: `${node.height}px`,
-                  }}
-                  aria-current={isActiveNode ? "page" : undefined}
-                >
-                  <PokemonSprite
-                    dexNumber={node.data.dexNumber}
-                    name={node.data.name}
-                    class={cn(
-                      "h-10 w-10",
-                      isActiveNode
-                        ? "border-background/40 bg-background/20"
-                        : "border-border bg-secondary/40"
-                    )}
-                    imageClass="h-8 w-8"
-                  />
-
-                  <div class="min-w-0">
-                    <p class="truncate font-medium text-sm leading-tight">{node.data.name}</p>
-                    <p
-                      class={cn(
-                        "mt-1 font-mono text-[10px] uppercase tracking-wider",
-                        isActiveNode ? "text-background/80" : "text-muted-foreground"
-                      )}
-                    >
-                      #{String(node.data.dexNumber).padStart(4, "0")}
-                    </p>
-                  </div>
-                </a>
-              )
-            }}
-          </For>
-        </div>
+              </a>
+            )
+          }}
+        </For>
       </div>
     </div>
   )
 }
 
-function summarizeRequirements(requirements: string[]): string | null {
+function formatRequirementSummary(method: string, requirements: string[]): string | null {
   if (requirements.length === 0) {
     return null
   }
 
-  if (requirements.length === 1) {
-    return requirements[0]
+  const normalized = requirements
+    .map((requirement) => formatRequirementToken(method, requirement))
+    .filter((requirement): requirement is string => Boolean(requirement))
+
+  if (normalized.length === 0) {
+    return null
   }
 
-  return `${requirements[0]} +${requirements.length - 1}`
+  const deduped: string[] = []
+  for (const item of normalized) {
+    if (!deduped.includes(item)) {
+      deduped.push(item)
+    }
+  }
+
+  return deduped.join(" / ")
+}
+
+function formatRequirementToken(method: string, requirement: string): string | null {
+  const text = requirement.replace(/\s+/g, " ").trim()
+  if (!text) {
+    return null
+  }
+
+  const normalizedMethod = method.toLowerCase().replace(/[-_]/g, "_")
+  const lower = text.toLowerCase()
+
+  if (lower === "property gender=female") {
+    return "Female only"
+  }
+
+  if (lower === "property gender=male") {
+    return "Male only"
+  }
+
+  if (normalizedMethod === "item_interact" && lower.startsWith("use ")) {
+    return text.slice(4)
+  }
+
+  if (normalizedMethod === "trade" && lower.startsWith("trade with ")) {
+    return `With ${text.slice(11)}`
+  }
+
+  return text
+}
+
+function toEvolutionMemberHref(member: EvolutionFamilyMemberRecord): string {
+  if (!member.formSlug) {
+    return `/pokemon/${member.slug}`
+  }
+
+  return `/pokemon/${member.slug}?form=${encodeURIComponent(member.formSlug)}`
 }

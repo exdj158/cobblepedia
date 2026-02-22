@@ -62,18 +62,26 @@
   "evolutionFamily": {
     "members": [
       {
+        "nodeId": "skiddo",
         "slug": "skiddo",
         "name": "Skiddo",
-        "dexNumber": 672
+        "dexNumber": 672,
+        "formSlug": null,
+        "formName": null
       },
       {
+        "nodeId": "gogoat",
         "slug": "gogoat",
         "name": "Gogoat",
-        "dexNumber": 673
+        "dexNumber": 673,
+        "formSlug": null,
+        "formName": null
       }
     ],
     "edges": [
       {
+        "fromNodeId": "skiddo",
+        "toNodeId": "gogoat",
         "fromSlug": "skiddo",
         "toSlug": "gogoat",
         "method": "level_up",

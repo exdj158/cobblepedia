@@ -96,23 +96,50 @@
   "evolutionFamily": {
     "members": [
       {
+        "nodeId": "geodude",
         "slug": "geodude",
         "name": "Geodude",
-        "dexNumber": 74
+        "dexNumber": 74,
+        "formSlug": null,
+        "formName": null
       },
       {
+        "nodeId": "graveler",
         "slug": "graveler",
         "name": "Graveler",
-        "dexNumber": 75
+        "dexNumber": 75,
+        "formSlug": null,
+        "formName": null
       },
       {
+        "nodeId": "graveler-alola",
+        "slug": "graveler",
+        "name": "Graveler",
+        "dexNumber": 75,
+        "formSlug": "graveler-alola",
+        "formName": "Alola"
+      },
+      {
+        "nodeId": "golem",
         "slug": "golem",
         "name": "Golem",
-        "dexNumber": 76
+        "dexNumber": 76,
+        "formSlug": null,
+        "formName": null
+      },
+      {
+        "nodeId": "golem-alola",
+        "slug": "golem",
+        "name": "Golem",
+        "dexNumber": 76,
+        "formSlug": "golem-alola",
+        "formName": "Alola"
       }
     ],
     "edges": [
       {
+        "fromNodeId": "geodude",
+        "toNodeId": "graveler",
         "fromSlug": "geodude",
         "toSlug": "graveler",
         "method": "level_up",
@@ -121,6 +148,26 @@
         ]
       },
       {
+        "fromNodeId": "geodude",
+        "toNodeId": "graveler-alola",
+        "fromSlug": "geodude",
+        "toSlug": "graveler",
+        "method": "level_up",
+        "requirementText": [
+          "Level 25+"
+        ]
+      },
+      {
+        "fromNodeId": "graveler",
+        "toNodeId": "golem",
+        "fromSlug": "graveler",
+        "toSlug": "golem",
+        "method": "trade",
+        "requirementText": []
+      },
+      {
+        "fromNodeId": "graveler",
+        "toNodeId": "golem-alola",
         "fromSlug": "graveler",
         "toSlug": "golem",
         "method": "trade",

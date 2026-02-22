@@ -69,23 +69,34 @@
   "evolutionFamily": {
     "members": [
       {
+        "nodeId": "jigglypuff",
         "slug": "jigglypuff",
         "name": "Jigglypuff",
-        "dexNumber": 39
+        "dexNumber": 39,
+        "formSlug": null,
+        "formName": null
       },
       {
+        "nodeId": "wigglytuff",
         "slug": "wigglytuff",
         "name": "Wigglytuff",
-        "dexNumber": 40
+        "dexNumber": 40,
+        "formSlug": null,
+        "formName": null
       },
       {
+        "nodeId": "igglybuff",
         "slug": "igglybuff",
         "name": "Igglybuff",
-        "dexNumber": 174
+        "dexNumber": 174,
+        "formSlug": null,
+        "formName": null
       }
     ],
     "edges": [
       {
+        "fromNodeId": "igglybuff",
+        "toNodeId": "jigglypuff",
         "fromSlug": "igglybuff",
         "toSlug": "jigglypuff",
         "method": "level_up",
@@ -94,6 +105,8 @@
         ]
       },
       {
+        "fromNodeId": "jigglypuff",
+        "toNodeId": "wigglytuff",
         "fromSlug": "jigglypuff",
         "toSlug": "wigglytuff",
         "method": "item_interact",

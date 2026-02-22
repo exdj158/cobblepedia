@@ -109,18 +109,26 @@
   "evolutionFamily": {
     "members": [
       {
+        "nodeId": "feebas",
         "slug": "feebas",
         "name": "Feebas",
-        "dexNumber": 349
+        "dexNumber": 349,
+        "formSlug": null,
+        "formName": null
       },
       {
+        "nodeId": "milotic",
         "slug": "milotic",
         "name": "Milotic",
-        "dexNumber": 350
+        "dexNumber": 350,
+        "formSlug": null,
+        "formName": null
       }
     ],
     "edges": [
       {
+        "fromNodeId": "feebas",
+        "toNodeId": "milotic",
         "fromSlug": "feebas",
         "toSlug": "milotic",
         "method": "trade",

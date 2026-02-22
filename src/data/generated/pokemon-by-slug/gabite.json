@@ -108,23 +108,34 @@
   "evolutionFamily": {
     "members": [
       {
+        "nodeId": "gible",
         "slug": "gible",
         "name": "Gible",
-        "dexNumber": 443
+        "dexNumber": 443,
+        "formSlug": null,
+        "formName": null
       },
       {
+        "nodeId": "gabite",
         "slug": "gabite",
         "name": "Gabite",
-        "dexNumber": 444
+        "dexNumber": 444,
+        "formSlug": null,
+        "formName": null
       },
       {
+        "nodeId": "garchomp",
         "slug": "garchomp",
         "name": "Garchomp",
-        "dexNumber": 445
+        "dexNumber": 445,
+        "formSlug": null,
+        "formName": null
       }
     ],
     "edges": [
       {
+        "fromNodeId": "gabite",
+        "toNodeId": "garchomp",
         "fromSlug": "gabite",
         "toSlug": "garchomp",
         "method": "level_up",
@@ -133,6 +144,8 @@
         ]
       },
       {
+        "fromNodeId": "gible",
+        "toNodeId": "gabite",
         "fromSlug": "gible",
         "toSlug": "gabite",
         "method": "level_up",

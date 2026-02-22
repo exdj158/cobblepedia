@@ -69,18 +69,26 @@
   "evolutionFamily": {
     "members": [
       {
+        "nodeId": "doduo",
         "slug": "doduo",
         "name": "Doduo",
-        "dexNumber": 84
+        "dexNumber": 84,
+        "formSlug": null,
+        "formName": null
       },
       {
+        "nodeId": "dodrio",
         "slug": "dodrio",
         "name": "Dodrio",
-        "dexNumber": 85
+        "dexNumber": 85,
+        "formSlug": null,
+        "formName": null
       }
     ],
     "edges": [
       {
+        "fromNodeId": "doduo",
+        "toNodeId": "dodrio",
         "fromSlug": "doduo",
         "toSlug": "dodrio",
         "method": "level_up",

@@ -100,23 +100,34 @@
   "evolutionFamily": {
     "members": [
       {
+        "nodeId": "quaxly",
         "slug": "quaxly",
         "name": "Quaxly",
-        "dexNumber": 912
+        "dexNumber": 912,
+        "formSlug": null,
+        "formName": null
       },
       {
+        "nodeId": "quaxwell",
         "slug": "quaxwell",
         "name": "Quaxwell",
-        "dexNumber": 913
+        "dexNumber": 913,
+        "formSlug": null,
+        "formName": null
       },
       {
+        "nodeId": "quaquaval",
         "slug": "quaquaval",
         "name": "Quaquaval",
-        "dexNumber": 914
+        "dexNumber": 914,
+        "formSlug": null,
+        "formName": null
       }
     ],
     "edges": [
       {
+        "fromNodeId": "quaxly",
+        "toNodeId": "quaxwell",
         "fromSlug": "quaxly",
         "toSlug": "quaxwell",
         "method": "level_up",
@@ -125,6 +136,8 @@
         ]
       },
       {
+        "fromNodeId": "quaxwell",
+        "toNodeId": "quaquaval",
         "fromSlug": "quaxwell",
         "toSlug": "quaquaval",
         "method": "level_up",

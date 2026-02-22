@@ -69,18 +69,26 @@
   "evolutionFamily": {
     "members": [
       {
+        "nodeId": "chinchou",
         "slug": "chinchou",
         "name": "Chinchou",
-        "dexNumber": 170
+        "dexNumber": 170,
+        "formSlug": null,
+        "formName": null
       },
       {
+        "nodeId": "lanturn",
         "slug": "lanturn",
         "name": "Lanturn",
-        "dexNumber": 171
+        "dexNumber": 171,
+        "formSlug": null,
+        "formName": null
       }
     ],
     "edges": [
       {
+        "fromNodeId": "chinchou",
+        "toNodeId": "lanturn",
         "fromSlug": "chinchou",
         "toSlug": "lanturn",
         "method": "level_up",

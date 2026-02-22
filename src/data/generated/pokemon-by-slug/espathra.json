@@ -68,18 +68,26 @@
   "evolutionFamily": {
     "members": [
       {
+        "nodeId": "flittle",
         "slug": "flittle",
         "name": "Flittle",
-        "dexNumber": 955
+        "dexNumber": 955,
+        "formSlug": null,
+        "formName": null
       },
       {
+        "nodeId": "espathra",
         "slug": "espathra",
         "name": "Espathra",
-        "dexNumber": 956
+        "dexNumber": 956,
+        "formSlug": null,
+        "formName": null
       }
     ],
     "edges": [
       {
+        "fromNodeId": "flittle",
+        "toNodeId": "espathra",
         "fromSlug": "flittle",
         "toSlug": "espathra",
         "method": "level_up",

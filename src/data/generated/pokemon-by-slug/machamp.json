@@ -70,29 +70,42 @@
   "evolutionFamily": {
     "members": [
       {
+        "nodeId": "machop",
         "slug": "machop",
         "name": "Machop",
-        "dexNumber": 66
+        "dexNumber": 66,
+        "formSlug": null,
+        "formName": null
       },
       {
+        "nodeId": "machoke",
         "slug": "machoke",
         "name": "Machoke",
-        "dexNumber": 67
+        "dexNumber": 67,
+        "formSlug": null,
+        "formName": null
       },
       {
+        "nodeId": "machamp",
         "slug": "machamp",
         "name": "Machamp",
-        "dexNumber": 68
+        "dexNumber": 68,
+        "formSlug": null,
+        "formName": null
       }
     ],
     "edges": [
       {
+        "fromNodeId": "machoke",
+        "toNodeId": "machamp",
         "fromSlug": "machoke",
         "toSlug": "machamp",
         "method": "trade",
         "requirementText": []
       },
       {
+        "fromNodeId": "machop",
+        "toNodeId": "machoke",
         "fromSlug": "machop",
         "toSlug": "machoke",
         "method": "level_up",

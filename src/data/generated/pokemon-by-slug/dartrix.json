@@ -122,7 +122,7 @@
       ],
       "requirementText": [
         "Level 36+",
-        "Biome Evolution/regional/dartrix Hisuibiome"
+        "Biome Evolution Regional Dartrix Hisuibiome"
       ],
       "requirements": [
         {
@@ -135,7 +135,7 @@
         },
         {
           "variant": "biome",
-          "text": "Biome Evolution/regional/dartrix Hisuibiome",
+          "text": "Biome Evolution Regional Dartrix Hisuibiome",
           "raw": {
             "variant": "biome",
             "biomeCondition": "#cobblemon:evolution/regional/dartrix_hisuibiome"
@@ -168,23 +168,42 @@
   "evolutionFamily": {
     "members": [
       {
+        "nodeId": "rowlet",
         "slug": "rowlet",
         "name": "Rowlet",
-        "dexNumber": 722
+        "dexNumber": 722,
+        "formSlug": null,
+        "formName": null
       },
       {
+        "nodeId": "dartrix",
         "slug": "dartrix",
         "name": "Dartrix",
-        "dexNumber": 723
+        "dexNumber": 723,
+        "formSlug": null,
+        "formName": null
       },
       {
+        "nodeId": "decidueye",
         "slug": "decidueye",
         "name": "Decidueye",
-        "dexNumber": 724
+        "dexNumber": 724,
+        "formSlug": null,
+        "formName": null
+      },
+      {
+        "nodeId": "decidueye-hisui",
+        "slug": "decidueye",
+        "name": "Decidueye",
+        "dexNumber": 724,
+        "formSlug": "decidueye-hisui",
+        "formName": "Hisui"
       }
     ],
     "edges": [
       {
+        "fromNodeId": "dartrix",
+        "toNodeId": "decidueye",
         "fromSlug": "dartrix",
         "toSlug": "decidueye",
         "method": "level_up",
@@ -193,24 +212,30 @@
         ]
       },
       {
-        "fromSlug": "dartrix",
-        "toSlug": "decidueye",
-        "method": "level_up",
-        "requirementText": [
-          "Level 36+",
-          "Biome Evolution/regional/dartrix Hisuibiome"
-        ]
-      },
-      {
+        "fromNodeId": "dartrix",
+        "toNodeId": "decidueye",
         "fromSlug": "dartrix",
         "toSlug": "decidueye",
         "method": "level_up",
         "requirementText": [
           "Level 34+",
-          "Biome Evolution/regional/dartrix Alolabiome"
+          "Biome Evolution Regional Dartrix Alolabiome"
         ]
       },
       {
+        "fromNodeId": "dartrix",
+        "toNodeId": "decidueye-hisui",
+        "fromSlug": "dartrix",
+        "toSlug": "decidueye",
+        "method": "level_up",
+        "requirementText": [
+          "Level 36+",
+          "Biome Evolution Regional Dartrix Hisuibiome"
+        ]
+      },
+      {
+        "fromNodeId": "dartrix",
+        "toNodeId": "decidueye-hisui",
         "fromSlug": "dartrix",
         "toSlug": "decidueye",
         "method": "level_up",
@@ -219,6 +244,8 @@
         ]
       },
       {
+        "fromNodeId": "rowlet",
+        "toNodeId": "dartrix",
         "fromSlug": "rowlet",
         "toSlug": "dartrix",
         "method": "level_up",
@@ -1558,7 +1585,7 @@
           ],
           "requirementText": [
             "Level 34+",
-            "Biome Evolution/regional/dartrix Alolabiome"
+            "Biome Evolution Regional Dartrix Alolabiome"
           ],
           "requirements": [
             {
@@ -1571,7 +1598,7 @@
             },
             {
               "variant": "biome",
-              "text": "Biome Evolution/regional/dartrix Alolabiome",
+              "text": "Biome Evolution Regional Dartrix Alolabiome",
               "raw": {
                 "variant": "biome",
                 "biomeCondition": "#cobblemon:evolution/regional/dartrix_alolabiome"

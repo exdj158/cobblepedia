@@ -69,18 +69,26 @@
   "evolutionFamily": {
     "members": [
       {
+        "nodeId": "tentacool",
         "slug": "tentacool",
         "name": "Tentacool",
-        "dexNumber": 72
+        "dexNumber": 72,
+        "formSlug": null,
+        "formName": null
       },
       {
+        "nodeId": "tentacruel",
         "slug": "tentacruel",
         "name": "Tentacruel",
-        "dexNumber": 73
+        "dexNumber": 73,
+        "formSlug": null,
+        "formName": null
       }
     ],
     "edges": [
       {
+        "fromNodeId": "tentacool",
+        "toNodeId": "tentacruel",
         "fromSlug": "tentacool",
         "toSlug": "tentacruel",
         "method": "level_up",

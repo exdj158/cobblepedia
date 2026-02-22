@@ -102,23 +102,34 @@
   "evolutionFamily": {
     "members": [
       {
+        "nodeId": "duskull",
         "slug": "duskull",
         "name": "Duskull",
-        "dexNumber": 355
+        "dexNumber": 355,
+        "formSlug": null,
+        "formName": null
       },
       {
+        "nodeId": "dusclops",
         "slug": "dusclops",
         "name": "Dusclops",
-        "dexNumber": 356
+        "dexNumber": 356,
+        "formSlug": null,
+        "formName": null
       },
       {
+        "nodeId": "dusknoir",
         "slug": "dusknoir",
         "name": "Dusknoir",
-        "dexNumber": 477
+        "dexNumber": 477,
+        "formSlug": null,
+        "formName": null
       }
     ],
     "edges": [
       {
+        "fromNodeId": "dusclops",
+        "toNodeId": "dusknoir",
         "fromSlug": "dusclops",
         "toSlug": "dusknoir",
         "method": "trade",
@@ -127,6 +138,8 @@
         ]
       },
       {
+        "fromNodeId": "duskull",
+        "toNodeId": "dusclops",
         "fromSlug": "duskull",
         "toSlug": "dusclops",
         "method": "level_up",

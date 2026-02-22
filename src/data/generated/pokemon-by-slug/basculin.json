@@ -71,18 +71,26 @@
   "evolutionFamily": {
     "members": [
       {
+        "nodeId": "basculin",
         "slug": "basculin",
         "name": "Basculin",
-        "dexNumber": 550
+        "dexNumber": 550,
+        "formSlug": null,
+        "formName": null
       },
       {
+        "nodeId": "basculegion",
         "slug": "basculegion",
         "name": "Basculegion",
-        "dexNumber": 902
+        "dexNumber": 902,
+        "formSlug": null,
+        "formName": null
       }
     ],
     "edges": [
       {
+        "fromNodeId": "basculin",
+        "toNodeId": "basculegion",
         "fromSlug": "basculin",
         "toSlug": "basculegion",
         "method": "level_up",

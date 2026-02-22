@@ -62,18 +62,26 @@
   "evolutionFamily": {
     "members": [
       {
+        "nodeId": "tarountula",
         "slug": "tarountula",
         "name": "Tarountula",
-        "dexNumber": 917
+        "dexNumber": 917,
+        "formSlug": null,
+        "formName": null
       },
       {
+        "nodeId": "spidops",
         "slug": "spidops",
         "name": "Spidops",
-        "dexNumber": 918
+        "dexNumber": 918,
+        "formSlug": null,
+        "formName": null
       }
     ],
     "edges": [
       {
+        "fromNodeId": "tarountula",
+        "toNodeId": "spidops",
         "fromSlug": "tarountula",
         "toSlug": "spidops",
         "method": "level_up",

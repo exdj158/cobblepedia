@@ -64,18 +64,26 @@
   "evolutionFamily": {
     "members": [
       {
+        "nodeId": "wimpod",
         "slug": "wimpod",
         "name": "Wimpod",
-        "dexNumber": 767
+        "dexNumber": 767,
+        "formSlug": null,
+        "formName": null
       },
       {
+        "nodeId": "golisopod",
         "slug": "golisopod",
         "name": "Golisopod",
-        "dexNumber": 768
+        "dexNumber": 768,
+        "formSlug": null,
+        "formName": null
       }
     ],
     "edges": [
       {
+        "fromNodeId": "wimpod",
+        "toNodeId": "golisopod",
         "fromSlug": "wimpod",
         "toSlug": "golisopod",
         "method": "level_up",

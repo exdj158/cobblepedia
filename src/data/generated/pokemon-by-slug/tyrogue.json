@@ -246,28 +246,42 @@
   "evolutionFamily": {
     "members": [
       {
+        "nodeId": "hitmonlee",
         "slug": "hitmonlee",
         "name": "Hitmonlee",
-        "dexNumber": 106
+        "dexNumber": 106,
+        "formSlug": null,
+        "formName": null
       },
       {
+        "nodeId": "hitmonchan",
         "slug": "hitmonchan",
         "name": "Hitmonchan",
-        "dexNumber": 107
+        "dexNumber": 107,
+        "formSlug": null,
+        "formName": null
       },
       {
+        "nodeId": "tyrogue",
         "slug": "tyrogue",
         "name": "Tyrogue",
-        "dexNumber": 236
+        "dexNumber": 236,
+        "formSlug": null,
+        "formName": null
       },
       {
+        "nodeId": "hitmontop",
         "slug": "hitmontop",
         "name": "Hitmontop",
-        "dexNumber": 237
+        "dexNumber": 237,
+        "formSlug": null,
+        "formName": null
       }
     ],
     "edges": [
       {
+        "fromNodeId": "tyrogue",
+        "toNodeId": "hitmonchan",
         "fromSlug": "tyrogue",
         "toSlug": "hitmonchan",
         "method": "level_up",
@@ -277,6 +291,8 @@
         ]
       },
       {
+        "fromNodeId": "tyrogue",
+        "toNodeId": "hitmonlee",
         "fromSlug": "tyrogue",
         "toSlug": "hitmonlee",
         "method": "level_up",
@@ -286,6 +302,8 @@
         ]
       },
       {
+        "fromNodeId": "tyrogue",
+        "toNodeId": "hitmontop",
         "fromSlug": "tyrogue",
         "toSlug": "hitmontop",
         "method": "level_up",

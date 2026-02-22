@@ -69,18 +69,26 @@
   "evolutionFamily": {
     "members": [
       {
+        "nodeId": "mareanie",
         "slug": "mareanie",
         "name": "Mareanie",
-        "dexNumber": 747
+        "dexNumber": 747,
+        "formSlug": null,
+        "formName": null
       },
       {
+        "nodeId": "toxapex",
         "slug": "toxapex",
         "name": "Toxapex",
-        "dexNumber": 748
+        "dexNumber": 748,
+        "formSlug": null,
+        "formName": null
       }
     ],
     "edges": [
       {
+        "fromNodeId": "mareanie",
+        "toNodeId": "toxapex",
         "fromSlug": "mareanie",
         "toSlug": "toxapex",
         "method": "level_up",

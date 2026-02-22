@@ -71,40 +71,73 @@
   "evolutionFamily": {
     "members": [
       {
+        "nodeId": "cubone",
         "slug": "cubone",
         "name": "Cubone",
-        "dexNumber": 104
+        "dexNumber": 104,
+        "formSlug": null,
+        "formName": null
       },
       {
+        "nodeId": "marowak",
         "slug": "marowak",
         "name": "Marowak",
-        "dexNumber": 105
+        "dexNumber": 105,
+        "formSlug": null,
+        "formName": null
+      },
+      {
+        "nodeId": "marowak-alola",
+        "slug": "marowak",
+        "name": "Marowak",
+        "dexNumber": 105,
+        "formSlug": "marowak-alola",
+        "formName": "Alola"
       }
     ],
     "edges": [
       {
+        "fromNodeId": "cubone",
+        "toNodeId": "marowak",
         "fromSlug": "cubone",
         "toSlug": "marowak",
         "method": "level_up",
         "requirementText": [
           "Level 28+",
-          "Not in biome Evolution/regional/cubone Alolabiome",
+          "Not in biome Evolution Regional Cubone Alolabiome",
           "Not in biome Is Nether"
         ]
       },
       {
+        "fromNodeId": "cubone",
+        "toNodeId": "marowak",
+        "fromSlug": "cubone",
+        "toSlug": "marowak",
+        "method": "level_up",
+        "requirementText": [
+          "Level 28+",
+          "Not in biome Evolution Regional Cubone Alolabiome",
+          "Biome Evolution Regional Cubone Kantobiome",
+          "Not in biome Is Nether"
+        ]
+      },
+      {
+        "fromNodeId": "cubone",
+        "toNodeId": "marowak-alola",
         "fromSlug": "cubone",
         "toSlug": "marowak",
         "method": "level_up",
         "requirementText": [
           "Level 28+",
           "Time: Night",
-          "Biome Evolution/regional/cubone Alolabiome",
-          "Not in biome Evolution/regional/cubone Kantobiome",
+          "Biome Evolution Regional Cubone Alolabiome",
+          "Not in biome Evolution Regional Cubone Kantobiome",
           "Not in biome Is Nether"
         ]
       },
       {
+        "fromNodeId": "cubone",
+        "toNodeId": "marowak-alola",
         "fromSlug": "cubone",
         "toSlug": "marowak",
         "method": "level_up",
@@ -115,24 +148,15 @@
         ]
       },
       {
-        "fromSlug": "cubone",
-        "toSlug": "marowak",
-        "method": "level_up",
-        "requirementText": [
-          "Level 28+",
-          "Not in biome Evolution/regional/cubone Alolabiome",
-          "Biome Evolution/regional/cubone Kantobiome",
-          "Not in biome Is Nether"
-        ]
-      },
-      {
+        "fromNodeId": "cubone",
+        "toNodeId": "marowak-alola",
         "fromSlug": "cubone",
         "toSlug": "marowak",
         "method": "level_up",
         "requirementText": [
           "Level 28+",
           "Time: Night",
-          "Not in biome Evolution/regional/cubone Kantobiome",
+          "Not in biome Evolution Regional Cubone Kantobiome",
           "Not in biome Is Nether"
         ]
       }

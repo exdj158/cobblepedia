@@ -109,18 +109,26 @@
   "evolutionFamily": {
     "members": [
       {
+        "nodeId": "shroomish",
         "slug": "shroomish",
         "name": "Shroomish",
-        "dexNumber": 285
+        "dexNumber": 285,
+        "formSlug": null,
+        "formName": null
       },
       {
+        "nodeId": "breloom",
         "slug": "breloom",
         "name": "Breloom",
-        "dexNumber": 286
+        "dexNumber": 286,
+        "formSlug": null,
+        "formName": null
       }
     ],
     "edges": [
       {
+        "fromNodeId": "shroomish",
+        "toNodeId": "breloom",
         "fromSlug": "shroomish",
         "toSlug": "breloom",
         "method": "level_up",

@@ -109,18 +109,26 @@
   "evolutionFamily": {
     "members": [
       {
+        "nodeId": "numel",
         "slug": "numel",
         "name": "Numel",
-        "dexNumber": 322
+        "dexNumber": 322,
+        "formSlug": null,
+        "formName": null
       },
       {
+        "nodeId": "camerupt",
         "slug": "camerupt",
         "name": "Camerupt",
-        "dexNumber": 323
+        "dexNumber": 323,
+        "formSlug": null,
+        "formName": null
       }
     ],
     "edges": [
       {
+        "fromNodeId": "numel",
+        "toNodeId": "camerupt",
         "fromSlug": "numel",
         "toSlug": "camerupt",
         "method": "level_up",

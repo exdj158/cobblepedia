@@ -70,18 +70,26 @@
   "evolutionFamily": {
     "members": [
       {
+        "nodeId": "ducklett",
         "slug": "ducklett",
         "name": "Ducklett",
-        "dexNumber": 580
+        "dexNumber": 580,
+        "formSlug": null,
+        "formName": null
       },
       {
+        "nodeId": "swanna",
         "slug": "swanna",
         "name": "Swanna",
-        "dexNumber": 581
+        "dexNumber": 581,
+        "formSlug": null,
+        "formName": null
       }
     ],
     "edges": [
       {
+        "fromNodeId": "ducklett",
+        "toNodeId": "swanna",
         "fromSlug": "ducklett",
         "toSlug": "swanna",
         "method": "level_up",

@@ -108,18 +108,26 @@
   "evolutionFamily": {
     "members": [
       {
+        "nodeId": "slugma",
         "slug": "slugma",
         "name": "Slugma",
-        "dexNumber": 218
+        "dexNumber": 218,
+        "formSlug": null,
+        "formName": null
       },
       {
+        "nodeId": "magcargo",
         "slug": "magcargo",
         "name": "Magcargo",
-        "dexNumber": 219
+        "dexNumber": 219,
+        "formSlug": null,
+        "formName": null
       }
     ],
     "edges": [
       {
+        "fromNodeId": "slugma",
+        "toNodeId": "magcargo",
         "fromSlug": "slugma",
         "toSlug": "magcargo",
         "method": "level_up",

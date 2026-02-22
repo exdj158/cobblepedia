@@ -98,18 +98,26 @@
   "evolutionFamily": {
     "members": [
       {
+        "nodeId": "swirlix",
         "slug": "swirlix",
         "name": "Swirlix",
-        "dexNumber": 684
+        "dexNumber": 684,
+        "formSlug": null,
+        "formName": null
       },
       {
+        "nodeId": "slurpuff",
         "slug": "slurpuff",
         "name": "Slurpuff",
-        "dexNumber": 685
+        "dexNumber": 685,
+        "formSlug": null,
+        "formName": null
       }
     ],
     "edges": [
       {
+        "fromNodeId": "swirlix",
+        "toNodeId": "slurpuff",
         "fromSlug": "swirlix",
         "toSlug": "slurpuff",
         "method": "trade",

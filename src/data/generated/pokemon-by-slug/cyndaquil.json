@@ -102,23 +102,42 @@
   "evolutionFamily": {
     "members": [
       {
+        "nodeId": "cyndaquil",
         "slug": "cyndaquil",
         "name": "Cyndaquil",
-        "dexNumber": 155
+        "dexNumber": 155,
+        "formSlug": null,
+        "formName": null
       },
       {
+        "nodeId": "quilava",
         "slug": "quilava",
         "name": "Quilava",
-        "dexNumber": 156
+        "dexNumber": 156,
+        "formSlug": null,
+        "formName": null
       },
       {
+        "nodeId": "typhlosion",
         "slug": "typhlosion",
         "name": "Typhlosion",
-        "dexNumber": 157
+        "dexNumber": 157,
+        "formSlug": null,
+        "formName": null
+      },
+      {
+        "nodeId": "typhlosion-hisui",
+        "slug": "typhlosion",
+        "name": "Typhlosion",
+        "dexNumber": 157,
+        "formSlug": "typhlosion-hisui",
+        "formName": "Hisui"
       }
     ],
     "edges": [
       {
+        "fromNodeId": "cyndaquil",
+        "toNodeId": "quilava",
         "fromSlug": "cyndaquil",
         "toSlug": "quilava",
         "method": "level_up",
@@ -127,6 +146,8 @@
         ]
       },
       {
+        "fromNodeId": "quilava",
+        "toNodeId": "typhlosion",
         "fromSlug": "quilava",
         "toSlug": "typhlosion",
         "method": "level_up",
@@ -135,21 +156,35 @@
         ]
       },
       {
+        "fromNodeId": "quilava",
+        "toNodeId": "typhlosion",
         "fromSlug": "quilava",
         "toSlug": "typhlosion",
         "method": "level_up",
         "requirementText": [
           "Level 36+",
-          "Biome Evolution/regional/quilava Hisuibiome"
+          "Biome Evolution Regional Quilava Johtobiome"
         ]
       },
       {
+        "fromNodeId": "quilava",
+        "toNodeId": "typhlosion-hisui",
         "fromSlug": "quilava",
         "toSlug": "typhlosion",
         "method": "level_up",
         "requirementText": [
           "Level 36+",
-          "Biome Evolution/regional/quilava Johtobiome"
+          "Biome Evolution Regional Quilava Hisuibiome"
+        ]
+      },
+      {
+        "fromNodeId": "quilava",
+        "toNodeId": "typhlosion-hisui",
+        "fromSlug": "quilava",
+        "toSlug": "typhlosion",
+        "method": "level_up",
+        "requirementText": [
+          "Level 36+"
         ]
       }
     ],

@@ -105,18 +105,26 @@
   "evolutionFamily": {
     "members": [
       {
+        "nodeId": "psyduck",
         "slug": "psyduck",
         "name": "Psyduck",
-        "dexNumber": 54
+        "dexNumber": 54,
+        "formSlug": null,
+        "formName": null
       },
       {
+        "nodeId": "golduck",
         "slug": "golduck",
         "name": "Golduck",
-        "dexNumber": 55
+        "dexNumber": 55,
+        "formSlug": null,
+        "formName": null
       }
     ],
     "edges": [
       {
+        "fromNodeId": "psyduck",
+        "toNodeId": "golduck",
         "fromSlug": "psyduck",
         "toSlug": "golduck",
         "method": "level_up",

@@ -72,7 +72,7 @@
       ],
       "requirementText": [
         "Level 33+",
-        "Property gender=female"
+        "Female only"
       ],
       "requirements": [
         {
@@ -85,7 +85,7 @@
         },
         {
           "variant": "properties",
-          "text": "Property gender=female",
+          "text": "Female only",
           "raw": {
             "variant": "properties",
             "target": "gender=female"
@@ -119,24 +119,32 @@
   "evolutionFamily": {
     "members": [
       {
+        "nodeId": "salandit",
         "slug": "salandit",
         "name": "Salandit",
-        "dexNumber": 757
+        "dexNumber": 757,
+        "formSlug": null,
+        "formName": null
       },
       {
+        "nodeId": "salazzle",
         "slug": "salazzle",
         "name": "Salazzle",
-        "dexNumber": 758
+        "dexNumber": 758,
+        "formSlug": null,
+        "formName": null
       }
     ],
     "edges": [
       {
+        "fromNodeId": "salandit",
+        "toNodeId": "salazzle",
         "fromSlug": "salandit",
         "toSlug": "salazzle",
         "method": "level_up",
         "requirementText": [
           "Level 33+",
-          "Property gender=female"
+          "Female only"
         ]
       }
     ],

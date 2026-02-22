@@ -108,23 +108,34 @@
   "evolutionFamily": {
     "members": [
       {
+        "nodeId": "shinx",
         "slug": "shinx",
         "name": "Shinx",
-        "dexNumber": 403
+        "dexNumber": 403,
+        "formSlug": null,
+        "formName": null
       },
       {
+        "nodeId": "luxio",
         "slug": "luxio",
         "name": "Luxio",
-        "dexNumber": 404
+        "dexNumber": 404,
+        "formSlug": null,
+        "formName": null
       },
       {
+        "nodeId": "luxray",
         "slug": "luxray",
         "name": "Luxray",
-        "dexNumber": 405
+        "dexNumber": 405,
+        "formSlug": null,
+        "formName": null
       }
     ],
     "edges": [
       {
+        "fromNodeId": "luxio",
+        "toNodeId": "luxray",
         "fromSlug": "luxio",
         "toSlug": "luxray",
         "method": "level_up",
@@ -133,6 +144,8 @@
         ]
       },
       {
+        "fromNodeId": "shinx",
+        "toNodeId": "luxio",
         "fromSlug": "shinx",
         "toSlug": "luxio",
         "method": "level_up",

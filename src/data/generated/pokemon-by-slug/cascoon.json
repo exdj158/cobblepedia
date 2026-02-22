@@ -108,33 +108,50 @@
   "evolutionFamily": {
     "members": [
       {
+        "nodeId": "wurmple",
         "slug": "wurmple",
         "name": "Wurmple",
-        "dexNumber": 265
+        "dexNumber": 265,
+        "formSlug": null,
+        "formName": null
       },
       {
+        "nodeId": "silcoon",
         "slug": "silcoon",
         "name": "Silcoon",
-        "dexNumber": 266
+        "dexNumber": 266,
+        "formSlug": null,
+        "formName": null
       },
       {
+        "nodeId": "beautifly",
         "slug": "beautifly",
         "name": "Beautifly",
-        "dexNumber": 267
+        "dexNumber": 267,
+        "formSlug": null,
+        "formName": null
       },
       {
+        "nodeId": "cascoon",
         "slug": "cascoon",
         "name": "Cascoon",
-        "dexNumber": 268
+        "dexNumber": 268,
+        "formSlug": null,
+        "formName": null
       },
       {
+        "nodeId": "dustox",
         "slug": "dustox",
         "name": "Dustox",
-        "dexNumber": 269
+        "dexNumber": 269,
+        "formSlug": null,
+        "formName": null
       }
     ],
     "edges": [
       {
+        "fromNodeId": "cascoon",
+        "toNodeId": "dustox",
         "fromSlug": "cascoon",
         "toSlug": "dustox",
         "method": "level_up",
@@ -143,6 +160,8 @@
         ]
       },
       {
+        "fromNodeId": "silcoon",
+        "toNodeId": "beautifly",
         "fromSlug": "silcoon",
         "toSlug": "beautifly",
         "method": "level_up",
@@ -151,6 +170,8 @@
         ]
       },
       {
+        "fromNodeId": "wurmple",
+        "toNodeId": "cascoon",
         "fromSlug": "wurmple",
         "toSlug": "cascoon",
         "method": "level_up",
@@ -160,6 +181,8 @@
         ]
       },
       {
+        "fromNodeId": "wurmple",
+        "toNodeId": "silcoon",
         "fromSlug": "wurmple",
         "toSlug": "silcoon",
         "method": "level_up",

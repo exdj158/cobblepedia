@@ -109,23 +109,34 @@
   "evolutionFamily": {
     "members": [
       {
+        "nodeId": "treecko",
         "slug": "treecko",
         "name": "Treecko",
-        "dexNumber": 252
+        "dexNumber": 252,
+        "formSlug": null,
+        "formName": null
       },
       {
+        "nodeId": "grovyle",
         "slug": "grovyle",
         "name": "Grovyle",
-        "dexNumber": 253
+        "dexNumber": 253,
+        "formSlug": null,
+        "formName": null
       },
       {
+        "nodeId": "sceptile",
         "slug": "sceptile",
         "name": "Sceptile",
-        "dexNumber": 254
+        "dexNumber": 254,
+        "formSlug": null,
+        "formName": null
       }
     ],
     "edges": [
       {
+        "fromNodeId": "grovyle",
+        "toNodeId": "sceptile",
         "fromSlug": "grovyle",
         "toSlug": "sceptile",
         "method": "level_up",
@@ -134,6 +145,8 @@
         ]
       },
       {
+        "fromNodeId": "treecko",
+        "toNodeId": "grovyle",
         "fromSlug": "treecko",
         "toSlug": "grovyle",
         "method": "level_up",

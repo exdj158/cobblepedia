@@ -70,23 +70,34 @@
   "evolutionFamily": {
     "members": [
       {
+        "nodeId": "lotad",
         "slug": "lotad",
         "name": "Lotad",
-        "dexNumber": 270
+        "dexNumber": 270,
+        "formSlug": null,
+        "formName": null
       },
       {
+        "nodeId": "lombre",
         "slug": "lombre",
         "name": "Lombre",
-        "dexNumber": 271
+        "dexNumber": 271,
+        "formSlug": null,
+        "formName": null
       },
       {
+        "nodeId": "ludicolo",
         "slug": "ludicolo",
         "name": "Ludicolo",
-        "dexNumber": 272
+        "dexNumber": 272,
+        "formSlug": null,
+        "formName": null
       }
     ],
     "edges": [
       {
+        "fromNodeId": "lombre",
+        "toNodeId": "ludicolo",
         "fromSlug": "lombre",
         "toSlug": "ludicolo",
         "method": "item_interact",
@@ -95,6 +106,8 @@
         ]
       },
       {
+        "fromNodeId": "lotad",
+        "toNodeId": "lombre",
         "fromSlug": "lotad",
         "toSlug": "lombre",
         "method": "level_up",

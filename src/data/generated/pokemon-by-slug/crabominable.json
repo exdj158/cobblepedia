@@ -69,18 +69,26 @@
   "evolutionFamily": {
     "members": [
       {
+        "nodeId": "crabrawler",
         "slug": "crabrawler",
         "name": "Crabrawler",
-        "dexNumber": 739
+        "dexNumber": 739,
+        "formSlug": null,
+        "formName": null
       },
       {
+        "nodeId": "crabominable",
         "slug": "crabominable",
         "name": "Crabominable",
-        "dexNumber": 740
+        "dexNumber": 740,
+        "formSlug": null,
+        "formName": null
       }
     ],
     "edges": [
       {
+        "fromNodeId": "crabrawler",
+        "toNodeId": "crabominable",
         "fromSlug": "crabrawler",
         "toSlug": "crabominable",
         "method": "item_interact",

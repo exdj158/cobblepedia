@@ -975,6 +975,7 @@ function EvolutionFacetQuickview(props: {
         {(detailSignal) => {
           const detail = detailSignal()
           const family = detail.evolutionFamily
+          const memberByNodeId = new Map(family.members.map((member) => [member.nodeId, member]))
 
           return (
             <div class="flex flex-col gap-5">
@@ -989,7 +990,7 @@ function EvolutionFacetQuickview(props: {
                 <For each={family.members}>
                   {(member) => (
                     <span class="border border-border bg-secondary px-2.5 py-1 text-sm">
-                      {member.name}
+                      {formatEvolutionFamilyMemberLabel(member, member.slug)}
                     </span>
                   )}
                 </For>
@@ -997,29 +998,35 @@ function EvolutionFacetQuickview(props: {
 
               <div class="flex max-h-[400px] flex-col gap-3 overflow-y-auto">
                 <For each={family.edges}>
-                  {(edge) => (
-                    <div class="border-border border-b py-3 last:border-0">
-                      <div class="mb-2">
-                        <span class="font-medium">
-                          {titleCaseFromId(edge.fromSlug)} → {titleCaseFromId(edge.toSlug)}
-                        </span>
-                        <span class="ml-2 text-muted-foreground text-sm">
-                          {titleCaseFromId(edge.method)}
-                        </span>
-                      </div>
-                      <Show when={edge.requirementText.length > 0}>
-                        <div class="flex flex-wrap gap-1">
-                          <For each={edge.requirementText}>
-                            {(text) => (
-                              <span class="border border-border bg-secondary px-2 py-0.5 text-xs">
-                                {text}
-                              </span>
-                            )}
-                          </For>
+                  {(edge) => {
+                    const fromMember = memberByNodeId.get(edge.fromNodeId)
+                    const toMember = memberByNodeId.get(edge.toNodeId)
+
+                    return (
+                      <div class="border-border border-b py-3 last:border-0">
+                        <div class="mb-2">
+                          <span class="font-medium">
+                            {formatEvolutionFamilyMemberLabel(fromMember, edge.fromSlug)} →{" "}
+                            {formatEvolutionFamilyMemberLabel(toMember, edge.toSlug)}
+                          </span>
+                          <span class="ml-2 text-muted-foreground text-sm">
+                            {titleCaseFromId(edge.method)}
+                          </span>
                         </div>
-                      </Show>
-                    </div>
-                  )}
+                        <Show when={edge.requirementText.length > 0}>
+                          <div class="flex flex-wrap gap-1">
+                            <For each={edge.requirementText}>
+                              {(text) => (
+                                <span class="border border-border bg-secondary px-2 py-0.5 text-xs">
+                                  {text}
+                                </span>
+                              )}
+                            </For>
+                          </div>
+                        </Show>
+                      </div>
+                    )
+                  }}
                 </For>
               </div>
             </div>
@@ -1028,6 +1035,21 @@ function EvolutionFacetQuickview(props: {
       </Show>
     </Show>
   )
+}
+
+function formatEvolutionFamilyMemberLabel(
+  member: PokemonDetailRecord["evolutionFamily"]["members"][number] | undefined,
+  fallbackSlug: string
+): string {
+  if (!member) {
+    return titleCaseFromId(fallbackSlug)
+  }
+
+  if (!member.formName) {
+    return member.name
+  }
+
+  return `${member.name} (${member.formName})`
 }
 
 function MoveLearnersQuickview(props: { entry: MoveLearnerEntryRecord | null }) {

@@ -65,18 +65,26 @@
   "evolutionFamily": {
     "members": [
       {
+        "nodeId": "carvanha",
         "slug": "carvanha",
         "name": "Carvanha",
-        "dexNumber": 318
+        "dexNumber": 318,
+        "formSlug": null,
+        "formName": null
       },
       {
+        "nodeId": "sharpedo",
         "slug": "sharpedo",
         "name": "Sharpedo",
-        "dexNumber": 319
+        "dexNumber": 319,
+        "formSlug": null,
+        "formName": null
       }
     ],
     "edges": [
       {
+        "fromNodeId": "carvanha",
+        "toNodeId": "sharpedo",
         "fromSlug": "carvanha",
         "toSlug": "sharpedo",
         "method": "level_up",

@@ -70,18 +70,26 @@
   "evolutionFamily": {
     "members": [
       {
+        "nodeId": "krabby",
         "slug": "krabby",
         "name": "Krabby",
-        "dexNumber": 98
+        "dexNumber": 98,
+        "formSlug": null,
+        "formName": null
       },
       {
+        "nodeId": "kingler",
         "slug": "kingler",
         "name": "Kingler",
-        "dexNumber": 99
+        "dexNumber": 99,
+        "formSlug": null,
+        "formName": null
       }
     ],
     "edges": [
       {
+        "fromNodeId": "krabby",
+        "toNodeId": "kingler",
         "fromSlug": "krabby",
         "toSlug": "kingler",
         "method": "level_up",

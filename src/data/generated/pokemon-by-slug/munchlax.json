@@ -105,18 +105,26 @@
   "evolutionFamily": {
     "members": [
       {
+        "nodeId": "snorlax",
         "slug": "snorlax",
         "name": "Snorlax",
-        "dexNumber": 143
+        "dexNumber": 143,
+        "formSlug": null,
+        "formName": null
       },
       {
+        "nodeId": "munchlax",
         "slug": "munchlax",
         "name": "Munchlax",
-        "dexNumber": 446
+        "dexNumber": 446,
+        "formSlug": null,
+        "formName": null
       }
     ],
     "edges": [
       {
+        "fromNodeId": "munchlax",
+        "toNodeId": "snorlax",
         "fromSlug": "munchlax",
         "toSlug": "snorlax",
         "method": "level_up",

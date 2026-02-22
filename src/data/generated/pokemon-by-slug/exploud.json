@@ -63,23 +63,34 @@
   "evolutionFamily": {
     "members": [
       {
+        "nodeId": "whismur",
         "slug": "whismur",
         "name": "Whismur",
-        "dexNumber": 293
+        "dexNumber": 293,
+        "formSlug": null,
+        "formName": null
       },
       {
+        "nodeId": "loudred",
         "slug": "loudred",
         "name": "Loudred",
-        "dexNumber": 294
+        "dexNumber": 294,
+        "formSlug": null,
+        "formName": null
       },
       {
+        "nodeId": "exploud",
         "slug": "exploud",
         "name": "Exploud",
-        "dexNumber": 295
+        "dexNumber": 295,
+        "formSlug": null,
+        "formName": null
       }
     ],
     "edges": [
       {
+        "fromNodeId": "loudred",
+        "toNodeId": "exploud",
         "fromSlug": "loudred",
         "toSlug": "exploud",
         "method": "level_up",
@@ -88,6 +99,8 @@
         ]
       },
       {
+        "fromNodeId": "whismur",
+        "toNodeId": "loudred",
         "fromSlug": "whismur",
         "toSlug": "loudred",
         "method": "level_up",

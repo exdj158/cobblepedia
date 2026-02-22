@@ -72,18 +72,26 @@
   "evolutionFamily": {
     "members": [
       {
+        "nodeId": "dunsparce",
         "slug": "dunsparce",
         "name": "Dunsparce",
-        "dexNumber": 206
+        "dexNumber": 206,
+        "formSlug": null,
+        "formName": null
       },
       {
+        "nodeId": "dudunsparce",
         "slug": "dudunsparce",
         "name": "Dudunsparce",
-        "dexNumber": 982
+        "dexNumber": 982,
+        "formSlug": null,
+        "formName": null
       }
     ],
     "edges": [
       {
+        "fromNodeId": "dunsparce",
+        "toNodeId": "dudunsparce",
         "fromSlug": "dunsparce",
         "toSlug": "dudunsparce",
         "method": "level_up",

@@ -102,18 +102,26 @@
   "evolutionFamily": {
     "members": [
       {
+        "nodeId": "phanpy",
         "slug": "phanpy",
         "name": "Phanpy",
-        "dexNumber": 231
+        "dexNumber": 231,
+        "formSlug": null,
+        "formName": null
       },
       {
+        "nodeId": "donphan",
         "slug": "donphan",
         "name": "Donphan",
-        "dexNumber": 232
+        "dexNumber": 232,
+        "formSlug": null,
+        "formName": null
       }
     ],
     "edges": [
       {
+        "fromNodeId": "phanpy",
+        "toNodeId": "donphan",
         "fromSlug": "phanpy",
         "toSlug": "donphan",
         "method": "level_up",

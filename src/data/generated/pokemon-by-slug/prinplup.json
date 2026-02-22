@@ -107,23 +107,34 @@
   "evolutionFamily": {
     "members": [
       {
+        "nodeId": "piplup",
         "slug": "piplup",
         "name": "Piplup",
-        "dexNumber": 393
+        "dexNumber": 393,
+        "formSlug": null,
+        "formName": null
       },
       {
+        "nodeId": "prinplup",
         "slug": "prinplup",
         "name": "Prinplup",
-        "dexNumber": 394
+        "dexNumber": 394,
+        "formSlug": null,
+        "formName": null
       },
       {
+        "nodeId": "empoleon",
         "slug": "empoleon",
         "name": "Empoleon",
-        "dexNumber": 395
+        "dexNumber": 395,
+        "formSlug": null,
+        "formName": null
       }
     ],
     "edges": [
       {
+        "fromNodeId": "piplup",
+        "toNodeId": "prinplup",
         "fromSlug": "piplup",
         "toSlug": "prinplup",
         "method": "level_up",
@@ -132,6 +143,8 @@
         ]
       },
       {
+        "fromNodeId": "prinplup",
+        "toNodeId": "empoleon",
         "fromSlug": "prinplup",
         "toSlug": "empoleon",
         "method": "level_up",

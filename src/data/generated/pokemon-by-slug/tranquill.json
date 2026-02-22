@@ -109,23 +109,34 @@
   "evolutionFamily": {
     "members": [
       {
+        "nodeId": "pidove",
         "slug": "pidove",
         "name": "Pidove",
-        "dexNumber": 519
+        "dexNumber": 519,
+        "formSlug": null,
+        "formName": null
       },
       {
+        "nodeId": "tranquill",
         "slug": "tranquill",
         "name": "Tranquill",
-        "dexNumber": 520
+        "dexNumber": 520,
+        "formSlug": null,
+        "formName": null
       },
       {
+        "nodeId": "unfezant",
         "slug": "unfezant",
         "name": "Unfezant",
-        "dexNumber": 521
+        "dexNumber": 521,
+        "formSlug": null,
+        "formName": null
       }
     ],
     "edges": [
       {
+        "fromNodeId": "pidove",
+        "toNodeId": "tranquill",
         "fromSlug": "pidove",
         "toSlug": "tranquill",
         "method": "level_up",
@@ -134,6 +145,8 @@
         ]
       },
       {
+        "fromNodeId": "tranquill",
+        "toNodeId": "unfezant",
         "fromSlug": "tranquill",
         "toSlug": "unfezant",
         "method": "level_up",

@@ -110,18 +110,26 @@
   "evolutionFamily": {
     "members": [
       {
+        "nodeId": "bergmite",
         "slug": "bergmite",
         "name": "Bergmite",
-        "dexNumber": 712
+        "dexNumber": 712,
+        "formSlug": null,
+        "formName": null
       },
       {
+        "nodeId": "avalugg",
         "slug": "avalugg",
         "name": "Avalugg",
-        "dexNumber": 713
+        "dexNumber": 713,
+        "formSlug": null,
+        "formName": null
       }
     ],
     "edges": [
       {
+        "fromNodeId": "bergmite",
+        "toNodeId": "avalugg",
         "fromSlug": "bergmite",
         "toSlug": "avalugg",
         "method": "level_up",

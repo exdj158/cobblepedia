@@ -64,18 +64,26 @@
   "evolutionFamily": {
     "members": [
       {
+        "nodeId": "surskit",
         "slug": "surskit",
         "name": "Surskit",
-        "dexNumber": 283
+        "dexNumber": 283,
+        "formSlug": null,
+        "formName": null
       },
       {
+        "nodeId": "masquerain",
         "slug": "masquerain",
         "name": "Masquerain",
-        "dexNumber": 284
+        "dexNumber": 284,
+        "formSlug": null,
+        "formName": null
       }
     ],
     "edges": [
       {
+        "fromNodeId": "surskit",
+        "toNodeId": "masquerain",
         "fromSlug": "surskit",
         "toSlug": "masquerain",
         "method": "level_up",

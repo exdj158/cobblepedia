@@ -110,23 +110,34 @@
   "evolutionFamily": {
     "members": [
       {
+        "nodeId": "hoppip",
         "slug": "hoppip",
         "name": "Hoppip",
-        "dexNumber": 187
+        "dexNumber": 187,
+        "formSlug": null,
+        "formName": null
       },
       {
+        "nodeId": "skiploom",
         "slug": "skiploom",
         "name": "Skiploom",
-        "dexNumber": 188
+        "dexNumber": 188,
+        "formSlug": null,
+        "formName": null
       },
       {
+        "nodeId": "jumpluff",
         "slug": "jumpluff",
         "name": "Jumpluff",
-        "dexNumber": 189
+        "dexNumber": 189,
+        "formSlug": null,
+        "formName": null
       }
     ],
     "edges": [
       {
+        "fromNodeId": "hoppip",
+        "toNodeId": "skiploom",
         "fromSlug": "hoppip",
         "toSlug": "skiploom",
         "method": "level_up",
@@ -135,6 +146,8 @@
         ]
       },
       {
+        "fromNodeId": "skiploom",
+        "toNodeId": "jumpluff",
         "fromSlug": "skiploom",
         "toSlug": "jumpluff",
         "method": "level_up",

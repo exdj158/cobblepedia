@@ -63,23 +63,34 @@
   "evolutionFamily": {
     "members": [
       {
+        "nodeId": "nincada",
         "slug": "nincada",
         "name": "Nincada",
-        "dexNumber": 290
+        "dexNumber": 290,
+        "formSlug": null,
+        "formName": null
       },
       {
+        "nodeId": "ninjask",
         "slug": "ninjask",
         "name": "Ninjask",
-        "dexNumber": 291
+        "dexNumber": 291,
+        "formSlug": null,
+        "formName": null
       },
       {
+        "nodeId": "shedinja",
         "slug": "shedinja",
         "name": "Shedinja",
-        "dexNumber": 292
+        "dexNumber": 292,
+        "formSlug": null,
+        "formName": null
       }
     ],
     "edges": [
       {
+        "fromNodeId": "nincada",
+        "toNodeId": "ninjask",
         "fromSlug": "nincada",
         "toSlug": "ninjask",
         "method": "level_up",

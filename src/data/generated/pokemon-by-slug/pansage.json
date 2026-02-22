@@ -85,18 +85,26 @@
   "evolutionFamily": {
     "members": [
       {
+        "nodeId": "pansage",
         "slug": "pansage",
         "name": "Pansage",
-        "dexNumber": 511
+        "dexNumber": 511,
+        "formSlug": null,
+        "formName": null
       },
       {
+        "nodeId": "simisage",
         "slug": "simisage",
         "name": "Simisage",
-        "dexNumber": 512
+        "dexNumber": 512,
+        "formSlug": null,
+        "formName": null
       }
     ],
     "edges": [
       {
+        "fromNodeId": "pansage",
+        "toNodeId": "simisage",
         "fromSlug": "pansage",
         "toSlug": "simisage",
         "method": "item_interact",

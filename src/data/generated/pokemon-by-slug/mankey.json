@@ -108,23 +108,34 @@
   "evolutionFamily": {
     "members": [
       {
+        "nodeId": "mankey",
         "slug": "mankey",
         "name": "Mankey",
-        "dexNumber": 56
+        "dexNumber": 56,
+        "formSlug": null,
+        "formName": null
       },
       {
+        "nodeId": "primeape",
         "slug": "primeape",
         "name": "Primeape",
-        "dexNumber": 57
+        "dexNumber": 57,
+        "formSlug": null,
+        "formName": null
       },
       {
+        "nodeId": "annihilape",
         "slug": "annihilape",
         "name": "Annihilape",
-        "dexNumber": 979
+        "dexNumber": 979,
+        "formSlug": null,
+        "formName": null
       }
     ],
     "edges": [
       {
+        "fromNodeId": "mankey",
+        "toNodeId": "primeape",
         "fromSlug": "mankey",
         "toSlug": "primeape",
         "method": "level_up",
@@ -133,6 +144,8 @@
         ]
       },
       {
+        "fromNodeId": "primeape",
+        "toNodeId": "annihilape",
         "fromSlug": "primeape",
         "toSlug": "annihilape",
         "method": "level_up",

@@ -99,18 +99,26 @@
   "evolutionFamily": {
     "members": [
       {
+        "nodeId": "fidough",
         "slug": "fidough",
         "name": "Fidough",
-        "dexNumber": 926
+        "dexNumber": 926,
+        "formSlug": null,
+        "formName": null
       },
       {
+        "nodeId": "dachsbun",
         "slug": "dachsbun",
         "name": "Dachsbun",
-        "dexNumber": 927
+        "dexNumber": 927,
+        "formSlug": null,
+        "formName": null
       }
     ],
     "edges": [
       {
+        "fromNodeId": "fidough",
+        "toNodeId": "dachsbun",
         "fromSlug": "fidough",
         "toSlug": "dachsbun",
         "method": "level_up",

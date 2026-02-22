@@ -71,18 +71,44 @@
   "evolutionFamily": {
     "members": [
       {
+        "nodeId": "ponyta",
         "slug": "ponyta",
         "name": "Ponyta",
-        "dexNumber": 77
+        "dexNumber": 77,
+        "formSlug": null,
+        "formName": null
       },
       {
+        "nodeId": "rapidash",
         "slug": "rapidash",
         "name": "Rapidash",
-        "dexNumber": 78
+        "dexNumber": 78,
+        "formSlug": null,
+        "formName": null
+      },
+      {
+        "nodeId": "rapidash-galar",
+        "slug": "rapidash",
+        "name": "Rapidash",
+        "dexNumber": 78,
+        "formSlug": "rapidash-galar",
+        "formName": "Galar"
       }
     ],
     "edges": [
       {
+        "fromNodeId": "ponyta",
+        "toNodeId": "rapidash",
+        "fromSlug": "ponyta",
+        "toSlug": "rapidash",
+        "method": "level_up",
+        "requirementText": [
+          "Level 40+"
+        ]
+      },
+      {
+        "fromNodeId": "ponyta",
+        "toNodeId": "rapidash-galar",
         "fromSlug": "ponyta",
         "toSlug": "rapidash",
         "method": "level_up",

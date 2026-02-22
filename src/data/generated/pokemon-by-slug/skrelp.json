@@ -110,18 +110,26 @@
   "evolutionFamily": {
     "members": [
       {
+        "nodeId": "skrelp",
         "slug": "skrelp",
         "name": "Skrelp",
-        "dexNumber": 690
+        "dexNumber": 690,
+        "formSlug": null,
+        "formName": null
       },
       {
+        "nodeId": "dragalge",
         "slug": "dragalge",
         "name": "Dragalge",
-        "dexNumber": 691
+        "dexNumber": 691,
+        "formSlug": null,
+        "formName": null
       }
     ],
     "edges": [
       {
+        "fromNodeId": "skrelp",
+        "toNodeId": "dragalge",
         "fromSlug": "skrelp",
         "toSlug": "dragalge",
         "method": "level_up",

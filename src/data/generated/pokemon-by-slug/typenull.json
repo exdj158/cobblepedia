@@ -104,18 +104,26 @@
   "evolutionFamily": {
     "members": [
       {
+        "nodeId": "typenull",
         "slug": "typenull",
         "name": "Type: Null",
-        "dexNumber": 772
+        "dexNumber": 772,
+        "formSlug": null,
+        "formName": null
       },
       {
+        "nodeId": "silvally",
         "slug": "silvally",
         "name": "Silvally",
-        "dexNumber": 773
+        "dexNumber": 773,
+        "formSlug": null,
+        "formName": null
       }
     ],
     "edges": [
       {
+        "fromNodeId": "typenull",
+        "toNodeId": "silvally",
         "fromSlug": "typenull",
         "toSlug": "silvally",
         "method": "level_up",

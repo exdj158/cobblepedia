@@ -68,18 +68,26 @@
   "evolutionFamily": {
     "members": [
       {
+        "nodeId": "aipom",
         "slug": "aipom",
         "name": "Aipom",
-        "dexNumber": 190
+        "dexNumber": 190,
+        "formSlug": null,
+        "formName": null
       },
       {
+        "nodeId": "ambipom",
         "slug": "ambipom",
         "name": "Ambipom",
-        "dexNumber": 424
+        "dexNumber": 424,
+        "formSlug": null,
+        "formName": null
       }
     ],
     "edges": [
       {
+        "fromNodeId": "aipom",
+        "toNodeId": "ambipom",
         "fromSlug": "aipom",
         "toSlug": "ambipom",
         "method": "level_up",

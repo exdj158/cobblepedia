@@ -100,23 +100,34 @@
   "evolutionFamily": {
     "members": [
       {
+        "nodeId": "nidoranm",
         "slug": "nidoranm",
         "name": "Nidoran-M",
-        "dexNumber": 32
+        "dexNumber": 32,
+        "formSlug": null,
+        "formName": null
       },
       {
+        "nodeId": "nidorino",
         "slug": "nidorino",
         "name": "Nidorino",
-        "dexNumber": 33
+        "dexNumber": 33,
+        "formSlug": null,
+        "formName": null
       },
       {
+        "nodeId": "nidoking",
         "slug": "nidoking",
         "name": "Nidoking",
-        "dexNumber": 34
+        "dexNumber": 34,
+        "formSlug": null,
+        "formName": null
       }
     ],
     "edges": [
       {
+        "fromNodeId": "nidoranm",
+        "toNodeId": "nidorino",
         "fromSlug": "nidoranm",
         "toSlug": "nidorino",
         "method": "level_up",
@@ -125,6 +136,8 @@
         ]
       },
       {
+        "fromNodeId": "nidorino",
+        "toNodeId": "nidoking",
         "fromSlug": "nidorino",
         "toSlug": "nidoking",
         "method": "item_interact",

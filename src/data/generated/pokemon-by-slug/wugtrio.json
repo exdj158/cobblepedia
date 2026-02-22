@@ -68,18 +68,26 @@
   "evolutionFamily": {
     "members": [
       {
+        "nodeId": "wiglett",
         "slug": "wiglett",
         "name": "Wiglett",
-        "dexNumber": 960
+        "dexNumber": 960,
+        "formSlug": null,
+        "formName": null
       },
       {
+        "nodeId": "wugtrio",
         "slug": "wugtrio",
         "name": "Wugtrio",
-        "dexNumber": 961
+        "dexNumber": 961,
+        "formSlug": null,
+        "formName": null
       }
     ],
     "edges": [
       {
+        "fromNodeId": "wiglett",
+        "toNodeId": "wugtrio",
         "fromSlug": "wiglett",
         "toSlug": "wugtrio",
         "method": "level_up",

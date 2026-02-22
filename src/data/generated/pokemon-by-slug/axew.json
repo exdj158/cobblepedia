@@ -105,23 +105,34 @@
   "evolutionFamily": {
     "members": [
       {
+        "nodeId": "axew",
         "slug": "axew",
         "name": "Axew",
-        "dexNumber": 610
+        "dexNumber": 610,
+        "formSlug": null,
+        "formName": null
       },
       {
+        "nodeId": "fraxure",
         "slug": "fraxure",
         "name": "Fraxure",
-        "dexNumber": 611
+        "dexNumber": 611,
+        "formSlug": null,
+        "formName": null
       },
       {
+        "nodeId": "haxorus",
         "slug": "haxorus",
         "name": "Haxorus",
-        "dexNumber": 612
+        "dexNumber": 612,
+        "formSlug": null,
+        "formName": null
       }
     ],
     "edges": [
       {
+        "fromNodeId": "axew",
+        "toNodeId": "fraxure",
         "fromSlug": "axew",
         "toSlug": "fraxure",
         "method": "level_up",
@@ -130,6 +141,8 @@
         ]
       },
       {
+        "fromNodeId": "fraxure",
+        "toNodeId": "haxorus",
         "fromSlug": "fraxure",
         "toSlug": "haxorus",
         "method": "level_up",

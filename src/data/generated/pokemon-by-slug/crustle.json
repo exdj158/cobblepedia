@@ -70,18 +70,26 @@
   "evolutionFamily": {
     "members": [
       {
+        "nodeId": "dwebble",
         "slug": "dwebble",
         "name": "Dwebble",
-        "dexNumber": 557
+        "dexNumber": 557,
+        "formSlug": null,
+        "formName": null
       },
       {
+        "nodeId": "crustle",
         "slug": "crustle",
         "name": "Crustle",
-        "dexNumber": 558
+        "dexNumber": 558,
+        "formSlug": null,
+        "formName": null
       }
     ],
     "edges": [
       {
+        "fromNodeId": "dwebble",
+        "toNodeId": "crustle",
         "fromSlug": "dwebble",
         "toSlug": "crustle",
         "method": "level_up",

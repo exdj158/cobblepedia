@@ -68,18 +68,26 @@
   "evolutionFamily": {
     "members": [
       {
+        "nodeId": "farfetchd",
         "slug": "farfetchd",
         "name": "Farfetch’d",
-        "dexNumber": 83
+        "dexNumber": 83,
+        "formSlug": null,
+        "formName": null
       },
       {
+        "nodeId": "sirfetchd",
         "slug": "sirfetchd",
         "name": "Sirfetch’d",
-        "dexNumber": 865
+        "dexNumber": 865,
+        "formSlug": null,
+        "formName": null
       }
     ],
     "edges": [
       {
+        "fromNodeId": "farfetchd",
+        "toNodeId": "sirfetchd",
         "fromSlug": "farfetchd",
         "toSlug": "sirfetchd",
         "method": "level_up",

@@ -105,31 +105,49 @@
   "evolutionFamily": {
     "members": [
       {
+        "nodeId": "sandshrew",
         "slug": "sandshrew",
         "name": "Sandshrew",
-        "dexNumber": 27
+        "dexNumber": 27,
+        "formSlug": null,
+        "formName": null
       },
       {
+        "nodeId": "sandslash",
         "slug": "sandslash",
         "name": "Sandslash",
-        "dexNumber": 28
+        "dexNumber": 28,
+        "formSlug": null,
+        "formName": null
+      },
+      {
+        "nodeId": "sandslash-alola",
+        "slug": "sandslash",
+        "name": "Sandslash",
+        "dexNumber": 28,
+        "formSlug": "sandslash-alola",
+        "formName": "Alola"
       }
     ],
     "edges": [
       {
-        "fromSlug": "sandshrew",
-        "toSlug": "sandslash",
-        "method": "item_interact",
-        "requirementText": [
-          "Use Ice Stone"
-        ]
-      },
-      {
+        "fromNodeId": "sandshrew",
+        "toNodeId": "sandslash",
         "fromSlug": "sandshrew",
         "toSlug": "sandslash",
         "method": "level_up",
         "requirementText": [
           "Level 22+"
+        ]
+      },
+      {
+        "fromNodeId": "sandshrew",
+        "toNodeId": "sandslash-alola",
+        "fromSlug": "sandshrew",
+        "toSlug": "sandslash",
+        "method": "item_interact",
+        "requirementText": [
+          "Use Ice Stone"
         ]
       }
     ],

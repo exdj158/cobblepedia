@@ -106,23 +106,34 @@
   "evolutionFamily": {
     "members": [
       {
+        "nodeId": "froakie",
         "slug": "froakie",
         "name": "Froakie",
-        "dexNumber": 656
+        "dexNumber": 656,
+        "formSlug": null,
+        "formName": null
       },
       {
+        "nodeId": "frogadier",
         "slug": "frogadier",
         "name": "Frogadier",
-        "dexNumber": 657
+        "dexNumber": 657,
+        "formSlug": null,
+        "formName": null
       },
       {
+        "nodeId": "greninja",
         "slug": "greninja",
         "name": "Greninja",
-        "dexNumber": 658
+        "dexNumber": 658,
+        "formSlug": null,
+        "formName": null
       }
     ],
     "edges": [
       {
+        "fromNodeId": "froakie",
+        "toNodeId": "frogadier",
         "fromSlug": "froakie",
         "toSlug": "frogadier",
         "method": "level_up",
@@ -131,6 +142,8 @@
         ]
       },
       {
+        "fromNodeId": "frogadier",
+        "toNodeId": "greninja",
         "fromSlug": "frogadier",
         "toSlug": "greninja",
         "method": "level_up",

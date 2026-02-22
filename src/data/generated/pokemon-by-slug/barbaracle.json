@@ -69,18 +69,26 @@
   "evolutionFamily": {
     "members": [
       {
+        "nodeId": "binacle",
         "slug": "binacle",
         "name": "Binacle",
-        "dexNumber": 688
+        "dexNumber": 688,
+        "formSlug": null,
+        "formName": null
       },
       {
+        "nodeId": "barbaracle",
         "slug": "barbaracle",
         "name": "Barbaracle",
-        "dexNumber": 689
+        "dexNumber": 689,
+        "formSlug": null,
+        "formName": null
       }
     ],
     "edges": [
       {
+        "fromNodeId": "binacle",
+        "toNodeId": "barbaracle",
         "fromSlug": "binacle",
         "toSlug": "barbaracle",
         "method": "level_up",

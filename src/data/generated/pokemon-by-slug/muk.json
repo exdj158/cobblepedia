@@ -71,18 +71,44 @@
   "evolutionFamily": {
     "members": [
       {
+        "nodeId": "grimer",
         "slug": "grimer",
         "name": "Grimer",
-        "dexNumber": 88
+        "dexNumber": 88,
+        "formSlug": null,
+        "formName": null
       },
       {
+        "nodeId": "muk",
         "slug": "muk",
         "name": "Muk",
-        "dexNumber": 89
+        "dexNumber": 89,
+        "formSlug": null,
+        "formName": null
+      },
+      {
+        "nodeId": "muk-alola",
+        "slug": "muk",
+        "name": "Muk",
+        "dexNumber": 89,
+        "formSlug": "muk-alola",
+        "formName": "Alola"
       }
     ],
     "edges": [
       {
+        "fromNodeId": "grimer",
+        "toNodeId": "muk",
+        "fromSlug": "grimer",
+        "toSlug": "muk",
+        "method": "level_up",
+        "requirementText": [
+          "Level 38+"
+        ]
+      },
+      {
+        "fromNodeId": "grimer",
+        "toNodeId": "muk-alola",
         "fromSlug": "grimer",
         "toSlug": "muk",
         "method": "level_up",

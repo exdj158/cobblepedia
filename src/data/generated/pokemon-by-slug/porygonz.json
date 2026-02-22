@@ -69,23 +69,34 @@
   "evolutionFamily": {
     "members": [
       {
+        "nodeId": "porygon",
         "slug": "porygon",
         "name": "Porygon",
-        "dexNumber": 137
+        "dexNumber": 137,
+        "formSlug": null,
+        "formName": null
       },
       {
+        "nodeId": "porygon2",
         "slug": "porygon2",
         "name": "Porygon2",
-        "dexNumber": 233
+        "dexNumber": 233,
+        "formSlug": null,
+        "formName": null
       },
       {
+        "nodeId": "porygonz",
         "slug": "porygonz",
         "name": "Porygon-Z",
-        "dexNumber": 474
+        "dexNumber": 474,
+        "formSlug": null,
+        "formName": null
       }
     ],
     "edges": [
       {
+        "fromNodeId": "porygon",
+        "toNodeId": "porygon2",
         "fromSlug": "porygon",
         "toSlug": "porygon2",
         "method": "trade",
@@ -94,6 +105,8 @@
         ]
       },
       {
+        "fromNodeId": "porygon2",
+        "toNodeId": "porygonz",
         "fromSlug": "porygon2",
         "toSlug": "porygonz",
         "method": "trade",

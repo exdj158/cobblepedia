@@ -72,33 +72,51 @@
   "evolutionFamily": {
     "members": [
       {
+        "nodeId": "lechonk",
         "slug": "lechonk",
         "name": "Lechonk",
-        "dexNumber": 915
+        "dexNumber": 915,
+        "formSlug": null,
+        "formName": null
       },
       {
+        "nodeId": "oinkologne",
         "slug": "oinkologne",
         "name": "Oinkologne",
-        "dexNumber": 916
+        "dexNumber": 916,
+        "formSlug": null,
+        "formName": null
+      },
+      {
+        "nodeId": "oinkologne-f",
+        "slug": "oinkologne",
+        "name": "Oinkologne",
+        "dexNumber": 916,
+        "formSlug": "oinkologne-f",
+        "formName": "F"
       }
     ],
     "edges": [
       {
+        "fromNodeId": "lechonk",
+        "toNodeId": "oinkologne",
         "fromSlug": "lechonk",
         "toSlug": "oinkologne",
         "method": "level_up",
         "requirementText": [
           "Level 18+",
-          "Property gender=male"
+          "Male only"
         ]
       },
       {
+        "fromNodeId": "lechonk",
+        "toNodeId": "oinkologne-f",
         "fromSlug": "lechonk",
         "toSlug": "oinkologne",
         "method": "level_up",
         "requirementText": [
           "Level 18+",
-          "Property gender=female"
+          "Female only"
         ]
       }
     ],

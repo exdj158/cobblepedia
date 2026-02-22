@@ -65,23 +65,34 @@
   "evolutionFamily": {
     "members": [
       {
+        "nodeId": "weedle",
         "slug": "weedle",
         "name": "Weedle",
-        "dexNumber": 13
+        "dexNumber": 13,
+        "formSlug": null,
+        "formName": null
       },
       {
+        "nodeId": "kakuna",
         "slug": "kakuna",
         "name": "Kakuna",
-        "dexNumber": 14
+        "dexNumber": 14,
+        "formSlug": null,
+        "formName": null
       },
       {
+        "nodeId": "beedrill",
         "slug": "beedrill",
         "name": "Beedrill",
-        "dexNumber": 15
+        "dexNumber": 15,
+        "formSlug": null,
+        "formName": null
       }
     ],
     "edges": [
       {
+        "fromNodeId": "kakuna",
+        "toNodeId": "beedrill",
         "fromSlug": "kakuna",
         "toSlug": "beedrill",
         "method": "level_up",
@@ -90,6 +101,8 @@
         ]
       },
       {
+        "fromNodeId": "weedle",
+        "toNodeId": "kakuna",
         "fromSlug": "weedle",
         "toSlug": "kakuna",
         "method": "level_up",

@@ -108,23 +108,34 @@
   "evolutionFamily": {
     "members": [
       {
+        "nodeId": "chimchar",
         "slug": "chimchar",
         "name": "Chimchar",
-        "dexNumber": 390
+        "dexNumber": 390,
+        "formSlug": null,
+        "formName": null
       },
       {
+        "nodeId": "monferno",
         "slug": "monferno",
         "name": "Monferno",
-        "dexNumber": 391
+        "dexNumber": 391,
+        "formSlug": null,
+        "formName": null
       },
       {
+        "nodeId": "infernape",
         "slug": "infernape",
         "name": "Infernape",
-        "dexNumber": 392
+        "dexNumber": 392,
+        "formSlug": null,
+        "formName": null
       }
     ],
     "edges": [
       {
+        "fromNodeId": "chimchar",
+        "toNodeId": "monferno",
         "fromSlug": "chimchar",
         "toSlug": "monferno",
         "method": "level_up",
@@ -133,6 +144,8 @@
         ]
       },
       {
+        "fromNodeId": "monferno",
+        "toNodeId": "infernape",
         "fromSlug": "monferno",
         "toSlug": "infernape",
         "method": "level_up",

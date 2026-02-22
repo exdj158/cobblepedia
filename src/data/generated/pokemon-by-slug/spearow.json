@@ -99,18 +99,26 @@
   "evolutionFamily": {
     "members": [
       {
+        "nodeId": "spearow",
         "slug": "spearow",
         "name": "Spearow",
-        "dexNumber": 21
+        "dexNumber": 21,
+        "formSlug": null,
+        "formName": null
       },
       {
+        "nodeId": "fearow",
         "slug": "fearow",
         "name": "Fearow",
-        "dexNumber": 22
+        "dexNumber": 22,
+        "formSlug": null,
+        "formName": null
       }
     ],
     "edges": [
       {
+        "fromNodeId": "spearow",
+        "toNodeId": "fearow",
         "fromSlug": "spearow",
         "toSlug": "fearow",
         "method": "level_up",

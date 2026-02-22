@@ -105,18 +105,44 @@
   "evolutionFamily": {
     "members": [
       {
+        "nodeId": "zorua",
         "slug": "zorua",
         "name": "Zorua",
-        "dexNumber": 570
+        "dexNumber": 570,
+        "formSlug": null,
+        "formName": null
       },
       {
+        "nodeId": "zoroark",
         "slug": "zoroark",
         "name": "Zoroark",
-        "dexNumber": 571
+        "dexNumber": 571,
+        "formSlug": null,
+        "formName": null
+      },
+      {
+        "nodeId": "zoroark-hisui",
+        "slug": "zoroark",
+        "name": "Zoroark",
+        "dexNumber": 571,
+        "formSlug": "zoroark-hisui",
+        "formName": "Hisui"
       }
     ],
     "edges": [
       {
+        "fromNodeId": "zorua",
+        "toNodeId": "zoroark",
+        "fromSlug": "zorua",
+        "toSlug": "zoroark",
+        "method": "level_up",
+        "requirementText": [
+          "Level 30+"
+        ]
+      },
+      {
+        "fromNodeId": "zorua",
+        "toNodeId": "zoroark-hisui",
         "fromSlug": "zorua",
         "toSlug": "zoroark",
         "method": "level_up",

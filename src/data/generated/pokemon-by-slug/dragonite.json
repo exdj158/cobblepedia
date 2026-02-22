@@ -65,23 +65,34 @@
   "evolutionFamily": {
     "members": [
       {
+        "nodeId": "dratini",
         "slug": "dratini",
         "name": "Dratini",
-        "dexNumber": 147
+        "dexNumber": 147,
+        "formSlug": null,
+        "formName": null
       },
       {
+        "nodeId": "dragonair",
         "slug": "dragonair",
         "name": "Dragonair",
-        "dexNumber": 148
+        "dexNumber": 148,
+        "formSlug": null,
+        "formName": null
       },
       {
+        "nodeId": "dragonite",
         "slug": "dragonite",
         "name": "Dragonite",
-        "dexNumber": 149
+        "dexNumber": 149,
+        "formSlug": null,
+        "formName": null
       }
     ],
     "edges": [
       {
+        "fromNodeId": "dragonair",
+        "toNodeId": "dragonite",
         "fromSlug": "dragonair",
         "toSlug": "dragonite",
         "method": "level_up",
@@ -90,6 +101,8 @@
         ]
       },
       {
+        "fromNodeId": "dratini",
+        "toNodeId": "dragonair",
         "fromSlug": "dratini",
         "toSlug": "dragonair",
         "method": "level_up",

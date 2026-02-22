@@ -66,23 +66,34 @@
   "evolutionFamily": {
     "members": [
       {
+        "nodeId": "mudkip",
         "slug": "mudkip",
         "name": "Mudkip",
-        "dexNumber": 258
+        "dexNumber": 258,
+        "formSlug": null,
+        "formName": null
       },
       {
+        "nodeId": "marshtomp",
         "slug": "marshtomp",
         "name": "Marshtomp",
-        "dexNumber": 259
+        "dexNumber": 259,
+        "formSlug": null,
+        "formName": null
       },
       {
+        "nodeId": "swampert",
         "slug": "swampert",
         "name": "Swampert",
-        "dexNumber": 260
+        "dexNumber": 260,
+        "formSlug": null,
+        "formName": null
       }
     ],
     "edges": [
       {
+        "fromNodeId": "marshtomp",
+        "toNodeId": "swampert",
         "fromSlug": "marshtomp",
         "toSlug": "swampert",
         "method": "level_up",
@@ -91,6 +102,8 @@
         ]
       },
       {
+        "fromNodeId": "mudkip",
+        "toNodeId": "marshtomp",
         "fromSlug": "mudkip",
         "toSlug": "marshtomp",
         "method": "level_up",

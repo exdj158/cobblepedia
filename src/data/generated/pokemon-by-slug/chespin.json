@@ -103,23 +103,34 @@
   "evolutionFamily": {
     "members": [
       {
+        "nodeId": "chespin",
         "slug": "chespin",
         "name": "Chespin",
-        "dexNumber": 650
+        "dexNumber": 650,
+        "formSlug": null,
+        "formName": null
       },
       {
+        "nodeId": "quilladin",
         "slug": "quilladin",
         "name": "Quilladin",
-        "dexNumber": 651
+        "dexNumber": 651,
+        "formSlug": null,
+        "formName": null
       },
       {
+        "nodeId": "chesnaught",
         "slug": "chesnaught",
         "name": "Chesnaught",
-        "dexNumber": 652
+        "dexNumber": 652,
+        "formSlug": null,
+        "formName": null
       }
     ],
     "edges": [
       {
+        "fromNodeId": "chespin",
+        "toNodeId": "quilladin",
         "fromSlug": "chespin",
         "toSlug": "quilladin",
         "method": "level_up",
@@ -128,6 +139,8 @@
         ]
       },
       {
+        "fromNodeId": "quilladin",
+        "toNodeId": "chesnaught",
         "fromSlug": "quilladin",
         "toSlug": "chesnaught",
         "method": "level_up",

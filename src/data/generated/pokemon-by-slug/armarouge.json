@@ -63,23 +63,34 @@
   "evolutionFamily": {
     "members": [
       {
+        "nodeId": "charcadet",
         "slug": "charcadet",
         "name": "Charcadet",
-        "dexNumber": 935
+        "dexNumber": 935,
+        "formSlug": null,
+        "formName": null
       },
       {
+        "nodeId": "armarouge",
         "slug": "armarouge",
         "name": "Armarouge",
-        "dexNumber": 936
+        "dexNumber": 936,
+        "formSlug": null,
+        "formName": null
       },
       {
+        "nodeId": "ceruledge",
         "slug": "ceruledge",
         "name": "Ceruledge",
-        "dexNumber": 937
+        "dexNumber": 937,
+        "formSlug": null,
+        "formName": null
       }
     ],
     "edges": [
       {
+        "fromNodeId": "charcadet",
+        "toNodeId": "armarouge",
         "fromSlug": "charcadet",
         "toSlug": "armarouge",
         "method": "item_interact",
@@ -88,6 +99,8 @@
         ]
       },
       {
+        "fromNodeId": "charcadet",
+        "toNodeId": "ceruledge",
         "fromSlug": "charcadet",
         "toSlug": "ceruledge",
         "method": "item_interact",

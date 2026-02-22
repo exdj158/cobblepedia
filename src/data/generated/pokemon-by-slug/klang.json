@@ -112,23 +112,34 @@
   "evolutionFamily": {
     "members": [
       {
+        "nodeId": "klink",
         "slug": "klink",
         "name": "Klink",
-        "dexNumber": 599
+        "dexNumber": 599,
+        "formSlug": null,
+        "formName": null
       },
       {
+        "nodeId": "klang",
         "slug": "klang",
         "name": "Klang",
-        "dexNumber": 600
+        "dexNumber": 600,
+        "formSlug": null,
+        "formName": null
       },
       {
+        "nodeId": "klinklang",
         "slug": "klinklang",
         "name": "Klinklang",
-        "dexNumber": 601
+        "dexNumber": 601,
+        "formSlug": null,
+        "formName": null
       }
     ],
     "edges": [
       {
+        "fromNodeId": "klang",
+        "toNodeId": "klinklang",
         "fromSlug": "klang",
         "toSlug": "klinklang",
         "method": "level_up",
@@ -137,6 +148,8 @@
         ]
       },
       {
+        "fromNodeId": "klink",
+        "toNodeId": "klang",
         "fromSlug": "klink",
         "toSlug": "klang",
         "method": "level_up",

@@ -110,18 +110,26 @@
   "evolutionFamily": {
     "members": [
       {
+        "nodeId": "wattrel",
         "slug": "wattrel",
         "name": "Wattrel",
-        "dexNumber": 940
+        "dexNumber": 940,
+        "formSlug": null,
+        "formName": null
       },
       {
+        "nodeId": "kilowattrel",
         "slug": "kilowattrel",
         "name": "Kilowattrel",
-        "dexNumber": 941
+        "dexNumber": 941,
+        "formSlug": null,
+        "formName": null
       }
     ],
     "edges": [
       {
+        "fromNodeId": "wattrel",
+        "toNodeId": "kilowattrel",
         "fromSlug": "wattrel",
         "toSlug": "kilowattrel",
         "method": "level_up",

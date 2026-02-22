@@ -68,18 +68,26 @@
   "evolutionFamily": {
     "members": [
       {
+        "nodeId": "goldeen",
         "slug": "goldeen",
         "name": "Goldeen",
-        "dexNumber": 118
+        "dexNumber": 118,
+        "formSlug": null,
+        "formName": null
       },
       {
+        "nodeId": "seaking",
         "slug": "seaking",
         "name": "Seaking",
-        "dexNumber": 119
+        "dexNumber": 119,
+        "formSlug": null,
+        "formName": null
       }
     ],
     "edges": [
       {
+        "fromNodeId": "goldeen",
+        "toNodeId": "seaking",
         "fromSlug": "goldeen",
         "toSlug": "seaking",
         "method": "level_up",

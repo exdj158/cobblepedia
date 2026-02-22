@@ -64,18 +64,26 @@
   "evolutionFamily": {
     "members": [
       {
+        "nodeId": "cacnea",
         "slug": "cacnea",
         "name": "Cacnea",
-        "dexNumber": 331
+        "dexNumber": 331,
+        "formSlug": null,
+        "formName": null
       },
       {
+        "nodeId": "cacturne",
         "slug": "cacturne",
         "name": "Cacturne",
-        "dexNumber": 332
+        "dexNumber": 332,
+        "formSlug": null,
+        "formName": null
       }
     ],
     "edges": [
       {
+        "fromNodeId": "cacnea",
+        "toNodeId": "cacturne",
         "fromSlug": "cacnea",
         "toSlug": "cacturne",
         "method": "level_up",

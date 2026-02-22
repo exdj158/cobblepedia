@@ -63,18 +63,26 @@
   "evolutionFamily": {
     "members": [
       {
+        "nodeId": "clobbopus",
         "slug": "clobbopus",
         "name": "Clobbopus",
-        "dexNumber": 852
+        "dexNumber": 852,
+        "formSlug": null,
+        "formName": null
       },
       {
+        "nodeId": "grapploct",
         "slug": "grapploct",
         "name": "Grapploct",
-        "dexNumber": 853
+        "dexNumber": 853,
+        "formSlug": null,
+        "formName": null
       }
     ],
     "edges": [
       {
+        "fromNodeId": "clobbopus",
+        "toNodeId": "grapploct",
         "fromSlug": "clobbopus",
         "toSlug": "grapploct",
         "method": "level_up",

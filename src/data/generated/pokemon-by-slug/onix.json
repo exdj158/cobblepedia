@@ -105,18 +105,26 @@
   "evolutionFamily": {
     "members": [
       {
+        "nodeId": "onix",
         "slug": "onix",
         "name": "Onix",
-        "dexNumber": 95
+        "dexNumber": 95,
+        "formSlug": null,
+        "formName": null
       },
       {
+        "nodeId": "steelix",
         "slug": "steelix",
         "name": "Steelix",
-        "dexNumber": 208
+        "dexNumber": 208,
+        "formSlug": null,
+        "formName": null
       }
     ],
     "edges": [
       {
+        "fromNodeId": "onix",
+        "toNodeId": "steelix",
         "fromSlug": "onix",
         "toSlug": "steelix",
         "method": "trade",

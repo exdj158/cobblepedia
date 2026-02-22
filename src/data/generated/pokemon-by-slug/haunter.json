@@ -91,23 +91,34 @@
   "evolutionFamily": {
     "members": [
       {
+        "nodeId": "gastly",
         "slug": "gastly",
         "name": "Gastly",
-        "dexNumber": 92
+        "dexNumber": 92,
+        "formSlug": null,
+        "formName": null
       },
       {
+        "nodeId": "haunter",
         "slug": "haunter",
         "name": "Haunter",
-        "dexNumber": 93
+        "dexNumber": 93,
+        "formSlug": null,
+        "formName": null
       },
       {
+        "nodeId": "gengar",
         "slug": "gengar",
         "name": "Gengar",
-        "dexNumber": 94
+        "dexNumber": 94,
+        "formSlug": null,
+        "formName": null
       }
     ],
     "edges": [
       {
+        "fromNodeId": "gastly",
+        "toNodeId": "haunter",
         "fromSlug": "gastly",
         "toSlug": "haunter",
         "method": "level_up",
@@ -116,6 +127,8 @@
         ]
       },
       {
+        "fromNodeId": "haunter",
+        "toNodeId": "gengar",
         "fromSlug": "haunter",
         "toSlug": "gengar",
         "method": "trade",

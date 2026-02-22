@@ -77,18 +77,26 @@
   "evolutionFamily": {
     "members": [
       {
+        "nodeId": "deerling",
         "slug": "deerling",
         "name": "Deerling",
-        "dexNumber": 585
+        "dexNumber": 585,
+        "formSlug": null,
+        "formName": null
       },
       {
+        "nodeId": "sawsbuck",
         "slug": "sawsbuck",
         "name": "Sawsbuck",
-        "dexNumber": 586
+        "dexNumber": 586,
+        "formSlug": null,
+        "formName": null
       }
     ],
     "edges": [
       {
+        "fromNodeId": "deerling",
+        "toNodeId": "sawsbuck",
         "fromSlug": "deerling",
         "toSlug": "sawsbuck",
         "method": "level_up",

@@ -70,18 +70,26 @@
   "evolutionFamily": {
     "members": [
       {
+        "nodeId": "trubbish",
         "slug": "trubbish",
         "name": "Trubbish",
-        "dexNumber": 568
+        "dexNumber": 568,
+        "formSlug": null,
+        "formName": null
       },
       {
+        "nodeId": "garbodor",
         "slug": "garbodor",
         "name": "Garbodor",
-        "dexNumber": 569
+        "dexNumber": 569,
+        "formSlug": null,
+        "formName": null
       }
     ],
     "edges": [
       {
+        "fromNodeId": "trubbish",
+        "toNodeId": "garbodor",
         "fromSlug": "trubbish",
         "toSlug": "garbodor",
         "method": "level_up",

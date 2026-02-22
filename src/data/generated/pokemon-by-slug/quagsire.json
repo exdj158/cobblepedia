@@ -70,23 +70,34 @@
   "evolutionFamily": {
     "members": [
       {
+        "nodeId": "wooper",
         "slug": "wooper",
         "name": "Wooper",
-        "dexNumber": 194
+        "dexNumber": 194,
+        "formSlug": null,
+        "formName": null
       },
       {
+        "nodeId": "quagsire",
         "slug": "quagsire",
         "name": "Quagsire",
-        "dexNumber": 195
+        "dexNumber": 195,
+        "formSlug": null,
+        "formName": null
       },
       {
+        "nodeId": "clodsire",
         "slug": "clodsire",
         "name": "Clodsire",
-        "dexNumber": 980
+        "dexNumber": 980,
+        "formSlug": null,
+        "formName": null
       }
     ],
     "edges": [
       {
+        "fromNodeId": "wooper",
+        "toNodeId": "clodsire",
         "fromSlug": "wooper",
         "toSlug": "clodsire",
         "method": "level_up",
@@ -95,6 +106,8 @@
         ]
       },
       {
+        "fromNodeId": "wooper",
+        "toNodeId": "quagsire",
         "fromSlug": "wooper",
         "toSlug": "quagsire",
         "method": "level_up",

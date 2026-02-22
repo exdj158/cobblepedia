@@ -62,18 +62,26 @@
   "evolutionFamily": {
     "members": [
       {
+        "nodeId": "spritzee",
         "slug": "spritzee",
         "name": "Spritzee",
-        "dexNumber": 682
+        "dexNumber": 682,
+        "formSlug": null,
+        "formName": null
       },
       {
+        "nodeId": "aromatisse",
         "slug": "aromatisse",
         "name": "Aromatisse",
-        "dexNumber": 683
+        "dexNumber": 683,
+        "formSlug": null,
+        "formName": null
       }
     ],
     "edges": [
       {
+        "fromNodeId": "spritzee",
+        "toNodeId": "aromatisse",
         "fromSlug": "spritzee",
         "toSlug": "aromatisse",
         "method": "trade",

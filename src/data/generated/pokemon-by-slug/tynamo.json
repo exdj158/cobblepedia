@@ -102,23 +102,34 @@
   "evolutionFamily": {
     "members": [
       {
+        "nodeId": "tynamo",
         "slug": "tynamo",
         "name": "Tynamo",
-        "dexNumber": 602
+        "dexNumber": 602,
+        "formSlug": null,
+        "formName": null
       },
       {
+        "nodeId": "eelektrik",
         "slug": "eelektrik",
         "name": "Eelektrik",
-        "dexNumber": 603
+        "dexNumber": 603,
+        "formSlug": null,
+        "formName": null
       },
       {
+        "nodeId": "eelektross",
         "slug": "eelektross",
         "name": "Eelektross",
-        "dexNumber": 604
+        "dexNumber": 604,
+        "formSlug": null,
+        "formName": null
       }
     ],
     "edges": [
       {
+        "fromNodeId": "eelektrik",
+        "toNodeId": "eelektross",
         "fromSlug": "eelektrik",
         "toSlug": "eelektross",
         "method": "item_interact",
@@ -127,6 +138,8 @@
         ]
       },
       {
+        "fromNodeId": "tynamo",
+        "toNodeId": "eelektrik",
         "fromSlug": "tynamo",
         "toSlug": "eelektrik",
         "method": "level_up",

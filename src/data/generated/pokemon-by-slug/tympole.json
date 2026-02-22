@@ -104,23 +104,34 @@
   "evolutionFamily": {
     "members": [
       {
+        "nodeId": "tympole",
         "slug": "tympole",
         "name": "Tympole",
-        "dexNumber": 535
+        "dexNumber": 535,
+        "formSlug": null,
+        "formName": null
       },
       {
+        "nodeId": "palpitoad",
         "slug": "palpitoad",
         "name": "Palpitoad",
-        "dexNumber": 536
+        "dexNumber": 536,
+        "formSlug": null,
+        "formName": null
       },
       {
+        "nodeId": "seismitoad",
         "slug": "seismitoad",
         "name": "Seismitoad",
-        "dexNumber": 537
+        "dexNumber": 537,
+        "formSlug": null,
+        "formName": null
       }
     ],
     "edges": [
       {
+        "fromNodeId": "palpitoad",
+        "toNodeId": "seismitoad",
         "fromSlug": "palpitoad",
         "toSlug": "seismitoad",
         "method": "level_up",
@@ -129,6 +140,8 @@
         ]
       },
       {
+        "fromNodeId": "tympole",
+        "toNodeId": "palpitoad",
         "fromSlug": "tympole",
         "toSlug": "palpitoad",
         "method": "level_up",

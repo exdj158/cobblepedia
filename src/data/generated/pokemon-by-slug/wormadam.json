@@ -69,38 +69,51 @@
   "evolutionFamily": {
     "members": [
       {
+        "nodeId": "burmy",
         "slug": "burmy",
         "name": "Burmy",
-        "dexNumber": 412
+        "dexNumber": 412,
+        "formSlug": null,
+        "formName": null
       },
       {
+        "nodeId": "wormadam",
         "slug": "wormadam",
         "name": "Wormadam",
-        "dexNumber": 413
+        "dexNumber": 413,
+        "formSlug": null,
+        "formName": null
       },
       {
+        "nodeId": "mothim",
         "slug": "mothim",
         "name": "Mothim",
-        "dexNumber": 414
+        "dexNumber": 414,
+        "formSlug": null,
+        "formName": null
       }
     ],
     "edges": [
       {
+        "fromNodeId": "burmy",
+        "toNodeId": "mothim",
         "fromSlug": "burmy",
         "toSlug": "mothim",
         "method": "level_up",
         "requirementText": [
           "Level 20+",
-          "Property gender=male"
+          "Male only"
         ]
       },
       {
+        "fromNodeId": "burmy",
+        "toNodeId": "wormadam",
         "fromSlug": "burmy",
         "toSlug": "wormadam",
         "method": "level_up",
         "requirementText": [
           "Level 20+",
-          "Property gender=female"
+          "Female only"
         ]
       }
     ],

@@ -71,18 +71,44 @@
   "evolutionFamily": {
     "members": [
       {
+        "nodeId": "diglett",
         "slug": "diglett",
         "name": "Diglett",
-        "dexNumber": 50
+        "dexNumber": 50,
+        "formSlug": null,
+        "formName": null
       },
       {
+        "nodeId": "dugtrio",
         "slug": "dugtrio",
         "name": "Dugtrio",
-        "dexNumber": 51
+        "dexNumber": 51,
+        "formSlug": null,
+        "formName": null
+      },
+      {
+        "nodeId": "dugtrio-alola",
+        "slug": "dugtrio",
+        "name": "Dugtrio",
+        "dexNumber": 51,
+        "formSlug": "dugtrio-alola",
+        "formName": "Alola"
       }
     ],
     "edges": [
       {
+        "fromNodeId": "diglett",
+        "toNodeId": "dugtrio",
+        "fromSlug": "diglett",
+        "toSlug": "dugtrio",
+        "method": "level_up",
+        "requirementText": [
+          "Level 26+"
+        ]
+      },
+      {
+        "fromNodeId": "diglett",
+        "toNodeId": "dugtrio-alola",
         "fromSlug": "diglett",
         "toSlug": "dugtrio",
         "method": "level_up",

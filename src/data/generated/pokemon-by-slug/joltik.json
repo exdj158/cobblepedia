@@ -109,18 +109,26 @@
   "evolutionFamily": {
     "members": [
       {
+        "nodeId": "joltik",
         "slug": "joltik",
         "name": "Joltik",
-        "dexNumber": 595
+        "dexNumber": 595,
+        "formSlug": null,
+        "formName": null
       },
       {
+        "nodeId": "galvantula",
         "slug": "galvantula",
         "name": "Galvantula",
-        "dexNumber": 596
+        "dexNumber": 596,
+        "formSlug": null,
+        "formName": null
       }
     ],
     "edges": [
       {
+        "fromNodeId": "joltik",
+        "toNodeId": "galvantula",
         "fromSlug": "joltik",
         "toSlug": "galvantula",
         "method": "level_up",

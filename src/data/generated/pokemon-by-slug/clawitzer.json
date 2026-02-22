@@ -63,18 +63,26 @@
   "evolutionFamily": {
     "members": [
       {
+        "nodeId": "clauncher",
         "slug": "clauncher",
         "name": "Clauncher",
-        "dexNumber": 692
+        "dexNumber": 692,
+        "formSlug": null,
+        "formName": null
       },
       {
+        "nodeId": "clawitzer",
         "slug": "clawitzer",
         "name": "Clawitzer",
-        "dexNumber": 693
+        "dexNumber": 693,
+        "formSlug": null,
+        "formName": null
       }
     ],
     "edges": [
       {
+        "fromNodeId": "clauncher",
+        "toNodeId": "clawitzer",
         "fromSlug": "clauncher",
         "toSlug": "clawitzer",
         "method": "level_up",

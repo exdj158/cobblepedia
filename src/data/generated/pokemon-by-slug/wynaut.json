@@ -109,18 +109,26 @@
   "evolutionFamily": {
     "members": [
       {
+        "nodeId": "wobbuffet",
         "slug": "wobbuffet",
         "name": "Wobbuffet",
-        "dexNumber": 202
+        "dexNumber": 202,
+        "formSlug": null,
+        "formName": null
       },
       {
+        "nodeId": "wynaut",
         "slug": "wynaut",
         "name": "Wynaut",
-        "dexNumber": 360
+        "dexNumber": 360,
+        "formSlug": null,
+        "formName": null
       }
     ],
     "edges": [
       {
+        "fromNodeId": "wynaut",
+        "toNodeId": "wobbuffet",
         "fromSlug": "wynaut",
         "toSlug": "wobbuffet",
         "method": "level_up",

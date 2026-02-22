@@ -70,18 +70,26 @@
   "evolutionFamily": {
     "members": [
       {
+        "nodeId": "paras",
         "slug": "paras",
         "name": "Paras",
-        "dexNumber": 46
+        "dexNumber": 46,
+        "formSlug": null,
+        "formName": null
       },
       {
+        "nodeId": "parasect",
         "slug": "parasect",
         "name": "Parasect",
-        "dexNumber": 47
+        "dexNumber": 47,
+        "formSlug": null,
+        "formName": null
       }
     ],
     "edges": [
       {
+        "fromNodeId": "paras",
+        "toNodeId": "parasect",
         "fromSlug": "paras",
         "toSlug": "parasect",
         "method": "level_up",

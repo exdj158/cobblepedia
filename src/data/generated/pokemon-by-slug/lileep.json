@@ -100,18 +100,26 @@
   "evolutionFamily": {
     "members": [
       {
+        "nodeId": "lileep",
         "slug": "lileep",
         "name": "Lileep",
-        "dexNumber": 345
+        "dexNumber": 345,
+        "formSlug": null,
+        "formName": null
       },
       {
+        "nodeId": "cradily",
         "slug": "cradily",
         "name": "Cradily",
-        "dexNumber": 346
+        "dexNumber": 346,
+        "formSlug": null,
+        "formName": null
       }
     ],
     "edges": [
       {
+        "fromNodeId": "lileep",
+        "toNodeId": "cradily",
         "fromSlug": "lileep",
         "toSlug": "cradily",
         "method": "level_up",

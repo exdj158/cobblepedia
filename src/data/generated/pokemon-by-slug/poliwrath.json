@@ -69,28 +69,42 @@
   "evolutionFamily": {
     "members": [
       {
+        "nodeId": "poliwag",
         "slug": "poliwag",
         "name": "Poliwag",
-        "dexNumber": 60
+        "dexNumber": 60,
+        "formSlug": null,
+        "formName": null
       },
       {
+        "nodeId": "poliwhirl",
         "slug": "poliwhirl",
         "name": "Poliwhirl",
-        "dexNumber": 61
+        "dexNumber": 61,
+        "formSlug": null,
+        "formName": null
       },
       {
+        "nodeId": "poliwrath",
         "slug": "poliwrath",
         "name": "Poliwrath",
-        "dexNumber": 62
+        "dexNumber": 62,
+        "formSlug": null,
+        "formName": null
       },
       {
+        "nodeId": "politoed",
         "slug": "politoed",
         "name": "Politoed",
-        "dexNumber": 186
+        "dexNumber": 186,
+        "formSlug": null,
+        "formName": null
       }
     ],
     "edges": [
       {
+        "fromNodeId": "poliwag",
+        "toNodeId": "poliwhirl",
         "fromSlug": "poliwag",
         "toSlug": "poliwhirl",
         "method": "level_up",
@@ -99,6 +113,8 @@
         ]
       },
       {
+        "fromNodeId": "poliwhirl",
+        "toNodeId": "politoed",
         "fromSlug": "poliwhirl",
         "toSlug": "politoed",
         "method": "trade",
@@ -107,6 +123,8 @@
         ]
       },
       {
+        "fromNodeId": "poliwhirl",
+        "toNodeId": "poliwrath",
         "fromSlug": "poliwhirl",
         "toSlug": "poliwrath",
         "method": "item_interact",

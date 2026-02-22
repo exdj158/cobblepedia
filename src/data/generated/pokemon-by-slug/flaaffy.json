@@ -107,23 +107,34 @@
   "evolutionFamily": {
     "members": [
       {
+        "nodeId": "mareep",
         "slug": "mareep",
         "name": "Mareep",
-        "dexNumber": 179
+        "dexNumber": 179,
+        "formSlug": null,
+        "formName": null
       },
       {
+        "nodeId": "flaaffy",
         "slug": "flaaffy",
         "name": "Flaaffy",
-        "dexNumber": 180
+        "dexNumber": 180,
+        "formSlug": null,
+        "formName": null
       },
       {
+        "nodeId": "ampharos",
         "slug": "ampharos",
         "name": "Ampharos",
-        "dexNumber": 181
+        "dexNumber": 181,
+        "formSlug": null,
+        "formName": null
       }
     ],
     "edges": [
       {
+        "fromNodeId": "flaaffy",
+        "toNodeId": "ampharos",
         "fromSlug": "flaaffy",
         "toSlug": "ampharos",
         "method": "level_up",
@@ -132,6 +143,8 @@
         ]
       },
       {
+        "fromNodeId": "mareep",
+        "toNodeId": "flaaffy",
         "fromSlug": "mareep",
         "toSlug": "flaaffy",
         "method": "level_up",

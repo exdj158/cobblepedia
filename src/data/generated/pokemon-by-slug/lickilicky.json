@@ -68,18 +68,26 @@
   "evolutionFamily": {
     "members": [
       {
+        "nodeId": "lickitung",
         "slug": "lickitung",
         "name": "Lickitung",
-        "dexNumber": 108
+        "dexNumber": 108,
+        "formSlug": null,
+        "formName": null
       },
       {
+        "nodeId": "lickilicky",
         "slug": "lickilicky",
         "name": "Lickilicky",
-        "dexNumber": 463
+        "dexNumber": 463,
+        "formSlug": null,
+        "formName": null
       }
     ],
     "edges": [
       {
+        "fromNodeId": "lickitung",
+        "toNodeId": "lickilicky",
         "fromSlug": "lickitung",
         "toSlug": "lickilicky",
         "method": "level_up",

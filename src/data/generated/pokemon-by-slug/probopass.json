@@ -69,18 +69,26 @@
   "evolutionFamily": {
     "members": [
       {
+        "nodeId": "nosepass",
         "slug": "nosepass",
         "name": "Nosepass",
-        "dexNumber": 299
+        "dexNumber": 299,
+        "formSlug": null,
+        "formName": null
       },
       {
+        "nodeId": "probopass",
         "slug": "probopass",
         "name": "Probopass",
-        "dexNumber": 476
+        "dexNumber": 476,
+        "formSlug": null,
+        "formName": null
       }
     ],
     "edges": [
       {
+        "fromNodeId": "nosepass",
+        "toNodeId": "probopass",
         "fromSlug": "nosepass",
         "toSlug": "probopass",
         "method": "item_interact",

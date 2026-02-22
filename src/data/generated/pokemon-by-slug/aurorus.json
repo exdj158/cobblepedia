@@ -64,18 +64,26 @@
   "evolutionFamily": {
     "members": [
       {
+        "nodeId": "amaura",
         "slug": "amaura",
         "name": "Amaura",
-        "dexNumber": 698
+        "dexNumber": 698,
+        "formSlug": null,
+        "formName": null
       },
       {
+        "nodeId": "aurorus",
         "slug": "aurorus",
         "name": "Aurorus",
-        "dexNumber": 699
+        "dexNumber": 699,
+        "formSlug": null,
+        "formName": null
       }
     ],
     "edges": [
       {
+        "fromNodeId": "amaura",
+        "toNodeId": "aurorus",
         "fromSlug": "amaura",
         "toSlug": "aurorus",
         "method": "level_up",

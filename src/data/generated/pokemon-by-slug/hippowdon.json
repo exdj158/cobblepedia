@@ -62,18 +62,26 @@
   "evolutionFamily": {
     "members": [
       {
+        "nodeId": "hippopotas",
         "slug": "hippopotas",
         "name": "Hippopotas",
-        "dexNumber": 449
+        "dexNumber": 449,
+        "formSlug": null,
+        "formName": null
       },
       {
+        "nodeId": "hippowdon",
         "slug": "hippowdon",
         "name": "Hippowdon",
-        "dexNumber": 450
+        "dexNumber": 450,
+        "formSlug": null,
+        "formName": null
       }
     ],
     "edges": [
       {
+        "fromNodeId": "hippopotas",
+        "toNodeId": "hippowdon",
         "fromSlug": "hippopotas",
         "toSlug": "hippowdon",
         "method": "level_up",

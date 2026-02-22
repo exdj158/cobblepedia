@@ -108,18 +108,26 @@
   "evolutionFamily": {
     "members": [
       {
+        "nodeId": "shuppet",
         "slug": "shuppet",
         "name": "Shuppet",
-        "dexNumber": 353
+        "dexNumber": 353,
+        "formSlug": null,
+        "formName": null
       },
       {
+        "nodeId": "banette",
         "slug": "banette",
         "name": "Banette",
-        "dexNumber": 354
+        "dexNumber": 354,
+        "formSlug": null,
+        "formName": null
       }
     ],
     "edges": [
       {
+        "fromNodeId": "shuppet",
+        "toNodeId": "banette",
         "fromSlug": "shuppet",
         "toSlug": "banette",
         "method": "level_up",

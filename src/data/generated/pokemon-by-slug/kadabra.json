@@ -96,23 +96,34 @@
   "evolutionFamily": {
     "members": [
       {
+        "nodeId": "abra",
         "slug": "abra",
         "name": "Abra",
-        "dexNumber": 63
+        "dexNumber": 63,
+        "formSlug": null,
+        "formName": null
       },
       {
+        "nodeId": "kadabra",
         "slug": "kadabra",
         "name": "Kadabra",
-        "dexNumber": 64
+        "dexNumber": 64,
+        "formSlug": null,
+        "formName": null
       },
       {
+        "nodeId": "alakazam",
         "slug": "alakazam",
         "name": "Alakazam",
-        "dexNumber": 65
+        "dexNumber": 65,
+        "formSlug": null,
+        "formName": null
       }
     ],
     "edges": [
       {
+        "fromNodeId": "abra",
+        "toNodeId": "kadabra",
         "fromSlug": "abra",
         "toSlug": "kadabra",
         "method": "level_up",
@@ -121,6 +132,8 @@
         ]
       },
       {
+        "fromNodeId": "kadabra",
+        "toNodeId": "alakazam",
         "fromSlug": "kadabra",
         "toSlug": "alakazam",
         "method": "trade",

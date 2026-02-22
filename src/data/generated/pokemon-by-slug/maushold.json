@@ -73,18 +73,26 @@
   "evolutionFamily": {
     "members": [
       {
+        "nodeId": "tandemaus",
         "slug": "tandemaus",
         "name": "Tandemaus",
-        "dexNumber": 924
+        "dexNumber": 924,
+        "formSlug": null,
+        "formName": null
       },
       {
+        "nodeId": "maushold",
         "slug": "maushold",
         "name": "Maushold",
-        "dexNumber": 925
+        "dexNumber": 925,
+        "formSlug": null,
+        "formName": null
       }
     ],
     "edges": [
       {
+        "fromNodeId": "tandemaus",
+        "toNodeId": "maushold",
         "fromSlug": "tandemaus",
         "toSlug": "maushold",
         "method": "level_up",

@@ -74,8 +74,19 @@ type RawSpeciesFile = {
 type DirectedEvolutionEdge = {
   fromSlug: string
   toSlug: string
+  toAspectTokens: string[]
   method: string
   requirementText: string[]
+}
+
+type EvolutionFamilyNodeCandidate = {
+  nodeId: string
+  slug: string
+  name: string
+  dexNumber: number
+  formSlug: string | null
+  formName: string | null
+  tokens: Set<string>
 }
 
 type SpawnWarnings = {
@@ -679,9 +690,12 @@ function buildPokemonDetailRecord(params: {
     evolutionFamily: {
       members: [
         {
+          nodeId: speciesFile.slug,
           slug: speciesFile.slug,
           name,
           dexNumber,
+          formSlug: null,
+          formName: null,
         },
       ],
       edges: [],
@@ -997,6 +1011,7 @@ function buildEvolutionFamilies(
       directedEdges.push({
         fromSlug: detail.slug,
         toSlug: evolution.result.slug,
+        toAspectTokens: evolution.result.aspectTokens,
         method: evolution.variant,
         requirementText: evolution.requirementText,
       })
@@ -1008,6 +1023,7 @@ function buildEvolutionFamilies(
         directedEdges.push({
           fromSlug: detail.slug,
           toSlug: evolution.result.slug,
+          toAspectTokens: evolution.result.aspectTokens,
           method: evolution.variant,
           requirementText: evolution.requirementText,
         })
@@ -1019,46 +1035,405 @@ function buildEvolutionFamilies(
 
   for (const detail of detailsBySlug.values()) {
     const component = walkComponent(detail.slug, adjacency)
-    const members = component
-      .map((slug) => detailsBySlug.get(slug))
-      .filter((member): member is PokemonDetailRecord => Boolean(member))
-      .map((member) => ({
-        slug: member.slug,
-        name: member.name,
-        dexNumber: member.dexNumber,
-      }))
-      .sort((left, right) => {
-        if (left.dexNumber !== right.dexNumber) {
-          return left.dexNumber - right.dexNumber
-        }
+    const componentSet = new Set(component)
+    const memberByNodeId = new Map<
+      string,
+      PokemonDetailRecord["evolutionFamily"]["members"][number]
+    >()
 
-        return left.slug.localeCompare(right.slug)
+    for (const slug of component) {
+      const memberDetail = detailsBySlug.get(slug)
+      if (!memberDetail) {
+        continue
+      }
+
+      memberByNodeId.set(slug, {
+        nodeId: slug,
+        slug,
+        name: memberDetail.name,
+        dexNumber: memberDetail.dexNumber,
+        formSlug: null,
+        formName: null,
+      })
+    }
+
+    const componentEdges = directedEdges.filter(
+      (edge) => componentSet.has(edge.fromSlug) && componentSet.has(edge.toSlug)
+    )
+
+    const resolvedEdges: PokemonDetailRecord["evolutionFamily"]["edges"] = []
+    for (const edge of componentEdges) {
+      const fromMember = resolveEvolutionFamilyMemberNode({
+        detail: detailsBySlug.get(edge.fromSlug) ?? null,
+        fallbackSlug: edge.fromSlug,
+        preferredFormSlug: null,
+        preferredFormName: null,
+        aspectTokens: [],
+      })
+      const toMember = resolveEvolutionFamilyMemberNode({
+        detail: detailsBySlug.get(edge.toSlug) ?? null,
+        fallbackSlug: edge.toSlug,
+        preferredFormSlug: null,
+        preferredFormName: null,
+        aspectTokens: edge.toAspectTokens,
       })
 
-    const componentSet = new Set(component)
-    const edges = dedupeEvolutionEdges(
-      directedEdges.filter(
-        (edge) => componentSet.has(edge.fromSlug) && componentSet.has(edge.toSlug)
-      )
-    )
+      memberByNodeId.set(fromMember.nodeId, fromMember)
+      memberByNodeId.set(toMember.nodeId, toMember)
+
+      resolvedEdges.push({
+        fromNodeId: fromMember.nodeId,
+        toNodeId: toMember.nodeId,
+        fromSlug: edge.fromSlug,
+        toSlug: edge.toSlug,
+        method: edge.method,
+        requirementText: edge.requirementText,
+      })
+    }
+
+    const edges = dedupeEvolutionEdges(resolvedEdges)
+
+    const members = Array.from(memberByNodeId.values()).sort((left, right) => {
+      if (left.dexNumber !== right.dexNumber) {
+        return left.dexNumber - right.dexNumber
+      }
+
+      if (left.slug !== right.slug) {
+        return left.slug.localeCompare(right.slug)
+      }
+
+      if (!left.formSlug && right.formSlug) {
+        return -1
+      }
+
+      if (left.formSlug && !right.formSlug) {
+        return 1
+      }
+
+      if ((left.formName ?? "") !== (right.formName ?? "")) {
+        return (left.formName ?? "").localeCompare(right.formName ?? "")
+      }
+
+      return left.nodeId.localeCompare(right.nodeId)
+    })
 
     const incomingEdgeMap = new Map<string, number>()
     for (const edge of edges) {
-      incomingEdgeMap.set(edge.toSlug, (incomingEdgeMap.get(edge.toSlug) ?? 0) + 1)
+      incomingEdgeMap.set(edge.toNodeId, (incomingEdgeMap.get(edge.toNodeId) ?? 0) + 1)
     }
 
     const roots = members
-      .filter((member) => !incomingEdgeMap.has(member.slug))
-      .map((member) => member.slug)
+      .filter((member) => !incomingEdgeMap.has(member.nodeId))
+      .map((member) => member.nodeId)
+
+    const fallbackRoot =
+      members.find((member) => member.slug === detail.slug && member.formSlug === null)?.nodeId ??
+      detail.slug
 
     familyBySlug.set(detail.slug, {
       members,
       edges,
-      roots: roots.length > 0 ? roots : [detail.slug],
+      roots: roots.length > 0 ? roots : [fallbackRoot],
     })
   }
 
   return familyBySlug
+}
+
+function resolveEvolutionFamilyMemberNode(params: {
+  detail: PokemonDetailRecord | null
+  fallbackSlug: string
+  preferredFormSlug: string | null
+  preferredFormName: string | null
+  aspectTokens: string[]
+}): PokemonDetailRecord["evolutionFamily"]["members"][number] {
+  if (!params.detail) {
+    return {
+      nodeId: params.fallbackSlug,
+      slug: params.fallbackSlug,
+      name: titleCaseFromId(params.fallbackSlug),
+      dexNumber: 0,
+      formSlug: null,
+      formName: null,
+    }
+  }
+
+  const candidates = buildEvolutionFamilyNodeCandidates(params.detail)
+
+  if (params.preferredFormSlug) {
+    const byFormSlug = candidates.find(
+      (candidate) => candidate.formSlug === params.preferredFormSlug
+    )
+    if (byFormSlug) {
+      return toEvolutionFamilyMember(byFormSlug)
+    }
+  }
+
+  if (params.preferredFormName) {
+    const normalizedName = canonicalId(params.preferredFormName)
+    if (normalizedName) {
+      const byFormName = candidates.find(
+        (candidate) => canonicalId(candidate.formName ?? "") === normalizedName
+      )
+      if (byFormName) {
+        return toEvolutionFamilyMember(byFormName)
+      }
+    }
+  }
+
+  if (params.aspectTokens.length > 0) {
+    const resolvedByAspect = resolveNodeCandidateByAspectTokens(candidates, params.aspectTokens)
+    if (resolvedByAspect) {
+      return toEvolutionFamilyMember(resolvedByAspect)
+    }
+  }
+
+  return {
+    nodeId: params.detail.slug,
+    slug: params.detail.slug,
+    name: params.detail.name,
+    dexNumber: params.detail.dexNumber,
+    formSlug: null,
+    formName: null,
+  }
+}
+
+function buildEvolutionFamilyNodeCandidates(
+  detail: PokemonDetailRecord
+): EvolutionFamilyNodeCandidate[] {
+  const baseCandidate: EvolutionFamilyNodeCandidate = {
+    nodeId: detail.slug,
+    slug: detail.slug,
+    name: detail.name,
+    dexNumber: detail.dexNumber,
+    formSlug: null,
+    formName: null,
+    tokens: collectEvolutionFamilyMatchTokens([
+      detail.slug,
+      detail.name,
+      ...detail.aspects,
+      ...detail.labels,
+    ]),
+  }
+
+  const formCandidates = detail.forms.map((form) => ({
+    nodeId: form.slug,
+    slug: detail.slug,
+    name: detail.name,
+    dexNumber: detail.dexNumber,
+    formSlug: form.slug,
+    formName: form.name,
+    tokens: collectEvolutionFamilyMatchTokens([
+      detail.slug,
+      detail.name,
+      form.slug,
+      form.name,
+      ...form.aspects,
+      ...form.labels,
+    ]),
+  }))
+
+  return [baseCandidate, ...formCandidates]
+}
+
+function resolveNodeCandidateByAspectTokens(
+  candidates: EvolutionFamilyNodeCandidate[],
+  aspectTokens: string[]
+): EvolutionFamilyNodeCandidate | null {
+  const tokenGroups = aspectTokens
+    .map((aspectToken) => buildEvolutionAspectMatchGroup(aspectToken))
+    .filter((group) => group.exact.length > 0 || group.loose.length > 0)
+
+  if (tokenGroups.length === 0) {
+    return null
+  }
+
+  let bestCandidate: EvolutionFamilyNodeCandidate | null = null
+  let bestScore = 0
+
+  for (const candidate of candidates) {
+    let score = 0
+
+    for (const group of tokenGroups) {
+      const exactMatch = group.exact.some((token) => candidate.tokens.has(token))
+      if (exactMatch) {
+        score += 14
+        continue
+      }
+
+      const looseMatches = group.loose.reduce((sum, token) => {
+        if (candidate.tokens.has(token)) {
+          return sum + 1
+        }
+        return sum
+      }, 0)
+
+      score += looseMatches * 3
+    }
+
+    if (candidate.formSlug && score > 0) {
+      score += 1
+    }
+
+    if (score > bestScore) {
+      bestScore = score
+      bestCandidate = candidate
+    }
+  }
+
+  return bestScore > 0 ? bestCandidate : null
+}
+
+function buildEvolutionAspectMatchGroup(aspectToken: string): {
+  exact: string[]
+  loose: string[]
+} {
+  const exact = new Set<string>()
+  const loose = new Set<string>()
+  const stopWords = new Set(["form", "mode", "variant"])
+
+  const normalized = canonicalId(aspectToken)
+  if (normalized) {
+    exact.add(normalized)
+    for (const alias of expandEvolutionFamilyTokenAliases(normalized)) {
+      exact.add(alias)
+    }
+  }
+
+  const raw = aspectToken.trim().toLowerCase()
+  if (raw.includes("=")) {
+    const [keyRaw, valueRaw] = raw.split("=", 2)
+    const key = canonicalId(keyRaw ?? "")
+    const value = canonicalId(valueRaw ?? "")
+
+    if (value) {
+      exact.add(value)
+      loose.add(value)
+      for (const alias of expandEvolutionFamilyTokenAliases(value)) {
+        exact.add(alias)
+        loose.add(alias)
+      }
+    }
+
+    if (key) {
+      loose.add(key)
+      for (const alias of expandEvolutionFamilyTokenAliases(key)) {
+        loose.add(alias)
+      }
+    }
+
+    if (key && value) {
+      const merged = `${key}${value}`
+      exact.add(merged)
+      for (const alias of expandEvolutionFamilyTokenAliases(merged)) {
+        exact.add(alias)
+      }
+    }
+  }
+
+  const parts = raw
+    .split(/[^a-z0-9]+/g)
+    .map((part) => canonicalId(part))
+    .filter(Boolean)
+
+  for (const part of parts) {
+    if (stopWords.has(part)) {
+      continue
+    }
+
+    loose.add(part)
+    for (const alias of expandEvolutionFamilyTokenAliases(part)) {
+      loose.add(alias)
+    }
+  }
+
+  return {
+    exact: Array.from(exact),
+    loose: Array.from(loose),
+  }
+}
+
+function collectEvolutionFamilyMatchTokens(values: string[]): Set<string> {
+  const tokens = new Set<string>()
+
+  for (const rawValue of values) {
+    if (typeof rawValue !== "string") {
+      continue
+    }
+
+    const trimmed = rawValue.trim().toLowerCase()
+    if (!trimmed) {
+      continue
+    }
+
+    const canonical = canonicalId(trimmed)
+    if (canonical) {
+      addEvolutionFamilyToken(tokens, canonical)
+    }
+
+    const parts = trimmed
+      .split(/[^a-z0-9]+/g)
+      .map((part) => canonicalId(part))
+      .filter(Boolean)
+
+    for (const part of parts) {
+      addEvolutionFamilyToken(tokens, part)
+    }
+
+    if (trimmed.includes("=")) {
+      const [keyRaw, valueRaw] = trimmed.split("=", 2)
+      const key = canonicalId(keyRaw ?? "")
+      const value = canonicalId(valueRaw ?? "")
+      if (value) {
+        addEvolutionFamilyToken(tokens, value)
+      }
+      if (key && value) {
+        addEvolutionFamilyToken(tokens, `${key}${value}`)
+      }
+    }
+  }
+
+  return tokens
+}
+
+function addEvolutionFamilyToken(tokenSet: Set<string>, token: string): void {
+  if (!token) {
+    return
+  }
+
+  tokenSet.add(token)
+
+  for (const alias of expandEvolutionFamilyTokenAliases(token)) {
+    tokenSet.add(alias)
+  }
+}
+
+function expandEvolutionFamilyTokenAliases(token: string): string[] {
+  const aliases: Record<string, string[]> = {
+    alola: ["alolan"],
+    alolan: ["alola"],
+    galar: ["galarian"],
+    galarian: ["galar"],
+    hisui: ["hisuian"],
+    hisuian: ["hisui"],
+    paldea: ["paldean"],
+    paldean: ["paldea"],
+  }
+
+  return aliases[token] ?? []
+}
+
+function toEvolutionFamilyMember(
+  candidate: EvolutionFamilyNodeCandidate
+): PokemonDetailRecord["evolutionFamily"]["members"][number] {
+  return {
+    nodeId: candidate.nodeId,
+    slug: candidate.slug,
+    name: candidate.name,
+    dexNumber: candidate.dexNumber,
+    formSlug: candidate.formSlug,
+    formName: candidate.formName,
+  }
 }
 
 function buildPokemonList(detailsBySlug: Map<string, PokemonDetailRecord>): PokemonListItem[] {
@@ -1773,22 +2148,24 @@ function sortMoves(left: ParsedMove, right: ParsedMove): number {
   return (left.sourceValue ?? 0) - (right.sourceValue ?? 0)
 }
 
-function dedupeEvolutionEdges(edges: DirectedEvolutionEdge[]) {
-  const map = new Map<string, DirectedEvolutionEdge>()
+function dedupeEvolutionEdges(
+  edges: PokemonDetailRecord["evolutionFamily"]["edges"]
+): PokemonDetailRecord["evolutionFamily"]["edges"] {
+  const map = new Map<string, PokemonDetailRecord["evolutionFamily"]["edges"][number]>()
 
   for (const edge of edges) {
-    const key = `${edge.fromSlug}::${edge.toSlug}::${edge.method}::${edge.requirementText.join("|")}`
+    const key = `${edge.fromNodeId}::${edge.toNodeId}::${edge.method}::${edge.requirementText.join("|")}`
     if (!map.has(key)) {
       map.set(key, edge)
     }
   }
 
   return Array.from(map.values()).sort((left, right) => {
-    if (left.fromSlug !== right.fromSlug) {
-      return left.fromSlug.localeCompare(right.fromSlug)
+    if (left.fromNodeId !== right.fromNodeId) {
+      return left.fromNodeId.localeCompare(right.fromNodeId)
     }
-    if (left.toSlug !== right.toSlug) {
-      return left.toSlug.localeCompare(right.toSlug)
+    if (left.toNodeId !== right.toNodeId) {
+      return left.toNodeId.localeCompare(right.toNodeId)
     }
     return left.method.localeCompare(right.method)
   })

@@ -160,65 +160,72 @@ function AbilityDetailView(props: { entry: AbilityEntryRecord }) {
               </thead>
               <tbody class="divide-y divide-border">
                 <For each={visiblePokemon()}>
-                  {(pokemon) => (
-                    <tr class="hover:bg-secondary/40">
-                      <td class="px-4 py-2.5">
-                        <a
-                          href={resolvePokemonAbilityHref(pokemon)}
-                          class="inline-flex items-center gap-2 hover:underline"
-                        >
-                          <PokemonSprite
-                            dexNumber={pokemon.dexNumber}
-                            name={pokemon.name}
-                            class="h-8 w-8"
-                            imageClass="h-6 w-6"
-                          />
-                          <span>
-                            #{String(pokemon.dexNumber).padStart(3, "0")} {pokemon.name}
-                          </span>
-                        </a>
-                      </td>
-                      <td class="px-4 py-2.5 text-right">
-                        <div class="flex flex-col items-end gap-1">
-                          <div class="flex justify-end gap-1">
-                            <Show
-                              when={resolveAbilitySlots(pokemon).length > 0}
-                              fallback={
-                                <span class="border border-border bg-secondary px-2 py-0.5 text-muted-foreground text-xs">
-                                  Form Only
-                                </span>
-                              }
-                            >
-                              <For each={resolveAbilitySlots(pokemon)}>
-                                {(slot) => (
-                                  <span
-                                    class={cn("border px-2 py-0.5 text-xs", slotBadgeClass(slot))}
-                                  >
-                                    {formatAbilitySlot(slot)}
+                  {(pokemon) => {
+                    const primaryFormSprite = resolvePrimaryAbilityFormSprite(pokemon)
+
+                    return (
+                      <tr class="hover:bg-secondary/40">
+                        <td class="px-4 py-2.5">
+                          <a
+                            href={resolvePokemonAbilityHref(pokemon)}
+                            class="inline-flex items-center gap-2 hover:underline"
+                          >
+                            <PokemonSprite
+                              dexNumber={pokemon.dexNumber}
+                              slug={pokemon.slug}
+                              formSlug={primaryFormSprite?.formSlug ?? null}
+                              formName={primaryFormSprite?.formName ?? null}
+                              name={pokemon.name}
+                              class="h-8 w-8"
+                              imageClass="h-6 w-6"
+                            />
+                            <span>
+                              #{String(pokemon.dexNumber).padStart(3, "0")} {pokemon.name}
+                            </span>
+                          </a>
+                        </td>
+                        <td class="px-4 py-2.5 text-right">
+                          <div class="flex flex-col items-end gap-1">
+                            <div class="flex justify-end gap-1">
+                              <Show
+                                when={resolveAbilitySlots(pokemon).length > 0}
+                                fallback={
+                                  <span class="border border-border bg-secondary px-2 py-0.5 text-muted-foreground text-xs">
+                                    Form Only
                                   </span>
-                                )}
-                              </For>
+                                }
+                              >
+                                <For each={resolveAbilitySlots(pokemon)}>
+                                  {(slot) => (
+                                    <span
+                                      class={cn("border px-2 py-0.5 text-xs", slotBadgeClass(slot))}
+                                    >
+                                      {formatAbilitySlot(slot)}
+                                    </span>
+                                  )}
+                                </For>
+                              </Show>
+                            </div>
+
+                            <Show when={resolveFormAbilitySlots(pokemon).length > 0}>
+                              <div class="flex flex-wrap justify-end gap-1">
+                                <For each={resolveFormAbilitySlots(pokemon)}>
+                                  {(formSlot) => (
+                                    <a
+                                      href={`/pokemon/${pokemon.slug}?form=${encodeURIComponent(formSlot.formSlug)}`}
+                                      class="border border-border bg-secondary/60 px-2 py-0.5 text-[10px] text-muted-foreground hover:border-muted-foreground hover:text-foreground"
+                                    >
+                                      {formSlot.formName}: {formatAbilitySlotList(formSlot.slots)}
+                                    </a>
+                                  )}
+                                </For>
+                              </div>
                             </Show>
                           </div>
-
-                          <Show when={resolveFormAbilitySlots(pokemon).length > 0}>
-                            <div class="flex flex-wrap justify-end gap-1">
-                              <For each={resolveFormAbilitySlots(pokemon)}>
-                                {(formSlot) => (
-                                  <a
-                                    href={`/pokemon/${pokemon.slug}?form=${encodeURIComponent(formSlot.formSlug)}`}
-                                    class="border border-border bg-secondary/60 px-2 py-0.5 text-[10px] text-muted-foreground hover:border-muted-foreground hover:text-foreground"
-                                  >
-                                    {formSlot.formName}: {formatAbilitySlotList(formSlot.slots)}
-                                  </a>
-                                )}
-                              </For>
-                            </div>
-                          </Show>
-                        </div>
-                      </td>
-                    </tr>
-                  )}
+                        </td>
+                      </tr>
+                    )
+                  }}
                 </For>
               </tbody>
             </table>
@@ -272,6 +279,26 @@ function resolveFormAbilitySlots(
       Array.isArray(formSlot.slots) &&
       formSlot.slots.length > 0
   )
+}
+
+function resolvePrimaryAbilityFormSprite(pokemon: AbilityEntryRecord["pokemon"][number]): {
+  formSlug: string
+  formName: string
+} | null {
+  const baseSlots = resolveAbilitySlots(pokemon)
+  if (baseSlots.length > 0) {
+    return null
+  }
+
+  const firstFormSlot = resolveFormAbilitySlots(pokemon)[0]
+  if (!firstFormSlot) {
+    return null
+  }
+
+  return {
+    formSlug: firstFormSlot.formSlug,
+    formName: firstFormSlot.formName,
+  }
 }
 
 function resolvePokemonAbilityHref(pokemon: AbilityEntryRecord["pokemon"][number]): string {

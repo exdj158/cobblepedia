@@ -62,18 +62,26 @@
   "evolutionFamily": {
     "members": [
       {
+        "nodeId": "chimecho",
         "slug": "chimecho",
         "name": "Chimecho",
-        "dexNumber": 358
+        "dexNumber": 358,
+        "formSlug": null,
+        "formName": null
       },
       {
+        "nodeId": "chingling",
         "slug": "chingling",
         "name": "Chingling",
-        "dexNumber": 433
+        "dexNumber": 433,
+        "formSlug": null,
+        "formName": null
       }
     ],
     "edges": [
       {
+        "fromNodeId": "chingling",
+        "toNodeId": "chimecho",
         "fromSlug": "chingling",
         "toSlug": "chimecho",
         "method": "level_up",

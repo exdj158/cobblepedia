@@ -95,18 +95,26 @@
   "evolutionFamily": {
     "members": [
       {
+        "nodeId": "minccino",
         "slug": "minccino",
         "name": "Minccino",
-        "dexNumber": 572
+        "dexNumber": 572,
+        "formSlug": null,
+        "formName": null
       },
       {
+        "nodeId": "cinccino",
         "slug": "cinccino",
         "name": "Cinccino",
-        "dexNumber": 573
+        "dexNumber": 573,
+        "formSlug": null,
+        "formName": null
       }
     ],
     "edges": [
       {
+        "fromNodeId": "minccino",
+        "toNodeId": "cinccino",
         "fromSlug": "minccino",
         "toSlug": "cinccino",
         "method": "item_interact",

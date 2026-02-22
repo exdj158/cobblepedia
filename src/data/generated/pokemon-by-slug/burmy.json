@@ -75,7 +75,7 @@
       ],
       "requirementText": [
         "Level 20+",
-        "Property gender=female"
+        "Female only"
       ],
       "requirements": [
         {
@@ -88,7 +88,7 @@
         },
         {
           "variant": "properties",
-          "text": "Property gender=female",
+          "text": "Female only",
           "raw": {
             "variant": "properties",
             "target": "gender=female"
@@ -131,7 +131,7 @@
       ],
       "requirementText": [
         "Level 20+",
-        "Property gender=male"
+        "Male only"
       ],
       "requirements": [
         {
@@ -144,7 +144,7 @@
         },
         {
           "variant": "properties",
-          "text": "Property gender=male",
+          "text": "Male only",
           "raw": {
             "variant": "properties",
             "target": "gender=male"
@@ -177,38 +177,51 @@
   "evolutionFamily": {
     "members": [
       {
+        "nodeId": "burmy",
         "slug": "burmy",
         "name": "Burmy",
-        "dexNumber": 412
+        "dexNumber": 412,
+        "formSlug": null,
+        "formName": null
       },
       {
+        "nodeId": "wormadam",
         "slug": "wormadam",
         "name": "Wormadam",
-        "dexNumber": 413
+        "dexNumber": 413,
+        "formSlug": null,
+        "formName": null
       },
       {
+        "nodeId": "mothim",
         "slug": "mothim",
         "name": "Mothim",
-        "dexNumber": 414
+        "dexNumber": 414,
+        "formSlug": null,
+        "formName": null
       }
     ],
     "edges": [
       {
+        "fromNodeId": "burmy",
+        "toNodeId": "mothim",
         "fromSlug": "burmy",
         "toSlug": "mothim",
         "method": "level_up",
         "requirementText": [
           "Level 20+",
-          "Property gender=male"
+          "Male only"
         ]
       },
       {
+        "fromNodeId": "burmy",
+        "toNodeId": "wormadam",
         "fromSlug": "burmy",
         "toSlug": "wormadam",
         "method": "level_up",
         "requirementText": [
           "Level 20+",
-          "Property gender=female"
+          "Female only"
         ]
       }
     ],
@@ -389,7 +402,7 @@
           ],
           "requirementText": [
             "Level 20+",
-            "Property gender=female"
+            "Female only"
           ],
           "requirements": [
             {
@@ -402,7 +415,7 @@
             },
             {
               "variant": "properties",
-              "text": "Property gender=female",
+              "text": "Female only",
               "raw": {
                 "variant": "properties",
                 "target": "gender=female"
@@ -445,7 +458,7 @@
           ],
           "requirementText": [
             "Level 20+",
-            "Property gender=male"
+            "Male only"
           ],
           "requirements": [
             {
@@ -458,7 +471,7 @@
             },
             {
               "variant": "properties",
-              "text": "Property gender=male",
+              "text": "Male only",
               "raw": {
                 "variant": "properties",
                 "target": "gender=male"
@@ -585,7 +598,7 @@
           ],
           "requirementText": [
             "Level 20+",
-            "Property gender=female"
+            "Female only"
           ],
           "requirements": [
             {
@@ -598,7 +611,7 @@
             },
             {
               "variant": "properties",
-              "text": "Property gender=female",
+              "text": "Female only",
               "raw": {
                 "variant": "properties",
                 "target": "gender=female"
@@ -641,7 +654,7 @@
           ],
           "requirementText": [
             "Level 20+",
-            "Property gender=male"
+            "Male only"
           ],
           "requirements": [
             {
@@ -654,7 +667,7 @@
             },
             {
               "variant": "properties",
-              "text": "Property gender=male",
+              "text": "Male only",
               "raw": {
                 "variant": "properties",
                 "target": "gender=male"

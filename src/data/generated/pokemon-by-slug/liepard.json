@@ -68,18 +68,26 @@
   "evolutionFamily": {
     "members": [
       {
+        "nodeId": "purrloin",
         "slug": "purrloin",
         "name": "Purrloin",
-        "dexNumber": 509
+        "dexNumber": 509,
+        "formSlug": null,
+        "formName": null
       },
       {
+        "nodeId": "liepard",
         "slug": "liepard",
         "name": "Liepard",
-        "dexNumber": 510
+        "dexNumber": 510,
+        "formSlug": null,
+        "formName": null
       }
     ],
     "edges": [
       {
+        "fromNodeId": "purrloin",
+        "toNodeId": "liepard",
         "fromSlug": "purrloin",
         "toSlug": "liepard",
         "method": "level_up",

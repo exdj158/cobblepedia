@@ -73,18 +73,26 @@
   "evolutionFamily": {
     "members": [
       {
+        "nodeId": "qwilfish",
         "slug": "qwilfish",
         "name": "Qwilfish",
-        "dexNumber": 211
+        "dexNumber": 211,
+        "formSlug": null,
+        "formName": null
       },
       {
+        "nodeId": "overqwil",
         "slug": "overqwil",
         "name": "Overqwil",
-        "dexNumber": 904
+        "dexNumber": 904,
+        "formSlug": null,
+        "formName": null
       }
     ],
     "edges": [
       {
+        "fromNodeId": "qwilfish",
+        "toNodeId": "overqwil",
         "fromSlug": "qwilfish",
         "toSlug": "overqwil",
         "method": "level_up",

@@ -97,23 +97,34 @@
   "evolutionFamily": {
     "members": [
       {
+        "nodeId": "roselia",
         "slug": "roselia",
         "name": "Roselia",
-        "dexNumber": 315
+        "dexNumber": 315,
+        "formSlug": null,
+        "formName": null
       },
       {
+        "nodeId": "budew",
         "slug": "budew",
         "name": "Budew",
-        "dexNumber": 406
+        "dexNumber": 406,
+        "formSlug": null,
+        "formName": null
       },
       {
+        "nodeId": "roserade",
         "slug": "roserade",
         "name": "Roserade",
-        "dexNumber": 407
+        "dexNumber": 407,
+        "formSlug": null,
+        "formName": null
       }
     ],
     "edges": [
       {
+        "fromNodeId": "budew",
+        "toNodeId": "roselia",
         "fromSlug": "budew",
         "toSlug": "roselia",
         "method": "level_up",
@@ -123,6 +134,8 @@
         ]
       },
       {
+        "fromNodeId": "roselia",
+        "toNodeId": "roserade",
         "fromSlug": "roselia",
         "toSlug": "roserade",
         "method": "item_interact",

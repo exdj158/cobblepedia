@@ -95,18 +95,26 @@
   "evolutionFamily": {
     "members": [
       {
+        "nodeId": "shellder",
         "slug": "shellder",
         "name": "Shellder",
-        "dexNumber": 90
+        "dexNumber": 90,
+        "formSlug": null,
+        "formName": null
       },
       {
+        "nodeId": "cloyster",
         "slug": "cloyster",
         "name": "Cloyster",
-        "dexNumber": 91
+        "dexNumber": 91,
+        "formSlug": null,
+        "formName": null
       }
     ],
     "edges": [
       {
+        "fromNodeId": "shellder",
+        "toNodeId": "cloyster",
         "fromSlug": "shellder",
         "toSlug": "cloyster",
         "method": "item_interact",

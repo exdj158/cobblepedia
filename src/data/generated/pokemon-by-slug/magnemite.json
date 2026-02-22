@@ -109,23 +109,34 @@
   "evolutionFamily": {
     "members": [
       {
+        "nodeId": "magnemite",
         "slug": "magnemite",
         "name": "Magnemite",
-        "dexNumber": 81
+        "dexNumber": 81,
+        "formSlug": null,
+        "formName": null
       },
       {
+        "nodeId": "magneton",
         "slug": "magneton",
         "name": "Magneton",
-        "dexNumber": 82
+        "dexNumber": 82,
+        "formSlug": null,
+        "formName": null
       },
       {
+        "nodeId": "magnezone",
         "slug": "magnezone",
         "name": "Magnezone",
-        "dexNumber": 462
+        "dexNumber": 462,
+        "formSlug": null,
+        "formName": null
       }
     ],
     "edges": [
       {
+        "fromNodeId": "magnemite",
+        "toNodeId": "magneton",
         "fromSlug": "magnemite",
         "toSlug": "magneton",
         "method": "level_up",
@@ -134,6 +145,8 @@
         ]
       },
       {
+        "fromNodeId": "magneton",
+        "toNodeId": "magnezone",
         "fromSlug": "magneton",
         "toSlug": "magnezone",
         "method": "item_interact",

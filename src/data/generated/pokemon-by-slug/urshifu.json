@@ -72,18 +72,42 @@
   "evolutionFamily": {
     "members": [
       {
+        "nodeId": "kubfu",
         "slug": "kubfu",
         "name": "Kubfu",
-        "dexNumber": 891
+        "dexNumber": 891,
+        "formSlug": null,
+        "formName": null
       },
       {
+        "nodeId": "urshifu",
         "slug": "urshifu",
         "name": "Urshifu",
-        "dexNumber": 892
+        "dexNumber": 892,
+        "formSlug": null,
+        "formName": null
+      },
+      {
+        "nodeId": "urshifu-gmax",
+        "slug": "urshifu",
+        "name": "Urshifu",
+        "dexNumber": 892,
+        "formSlug": "urshifu-gmax",
+        "formName": "Gmax"
+      },
+      {
+        "nodeId": "urshifu-rapidstrike",
+        "slug": "urshifu",
+        "name": "Urshifu",
+        "dexNumber": 892,
+        "formSlug": "urshifu-rapidstrike",
+        "formName": "Rapid-Strike"
       }
     ],
     "edges": [
       {
+        "fromNodeId": "kubfu",
+        "toNodeId": "urshifu-gmax",
         "fromSlug": "kubfu",
         "toSlug": "urshifu",
         "method": "item_interact",
@@ -92,6 +116,8 @@
         ]
       },
       {
+        "fromNodeId": "kubfu",
+        "toNodeId": "urshifu-rapidstrike",
         "fromSlug": "kubfu",
         "toSlug": "urshifu",
         "method": "item_interact",
@@ -101,7 +127,8 @@
       }
     ],
     "roots": [
-      "kubfu"
+      "kubfu",
+      "urshifu"
     ]
   },
   "moves": [

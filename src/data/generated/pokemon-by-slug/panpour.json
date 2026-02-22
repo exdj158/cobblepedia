@@ -85,18 +85,26 @@
   "evolutionFamily": {
     "members": [
       {
+        "nodeId": "panpour",
         "slug": "panpour",
         "name": "Panpour",
-        "dexNumber": 515
+        "dexNumber": 515,
+        "formSlug": null,
+        "formName": null
       },
       {
+        "nodeId": "simipour",
         "slug": "simipour",
         "name": "Simipour",
-        "dexNumber": 516
+        "dexNumber": 516,
+        "formSlug": null,
+        "formName": null
       }
     ],
     "edges": [
       {
+        "fromNodeId": "panpour",
+        "toNodeId": "simipour",
         "fromSlug": "panpour",
         "toSlug": "simipour",
         "method": "item_interact",

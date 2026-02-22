@@ -72,33 +72,51 @@
   "evolutionFamily": {
     "members": [
       {
+        "nodeId": "espurr",
         "slug": "espurr",
         "name": "Espurr",
-        "dexNumber": 677
+        "dexNumber": 677,
+        "formSlug": null,
+        "formName": null
       },
       {
+        "nodeId": "meowstic",
         "slug": "meowstic",
         "name": "Meowstic",
-        "dexNumber": 678
+        "dexNumber": 678,
+        "formSlug": null,
+        "formName": null
+      },
+      {
+        "nodeId": "meowstic-f",
+        "slug": "meowstic",
+        "name": "Meowstic",
+        "dexNumber": 678,
+        "formSlug": "meowstic-f",
+        "formName": "F"
       }
     ],
     "edges": [
       {
+        "fromNodeId": "espurr",
+        "toNodeId": "meowstic",
         "fromSlug": "espurr",
         "toSlug": "meowstic",
         "method": "level_up",
         "requirementText": [
           "Level 25+",
-          "Property gender=male"
+          "Male only"
         ]
       },
       {
+        "fromNodeId": "espurr",
+        "toNodeId": "meowstic-f",
         "fromSlug": "espurr",
         "toSlug": "meowstic",
         "method": "level_up",
         "requirementText": [
           "Level 25+",
-          "Property gender=female"
+          "Female only"
         ]
       }
     ],

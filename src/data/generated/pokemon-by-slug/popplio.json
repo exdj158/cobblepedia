@@ -100,23 +100,34 @@
   "evolutionFamily": {
     "members": [
       {
+        "nodeId": "popplio",
         "slug": "popplio",
         "name": "Popplio",
-        "dexNumber": 728
+        "dexNumber": 728,
+        "formSlug": null,
+        "formName": null
       },
       {
+        "nodeId": "brionne",
         "slug": "brionne",
         "name": "Brionne",
-        "dexNumber": 729
+        "dexNumber": 729,
+        "formSlug": null,
+        "formName": null
       },
       {
+        "nodeId": "primarina",
         "slug": "primarina",
         "name": "Primarina",
-        "dexNumber": 730
+        "dexNumber": 730,
+        "formSlug": null,
+        "formName": null
       }
     ],
     "edges": [
       {
+        "fromNodeId": "brionne",
+        "toNodeId": "primarina",
         "fromSlug": "brionne",
         "toSlug": "primarina",
         "method": "level_up",
@@ -125,6 +136,8 @@
         ]
       },
       {
+        "fromNodeId": "popplio",
+        "toNodeId": "brionne",
         "fromSlug": "popplio",
         "toSlug": "brionne",
         "method": "level_up",

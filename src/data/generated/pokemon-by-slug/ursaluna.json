@@ -71,23 +71,34 @@
   "evolutionFamily": {
     "members": [
       {
+        "nodeId": "teddiursa",
         "slug": "teddiursa",
         "name": "Teddiursa",
-        "dexNumber": 216
+        "dexNumber": 216,
+        "formSlug": null,
+        "formName": null
       },
       {
+        "nodeId": "ursaring",
         "slug": "ursaring",
         "name": "Ursaring",
-        "dexNumber": 217
+        "dexNumber": 217,
+        "formSlug": null,
+        "formName": null
       },
       {
+        "nodeId": "ursaluna",
         "slug": "ursaluna",
         "name": "Ursaluna",
-        "dexNumber": 901
+        "dexNumber": 901,
+        "formSlug": null,
+        "formName": null
       }
     ],
     "edges": [
       {
+        "fromNodeId": "teddiursa",
+        "toNodeId": "ursaring",
         "fromSlug": "teddiursa",
         "toSlug": "ursaring",
         "method": "level_up",
@@ -96,6 +107,8 @@
         ]
       },
       {
+        "fromNodeId": "ursaring",
+        "toNodeId": "ursaluna",
         "fromSlug": "ursaring",
         "toSlug": "ursaluna",
         "method": "item_interact",

@@ -104,28 +104,42 @@
   "evolutionFamily": {
     "members": [
       {
+        "nodeId": "cosmog",
         "slug": "cosmog",
         "name": "Cosmog",
-        "dexNumber": 789
+        "dexNumber": 789,
+        "formSlug": null,
+        "formName": null
       },
       {
+        "nodeId": "cosmoem",
         "slug": "cosmoem",
         "name": "Cosmoem",
-        "dexNumber": 790
+        "dexNumber": 790,
+        "formSlug": null,
+        "formName": null
       },
       {
+        "nodeId": "solgaleo",
         "slug": "solgaleo",
         "name": "Solgaleo",
-        "dexNumber": 791
+        "dexNumber": 791,
+        "formSlug": null,
+        "formName": null
       },
       {
+        "nodeId": "lunala",
         "slug": "lunala",
         "name": "Lunala",
-        "dexNumber": 792
+        "dexNumber": 792,
+        "formSlug": null,
+        "formName": null
       }
     ],
     "edges": [
       {
+        "fromNodeId": "cosmoem",
+        "toNodeId": "lunala",
         "fromSlug": "cosmoem",
         "toSlug": "lunala",
         "method": "level_up",
@@ -135,6 +149,8 @@
         ]
       },
       {
+        "fromNodeId": "cosmoem",
+        "toNodeId": "solgaleo",
         "fromSlug": "cosmoem",
         "toSlug": "solgaleo",
         "method": "level_up",
@@ -144,6 +160,8 @@
         ]
       },
       {
+        "fromNodeId": "cosmog",
+        "toNodeId": "cosmoem",
         "fromSlug": "cosmog",
         "toSlug": "cosmoem",
         "method": "level_up",

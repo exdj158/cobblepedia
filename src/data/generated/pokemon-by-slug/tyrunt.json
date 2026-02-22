@@ -118,18 +118,26 @@
   "evolutionFamily": {
     "members": [
       {
+        "nodeId": "tyrunt",
         "slug": "tyrunt",
         "name": "Tyrunt",
-        "dexNumber": 696
+        "dexNumber": 696,
+        "formSlug": null,
+        "formName": null
       },
       {
+        "nodeId": "tyrantrum",
         "slug": "tyrantrum",
         "name": "Tyrantrum",
-        "dexNumber": 697
+        "dexNumber": 697,
+        "formSlug": null,
+        "formName": null
       }
     ],
     "edges": [
       {
+        "fromNodeId": "tyrunt",
+        "toNodeId": "tyrantrum",
         "fromSlug": "tyrunt",
         "toSlug": "tyrantrum",
         "method": "level_up",

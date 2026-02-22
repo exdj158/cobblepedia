@@ -71,23 +71,34 @@
   "evolutionFamily": {
     "members": [
       {
+        "nodeId": "rookidee",
         "slug": "rookidee",
         "name": "Rookidee",
-        "dexNumber": 821
+        "dexNumber": 821,
+        "formSlug": null,
+        "formName": null
       },
       {
+        "nodeId": "corvisquire",
         "slug": "corvisquire",
         "name": "Corvisquire",
-        "dexNumber": 822
+        "dexNumber": 822,
+        "formSlug": null,
+        "formName": null
       },
       {
+        "nodeId": "corviknight",
         "slug": "corviknight",
         "name": "Corviknight",
-        "dexNumber": 823
+        "dexNumber": 823,
+        "formSlug": null,
+        "formName": null
       }
     ],
     "edges": [
       {
+        "fromNodeId": "corvisquire",
+        "toNodeId": "corviknight",
         "fromSlug": "corvisquire",
         "toSlug": "corviknight",
         "method": "level_up",
@@ -96,6 +107,8 @@
         ]
       },
       {
+        "fromNodeId": "rookidee",
+        "toNodeId": "corvisquire",
         "fromSlug": "rookidee",
         "toSlug": "corvisquire",
         "method": "level_up",

@@ -99,23 +99,34 @@
   "evolutionFamily": {
     "members": [
       {
+        "nodeId": "smoliv",
         "slug": "smoliv",
         "name": "Smoliv",
-        "dexNumber": 928
+        "dexNumber": 928,
+        "formSlug": null,
+        "formName": null
       },
       {
+        "nodeId": "dolliv",
         "slug": "dolliv",
         "name": "Dolliv",
-        "dexNumber": 929
+        "dexNumber": 929,
+        "formSlug": null,
+        "formName": null
       },
       {
+        "nodeId": "arboliva",
         "slug": "arboliva",
         "name": "Arboliva",
-        "dexNumber": 930
+        "dexNumber": 930,
+        "formSlug": null,
+        "formName": null
       }
     ],
     "edges": [
       {
+        "fromNodeId": "dolliv",
+        "toNodeId": "arboliva",
         "fromSlug": "dolliv",
         "toSlug": "arboliva",
         "method": "level_up",
@@ -124,6 +135,8 @@
         ]
       },
       {
+        "fromNodeId": "smoliv",
+        "toNodeId": "dolliv",
         "fromSlug": "smoliv",
         "toSlug": "dolliv",
         "method": "level_up",

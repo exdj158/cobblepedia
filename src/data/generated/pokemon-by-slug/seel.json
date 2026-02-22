@@ -109,18 +109,26 @@
   "evolutionFamily": {
     "members": [
       {
+        "nodeId": "seel",
         "slug": "seel",
         "name": "Seel",
-        "dexNumber": 86
+        "dexNumber": 86,
+        "formSlug": null,
+        "formName": null
       },
       {
+        "nodeId": "dewgong",
         "slug": "dewgong",
         "name": "Dewgong",
-        "dexNumber": 87
+        "dexNumber": 87,
+        "formSlug": null,
+        "formName": null
       }
     ],
     "edges": [
       {
+        "fromNodeId": "seel",
+        "toNodeId": "dewgong",
         "fromSlug": "seel",
         "toSlug": "dewgong",
         "method": "level_up",

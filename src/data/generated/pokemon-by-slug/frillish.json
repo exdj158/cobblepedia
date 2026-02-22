@@ -105,18 +105,26 @@
   "evolutionFamily": {
     "members": [
       {
+        "nodeId": "frillish",
         "slug": "frillish",
         "name": "Frillish",
-        "dexNumber": 592
+        "dexNumber": 592,
+        "formSlug": null,
+        "formName": null
       },
       {
+        "nodeId": "jellicent",
         "slug": "jellicent",
         "name": "Jellicent",
-        "dexNumber": 593
+        "dexNumber": 593,
+        "formSlug": null,
+        "formName": null
       }
     ],
     "edges": [
       {
+        "fromNodeId": "frillish",
+        "toNodeId": "jellicent",
         "fromSlug": "frillish",
         "toSlug": "jellicent",
         "method": "level_up",

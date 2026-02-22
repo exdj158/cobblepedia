@@ -137,23 +137,34 @@
   "evolutionFamily": {
     "members": [
       {
+        "nodeId": "clamperl",
         "slug": "clamperl",
         "name": "Clamperl",
-        "dexNumber": 366
+        "dexNumber": 366,
+        "formSlug": null,
+        "formName": null
       },
       {
+        "nodeId": "huntail",
         "slug": "huntail",
         "name": "Huntail",
-        "dexNumber": 367
+        "dexNumber": 367,
+        "formSlug": null,
+        "formName": null
       },
       {
+        "nodeId": "gorebyss",
         "slug": "gorebyss",
         "name": "Gorebyss",
-        "dexNumber": 368
+        "dexNumber": 368,
+        "formSlug": null,
+        "formName": null
       }
     ],
     "edges": [
       {
+        "fromNodeId": "clamperl",
+        "toNodeId": "gorebyss",
         "fromSlug": "clamperl",
         "toSlug": "gorebyss",
         "method": "trade",
@@ -162,6 +173,8 @@
         ]
       },
       {
+        "fromNodeId": "clamperl",
+        "toNodeId": "huntail",
         "fromSlug": "clamperl",
         "toSlug": "huntail",
         "method": "trade",

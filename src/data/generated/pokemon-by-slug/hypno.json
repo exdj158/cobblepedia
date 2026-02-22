@@ -68,18 +68,26 @@
   "evolutionFamily": {
     "members": [
       {
+        "nodeId": "drowzee",
         "slug": "drowzee",
         "name": "Drowzee",
-        "dexNumber": 96
+        "dexNumber": 96,
+        "formSlug": null,
+        "formName": null
       },
       {
+        "nodeId": "hypno",
         "slug": "hypno",
         "name": "Hypno",
-        "dexNumber": 97
+        "dexNumber": 97,
+        "formSlug": null,
+        "formName": null
       }
     ],
     "edges": [
       {
+        "fromNodeId": "drowzee",
+        "toNodeId": "hypno",
         "fromSlug": "drowzee",
         "toSlug": "hypno",
         "method": "level_up",

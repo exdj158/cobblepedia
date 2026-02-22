@@ -68,18 +68,26 @@
   "evolutionFamily": {
     "members": [
       {
+        "nodeId": "makuhita",
         "slug": "makuhita",
         "name": "Makuhita",
-        "dexNumber": 296
+        "dexNumber": 296,
+        "formSlug": null,
+        "formName": null
       },
       {
+        "nodeId": "hariyama",
         "slug": "hariyama",
         "name": "Hariyama",
-        "dexNumber": 297
+        "dexNumber": 297,
+        "formSlug": null,
+        "formName": null
       }
     ],
     "edges": [
       {
+        "fromNodeId": "makuhita",
+        "toNodeId": "hariyama",
         "fromSlug": "makuhita",
         "toSlug": "hariyama",
         "method": "level_up",

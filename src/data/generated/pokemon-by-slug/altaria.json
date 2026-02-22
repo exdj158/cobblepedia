@@ -66,18 +66,26 @@
   "evolutionFamily": {
     "members": [
       {
+        "nodeId": "swablu",
         "slug": "swablu",
         "name": "Swablu",
-        "dexNumber": 333
+        "dexNumber": 333,
+        "formSlug": null,
+        "formName": null
       },
       {
+        "nodeId": "altaria",
         "slug": "altaria",
         "name": "Altaria",
-        "dexNumber": 334
+        "dexNumber": 334,
+        "formSlug": null,
+        "formName": null
       }
     ],
     "edges": [
       {
+        "fromNodeId": "swablu",
+        "toNodeId": "altaria",
         "fromSlug": "swablu",
         "toSlug": "altaria",
         "method": "level_up",

@@ -108,18 +108,26 @@
   "evolutionFamily": {
     "members": [
       {
+        "nodeId": "nickit",
         "slug": "nickit",
         "name": "Nickit",
-        "dexNumber": 827
+        "dexNumber": 827,
+        "formSlug": null,
+        "formName": null
       },
       {
+        "nodeId": "thievul",
         "slug": "thievul",
         "name": "Thievul",
-        "dexNumber": 828
+        "dexNumber": 828,
+        "formSlug": null,
+        "formName": null
       }
     ],
     "edges": [
       {
+        "fromNodeId": "nickit",
+        "toNodeId": "thievul",
         "fromSlug": "nickit",
         "toSlug": "thievul",
         "method": "level_up",

@@ -69,18 +69,34 @@
   "evolutionFamily": {
     "members": [
       {
+        "nodeId": "sinistea",
         "slug": "sinistea",
         "name": "Sinistea",
-        "dexNumber": 854
+        "dexNumber": 854,
+        "formSlug": null,
+        "formName": null
       },
       {
+        "nodeId": "polteageist",
         "slug": "polteageist",
         "name": "Polteageist",
-        "dexNumber": 855
+        "dexNumber": 855,
+        "formSlug": null,
+        "formName": null
+      },
+      {
+        "nodeId": "polteageist-antique",
+        "slug": "polteageist",
+        "name": "Polteageist",
+        "dexNumber": 855,
+        "formSlug": "polteageist-antique",
+        "formName": "Antique"
       }
     ],
     "edges": [
       {
+        "fromNodeId": "sinistea",
+        "toNodeId": "polteageist",
         "fromSlug": "sinistea",
         "toSlug": "polteageist",
         "method": "item_interact",
@@ -89,6 +105,8 @@
         ]
       },
       {
+        "fromNodeId": "sinistea",
+        "toNodeId": "polteageist-antique",
         "fromSlug": "sinistea",
         "toSlug": "polteageist",
         "method": "item_interact",

@@ -68,23 +68,34 @@
   "evolutionFamily": {
     "members": [
       {
+        "nodeId": "bounsweet",
         "slug": "bounsweet",
         "name": "Bounsweet",
-        "dexNumber": 761
+        "dexNumber": 761,
+        "formSlug": null,
+        "formName": null
       },
       {
+        "nodeId": "steenee",
         "slug": "steenee",
         "name": "Steenee",
-        "dexNumber": 762
+        "dexNumber": 762,
+        "formSlug": null,
+        "formName": null
       },
       {
+        "nodeId": "tsareena",
         "slug": "tsareena",
         "name": "Tsareena",
-        "dexNumber": 763
+        "dexNumber": 763,
+        "formSlug": null,
+        "formName": null
       }
     ],
     "edges": [
       {
+        "fromNodeId": "bounsweet",
+        "toNodeId": "steenee",
         "fromSlug": "bounsweet",
         "toSlug": "steenee",
         "method": "level_up",
@@ -93,6 +104,8 @@
         ]
       },
       {
+        "fromNodeId": "steenee",
+        "toNodeId": "tsareena",
         "fromSlug": "steenee",
         "toSlug": "tsareena",
         "method": "level_up",

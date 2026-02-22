@@ -99,23 +99,34 @@
   "evolutionFamily": {
     "members": [
       {
+        "nodeId": "electabuzz",
         "slug": "electabuzz",
         "name": "Electabuzz",
-        "dexNumber": 125
+        "dexNumber": 125,
+        "formSlug": null,
+        "formName": null
       },
       {
+        "nodeId": "elekid",
         "slug": "elekid",
         "name": "Elekid",
-        "dexNumber": 239
+        "dexNumber": 239,
+        "formSlug": null,
+        "formName": null
       },
       {
+        "nodeId": "electivire",
         "slug": "electivire",
         "name": "Electivire",
-        "dexNumber": 466
+        "dexNumber": 466,
+        "formSlug": null,
+        "formName": null
       }
     ],
     "edges": [
       {
+        "fromNodeId": "electabuzz",
+        "toNodeId": "electivire",
         "fromSlug": "electabuzz",
         "toSlug": "electivire",
         "method": "trade",
@@ -124,6 +135,8 @@
         ]
       },
       {
+        "fromNodeId": "elekid",
+        "toNodeId": "electabuzz",
         "fromSlug": "elekid",
         "toSlug": "electabuzz",
         "method": "level_up",

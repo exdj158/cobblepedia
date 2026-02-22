@@ -70,23 +70,34 @@
   "evolutionFamily": {
     "members": [
       {
+        "nodeId": "horsea",
         "slug": "horsea",
         "name": "Horsea",
-        "dexNumber": 116
+        "dexNumber": 116,
+        "formSlug": null,
+        "formName": null
       },
       {
+        "nodeId": "seadra",
         "slug": "seadra",
         "name": "Seadra",
-        "dexNumber": 117
+        "dexNumber": 117,
+        "formSlug": null,
+        "formName": null
       },
       {
+        "nodeId": "kingdra",
         "slug": "kingdra",
         "name": "Kingdra",
-        "dexNumber": 230
+        "dexNumber": 230,
+        "formSlug": null,
+        "formName": null
       }
     ],
     "edges": [
       {
+        "fromNodeId": "horsea",
+        "toNodeId": "seadra",
         "fromSlug": "horsea",
         "toSlug": "seadra",
         "method": "level_up",
@@ -95,6 +106,8 @@
         ]
       },
       {
+        "fromNodeId": "seadra",
+        "toNodeId": "kingdra",
         "fromSlug": "seadra",
         "toSlug": "kingdra",
         "method": "trade",

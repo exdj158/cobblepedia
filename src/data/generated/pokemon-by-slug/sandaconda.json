@@ -71,18 +71,26 @@
   "evolutionFamily": {
     "members": [
       {
+        "nodeId": "silicobra",
         "slug": "silicobra",
         "name": "Silicobra",
-        "dexNumber": 843
+        "dexNumber": 843,
+        "formSlug": null,
+        "formName": null
       },
       {
+        "nodeId": "sandaconda",
         "slug": "sandaconda",
         "name": "Sandaconda",
-        "dexNumber": 844
+        "dexNumber": 844,
+        "formSlug": null,
+        "formName": null
       }
     ],
     "edges": [
       {
+        "fromNodeId": "silicobra",
+        "toNodeId": "sandaconda",
         "fromSlug": "silicobra",
         "toSlug": "sandaconda",
         "method": "level_up",

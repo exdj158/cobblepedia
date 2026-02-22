@@ -104,18 +104,26 @@
   "evolutionFamily": {
     "members": [
       {
+        "nodeId": "shieldon",
         "slug": "shieldon",
         "name": "Shieldon",
-        "dexNumber": 410
+        "dexNumber": 410,
+        "formSlug": null,
+        "formName": null
       },
       {
+        "nodeId": "bastiodon",
         "slug": "bastiodon",
         "name": "Bastiodon",
-        "dexNumber": 411
+        "dexNumber": 411,
+        "formSlug": null,
+        "formName": null
       }
     ],
     "edges": [
       {
+        "fromNodeId": "shieldon",
+        "toNodeId": "bastiodon",
         "fromSlug": "shieldon",
         "toSlug": "bastiodon",
         "method": "level_up",

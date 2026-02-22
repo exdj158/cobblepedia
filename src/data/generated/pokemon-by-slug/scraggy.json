@@ -106,18 +106,26 @@
   "evolutionFamily": {
     "members": [
       {
+        "nodeId": "scraggy",
         "slug": "scraggy",
         "name": "Scraggy",
-        "dexNumber": 559
+        "dexNumber": 559,
+        "formSlug": null,
+        "formName": null
       },
       {
+        "nodeId": "scrafty",
         "slug": "scrafty",
         "name": "Scrafty",
-        "dexNumber": 560
+        "dexNumber": 560,
+        "formSlug": null,
+        "formName": null
       }
     ],
     "edges": [
       {
+        "fromNodeId": "scraggy",
+        "toNodeId": "scrafty",
         "fromSlug": "scraggy",
         "toSlug": "scrafty",
         "method": "level_up",

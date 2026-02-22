@@ -88,18 +88,34 @@
   "evolutionFamily": {
     "members": [
       {
+        "nodeId": "vulpix",
         "slug": "vulpix",
         "name": "Vulpix",
-        "dexNumber": 37
+        "dexNumber": 37,
+        "formSlug": null,
+        "formName": null
       },
       {
+        "nodeId": "ninetales",
         "slug": "ninetales",
         "name": "Ninetales",
-        "dexNumber": 38
+        "dexNumber": 38,
+        "formSlug": null,
+        "formName": null
+      },
+      {
+        "nodeId": "ninetales-alola",
+        "slug": "ninetales",
+        "name": "Ninetales",
+        "dexNumber": 38,
+        "formSlug": "ninetales-alola",
+        "formName": "Alola"
       }
     ],
     "edges": [
       {
+        "fromNodeId": "vulpix",
+        "toNodeId": "ninetales",
         "fromSlug": "vulpix",
         "toSlug": "ninetales",
         "method": "item_interact",
@@ -108,6 +124,8 @@
         ]
       },
       {
+        "fromNodeId": "vulpix",
+        "toNodeId": "ninetales-alola",
         "fromSlug": "vulpix",
         "toSlug": "ninetales",
         "method": "item_interact",

@@ -98,18 +98,44 @@
   "evolutionFamily": {
     "members": [
       {
+        "nodeId": "growlithe",
         "slug": "growlithe",
         "name": "Growlithe",
-        "dexNumber": 58
+        "dexNumber": 58,
+        "formSlug": null,
+        "formName": null
       },
       {
+        "nodeId": "arcanine",
         "slug": "arcanine",
         "name": "Arcanine",
-        "dexNumber": 59
+        "dexNumber": 59,
+        "formSlug": null,
+        "formName": null
+      },
+      {
+        "nodeId": "arcanine-hisui",
+        "slug": "arcanine",
+        "name": "Arcanine",
+        "dexNumber": 59,
+        "formSlug": "arcanine-hisui",
+        "formName": "Hisui"
       }
     ],
     "edges": [
       {
+        "fromNodeId": "growlithe",
+        "toNodeId": "arcanine",
+        "fromSlug": "growlithe",
+        "toSlug": "arcanine",
+        "method": "item_interact",
+        "requirementText": [
+          "Use Fire Stone"
+        ]
+      },
+      {
+        "fromNodeId": "growlithe",
+        "toNodeId": "arcanine-hisui",
         "fromSlug": "growlithe",
         "toSlug": "arcanine",
         "method": "item_interact",

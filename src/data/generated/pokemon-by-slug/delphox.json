@@ -63,23 +63,34 @@
   "evolutionFamily": {
     "members": [
       {
+        "nodeId": "fennekin",
         "slug": "fennekin",
         "name": "Fennekin",
-        "dexNumber": 653
+        "dexNumber": 653,
+        "formSlug": null,
+        "formName": null
       },
       {
+        "nodeId": "braixen",
         "slug": "braixen",
         "name": "Braixen",
-        "dexNumber": 654
+        "dexNumber": 654,
+        "formSlug": null,
+        "formName": null
       },
       {
+        "nodeId": "delphox",
         "slug": "delphox",
         "name": "Delphox",
-        "dexNumber": 655
+        "dexNumber": 655,
+        "formSlug": null,
+        "formName": null
       }
     ],
     "edges": [
       {
+        "fromNodeId": "braixen",
+        "toNodeId": "delphox",
         "fromSlug": "braixen",
         "toSlug": "delphox",
         "method": "level_up",
@@ -88,6 +99,8 @@
         ]
       },
       {
+        "fromNodeId": "fennekin",
+        "toNodeId": "braixen",
         "fromSlug": "fennekin",
         "toSlug": "braixen",
         "method": "level_up",

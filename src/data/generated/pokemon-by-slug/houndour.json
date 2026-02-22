@@ -105,18 +105,26 @@
   "evolutionFamily": {
     "members": [
       {
+        "nodeId": "houndour",
         "slug": "houndour",
         "name": "Houndour",
-        "dexNumber": 228
+        "dexNumber": 228,
+        "formSlug": null,
+        "formName": null
       },
       {
+        "nodeId": "houndoom",
         "slug": "houndoom",
         "name": "Houndoom",
-        "dexNumber": 229
+        "dexNumber": 229,
+        "formSlug": null,
+        "formName": null
       }
     ],
     "edges": [
       {
+        "fromNodeId": "houndour",
+        "toNodeId": "houndoom",
         "fromSlug": "houndour",
         "toSlug": "houndoom",
         "method": "level_up",

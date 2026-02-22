@@ -70,18 +70,26 @@
   "evolutionFamily": {
     "members": [
       {
+        "nodeId": "cutiefly",
         "slug": "cutiefly",
         "name": "Cutiefly",
-        "dexNumber": 742
+        "dexNumber": 742,
+        "formSlug": null,
+        "formName": null
       },
       {
+        "nodeId": "ribombee",
         "slug": "ribombee",
         "name": "Ribombee",
-        "dexNumber": 743
+        "dexNumber": 743,
+        "formSlug": null,
+        "formName": null
       }
     ],
     "edges": [
       {
+        "fromNodeId": "cutiefly",
+        "toNodeId": "ribombee",
         "fromSlug": "cutiefly",
         "toSlug": "ribombee",
         "method": "level_up",

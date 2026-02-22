@@ -68,18 +68,26 @@
   "evolutionFamily": {
     "members": [
       {
+        "nodeId": "shelmet",
         "slug": "shelmet",
         "name": "Shelmet",
-        "dexNumber": 616
+        "dexNumber": 616,
+        "formSlug": null,
+        "formName": null
       },
       {
+        "nodeId": "accelgor",
         "slug": "accelgor",
         "name": "Accelgor",
-        "dexNumber": 617
+        "dexNumber": 617,
+        "formSlug": null,
+        "formName": null
       }
     ],
     "edges": [
       {
+        "fromNodeId": "shelmet",
+        "toNodeId": "accelgor",
         "fromSlug": "shelmet",
         "toSlug": "accelgor",
         "method": "item_interact",
@@ -89,6 +97,8 @@
         ]
       },
       {
+        "fromNodeId": "shelmet",
+        "toNodeId": "accelgor",
         "fromSlug": "shelmet",
         "toSlug": "accelgor",
         "method": "trade",

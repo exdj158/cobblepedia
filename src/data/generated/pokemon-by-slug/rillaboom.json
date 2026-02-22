@@ -65,23 +65,34 @@
   "evolutionFamily": {
     "members": [
       {
+        "nodeId": "grookey",
         "slug": "grookey",
         "name": "Grookey",
-        "dexNumber": 810
+        "dexNumber": 810,
+        "formSlug": null,
+        "formName": null
       },
       {
+        "nodeId": "thwackey",
         "slug": "thwackey",
         "name": "Thwackey",
-        "dexNumber": 811
+        "dexNumber": 811,
+        "formSlug": null,
+        "formName": null
       },
       {
+        "nodeId": "rillaboom",
         "slug": "rillaboom",
         "name": "Rillaboom",
-        "dexNumber": 812
+        "dexNumber": 812,
+        "formSlug": null,
+        "formName": null
       }
     ],
     "edges": [
       {
+        "fromNodeId": "grookey",
+        "toNodeId": "thwackey",
         "fromSlug": "grookey",
         "toSlug": "thwackey",
         "method": "level_up",
@@ -90,6 +101,8 @@
         ]
       },
       {
+        "fromNodeId": "thwackey",
+        "toNodeId": "rillaboom",
         "fromSlug": "thwackey",
         "toSlug": "rillaboom",
         "method": "level_up",

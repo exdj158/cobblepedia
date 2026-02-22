@@ -113,23 +113,34 @@
   "evolutionFamily": {
     "members": [
       {
+        "nodeId": "tinkatink",
         "slug": "tinkatink",
         "name": "Tinkatink",
-        "dexNumber": 957
+        "dexNumber": 957,
+        "formSlug": null,
+        "formName": null
       },
       {
+        "nodeId": "tinkatuff",
         "slug": "tinkatuff",
         "name": "Tinkatuff",
-        "dexNumber": 958
+        "dexNumber": 958,
+        "formSlug": null,
+        "formName": null
       },
       {
+        "nodeId": "tinkaton",
         "slug": "tinkaton",
         "name": "Tinkaton",
-        "dexNumber": 959
+        "dexNumber": 959,
+        "formSlug": null,
+        "formName": null
       }
     ],
     "edges": [
       {
+        "fromNodeId": "tinkatink",
+        "toNodeId": "tinkatuff",
         "fromSlug": "tinkatink",
         "toSlug": "tinkatuff",
         "method": "level_up",
@@ -138,6 +149,8 @@
         ]
       },
       {
+        "fromNodeId": "tinkatuff",
+        "toNodeId": "tinkaton",
         "fromSlug": "tinkatuff",
         "toSlug": "tinkaton",
         "method": "level_up",

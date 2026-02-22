@@ -73,23 +73,34 @@
   "evolutionFamily": {
     "members": [
       {
+        "nodeId": "sneasel",
         "slug": "sneasel",
         "name": "Sneasel",
-        "dexNumber": 215
+        "dexNumber": 215,
+        "formSlug": null,
+        "formName": null
       },
       {
+        "nodeId": "weavile",
         "slug": "weavile",
         "name": "Weavile",
-        "dexNumber": 461
+        "dexNumber": 461,
+        "formSlug": null,
+        "formName": null
       },
       {
+        "nodeId": "sneasler",
         "slug": "sneasler",
         "name": "Sneasler",
-        "dexNumber": 903
+        "dexNumber": 903,
+        "formSlug": null,
+        "formName": null
       }
     ],
     "edges": [
       {
+        "fromNodeId": "sneasel",
+        "toNodeId": "sneasler",
         "fromSlug": "sneasel",
         "toSlug": "sneasler",
         "method": "level_up",
@@ -99,6 +110,8 @@
         ]
       },
       {
+        "fromNodeId": "sneasel",
+        "toNodeId": "weavile",
         "fromSlug": "sneasel",
         "toSlug": "weavile",
         "method": "level_up",

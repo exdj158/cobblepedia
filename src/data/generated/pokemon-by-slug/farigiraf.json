@@ -69,18 +69,26 @@
   "evolutionFamily": {
     "members": [
       {
+        "nodeId": "girafarig",
         "slug": "girafarig",
         "name": "Girafarig",
-        "dexNumber": 203
+        "dexNumber": 203,
+        "formSlug": null,
+        "formName": null
       },
       {
+        "nodeId": "farigiraf",
         "slug": "farigiraf",
         "name": "Farigiraf",
-        "dexNumber": 981
+        "dexNumber": 981,
+        "formSlug": null,
+        "formName": null
       }
     ],
     "edges": [
       {
+        "fromNodeId": "girafarig",
+        "toNodeId": "farigiraf",
         "fromSlug": "girafarig",
         "toSlug": "farigiraf",
         "method": "level_up",

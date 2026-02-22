@@ -99,18 +99,26 @@
   "evolutionFamily": {
     "members": [
       {
+        "nodeId": "bramblin",
         "slug": "bramblin",
         "name": "Bramblin",
-        "dexNumber": 946
+        "dexNumber": 946,
+        "formSlug": null,
+        "formName": null
       },
       {
+        "nodeId": "brambleghast",
         "slug": "brambleghast",
         "name": "Brambleghast",
-        "dexNumber": 947
+        "dexNumber": 947,
+        "formSlug": null,
+        "formName": null
       }
     ],
     "edges": [
       {
+        "fromNodeId": "bramblin",
+        "toNodeId": "brambleghast",
         "fromSlug": "bramblin",
         "toSlug": "brambleghast",
         "method": "level_up",

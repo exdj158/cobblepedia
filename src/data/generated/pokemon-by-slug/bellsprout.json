@@ -99,23 +99,34 @@
   "evolutionFamily": {
     "members": [
       {
+        "nodeId": "bellsprout",
         "slug": "bellsprout",
         "name": "Bellsprout",
-        "dexNumber": 69
+        "dexNumber": 69,
+        "formSlug": null,
+        "formName": null
       },
       {
+        "nodeId": "weepinbell",
         "slug": "weepinbell",
         "name": "Weepinbell",
-        "dexNumber": 70
+        "dexNumber": 70,
+        "formSlug": null,
+        "formName": null
       },
       {
+        "nodeId": "victreebel",
         "slug": "victreebel",
         "name": "Victreebel",
-        "dexNumber": 71
+        "dexNumber": 71,
+        "formSlug": null,
+        "formName": null
       }
     ],
     "edges": [
       {
+        "fromNodeId": "bellsprout",
+        "toNodeId": "weepinbell",
         "fromSlug": "bellsprout",
         "toSlug": "weepinbell",
         "method": "level_up",
@@ -124,6 +135,8 @@
         ]
       },
       {
+        "fromNodeId": "weepinbell",
+        "toNodeId": "victreebel",
         "fromSlug": "weepinbell",
         "toSlug": "victreebel",
         "method": "item_interact",

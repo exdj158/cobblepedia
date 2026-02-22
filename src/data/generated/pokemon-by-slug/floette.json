@@ -101,23 +101,34 @@
   "evolutionFamily": {
     "members": [
       {
+        "nodeId": "flabebe",
         "slug": "flabebe",
         "name": "Flabebe",
-        "dexNumber": 669
+        "dexNumber": 669,
+        "formSlug": null,
+        "formName": null
       },
       {
+        "nodeId": "floette",
         "slug": "floette",
         "name": "Floette",
-        "dexNumber": 670
+        "dexNumber": 670,
+        "formSlug": null,
+        "formName": null
       },
       {
+        "nodeId": "florges",
         "slug": "florges",
         "name": "Florges",
-        "dexNumber": 671
+        "dexNumber": 671,
+        "formSlug": null,
+        "formName": null
       }
     ],
     "edges": [
       {
+        "fromNodeId": "flabebe",
+        "toNodeId": "floette",
         "fromSlug": "flabebe",
         "toSlug": "floette",
         "method": "level_up",
@@ -126,6 +137,8 @@
         ]
       },
       {
+        "fromNodeId": "floette",
+        "toNodeId": "florges",
         "fromSlug": "floette",
         "toSlug": "florges",
         "method": "item_interact",

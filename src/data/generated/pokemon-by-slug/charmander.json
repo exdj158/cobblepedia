@@ -100,23 +100,34 @@
   "evolutionFamily": {
     "members": [
       {
+        "nodeId": "charmander",
         "slug": "charmander",
         "name": "Charmander",
-        "dexNumber": 4
+        "dexNumber": 4,
+        "formSlug": null,
+        "formName": null
       },
       {
+        "nodeId": "charmeleon",
         "slug": "charmeleon",
         "name": "Charmeleon",
-        "dexNumber": 5
+        "dexNumber": 5,
+        "formSlug": null,
+        "formName": null
       },
       {
+        "nodeId": "charizard",
         "slug": "charizard",
         "name": "Charizard",
-        "dexNumber": 6
+        "dexNumber": 6,
+        "formSlug": null,
+        "formName": null
       }
     ],
     "edges": [
       {
+        "fromNodeId": "charmander",
+        "toNodeId": "charmeleon",
         "fromSlug": "charmander",
         "toSlug": "charmeleon",
         "method": "level_up",
@@ -125,6 +136,8 @@
         ]
       },
       {
+        "fromNodeId": "charmeleon",
+        "toNodeId": "charizard",
         "fromSlug": "charmeleon",
         "toSlug": "charizard",
         "method": "level_up",

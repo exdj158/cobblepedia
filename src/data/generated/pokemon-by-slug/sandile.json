@@ -105,23 +105,34 @@
   "evolutionFamily": {
     "members": [
       {
+        "nodeId": "sandile",
         "slug": "sandile",
         "name": "Sandile",
-        "dexNumber": 551
+        "dexNumber": 551,
+        "formSlug": null,
+        "formName": null
       },
       {
+        "nodeId": "krokorok",
         "slug": "krokorok",
         "name": "Krokorok",
-        "dexNumber": 552
+        "dexNumber": 552,
+        "formSlug": null,
+        "formName": null
       },
       {
+        "nodeId": "krookodile",
         "slug": "krookodile",
         "name": "Krookodile",
-        "dexNumber": 553
+        "dexNumber": 553,
+        "formSlug": null,
+        "formName": null
       }
     ],
     "edges": [
       {
+        "fromNodeId": "krokorok",
+        "toNodeId": "krookodile",
         "fromSlug": "krokorok",
         "toSlug": "krookodile",
         "method": "level_up",
@@ -130,6 +141,8 @@
         ]
       },
       {
+        "fromNodeId": "sandile",
+        "toNodeId": "krokorok",
         "fromSlug": "sandile",
         "toSlug": "krokorok",
         "method": "level_up",

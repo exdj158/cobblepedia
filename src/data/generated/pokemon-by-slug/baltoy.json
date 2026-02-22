@@ -103,18 +103,26 @@
   "evolutionFamily": {
     "members": [
       {
+        "nodeId": "baltoy",
         "slug": "baltoy",
         "name": "Baltoy",
-        "dexNumber": 343
+        "dexNumber": 343,
+        "formSlug": null,
+        "formName": null
       },
       {
+        "nodeId": "claydol",
         "slug": "claydol",
         "name": "Claydol",
-        "dexNumber": 344
+        "dexNumber": 344,
+        "formSlug": null,
+        "formName": null
       }
     ],
     "edges": [
       {
+        "fromNodeId": "baltoy",
+        "toNodeId": "claydol",
         "fromSlug": "baltoy",
         "toSlug": "claydol",
         "method": "level_up",

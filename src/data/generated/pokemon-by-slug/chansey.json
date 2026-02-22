@@ -108,23 +108,34 @@
   "evolutionFamily": {
     "members": [
       {
+        "nodeId": "chansey",
         "slug": "chansey",
         "name": "Chansey",
-        "dexNumber": 113
+        "dexNumber": 113,
+        "formSlug": null,
+        "formName": null
       },
       {
+        "nodeId": "blissey",
         "slug": "blissey",
         "name": "Blissey",
-        "dexNumber": 242
+        "dexNumber": 242,
+        "formSlug": null,
+        "formName": null
       },
       {
+        "nodeId": "happiny",
         "slug": "happiny",
         "name": "Happiny",
-        "dexNumber": 440
+        "dexNumber": 440,
+        "formSlug": null,
+        "formName": null
       }
     ],
     "edges": [
       {
+        "fromNodeId": "chansey",
+        "toNodeId": "blissey",
         "fromSlug": "chansey",
         "toSlug": "blissey",
         "method": "level_up",
@@ -133,6 +144,8 @@
         ]
       },
       {
+        "fromNodeId": "happiny",
+        "toNodeId": "chansey",
         "fromSlug": "happiny",
         "toSlug": "chansey",
         "method": "level_up",

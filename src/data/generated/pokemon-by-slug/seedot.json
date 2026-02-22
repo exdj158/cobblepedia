@@ -109,23 +109,34 @@
   "evolutionFamily": {
     "members": [
       {
+        "nodeId": "seedot",
         "slug": "seedot",
         "name": "Seedot",
-        "dexNumber": 273
+        "dexNumber": 273,
+        "formSlug": null,
+        "formName": null
       },
       {
+        "nodeId": "nuzleaf",
         "slug": "nuzleaf",
         "name": "Nuzleaf",
-        "dexNumber": 274
+        "dexNumber": 274,
+        "formSlug": null,
+        "formName": null
       },
       {
+        "nodeId": "shiftry",
         "slug": "shiftry",
         "name": "Shiftry",
-        "dexNumber": 275
+        "dexNumber": 275,
+        "formSlug": null,
+        "formName": null
       }
     ],
     "edges": [
       {
+        "fromNodeId": "nuzleaf",
+        "toNodeId": "shiftry",
         "fromSlug": "nuzleaf",
         "toSlug": "shiftry",
         "method": "item_interact",
@@ -134,6 +145,8 @@
         ]
       },
       {
+        "fromNodeId": "seedot",
+        "toNodeId": "nuzleaf",
         "fromSlug": "seedot",
         "toSlug": "nuzleaf",
         "method": "level_up",

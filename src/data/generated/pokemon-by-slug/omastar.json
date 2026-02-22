@@ -71,18 +71,26 @@
   "evolutionFamily": {
     "members": [
       {
+        "nodeId": "omanyte",
         "slug": "omanyte",
         "name": "Omanyte",
-        "dexNumber": 138
+        "dexNumber": 138,
+        "formSlug": null,
+        "formName": null
       },
       {
+        "nodeId": "omastar",
         "slug": "omastar",
         "name": "Omastar",
-        "dexNumber": 139
+        "dexNumber": 139,
+        "formSlug": null,
+        "formName": null
       }
     ],
     "edges": [
       {
+        "fromNodeId": "omanyte",
+        "toNodeId": "omastar",
         "fromSlug": "omanyte",
         "toSlug": "omastar",
         "method": "level_up",

@@ -106,23 +106,34 @@
   "evolutionFamily": {
     "members": [
       {
+        "nodeId": "bagon",
         "slug": "bagon",
         "name": "Bagon",
-        "dexNumber": 371
+        "dexNumber": 371,
+        "formSlug": null,
+        "formName": null
       },
       {
+        "nodeId": "shelgon",
         "slug": "shelgon",
         "name": "Shelgon",
-        "dexNumber": 372
+        "dexNumber": 372,
+        "formSlug": null,
+        "formName": null
       },
       {
+        "nodeId": "salamence",
         "slug": "salamence",
         "name": "Salamence",
-        "dexNumber": 373
+        "dexNumber": 373,
+        "formSlug": null,
+        "formName": null
       }
     ],
     "edges": [
       {
+        "fromNodeId": "bagon",
+        "toNodeId": "shelgon",
         "fromSlug": "bagon",
         "toSlug": "shelgon",
         "method": "level_up",
@@ -131,6 +142,8 @@
         ]
       },
       {
+        "fromNodeId": "shelgon",
+        "toNodeId": "salamence",
         "fromSlug": "shelgon",
         "toSlug": "salamence",
         "method": "level_up",

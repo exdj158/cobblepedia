@@ -103,23 +103,34 @@
   "evolutionFamily": {
     "members": [
       {
+        "nodeId": "larvitar",
         "slug": "larvitar",
         "name": "Larvitar",
-        "dexNumber": 246
+        "dexNumber": 246,
+        "formSlug": null,
+        "formName": null
       },
       {
+        "nodeId": "pupitar",
         "slug": "pupitar",
         "name": "Pupitar",
-        "dexNumber": 247
+        "dexNumber": 247,
+        "formSlug": null,
+        "formName": null
       },
       {
+        "nodeId": "tyranitar",
         "slug": "tyranitar",
         "name": "Tyranitar",
-        "dexNumber": 248
+        "dexNumber": 248,
+        "formSlug": null,
+        "formName": null
       }
     ],
     "edges": [
       {
+        "fromNodeId": "larvitar",
+        "toNodeId": "pupitar",
         "fromSlug": "larvitar",
         "toSlug": "pupitar",
         "method": "level_up",
@@ -128,6 +139,8 @@
         ]
       },
       {
+        "fromNodeId": "pupitar",
+        "toNodeId": "tyranitar",
         "fromSlug": "pupitar",
         "toSlug": "tyranitar",
         "method": "level_up",

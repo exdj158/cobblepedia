@@ -71,23 +71,34 @@
   "evolutionFamily": {
     "members": [
       {
+        "nodeId": "scyther",
         "slug": "scyther",
         "name": "Scyther",
-        "dexNumber": 123
+        "dexNumber": 123,
+        "formSlug": null,
+        "formName": null
       },
       {
+        "nodeId": "scizor",
         "slug": "scizor",
         "name": "Scizor",
-        "dexNumber": 212
+        "dexNumber": 212,
+        "formSlug": null,
+        "formName": null
       },
       {
+        "nodeId": "kleavor",
         "slug": "kleavor",
         "name": "Kleavor",
-        "dexNumber": 900
+        "dexNumber": 900,
+        "formSlug": null,
+        "formName": null
       }
     ],
     "edges": [
       {
+        "fromNodeId": "scyther",
+        "toNodeId": "kleavor",
         "fromSlug": "scyther",
         "toSlug": "kleavor",
         "method": "item_interact",
@@ -96,6 +107,8 @@
         ]
       },
       {
+        "fromNodeId": "scyther",
+        "toNodeId": "scizor",
         "fromSlug": "scyther",
         "toSlug": "scizor",
         "method": "trade",

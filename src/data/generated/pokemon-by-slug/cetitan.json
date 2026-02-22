@@ -68,18 +68,26 @@
   "evolutionFamily": {
     "members": [
       {
+        "nodeId": "cetoddle",
         "slug": "cetoddle",
         "name": "Cetoddle",
-        "dexNumber": 974
+        "dexNumber": 974,
+        "formSlug": null,
+        "formName": null
       },
       {
+        "nodeId": "cetitan",
         "slug": "cetitan",
         "name": "Cetitan",
-        "dexNumber": 975
+        "dexNumber": 975,
+        "formSlug": null,
+        "formName": null
       }
     ],
     "edges": [
       {
+        "fromNodeId": "cetoddle",
+        "toNodeId": "cetitan",
         "fromSlug": "cetoddle",
         "toSlug": "cetitan",
         "method": "item_interact",

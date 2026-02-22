@@ -69,18 +69,26 @@
   "evolutionFamily": {
     "members": [
       {
+        "nodeId": "spinarak",
         "slug": "spinarak",
         "name": "Spinarak",
-        "dexNumber": 167
+        "dexNumber": 167,
+        "formSlug": null,
+        "formName": null
       },
       {
+        "nodeId": "ariados",
         "slug": "ariados",
         "name": "Ariados",
-        "dexNumber": 168
+        "dexNumber": 168,
+        "formSlug": null,
+        "formName": null
       }
     ],
     "edges": [
       {
+        "fromNodeId": "spinarak",
+        "toNodeId": "ariados",
         "fromSlug": "spinarak",
         "toSlug": "ariados",
         "method": "level_up",

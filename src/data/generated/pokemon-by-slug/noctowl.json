@@ -69,18 +69,26 @@
   "evolutionFamily": {
     "members": [
       {
+        "nodeId": "hoothoot",
         "slug": "hoothoot",
         "name": "Hoothoot",
-        "dexNumber": 163
+        "dexNumber": 163,
+        "formSlug": null,
+        "formName": null
       },
       {
+        "nodeId": "noctowl",
         "slug": "noctowl",
         "name": "Noctowl",
-        "dexNumber": 164
+        "dexNumber": 164,
+        "formSlug": null,
+        "formName": null
       }
     ],
     "edges": [
       {
+        "fromNodeId": "hoothoot",
+        "toNodeId": "noctowl",
         "fromSlug": "hoothoot",
         "toSlug": "noctowl",
         "method": "level_up",

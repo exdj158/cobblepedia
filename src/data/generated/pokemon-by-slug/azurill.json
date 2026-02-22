@@ -106,23 +106,34 @@
   "evolutionFamily": {
     "members": [
       {
+        "nodeId": "marill",
         "slug": "marill",
         "name": "Marill",
-        "dexNumber": 183
+        "dexNumber": 183,
+        "formSlug": null,
+        "formName": null
       },
       {
+        "nodeId": "azumarill",
         "slug": "azumarill",
         "name": "Azumarill",
-        "dexNumber": 184
+        "dexNumber": 184,
+        "formSlug": null,
+        "formName": null
       },
       {
+        "nodeId": "azurill",
         "slug": "azurill",
         "name": "Azurill",
-        "dexNumber": 298
+        "dexNumber": 298,
+        "formSlug": null,
+        "formName": null
       }
     ],
     "edges": [
       {
+        "fromNodeId": "azurill",
+        "toNodeId": "marill",
         "fromSlug": "azurill",
         "toSlug": "marill",
         "method": "level_up",
@@ -131,6 +142,8 @@
         ]
       },
       {
+        "fromNodeId": "marill",
+        "toNodeId": "azumarill",
         "fromSlug": "marill",
         "toSlug": "azumarill",
         "method": "level_up",

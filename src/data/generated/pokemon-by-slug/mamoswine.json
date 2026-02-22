@@ -69,23 +69,34 @@
   "evolutionFamily": {
     "members": [
       {
+        "nodeId": "swinub",
         "slug": "swinub",
         "name": "Swinub",
-        "dexNumber": 220
+        "dexNumber": 220,
+        "formSlug": null,
+        "formName": null
       },
       {
+        "nodeId": "piloswine",
         "slug": "piloswine",
         "name": "Piloswine",
-        "dexNumber": 221
+        "dexNumber": 221,
+        "formSlug": null,
+        "formName": null
       },
       {
+        "nodeId": "mamoswine",
         "slug": "mamoswine",
         "name": "Mamoswine",
-        "dexNumber": 473
+        "dexNumber": 473,
+        "formSlug": null,
+        "formName": null
       }
     ],
     "edges": [
       {
+        "fromNodeId": "piloswine",
+        "toNodeId": "mamoswine",
         "fromSlug": "piloswine",
         "toSlug": "mamoswine",
         "method": "level_up",
@@ -94,6 +105,8 @@
         ]
       },
       {
+        "fromNodeId": "swinub",
+        "toNodeId": "piloswine",
         "fromSlug": "swinub",
         "toSlug": "piloswine",
         "method": "level_up",

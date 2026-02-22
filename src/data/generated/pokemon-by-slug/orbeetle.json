@@ -71,23 +71,34 @@
   "evolutionFamily": {
     "members": [
       {
+        "nodeId": "blipbug",
         "slug": "blipbug",
         "name": "Blipbug",
-        "dexNumber": 824
+        "dexNumber": 824,
+        "formSlug": null,
+        "formName": null
       },
       {
+        "nodeId": "dottler",
         "slug": "dottler",
         "name": "Dottler",
-        "dexNumber": 825
+        "dexNumber": 825,
+        "formSlug": null,
+        "formName": null
       },
       {
+        "nodeId": "orbeetle",
         "slug": "orbeetle",
         "name": "Orbeetle",
-        "dexNumber": 826
+        "dexNumber": 826,
+        "formSlug": null,
+        "formName": null
       }
     ],
     "edges": [
       {
+        "fromNodeId": "blipbug",
+        "toNodeId": "dottler",
         "fromSlug": "blipbug",
         "toSlug": "dottler",
         "method": "level_up",
@@ -96,6 +107,8 @@
         ]
       },
       {
+        "fromNodeId": "dottler",
+        "toNodeId": "orbeetle",
         "fromSlug": "dottler",
         "toSlug": "orbeetle",
         "method": "level_up",

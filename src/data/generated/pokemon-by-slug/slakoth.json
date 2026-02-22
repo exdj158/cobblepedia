@@ -98,23 +98,34 @@
   "evolutionFamily": {
     "members": [
       {
+        "nodeId": "slakoth",
         "slug": "slakoth",
         "name": "Slakoth",
-        "dexNumber": 287
+        "dexNumber": 287,
+        "formSlug": null,
+        "formName": null
       },
       {
+        "nodeId": "vigoroth",
         "slug": "vigoroth",
         "name": "Vigoroth",
-        "dexNumber": 288
+        "dexNumber": 288,
+        "formSlug": null,
+        "formName": null
       },
       {
+        "nodeId": "slaking",
         "slug": "slaking",
         "name": "Slaking",
-        "dexNumber": 289
+        "dexNumber": 289,
+        "formSlug": null,
+        "formName": null
       }
     ],
     "edges": [
       {
+        "fromNodeId": "slakoth",
+        "toNodeId": "vigoroth",
         "fromSlug": "slakoth",
         "toSlug": "vigoroth",
         "method": "level_up",
@@ -123,6 +134,8 @@
         ]
       },
       {
+        "fromNodeId": "vigoroth",
+        "toNodeId": "slaking",
         "fromSlug": "vigoroth",
         "toSlug": "slaking",
         "method": "level_up",

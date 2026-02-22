@@ -790,7 +790,11 @@ function PokemonDetailView(props: {
             <p class="p-4 text-muted-foreground text-sm">No evolution family data available.</p>
           }
         >
-          <EvolutionFamilyFlow family={detail().evolutionFamily} activeSlug={detail().slug} />
+          <EvolutionFamilyFlow
+            family={detail().evolutionFamily}
+            activeSlug={detail().slug}
+            activeFormSlug={selectedFormSlug()}
+          />
         </Show>
       </section>
 

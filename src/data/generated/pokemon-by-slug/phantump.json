@@ -94,18 +94,26 @@
   "evolutionFamily": {
     "members": [
       {
+        "nodeId": "phantump",
         "slug": "phantump",
         "name": "Phantump",
-        "dexNumber": 708
+        "dexNumber": 708,
+        "formSlug": null,
+        "formName": null
       },
       {
+        "nodeId": "trevenant",
         "slug": "trevenant",
         "name": "Trevenant",
-        "dexNumber": 709
+        "dexNumber": 709,
+        "formSlug": null,
+        "formName": null
       }
     ],
     "edges": [
       {
+        "fromNodeId": "phantump",
+        "toNodeId": "trevenant",
         "fromSlug": "phantump",
         "toSlug": "trevenant",
         "method": "trade",

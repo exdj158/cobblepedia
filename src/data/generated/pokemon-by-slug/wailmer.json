@@ -105,18 +105,26 @@
   "evolutionFamily": {
     "members": [
       {
+        "nodeId": "wailmer",
         "slug": "wailmer",
         "name": "Wailmer",
-        "dexNumber": 320
+        "dexNumber": 320,
+        "formSlug": null,
+        "formName": null
       },
       {
+        "nodeId": "wailord",
         "slug": "wailord",
         "name": "Wailord",
-        "dexNumber": 321
+        "dexNumber": 321,
+        "formSlug": null,
+        "formName": null
       }
     ],
     "edges": [
       {
+        "fromNodeId": "wailmer",
+        "toNodeId": "wailord",
         "fromSlug": "wailmer",
         "toSlug": "wailord",
         "method": "level_up",

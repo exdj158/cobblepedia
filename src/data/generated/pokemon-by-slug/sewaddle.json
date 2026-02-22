@@ -109,23 +109,34 @@
   "evolutionFamily": {
     "members": [
       {
+        "nodeId": "sewaddle",
         "slug": "sewaddle",
         "name": "Sewaddle",
-        "dexNumber": 540
+        "dexNumber": 540,
+        "formSlug": null,
+        "formName": null
       },
       {
+        "nodeId": "swadloon",
         "slug": "swadloon",
         "name": "Swadloon",
-        "dexNumber": 541
+        "dexNumber": 541,
+        "formSlug": null,
+        "formName": null
       },
       {
+        "nodeId": "leavanny",
         "slug": "leavanny",
         "name": "Leavanny",
-        "dexNumber": 542
+        "dexNumber": 542,
+        "formSlug": null,
+        "formName": null
       }
     ],
     "edges": [
       {
+        "fromNodeId": "sewaddle",
+        "toNodeId": "swadloon",
         "fromSlug": "sewaddle",
         "toSlug": "swadloon",
         "method": "level_up",
@@ -134,6 +145,8 @@
         ]
       },
       {
+        "fromNodeId": "swadloon",
+        "toNodeId": "leavanny",
         "fromSlug": "swadloon",
         "toSlug": "leavanny",
         "method": "level_up",

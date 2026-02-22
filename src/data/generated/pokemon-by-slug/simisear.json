@@ -62,18 +62,26 @@
   "evolutionFamily": {
     "members": [
       {
+        "nodeId": "pansear",
         "slug": "pansear",
         "name": "Pansear",
-        "dexNumber": 513
+        "dexNumber": 513,
+        "formSlug": null,
+        "formName": null
       },
       {
+        "nodeId": "simisear",
         "slug": "simisear",
         "name": "Simisear",
-        "dexNumber": 514
+        "dexNumber": 514,
+        "formSlug": null,
+        "formName": null
       }
     ],
     "edges": [
       {
+        "fromNodeId": "pansear",
+        "toNodeId": "simisear",
         "fromSlug": "pansear",
         "toSlug": "simisear",
         "method": "item_interact",

@@ -110,18 +110,26 @@
   "evolutionFamily": {
     "members": [
       {
+        "nodeId": "noibat",
         "slug": "noibat",
         "name": "Noibat",
-        "dexNumber": 714
+        "dexNumber": 714,
+        "formSlug": null,
+        "formName": null
       },
       {
+        "nodeId": "noivern",
         "slug": "noivern",
         "name": "Noivern",
-        "dexNumber": 715
+        "dexNumber": 715,
+        "formSlug": null,
+        "formName": null
       }
     ],
     "edges": [
       {
+        "fromNodeId": "noibat",
+        "toNodeId": "noivern",
         "fromSlug": "noibat",
         "toSlug": "noivern",
         "method": "level_up",

@@ -69,18 +69,26 @@
   "evolutionFamily": {
     "members": [
       {
+        "nodeId": "snubbull",
         "slug": "snubbull",
         "name": "Snubbull",
-        "dexNumber": 209
+        "dexNumber": 209,
+        "formSlug": null,
+        "formName": null
       },
       {
+        "nodeId": "granbull",
         "slug": "granbull",
         "name": "Granbull",
-        "dexNumber": 210
+        "dexNumber": 210,
+        "formSlug": null,
+        "formName": null
       }
     ],
     "edges": [
       {
+        "fromNodeId": "snubbull",
+        "toNodeId": "granbull",
         "fromSlug": "snubbull",
         "toSlug": "granbull",
         "method": "level_up",

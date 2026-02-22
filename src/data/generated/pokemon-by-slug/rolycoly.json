@@ -108,23 +108,34 @@
   "evolutionFamily": {
     "members": [
       {
+        "nodeId": "rolycoly",
         "slug": "rolycoly",
         "name": "Rolycoly",
-        "dexNumber": 837
+        "dexNumber": 837,
+        "formSlug": null,
+        "formName": null
       },
       {
+        "nodeId": "carkol",
         "slug": "carkol",
         "name": "Carkol",
-        "dexNumber": 838
+        "dexNumber": 838,
+        "formSlug": null,
+        "formName": null
       },
       {
+        "nodeId": "coalossal",
         "slug": "coalossal",
         "name": "Coalossal",
-        "dexNumber": 839
+        "dexNumber": 839,
+        "formSlug": null,
+        "formName": null
       }
     ],
     "edges": [
       {
+        "fromNodeId": "carkol",
+        "toNodeId": "coalossal",
         "fromSlug": "carkol",
         "toSlug": "coalossal",
         "method": "level_up",
@@ -133,6 +144,8 @@
         ]
       },
       {
+        "fromNodeId": "rolycoly",
+        "toNodeId": "carkol",
         "fromSlug": "rolycoly",
         "toSlug": "carkol",
         "method": "level_up",

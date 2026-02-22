@@ -108,23 +108,34 @@
   "evolutionFamily": {
     "members": [
       {
+        "nodeId": "yamask",
         "slug": "yamask",
         "name": "Yamask",
-        "dexNumber": 562
+        "dexNumber": 562,
+        "formSlug": null,
+        "formName": null
       },
       {
+        "nodeId": "cofagrigus",
         "slug": "cofagrigus",
         "name": "Cofagrigus",
-        "dexNumber": 563
+        "dexNumber": 563,
+        "formSlug": null,
+        "formName": null
       },
       {
+        "nodeId": "runerigus",
         "slug": "runerigus",
         "name": "Runerigus",
-        "dexNumber": 867
+        "dexNumber": 867,
+        "formSlug": null,
+        "formName": null
       }
     ],
     "edges": [
       {
+        "fromNodeId": "yamask",
+        "toNodeId": "cofagrigus",
         "fromSlug": "yamask",
         "toSlug": "cofagrigus",
         "method": "level_up",
@@ -133,6 +144,8 @@
         ]
       },
       {
+        "fromNodeId": "yamask",
+        "toNodeId": "runerigus",
         "fromSlug": "yamask",
         "toSlug": "runerigus",
         "method": "level_up",

@@ -66,18 +66,26 @@
   "evolutionFamily": {
     "members": [
       {
+        "nodeId": "snover",
         "slug": "snover",
         "name": "Snover",
-        "dexNumber": 459
+        "dexNumber": 459,
+        "formSlug": null,
+        "formName": null
       },
       {
+        "nodeId": "abomasnow",
         "slug": "abomasnow",
         "name": "Abomasnow",
-        "dexNumber": 460
+        "dexNumber": 460,
+        "formSlug": null,
+        "formName": null
       }
     ],
     "edges": [
       {
+        "fromNodeId": "snover",
+        "toNodeId": "abomasnow",
         "fromSlug": "snover",
         "toSlug": "abomasnow",
         "method": "level_up",

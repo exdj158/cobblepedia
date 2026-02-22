@@ -63,18 +63,26 @@
   "evolutionFamily": {
     "members": [
       {
+        "nodeId": "pineco",
         "slug": "pineco",
         "name": "Pineco",
-        "dexNumber": 204
+        "dexNumber": 204,
+        "formSlug": null,
+        "formName": null
       },
       {
+        "nodeId": "forretress",
         "slug": "forretress",
         "name": "Forretress",
-        "dexNumber": 205
+        "dexNumber": 205,
+        "formSlug": null,
+        "formName": null
       }
     ],
     "edges": [
       {
+        "fromNodeId": "pineco",
+        "toNodeId": "forretress",
         "fromSlug": "pineco",
         "toSlug": "forretress",
         "method": "level_up",

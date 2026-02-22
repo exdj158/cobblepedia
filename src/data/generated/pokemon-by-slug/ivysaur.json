@@ -110,23 +110,34 @@
   "evolutionFamily": {
     "members": [
       {
+        "nodeId": "bulbasaur",
         "slug": "bulbasaur",
         "name": "Bulbasaur",
-        "dexNumber": 1
+        "dexNumber": 1,
+        "formSlug": null,
+        "formName": null
       },
       {
+        "nodeId": "ivysaur",
         "slug": "ivysaur",
         "name": "Ivysaur",
-        "dexNumber": 2
+        "dexNumber": 2,
+        "formSlug": null,
+        "formName": null
       },
       {
+        "nodeId": "venusaur",
         "slug": "venusaur",
         "name": "Venusaur",
-        "dexNumber": 3
+        "dexNumber": 3,
+        "formSlug": null,
+        "formName": null
       }
     ],
     "edges": [
       {
+        "fromNodeId": "bulbasaur",
+        "toNodeId": "ivysaur",
         "fromSlug": "bulbasaur",
         "toSlug": "ivysaur",
         "method": "level_up",
@@ -135,6 +146,8 @@
         ]
       },
       {
+        "fromNodeId": "ivysaur",
+        "toNodeId": "venusaur",
         "fromSlug": "ivysaur",
         "toSlug": "venusaur",
         "method": "level_up",

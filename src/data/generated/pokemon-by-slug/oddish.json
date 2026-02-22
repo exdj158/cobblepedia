@@ -99,28 +99,42 @@
   "evolutionFamily": {
     "members": [
       {
+        "nodeId": "oddish",
         "slug": "oddish",
         "name": "Oddish",
-        "dexNumber": 43
+        "dexNumber": 43,
+        "formSlug": null,
+        "formName": null
       },
       {
+        "nodeId": "gloom",
         "slug": "gloom",
         "name": "Gloom",
-        "dexNumber": 44
+        "dexNumber": 44,
+        "formSlug": null,
+        "formName": null
       },
       {
+        "nodeId": "vileplume",
         "slug": "vileplume",
         "name": "Vileplume",
-        "dexNumber": 45
+        "dexNumber": 45,
+        "formSlug": null,
+        "formName": null
       },
       {
+        "nodeId": "bellossom",
         "slug": "bellossom",
         "name": "Bellossom",
-        "dexNumber": 182
+        "dexNumber": 182,
+        "formSlug": null,
+        "formName": null
       }
     ],
     "edges": [
       {
+        "fromNodeId": "gloom",
+        "toNodeId": "bellossom",
         "fromSlug": "gloom",
         "toSlug": "bellossom",
         "method": "item_interact",
@@ -129,6 +143,8 @@
         ]
       },
       {
+        "fromNodeId": "gloom",
+        "toNodeId": "vileplume",
         "fromSlug": "gloom",
         "toSlug": "vileplume",
         "method": "item_interact",
@@ -137,6 +153,8 @@
         ]
       },
       {
+        "fromNodeId": "oddish",
+        "toNodeId": "gloom",
         "fromSlug": "oddish",
         "toSlug": "gloom",
         "method": "level_up",

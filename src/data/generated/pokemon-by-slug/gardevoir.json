@@ -72,37 +72,53 @@
   "evolutionFamily": {
     "members": [
       {
+        "nodeId": "ralts",
         "slug": "ralts",
         "name": "Ralts",
-        "dexNumber": 280
+        "dexNumber": 280,
+        "formSlug": null,
+        "formName": null
       },
       {
+        "nodeId": "kirlia",
         "slug": "kirlia",
         "name": "Kirlia",
-        "dexNumber": 281
+        "dexNumber": 281,
+        "formSlug": null,
+        "formName": null
       },
       {
+        "nodeId": "gardevoir",
         "slug": "gardevoir",
         "name": "Gardevoir",
-        "dexNumber": 282
+        "dexNumber": 282,
+        "formSlug": null,
+        "formName": null
       },
       {
+        "nodeId": "gallade",
         "slug": "gallade",
         "name": "Gallade",
-        "dexNumber": 475
+        "dexNumber": 475,
+        "formSlug": null,
+        "formName": null
       }
     ],
     "edges": [
       {
+        "fromNodeId": "kirlia",
+        "toNodeId": "gallade",
         "fromSlug": "kirlia",
         "toSlug": "gallade",
         "method": "item_interact",
         "requirementText": [
           "Use Dawn Stone",
-          "Property gender=male"
+          "Male only"
         ]
       },
       {
+        "fromNodeId": "kirlia",
+        "toNodeId": "gardevoir",
         "fromSlug": "kirlia",
         "toSlug": "gardevoir",
         "method": "level_up",
@@ -111,6 +127,8 @@
         ]
       },
       {
+        "fromNodeId": "ralts",
+        "toNodeId": "kirlia",
         "fromSlug": "ralts",
         "toSlug": "kirlia",
         "method": "level_up",

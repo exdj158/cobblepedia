@@ -103,18 +103,26 @@
   "evolutionFamily": {
     "members": [
       {
+        "nodeId": "glimmet",
         "slug": "glimmet",
         "name": "Glimmet",
-        "dexNumber": 969
+        "dexNumber": 969,
+        "formSlug": null,
+        "formName": null
       },
       {
+        "nodeId": "glimmora",
         "slug": "glimmora",
         "name": "Glimmora",
-        "dexNumber": 970
+        "dexNumber": 970,
+        "formSlug": null,
+        "formName": null
       }
     ],
     "edges": [
       {
+        "fromNodeId": "glimmet",
+        "toNodeId": "glimmora",
         "fromSlug": "glimmet",
         "toSlug": "glimmora",
         "method": "level_up",

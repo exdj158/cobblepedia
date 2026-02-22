@@ -69,18 +69,26 @@
   "evolutionFamily": {
     "members": [
       {
+        "nodeId": "venonat",
         "slug": "venonat",
         "name": "Venonat",
-        "dexNumber": 48
+        "dexNumber": 48,
+        "formSlug": null,
+        "formName": null
       },
       {
+        "nodeId": "venomoth",
         "slug": "venomoth",
         "name": "Venomoth",
-        "dexNumber": 49
+        "dexNumber": 49,
+        "formSlug": null,
+        "formName": null
       }
     ],
     "edges": [
       {
+        "fromNodeId": "venonat",
+        "toNodeId": "venomoth",
         "fromSlug": "venonat",
         "toSlug": "venomoth",
         "method": "level_up",

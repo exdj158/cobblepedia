@@ -108,23 +108,34 @@
   "evolutionFamily": {
     "members": [
       {
+        "nodeId": "nacli",
         "slug": "nacli",
         "name": "Nacli",
-        "dexNumber": 932
+        "dexNumber": 932,
+        "formSlug": null,
+        "formName": null
       },
       {
+        "nodeId": "naclstack",
         "slug": "naclstack",
         "name": "Naclstack",
-        "dexNumber": 933
+        "dexNumber": 933,
+        "formSlug": null,
+        "formName": null
       },
       {
+        "nodeId": "garganacl",
         "slug": "garganacl",
         "name": "Garganacl",
-        "dexNumber": 934
+        "dexNumber": 934,
+        "formSlug": null,
+        "formName": null
       }
     ],
     "edges": [
       {
+        "fromNodeId": "nacli",
+        "toNodeId": "naclstack",
         "fromSlug": "nacli",
         "toSlug": "naclstack",
         "method": "level_up",
@@ -133,6 +144,8 @@
         ]
       },
       {
+        "fromNodeId": "naclstack",
+        "toNodeId": "garganacl",
         "fromSlug": "naclstack",
         "toSlug": "garganacl",
         "method": "level_up",

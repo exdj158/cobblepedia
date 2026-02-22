@@ -71,23 +71,42 @@
   "evolutionFamily": {
     "members": [
       {
+        "nodeId": "zigzagoon",
         "slug": "zigzagoon",
         "name": "Zigzagoon",
-        "dexNumber": 263
+        "dexNumber": 263,
+        "formSlug": null,
+        "formName": null
       },
       {
+        "nodeId": "linoone",
         "slug": "linoone",
         "name": "Linoone",
-        "dexNumber": 264
+        "dexNumber": 264,
+        "formSlug": null,
+        "formName": null
       },
       {
+        "nodeId": "linoone-galar",
+        "slug": "linoone",
+        "name": "Linoone",
+        "dexNumber": 264,
+        "formSlug": "linoone-galar",
+        "formName": "Galar"
+      },
+      {
+        "nodeId": "obstagoon",
         "slug": "obstagoon",
         "name": "Obstagoon",
-        "dexNumber": 862
+        "dexNumber": 862,
+        "formSlug": null,
+        "formName": null
       }
     ],
     "edges": [
       {
+        "fromNodeId": "linoone",
+        "toNodeId": "obstagoon",
         "fromSlug": "linoone",
         "toSlug": "obstagoon",
         "method": "level_up",
@@ -97,6 +116,18 @@
         ]
       },
       {
+        "fromNodeId": "zigzagoon",
+        "toNodeId": "linoone",
+        "fromSlug": "zigzagoon",
+        "toSlug": "linoone",
+        "method": "level_up",
+        "requirementText": [
+          "Level 20+"
+        ]
+      },
+      {
+        "fromNodeId": "zigzagoon",
+        "toNodeId": "linoone-galar",
         "fromSlug": "zigzagoon",
         "toSlug": "linoone",
         "method": "level_up",

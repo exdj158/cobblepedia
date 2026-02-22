@@ -92,18 +92,26 @@
   "evolutionFamily": {
     "members": [
       {
+        "nodeId": "murkrow",
         "slug": "murkrow",
         "name": "Murkrow",
-        "dexNumber": 198
+        "dexNumber": 198,
+        "formSlug": null,
+        "formName": null
       },
       {
+        "nodeId": "honchkrow",
         "slug": "honchkrow",
         "name": "Honchkrow",
-        "dexNumber": 430
+        "dexNumber": 430,
+        "formSlug": null,
+        "formName": null
       }
     ],
     "edges": [
       {
+        "fromNodeId": "murkrow",
+        "toNodeId": "honchkrow",
         "fromSlug": "murkrow",
         "toSlug": "honchkrow",
         "method": "item_interact",

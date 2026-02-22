@@ -110,18 +110,26 @@
   "evolutionFamily": {
     "members": [
       {
+        "nodeId": "wingull",
         "slug": "wingull",
         "name": "Wingull",
-        "dexNumber": 278
+        "dexNumber": 278,
+        "formSlug": null,
+        "formName": null
       },
       {
+        "nodeId": "pelipper",
         "slug": "pelipper",
         "name": "Pelipper",
-        "dexNumber": 279
+        "dexNumber": 279,
+        "formSlug": null,
+        "formName": null
       }
     ],
     "edges": [
       {
+        "fromNodeId": "wingull",
+        "toNodeId": "pelipper",
         "fromSlug": "wingull",
         "toSlug": "pelipper",
         "method": "level_up",

@@ -123,7 +123,7 @@
       ],
       "requirementText": [
         "Level 40+",
-        "Biome Evolution/regional/goomy Hisuibiome"
+        "Biome Evolution Regional Goomy Hisuibiome"
       ],
       "requirements": [
         {
@@ -136,7 +136,7 @@
         },
         {
           "variant": "biome",
-          "text": "Biome Evolution/regional/goomy Hisuibiome",
+          "text": "Biome Evolution Regional Goomy Hisuibiome",
           "raw": {
             "variant": "biome",
             "biomeCondition": "#cobblemon:evolution/regional/goomy_hisuibiome"
@@ -169,23 +169,50 @@
   "evolutionFamily": {
     "members": [
       {
+        "nodeId": "goomy",
         "slug": "goomy",
         "name": "Goomy",
-        "dexNumber": 704
+        "dexNumber": 704,
+        "formSlug": null,
+        "formName": null
       },
       {
+        "nodeId": "sliggoo",
         "slug": "sliggoo",
         "name": "Sliggoo",
-        "dexNumber": 705
+        "dexNumber": 705,
+        "formSlug": null,
+        "formName": null
       },
       {
+        "nodeId": "sliggoo-hisui",
+        "slug": "sliggoo",
+        "name": "Sliggoo",
+        "dexNumber": 705,
+        "formSlug": "sliggoo-hisui",
+        "formName": "Hisui"
+      },
+      {
+        "nodeId": "goodra",
         "slug": "goodra",
         "name": "Goodra",
-        "dexNumber": 706
+        "dexNumber": 706,
+        "formSlug": null,
+        "formName": null
+      },
+      {
+        "nodeId": "goodra-hisui",
+        "slug": "goodra",
+        "name": "Goodra",
+        "dexNumber": 706,
+        "formSlug": "goodra-hisui",
+        "formName": "Hisui"
       }
     ],
     "edges": [
       {
+        "fromNodeId": "goomy",
+        "toNodeId": "sliggoo",
         "fromSlug": "goomy",
         "toSlug": "sliggoo",
         "method": "level_up",
@@ -194,24 +221,51 @@
         ]
       },
       {
+        "fromNodeId": "goomy",
+        "toNodeId": "sliggoo",
         "fromSlug": "goomy",
         "toSlug": "sliggoo",
         "method": "level_up",
         "requirementText": [
           "Level 40+",
-          "Biome Evolution/regional/goomy Hisuibiome"
+          "Biome Evolution Regional Goomy Kalosbiome"
         ]
       },
       {
+        "fromNodeId": "goomy",
+        "toNodeId": "sliggoo-hisui",
         "fromSlug": "goomy",
         "toSlug": "sliggoo",
         "method": "level_up",
         "requirementText": [
           "Level 40+",
-          "Biome Evolution/regional/goomy Kalosbiome"
+          "Biome Evolution Regional Goomy Hisuibiome"
         ]
       },
       {
+        "fromNodeId": "goomy",
+        "toNodeId": "sliggoo-hisui",
+        "fromSlug": "goomy",
+        "toSlug": "sliggoo",
+        "method": "level_up",
+        "requirementText": [
+          "Level 40+"
+        ]
+      },
+      {
+        "fromNodeId": "sliggoo",
+        "toNodeId": "goodra",
+        "fromSlug": "sliggoo",
+        "toSlug": "goodra",
+        "method": "level_up",
+        "requirementText": [
+          "Level 50+",
+          "During rain"
+        ]
+      },
+      {
+        "fromNodeId": "sliggoo",
+        "toNodeId": "goodra-hisui",
         "fromSlug": "sliggoo",
         "toSlug": "goodra",
         "method": "level_up",
@@ -2097,7 +2151,7 @@
           ],
           "requirementText": [
             "Level 40+",
-            "Biome Evolution/regional/goomy Kalosbiome"
+            "Biome Evolution Regional Goomy Kalosbiome"
           ],
           "requirements": [
             {
@@ -2110,7 +2164,7 @@
             },
             {
               "variant": "biome",
-              "text": "Biome Evolution/regional/goomy Kalosbiome",
+              "text": "Biome Evolution Regional Goomy Kalosbiome",
               "raw": {
                 "variant": "biome",
                 "biomeCondition": "#cobblemon:evolution/regional/goomy_kalosbiome"

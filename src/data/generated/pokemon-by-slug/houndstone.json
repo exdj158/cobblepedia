@@ -62,18 +62,26 @@
   "evolutionFamily": {
     "members": [
       {
+        "nodeId": "greavard",
         "slug": "greavard",
         "name": "Greavard",
-        "dexNumber": 971
+        "dexNumber": 971,
+        "formSlug": null,
+        "formName": null
       },
       {
+        "nodeId": "houndstone",
         "slug": "houndstone",
         "name": "Houndstone",
-        "dexNumber": 972
+        "dexNumber": 972,
+        "formSlug": null,
+        "formName": null
       }
     ],
     "edges": [
       {
+        "fromNodeId": "greavard",
+        "toNodeId": "houndstone",
         "fromSlug": "greavard",
         "toSlug": "houndstone",
         "method": "level_up",

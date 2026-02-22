@@ -99,18 +99,26 @@
   "evolutionFamily": {
     "members": [
       {
+        "nodeId": "meditite",
         "slug": "meditite",
         "name": "Meditite",
-        "dexNumber": 307
+        "dexNumber": 307,
+        "formSlug": null,
+        "formName": null
       },
       {
+        "nodeId": "medicham",
         "slug": "medicham",
         "name": "Medicham",
-        "dexNumber": 308
+        "dexNumber": 308,
+        "formSlug": null,
+        "formName": null
       }
     ],
     "edges": [
       {
+        "fromNodeId": "meditite",
+        "toNodeId": "medicham",
         "fromSlug": "meditite",
         "toSlug": "medicham",
         "method": "level_up",

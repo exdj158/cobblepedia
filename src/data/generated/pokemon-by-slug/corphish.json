@@ -109,18 +109,26 @@
   "evolutionFamily": {
     "members": [
       {
+        "nodeId": "corphish",
         "slug": "corphish",
         "name": "Corphish",
-        "dexNumber": 341
+        "dexNumber": 341,
+        "formSlug": null,
+        "formName": null
       },
       {
+        "nodeId": "crawdaunt",
         "slug": "crawdaunt",
         "name": "Crawdaunt",
-        "dexNumber": 342
+        "dexNumber": 342,
+        "formSlug": null,
+        "formName": null
       }
     ],
     "edges": [
       {
+        "fromNodeId": "corphish",
+        "toNodeId": "crawdaunt",
         "fromSlug": "corphish",
         "toSlug": "crawdaunt",
         "method": "level_up",

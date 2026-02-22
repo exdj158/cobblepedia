@@ -63,23 +63,34 @@
   "evolutionFamily": {
     "members": [
       {
+        "nodeId": "totodile",
         "slug": "totodile",
         "name": "Totodile",
-        "dexNumber": 158
+        "dexNumber": 158,
+        "formSlug": null,
+        "formName": null
       },
       {
+        "nodeId": "croconaw",
         "slug": "croconaw",
         "name": "Croconaw",
-        "dexNumber": 159
+        "dexNumber": 159,
+        "formSlug": null,
+        "formName": null
       },
       {
+        "nodeId": "feraligatr",
         "slug": "feraligatr",
         "name": "Feraligatr",
-        "dexNumber": 160
+        "dexNumber": 160,
+        "formSlug": null,
+        "formName": null
       }
     ],
     "edges": [
       {
+        "fromNodeId": "croconaw",
+        "toNodeId": "feraligatr",
         "fromSlug": "croconaw",
         "toSlug": "feraligatr",
         "method": "level_up",
@@ -88,6 +99,8 @@
         ]
       },
       {
+        "fromNodeId": "totodile",
+        "toNodeId": "croconaw",
         "fromSlug": "totodile",
         "toSlug": "croconaw",
         "method": "level_up",

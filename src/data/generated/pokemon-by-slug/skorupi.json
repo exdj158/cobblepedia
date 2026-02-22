@@ -106,18 +106,26 @@
   "evolutionFamily": {
     "members": [
       {
+        "nodeId": "skorupi",
         "slug": "skorupi",
         "name": "Skorupi",
-        "dexNumber": 451
+        "dexNumber": 451,
+        "formSlug": null,
+        "formName": null
       },
       {
+        "nodeId": "drapion",
         "slug": "drapion",
         "name": "Drapion",
-        "dexNumber": 452
+        "dexNumber": 452,
+        "formSlug": null,
+        "formName": null
       }
     ],
     "edges": [
       {
+        "fromNodeId": "skorupi",
+        "toNodeId": "drapion",
         "fromSlug": "skorupi",
         "toSlug": "drapion",
         "method": "level_up",

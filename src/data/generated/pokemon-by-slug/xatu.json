@@ -69,18 +69,26 @@
   "evolutionFamily": {
     "members": [
       {
+        "nodeId": "natu",
         "slug": "natu",
         "name": "Natu",
-        "dexNumber": 177
+        "dexNumber": 177,
+        "formSlug": null,
+        "formName": null
       },
       {
+        "nodeId": "xatu",
         "slug": "xatu",
         "name": "Xatu",
-        "dexNumber": 178
+        "dexNumber": 178,
+        "formSlug": null,
+        "formName": null
       }
     ],
     "edges": [
       {
+        "fromNodeId": "natu",
+        "toNodeId": "xatu",
         "fromSlug": "natu",
         "toSlug": "xatu",
         "method": "level_up",

@@ -71,18 +71,26 @@
   "evolutionFamily": {
     "members": [
       {
+        "nodeId": "tirtouga",
         "slug": "tirtouga",
         "name": "Tirtouga",
-        "dexNumber": 564
+        "dexNumber": 564,
+        "formSlug": null,
+        "formName": null
       },
       {
+        "nodeId": "carracosta",
         "slug": "carracosta",
         "name": "Carracosta",
-        "dexNumber": 565
+        "dexNumber": 565,
+        "formSlug": null,
+        "formName": null
       }
     ],
     "edges": [
       {
+        "fromNodeId": "tirtouga",
+        "toNodeId": "carracosta",
         "fromSlug": "tirtouga",
         "toSlug": "carracosta",
         "method": "level_up",

@@ -115,23 +115,34 @@
   "evolutionFamily": {
     "members": [
       {
+        "nodeId": "pawniard",
         "slug": "pawniard",
         "name": "Pawniard",
-        "dexNumber": 624
+        "dexNumber": 624,
+        "formSlug": null,
+        "formName": null
       },
       {
+        "nodeId": "bisharp",
         "slug": "bisharp",
         "name": "Bisharp",
-        "dexNumber": 625
+        "dexNumber": 625,
+        "formSlug": null,
+        "formName": null
       },
       {
+        "nodeId": "kingambit",
         "slug": "kingambit",
         "name": "Kingambit",
-        "dexNumber": 983
+        "dexNumber": 983,
+        "formSlug": null,
+        "formName": null
       }
     ],
     "edges": [
       {
+        "fromNodeId": "bisharp",
+        "toNodeId": "kingambit",
         "fromSlug": "bisharp",
         "toSlug": "kingambit",
         "method": "level_up",
@@ -140,6 +151,8 @@
         ]
       },
       {
+        "fromNodeId": "pawniard",
+        "toNodeId": "bisharp",
         "fromSlug": "pawniard",
         "toSlug": "bisharp",
         "method": "level_up",

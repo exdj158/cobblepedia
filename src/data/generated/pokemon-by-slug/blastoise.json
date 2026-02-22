@@ -67,23 +67,34 @@
   "evolutionFamily": {
     "members": [
       {
+        "nodeId": "squirtle",
         "slug": "squirtle",
         "name": "Squirtle",
-        "dexNumber": 7
+        "dexNumber": 7,
+        "formSlug": null,
+        "formName": null
       },
       {
+        "nodeId": "wartortle",
         "slug": "wartortle",
         "name": "Wartortle",
-        "dexNumber": 8
+        "dexNumber": 8,
+        "formSlug": null,
+        "formName": null
       },
       {
+        "nodeId": "blastoise",
         "slug": "blastoise",
         "name": "Blastoise",
-        "dexNumber": 9
+        "dexNumber": 9,
+        "formSlug": null,
+        "formName": null
       }
     ],
     "edges": [
       {
+        "fromNodeId": "squirtle",
+        "toNodeId": "wartortle",
         "fromSlug": "squirtle",
         "toSlug": "wartortle",
         "method": "level_up",
@@ -92,6 +103,8 @@
         ]
       },
       {
+        "fromNodeId": "wartortle",
+        "toNodeId": "blastoise",
         "fromSlug": "wartortle",
         "toSlug": "blastoise",
         "method": "level_up",

@@ -71,18 +71,26 @@
   "evolutionFamily": {
     "members": [
       {
+        "nodeId": "sizzlipede",
         "slug": "sizzlipede",
         "name": "Sizzlipede",
-        "dexNumber": 850
+        "dexNumber": 850,
+        "formSlug": null,
+        "formName": null
       },
       {
+        "nodeId": "centiskorch",
         "slug": "centiskorch",
         "name": "Centiskorch",
-        "dexNumber": 851
+        "dexNumber": 851,
+        "formSlug": null,
+        "formName": null
       }
     ],
     "edges": [
       {
+        "fromNodeId": "sizzlipede",
+        "toNodeId": "centiskorch",
         "fromSlug": "sizzlipede",
         "toSlug": "centiskorch",
         "method": "level_up",

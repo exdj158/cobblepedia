@@ -106,18 +106,26 @@
   "evolutionFamily": {
     "members": [
       {
+        "nodeId": "jynx",
         "slug": "jynx",
         "name": "Jynx",
-        "dexNumber": 124
+        "dexNumber": 124,
+        "formSlug": null,
+        "formName": null
       },
       {
+        "nodeId": "smoochum",
         "slug": "smoochum",
         "name": "Smoochum",
-        "dexNumber": 238
+        "dexNumber": 238,
+        "formSlug": null,
+        "formName": null
       }
     ],
     "edges": [
       {
+        "fromNodeId": "smoochum",
+        "toNodeId": "jynx",
         "fromSlug": "smoochum",
         "toSlug": "jynx",
         "method": "level_up",

@@ -62,53 +62,82 @@
   "evolutionFamily": {
     "members": [
       {
+        "nodeId": "eevee",
         "slug": "eevee",
         "name": "Eevee",
-        "dexNumber": 133
+        "dexNumber": 133,
+        "formSlug": null,
+        "formName": null
       },
       {
+        "nodeId": "vaporeon",
         "slug": "vaporeon",
         "name": "Vaporeon",
-        "dexNumber": 134
+        "dexNumber": 134,
+        "formSlug": null,
+        "formName": null
       },
       {
+        "nodeId": "jolteon",
         "slug": "jolteon",
         "name": "Jolteon",
-        "dexNumber": 135
+        "dexNumber": 135,
+        "formSlug": null,
+        "formName": null
       },
       {
+        "nodeId": "flareon",
         "slug": "flareon",
         "name": "Flareon",
-        "dexNumber": 136
+        "dexNumber": 136,
+        "formSlug": null,
+        "formName": null
       },
       {
+        "nodeId": "espeon",
         "slug": "espeon",
         "name": "Espeon",
-        "dexNumber": 196
+        "dexNumber": 196,
+        "formSlug": null,
+        "formName": null
       },
       {
+        "nodeId": "umbreon",
         "slug": "umbreon",
         "name": "Umbreon",
-        "dexNumber": 197
+        "dexNumber": 197,
+        "formSlug": null,
+        "formName": null
       },
       {
+        "nodeId": "leafeon",
         "slug": "leafeon",
         "name": "Leafeon",
-        "dexNumber": 470
+        "dexNumber": 470,
+        "formSlug": null,
+        "formName": null
       },
       {
+        "nodeId": "glaceon",
         "slug": "glaceon",
         "name": "Glaceon",
-        "dexNumber": 471
+        "dexNumber": 471,
+        "formSlug": null,
+        "formName": null
       },
       {
+        "nodeId": "sylveon",
         "slug": "sylveon",
         "name": "Sylveon",
-        "dexNumber": 700
+        "dexNumber": 700,
+        "formSlug": null,
+        "formName": null
       }
     ],
     "edges": [
       {
+        "fromNodeId": "eevee",
+        "toNodeId": "espeon",
         "fromSlug": "eevee",
         "toSlug": "espeon",
         "method": "level_up",
@@ -118,6 +147,8 @@
         ]
       },
       {
+        "fromNodeId": "eevee",
+        "toNodeId": "flareon",
         "fromSlug": "eevee",
         "toSlug": "flareon",
         "method": "item_interact",
@@ -126,6 +157,8 @@
         ]
       },
       {
+        "fromNodeId": "eevee",
+        "toNodeId": "glaceon",
         "fromSlug": "eevee",
         "toSlug": "glaceon",
         "method": "item_interact",
@@ -134,6 +167,8 @@
         ]
       },
       {
+        "fromNodeId": "eevee",
+        "toNodeId": "jolteon",
         "fromSlug": "eevee",
         "toSlug": "jolteon",
         "method": "item_interact",
@@ -142,6 +177,8 @@
         ]
       },
       {
+        "fromNodeId": "eevee",
+        "toNodeId": "leafeon",
         "fromSlug": "eevee",
         "toSlug": "leafeon",
         "method": "item_interact",
@@ -150,6 +187,8 @@
         ]
       },
       {
+        "fromNodeId": "eevee",
+        "toNodeId": "sylveon",
         "fromSlug": "eevee",
         "toSlug": "sylveon",
         "method": "level_up",
@@ -159,6 +198,8 @@
         ]
       },
       {
+        "fromNodeId": "eevee",
+        "toNodeId": "umbreon",
         "fromSlug": "eevee",
         "toSlug": "umbreon",
         "method": "level_up",
@@ -168,6 +209,8 @@
         ]
       },
       {
+        "fromNodeId": "eevee",
+        "toNodeId": "vaporeon",
         "fromSlug": "eevee",
         "toSlug": "vaporeon",
         "method": "item_interact",

@@ -64,18 +64,26 @@
   "evolutionFamily": {
     "members": [
       {
+        "nodeId": "ferroseed",
         "slug": "ferroseed",
         "name": "Ferroseed",
-        "dexNumber": 597
+        "dexNumber": 597,
+        "formSlug": null,
+        "formName": null
       },
       {
+        "nodeId": "ferrothorn",
         "slug": "ferrothorn",
         "name": "Ferrothorn",
-        "dexNumber": 598
+        "dexNumber": 598,
+        "formSlug": null,
+        "formName": null
       }
     ],
     "edges": [
       {
+        "fromNodeId": "ferroseed",
+        "toNodeId": "ferrothorn",
         "fromSlug": "ferroseed",
         "toSlug": "ferrothorn",
         "method": "level_up",

@@ -93,18 +93,26 @@
   "evolutionFamily": {
     "members": [
       {
+        "nodeId": "cottonee",
         "slug": "cottonee",
         "name": "Cottonee",
-        "dexNumber": 546
+        "dexNumber": 546,
+        "formSlug": null,
+        "formName": null
       },
       {
+        "nodeId": "whimsicott",
         "slug": "whimsicott",
         "name": "Whimsicott",
-        "dexNumber": 547
+        "dexNumber": 547,
+        "formSlug": null,
+        "formName": null
       }
     ],
     "edges": [
       {
+        "fromNodeId": "cottonee",
+        "toNodeId": "whimsicott",
         "fromSlug": "cottonee",
         "toSlug": "whimsicott",
         "method": "item_interact",

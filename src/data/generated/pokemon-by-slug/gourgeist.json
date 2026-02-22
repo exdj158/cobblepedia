@@ -77,18 +77,26 @@
   "evolutionFamily": {
     "members": [
       {
+        "nodeId": "pumpkaboo",
         "slug": "pumpkaboo",
         "name": "Pumpkaboo",
-        "dexNumber": 710
+        "dexNumber": 710,
+        "formSlug": null,
+        "formName": null
       },
       {
+        "nodeId": "gourgeist",
         "slug": "gourgeist",
         "name": "Gourgeist",
-        "dexNumber": 711
+        "dexNumber": 711,
+        "formSlug": null,
+        "formName": null
       }
     ],
     "edges": [
       {
+        "fromNodeId": "pumpkaboo",
+        "toNodeId": "gourgeist",
         "fromSlug": "pumpkaboo",
         "toSlug": "gourgeist",
         "method": "trade",

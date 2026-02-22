@@ -68,23 +68,34 @@
   "evolutionFamily": {
     "members": [
       {
+        "nodeId": "clefairy",
         "slug": "clefairy",
         "name": "Clefairy",
-        "dexNumber": 35
+        "dexNumber": 35,
+        "formSlug": null,
+        "formName": null
       },
       {
+        "nodeId": "clefable",
         "slug": "clefable",
         "name": "Clefable",
-        "dexNumber": 36
+        "dexNumber": 36,
+        "formSlug": null,
+        "formName": null
       },
       {
+        "nodeId": "cleffa",
         "slug": "cleffa",
         "name": "Cleffa",
-        "dexNumber": 173
+        "dexNumber": 173,
+        "formSlug": null,
+        "formName": null
       }
     ],
     "edges": [
       {
+        "fromNodeId": "clefairy",
+        "toNodeId": "clefable",
         "fromSlug": "clefairy",
         "toSlug": "clefable",
         "method": "item_interact",
@@ -93,6 +104,8 @@
         ]
       },
       {
+        "fromNodeId": "cleffa",
+        "toNodeId": "clefairy",
         "fromSlug": "cleffa",
         "toSlug": "clefairy",
         "method": "level_up",

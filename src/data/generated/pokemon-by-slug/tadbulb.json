@@ -91,18 +91,26 @@
   "evolutionFamily": {
     "members": [
       {
+        "nodeId": "tadbulb",
         "slug": "tadbulb",
         "name": "Tadbulb",
-        "dexNumber": 938
+        "dexNumber": 938,
+        "formSlug": null,
+        "formName": null
       },
       {
+        "nodeId": "bellibolt",
         "slug": "bellibolt",
         "name": "Bellibolt",
-        "dexNumber": 939
+        "dexNumber": 939,
+        "formSlug": null,
+        "formName": null
       }
     ],
     "edges": [
       {
+        "fromNodeId": "tadbulb",
+        "toNodeId": "bellibolt",
         "fromSlug": "tadbulb",
         "toSlug": "bellibolt",
         "method": "item_interact",

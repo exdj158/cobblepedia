@@ -68,18 +68,26 @@
   "evolutionFamily": {
     "members": [
       {
+        "nodeId": "sentret",
         "slug": "sentret",
         "name": "Sentret",
-        "dexNumber": 161
+        "dexNumber": 161,
+        "formSlug": null,
+        "formName": null
       },
       {
+        "nodeId": "furret",
         "slug": "furret",
         "name": "Furret",
-        "dexNumber": 162
+        "dexNumber": 162,
+        "formSlug": null,
+        "formName": null
       }
     ],
     "edges": [
       {
+        "fromNodeId": "sentret",
+        "toNodeId": "furret",
         "fromSlug": "sentret",
         "toSlug": "furret",
         "method": "level_up",

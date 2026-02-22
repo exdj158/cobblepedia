@@ -119,18 +119,26 @@
   "evolutionFamily": {
     "members": [
       {
+        "nodeId": "gligar",
         "slug": "gligar",
         "name": "Gligar",
-        "dexNumber": 207
+        "dexNumber": 207,
+        "formSlug": null,
+        "formName": null
       },
       {
+        "nodeId": "gliscor",
         "slug": "gliscor",
         "name": "Gliscor",
-        "dexNumber": 472
+        "dexNumber": 472,
+        "formSlug": null,
+        "formName": null
       }
     ],
     "edges": [
       {
+        "fromNodeId": "gligar",
+        "toNodeId": "gliscor",
         "fromSlug": "gligar",
         "toSlug": "gliscor",
         "method": "level_up",

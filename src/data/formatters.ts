@@ -132,7 +132,7 @@ export function parseLevelRange(levelText: string | null): {
 export function formatBiomeToken(token: string): string {
   const normalized = token.startsWith("#") ? token.slice(1) : token
   const [, id = normalized] = normalized.split(":")
-  return titleCaseFromId(id)
+  return titleCaseFromId(id.replace(/\//g, "_"))
 }
 
 export function formatEvolutionRequirement(requirement: Record<string, unknown>): string {
@@ -227,7 +227,18 @@ export function formatEvolutionRequirement(requirement: Record<string, unknown>)
   }
 
   if (variant === "properties") {
-    return `Property ${String(requirement.target ?? "condition")}`
+    const target = String(requirement.target ?? "condition").trim()
+    const normalizedTarget = canonicalId(target)
+
+    if (normalizedTarget === "genderfemale") {
+      return "Female only"
+    }
+
+    if (normalizedTarget === "gendermale") {
+      return "Male only"
+    }
+
+    return `Property ${target}`
   }
 
   if (variant === "property_range") {

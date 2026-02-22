@@ -100,18 +100,26 @@
   "evolutionFamily": {
     "members": [
       {
+        "nodeId": "anorith",
         "slug": "anorith",
         "name": "Anorith",
-        "dexNumber": 347
+        "dexNumber": 347,
+        "formSlug": null,
+        "formName": null
       },
       {
+        "nodeId": "armaldo",
         "slug": "armaldo",
         "name": "Armaldo",
-        "dexNumber": 348
+        "dexNumber": 348,
+        "formSlug": null,
+        "formName": null
       }
     ],
     "edges": [
       {
+        "fromNodeId": "anorith",
+        "toNodeId": "armaldo",
         "fromSlug": "anorith",
         "toSlug": "armaldo",
         "method": "level_up",

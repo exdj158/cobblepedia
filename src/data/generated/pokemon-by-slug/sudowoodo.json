@@ -68,18 +68,26 @@
   "evolutionFamily": {
     "members": [
       {
+        "nodeId": "sudowoodo",
         "slug": "sudowoodo",
         "name": "Sudowoodo",
-        "dexNumber": 185
+        "dexNumber": 185,
+        "formSlug": null,
+        "formName": null
       },
       {
+        "nodeId": "bonsly",
         "slug": "bonsly",
         "name": "Bonsly",
-        "dexNumber": 438
+        "dexNumber": 438,
+        "formSlug": null,
+        "formName": null
       }
     ],
     "edges": [
       {
+        "fromNodeId": "bonsly",
+        "toNodeId": "sudowoodo",
         "fromSlug": "bonsly",
         "toSlug": "sudowoodo",
         "method": "level_up",

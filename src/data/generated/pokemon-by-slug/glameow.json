@@ -108,18 +108,26 @@
   "evolutionFamily": {
     "members": [
       {
+        "nodeId": "glameow",
         "slug": "glameow",
         "name": "Glameow",
-        "dexNumber": 431
+        "dexNumber": 431,
+        "formSlug": null,
+        "formName": null
       },
       {
+        "nodeId": "purugly",
         "slug": "purugly",
         "name": "Purugly",
-        "dexNumber": 432
+        "dexNumber": 432,
+        "formSlug": null,
+        "formName": null
       }
     ],
     "edges": [
       {
+        "fromNodeId": "glameow",
+        "toNodeId": "purugly",
         "fromSlug": "glameow",
         "toSlug": "purugly",
         "method": "level_up",

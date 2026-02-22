@@ -117,18 +117,26 @@
   "evolutionFamily": {
     "members": [
       {
+        "nodeId": "karrablast",
         "slug": "karrablast",
         "name": "Karrablast",
-        "dexNumber": 588
+        "dexNumber": 588,
+        "formSlug": null,
+        "formName": null
       },
       {
+        "nodeId": "escavalier",
         "slug": "escavalier",
         "name": "Escavalier",
-        "dexNumber": 589
+        "dexNumber": 589,
+        "formSlug": null,
+        "formName": null
       }
     ],
     "edges": [
       {
+        "fromNodeId": "karrablast",
+        "toNodeId": "escavalier",
         "fromSlug": "karrablast",
         "toSlug": "escavalier",
         "method": "item_interact",
@@ -137,6 +145,8 @@
         ]
       },
       {
+        "fromNodeId": "karrablast",
+        "toNodeId": "escavalier",
         "fromSlug": "karrablast",
         "toSlug": "escavalier",
         "method": "trade",

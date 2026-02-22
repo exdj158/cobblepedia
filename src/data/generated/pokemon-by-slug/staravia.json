@@ -107,23 +107,34 @@
   "evolutionFamily": {
     "members": [
       {
+        "nodeId": "starly",
         "slug": "starly",
         "name": "Starly",
-        "dexNumber": 396
+        "dexNumber": 396,
+        "formSlug": null,
+        "formName": null
       },
       {
+        "nodeId": "staravia",
         "slug": "staravia",
         "name": "Staravia",
-        "dexNumber": 397
+        "dexNumber": 397,
+        "formSlug": null,
+        "formName": null
       },
       {
+        "nodeId": "staraptor",
         "slug": "staraptor",
         "name": "Staraptor",
-        "dexNumber": 398
+        "dexNumber": 398,
+        "formSlug": null,
+        "formName": null
       }
     ],
     "edges": [
       {
+        "fromNodeId": "staravia",
+        "toNodeId": "staraptor",
         "fromSlug": "staravia",
         "toSlug": "staraptor",
         "method": "level_up",
@@ -132,6 +143,8 @@
         ]
       },
       {
+        "fromNodeId": "starly",
+        "toNodeId": "staravia",
         "fromSlug": "starly",
         "toSlug": "staravia",
         "method": "level_up",

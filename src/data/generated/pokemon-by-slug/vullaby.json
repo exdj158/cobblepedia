@@ -109,18 +109,26 @@
   "evolutionFamily": {
     "members": [
       {
+        "nodeId": "vullaby",
         "slug": "vullaby",
         "name": "Vullaby",
-        "dexNumber": 629
+        "dexNumber": 629,
+        "formSlug": null,
+        "formName": null
       },
       {
+        "nodeId": "mandibuzz",
         "slug": "mandibuzz",
         "name": "Mandibuzz",
-        "dexNumber": 630
+        "dexNumber": 630,
+        "formSlug": null,
+        "formName": null
       }
     ],
     "edges": [
       {
+        "fromNodeId": "vullaby",
+        "toNodeId": "mandibuzz",
         "fromSlug": "vullaby",
         "toSlug": "mandibuzz",
         "method": "level_up",

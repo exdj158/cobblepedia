@@ -71,18 +71,34 @@
   "evolutionFamily": {
     "members": [
       {
+        "nodeId": "rattata",
         "slug": "rattata",
         "name": "Rattata",
-        "dexNumber": 19
+        "dexNumber": 19,
+        "formSlug": null,
+        "formName": null
       },
       {
+        "nodeId": "raticate",
         "slug": "raticate",
         "name": "Raticate",
-        "dexNumber": 20
+        "dexNumber": 20,
+        "formSlug": null,
+        "formName": null
+      },
+      {
+        "nodeId": "raticate-alola",
+        "slug": "raticate",
+        "name": "Raticate",
+        "dexNumber": 20,
+        "formSlug": "raticate-alola",
+        "formName": "Alola"
       }
     ],
     "edges": [
       {
+        "fromNodeId": "rattata",
+        "toNodeId": "raticate",
         "fromSlug": "rattata",
         "toSlug": "raticate",
         "method": "level_up",
@@ -91,6 +107,8 @@
         ]
       },
       {
+        "fromNodeId": "rattata",
+        "toNodeId": "raticate-alola",
         "fromSlug": "rattata",
         "toSlug": "raticate",
         "method": "level_up",

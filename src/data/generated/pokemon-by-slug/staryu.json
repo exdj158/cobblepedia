@@ -91,18 +91,26 @@
   "evolutionFamily": {
     "members": [
       {
+        "nodeId": "staryu",
         "slug": "staryu",
         "name": "Staryu",
-        "dexNumber": 120
+        "dexNumber": 120,
+        "formSlug": null,
+        "formName": null
       },
       {
+        "nodeId": "starmie",
         "slug": "starmie",
         "name": "Starmie",
-        "dexNumber": 121
+        "dexNumber": 121,
+        "formSlug": null,
+        "formName": null
       }
     ],
     "edges": [
       {
+        "fromNodeId": "staryu",
+        "toNodeId": "starmie",
         "fromSlug": "staryu",
         "toSlug": "starmie",
         "method": "item_interact",

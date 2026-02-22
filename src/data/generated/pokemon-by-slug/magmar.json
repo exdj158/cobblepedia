@@ -102,23 +102,34 @@
   "evolutionFamily": {
     "members": [
       {
+        "nodeId": "magmar",
         "slug": "magmar",
         "name": "Magmar",
-        "dexNumber": 126
+        "dexNumber": 126,
+        "formSlug": null,
+        "formName": null
       },
       {
+        "nodeId": "magby",
         "slug": "magby",
         "name": "Magby",
-        "dexNumber": 240
+        "dexNumber": 240,
+        "formSlug": null,
+        "formName": null
       },
       {
+        "nodeId": "magmortar",
         "slug": "magmortar",
         "name": "Magmortar",
-        "dexNumber": 467
+        "dexNumber": 467,
+        "formSlug": null,
+        "formName": null
       }
     ],
     "edges": [
       {
+        "fromNodeId": "magby",
+        "toNodeId": "magmar",
         "fromSlug": "magby",
         "toSlug": "magmar",
         "method": "level_up",
@@ -127,6 +138,8 @@
         ]
       },
       {
+        "fromNodeId": "magmar",
+        "toNodeId": "magmortar",
         "fromSlug": "magmar",
         "toSlug": "magmortar",
         "method": "trade",

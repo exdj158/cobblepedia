@@ -105,23 +105,34 @@
   "evolutionFamily": {
     "members": [
       {
+        "nodeId": "beldum",
         "slug": "beldum",
         "name": "Beldum",
-        "dexNumber": 374
+        "dexNumber": 374,
+        "formSlug": null,
+        "formName": null
       },
       {
+        "nodeId": "metang",
         "slug": "metang",
         "name": "Metang",
-        "dexNumber": 375
+        "dexNumber": 375,
+        "formSlug": null,
+        "formName": null
       },
       {
+        "nodeId": "metagross",
         "slug": "metagross",
         "name": "Metagross",
-        "dexNumber": 376
+        "dexNumber": 376,
+        "formSlug": null,
+        "formName": null
       }
     ],
     "edges": [
       {
+        "fromNodeId": "beldum",
+        "toNodeId": "metang",
         "fromSlug": "beldum",
         "toSlug": "metang",
         "method": "level_up",
@@ -130,6 +141,8 @@
         ]
       },
       {
+        "fromNodeId": "metang",
+        "toNodeId": "metagross",
         "fromSlug": "metang",
         "toSlug": "metagross",
         "method": "level_up",

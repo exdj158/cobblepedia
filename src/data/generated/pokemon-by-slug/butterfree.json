@@ -65,23 +65,34 @@
   "evolutionFamily": {
     "members": [
       {
+        "nodeId": "caterpie",
         "slug": "caterpie",
         "name": "Caterpie",
-        "dexNumber": 10
+        "dexNumber": 10,
+        "formSlug": null,
+        "formName": null
       },
       {
+        "nodeId": "metapod",
         "slug": "metapod",
         "name": "Metapod",
-        "dexNumber": 11
+        "dexNumber": 11,
+        "formSlug": null,
+        "formName": null
       },
       {
+        "nodeId": "butterfree",
         "slug": "butterfree",
         "name": "Butterfree",
-        "dexNumber": 12
+        "dexNumber": 12,
+        "formSlug": null,
+        "formName": null
       }
     ],
     "edges": [
       {
+        "fromNodeId": "caterpie",
+        "toNodeId": "metapod",
         "fromSlug": "caterpie",
         "toSlug": "metapod",
         "method": "level_up",
@@ -90,6 +101,8 @@
         ]
       },
       {
+        "fromNodeId": "metapod",
+        "toNodeId": "butterfree",
         "fromSlug": "metapod",
         "toSlug": "butterfree",
         "method": "level_up",

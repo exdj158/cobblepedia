@@ -103,18 +103,26 @@
   "evolutionFamily": {
     "members": [
       {
+        "nodeId": "cranidos",
         "slug": "cranidos",
         "name": "Cranidos",
-        "dexNumber": 408
+        "dexNumber": 408,
+        "formSlug": null,
+        "formName": null
       },
       {
+        "nodeId": "rampardos",
         "slug": "rampardos",
         "name": "Rampardos",
-        "dexNumber": 409
+        "dexNumber": 409,
+        "formSlug": null,
+        "formName": null
       }
     ],
     "edges": [
       {
+        "fromNodeId": "cranidos",
+        "toNodeId": "rampardos",
         "fromSlug": "cranidos",
         "toSlug": "rampardos",
         "method": "level_up",

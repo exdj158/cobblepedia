@@ -126,18 +126,26 @@
   "evolutionFamily": {
     "members": [
       {
+        "nodeId": "pancham",
         "slug": "pancham",
         "name": "Pancham",
-        "dexNumber": 674
+        "dexNumber": 674,
+        "formSlug": null,
+        "formName": null
       },
       {
+        "nodeId": "pangoro",
         "slug": "pangoro",
         "name": "Pangoro",
-        "dexNumber": 675
+        "dexNumber": 675,
+        "formSlug": null,
+        "formName": null
       }
     ],
     "edges": [
       {
+        "fromNodeId": "pancham",
+        "toNodeId": "pangoro",
         "fromSlug": "pancham",
         "toSlug": "pangoro",
         "method": "level_up",

@@ -69,23 +69,34 @@
   "evolutionFamily": {
     "members": [
       {
+        "nodeId": "litwick",
         "slug": "litwick",
         "name": "Litwick",
-        "dexNumber": 607
+        "dexNumber": 607,
+        "formSlug": null,
+        "formName": null
       },
       {
+        "nodeId": "lampent",
         "slug": "lampent",
         "name": "Lampent",
-        "dexNumber": 608
+        "dexNumber": 608,
+        "formSlug": null,
+        "formName": null
       },
       {
+        "nodeId": "chandelure",
         "slug": "chandelure",
         "name": "Chandelure",
-        "dexNumber": 609
+        "dexNumber": 609,
+        "formSlug": null,
+        "formName": null
       }
     ],
     "edges": [
       {
+        "fromNodeId": "lampent",
+        "toNodeId": "chandelure",
         "fromSlug": "lampent",
         "toSlug": "chandelure",
         "method": "item_interact",
@@ -94,6 +105,8 @@
         ]
       },
       {
+        "fromNodeId": "litwick",
+        "toNodeId": "lampent",
         "fromSlug": "litwick",
         "toSlug": "lampent",
         "method": "level_up",

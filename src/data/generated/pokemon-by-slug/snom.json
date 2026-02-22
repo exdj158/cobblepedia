@@ -116,18 +116,26 @@
   "evolutionFamily": {
     "members": [
       {
+        "nodeId": "snom",
         "slug": "snom",
         "name": "Snom",
-        "dexNumber": 872
+        "dexNumber": 872,
+        "formSlug": null,
+        "formName": null
       },
       {
+        "nodeId": "frosmoth",
         "slug": "frosmoth",
         "name": "Frosmoth",
-        "dexNumber": 873
+        "dexNumber": 873,
+        "formSlug": null,
+        "formName": null
       }
     ],
     "edges": [
       {
+        "fromNodeId": "snom",
+        "toNodeId": "frosmoth",
         "fromSlug": "snom",
         "toSlug": "frosmoth",
         "method": "level_up",

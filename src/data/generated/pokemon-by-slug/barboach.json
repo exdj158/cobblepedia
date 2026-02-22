@@ -109,18 +109,26 @@
   "evolutionFamily": {
     "members": [
       {
+        "nodeId": "barboach",
         "slug": "barboach",
         "name": "Barboach",
-        "dexNumber": 339
+        "dexNumber": 339,
+        "formSlug": null,
+        "formName": null
       },
       {
+        "nodeId": "whiscash",
         "slug": "whiscash",
         "name": "Whiscash",
-        "dexNumber": 340
+        "dexNumber": 340,
+        "formSlug": null,
+        "formName": null
       }
     ],
     "edges": [
       {
+        "fromNodeId": "barboach",
+        "toNodeId": "whiscash",
         "fromSlug": "barboach",
         "toSlug": "whiscash",
         "method": "level_up",

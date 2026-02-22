@@ -64,23 +64,34 @@
   "evolutionFamily": {
     "members": [
       {
+        "nodeId": "trapinch",
         "slug": "trapinch",
         "name": "Trapinch",
-        "dexNumber": 328
+        "dexNumber": 328,
+        "formSlug": null,
+        "formName": null
       },
       {
+        "nodeId": "vibrava",
         "slug": "vibrava",
         "name": "Vibrava",
-        "dexNumber": 329
+        "dexNumber": 329,
+        "formSlug": null,
+        "formName": null
       },
       {
+        "nodeId": "flygon",
         "slug": "flygon",
         "name": "Flygon",
-        "dexNumber": 330
+        "dexNumber": 330,
+        "formSlug": null,
+        "formName": null
       }
     ],
     "edges": [
       {
+        "fromNodeId": "trapinch",
+        "toNodeId": "vibrava",
         "fromSlug": "trapinch",
         "toSlug": "vibrava",
         "method": "level_up",
@@ -89,6 +100,8 @@
         ]
       },
       {
+        "fromNodeId": "vibrava",
+        "toNodeId": "flygon",
         "fromSlug": "vibrava",
         "toSlug": "flygon",
         "method": "level_up",

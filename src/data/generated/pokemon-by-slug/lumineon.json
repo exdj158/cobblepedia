@@ -68,18 +68,26 @@
   "evolutionFamily": {
     "members": [
       {
+        "nodeId": "finneon",
         "slug": "finneon",
         "name": "Finneon",
-        "dexNumber": 456
+        "dexNumber": 456,
+        "formSlug": null,
+        "formName": null
       },
       {
+        "nodeId": "lumineon",
         "slug": "lumineon",
         "name": "Lumineon",
-        "dexNumber": 457
+        "dexNumber": 457,
+        "formSlug": null,
+        "formName": null
       }
     ],
     "edges": [
       {
+        "fromNodeId": "finneon",
+        "toNodeId": "lumineon",
         "fromSlug": "finneon",
         "toSlug": "lumineon",
         "method": "level_up",

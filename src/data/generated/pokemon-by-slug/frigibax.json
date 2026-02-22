@@ -100,23 +100,34 @@
   "evolutionFamily": {
     "members": [
       {
+        "nodeId": "frigibax",
         "slug": "frigibax",
         "name": "Frigibax",
-        "dexNumber": 996
+        "dexNumber": 996,
+        "formSlug": null,
+        "formName": null
       },
       {
+        "nodeId": "arctibax",
         "slug": "arctibax",
         "name": "Arctibax",
-        "dexNumber": 997
+        "dexNumber": 997,
+        "formSlug": null,
+        "formName": null
       },
       {
+        "nodeId": "baxcalibur",
         "slug": "baxcalibur",
         "name": "Baxcalibur",
-        "dexNumber": 998
+        "dexNumber": 998,
+        "formSlug": null,
+        "formName": null
       }
     ],
     "edges": [
       {
+        "fromNodeId": "arctibax",
+        "toNodeId": "baxcalibur",
         "fromSlug": "arctibax",
         "toSlug": "baxcalibur",
         "method": "level_up",
@@ -125,6 +136,8 @@
         ]
       },
       {
+        "fromNodeId": "frigibax",
+        "toNodeId": "arctibax",
         "fromSlug": "frigibax",
         "toSlug": "arctibax",
         "method": "level_up",

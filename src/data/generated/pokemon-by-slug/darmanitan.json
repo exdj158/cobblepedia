@@ -71,18 +71,34 @@
   "evolutionFamily": {
     "members": [
       {
+        "nodeId": "darumaka",
         "slug": "darumaka",
         "name": "Darumaka",
-        "dexNumber": 554
+        "dexNumber": 554,
+        "formSlug": null,
+        "formName": null
       },
       {
+        "nodeId": "darmanitan",
         "slug": "darmanitan",
         "name": "Darmanitan",
-        "dexNumber": 555
+        "dexNumber": 555,
+        "formSlug": null,
+        "formName": null
+      },
+      {
+        "nodeId": "darmanitan-galar",
+        "slug": "darmanitan",
+        "name": "Darmanitan",
+        "dexNumber": 555,
+        "formSlug": "darmanitan-galar",
+        "formName": "Galar"
       }
     ],
     "edges": [
       {
+        "fromNodeId": "darumaka",
+        "toNodeId": "darmanitan-galar",
         "fromSlug": "darumaka",
         "toSlug": "darmanitan",
         "method": "item_interact",
@@ -91,6 +107,8 @@
         ]
       },
       {
+        "fromNodeId": "darumaka",
+        "toNodeId": "darmanitan-galar",
         "fromSlug": "darumaka",
         "toSlug": "darmanitan",
         "method": "level_up",
@@ -100,7 +118,8 @@
       }
     ],
     "roots": [
-      "darumaka"
+      "darumaka",
+      "darmanitan"
     ]
   },
   "moves": [

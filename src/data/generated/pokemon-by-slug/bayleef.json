@@ -107,23 +107,34 @@
   "evolutionFamily": {
     "members": [
       {
+        "nodeId": "chikorita",
         "slug": "chikorita",
         "name": "Chikorita",
-        "dexNumber": 152
+        "dexNumber": 152,
+        "formSlug": null,
+        "formName": null
       },
       {
+        "nodeId": "bayleef",
         "slug": "bayleef",
         "name": "Bayleef",
-        "dexNumber": 153
+        "dexNumber": 153,
+        "formSlug": null,
+        "formName": null
       },
       {
+        "nodeId": "meganium",
         "slug": "meganium",
         "name": "Meganium",
-        "dexNumber": 154
+        "dexNumber": 154,
+        "formSlug": null,
+        "formName": null
       }
     ],
     "edges": [
       {
+        "fromNodeId": "bayleef",
+        "toNodeId": "meganium",
         "fromSlug": "bayleef",
         "toSlug": "meganium",
         "method": "level_up",
@@ -132,6 +143,8 @@
         ]
       },
       {
+        "fromNodeId": "chikorita",
+        "toNodeId": "bayleef",
         "fromSlug": "chikorita",
         "toSlug": "bayleef",
         "method": "level_up",

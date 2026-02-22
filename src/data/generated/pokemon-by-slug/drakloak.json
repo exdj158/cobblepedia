@@ -114,23 +114,34 @@
   "evolutionFamily": {
     "members": [
       {
+        "nodeId": "dreepy",
         "slug": "dreepy",
         "name": "Dreepy",
-        "dexNumber": 885
+        "dexNumber": 885,
+        "formSlug": null,
+        "formName": null
       },
       {
+        "nodeId": "drakloak",
         "slug": "drakloak",
         "name": "Drakloak",
-        "dexNumber": 886
+        "dexNumber": 886,
+        "formSlug": null,
+        "formName": null
       },
       {
+        "nodeId": "dragapult",
         "slug": "dragapult",
         "name": "Dragapult",
-        "dexNumber": 887
+        "dexNumber": 887,
+        "formSlug": null,
+        "formName": null
       }
     ],
     "edges": [
       {
+        "fromNodeId": "drakloak",
+        "toNodeId": "dragapult",
         "fromSlug": "drakloak",
         "toSlug": "dragapult",
         "method": "level_up",
@@ -139,6 +150,8 @@
         ]
       },
       {
+        "fromNodeId": "dreepy",
+        "toNodeId": "drakloak",
         "fromSlug": "dreepy",
         "toSlug": "drakloak",
         "method": "level_up",

@@ -71,18 +71,26 @@
   "evolutionFamily": {
     "members": [
       {
+        "nodeId": "kabuto",
         "slug": "kabuto",
         "name": "Kabuto",
-        "dexNumber": 140
+        "dexNumber": 140,
+        "formSlug": null,
+        "formName": null
       },
       {
+        "nodeId": "kabutops",
         "slug": "kabutops",
         "name": "Kabutops",
-        "dexNumber": 141
+        "dexNumber": 141,
+        "formSlug": null,
+        "formName": null
       }
     ],
     "edges": [
       {
+        "fromNodeId": "kabuto",
+        "toNodeId": "kabutops",
         "fromSlug": "kabuto",
         "toSlug": "kabutops",
         "method": "level_up",

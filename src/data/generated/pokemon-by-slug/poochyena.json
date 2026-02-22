@@ -108,18 +108,26 @@
   "evolutionFamily": {
     "members": [
       {
+        "nodeId": "poochyena",
         "slug": "poochyena",
         "name": "Poochyena",
-        "dexNumber": 261
+        "dexNumber": 261,
+        "formSlug": null,
+        "formName": null
       },
       {
+        "nodeId": "mightyena",
         "slug": "mightyena",
         "name": "Mightyena",
-        "dexNumber": 262
+        "dexNumber": 262,
+        "formSlug": null,
+        "formName": null
       }
     ],
     "edges": [
       {
+        "fromNodeId": "poochyena",
+        "toNodeId": "mightyena",
         "fromSlug": "poochyena",
         "toSlug": "mightyena",
         "method": "level_up",

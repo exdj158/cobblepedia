@@ -69,18 +69,26 @@
   "evolutionFamily": {
     "members": [
       {
+        "nodeId": "mienfoo",
         "slug": "mienfoo",
         "name": "Mienfoo",
-        "dexNumber": 619
+        "dexNumber": 619,
+        "formSlug": null,
+        "formName": null
       },
       {
+        "nodeId": "mienshao",
         "slug": "mienshao",
         "name": "Mienshao",
-        "dexNumber": 620
+        "dexNumber": 620,
+        "formSlug": null,
+        "formName": null
       }
     ],
     "edges": [
       {
+        "fromNodeId": "mienfoo",
+        "toNodeId": "mienshao",
         "fromSlug": "mienfoo",
         "toSlug": "mienshao",
         "method": "level_up",

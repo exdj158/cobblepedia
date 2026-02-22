@@ -104,18 +104,26 @@
   "evolutionFamily": {
     "members": [
       {
+        "nodeId": "tangela",
         "slug": "tangela",
         "name": "Tangela",
-        "dexNumber": 114
+        "dexNumber": 114,
+        "formSlug": null,
+        "formName": null
       },
       {
+        "nodeId": "tangrowth",
         "slug": "tangrowth",
         "name": "Tangrowth",
-        "dexNumber": 465
+        "dexNumber": 465,
+        "formSlug": null,
+        "formName": null
       }
     ],
     "edges": [
       {
+        "fromNodeId": "tangela",
+        "toNodeId": "tangrowth",
         "fromSlug": "tangela",
         "toSlug": "tangrowth",
         "method": "level_up",

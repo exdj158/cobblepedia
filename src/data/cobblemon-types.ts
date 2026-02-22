@@ -93,12 +93,17 @@ export type SpawnEntryRecord = {
 }
 
 export type EvolutionFamilyMemberRecord = {
+  nodeId: string
   slug: string
   name: string
   dexNumber: number
+  formSlug: string | null
+  formName: string | null
 }
 
 export type EvolutionFamilyEdgeRecord = {
+  fromNodeId: string
+  toNodeId: string
   fromSlug: string
   toSlug: string
   method: string

@@ -63,18 +63,26 @@
   "evolutionFamily": {
     "members": [
       {
+        "nodeId": "buizel",
         "slug": "buizel",
         "name": "Buizel",
-        "dexNumber": 418
+        "dexNumber": 418,
+        "formSlug": null,
+        "formName": null
       },
       {
+        "nodeId": "floatzel",
         "slug": "floatzel",
         "name": "Floatzel",
-        "dexNumber": 419
+        "dexNumber": 419,
+        "formSlug": null,
+        "formName": null
       }
     ],
     "edges": [
       {
+        "fromNodeId": "buizel",
+        "toNodeId": "floatzel",
         "fromSlug": "buizel",
         "toSlug": "floatzel",
         "method": "level_up",

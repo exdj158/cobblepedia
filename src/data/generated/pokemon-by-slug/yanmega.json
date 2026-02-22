@@ -69,18 +69,26 @@
   "evolutionFamily": {
     "members": [
       {
+        "nodeId": "yanma",
         "slug": "yanma",
         "name": "Yanma",
-        "dexNumber": 193
+        "dexNumber": 193,
+        "formSlug": null,
+        "formName": null
       },
       {
+        "nodeId": "yanmega",
         "slug": "yanmega",
         "name": "Yanmega",
-        "dexNumber": 469
+        "dexNumber": 469,
+        "formSlug": null,
+        "formName": null
       }
     ],
     "edges": [
       {
+        "fromNodeId": "yanma",
+        "toNodeId": "yanmega",
         "fromSlug": "yanma",
         "toSlug": "yanmega",
         "method": "level_up",

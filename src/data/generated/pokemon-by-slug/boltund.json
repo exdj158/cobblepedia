@@ -62,18 +62,26 @@
   "evolutionFamily": {
     "members": [
       {
+        "nodeId": "yamper",
         "slug": "yamper",
         "name": "Yamper",
-        "dexNumber": 835
+        "dexNumber": 835,
+        "formSlug": null,
+        "formName": null
       },
       {
+        "nodeId": "boltund",
         "slug": "boltund",
         "name": "Boltund",
-        "dexNumber": 836
+        "dexNumber": 836,
+        "formSlug": null,
+        "formName": null
       }
     ],
     "edges": [
       {
+        "fromNodeId": "yamper",
+        "toNodeId": "boltund",
         "fromSlug": "yamper",
         "toSlug": "boltund",
         "method": "level_up",

@@ -109,18 +109,26 @@
   "evolutionFamily": {
     "members": [
       {
+        "nodeId": "bidoof",
         "slug": "bidoof",
         "name": "Bidoof",
-        "dexNumber": 399
+        "dexNumber": 399,
+        "formSlug": null,
+        "formName": null
       },
       {
+        "nodeId": "bibarel",
         "slug": "bibarel",
         "name": "Bibarel",
-        "dexNumber": 400
+        "dexNumber": 400,
+        "formSlug": null,
+        "formName": null
       }
     ],
     "edges": [
       {
+        "fromNodeId": "bidoof",
+        "toNodeId": "bibarel",
         "fromSlug": "bidoof",
         "toSlug": "bibarel",
         "method": "level_up",

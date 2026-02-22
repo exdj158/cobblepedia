@@ -68,23 +68,34 @@
   "evolutionFamily": {
     "members": [
       {
+        "nodeId": "solosis",
         "slug": "solosis",
         "name": "Solosis",
-        "dexNumber": 577
+        "dexNumber": 577,
+        "formSlug": null,
+        "formName": null
       },
       {
+        "nodeId": "duosion",
         "slug": "duosion",
         "name": "Duosion",
-        "dexNumber": 578
+        "dexNumber": 578,
+        "formSlug": null,
+        "formName": null
       },
       {
+        "nodeId": "reuniclus",
         "slug": "reuniclus",
         "name": "Reuniclus",
-        "dexNumber": 579
+        "dexNumber": 579,
+        "formSlug": null,
+        "formName": null
       }
     ],
     "edges": [
       {
+        "fromNodeId": "duosion",
+        "toNodeId": "reuniclus",
         "fromSlug": "duosion",
         "toSlug": "reuniclus",
         "method": "level_up",
@@ -93,6 +104,8 @@
         ]
       },
       {
+        "fromNodeId": "solosis",
+        "toNodeId": "duosion",
         "fromSlug": "solosis",
         "toSlug": "duosion",
         "method": "level_up",

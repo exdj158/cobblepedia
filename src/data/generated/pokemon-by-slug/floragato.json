@@ -107,23 +107,34 @@
   "evolutionFamily": {
     "members": [
       {
+        "nodeId": "sprigatito",
         "slug": "sprigatito",
         "name": "Sprigatito",
-        "dexNumber": 906
+        "dexNumber": 906,
+        "formSlug": null,
+        "formName": null
       },
       {
+        "nodeId": "floragato",
         "slug": "floragato",
         "name": "Floragato",
-        "dexNumber": 907
+        "dexNumber": 907,
+        "formSlug": null,
+        "formName": null
       },
       {
+        "nodeId": "meowscarada",
         "slug": "meowscarada",
         "name": "Meowscarada",
-        "dexNumber": 908
+        "dexNumber": 908,
+        "formSlug": null,
+        "formName": null
       }
     ],
     "edges": [
       {
+        "fromNodeId": "floragato",
+        "toNodeId": "meowscarada",
         "fromSlug": "floragato",
         "toSlug": "meowscarada",
         "method": "level_up",
@@ -132,6 +143,8 @@
         ]
       },
       {
+        "fromNodeId": "sprigatito",
+        "toNodeId": "floragato",
         "fromSlug": "sprigatito",
         "toSlug": "floragato",
         "method": "level_up",

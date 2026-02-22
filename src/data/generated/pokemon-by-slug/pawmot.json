@@ -69,23 +69,34 @@
   "evolutionFamily": {
     "members": [
       {
+        "nodeId": "pawmi",
         "slug": "pawmi",
         "name": "Pawmi",
-        "dexNumber": 921
+        "dexNumber": 921,
+        "formSlug": null,
+        "formName": null
       },
       {
+        "nodeId": "pawmo",
         "slug": "pawmo",
         "name": "Pawmo",
-        "dexNumber": 922
+        "dexNumber": 922,
+        "formSlug": null,
+        "formName": null
       },
       {
+        "nodeId": "pawmot",
         "slug": "pawmot",
         "name": "Pawmot",
-        "dexNumber": 923
+        "dexNumber": 923,
+        "formSlug": null,
+        "formName": null
       }
     ],
     "edges": [
       {
+        "fromNodeId": "pawmi",
+        "toNodeId": "pawmo",
         "fromSlug": "pawmi",
         "toSlug": "pawmo",
         "method": "level_up",
@@ -94,6 +105,8 @@
         ]
       },
       {
+        "fromNodeId": "pawmo",
+        "toNodeId": "pawmot",
         "fromSlug": "pawmo",
         "toSlug": "pawmot",
         "method": "level_up",

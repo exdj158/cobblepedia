@@ -68,23 +68,34 @@
   "evolutionFamily": {
     "members": [
       {
+        "nodeId": "lillipup",
         "slug": "lillipup",
         "name": "Lillipup",
-        "dexNumber": 506
+        "dexNumber": 506,
+        "formSlug": null,
+        "formName": null
       },
       {
+        "nodeId": "herdier",
         "slug": "herdier",
         "name": "Herdier",
-        "dexNumber": 507
+        "dexNumber": 507,
+        "formSlug": null,
+        "formName": null
       },
       {
+        "nodeId": "stoutland",
         "slug": "stoutland",
         "name": "Stoutland",
-        "dexNumber": 508
+        "dexNumber": 508,
+        "formSlug": null,
+        "formName": null
       }
     ],
     "edges": [
       {
+        "fromNodeId": "herdier",
+        "toNodeId": "stoutland",
         "fromSlug": "herdier",
         "toSlug": "stoutland",
         "method": "level_up",
@@ -93,6 +104,8 @@
         ]
       },
       {
+        "fromNodeId": "lillipup",
+        "toNodeId": "herdier",
         "fromSlug": "lillipup",
         "toSlug": "herdier",
         "method": "level_up",

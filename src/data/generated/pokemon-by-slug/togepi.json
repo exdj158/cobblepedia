@@ -109,23 +109,34 @@
   "evolutionFamily": {
     "members": [
       {
+        "nodeId": "togepi",
         "slug": "togepi",
         "name": "Togepi",
-        "dexNumber": 175
+        "dexNumber": 175,
+        "formSlug": null,
+        "formName": null
       },
       {
+        "nodeId": "togetic",
         "slug": "togetic",
         "name": "Togetic",
-        "dexNumber": 176
+        "dexNumber": 176,
+        "formSlug": null,
+        "formName": null
       },
       {
+        "nodeId": "togekiss",
         "slug": "togekiss",
         "name": "Togekiss",
-        "dexNumber": 468
+        "dexNumber": 468,
+        "formSlug": null,
+        "formName": null
       }
     ],
     "edges": [
       {
+        "fromNodeId": "togepi",
+        "toNodeId": "togetic",
         "fromSlug": "togepi",
         "toSlug": "togetic",
         "method": "level_up",
@@ -134,6 +145,8 @@
         ]
       },
       {
+        "fromNodeId": "togetic",
+        "toNodeId": "togekiss",
         "fromSlug": "togetic",
         "toSlug": "togekiss",
         "method": "item_interact",

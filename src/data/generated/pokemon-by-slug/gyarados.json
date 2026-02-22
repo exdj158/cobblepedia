@@ -66,18 +66,26 @@
   "evolutionFamily": {
     "members": [
       {
+        "nodeId": "magikarp",
         "slug": "magikarp",
         "name": "Magikarp",
-        "dexNumber": 129
+        "dexNumber": 129,
+        "formSlug": null,
+        "formName": null
       },
       {
+        "nodeId": "gyarados",
         "slug": "gyarados",
         "name": "Gyarados",
-        "dexNumber": 130
+        "dexNumber": 130,
+        "formSlug": null,
+        "formName": null
       }
     ],
     "edges": [
       {
+        "fromNodeId": "magikarp",
+        "toNodeId": "gyarados",
         "fromSlug": "magikarp",
         "toSlug": "gyarados",
         "method": "level_up",

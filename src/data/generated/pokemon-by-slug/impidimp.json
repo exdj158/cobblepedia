@@ -110,23 +110,34 @@
   "evolutionFamily": {
     "members": [
       {
+        "nodeId": "impidimp",
         "slug": "impidimp",
         "name": "Impidimp",
-        "dexNumber": 859
+        "dexNumber": 859,
+        "formSlug": null,
+        "formName": null
       },
       {
+        "nodeId": "morgrem",
         "slug": "morgrem",
         "name": "Morgrem",
-        "dexNumber": 860
+        "dexNumber": 860,
+        "formSlug": null,
+        "formName": null
       },
       {
+        "nodeId": "grimmsnarl",
         "slug": "grimmsnarl",
         "name": "Grimmsnarl",
-        "dexNumber": 861
+        "dexNumber": 861,
+        "formSlug": null,
+        "formName": null
       }
     ],
     "edges": [
       {
+        "fromNodeId": "impidimp",
+        "toNodeId": "morgrem",
         "fromSlug": "impidimp",
         "toSlug": "morgrem",
         "method": "level_up",
@@ -135,6 +146,8 @@
         ]
       },
       {
+        "fromNodeId": "morgrem",
+        "toNodeId": "grimmsnarl",
         "fromSlug": "morgrem",
         "toSlug": "grimmsnarl",
         "method": "level_up",

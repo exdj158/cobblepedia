@@ -63,18 +63,26 @@
   "evolutionFamily": {
     "members": [
       {
+        "nodeId": "taillow",
         "slug": "taillow",
         "name": "Taillow",
-        "dexNumber": 276
+        "dexNumber": 276,
+        "formSlug": null,
+        "formName": null
       },
       {
+        "nodeId": "swellow",
         "slug": "swellow",
         "name": "Swellow",
-        "dexNumber": 277
+        "dexNumber": 277,
+        "formSlug": null,
+        "formName": null
       }
     ],
     "edges": [
       {
+        "fromNodeId": "taillow",
+        "toNodeId": "swellow",
         "fromSlug": "taillow",
         "toSlug": "swellow",
         "method": "level_up",

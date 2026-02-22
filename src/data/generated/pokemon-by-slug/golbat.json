@@ -107,23 +107,34 @@
   "evolutionFamily": {
     "members": [
       {
+        "nodeId": "zubat",
         "slug": "zubat",
         "name": "Zubat",
-        "dexNumber": 41
+        "dexNumber": 41,
+        "formSlug": null,
+        "formName": null
       },
       {
+        "nodeId": "golbat",
         "slug": "golbat",
         "name": "Golbat",
-        "dexNumber": 42
+        "dexNumber": 42,
+        "formSlug": null,
+        "formName": null
       },
       {
+        "nodeId": "crobat",
         "slug": "crobat",
         "name": "Crobat",
-        "dexNumber": 169
+        "dexNumber": 169,
+        "formSlug": null,
+        "formName": null
       }
     ],
     "edges": [
       {
+        "fromNodeId": "golbat",
+        "toNodeId": "crobat",
         "fromSlug": "golbat",
         "toSlug": "crobat",
         "method": "level_up",
@@ -132,6 +143,8 @@
         ]
       },
       {
+        "fromNodeId": "zubat",
+        "toNodeId": "golbat",
         "fromSlug": "zubat",
         "toSlug": "golbat",
         "method": "level_up",

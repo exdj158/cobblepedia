@@ -99,23 +99,34 @@
   "evolutionFamily": {
     "members": [
       {
+        "nodeId": "litten",
         "slug": "litten",
         "name": "Litten",
-        "dexNumber": 725
+        "dexNumber": 725,
+        "formSlug": null,
+        "formName": null
       },
       {
+        "nodeId": "torracat",
         "slug": "torracat",
         "name": "Torracat",
-        "dexNumber": 726
+        "dexNumber": 726,
+        "formSlug": null,
+        "formName": null
       },
       {
+        "nodeId": "incineroar",
         "slug": "incineroar",
         "name": "Incineroar",
-        "dexNumber": 727
+        "dexNumber": 727,
+        "formSlug": null,
+        "formName": null
       }
     ],
     "edges": [
       {
+        "fromNodeId": "litten",
+        "toNodeId": "torracat",
         "fromSlug": "litten",
         "toSlug": "torracat",
         "method": "level_up",
@@ -124,6 +135,8 @@
         ]
       },
       {
+        "fromNodeId": "torracat",
+        "toNodeId": "incineroar",
         "fromSlug": "torracat",
         "toSlug": "incineroar",
         "method": "level_up",

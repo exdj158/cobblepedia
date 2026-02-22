@@ -64,32 +64,45 @@
   "evolutionFamily": {
     "members": [
       {
+        "nodeId": "snorunt",
         "slug": "snorunt",
         "name": "Snorunt",
-        "dexNumber": 361
+        "dexNumber": 361,
+        "formSlug": null,
+        "formName": null
       },
       {
+        "nodeId": "glalie",
         "slug": "glalie",
         "name": "Glalie",
-        "dexNumber": 362
+        "dexNumber": 362,
+        "formSlug": null,
+        "formName": null
       },
       {
+        "nodeId": "froslass",
         "slug": "froslass",
         "name": "Froslass",
-        "dexNumber": 478
+        "dexNumber": 478,
+        "formSlug": null,
+        "formName": null
       }
     ],
     "edges": [
       {
+        "fromNodeId": "snorunt",
+        "toNodeId": "froslass",
         "fromSlug": "snorunt",
         "toSlug": "froslass",
         "method": "item_interact",
         "requirementText": [
           "Use Dawn Stone",
-          "Property gender=female"
+          "Female only"
         ]
       },
       {
+        "fromNodeId": "snorunt",
+        "toNodeId": "glalie",
         "fromSlug": "snorunt",
         "toSlug": "glalie",
         "method": "level_up",

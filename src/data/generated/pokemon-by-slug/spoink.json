@@ -108,18 +108,26 @@
   "evolutionFamily": {
     "members": [
       {
+        "nodeId": "spoink",
         "slug": "spoink",
         "name": "Spoink",
-        "dexNumber": 325
+        "dexNumber": 325,
+        "formSlug": null,
+        "formName": null
       },
       {
+        "nodeId": "grumpig",
         "slug": "grumpig",
         "name": "Grumpig",
-        "dexNumber": 326
+        "dexNumber": 326,
+        "formSlug": null,
+        "formName": null
       }
     ],
     "edges": [
       {
+        "fromNodeId": "spoink",
+        "toNodeId": "grumpig",
         "fromSlug": "spoink",
         "toSlug": "grumpig",
         "method": "level_up",

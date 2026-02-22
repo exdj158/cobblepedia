@@ -112,23 +112,34 @@
   "evolutionFamily": {
     "members": [
       {
+        "nodeId": "hatenna",
         "slug": "hatenna",
         "name": "Hatenna",
-        "dexNumber": 856
+        "dexNumber": 856,
+        "formSlug": null,
+        "formName": null
       },
       {
+        "nodeId": "hattrem",
         "slug": "hattrem",
         "name": "Hattrem",
-        "dexNumber": 857
+        "dexNumber": 857,
+        "formSlug": null,
+        "formName": null
       },
       {
+        "nodeId": "hatterene",
         "slug": "hatterene",
         "name": "Hatterene",
-        "dexNumber": 858
+        "dexNumber": 858,
+        "formSlug": null,
+        "formName": null
       }
     ],
     "edges": [
       {
+        "fromNodeId": "hatenna",
+        "toNodeId": "hattrem",
         "fromSlug": "hatenna",
         "toSlug": "hattrem",
         "method": "level_up",
@@ -137,6 +148,8 @@
         ]
       },
       {
+        "fromNodeId": "hattrem",
+        "toNodeId": "hatterene",
         "fromSlug": "hattrem",
         "toSlug": "hatterene",
         "method": "level_up",

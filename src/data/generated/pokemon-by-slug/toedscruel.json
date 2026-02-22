@@ -63,18 +63,26 @@
   "evolutionFamily": {
     "members": [
       {
+        "nodeId": "toedscool",
         "slug": "toedscool",
         "name": "Toedscool",
-        "dexNumber": 948
+        "dexNumber": 948,
+        "formSlug": null,
+        "formName": null
       },
       {
+        "nodeId": "toedscruel",
         "slug": "toedscruel",
         "name": "Toedscruel",
-        "dexNumber": 949
+        "dexNumber": 949,
+        "formSlug": null,
+        "formName": null
       }
     ],
     "edges": [
       {
+        "fromNodeId": "toedscool",
+        "toNodeId": "toedscruel",
         "fromSlug": "toedscool",
         "toSlug": "toedscruel",
         "method": "level_up",

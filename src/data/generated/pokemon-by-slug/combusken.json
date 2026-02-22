@@ -107,23 +107,34 @@
   "evolutionFamily": {
     "members": [
       {
+        "nodeId": "torchic",
         "slug": "torchic",
         "name": "Torchic",
-        "dexNumber": 255
+        "dexNumber": 255,
+        "formSlug": null,
+        "formName": null
       },
       {
+        "nodeId": "combusken",
         "slug": "combusken",
         "name": "Combusken",
-        "dexNumber": 256
+        "dexNumber": 256,
+        "formSlug": null,
+        "formName": null
       },
       {
+        "nodeId": "blaziken",
         "slug": "blaziken",
         "name": "Blaziken",
-        "dexNumber": 257
+        "dexNumber": 257,
+        "formSlug": null,
+        "formName": null
       }
     ],
     "edges": [
       {
+        "fromNodeId": "combusken",
+        "toNodeId": "blaziken",
         "fromSlug": "combusken",
         "toSlug": "blaziken",
         "method": "level_up",
@@ -132,6 +143,8 @@
         ]
       },
       {
+        "fromNodeId": "torchic",
+        "toNodeId": "combusken",
         "fromSlug": "torchic",
         "toSlug": "combusken",
         "method": "level_up",

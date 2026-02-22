@@ -299,70 +299,77 @@ function MoveDetailView(props: { entry: MoveLearnerEntryRecord }) {
             </thead>
             <tbody class="divide-y divide-border">
               <For each={filteredLearners()}>
-                {(learner) => (
-                  <tr class="hover:bg-secondary/40">
-                    <td class="px-4 py-2.5">
-                      <div class="space-y-1.5">
-                        <a
-                          href={resolveMoveLearnerHref(learner)}
-                          class="inline-flex items-center gap-2 hover:underline"
-                        >
-                          <PokemonSprite
-                            dexNumber={learner.dexNumber}
-                            name={learner.name}
-                            class="h-8 w-8"
-                            imageClass="h-6 w-6"
-                          />
-                          <span>
-                            #{String(learner.dexNumber).padStart(3, "0")} {learner.name}
-                          </span>
-                        </a>
+                {(learner) => {
+                  const spriteForm = resolveMoveLearnerSpriteForm(learner)
 
-                        <div class="flex flex-wrap gap-1">
-                          <For each={getLearnerEggGroups(learner)}>
-                            {(group) => (
-                              <span class="inline-flex items-center gap-1 border border-border bg-secondary px-2 py-0.5 font-mono text-[10px] text-muted-foreground uppercase tracking-wider">
-                                <IconEgg class="h-3 w-3" />
-                                {formatEggGroup(group)}
+                  return (
+                    <tr class="hover:bg-secondary/40">
+                      <td class="px-4 py-2.5">
+                        <div class="space-y-1.5">
+                          <a
+                            href={resolveMoveLearnerHref(learner)}
+                            class="inline-flex items-center gap-2 hover:underline"
+                          >
+                            <PokemonSprite
+                              dexNumber={learner.dexNumber}
+                              slug={learner.slug}
+                              formSlug={spriteForm?.slug ?? null}
+                              formName={spriteForm?.name ?? null}
+                              name={learner.name}
+                              class="h-8 w-8"
+                              imageClass="h-6 w-6"
+                            />
+                            <span>
+                              #{String(learner.dexNumber).padStart(3, "0")} {learner.name}
+                            </span>
+                          </a>
+
+                          <div class="flex flex-wrap gap-1">
+                            <For each={getLearnerEggGroups(learner)}>
+                              {(group) => (
+                                <span class="inline-flex items-center gap-1 border border-border bg-secondary px-2 py-0.5 font-mono text-[10px] text-muted-foreground uppercase tracking-wider">
+                                  <IconEgg class="h-3 w-3" />
+                                  {formatEggGroup(group)}
+                                </span>
+                              )}
+                            </For>
+                          </div>
+
+                          <Show when={learner.forms.length > 0}>
+                            <div class="flex flex-wrap gap-1">
+                              <Show when={!learner.baseAvailable}>
+                                <span class="border border-border bg-secondary/70 px-2 py-0.5 font-mono text-[10px] text-muted-foreground uppercase tracking-wider">
+                                  Form Only
+                                </span>
+                              </Show>
+                              <For each={learner.forms}>
+                                {(form) => (
+                                  <a
+                                    href={`/pokemon/${learner.slug}?form=${encodeURIComponent(form.slug)}`}
+                                    class="border border-border bg-secondary/40 px-2 py-0.5 text-[10px] text-muted-foreground hover:border-muted-foreground hover:text-foreground"
+                                  >
+                                    {form.name}
+                                  </a>
+                                )}
+                              </For>
+                            </div>
+                          </Show>
+                        </div>
+                      </td>
+                      <td class="px-4 py-2.5">
+                        <div class="flex justify-end gap-1">
+                          <For each={learner.methods}>
+                            {(method) => (
+                              <span class="border border-border bg-secondary px-2 py-0.5 text-muted-foreground text-xs">
+                                {formatLearnerMethodLabel(learner, method)}
                               </span>
                             )}
                           </For>
                         </div>
-
-                        <Show when={learner.forms.length > 0}>
-                          <div class="flex flex-wrap gap-1">
-                            <Show when={!learner.baseAvailable}>
-                              <span class="border border-border bg-secondary/70 px-2 py-0.5 font-mono text-[10px] text-muted-foreground uppercase tracking-wider">
-                                Form Only
-                              </span>
-                            </Show>
-                            <For each={learner.forms}>
-                              {(form) => (
-                                <a
-                                  href={`/pokemon/${learner.slug}?form=${encodeURIComponent(form.slug)}`}
-                                  class="border border-border bg-secondary/40 px-2 py-0.5 text-[10px] text-muted-foreground hover:border-muted-foreground hover:text-foreground"
-                                >
-                                  {form.name}
-                                </a>
-                              )}
-                            </For>
-                          </div>
-                        </Show>
-                      </div>
-                    </td>
-                    <td class="px-4 py-2.5">
-                      <div class="flex justify-end gap-1">
-                        <For each={learner.methods}>
-                          {(method) => (
-                            <span class="border border-border bg-secondary px-2 py-0.5 text-muted-foreground text-xs">
-                              {formatLearnerMethodLabel(learner, method)}
-                            </span>
-                          )}
-                        </For>
-                      </div>
-                    </td>
-                  </tr>
-                )}
+                      </td>
+                    </tr>
+                  )
+                }}
               </For>
             </tbody>
           </table>
@@ -474,6 +481,21 @@ function formatLearnerMethodLabel(
   }
 
   return "Level"
+}
+
+function resolveMoveLearnerSpriteForm(
+  learner: MoveLearnerEntryRecord["learners"][number]
+): { slug: string; name: string } | null {
+  if (learner.baseAvailable || learner.forms.length === 0) {
+    return null
+  }
+
+  const firstForm = learner.forms[0]
+  if (!firstForm) {
+    return null
+  }
+
+  return firstForm
 }
 
 function resolveMoveLearnerHref(learner: MoveLearnerEntryRecord["learners"][number]): string {

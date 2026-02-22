@@ -69,23 +69,34 @@
   "evolutionFamily": {
     "members": [
       {
+        "nodeId": "pikipek",
         "slug": "pikipek",
         "name": "Pikipek",
-        "dexNumber": 731
+        "dexNumber": 731,
+        "formSlug": null,
+        "formName": null
       },
       {
+        "nodeId": "trumbeak",
         "slug": "trumbeak",
         "name": "Trumbeak",
-        "dexNumber": 732
+        "dexNumber": 732,
+        "formSlug": null,
+        "formName": null
       },
       {
+        "nodeId": "toucannon",
         "slug": "toucannon",
         "name": "Toucannon",
-        "dexNumber": 733
+        "dexNumber": 733,
+        "formSlug": null,
+        "formName": null
       }
     ],
     "edges": [
       {
+        "fromNodeId": "pikipek",
+        "toNodeId": "trumbeak",
         "fromSlug": "pikipek",
         "toSlug": "trumbeak",
         "method": "level_up",
@@ -94,6 +105,8 @@
         ]
       },
       {
+        "fromNodeId": "trumbeak",
+        "toNodeId": "toucannon",
         "fromSlug": "trumbeak",
         "toSlug": "toucannon",
         "method": "level_up",

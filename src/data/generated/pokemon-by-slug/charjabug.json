@@ -94,23 +94,34 @@
   "evolutionFamily": {
     "members": [
       {
+        "nodeId": "grubbin",
         "slug": "grubbin",
         "name": "Grubbin",
-        "dexNumber": 736
+        "dexNumber": 736,
+        "formSlug": null,
+        "formName": null
       },
       {
+        "nodeId": "charjabug",
         "slug": "charjabug",
         "name": "Charjabug",
-        "dexNumber": 737
+        "dexNumber": 737,
+        "formSlug": null,
+        "formName": null
       },
       {
+        "nodeId": "vikavolt",
         "slug": "vikavolt",
         "name": "Vikavolt",
-        "dexNumber": 738
+        "dexNumber": 738,
+        "formSlug": null,
+        "formName": null
       }
     ],
     "edges": [
       {
+        "fromNodeId": "charjabug",
+        "toNodeId": "vikavolt",
         "fromSlug": "charjabug",
         "toSlug": "vikavolt",
         "method": "item_interact",
@@ -119,6 +130,8 @@
         ]
       },
       {
+        "fromNodeId": "grubbin",
+        "toNodeId": "charjabug",
         "fromSlug": "grubbin",
         "toSlug": "charjabug",
         "method": "level_up",

@@ -103,23 +103,34 @@
   "evolutionFamily": {
     "members": [
       {
+        "nodeId": "snivy",
         "slug": "snivy",
         "name": "Snivy",
-        "dexNumber": 495
+        "dexNumber": 495,
+        "formSlug": null,
+        "formName": null
       },
       {
+        "nodeId": "servine",
         "slug": "servine",
         "name": "Servine",
-        "dexNumber": 496
+        "dexNumber": 496,
+        "formSlug": null,
+        "formName": null
       },
       {
+        "nodeId": "serperior",
         "slug": "serperior",
         "name": "Serperior",
-        "dexNumber": 497
+        "dexNumber": 497,
+        "formSlug": null,
+        "formName": null
       }
     ],
     "edges": [
       {
+        "fromNodeId": "servine",
+        "toNodeId": "serperior",
         "fromSlug": "servine",
         "toSlug": "serperior",
         "method": "level_up",
@@ -128,6 +139,8 @@
         ]
       },
       {
+        "fromNodeId": "snivy",
+        "toNodeId": "servine",
         "fromSlug": "snivy",
         "toSlug": "servine",
         "method": "level_up",

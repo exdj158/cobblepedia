@@ -109,18 +109,26 @@
   "evolutionFamily": {
     "members": [
       {
+        "nodeId": "chewtle",
         "slug": "chewtle",
         "name": "Chewtle",
-        "dexNumber": 833
+        "dexNumber": 833,
+        "formSlug": null,
+        "formName": null
       },
       {
+        "nodeId": "drednaw",
         "slug": "drednaw",
         "name": "Drednaw",
-        "dexNumber": 834
+        "dexNumber": 834,
+        "formSlug": null,
+        "formName": null
       }
     ],
     "edges": [
       {
+        "fromNodeId": "chewtle",
+        "toNodeId": "drednaw",
         "fromSlug": "chewtle",
         "toSlug": "drednaw",
         "method": "level_up",

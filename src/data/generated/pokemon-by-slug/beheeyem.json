@@ -68,18 +68,26 @@
   "evolutionFamily": {
     "members": [
       {
+        "nodeId": "elgyem",
         "slug": "elgyem",
         "name": "Elgyem",
-        "dexNumber": 605
+        "dexNumber": 605,
+        "formSlug": null,
+        "formName": null
       },
       {
+        "nodeId": "beheeyem",
         "slug": "beheeyem",
         "name": "Beheeyem",
-        "dexNumber": 606
+        "dexNumber": 606,
+        "formSlug": null,
+        "formName": null
       }
     ],
     "edges": [
       {
+        "fromNodeId": "elgyem",
+        "toNodeId": "beheeyem",
         "fromSlug": "elgyem",
         "toSlug": "beheeyem",
         "method": "level_up",

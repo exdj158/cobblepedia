@@ -107,18 +107,26 @@
   "evolutionFamily": {
     "members": [
       {
+        "nodeId": "cherubi",
         "slug": "cherubi",
         "name": "Cherubi",
-        "dexNumber": 420
+        "dexNumber": 420,
+        "formSlug": null,
+        "formName": null
       },
       {
+        "nodeId": "cherrim",
         "slug": "cherrim",
         "name": "Cherrim",
-        "dexNumber": 421
+        "dexNumber": 421,
+        "formSlug": null,
+        "formName": null
       }
     ],
     "edges": [
       {
+        "fromNodeId": "cherubi",
+        "toNodeId": "cherrim",
         "fromSlug": "cherubi",
         "toSlug": "cherrim",
         "method": "level_up",

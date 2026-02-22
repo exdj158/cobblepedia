@@ -114,23 +114,34 @@
   "evolutionFamily": {
     "members": [
       {
+        "nodeId": "jangmoo",
         "slug": "jangmoo",
         "name": "Jangmo-o",
-        "dexNumber": 782
+        "dexNumber": 782,
+        "formSlug": null,
+        "formName": null
       },
       {
+        "nodeId": "hakamoo",
         "slug": "hakamoo",
         "name": "Hakamo-o",
-        "dexNumber": 783
+        "dexNumber": 783,
+        "formSlug": null,
+        "formName": null
       },
       {
+        "nodeId": "kommoo",
         "slug": "kommoo",
         "name": "Kommo-o",
-        "dexNumber": 784
+        "dexNumber": 784,
+        "formSlug": null,
+        "formName": null
       }
     ],
     "edges": [
       {
+        "fromNodeId": "hakamoo",
+        "toNodeId": "kommoo",
         "fromSlug": "hakamoo",
         "toSlug": "kommoo",
         "method": "level_up",
@@ -139,6 +150,8 @@
         ]
       },
       {
+        "fromNodeId": "jangmoo",
+        "toNodeId": "hakamoo",
         "fromSlug": "jangmoo",
         "toSlug": "hakamoo",
         "method": "level_up",

@@ -69,18 +69,26 @@
   "evolutionFamily": {
     "members": [
       {
+        "nodeId": "drilbur",
         "slug": "drilbur",
         "name": "Drilbur",
-        "dexNumber": 529
+        "dexNumber": 529,
+        "formSlug": null,
+        "formName": null
       },
       {
+        "nodeId": "excadrill",
         "slug": "excadrill",
         "name": "Excadrill",
-        "dexNumber": 530
+        "dexNumber": 530,
+        "formSlug": null,
+        "formName": null
       }
     ],
     "edges": [
       {
+        "fromNodeId": "drilbur",
+        "toNodeId": "excadrill",
         "fromSlug": "drilbur",
         "toSlug": "excadrill",
         "method": "level_up",

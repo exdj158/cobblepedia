@@ -124,7 +124,7 @@
       ],
       "requirementText": [
         "Level 54+",
-        "Biome Evolution/regional/rufflet Hisuibiome"
+        "Biome Evolution Regional Rufflet Hisuibiome"
       ],
       "requirements": [
         {
@@ -137,7 +137,7 @@
         },
         {
           "variant": "biome",
-          "text": "Biome Evolution/regional/rufflet Hisuibiome",
+          "text": "Biome Evolution Regional Rufflet Hisuibiome",
           "raw": {
             "variant": "biome",
             "biomeCondition": "#cobblemon:evolution/regional/rufflet_hisuibiome"
@@ -170,18 +170,34 @@
   "evolutionFamily": {
     "members": [
       {
+        "nodeId": "rufflet",
         "slug": "rufflet",
         "name": "Rufflet",
-        "dexNumber": 627
+        "dexNumber": 627,
+        "formSlug": null,
+        "formName": null
       },
       {
+        "nodeId": "braviary",
         "slug": "braviary",
         "name": "Braviary",
-        "dexNumber": 628
+        "dexNumber": 628,
+        "formSlug": null,
+        "formName": null
+      },
+      {
+        "nodeId": "braviary-hisui",
+        "slug": "braviary",
+        "name": "Braviary",
+        "dexNumber": 628,
+        "formSlug": "braviary-hisui",
+        "formName": "Hisui"
       }
     ],
     "edges": [
       {
+        "fromNodeId": "rufflet",
+        "toNodeId": "braviary",
         "fromSlug": "rufflet",
         "toSlug": "braviary",
         "method": "level_up",
@@ -190,21 +206,35 @@
         ]
       },
       {
+        "fromNodeId": "rufflet",
+        "toNodeId": "braviary",
         "fromSlug": "rufflet",
         "toSlug": "braviary",
         "method": "level_up",
         "requirementText": [
           "Level 54+",
-          "Biome Evolution/regional/rufflet Hisuibiome"
+          "Biome Evolution Regional Rufflet Unovabiome"
         ]
       },
       {
+        "fromNodeId": "rufflet",
+        "toNodeId": "braviary-hisui",
         "fromSlug": "rufflet",
         "toSlug": "braviary",
         "method": "level_up",
         "requirementText": [
           "Level 54+",
-          "Biome Evolution/regional/rufflet Unovabiome"
+          "Biome Evolution Regional Rufflet Hisuibiome"
+        ]
+      },
+      {
+        "fromNodeId": "rufflet",
+        "toNodeId": "braviary-hisui",
+        "fromSlug": "rufflet",
+        "toSlug": "braviary",
+        "method": "level_up",
+        "requirementText": [
+          "Level 54+"
         ]
       }
     ],
@@ -1531,7 +1561,7 @@
           ],
           "requirementText": [
             "Level 54+",
-            "Biome Evolution/regional/rufflet Unovabiome"
+            "Biome Evolution Regional Rufflet Unovabiome"
           ],
           "requirements": [
             {
@@ -1544,7 +1574,7 @@
             },
             {
               "variant": "biome",
-              "text": "Biome Evolution/regional/rufflet Unovabiome",
+              "text": "Biome Evolution Regional Rufflet Unovabiome",
               "raw": {
                 "variant": "biome",
                 "biomeCondition": "#cobblemon:evolution/regional/rufflet_unovabiome"

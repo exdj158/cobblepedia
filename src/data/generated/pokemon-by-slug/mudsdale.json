@@ -68,18 +68,26 @@
   "evolutionFamily": {
     "members": [
       {
+        "nodeId": "mudbray",
         "slug": "mudbray",
         "name": "Mudbray",
-        "dexNumber": 749
+        "dexNumber": 749,
+        "formSlug": null,
+        "formName": null
       },
       {
+        "nodeId": "mudsdale",
         "slug": "mudsdale",
         "name": "Mudsdale",
-        "dexNumber": 750
+        "dexNumber": 750,
+        "formSlug": null,
+        "formName": null
       }
     ],
     "edges": [
       {
+        "fromNodeId": "mudbray",
+        "toNodeId": "mudsdale",
         "fromSlug": "mudbray",
         "toSlug": "mudsdale",
         "method": "level_up",

@@ -91,18 +91,26 @@
   "evolutionFamily": {
     "members": [
       {
+        "nodeId": "munna",
         "slug": "munna",
         "name": "Munna",
-        "dexNumber": 517
+        "dexNumber": 517,
+        "formSlug": null,
+        "formName": null
       },
       {
+        "nodeId": "musharna",
         "slug": "musharna",
         "name": "Musharna",
-        "dexNumber": 518
+        "dexNumber": 518,
+        "formSlug": null,
+        "formName": null
       }
     ],
     "edges": [
       {
+        "fromNodeId": "munna",
+        "toNodeId": "musharna",
         "fromSlug": "munna",
         "toSlug": "musharna",
         "method": "item_interact",

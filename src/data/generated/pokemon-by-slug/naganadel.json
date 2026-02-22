@@ -64,18 +64,26 @@
   "evolutionFamily": {
     "members": [
       {
+        "nodeId": "poipole",
         "slug": "poipole",
         "name": "Poipole",
-        "dexNumber": 803
+        "dexNumber": 803,
+        "formSlug": null,
+        "formName": null
       },
       {
+        "nodeId": "naganadel",
         "slug": "naganadel",
         "name": "Naganadel",
-        "dexNumber": 804
+        "dexNumber": 804,
+        "formSlug": null,
+        "formName": null
       }
     ],
     "edges": [
       {
+        "fromNodeId": "poipole",
+        "toNodeId": "naganadel",
         "fromSlug": "poipole",
         "toSlug": "naganadel",
         "method": "level_up",

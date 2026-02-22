@@ -102,18 +102,26 @@
   "evolutionFamily": {
     "members": [
       {
+        "nodeId": "kricketot",
         "slug": "kricketot",
         "name": "Kricketot",
-        "dexNumber": 401
+        "dexNumber": 401,
+        "formSlug": null,
+        "formName": null
       },
       {
+        "nodeId": "kricketune",
         "slug": "kricketune",
         "name": "Kricketune",
-        "dexNumber": 402
+        "dexNumber": 402,
+        "formSlug": null,
+        "formName": null
       }
     ],
     "edges": [
       {
+        "fromNodeId": "kricketot",
+        "toNodeId": "kricketune",
         "fromSlug": "kricketot",
         "toSlug": "kricketune",
         "method": "level_up",

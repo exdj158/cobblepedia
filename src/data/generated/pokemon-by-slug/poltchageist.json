@@ -97,18 +97,34 @@
   "evolutionFamily": {
     "members": [
       {
+        "nodeId": "poltchageist",
         "slug": "poltchageist",
         "name": "Poltchageist",
-        "dexNumber": 1012
+        "dexNumber": 1012,
+        "formSlug": null,
+        "formName": null
       },
       {
+        "nodeId": "sinistcha",
         "slug": "sinistcha",
         "name": "Sinistcha",
-        "dexNumber": 1013
+        "dexNumber": 1013,
+        "formSlug": null,
+        "formName": null
+      },
+      {
+        "nodeId": "sinistcha-masterpiece",
+        "slug": "sinistcha",
+        "name": "Sinistcha",
+        "dexNumber": 1013,
+        "formSlug": "sinistcha-masterpiece",
+        "formName": "Masterpiece"
       }
     ],
     "edges": [
       {
+        "fromNodeId": "poltchageist",
+        "toNodeId": "sinistcha",
         "fromSlug": "poltchageist",
         "toSlug": "sinistcha",
         "method": "item_interact",
@@ -117,6 +133,8 @@
         ]
       },
       {
+        "fromNodeId": "poltchageist",
+        "toNodeId": "sinistcha-masterpiece",
         "fromSlug": "poltchageist",
         "toSlug": "sinistcha",
         "method": "item_interact",

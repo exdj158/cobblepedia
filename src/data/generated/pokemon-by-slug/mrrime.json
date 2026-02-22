@@ -74,23 +74,42 @@
   "evolutionFamily": {
     "members": [
       {
+        "nodeId": "mrmime",
         "slug": "mrmime",
         "name": "Mr. Mime",
-        "dexNumber": 122
+        "dexNumber": 122,
+        "formSlug": null,
+        "formName": null
       },
       {
+        "nodeId": "mrmime-galar",
+        "slug": "mrmime",
+        "name": "Mr. Mime",
+        "dexNumber": 122,
+        "formSlug": "mrmime-galar",
+        "formName": "Galar"
+      },
+      {
+        "nodeId": "mimejr",
         "slug": "mimejr",
         "name": "Mime Jr.",
-        "dexNumber": 439
+        "dexNumber": 439,
+        "formSlug": null,
+        "formName": null
       },
       {
+        "nodeId": "mrrime",
         "slug": "mrrime",
         "name": "Mr. Rime",
-        "dexNumber": 866
+        "dexNumber": 866,
+        "formSlug": null,
+        "formName": null
       }
     ],
     "edges": [
       {
+        "fromNodeId": "mimejr",
+        "toNodeId": "mrmime",
         "fromSlug": "mimejr",
         "toSlug": "mrmime",
         "method": "level_up",
@@ -99,24 +118,40 @@
         ]
       },
       {
+        "fromNodeId": "mimejr",
+        "toNodeId": "mrmime",
         "fromSlug": "mimejr",
         "toSlug": "mrmime",
         "method": "level_up",
         "requirementText": [
           "Knows Mimic",
-          "Biome Evolution/regional/mimejr Galarbiome"
+          "Biome Evolution Regional Mimejr Sinnohbiome"
         ]
       },
       {
+        "fromNodeId": "mimejr",
+        "toNodeId": "mrmime-galar",
         "fromSlug": "mimejr",
         "toSlug": "mrmime",
         "method": "level_up",
         "requirementText": [
           "Knows Mimic",
-          "Biome Evolution/regional/mimejr Sinnohbiome"
+          "Biome Evolution Regional Mimejr Galarbiome"
         ]
       },
       {
+        "fromNodeId": "mimejr",
+        "toNodeId": "mrmime-galar",
+        "fromSlug": "mimejr",
+        "toSlug": "mrmime",
+        "method": "level_up",
+        "requirementText": [
+          "Knows Mimic"
+        ]
+      },
+      {
+        "fromNodeId": "mrmime",
+        "toNodeId": "mrrime",
         "fromSlug": "mrmime",
         "toSlug": "mrrime",
         "method": "level_up",

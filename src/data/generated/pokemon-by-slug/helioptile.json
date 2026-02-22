@@ -93,18 +93,26 @@
   "evolutionFamily": {
     "members": [
       {
+        "nodeId": "helioptile",
         "slug": "helioptile",
         "name": "Helioptile",
-        "dexNumber": 694
+        "dexNumber": 694,
+        "formSlug": null,
+        "formName": null
       },
       {
+        "nodeId": "heliolisk",
         "slug": "heliolisk",
         "name": "Heliolisk",
-        "dexNumber": 695
+        "dexNumber": 695,
+        "formSlug": null,
+        "formName": null
       }
     ],
     "edges": [
       {
+        "fromNodeId": "helioptile",
+        "toNodeId": "heliolisk",
         "fromSlug": "helioptile",
         "toSlug": "heliolisk",
         "method": "item_interact",

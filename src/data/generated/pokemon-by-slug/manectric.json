@@ -70,18 +70,26 @@
   "evolutionFamily": {
     "members": [
       {
+        "nodeId": "electrike",
         "slug": "electrike",
         "name": "Electrike",
-        "dexNumber": 309
+        "dexNumber": 309,
+        "formSlug": null,
+        "formName": null
       },
       {
+        "nodeId": "manectric",
         "slug": "manectric",
         "name": "Manectric",
-        "dexNumber": 310
+        "dexNumber": 310,
+        "formSlug": null,
+        "formName": null
       }
     ],
     "edges": [
       {
+        "fromNodeId": "electrike",
+        "toNodeId": "manectric",
         "fromSlug": "electrike",
         "toSlug": "manectric",
         "method": "level_up",

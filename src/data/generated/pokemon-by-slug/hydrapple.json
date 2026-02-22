@@ -70,33 +70,50 @@
   "evolutionFamily": {
     "members": [
       {
+        "nodeId": "applin",
         "slug": "applin",
         "name": "Applin",
-        "dexNumber": 840
+        "dexNumber": 840,
+        "formSlug": null,
+        "formName": null
       },
       {
+        "nodeId": "flapple",
         "slug": "flapple",
         "name": "Flapple",
-        "dexNumber": 841
+        "dexNumber": 841,
+        "formSlug": null,
+        "formName": null
       },
       {
+        "nodeId": "appletun",
         "slug": "appletun",
         "name": "Appletun",
-        "dexNumber": 842
+        "dexNumber": 842,
+        "formSlug": null,
+        "formName": null
       },
       {
+        "nodeId": "dipplin",
         "slug": "dipplin",
         "name": "Dipplin",
-        "dexNumber": 1011
+        "dexNumber": 1011,
+        "formSlug": null,
+        "formName": null
       },
       {
+        "nodeId": "hydrapple",
         "slug": "hydrapple",
         "name": "Hydrapple",
-        "dexNumber": 1019
+        "dexNumber": 1019,
+        "formSlug": null,
+        "formName": null
       }
     ],
     "edges": [
       {
+        "fromNodeId": "applin",
+        "toNodeId": "appletun",
         "fromSlug": "applin",
         "toSlug": "appletun",
         "method": "item_interact",
@@ -105,6 +122,8 @@
         ]
       },
       {
+        "fromNodeId": "applin",
+        "toNodeId": "dipplin",
         "fromSlug": "applin",
         "toSlug": "dipplin",
         "method": "item_interact",
@@ -113,6 +132,8 @@
         ]
       },
       {
+        "fromNodeId": "applin",
+        "toNodeId": "flapple",
         "fromSlug": "applin",
         "toSlug": "flapple",
         "method": "item_interact",
@@ -121,6 +142,8 @@
         ]
       },
       {
+        "fromNodeId": "dipplin",
+        "toNodeId": "hydrapple",
         "fromSlug": "dipplin",
         "toSlug": "hydrapple",
         "method": "level_up",

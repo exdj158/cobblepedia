@@ -106,23 +106,34 @@
   "evolutionFamily": {
     "members": [
       {
+        "nodeId": "nidoranf",
         "slug": "nidoranf",
         "name": "Nidoran-F",
-        "dexNumber": 29
+        "dexNumber": 29,
+        "formSlug": null,
+        "formName": null
       },
       {
+        "nodeId": "nidorina",
         "slug": "nidorina",
         "name": "Nidorina",
-        "dexNumber": 30
+        "dexNumber": 30,
+        "formSlug": null,
+        "formName": null
       },
       {
+        "nodeId": "nidoqueen",
         "slug": "nidoqueen",
         "name": "Nidoqueen",
-        "dexNumber": 31
+        "dexNumber": 31,
+        "formSlug": null,
+        "formName": null
       }
     ],
     "edges": [
       {
+        "fromNodeId": "nidoranf",
+        "toNodeId": "nidorina",
         "fromSlug": "nidoranf",
         "toSlug": "nidorina",
         "method": "level_up",
@@ -131,6 +142,8 @@
         ]
       },
       {
+        "fromNodeId": "nidorina",
+        "toNodeId": "nidoqueen",
         "fromSlug": "nidorina",
         "toSlug": "nidoqueen",
         "method": "item_interact",
