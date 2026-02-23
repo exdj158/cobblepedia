@@ -100,6 +100,10 @@ function MoveDetailView(props: { entry: MoveLearnerEntryRecord }) {
 
   const moveTypeId = createMemo(() => canonicalId(props.entry.type ?? ""))
   const moveTypeColor = createMemo(() => MOVE_TYPE_COLORS[moveTypeId()] ?? "#888888")
+  const moveTypeHref = createMemo(() => {
+    const typeId = moveTypeId()
+    return typeId ? `/types/${typeId}` : null
+  })
 
   const availableEggGroups = createMemo(() => {
     const groups = new Set<string>()
@@ -223,6 +227,7 @@ function MoveDetailView(props: { entry: MoveLearnerEntryRecord }) {
             value={formatMoveTypeLabel(props.entry.type)}
             accentColor={moveTypeColor()}
             emphasized
+            href={moveTypeHref()}
           />
           <StatBadge label="Category" value={formatMoveCategory(props.entry.category)} />
           <StatBadge
@@ -398,21 +403,53 @@ function StatBadge(props: {
   value: string
   accentColor?: string
   emphasized?: boolean
+  href?: string | null
 }) {
-  return (
-    <div
-      class={cn("border bg-secondary/40 px-3 py-2", props.emphasized && "bg-secondary/60")}
-      style={props.accentColor ? { "border-color": props.accentColor } : undefined}
-    >
+  const containerClass = cn(
+    "border bg-secondary/40 px-3 py-2",
+    props.emphasized && "bg-secondary/60",
+    props.href &&
+      "block transition-colors hover:border-muted-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-muted-foreground/50"
+  )
+
+  const valueClass = cn(
+    "mt-0.5 font-medium text-sm",
+    props.emphasized && "font-semibold",
+    props.href && "underline-offset-2 hover:underline"
+  )
+
+  const valueStyle =
+    props.emphasized && props.accentColor ? { color: props.accentColor } : undefined
+
+  const content = (
+    <>
       <p class="font-mono text-[10px] text-muted-foreground uppercase tracking-wide">
         {props.label}
       </p>
-      <p
-        class={cn("mt-0.5 font-medium text-sm", props.emphasized && "font-semibold")}
-        style={props.emphasized && props.accentColor ? { color: props.accentColor } : undefined}
-      >
+      <p class={valueClass} style={valueStyle}>
         {props.value}
       </p>
+    </>
+  )
+
+  if (props.href) {
+    return (
+      <a
+        href={props.href}
+        class={containerClass}
+        style={props.accentColor ? { "border-color": props.accentColor } : undefined}
+      >
+        {content}
+      </a>
+    )
+  }
+
+  return (
+    <div
+      class={containerClass}
+      style={props.accentColor ? { "border-color": props.accentColor } : undefined}
+    >
+      {content}
     </div>
   )
 }

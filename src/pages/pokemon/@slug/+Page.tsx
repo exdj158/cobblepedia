@@ -362,10 +362,6 @@ function PokemonDetailView(props: {
       return null
     }
 
-    if (selectedFormSlug() && !resolution.matchedForm) {
-      return "Base form artwork"
-    }
-
     if (artworkUrlIndex() === 1) {
       return "Home artwork"
     }
