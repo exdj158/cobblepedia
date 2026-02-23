@@ -44,6 +44,8 @@ Big feats:
 
 - [ ] Dedicated moves search page. Moves under 'types', rank them by damage, etc. Classify by special, physical, status, etc. sort by damage, etc. search by enhanced crit, terrain moves, etc.
 
-- [ ] Competitive Card for every pokemon: Link a 'pokemondb.net' what-is-a-good-moveset guide for EVERY single pokemon i.e. https://pokemondb.net/pokebase/7066/what-is-a-good-moveset-for-bronzong
+- [x] Competitive Card for every pokemon: Link a 'pokemondb.net' what-is-a-good-moveset guide for EVERY single pokemon i.e. https://pokemondb.net/pokebase/7066/what-is-a-good-moveset-for-bronzong
   - or this https://www.smogon.com/dex/sv/pokemon/krookodile/
   - and definitely this: https://www.pikalytics.com/pokedex/gen9vgc2026regf/krookodile
+
+Improve the design for this new Competitive Card please. each tab looks kinda different so I kinda wanna make them uniform i.e. moves are clickable. Same fonts, for the same elements i.e. Nature, same distributions for ev spread, etc. Make it look better and less boring, but still compact.

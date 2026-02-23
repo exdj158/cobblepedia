@@ -5,6 +5,7 @@ import JSZip from "jszip"
 import type {
   AbilityIndex,
   AbilitySlot,
+  CompetitiveStatSpread,
   EvolutionEdgeRecord,
   ItemIndex,
   MetaRecord,
@@ -19,6 +20,8 @@ import type {
   PokemonTypeEntryRecord,
   RideableMonRecord,
   SearchDocument,
+  SmogonMovesetRecord,
+  SmogonMovesetsByPokemonRecord,
   SpawnEntryRecord,
 } from "../src/data/cobblemon-types"
 import {
@@ -48,6 +51,9 @@ const POKEAPI_POKEMON_CSV_URL =
   "https://raw.githubusercontent.com/PokeAPI/pokeapi/master/data/v2/csv/pokemon.csv"
 const POKEAPI_POKEMON_FORMS_CSV_URL =
   "https://raw.githubusercontent.com/PokeAPI/pokeapi/master/data/v2/csv/pokemon_forms.csv"
+const SMOGON_SETS_GEN9_URL = "https://pkmn.github.io/smogon/data/sets/gen9.json"
+const SMOGON_SETS_FORMAT_ID = "gen9"
+const SMOGON_SETS_FORMAT_LABEL = "Smogon Gen 9"
 const KNOWN_MOVE_PREFIXES = new Set(["egg", "tm", "tutor", "legacy", "special", "form_change"])
 const EVOLUTION_FORM_REGION_ALIASES: Record<string, string> = {
   alola: "alola",
@@ -139,9 +145,14 @@ const EN_US_LANG_PATH = path.join(
 const GENERATED_ROOT = path.join(PROJECT_ROOT, "src/data/generated")
 const GENERATED_BY_SLUG_ROOT = path.join(GENERATED_ROOT, "pokemon-by-slug")
 const GENERATED_MOVE_LEARNER_SHARDS_ROOT = path.join(GENERATED_ROOT, "move-learners-shards")
+const GENERATED_SMOGON_MOVESETS_BY_SLUG_ROOT = path.join(GENERATED_ROOT, "smogon-movesets-by-slug")
 const PUBLIC_GENERATED_ROOT = path.join(PROJECT_ROOT, "public/data/generated")
 const PUBLIC_GENERATED_BY_SLUG_ROOT = path.join(PUBLIC_GENERATED_ROOT, "pokemon-by-slug")
 const PUBLIC_MOVE_LEARNER_SHARDS_ROOT = path.join(PUBLIC_GENERATED_ROOT, "move-learners-shards")
+const PUBLIC_SMOGON_MOVESETS_BY_SLUG_ROOT = path.join(
+  PUBLIC_GENERATED_ROOT,
+  "smogon-movesets-by-slug"
+)
 
 type RawSpeciesFile = {
   slug: string
@@ -248,6 +259,24 @@ type PokeapiSpeciesFormCandidate = {
   suffixCanonical: string
 }
 
+type SmogonSetsPayload = Record<string, unknown>
+
+type RawSmogonSet = {
+  moves?: unknown
+  ability?: unknown
+  item?: unknown
+  nature?: unknown
+  evs?: unknown
+  ivs?: unknown
+  teratypes?: unknown
+}
+
+type SmogonMovesetEntry = {
+  entryName: string
+  canonicalEntryId: string
+  sets: SmogonMovesetRecord[]
+}
+
 await main()
 
 async function main() {
@@ -308,6 +337,7 @@ async function main() {
   const itemIndex = await loadItemIndex()
   const rideableMons = buildRideableMons(detailsBySlug)
   const pokemonFormSpriteIndex = await buildPokemonFormSpriteIndex(detailsBySlug)
+  const smogonMovesetsBySlug = await buildSmogonMovesetsBySlug(detailsBySlug)
   const searchIndex = buildSearchIndex(pokemonList, moveLearners)
 
   if (searchIndex.some((doc) => doc.resultType === "pokemon-overview" && !doc.implemented)) {
@@ -342,6 +372,7 @@ async function main() {
     itemIndex,
     rideableMons,
     pokemonFormSpriteIndex,
+    smogonMovesetsBySlug,
     searchIndex,
     detailsBySlug,
   })
@@ -353,6 +384,7 @@ async function main() {
   console.log(`- Move map size: ${meta.moveCount}`)
   console.log(`- Item entries: ${meta.itemCount}`)
   console.log(`- Form sprite mappings: ${Object.keys(pokemonFormSpriteIndex).length}`)
+  console.log(`- Smogon moveset shards: ${smogonMovesetsBySlug.size}`)
   console.log(`- Learnset entries parsed: ${showdownData.learnsetCount}`)
 }
 
@@ -2818,6 +2850,374 @@ function buildRideableMons(detailsBySlug: Map<string, PokemonDetailRecord>): Rid
     })
 }
 
+async function buildSmogonMovesetsBySlug(
+  detailsBySlug: Map<string, PokemonDetailRecord>
+): Promise<Map<string, SmogonMovesetsByPokemonRecord>> {
+  const payload = await fetchSmogonSetsPayload()
+  const smogonLookup = payload
+    ? buildSmogonSetsLookup(payload)
+    : new Map<string, SmogonMovesetEntry>()
+  const generatedAt = new Date().toISOString()
+
+  const shards = new Map<string, SmogonMovesetsByPokemonRecord>()
+  const sortedDetails = Array.from(detailsBySlug.values()).sort((left, right) => {
+    if (left.dexNumber !== right.dexNumber) {
+      return left.dexNumber - right.dexNumber
+    }
+
+    return left.slug.localeCompare(right.slug)
+  })
+
+  for (const detail of sortedDetails) {
+    const defaultEntry = resolveSmogonMovesetEntry(
+      buildSmogonSpeciesCandidates(detail),
+      smogonLookup
+    )
+    const usedEntryIds = new Set<string>()
+    if (defaultEntry) {
+      usedEntryIds.add(defaultEntry.canonicalEntryId)
+    }
+
+    const formEntries: Record<string, SmogonMovesetsByPokemonRecord["formEntries"][string]> = {}
+
+    for (const form of detail.forms) {
+      const formEntry = resolveSmogonMovesetEntry(
+        buildSmogonFormCandidates(detail, form),
+        smogonLookup,
+        usedEntryIds
+      )
+      if (!formEntry) {
+        continue
+      }
+
+      usedEntryIds.add(formEntry.canonicalEntryId)
+      formEntries[form.slug] = {
+        entryName: formEntry.entryName,
+        sets: formEntry.sets,
+      }
+    }
+
+    shards.set(detail.slug, {
+      slug: detail.slug,
+      name: detail.name,
+      formatId: SMOGON_SETS_FORMAT_ID,
+      formatLabel: SMOGON_SETS_FORMAT_LABEL,
+      sourceUrl: SMOGON_SETS_GEN9_URL,
+      generatedAt,
+      defaultEntryName: defaultEntry?.entryName ?? null,
+      defaultSets: defaultEntry?.sets ?? [],
+      formEntries,
+    })
+  }
+
+  return shards
+}
+
+async function fetchSmogonSetsPayload(): Promise<SmogonSetsPayload | null> {
+  try {
+    const response = await fetch(SMOGON_SETS_GEN9_URL)
+    if (!response.ok) {
+      throw new Error(`request failed with status ${response.status}`)
+    }
+
+    const payload = (await response.json()) as unknown
+    if (!isRecord(payload)) {
+      return null
+    }
+
+    return payload as SmogonSetsPayload
+  } catch (error) {
+    const message = error instanceof Error ? error.message : "unknown error"
+    console.warn(`[warn] Unable to fetch Smogon gen9 sets: ${message}`)
+    return null
+  }
+}
+
+function buildSmogonSetsLookup(payload: SmogonSetsPayload): Map<string, SmogonMovesetEntry> {
+  const lookup = new Map<string, SmogonMovesetEntry>()
+
+  const entries = Object.entries(payload).sort(([leftName], [rightName]) => {
+    return leftName.localeCompare(rightName)
+  })
+
+  for (const [entryName, rawSets] of entries) {
+    const canonicalEntryId = canonicalId(entryName)
+    if (!canonicalEntryId || lookup.has(canonicalEntryId)) {
+      continue
+    }
+
+    const sets = normalizeSmogonSets(rawSets)
+    if (sets.length === 0) {
+      continue
+    }
+
+    lookup.set(canonicalEntryId, {
+      entryName,
+      canonicalEntryId,
+      sets,
+    })
+  }
+
+  return lookup
+}
+
+function normalizeSmogonSets(value: unknown): SmogonMovesetRecord[] {
+  if (!isRecord(value)) {
+    return []
+  }
+
+  // gen9.json has structure: Pokemon -> tier -> setName -> setData
+  // We need to extract sets from all tiers
+  const results: SmogonMovesetRecord[] = []
+
+  for (const [tierName, tierData] of Object.entries(value)) {
+    if (!isRecord(tierData)) {
+      continue
+    }
+
+    const tierSets = extractTierSets(tierName, tierData)
+    results.push(...tierSets)
+  }
+
+  // Sort by tier priority (OU first, then UU, RU, etc.) then by set name
+  const tierPriority: Record<string, number> = {
+    ou: 0,
+    uubl: 1,
+    uu: 2,
+    rubl: 3,
+    ru: 4,
+    nubl: 5,
+    nu: 6,
+    publ: 7,
+    pu: 8,
+    zu: 9,
+    nfe: 10,
+  }
+
+  results.sort((left, right) => {
+    const leftPriority = tierPriority[left.tier.toLowerCase()] ?? 100
+    const rightPriority = tierPriority[right.tier.toLowerCase()] ?? 100
+    if (leftPriority !== rightPriority) {
+      return leftPriority - rightPriority
+    }
+    return left.name.localeCompare(right.name)
+  })
+
+  return results
+}
+
+function extractTierSets(
+  tierName: string,
+  tierData: Record<string, unknown>
+): SmogonMovesetRecord[] {
+  const results: SmogonMovesetRecord[] = []
+
+  for (const [setName, rawSetValue] of Object.entries(tierData)) {
+    if (!isRecord(rawSetValue)) {
+      continue
+    }
+
+    const rawSet = rawSetValue as RawSmogonSet
+    const moves = normalizeSmogonMoveSlots(rawSet.moves)
+    const ability = typeof rawSet.ability === "string" ? rawSet.ability.trim() : null
+    const item = typeof rawSet.item === "string" ? rawSet.item.trim() : null
+    const natures = normalizeSmogonStringList(rawSet.nature)
+    const teraTypes = normalizeSmogonStringList(rawSet.teratypes)
+    const evs = normalizeSmogonStatSpread(rawSet.evs)
+    const ivs = normalizeSmogonStatSpread(rawSet.ivs)
+
+    const hasUsefulData =
+      moves.length > 0 ||
+      ability !== null ||
+      item !== null ||
+      natures.length > 0 ||
+      teraTypes.length > 0 ||
+      Object.keys(evs).length > 0 ||
+      Object.keys(ivs).length > 0
+
+    if (!hasUsefulData) {
+      continue
+    }
+
+    results.push({
+      name: setName,
+      tier: tierName.toUpperCase(),
+      ability,
+      item,
+      natures,
+      teraTypes,
+      moves,
+      evs,
+      ivs,
+    })
+  }
+
+  return results
+}
+
+function normalizeSmogonMoveSlots(value: unknown): string[][] {
+  if (!Array.isArray(value)) {
+    return []
+  }
+
+  const slots: string[][] = []
+
+  for (const slotValue of value) {
+    if (typeof slotValue === "string") {
+      const moveName = slotValue.trim()
+      if (moveName) {
+        slots.push([moveName])
+      }
+      continue
+    }
+
+    if (!Array.isArray(slotValue)) {
+      continue
+    }
+
+    const options = slotValue
+      .map((entry) => (typeof entry === "string" ? entry.trim() : ""))
+      .filter((entry) => entry.length > 0)
+
+    if (options.length > 0) {
+      slots.push(Array.from(new Set(options)))
+    }
+  }
+
+  return slots
+}
+
+function normalizeSmogonStringList(value: unknown): string[] {
+  if (typeof value === "string") {
+    const normalized = value.trim()
+    return normalized ? [normalized] : []
+  }
+
+  if (!Array.isArray(value)) {
+    return []
+  }
+
+  const values = value
+    .map((entry) => (typeof entry === "string" ? entry.trim() : ""))
+    .filter((entry) => entry.length > 0)
+
+  return Array.from(new Set(values))
+}
+
+function normalizeSmogonStatSpread(value: unknown): CompetitiveStatSpread {
+  if (!isRecord(value)) {
+    return {}
+  }
+
+  const stats = ["hp", "atk", "def", "spa", "spd", "spe"] as const
+  const spread: CompetitiveStatSpread = {}
+
+  for (const statKey of stats) {
+    const rawStat = value[statKey]
+    if (typeof rawStat !== "number" || !Number.isFinite(rawStat)) {
+      continue
+    }
+
+    spread[statKey] = Math.trunc(rawStat)
+  }
+
+  return spread
+}
+
+function resolveSmogonMovesetEntry(
+  candidates: string[],
+  lookup: Map<string, SmogonMovesetEntry>,
+  excludedCanonicalIds: Set<string> = new Set()
+): SmogonMovesetEntry | null {
+  for (const candidate of candidates) {
+    const candidateId = canonicalId(candidate)
+    if (!candidateId || excludedCanonicalIds.has(candidateId)) {
+      continue
+    }
+
+    const entry = lookup.get(candidateId)
+    if (entry) {
+      return entry
+    }
+  }
+
+  return null
+}
+
+function buildSmogonSpeciesCandidates(detail: PokemonDetailRecord): string[] {
+  return dedupeSmogonCandidates([detail.name, detail.slug, normalizePokeapiIdentifier(detail.name)])
+}
+
+function buildSmogonFormCandidates(detail: PokemonDetailRecord, form: PokemonFormRecord): string[] {
+  const baseNameNormalized = normalizePokeapiIdentifier(detail.name)
+  const formNameNormalized = normalizePokeapiIdentifier(form.name)
+  const formSlugSuffix = extractFormSlugSuffix(detail.slug, form.slug)
+  const suffixCandidates = buildCanonicalFormSuffixCandidates({
+    baseSlug: detail.slug,
+    formSlug: form.slug,
+    formName: form.name,
+    baseCanonical: canonicalId(detail.slug),
+    defaultIdentifierCanonical: baseNameNormalized ? canonicalId(baseNameNormalized) : null,
+  })
+
+  const candidates: string[] = [
+    form.slug,
+    `${detail.name}-${form.name}`,
+    `${detail.name} ${form.name}`,
+    `${detail.slug}-${form.name}`,
+    `${detail.slug}-${formSlugSuffix}`,
+    `${detail.name}-${formSlugSuffix}`,
+  ]
+
+  if (baseNameNormalized) {
+    candidates.push(`${baseNameNormalized}-${formNameNormalized}`)
+    candidates.push(`${baseNameNormalized}-${formSlugSuffix}`)
+  }
+
+  for (const suffix of suffixCandidates) {
+    candidates.push(`${detail.name}-${suffix}`)
+    candidates.push(`${detail.slug}-${suffix}`)
+
+    if (baseNameNormalized) {
+      candidates.push(`${baseNameNormalized}-${suffix}`)
+    }
+  }
+
+  for (const aspect of form.aspects) {
+    const normalizedAspect = normalizePokeapiIdentifier(aspect)
+    candidates.push(`${detail.name}-${aspect}`)
+    candidates.push(`${detail.slug}-${aspect}`)
+
+    if (normalizedAspect) {
+      candidates.push(`${detail.name}-${normalizedAspect}`)
+      candidates.push(`${detail.slug}-${normalizedAspect}`)
+      if (baseNameNormalized) {
+        candidates.push(`${baseNameNormalized}-${normalizedAspect}`)
+      }
+    }
+  }
+
+  return dedupeSmogonCandidates(candidates)
+}
+
+function dedupeSmogonCandidates(values: string[]): string[] {
+  const deduped: string[] = []
+  const seen = new Set<string>()
+
+  for (const rawValue of values) {
+    const normalizedValue = rawValue.trim()
+    const canonicalValue = canonicalId(normalizedValue)
+    if (!normalizedValue || !canonicalValue || seen.has(canonicalValue)) {
+      continue
+    }
+
+    seen.add(canonicalValue)
+    deduped.push(normalizedValue)
+  }
+
+  return deduped
+}
+
 function buildSearchIndex(
   pokemonList: PokemonListItem[],
   moveLearners: MoveLearnersIndex
@@ -2908,16 +3308,19 @@ async function writeArtifacts(params: {
   itemIndex: ItemIndex
   rideableMons: RideableMonRecord[]
   pokemonFormSpriteIndex: PokemonFormSpriteIndex
+  smogonMovesetsBySlug: Map<string, SmogonMovesetsByPokemonRecord>
   searchIndex: SearchDocument[]
   detailsBySlug: Map<string, PokemonDetailRecord>
 }) {
   await rm(GENERATED_ROOT, { recursive: true, force: true })
   await mkdir(GENERATED_BY_SLUG_ROOT, { recursive: true })
   await mkdir(GENERATED_MOVE_LEARNER_SHARDS_ROOT, { recursive: true })
+  await mkdir(GENERATED_SMOGON_MOVESETS_BY_SLUG_ROOT, { recursive: true })
 
   await rm(PUBLIC_GENERATED_ROOT, { recursive: true, force: true })
   await mkdir(PUBLIC_GENERATED_BY_SLUG_ROOT, { recursive: true })
   await mkdir(PUBLIC_MOVE_LEARNER_SHARDS_ROOT, { recursive: true })
+  await mkdir(PUBLIC_SMOGON_MOVESETS_BY_SLUG_ROOT, { recursive: true })
 
   const writeSharedArtifact = async (fileName: string, data: unknown) => {
     await writeJsonFile(path.join(GENERATED_ROOT, fileName), data)
@@ -2938,6 +3341,12 @@ async function writeArtifacts(params: {
     const shardFileName = `${shardId}.json`
     await writeJsonFile(path.join(GENERATED_MOVE_LEARNER_SHARDS_ROOT, shardFileName), shardData)
     await writeJsonFile(path.join(PUBLIC_MOVE_LEARNER_SHARDS_ROOT, shardFileName), shardData)
+  }
+
+  for (const [slug, smogonMovesets] of params.smogonMovesetsBySlug) {
+    const fileName = `${slug}.json`
+    await writeJsonFile(path.join(GENERATED_SMOGON_MOVESETS_BY_SLUG_ROOT, fileName), smogonMovesets)
+    await writeJsonFile(path.join(PUBLIC_SMOGON_MOVESETS_BY_SLUG_ROOT, fileName), smogonMovesets)
   }
 
   const sortedDetails = Array.from(params.detailsBySlug.entries()).sort(([left], [right]) => {

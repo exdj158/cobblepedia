@@ -9,6 +9,8 @@ import {
   IconBox,
   IconEgg,
   IconForms,
+  IconIconArrowUpRight,
+  IconIconGhost,
   IconMapPin,
   IconShield,
   IconSword,
@@ -23,12 +25,14 @@ import type {
   PokemonDexNavItem,
   PokemonDexNeighbors,
   RideableSummaryRecord,
+  SmogonMovesetRecord,
 } from "@/data/cobblemon-types"
 import {
   loadItemIndex,
   loadMoveLearnerEntry,
   loadPokemonDetail,
   loadPokemonDexNeighbors,
+  loadSmogonMovesetsBySlug,
 } from "@/data/data-loader"
 import {
   canonicalId,
@@ -850,12 +854,6 @@ function PokemonDetailView(props: {
         <div class="space-y-6">
           <MovesSection moves={activeMoves()} activeFormName={selectedForm()?.name ?? null} />
 
-          <CompetitiveSection
-            slug={detail().slug}
-            name={detail().name}
-            selectedForm={selectedForm()}
-          />
-
           {/* Spawn Locations */}
           <section class="border border-border bg-card">
             <div class="flex items-center gap-2 border-border border-b bg-secondary px-4 py-3">
@@ -943,6 +941,15 @@ function PokemonDetailView(props: {
           />
         </Show>
       </section>
+
+      <div class="mt-6">
+        <CompetitiveSection
+          slug={detail().slug}
+          name={detail().name}
+          dexNumber={detail().dexNumber}
+          selectedForm={selectedForm()}
+        />
+      </div>
 
       <Show when={leaderHotkeys.leaderActive()}>
         <div class="pointer-events-none fixed right-4 bottom-4 z-50 w-80 max-w-[calc(100vw-2rem)] border border-border bg-card/95 shadow-lg backdrop-blur-sm">
@@ -1241,11 +1248,42 @@ function MovesSection(props: {
   )
 }
 
+const TIER_COLORS: Record<string, { bg: string; text: string; border: string }> = {
+  OU: { bg: "bg-amber-500/15", text: "text-amber-600", border: "border-amber-500/30" },
+  UUBL: { bg: "bg-amber-400/15", text: "text-amber-500", border: "border-amber-400/30" },
+  UU: { bg: "bg-blue-500/15", text: "text-blue-600", border: "border-blue-500/30" },
+  RUBL: { bg: "bg-blue-400/15", text: "text-blue-500", border: "border-blue-400/30" },
+  RU: { bg: "bg-cyan-500/15", text: "text-cyan-600", border: "border-cyan-500/30" },
+  NUBL: { bg: "bg-cyan-400/15", text: "text-cyan-500", border: "border-cyan-400/30" },
+  NU: { bg: "bg-teal-500/15", text: "text-teal-600", border: "border-teal-500/30" },
+  PUBL: { bg: "bg-teal-400/15", text: "text-teal-500", border: "border-teal-400/30" },
+  PU: { bg: "bg-emerald-500/15", text: "text-emerald-600", border: "border-emerald-500/30" },
+  ZU: { bg: "bg-slate-500/15", text: "text-slate-600", border: "border-slate-500/30" },
+  NFE: { bg: "bg-gray-500/15", text: "text-gray-600", border: "border-gray-500/30" },
+  LC: { bg: "bg-indigo-500/15", text: "text-indigo-600", border: "border-indigo-500/30" },
+  Uber: { bg: "bg-red-500/15", text: "text-red-600", border: "border-red-500/30" },
+  AG: { bg: "bg-red-600/15", text: "text-red-700", border: "border-red-600/30" },
+}
+
+function getTierColors(tier: string) {
+  return (
+    TIER_COLORS[tier] ?? {
+      bg: "bg-secondary",
+      text: "text-muted-foreground",
+      border: "border-border",
+    }
+  )
+}
+
 function CompetitiveSection(props: {
   slug: string
   name: string
+  dexNumber: number
   selectedForm: PokemonDetailRecord["forms"][number] | null
 }) {
+  const [activeTab, setActiveTab] = createSignal<"movesets" | "stats">("movesets")
+  const [showAllMovesets, setShowAllMovesets] = createSignal(false)
+
   const selectedFormHint = createMemo<CompetitiveFormHint | null>(() => {
     if (!props.selectedForm) {
       return null
@@ -1294,10 +1332,60 @@ function CompetitiveSection(props: {
       }),
   }))
 
+  const smogonMovesetsQuery = useQuery(() => ({
+    queryKey: ["competitive-smogon-movesets", props.slug],
+    enabled: !import.meta.env.SSR,
+    staleTime: 1000 * 60 * 60 * 6,
+    queryFn: () => loadSmogonMovesetsBySlug(props.slug),
+  }))
+
   const competitiveData = createMemo<CompetitiveReferenceData | null>(
     () => competitiveQuery.data ?? null
   )
   const snapshot = createMemo(() => competitiveData()?.snapshot ?? null)
+  const smogonMovesets = createMemo(() => smogonMovesetsQuery.data ?? null)
+
+  const activeSmogonEntry = createMemo<{ entryName: string; sets: SmogonMovesetRecord[] } | null>(
+    () => {
+      const payload = smogonMovesets()
+      if (!payload) {
+        return null
+      }
+
+      const selectedFormSlug = selectedFormHint()?.slug
+      if (selectedFormSlug) {
+        const formEntry = payload.formEntries[selectedFormSlug]
+        if (formEntry && formEntry.sets.length > 0) {
+          return {
+            entryName: formEntry.entryName,
+            sets: formEntry.sets,
+          }
+        }
+      }
+
+      if (payload.defaultSets.length === 0) {
+        return null
+      }
+
+      return {
+        entryName: payload.defaultEntryName ?? payload.name,
+        sets: payload.defaultSets,
+      }
+    }
+  )
+
+  const visibleSmogonSets = createMemo(() => {
+    const entry = activeSmogonEntry()
+    if (!entry) return []
+    if (showAllMovesets()) return entry.sets
+    return entry.sets.slice(0, 2)
+  })
+
+  const hasMoreSets = createMemo(() => {
+    const entry = activeSmogonEntry()
+    if (!entry) return false
+    return entry.sets.length > 2
+  })
 
   const smogonUrl = createMemo(() => competitiveData()?.smogonUrl ?? buildSmogonDexUrl(props.slug))
   const pikalyticsUrl = createMemo(
@@ -1308,143 +1396,361 @@ function CompetitiveSection(props: {
     formatCompetitiveDataDate(competitiveData()?.pikalyticsDataDate ?? null)
   )
 
+  const smogonFormatLabel = createMemo(() => smogonMovesets()?.formatLabel ?? "Smogon Gen 9")
+
   return (
     <section class="border border-border bg-card">
-      <div class="flex items-center gap-2 border-border border-b bg-secondary px-4 py-3">
-        <IconShield class="h-4 w-4 text-muted-foreground" />
-        <h2 class="font-semibold">Competitive</h2>
-      </div>
+      <div class="flex items-center justify-between gap-2 border-border border-b bg-secondary px-4 py-3">
+        <div class="flex items-center gap-2">
+          <IconShield class="h-4 w-4 text-muted-foreground" />
+          <h2 class="font-semibold">Competitive</h2>
+        </div>
 
-      <div class="space-y-4 p-4">
-        {/* Description */}
-        <p class="text-muted-foreground text-sm">
-          External battle references for common movesets, items, and abilities.
-        </p>
-
-        {/* External Links */}
-        <div class="grid gap-2 sm:grid-cols-2">
+        <div class="flex flex-wrap items-center gap-1.5">
           <a
             href={smogonUrl()}
             target="_blank"
             rel="noreferrer noopener"
-            class="group flex items-center gap-3 border border-border bg-secondary px-3 py-2.5 text-xs transition-all hover:border-foreground/20 hover:bg-secondary/80"
+            class="group inline-flex items-center gap-1.5 border border-border bg-background px-2.5 py-1 text-[11px] text-muted-foreground transition-colors hover:border-muted-foreground hover:text-foreground"
           >
             <img
               src={SMOGON_LOGO_URL}
               alt=""
-              class="h-4 w-4 object-contain opacity-70 transition-opacity group-hover:opacity-100"
+              class="h-3 w-3 object-contain"
               loading="lazy"
               decoding="async"
               referrerPolicy="no-referrer"
             />
-            <span class="flex-1 font-medium">Smogon Analysis</span>
-            <IconArrowRight class="h-3 w-3 text-muted-foreground opacity-0 transition-all group-hover:translate-x-0.5 group-hover:opacity-100" />
+            Smogon
+            <IconIconArrowUpRight class="h-3 w-3 opacity-60 transition-opacity group-hover:opacity-100" />
           </a>
           <a
             href={pikalyticsUrl()}
             target="_blank"
             rel="noreferrer noopener"
-            class="group flex items-center gap-3 border border-border bg-secondary px-3 py-2.5 text-xs transition-all hover:border-foreground/20 hover:bg-secondary/80"
+            class="group inline-flex items-center gap-1.5 border border-border bg-background px-2.5 py-1 text-[11px] text-muted-foreground transition-colors hover:border-muted-foreground hover:text-foreground"
           >
             <img
               src={PIKALYTICS_LOGO_URL}
               alt=""
-              class="h-4 w-4 object-contain opacity-70 transition-opacity group-hover:opacity-100"
+              class="h-3 w-3 object-contain"
               loading="lazy"
               decoding="async"
               referrerPolicy="no-referrer"
             />
-            <span class="flex-1 font-medium">Pikalytics Stats</span>
-            <IconArrowRight class="h-3 w-3 text-muted-foreground opacity-0 transition-all group-hover:translate-x-0.5 group-hover:opacity-100" />
+            Pikalytics
+            <IconIconArrowUpRight class="h-3 w-3 opacity-60 transition-opacity group-hover:opacity-100" />
           </a>
         </div>
+      </div>
 
-        {/* Metadata */}
-        <div class="flex flex-wrap items-center gap-1.5 text-[10px] text-muted-foreground">
-          <span class="border border-border bg-secondary px-1.5 py-0.5 font-mono uppercase tracking-wide">
-            {competitiveData()?.pikalyticsFormatLabel ?? "VGC 2026 Regulation Set F (1760+)"}
-          </span>
-          <Show when={pikalyticsDataDateLabel()}>
-            {(label) => (
-              <span class="border border-border bg-secondary/50 px-1.5 py-0.5 font-mono uppercase tracking-wide">
-                {label()}
-              </span>
-            )}
-          </Show>
-          <Show when={snapshot()?.ranking != null}>
-            <span class="border border-border bg-secondary/50 px-1.5 py-0.5 font-mono uppercase tracking-wide">
-              #{snapshot()?.ranking}
-            </span>
-          </Show>
-          <Show when={snapshot()?.usagePercent != null}>
-            <span class="border border-border bg-secondary/50 px-1.5 py-0.5 font-mono uppercase tracking-wide">
-              {formatCompetitivePercent(snapshot()?.usagePercent ?? 0)}
-            </span>
-          </Show>
+      <div class="space-y-4 p-4">
+        <div class="flex flex-wrap items-center gap-3">
+          <div class="inline-flex border border-border bg-secondary/30 p-0.5">
+            <button
+              type="button"
+              class={cn(
+                "px-4 py-1.5 font-medium text-[11px] uppercase tracking-wide transition-colors",
+                activeTab() === "movesets"
+                  ? "bg-foreground text-background"
+                  : "text-muted-foreground hover:text-foreground"
+              )}
+              onClick={() => setActiveTab("movesets")}
+            >
+              Movesets
+            </button>
+            <button
+              type="button"
+              class={cn(
+                "px-4 py-1.5 font-medium text-[11px] uppercase tracking-wide transition-colors",
+                activeTab() === "stats"
+                  ? "bg-foreground text-background"
+                  : "text-muted-foreground hover:text-foreground"
+              )}
+              onClick={() => setActiveTab("stats")}
+            >
+              Stats
+            </button>
+          </div>
+
+          <p class="text-muted-foreground text-xs">Data from Smogon/Pikalytics, not Cobblemon.</p>
         </div>
 
-        {/* Data Content */}
         <Show
-          when={!competitiveQuery.isPending}
+          when={activeTab() === "movesets"}
           fallback={
-            <div class="flex items-center gap-2 text-muted-foreground text-xs">
-              <div class="h-3.5 w-3.5 animate-spin rounded-full border-2 border-border border-t-foreground" />
-              Loading competitive data...
+            <div class="space-y-4">
+              <div class="flex flex-wrap items-center gap-1.5 text-[10px]">
+                <span class="border border-border bg-secondary px-2 py-1 font-mono uppercase tracking-wide">
+                  {competitiveData()?.pikalyticsFormatLabel ?? "VGC 2026 Regulation Set F (1760+)"}
+                </span>
+                <Show when={pikalyticsDataDateLabel()}>
+                  {(label) => (
+                    <span class="border border-border bg-secondary/50 px-2 py-1 font-mono text-muted-foreground uppercase tracking-wide">
+                      {label()}
+                    </span>
+                  )}
+                </Show>
+                <Show when={snapshot()?.ranking != null}>
+                  <span class="border border-border bg-secondary/50 px-2 py-1 font-mono uppercase tracking-wide">
+                    #{snapshot()?.ranking}
+                  </span>
+                </Show>
+                <Show when={snapshot()?.usagePercent != null}>
+                  <span class="border border-border bg-secondary/50 px-2 py-1 font-mono uppercase tracking-wide">
+                    {formatCompetitivePercent(snapshot()?.usagePercent ?? 0)}
+                  </span>
+                </Show>
+              </div>
+
+              <Show
+                when={!competitiveQuery.isPending}
+                fallback={
+                  <div class="flex items-center gap-2 text-muted-foreground text-xs">
+                    <div class="h-3.5 w-3.5 animate-spin rounded-full border-2 border-border border-t-foreground" />
+                    Loading Pikalytics stats...
+                  </div>
+                }
+              >
+                <Show
+                  when={snapshot()}
+                  fallback={
+                    <div class="flex items-start gap-2 rounded-sm border border-border bg-secondary/30 px-3 py-2.5 text-xs">
+                      <IconIconGhost class="mt-0.5 h-3.5 w-3.5 shrink-0 text-muted-foreground/60" />
+                      <p class="text-muted-foreground">
+                        No reliable ladder sample available for this species in the current format.
+                      </p>
+                    </div>
+                  }
+                >
+                  {(snapshotSignal) => (
+                    <div class="space-y-4">
+                      <div class="grid gap-3 md:grid-cols-3">
+                        <CompetitiveMovesList entries={snapshotSignal().topMoves} emptyLabel="—" />
+                        <CompetitiveDistributionList
+                          title="Items"
+                          entries={snapshotSignal().topItems}
+                          emptyLabel="—"
+                        />
+                        <CompetitiveDistributionList
+                          title="Abilities"
+                          entries={snapshotSignal().topAbilities}
+                          emptyLabel="—"
+                        />
+                      </div>
+
+                      <Show when={snapshotSignal().topSpread}>
+                        {(spread) => (
+                          <div class="flex items-center gap-3 rounded-sm border border-border bg-secondary/30 px-4 py-3">
+                            <span class="font-mono text-[10px] text-muted-foreground uppercase tracking-wide">
+                              EV Spread
+                            </span>
+                            <div class="flex flex-1 flex-wrap items-center gap-x-4 gap-y-1 text-xs">
+                              <span class="font-medium font-mono">{spread().nature}</span>
+                              <span class="font-mono text-muted-foreground">
+                                {spread().evSpread}
+                              </span>
+                              <span class="font-mono text-[10px] text-muted-foreground/70">
+                                {formatCompetitivePercent(spread().percent)}
+                              </span>
+                            </div>
+                          </div>
+                        )}
+                      </Show>
+                    </div>
+                  )}
+                </Show>
+              </Show>
             </div>
           }
         >
           <Show
-            when={snapshot()}
+            when={!smogonMovesetsQuery.isPending}
             fallback={
-              <div class="flex items-start gap-2 rounded-sm border border-border bg-secondary/30 px-3 py-2.5 text-xs">
-                <div class="mt-0.5 h-1.5 w-1.5 shrink-0 rounded-full bg-muted-foreground/50" />
-                <p class="text-muted-foreground">
-                  No reliable ladder sample available. Use the links above for set research.
-                </p>
+              <div class="flex items-center gap-2 text-muted-foreground text-xs">
+                <div class="h-3.5 w-3.5 animate-spin rounded-full border-2 border-border border-t-foreground" />
+                Loading Smogon movesets...
               </div>
             }
           >
-            {(snapshotSignal) => (
-              <div class="space-y-4">
-                {/* Stats Grid */}
-                <div class="grid gap-2 sm:grid-cols-3">
-                  <CompetitiveMovesList entries={snapshotSignal().topMoves} emptyLabel="—" />
-                  <CompetitiveDistributionList
-                    title="Items"
-                    entries={snapshotSignal().topItems}
-                    emptyLabel="—"
-                  />
-                  <CompetitiveDistributionList
-                    title="Abilities"
-                    entries={snapshotSignal().topAbilities}
-                    emptyLabel="—"
-                  />
+            <Show
+              when={activeSmogonEntry()}
+              fallback={
+                <div class="flex items-start gap-2 rounded-sm border border-border bg-secondary/30 px-3 py-2.5 text-xs">
+                  <IconIconGhost class="mt-0.5 h-3.5 w-3.5 shrink-0 text-muted-foreground/60" />
+                  <p class="text-muted-foreground">
+                    No Smogon movesets available for this species or selected form.
+                  </p>
                 </div>
+              }
+            >
+              {(entrySignal) => (
+                <div class="space-y-4">
+                  <div class="flex flex-wrap items-center gap-1.5 text-[10px]">
+                    <span class="border border-border bg-secondary px-2 py-1 font-mono uppercase tracking-wide">
+                      {smogonFormatLabel()}
+                    </span>
+                    <span class="border border-border bg-secondary/50 px-2 py-1 font-mono text-muted-foreground uppercase tracking-wide">
+                      {entrySignal().sets.length} sets
+                    </span>
+                    <span class="inline-flex items-center gap-1.5 border border-border bg-secondary/50 px-2 py-1 font-mono text-muted-foreground uppercase tracking-wide">
+                      <img
+                        src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${props.dexNumber}.png`}
+                        alt=""
+                        class="h-3.5 w-3.5 object-contain"
+                        loading="lazy"
+                      />
+                      {entrySignal().entryName}
+                    </span>
+                  </div>
 
-                {/* Spread */}
-                <Show when={snapshotSignal().topSpread}>
-                  {(spread) => (
-                    <div class="flex items-center gap-3 rounded-sm border border-border bg-secondary/30 px-3 py-2.5">
-                      <span class="text-[10px] text-muted-foreground uppercase tracking-wide">
-                        EV Spread
-                      </span>
-                      <div class="flex flex-1 flex-wrap items-center gap-x-3 gap-y-1 text-xs">
-                        <span class="font-medium font-mono">{spread().nature}</span>
-                        <span class="font-mono text-muted-foreground">{spread().evSpread}</span>
-                        <span class="font-mono text-[10px] text-muted-foreground/70">
-                          {formatCompetitivePercent(spread().percent)}
-                        </span>
-                      </div>
-                    </div>
-                  )}
-                </Show>
-              </div>
-            )}
+                  <div class="grid gap-3">
+                    <For each={visibleSmogonSets()}>
+                      {(moveset) => <SmogonMovesetCard moveset={moveset} />}
+                    </For>
+                  </div>
+
+                  <Show when={hasMoreSets()}>
+                    <button
+                      type="button"
+                      onClick={() => setShowAllMovesets(!showAllMovesets())}
+                      class="w-full border border-border bg-secondary/30 px-4 py-2.5 font-medium text-muted-foreground text-xs transition-colors hover:border-muted-foreground hover:text-foreground"
+                    >
+                      {showAllMovesets()
+                        ? "Show less"
+                        : `Show ${entrySignal().sets.length - 2} more sets`}
+                    </button>
+                  </Show>
+                </div>
+              )}
+            </Show>
           </Show>
         </Show>
       </div>
     </section>
   )
+}
+
+function SmogonMovesetCard(props: { moveset: SmogonMovesetRecord }) {
+  const evSpread = createMemo(() => formatSmogonStatSpread(props.moveset.evs))
+  const ivSpread = createMemo(() => formatSmogonStatSpread(props.moveset.ivs))
+  const tierColors = createMemo(() => getTierColors(props.moveset.tier))
+
+  return (
+    <div class="border border-border bg-secondary/20 p-2.5">
+      {/* Compact Header */}
+      <div class="mb-2 flex items-center justify-between gap-2">
+        <h3 class="truncate font-medium text-xs">{props.moveset.name}</h3>
+        <span
+          class={cn(
+            "shrink-0 border px-1.5 py-0.5 font-mono text-[9px] uppercase tracking-wide",
+            tierColors().bg,
+            tierColors().text,
+            tierColors().border
+          )}
+        >
+          {props.moveset.tier}
+        </span>
+      </div>
+
+      {/* Compact Info Bar */}
+      <div class="mb-2 flex flex-wrap items-center gap-x-3 gap-y-1 text-[10px]">
+        <Show when={props.moveset.ability}>
+          {(ability) => (
+            <span class="flex items-center gap-1">
+              <span class="font-mono text-[9px] text-muted-foreground uppercase">Abi</span>
+              <span class="font-medium">{ability()}</span>
+            </span>
+          )}
+        </Show>
+        <Show when={props.moveset.item}>
+          {(item) => (
+            <span class="flex items-center gap-1">
+              <span class="font-mono text-[9px] text-muted-foreground uppercase">Item</span>
+              <span class="font-medium">{item()}</span>
+            </span>
+          )}
+        </Show>
+        <Show when={props.moveset.natures.length > 0}>
+          <span class="flex items-center gap-1">
+            <span class="font-mono text-[9px] text-muted-foreground uppercase">Nat</span>
+            <span class="font-mono">{props.moveset.natures.join("/")}</span>
+          </span>
+        </Show>
+        <Show when={props.moveset.teraTypes.length > 0}>
+          <span class="flex items-center gap-1">
+            <span class="font-mono text-[9px] text-muted-foreground uppercase">Tera</span>
+            <span>{props.moveset.teraTypes.join("/")}</span>
+          </span>
+        </Show>
+      </div>
+
+      {/* Compact Moves - Single Row */}
+      <div class="mb-2 flex flex-wrap gap-x-3 gap-y-0.5 text-[10px]">
+        <For each={props.moveset.moves}>
+          {(moveOptions) => <SmogonMoveSlotCompact moveOptions={moveOptions} />}
+        </For>
+      </div>
+
+      {/* Compact EV/IV */}
+      <Show when={evSpread() || ivSpread()}>
+        <div class="flex flex-wrap gap-x-3 gap-y-0.5 border-border border-t pt-1.5 text-[10px] text-muted-foreground">
+          <Show when={evSpread()}>{(spread) => <span class="font-mono">{spread()}</span>}</Show>
+          <Show when={ivSpread()}>{(spread) => <span class="font-mono">{spread()}</span>}</Show>
+        </div>
+      </Show>
+    </div>
+  )
+}
+
+function SmogonMoveSlotCompact(props: { moveOptions: string[] }) {
+  return (
+    <span class="inline-flex items-center gap-0.5">
+      <For each={props.moveOptions}>
+        {(move, index) => (
+          <>
+            <Show when={index() > 0}>
+              <span class="text-muted-foreground">/</span>
+            </Show>
+            <a
+              href={`/moves/${canonicalId(move)}`}
+              class="font-medium text-foreground transition-opacity hover:underline hover:opacity-70"
+            >
+              {move}
+            </a>
+          </>
+        )}
+      </For>
+    </span>
+  )
+}
+
+function formatSmogonStatSpread(spread: Record<string, number>): string | null {
+  const orderedStats: Array<[string, string]> = [
+    ["hp", "HP"],
+    ["atk", "Atk"],
+    ["def", "Def"],
+    ["spa", "SpA"],
+    ["spd", "SpD"],
+    ["spe", "Spe"],
+  ]
+
+  const parts: string[] = []
+
+  for (const [statId, label] of orderedStats) {
+    const value = spread[statId]
+    if (!Number.isFinite(value)) {
+      continue
+    }
+
+    parts.push(`${Math.trunc(value)} ${label}`)
+  }
+
+  if (parts.length === 0) {
+    return null
+  }
+
+  return parts.join(" / ")
 }
 
 function CompetitiveDistributionList(props: {

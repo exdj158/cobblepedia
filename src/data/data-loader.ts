@@ -11,6 +11,7 @@ import type {
   PokemonTypeEntryRecord,
   RideableMonRecord,
   SearchDocument,
+  SmogonMovesetsByPokemonRecord,
 } from "@/data/cobblemon-types"
 import { canonicalId } from "@/data/formatters"
 import { getMoveLearnerShardId } from "@/data/move-learner-sharding"
@@ -30,6 +31,7 @@ let publicGeneratedVersionPromise: Promise<string | null> | null = null
 const moveLearnerEntryPromises = new Map<string, Promise<MoveLearnerEntryRecord | null>>()
 const moveLearnerShardPromises = new Map<string, Promise<Record<string, MoveLearnerEntryRecord>>>()
 const pokemonDetailPromises = new Map<string, Promise<PokemonDetailRecord | null>>()
+const smogonMovesetsPromises = new Map<string, Promise<SmogonMovesetsByPokemonRecord | null>>()
 const pokemonDexNeighborsPromises = new Map<string, Promise<PokemonDexNeighbors>>()
 const serverGeneratedJsonPromises = new Map<string, Promise<unknown>>()
 
@@ -196,6 +198,27 @@ export function loadPokemonDetail(slug: string): Promise<PokemonDetailRecord | n
   ).catch(() => null)
 
   pokemonDetailPromises.set(normalizedSlug, promise)
+  return promise
+}
+
+export function loadSmogonMovesetsBySlug(
+  slug: string
+): Promise<SmogonMovesetsByPokemonRecord | null> {
+  const normalizedSlug = slug.trim().toLowerCase()
+  if (!normalizedSlug) {
+    return Promise.resolve(null)
+  }
+
+  const existingPromise = smogonMovesetsPromises.get(normalizedSlug)
+  if (existingPromise) {
+    return existingPromise
+  }
+
+  const promise = loadGeneratedJson<SmogonMovesetsByPokemonRecord>(
+    `smogon-movesets-by-slug/${normalizedSlug}.json`
+  ).catch(() => null)
+
+  smogonMovesetsPromises.set(normalizedSlug, promise)
   return promise
 }
 

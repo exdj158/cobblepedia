@@ -295,6 +295,44 @@ export type PokemonFormSpriteIndexEntry = {
 
 export type PokemonFormSpriteIndex = Record<string, PokemonFormSpriteIndexEntry>
 
+export type CompetitiveStatSpread = Partial<{
+  hp: number
+  atk: number
+  def: number
+  spa: number
+  spd: number
+  spe: number
+}>
+
+export type SmogonMovesetRecord = {
+  name: string
+  tier: string
+  ability: string | null
+  item: string | null
+  natures: string[]
+  teraTypes: string[]
+  moves: string[][]
+  evs: CompetitiveStatSpread
+  ivs: CompetitiveStatSpread
+}
+
+export type SmogonMovesetFormEntry = {
+  entryName: string
+  sets: SmogonMovesetRecord[]
+}
+
+export type SmogonMovesetsByPokemonRecord = {
+  slug: string
+  name: string
+  formatId: string
+  formatLabel: string
+  sourceUrl: string
+  generatedAt: string
+  defaultEntryName: string | null
+  defaultSets: SmogonMovesetRecord[]
+  formEntries: Record<string, SmogonMovesetFormEntry>
+}
+
 export type SearchDocument = {
   id: string
   resultType: SearchResultType
