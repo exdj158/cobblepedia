@@ -733,7 +733,10 @@ export function EggGroupsPageView(props: {
                       const snapshot = createMemo(() => compatibilitySnapshot())
 
                       return (
-                        <section class="border border-border bg-card p-4 sm:p-5">
+                        <section
+                          class="border border-border border-l-4 bg-card p-4 sm:p-5"
+                          style={{ "border-left-color": primaryEggGroupColor() }}
+                        >
                           <div class="mb-4 flex flex-wrap items-start justify-between gap-3 border-border border-b pb-4">
                             <div class="space-y-1.5">
                               <p class="font-mono text-muted-foreground text-xs uppercase tracking-wide">
