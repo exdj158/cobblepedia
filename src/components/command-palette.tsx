@@ -540,6 +540,9 @@ export default function CommandPalette() {
                                       {(dexNumber) => (
                                         <PokemonSprite
                                           dexNumber={dexNumber()}
+                                          slug={result.slug ?? undefined}
+                                          formSlug={result.formSlug ?? null}
+                                          formName={result.formName ?? null}
                                           name={result.title}
                                           class="h-10 w-10"
                                           imageClass="h-7 w-7"
@@ -1157,33 +1160,40 @@ function MoveLearnersQuickview(props: { entry: MoveLearnerEntryRecord | null }) 
 
             <div class="flex max-h-[400px] flex-col gap-2 overflow-y-auto">
               <For each={entry.learners.slice(0, 30)}>
-                {(learner) => (
-                  <div class="flex items-center justify-between gap-2 border-border border-b py-2 last:border-0">
-                    <a
-                      href={resolveMoveLearnerHref(learner)}
-                      class="flex min-w-0 items-center gap-2 hover:underline"
-                    >
-                      <PokemonSprite
-                        dexNumber={learner.dexNumber}
-                        name={learner.name}
-                        class="h-8 w-8"
-                        imageClass="h-6 w-6"
-                      />
-                      <span class="truncate text-sm">{learner.name}</span>
-                    </a>
-                    <div class="text-right text-muted-foreground text-xs">
-                      <div>{learner.methods.map((method) => sourceLabel(method)).join(", ")}</div>
-                      <Show when={learner.forms.length > 0}>
-                        <div class="mt-0.5">
-                          <Show when={!learner.baseAvailable}>
-                            <span class="mr-1 uppercase">Form Only</span>
-                          </Show>
-                          <span>{learner.forms.map((form) => form.name).join(", ")}</span>
-                        </div>
-                      </Show>
+                {(learner) => {
+                  const spriteForm = resolveMoveLearnerSpriteForm(learner)
+
+                  return (
+                    <div class="flex items-center justify-between gap-2 border-border border-b py-2 last:border-0">
+                      <a
+                        href={resolveMoveLearnerHref(learner)}
+                        class="flex min-w-0 items-center gap-2 hover:underline"
+                      >
+                        <PokemonSprite
+                          dexNumber={learner.dexNumber}
+                          slug={learner.slug}
+                          formSlug={spriteForm?.slug ?? null}
+                          formName={spriteForm?.name ?? null}
+                          name={learner.name}
+                          class="h-8 w-8"
+                          imageClass="h-6 w-6"
+                        />
+                        <span class="truncate text-sm">{learner.name}</span>
+                      </a>
+                      <div class="text-right text-muted-foreground text-xs">
+                        <div>{learner.methods.map((method) => sourceLabel(method)).join(", ")}</div>
+                        <Show when={learner.forms.length > 0}>
+                          <div class="mt-0.5">
+                            <Show when={!learner.baseAvailable}>
+                              <span class="mr-1 uppercase">Form Only</span>
+                            </Show>
+                            <span>{learner.forms.map((form) => form.name).join(", ")}</span>
+                          </div>
+                        </Show>
+                      </div>
                     </div>
-                  </div>
-                )}
+                  )
+                }}
               </For>
             </div>
           </div>
@@ -1460,6 +1470,21 @@ function PrimaryPageQuickview(props: { result: PaletteResult }) {
 
 function sourceLabel(sourceType: string): string {
   return formatMoveSource(sourceType as MoveSourceType, null)
+}
+
+function resolveMoveLearnerSpriteForm(
+  learner: MoveLearnerEntryRecord["learners"][number]
+): { slug: string; name: string } | null {
+  if (learner.baseAvailable || learner.forms.length === 0) {
+    return null
+  }
+
+  const firstForm = learner.forms[0]
+  if (!firstForm) {
+    return null
+  }
+
+  return firstForm
 }
 
 function resolveMoveLearnerHref(learner: MoveLearnerEntryRecord["learners"][number]): string {

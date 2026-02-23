@@ -304,6 +304,8 @@ export type PaletteResult = {
   title: string
   subtitle: string
   slug: string | null
+  formSlug?: string | null
+  formName?: string | null
   moveId: string | null
   abilityId?: string | null
   itemId?: string | null

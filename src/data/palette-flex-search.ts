@@ -229,6 +229,8 @@ function buildPaletteSearchDocs(params: PaletteFlexSearchParams): PaletteSearchD
               ? `#${formEntry.dexNumber} ${formTypes} Form`
               : `#${formEntry.dexNumber} Form`,
             slug: formEntry.slug,
+            formSlug: formEntry.formSlug,
+            formName: formEntry.formName,
             moveId: null,
             facet: null,
             score: 0,
