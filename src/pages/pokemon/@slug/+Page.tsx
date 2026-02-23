@@ -312,6 +312,18 @@ function PokemonDetailView(props: {
     return form?.baseFriendship ?? detail().baseFriendship
   })
 
+  const breedingExplorerHref = createMemo(() => {
+    const primaryEggGroup = detail().eggGroups[0] ?? ""
+    const search = new URLSearchParams()
+    search.set("pokemon", detail().slug)
+
+    if (primaryEggGroup) {
+      return `/egg-groups/${primaryEggGroup}?${search.toString()}`
+    }
+
+    return `/egg-groups?${search.toString()}`
+  })
+
   const displayName = createMemo(() => {
     const form = selectedForm()
     if (!form) {
@@ -761,7 +773,14 @@ function PokemonDetailView(props: {
           <section class="border border-border bg-card">
             <div class="flex items-center gap-2 border-border border-b bg-secondary px-4 py-3">
               <IconEgg class="h-4 w-4 text-muted-foreground" />
-              <h2 class="font-semibold">Breeding</h2>
+              <h2 class="font-semibold">
+                <a
+                  href={breedingExplorerHref()}
+                  class="transition-colors hover:text-foreground hover:underline hover:underline-offset-2 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-muted-foreground/50"
+                >
+                  Breeding
+                </a>
+              </h2>
             </div>
             <div class="grid grid-cols-2 gap-px bg-border">
               <div class="bg-card p-4">

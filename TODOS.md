@@ -13,6 +13,7 @@
 
 Big feats:
 
+- [x] Breeding improvements (friend suggestion)
 - [ ] Settings page: i.e.
   - Dark mode
   - Show pokedex entries.

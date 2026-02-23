@@ -43,6 +43,8 @@ const publicDataBasePath = (() => {
   return `${normalizedBasePath}/data/generated`
 })()
 
+const GENERATED_JSON_FETCH_TIMEOUT_MS = 15000
+
 export function loadSearchIndex(): Promise<SearchDocument[]> {
   if (!searchIndexPromise) {
     searchIndexPromise = loadGeneratedJson<SearchDocument[]>("search-index.json")
@@ -342,14 +344,30 @@ async function fetchPublicGeneratedJson<T>(
   const version = withVersion ? await loadPublicGeneratedVersion() : null
   const cacheBuster = version ? `?v=${encodeURIComponent(version)}` : ""
 
-  const response = await fetch(`${publicDataBasePath}/${relativePath}${cacheBuster}`, {
-    cache: "force-cache",
-  })
-  if (!response.ok) {
-    throw new Error(`Failed to load generated data: ${relativePath} (${response.status})`)
-  }
+  const controller = new AbortController()
+  const timeoutId = globalThis.setTimeout(() => {
+    controller.abort()
+  }, GENERATED_JSON_FETCH_TIMEOUT_MS)
 
-  return (await response.json()) as T
+  try {
+    const response = await fetch(`${publicDataBasePath}/${relativePath}${cacheBuster}`, {
+      cache: "force-cache",
+      signal: controller.signal,
+    })
+    if (!response.ok) {
+      throw new Error(`Failed to load generated data: ${relativePath} (${response.status})`)
+    }
+
+    return (await response.json()) as T
+  } catch (error) {
+    if (error instanceof DOMException && error.name === "AbortError") {
+      throw new Error(`Timed out loading generated data: ${relativePath}`)
+    }
+
+    throw error
+  } finally {
+    globalThis.clearTimeout(timeoutId)
+  }
 }
 
 function loadPublicGeneratedVersion(): Promise<string | null> {
