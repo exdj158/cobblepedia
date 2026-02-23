@@ -1,0 +1,137 @@
+{
+  "geargrind": {
+    "moveId": "geargrind",
+    "moveName": "Gear Grind",
+    "type": "steel",
+    "category": "physical",
+    "basePower": 50,
+    "accuracy": 85,
+    "alwaysHits": false,
+    "shortDescription": "Hits 2 times in one turn.",
+    "description": "Hits twice. If the first hit breaks the target's substitute, it will take damage for the second hit.",
+    "learners": [
+      {
+        "slug": "klink",
+        "name": "Klink",
+        "dexNumber": 599,
+        "methods": [
+          "level"
+        ],
+        "eggGroups": [
+          "mineral"
+        ],
+        "levelUpLevels": [
+          32
+        ],
+        "baseAvailable": true,
+        "forms": []
+      },
+      {
+        "slug": "klang",
+        "name": "Klang",
+        "dexNumber": 600,
+        "methods": [
+          "level"
+        ],
+        "eggGroups": [
+          "mineral"
+        ],
+        "levelUpLevels": [
+          32
+        ],
+        "baseAvailable": true,
+        "forms": []
+      },
+      {
+        "slug": "klinklang",
+        "name": "Klinklang",
+        "dexNumber": 601,
+        "methods": [
+          "level"
+        ],
+        "eggGroups": [
+          "mineral"
+        ],
+        "levelUpLevels": [
+          32
+        ],
+        "baseAvailable": true,
+        "forms": []
+      }
+    ]
+  },
+  "gearup": {
+    "moveId": "gearup",
+    "moveName": "Gear Up",
+    "type": "steel",
+    "category": "status",
+    "basePower": 0,
+    "accuracy": null,
+    "alwaysHits": true,
+    "shortDescription": "Raises Atk, Sp. Atk of allies with Plus/Minus by 1.",
+    "description": "Raises the Attack and Special Attack of Pokemon on the user's side with the Plus or Minus Abilities by 1 stage.",
+    "learners": [
+      {
+        "slug": "klinklang",
+        "name": "Klinklang",
+        "dexNumber": 601,
+        "methods": [
+          "level"
+        ],
+        "eggGroups": [
+          "mineral"
+        ],
+        "levelUpLevels": [
+          1
+        ],
+        "baseAvailable": true,
+        "forms": []
+      },
+      {
+        "slug": "magearna",
+        "name": "Magearna",
+        "dexNumber": 801,
+        "methods": [
+          "level"
+        ],
+        "eggGroups": [
+          "undiscovered"
+        ],
+        "levelUpLevels": [
+          1
+        ],
+        "baseAvailable": true,
+        "forms": []
+      }
+    ]
+  },
+  "geomancy": {
+    "moveId": "geomancy",
+    "moveName": "Geomancy",
+    "type": "fairy",
+    "category": "status",
+    "basePower": 0,
+    "accuracy": null,
+    "alwaysHits": true,
+    "shortDescription": "Charges, then raises SpA, SpD, Spe by 2 turn 2.",
+    "description": "Raises the user's Special Attack, Special Defense, and Speed by 2 stages. This attack charges on the first turn and executes on the second. If the user is holding a Power Herb, the move completes in one turn.",
+    "learners": [
+      {
+        "slug": "xerneas",
+        "name": "Xerneas",
+        "dexNumber": 716,
+        "methods": [
+          "level"
+        ],
+        "eggGroups": [
+          "undiscovered"
+        ],
+        "levelUpLevels": [
+          55
+        ],
+        "baseAvailable": true,
+        "forms": []
+      }
+    ]
+  }
+}

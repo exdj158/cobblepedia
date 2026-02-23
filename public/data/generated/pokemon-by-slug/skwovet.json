@@ -1,0 +1,995 @@
+{
+  "slug": "skwovet",
+  "name": "Skwovet",
+  "dexNumber": 819,
+  "implemented": true,
+  "types": [
+    "normal"
+  ],
+  "abilities": [
+    {
+      "id": "cheekpouch",
+      "hidden": false,
+      "label": "Cheekpouch",
+      "slot": "first"
+    },
+    {
+      "id": "gluttony",
+      "hidden": true,
+      "label": "Gluttony",
+      "slot": "hidden"
+    }
+  ],
+  "eggGroups": [
+    "field"
+  ],
+  "labels": [
+    "gen8"
+  ],
+  "aspects": [],
+  "aliases": [
+    "skwovet"
+  ],
+  "maleRatio": 0.5,
+  "height": 3,
+  "weight": 25,
+  "catchRate": 255,
+  "baseExperienceYield": 55,
+  "baseFriendship": 50,
+  "eggCycles": 20,
+  "baseStats": {
+    "hp": 70,
+    "attack": 55,
+    "defence": 55,
+    "special_attack": 35,
+    "special_defence": 35,
+    "speed": 25
+  },
+  "evYield": {
+    "hp": 1,
+    "attack": 0,
+    "defence": 0,
+    "special_attack": 0,
+    "special_defence": 0,
+    "speed": 0
+  },
+  "preEvolution": null,
+  "evolutions": [
+    {
+      "id": "skwovet_greedent",
+      "variant": "level_up",
+      "result": {
+        "raw": "greedent",
+        "slug": "greedent",
+        "aspectTokens": []
+      },
+      "consumeHeldItem": false,
+      "learnableMoves": [
+        "covet"
+      ],
+      "requirementText": [
+        "Level 24+"
+      ],
+      "requirements": [
+        {
+          "variant": "level",
+          "text": "Level 24+",
+          "raw": {
+            "variant": "level",
+            "minLevel": 24
+          }
+        }
+      ],
+      "requiredContext": null,
+      "fromForm": null,
+      "raw": {
+        "id": "skwovet_greedent",
+        "variant": "level_up",
+        "result": "greedent",
+        "consumeHeldItem": false,
+        "learnableMoves": [
+          "covet"
+        ],
+        "requirements": [
+          {
+            "variant": "level",
+            "minLevel": 24
+          }
+        ]
+      }
+    }
+  ],
+  "evolutionFamily": {
+    "members": [
+      {
+        "nodeId": "skwovet",
+        "slug": "skwovet",
+        "name": "Skwovet",
+        "dexNumber": 819,
+        "formSlug": null,
+        "formName": null
+      },
+      {
+        "nodeId": "greedent",
+        "slug": "greedent",
+        "name": "Greedent",
+        "dexNumber": 820,
+        "formSlug": null,
+        "formName": null
+      }
+    ],
+    "edges": [
+      {
+        "fromNodeId": "skwovet",
+        "toNodeId": "greedent",
+        "fromSlug": "skwovet",
+        "toSlug": "greedent",
+        "method": "level_up",
+        "requirementText": [
+          "Level 24+"
+        ]
+      }
+    ],
+    "roots": [
+      "skwovet"
+    ]
+  },
+  "moves": [
+    {
+      "raw": "tm:amnesia",
+      "moveId": "amnesia",
+      "moveName": "Amnesia",
+      "type": "psychic",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:assurance",
+      "moveId": "assurance",
+      "moveName": "Assurance",
+      "type": "dark",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "legacy:attract",
+      "moveId": "attract",
+      "moveName": "Attract",
+      "type": "normal",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "45:belch",
+      "moveId": "belch",
+      "moveName": "Belch",
+      "type": "poison",
+      "sourceType": "level",
+      "sourceValue": 45,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "egg:bellydrum",
+      "moveId": "bellydrum",
+      "moveName": "Belly Drum",
+      "type": "normal",
+      "sourceType": "egg",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "5:bite",
+      "moveId": "bite",
+      "moveName": "Bite",
+      "type": "dark",
+      "sourceType": "level",
+      "sourceValue": 5,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "20:bodyslam",
+      "moveId": "bodyslam",
+      "moveName": "Body Slam",
+      "type": "normal",
+      "sourceType": "level",
+      "sourceValue": 20,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:bodyslam",
+      "moveId": "bodyslam",
+      "moveName": "Body Slam",
+      "type": "normal",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:brutalswing",
+      "moveId": "brutalswing",
+      "moveName": "Brutal Swing",
+      "type": "dark",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "35:bulletseed",
+      "moveId": "bulletseed",
+      "moveName": "Bullet Seed",
+      "type": "grass",
+      "sourceType": "level",
+      "sourceValue": 35,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:bulletseed",
+      "moveId": "bulletseed",
+      "moveName": "Bullet Seed",
+      "type": "grass",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "30:counter",
+      "moveId": "counter",
+      "moveName": "Counter",
+      "type": "fighting",
+      "sourceType": "level",
+      "sourceValue": 30,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:crunch",
+      "moveId": "crunch",
+      "moveName": "Crunch",
+      "type": "dark",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:curse",
+      "moveId": "curse",
+      "moveName": "Curse",
+      "type": "ghost",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "egg:defensecurl",
+      "moveId": "defensecurl",
+      "moveName": "Defense Curl",
+      "type": "normal",
+      "sourceType": "egg",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:dig",
+      "moveId": "dig",
+      "moveName": "Dig",
+      "type": "ground",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:doubleedge",
+      "moveId": "doubleedge",
+      "moveName": "Double-Edge",
+      "type": "normal",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:endeavor",
+      "moveId": "endeavor",
+      "moveName": "Endeavor",
+      "type": "normal",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tutor:endeavor",
+      "moveId": "endeavor",
+      "moveName": "Endeavor",
+      "type": "normal",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:endure",
+      "moveId": "endure",
+      "moveName": "Endure",
+      "type": "normal",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:facade",
+      "moveId": "facade",
+      "moveName": "Facade",
+      "type": "normal",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:fling",
+      "moveId": "fling",
+      "moveName": "Fling",
+      "type": "dark",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:gyroball",
+      "moveId": "gyroball",
+      "moveName": "Gyro Ball",
+      "type": "steel",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:hypervoice",
+      "moveId": "hypervoice",
+      "moveName": "Hyper Voice",
+      "type": "normal",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tutor:hypervoice",
+      "moveId": "hypervoice",
+      "moveName": "Hyper Voice",
+      "type": "normal",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:irontail",
+      "moveId": "irontail",
+      "moveName": "Iron Tail",
+      "type": "steel",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tutor:irontail",
+      "moveId": "irontail",
+      "moveName": "Iron Tail",
+      "type": "steel",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "egg:lastresort",
+      "moveId": "lastresort",
+      "moveName": "Last Resort",
+      "type": "normal",
+      "sourceType": "egg",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:lastresort",
+      "moveId": "lastresort",
+      "moveName": "Last Resort",
+      "type": "normal",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tutor:lastresort",
+      "moveId": "lastresort",
+      "moveName": "Last Resort",
+      "type": "normal",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:mudshot",
+      "moveId": "mudshot",
+      "moveName": "Mud Shot",
+      "type": "ground",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:mudslap",
+      "moveId": "mudslap",
+      "moveName": "Mud-Slap",
+      "type": "ground",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tutor:mudslap",
+      "moveId": "mudslap",
+      "moveName": "Mud-Slap",
+      "type": "ground",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:payback",
+      "moveId": "payback",
+      "moveName": "Payback",
+      "type": "dark",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:protect",
+      "moveId": "protect",
+      "moveName": "Protect",
+      "type": "normal",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "25:rest",
+      "moveId": "rest",
+      "moveName": "Rest",
+      "type": "psychic",
+      "sourceType": "level",
+      "sourceValue": 25,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:rest",
+      "moveId": "rest",
+      "moveName": "Rest",
+      "type": "psychic",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tutor:rest",
+      "moveId": "rest",
+      "moveName": "Rest",
+      "type": "psychic",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "egg:rollout",
+      "moveId": "rollout",
+      "moveName": "Rollout",
+      "type": "rock",
+      "sourceType": "egg",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:rollout",
+      "moveId": "rollout",
+      "moveName": "Rollout",
+      "type": "rock",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tutor:rollout",
+      "moveId": "rollout",
+      "moveName": "Rollout",
+      "type": "rock",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "legacy:round",
+      "moveId": "round",
+      "moveName": "Round",
+      "type": "normal",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:seedbomb",
+      "moveId": "seedbomb",
+      "moveName": "Seed Bomb",
+      "type": "grass",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tutor:seedbomb",
+      "moveId": "seedbomb",
+      "moveName": "Seed Bomb",
+      "type": "grass",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:sleeptalk",
+      "moveId": "sleeptalk",
+      "moveName": "Sleep Talk",
+      "type": "normal",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tutor:sleeptalk",
+      "moveId": "sleeptalk",
+      "moveName": "Sleep Talk",
+      "type": "normal",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "legacy:snore",
+      "moveId": "snore",
+      "moveName": "Snore",
+      "type": "normal",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "15:spitup",
+      "moveId": "spitup",
+      "moveName": "Spit Up",
+      "type": "normal",
+      "sourceType": "level",
+      "sourceValue": 15,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "15:stockpile",
+      "moveId": "stockpile",
+      "moveName": "Stockpile",
+      "type": "normal",
+      "sourceType": "level",
+      "sourceValue": 15,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "10:stuffcheeks",
+      "moveId": "stuffcheeks",
+      "moveName": "Stuff Cheeks",
+      "type": "normal",
+      "sourceType": "level",
+      "sourceValue": 10,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:substitute",
+      "moveId": "substitute",
+      "moveName": "Substitute",
+      "type": "normal",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "40:superfang",
+      "moveId": "superfang",
+      "moveName": "Super Fang",
+      "type": "normal",
+      "sourceType": "level",
+      "sourceValue": 40,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:superfang",
+      "moveId": "superfang",
+      "moveName": "Super Fang",
+      "type": "normal",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tutor:superfang",
+      "moveId": "superfang",
+      "moveName": "Super Fang",
+      "type": "normal",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "15:swallow",
+      "moveId": "swallow",
+      "moveName": "Swallow",
+      "type": "normal",
+      "sourceType": "level",
+      "sourceValue": 15,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "1:tackle",
+      "moveId": "tackle",
+      "moveName": "Tackle",
+      "type": "normal",
+      "sourceType": "level",
+      "sourceValue": 1,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:tailslap",
+      "moveId": "tailslap",
+      "moveName": "Tail Slap",
+      "type": "normal",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "1:tailwhip",
+      "moveId": "tailwhip",
+      "moveName": "Tail Whip",
+      "type": "normal",
+      "sourceType": "level",
+      "sourceValue": 1,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:takedown",
+      "moveId": "takedown",
+      "moveName": "Take Down",
+      "type": "normal",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:terablast",
+      "moveId": "terablast",
+      "moveName": "Tera Blast",
+      "type": "normal",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:thief",
+      "moveId": "thief",
+      "moveName": "Thief",
+      "type": "dark",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:trailblaze",
+      "moveId": "trailblaze",
+      "moveName": "Trailblaze",
+      "type": "grass",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "legacy:uproar",
+      "moveId": "uproar",
+      "moveName": "Uproar",
+      "type": "normal",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    }
+  ],
+  "spawnEntries": [
+    {
+      "id": "skwovet-1",
+      "sourceFile": "0819_skwovet.json",
+      "pokemon": {
+        "raw": "skwovet",
+        "slug": "skwovet",
+        "aspectTokens": []
+      },
+      "type": "pokemon",
+      "spawnablePositionType": "grounded",
+      "bucket": "common",
+      "bucketWeight": 94.3,
+      "levelText": "3-28",
+      "levelMin": 3,
+      "levelMax": 28,
+      "weight": 9,
+      "presets": [
+        "natural",
+        "treetop"
+      ],
+      "biomeHints": [
+        "Is Forest",
+        "Nether Jungle",
+        "Nether Swampland",
+        "Is Taiga",
+        "Is Snowy Taiga"
+      ],
+      "condition": {
+        "neededBaseBlocks": [
+          "#cobblemon:natural",
+          "#cobblemon:trees"
+        ],
+        "minSkyLight": 8,
+        "maxSkyLight": 15,
+        "biomes": [
+          "#cobblemon:is_forest",
+          "#cobblemon:is_taiga"
+        ]
+      },
+      "anticondition": {
+        "neededBaseBlocks": [
+          "minecraft:farmland"
+        ]
+      },
+      "weightMultipliers": [],
+      "raw": {
+        "id": "skwovet-1",
+        "pokemon": "skwovet",
+        "presets": [
+          "natural",
+          "treetop"
+        ],
+        "type": "pokemon",
+        "spawnablePositionType": "grounded",
+        "bucket": "common",
+        "level": "3-28",
+        "weight": 9,
+        "condition": {
+          "minSkyLight": 8,
+          "maxSkyLight": 15,
+          "biomes": [
+            "#cobblemon:is_forest",
+            "#cobblemon:is_taiga"
+          ]
+        }
+      }
+    }
+  ],
+  "forms": [],
+  "rawSpecies": {
+    "implemented": true,
+    "nationalPokedexNumber": 819,
+    "name": "Skwovet",
+    "primaryType": "normal",
+    "maleRatio": 0.5,
+    "height": 3,
+    "weight": 25,
+    "pokedex": [
+      "cobblemon.species.skwovet.desc"
+    ],
+    "labels": [
+      "gen8"
+    ],
+    "aspects": [],
+    "abilities": [
+      "cheekpouch",
+      "h:gluttony"
+    ],
+    "eggGroups": [
+      "field"
+    ],
+    "baseStats": {
+      "hp": 70,
+      "attack": 55,
+      "defence": 55,
+      "special_attack": 35,
+      "special_defence": 35,
+      "speed": 25
+    },
+    "evYield": {
+      "hp": 1,
+      "attack": 0,
+      "defence": 0,
+      "special_attack": 0,
+      "special_defence": 0,
+      "speed": 0
+    },
+    "baseExperienceYield": 55,
+    "experienceGroup": "medium_fast",
+    "catchRate": 255,
+    "eggCycles": 20,
+    "baseFriendship": 50,
+    "baseScale": 0.5,
+    "hitbox": {
+      "width": 1.15,
+      "height": 1.25,
+      "fixed": false
+    },
+    "drops": {
+      "amount": 1,
+      "entries": [
+        {
+          "item": "cobblemon:oran_berry",
+          "quantityRange": "0-1"
+        }
+      ]
+    },
+    "moves": [
+      "1:tackle",
+      "1:tailwhip",
+      "5:bite",
+      "10:stuffcheeks",
+      "15:stockpile",
+      "15:swallow",
+      "15:spitup",
+      "20:bodyslam",
+      "25:rest",
+      "30:counter",
+      "35:bulletseed",
+      "40:superfang",
+      "45:belch",
+      "egg:bellydrum",
+      "egg:defensecurl",
+      "egg:lastresort",
+      "egg:rollout",
+      "tm:amnesia",
+      "tm:assurance",
+      "tm:bodyslam",
+      "tm:brutalswing",
+      "tm:bulletseed",
+      "tm:crunch",
+      "tm:curse",
+      "tm:dig",
+      "tm:doubleedge",
+      "tm:endeavor",
+      "tm:endure",
+      "tm:facade",
+      "tm:fling",
+      "tm:gyroball",
+      "tm:hypervoice",
+      "tm:irontail",
+      "tm:lastresort",
+      "tm:mudshot",
+      "tm:mudslap",
+      "tm:payback",
+      "tm:protect",
+      "tm:rest",
+      "tm:rollout",
+      "tm:seedbomb",
+      "tm:sleeptalk",
+      "tm:substitute",
+      "tm:superfang",
+      "tm:tailslap",
+      "tm:takedown",
+      "tm:terablast",
+      "tm:thief",
+      "tm:trailblaze",
+      "tutor:endeavor",
+      "tutor:hypervoice",
+      "tutor:irontail",
+      "tutor:lastresort",
+      "tutor:mudslap",
+      "tutor:rest",
+      "tutor:rollout",
+      "tutor:seedbomb",
+      "tutor:sleeptalk",
+      "tutor:superfang",
+      "legacy:attract",
+      "legacy:round",
+      "legacy:snore",
+      "legacy:uproar"
+    ],
+    "evolutions": [
+      {
+        "id": "skwovet_greedent",
+        "variant": "level_up",
+        "result": "greedent",
+        "consumeHeldItem": false,
+        "learnableMoves": [
+          "covet"
+        ],
+        "requirements": [
+          {
+            "variant": "level",
+            "minLevel": 24
+          }
+        ]
+      }
+    ],
+    "behaviour": {
+      "resting": {
+        "willSleepOnBed": true,
+        "drowsyChance": 0.0333,
+        "rouseChance": 0.0042
+      },
+      "moving": {
+        "swim": {
+          "avoidsWater": true
+        }
+      },
+      "combat": {
+        "willDefendOwner": true
+      }
+    }
+  }
+}

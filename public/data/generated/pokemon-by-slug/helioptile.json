@@ -1,0 +1,1202 @@
+{
+  "slug": "helioptile",
+  "name": "Helioptile",
+  "dexNumber": 694,
+  "implemented": false,
+  "types": [
+    "electric",
+    "normal"
+  ],
+  "abilities": [
+    {
+      "id": "dryskin",
+      "hidden": false,
+      "label": "Dryskin",
+      "slot": "first"
+    },
+    {
+      "id": "sandveil",
+      "hidden": false,
+      "label": "Sandveil",
+      "slot": "second"
+    },
+    {
+      "id": "solarpower",
+      "hidden": true,
+      "label": "Solarpower",
+      "slot": "hidden"
+    }
+  ],
+  "eggGroups": [
+    "monster",
+    "dragon"
+  ],
+  "labels": [
+    "gen6"
+  ],
+  "aspects": [],
+  "aliases": [
+    "helioptile"
+  ],
+  "maleRatio": 0.5,
+  "height": 5,
+  "weight": 60,
+  "catchRate": 190,
+  "baseExperienceYield": 58,
+  "baseFriendship": 50,
+  "eggCycles": 20,
+  "baseStats": {
+    "hp": 44,
+    "attack": 38,
+    "defence": 33,
+    "special_attack": 61,
+    "special_defence": 43,
+    "speed": 70
+  },
+  "evYield": {
+    "hp": 0,
+    "attack": 0,
+    "defence": 0,
+    "special_attack": 0,
+    "special_defence": 0,
+    "speed": 1
+  },
+  "preEvolution": null,
+  "evolutions": [
+    {
+      "id": "helioptile_heliolisk",
+      "variant": "item_interact",
+      "result": {
+        "raw": "heliolisk",
+        "slug": "heliolisk",
+        "aspectTokens": []
+      },
+      "consumeHeldItem": false,
+      "learnableMoves": [],
+      "requirementText": [
+        "Use Sun Stone"
+      ],
+      "requirements": [],
+      "requiredContext": "cobblemon:sun_stone",
+      "fromForm": null,
+      "raw": {
+        "id": "helioptile_heliolisk",
+        "variant": "item_interact",
+        "result": "heliolisk",
+        "consumeHeldItem": false,
+        "learnableMoves": [],
+        "requirements": [],
+        "requiredContext": "cobblemon:sun_stone"
+      }
+    }
+  ],
+  "evolutionFamily": {
+    "members": [
+      {
+        "nodeId": "helioptile",
+        "slug": "helioptile",
+        "name": "Helioptile",
+        "dexNumber": 694,
+        "formSlug": null,
+        "formName": null
+      },
+      {
+        "nodeId": "heliolisk",
+        "slug": "heliolisk",
+        "name": "Heliolisk",
+        "dexNumber": 695,
+        "formSlug": null,
+        "formName": null
+      }
+    ],
+    "edges": [
+      {
+        "fromNodeId": "helioptile",
+        "toNodeId": "heliolisk",
+        "fromSlug": "helioptile",
+        "toSlug": "heliolisk",
+        "method": "item_interact",
+        "requirementText": [
+          "Use Sun Stone"
+        ]
+      }
+    ],
+    "roots": [
+      "helioptile"
+    ]
+  },
+  "moves": [
+    {
+      "raw": "tm:agility",
+      "moveId": "agility",
+      "moveName": "Agility",
+      "type": "psychic",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:allyswitch",
+      "moveId": "allyswitch",
+      "moveName": "Ally Switch",
+      "type": "psychic",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tutor:allyswitch",
+      "moveId": "allyswitch",
+      "moveName": "Ally Switch",
+      "type": "psychic",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "legacy:attract",
+      "moveId": "attract",
+      "moveName": "Attract",
+      "type": "normal",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "20:bulldoze",
+      "moveId": "bulldoze",
+      "moveName": "Bulldoze",
+      "type": "ground",
+      "sourceType": "level",
+      "sourceValue": 20,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:bulldoze",
+      "moveId": "bulldoze",
+      "moveName": "Bulldoze",
+      "type": "ground",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tutor:bulldoze",
+      "moveId": "bulldoze",
+      "moveName": "Bulldoze",
+      "type": "ground",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "egg:camouflage",
+      "moveId": "camouflage",
+      "moveName": "Camouflage",
+      "type": "normal",
+      "sourceType": "egg",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "16:charge",
+      "moveId": "charge",
+      "moveName": "Charge",
+      "type": "electric",
+      "sourceType": "level",
+      "sourceValue": 16,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:charge",
+      "moveId": "charge",
+      "moveName": "Charge",
+      "type": "electric",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:chargebeam",
+      "moveId": "chargebeam",
+      "moveName": "Charge Beam",
+      "type": "electric",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tutor:chargebeam",
+      "moveId": "chargebeam",
+      "moveName": "Charge Beam",
+      "type": "electric",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "legacy:confide",
+      "moveId": "confide",
+      "moveName": "Confide",
+      "type": "normal",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:cut",
+      "moveId": "cut",
+      "moveName": "Cut",
+      "type": "normal",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:darkpulse",
+      "moveId": "darkpulse",
+      "moveName": "Dark Pulse",
+      "type": "dark",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tutor:darkpulse",
+      "moveId": "darkpulse",
+      "moveName": "Dark Pulse",
+      "type": "dark",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:dig",
+      "moveId": "dig",
+      "moveName": "Dig",
+      "type": "ground",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "legacy:doubleteam",
+      "moveId": "doubleteam",
+      "moveName": "Double Team",
+      "type": "normal",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "egg:dragonrush",
+      "moveId": "dragonrush",
+      "moveName": "Dragon Rush",
+      "type": "dragon",
+      "sourceType": "egg",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "egg:dragontail",
+      "moveId": "dragontail",
+      "moveName": "Dragon Tail",
+      "type": "dragon",
+      "sourceType": "egg",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:dragontail",
+      "moveId": "dragontail",
+      "moveName": "Dragon Tail",
+      "type": "dragon",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:electricterrain",
+      "moveId": "electricterrain",
+      "moveName": "Electric Terrain",
+      "type": "electric",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "40:electrify",
+      "moveId": "electrify",
+      "moveName": "Electrify",
+      "type": "electric",
+      "sourceType": "level",
+      "sourceValue": 40,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:electroball",
+      "moveId": "electroball",
+      "moveName": "Electro Ball",
+      "type": "electric",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:electroweb",
+      "moveId": "electroweb",
+      "moveName": "Electroweb",
+      "type": "electric",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tutor:electroweb",
+      "moveId": "electroweb",
+      "moveName": "Electroweb",
+      "type": "electric",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:endure",
+      "moveId": "endure",
+      "moveName": "Endure",
+      "type": "normal",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:facade",
+      "moveId": "facade",
+      "moveName": "Facade",
+      "type": "normal",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:flash",
+      "moveId": "flash",
+      "moveName": "Flash",
+      "type": "normal",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "legacy:frustration",
+      "moveId": "frustration",
+      "moveName": "Frustration",
+      "type": "normal",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "egg:glare",
+      "moveId": "glare",
+      "moveName": "Glare",
+      "type": "normal",
+      "sourceType": "egg",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:grassknot",
+      "moveId": "grassknot",
+      "moveName": "Grass Knot",
+      "type": "grass",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "legacy:hiddenpower",
+      "moveId": "hiddenpower",
+      "moveName": "Hidden Power",
+      "type": "normal",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:irontail",
+      "moveId": "irontail",
+      "moveName": "Iron Tail",
+      "type": "steel",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tutor:irontail",
+      "moveId": "irontail",
+      "moveName": "Iron Tail",
+      "type": "steel",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:lightscreen",
+      "moveId": "lightscreen",
+      "moveName": "Light Screen",
+      "type": "psychic",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:lowsweep",
+      "moveId": "lowsweep",
+      "moveName": "Low Sweep",
+      "type": "fighting",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:magnetrise",
+      "moveId": "magnetrise",
+      "moveName": "Magnet Rise",
+      "type": "electric",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tutor:magnetrise",
+      "moveId": "magnetrise",
+      "moveName": "Magnet Rise",
+      "type": "electric",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "1:mudslap",
+      "moveId": "mudslap",
+      "moveName": "Mud-Slap",
+      "type": "ground",
+      "sourceType": "level",
+      "sourceValue": 1,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:mudslap",
+      "moveId": "mudslap",
+      "moveName": "Mud-Slap",
+      "type": "ground",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tutor:mudslap",
+      "moveId": "mudslap",
+      "moveName": "Mud-Slap",
+      "type": "ground",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "28:paraboliccharge",
+      "moveId": "paraboliccharge",
+      "moveName": "Parabolic Charge",
+      "type": "electric",
+      "sourceType": "level",
+      "sourceValue": 28,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "4:pound",
+      "moveId": "pound",
+      "moveName": "Pound",
+      "type": "normal",
+      "sourceType": "level",
+      "sourceValue": 4,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:protect",
+      "moveId": "protect",
+      "moveName": "Protect",
+      "type": "normal",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:psychup",
+      "moveId": "psychup",
+      "moveName": "Psych Up",
+      "type": "normal",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "12:quickattack",
+      "moveId": "quickattack",
+      "moveName": "Quick Attack",
+      "type": "normal",
+      "sourceType": "level",
+      "sourceValue": 12,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:raindance",
+      "moveId": "raindance",
+      "moveName": "Rain Dance",
+      "type": "water",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "egg:razorwind",
+      "moveId": "razorwind",
+      "moveName": "Razor Wind",
+      "type": "normal",
+      "sourceType": "egg",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:rest",
+      "moveId": "rest",
+      "moveName": "Rest",
+      "type": "psychic",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tutor:rest",
+      "moveId": "rest",
+      "moveName": "Rest",
+      "type": "psychic",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "legacy:return",
+      "moveId": "return",
+      "moveName": "Return",
+      "type": "normal",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:risingvoltage",
+      "moveId": "risingvoltage",
+      "moveName": "Rising Voltage",
+      "type": "electric",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tutor:risingvoltage",
+      "moveId": "risingvoltage",
+      "moveName": "Rising Voltage",
+      "type": "electric",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:rockslide",
+      "moveId": "rockslide",
+      "moveName": "Rock Slide",
+      "type": "rock",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tutor:rockslide",
+      "moveId": "rockslide",
+      "moveName": "Rock Slide",
+      "type": "rock",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:rocktomb",
+      "moveId": "rocktomb",
+      "moveName": "Rock Tomb",
+      "type": "rock",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "legacy:round",
+      "moveId": "round",
+      "moveName": "Round",
+      "type": "normal",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:sandstorm",
+      "moveId": "sandstorm",
+      "moveName": "Sandstorm",
+      "type": "rock",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:scaleshot",
+      "moveId": "scaleshot",
+      "moveName": "Scale Shot",
+      "type": "dragon",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tutor:scaleshot",
+      "moveId": "scaleshot",
+      "moveName": "Scale Shot",
+      "type": "dragon",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "legacy:secretpower",
+      "moveId": "secretpower",
+      "moveName": "Secret Power",
+      "type": "normal",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:shockwave",
+      "moveId": "shockwave",
+      "moveName": "Shock Wave",
+      "type": "electric",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tutor:shockwave",
+      "moveId": "shockwave",
+      "moveName": "Shock Wave",
+      "type": "electric",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:signalbeam",
+      "moveId": "signalbeam",
+      "moveName": "Signal Beam",
+      "type": "bug",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tutor:signalbeam",
+      "moveId": "signalbeam",
+      "moveName": "Signal Beam",
+      "type": "bug",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:sleeptalk",
+      "moveId": "sleeptalk",
+      "moveName": "Sleep Talk",
+      "type": "normal",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tutor:sleeptalk",
+      "moveId": "sleeptalk",
+      "moveName": "Sleep Talk",
+      "type": "normal",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "legacy:snore",
+      "moveId": "snore",
+      "moveName": "Snore",
+      "type": "normal",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:substitute",
+      "moveId": "substitute",
+      "moveName": "Substitute",
+      "type": "normal",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:surf",
+      "moveId": "surf",
+      "moveName": "Surf",
+      "type": "water",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "legacy:swagger",
+      "moveId": "swagger",
+      "moveName": "Swagger",
+      "type": "normal",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:swift",
+      "moveId": "swift",
+      "moveName": "Swift",
+      "type": "normal",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tutor:swift",
+      "moveId": "swift",
+      "moveName": "Swift",
+      "type": "normal",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "1:tailwhip",
+      "moveId": "tailwhip",
+      "moveName": "Tail Whip",
+      "type": "normal",
+      "sourceType": "level",
+      "sourceValue": 1,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:terablast",
+      "moveId": "terablast",
+      "moveName": "Tera Blast",
+      "type": "normal",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "44:thunder",
+      "moveId": "thunder",
+      "moveName": "Thunder",
+      "type": "electric",
+      "sourceType": "level",
+      "sourceValue": 44,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:thunder",
+      "moveId": "thunder",
+      "moveName": "Thunder",
+      "type": "electric",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "8:thundershock",
+      "moveId": "thundershock",
+      "moveName": "Thunder Shock",
+      "type": "electric",
+      "sourceType": "level",
+      "sourceValue": 8,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "32:thunderwave",
+      "moveId": "thunderwave",
+      "moveName": "Thunder Wave",
+      "type": "electric",
+      "sourceType": "level",
+      "sourceValue": 32,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:thunderwave",
+      "moveId": "thunderwave",
+      "moveName": "Thunder Wave",
+      "type": "electric",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "36:thunderbolt",
+      "moveId": "thunderbolt",
+      "moveName": "Thunderbolt",
+      "type": "electric",
+      "sourceType": "level",
+      "sourceValue": 36,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:thunderbolt",
+      "moveId": "thunderbolt",
+      "moveName": "Thunderbolt",
+      "type": "electric",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tutor:thunderbolt",
+      "moveId": "thunderbolt",
+      "moveName": "Thunderbolt",
+      "type": "electric",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "legacy:toxic",
+      "moveId": "toxic",
+      "moveName": "Toxic",
+      "type": "poison",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:uturn",
+      "moveId": "uturn",
+      "moveName": "U-turn",
+      "type": "bug",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "24:voltswitch",
+      "moveId": "voltswitch",
+      "moveName": "Volt Switch",
+      "type": "electric",
+      "sourceType": "level",
+      "sourceValue": 24,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:voltswitch",
+      "moveId": "voltswitch",
+      "moveName": "Volt Switch",
+      "type": "electric",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:wildcharge",
+      "moveId": "wildcharge",
+      "moveName": "Wild Charge",
+      "type": "electric",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tutor:wildcharge",
+      "moveId": "wildcharge",
+      "moveName": "Wild Charge",
+      "type": "electric",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    }
+  ],
+  "spawnEntries": [],
+  "forms": [],
+  "rawSpecies": {
+    "nationalPokedexNumber": 694,
+    "name": "Helioptile",
+    "primaryType": "electric",
+    "secondaryType": "normal",
+    "maleRatio": 0.5,
+    "height": 5,
+    "weight": 60,
+    "pokedex": [
+      "cobblemon.species.helioptile.desc"
+    ],
+    "labels": [
+      "gen6"
+    ],
+    "aspects": [],
+    "abilities": [
+      "dryskin",
+      "sandveil",
+      "h:solarpower"
+    ],
+    "eggGroups": [
+      "monster",
+      "dragon"
+    ],
+    "baseStats": {
+      "hp": 44,
+      "attack": 38,
+      "defence": 33,
+      "special_attack": 61,
+      "special_defence": 43,
+      "speed": 70
+    },
+    "evYield": {
+      "hp": 0,
+      "attack": 0,
+      "defence": 0,
+      "special_attack": 0,
+      "special_defence": 0,
+      "speed": 1
+    },
+    "baseExperienceYield": 58,
+    "experienceGroup": "medium_fast",
+    "catchRate": 190,
+    "eggCycles": 20,
+    "baseFriendship": 50,
+    "baseScale": 1,
+    "hitbox": {
+      "width": 1,
+      "height": 1,
+      "fixed": false
+    },
+    "moves": [
+      "1:tailwhip",
+      "1:mudslap",
+      "4:pound",
+      "8:thundershock",
+      "12:quickattack",
+      "16:charge",
+      "20:bulldoze",
+      "24:voltswitch",
+      "28:paraboliccharge",
+      "32:thunderwave",
+      "36:thunderbolt",
+      "40:electrify",
+      "44:thunder",
+      "egg:camouflage",
+      "egg:dragonrush",
+      "egg:dragontail",
+      "egg:glare",
+      "egg:razorwind",
+      "tm:agility",
+      "tm:allyswitch",
+      "tm:bulldoze",
+      "tm:charge",
+      "tm:chargebeam",
+      "tm:cut",
+      "tm:darkpulse",
+      "tm:dig",
+      "tm:dragontail",
+      "tm:electricterrain",
+      "tm:electroball",
+      "tm:electroweb",
+      "tm:endure",
+      "tm:facade",
+      "tm:flash",
+      "tm:grassknot",
+      "tm:irontail",
+      "tm:lightscreen",
+      "tm:lowsweep",
+      "tm:magnetrise",
+      "tm:mudslap",
+      "tm:protect",
+      "tm:psychup",
+      "tm:raindance",
+      "tm:rest",
+      "tm:risingvoltage",
+      "tm:rockslide",
+      "tm:rocktomb",
+      "tm:sandstorm",
+      "tm:scaleshot",
+      "tm:shockwave",
+      "tm:signalbeam",
+      "tm:sleeptalk",
+      "tm:substitute",
+      "tm:surf",
+      "tm:swift",
+      "tm:terablast",
+      "tm:thunder",
+      "tm:thunderbolt",
+      "tm:thunderwave",
+      "tm:uturn",
+      "tm:voltswitch",
+      "tm:wildcharge",
+      "tutor:allyswitch",
+      "tutor:bulldoze",
+      "tutor:chargebeam",
+      "tutor:darkpulse",
+      "tutor:electroweb",
+      "tutor:irontail",
+      "tutor:magnetrise",
+      "tutor:mudslap",
+      "tutor:rest",
+      "tutor:risingvoltage",
+      "tutor:rockslide",
+      "tutor:scaleshot",
+      "tutor:shockwave",
+      "tutor:signalbeam",
+      "tutor:sleeptalk",
+      "tutor:swift",
+      "tutor:thunderbolt",
+      "tutor:wildcharge",
+      "legacy:attract",
+      "legacy:confide",
+      "legacy:doubleteam",
+      "legacy:frustration",
+      "legacy:hiddenpower",
+      "legacy:return",
+      "legacy:round",
+      "legacy:secretpower",
+      "legacy:snore",
+      "legacy:swagger",
+      "legacy:toxic"
+    ],
+    "evolutions": [
+      {
+        "id": "helioptile_heliolisk",
+        "variant": "item_interact",
+        "result": "heliolisk",
+        "consumeHeldItem": false,
+        "learnableMoves": [],
+        "requirements": [],
+        "requiredContext": "cobblemon:sun_stone"
+      }
+    ],
+    "behaviour": {
+      "resting": {
+        "willSleepOnBed": true,
+        "drowsyChance": 0.0333,
+        "rouseChance": 0.0042
+      },
+      "moving": {
+        "swim": {
+          "avoidsWater": true
+        }
+      },
+      "combat": {
+        "willDefendOwner": true
+      }
+    }
+  }
+}

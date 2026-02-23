@@ -1,0 +1,1995 @@
+{
+  "slug": "rufflet",
+  "name": "Rufflet",
+  "dexNumber": 627,
+  "implemented": true,
+  "types": [
+    "normal",
+    "flying"
+  ],
+  "abilities": [
+    {
+      "id": "keeneye",
+      "hidden": false,
+      "label": "Keeneye",
+      "slot": "first"
+    },
+    {
+      "id": "sheerforce",
+      "hidden": false,
+      "label": "Sheerforce",
+      "slot": "second"
+    },
+    {
+      "id": "hustle",
+      "hidden": true,
+      "label": "Hustle",
+      "slot": "hidden"
+    }
+  ],
+  "eggGroups": [
+    "flying"
+  ],
+  "labels": [
+    "gen5",
+    "unovan_form"
+  ],
+  "aspects": [],
+  "aliases": [
+    "hisui-bias",
+    "rufflet",
+    "rufflet hisui-bias"
+  ],
+  "maleRatio": 1,
+  "height": 5,
+  "weight": 105,
+  "catchRate": 190,
+  "baseExperienceYield": 70,
+  "baseFriendship": 50,
+  "eggCycles": 20,
+  "baseStats": {
+    "hp": 70,
+    "attack": 83,
+    "defence": 50,
+    "special_attack": 37,
+    "special_defence": 50,
+    "speed": 60
+  },
+  "evYield": {
+    "hp": 0,
+    "attack": 1,
+    "defence": 0,
+    "special_attack": 0,
+    "special_defence": 0,
+    "speed": 0
+  },
+  "preEvolution": null,
+  "evolutions": [
+    {
+      "id": "rufflet_braviary",
+      "variant": "level_up",
+      "result": {
+        "raw": "braviary",
+        "slug": "braviary",
+        "aspectTokens": []
+      },
+      "consumeHeldItem": false,
+      "learnableMoves": [
+        "superpower"
+      ],
+      "requirementText": [
+        "Level 54+"
+      ],
+      "requirements": [
+        {
+          "variant": "level",
+          "text": "Level 54+",
+          "raw": {
+            "variant": "level",
+            "minLevel": 54
+          }
+        }
+      ],
+      "requiredContext": null,
+      "fromForm": null,
+      "raw": {
+        "id": "rufflet_braviary",
+        "variant": "level_up",
+        "result": "braviary",
+        "consumeHeldItem": false,
+        "learnableMoves": [
+          "superpower"
+        ],
+        "requirements": [
+          {
+            "variant": "level",
+            "minLevel": 54
+          }
+        ]
+      }
+    },
+    {
+      "id": "rufflet_braviaryhisui",
+      "variant": "level_up",
+      "result": {
+        "raw": "braviary hisuian",
+        "slug": "braviary",
+        "aspectTokens": [
+          "hisuian"
+        ]
+      },
+      "consumeHeldItem": false,
+      "learnableMoves": [
+        "esperwing"
+      ],
+      "requirementText": [
+        "Level 54+",
+        "Biome Evolution Regional Rufflet Hisuibiome"
+      ],
+      "requirements": [
+        {
+          "variant": "level",
+          "text": "Level 54+",
+          "raw": {
+            "variant": "level",
+            "minLevel": 54
+          }
+        },
+        {
+          "variant": "biome",
+          "text": "Biome Evolution Regional Rufflet Hisuibiome",
+          "raw": {
+            "variant": "biome",
+            "biomeCondition": "#cobblemon:evolution/regional/rufflet_hisuibiome"
+          }
+        }
+      ],
+      "requiredContext": null,
+      "fromForm": null,
+      "raw": {
+        "id": "rufflet_braviaryhisui",
+        "variant": "level_up",
+        "result": "braviary hisuian",
+        "consumeHeldItem": false,
+        "learnableMoves": [
+          "esperwing"
+        ],
+        "requirements": [
+          {
+            "variant": "level",
+            "minLevel": 54
+          },
+          {
+            "variant": "biome",
+            "biomeCondition": "#cobblemon:evolution/regional/rufflet_hisuibiome"
+          }
+        ]
+      }
+    }
+  ],
+  "evolutionFamily": {
+    "members": [
+      {
+        "nodeId": "rufflet",
+        "slug": "rufflet",
+        "name": "Rufflet",
+        "dexNumber": 627,
+        "formSlug": null,
+        "formName": null
+      },
+      {
+        "nodeId": "rufflet-hisuibias",
+        "slug": "rufflet",
+        "name": "Rufflet",
+        "dexNumber": 627,
+        "formSlug": "rufflet-hisuibias",
+        "formName": "Hisui-Bias"
+      },
+      {
+        "nodeId": "braviary",
+        "slug": "braviary",
+        "name": "Braviary",
+        "dexNumber": 628,
+        "formSlug": null,
+        "formName": null
+      },
+      {
+        "nodeId": "braviary-hisui",
+        "slug": "braviary",
+        "name": "Braviary",
+        "dexNumber": 628,
+        "formSlug": "braviary-hisui",
+        "formName": "Hisui"
+      }
+    ],
+    "edges": [
+      {
+        "fromNodeId": "rufflet",
+        "toNodeId": "braviary",
+        "fromSlug": "rufflet",
+        "toSlug": "braviary",
+        "method": "level_up",
+        "requirementText": [
+          "Level 54+"
+        ]
+      },
+      {
+        "fromNodeId": "rufflet-hisuibias",
+        "toNodeId": "braviary-hisui",
+        "fromSlug": "rufflet",
+        "toSlug": "braviary",
+        "method": "level_up",
+        "requirementText": [
+          "Level 54+"
+        ]
+      }
+    ],
+    "roots": [
+      "rufflet",
+      "rufflet-hisuibias"
+    ]
+  },
+  "moves": [
+    {
+      "raw": "tm:acrobatics",
+      "moveId": "acrobatics",
+      "moveName": "Acrobatics",
+      "type": "flying",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "30:aerialace",
+      "moveId": "aerialace",
+      "moveName": "Aerial Ace",
+      "type": "flying",
+      "sourceType": "level",
+      "sourceValue": 30,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:aerialace",
+      "moveId": "aerialace",
+      "moveName": "Aerial Ace",
+      "type": "flying",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tutor:aerialace",
+      "moveId": "aerialace",
+      "moveName": "Aerial Ace",
+      "type": "flying",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:agility",
+      "moveId": "agility",
+      "moveName": "Agility",
+      "type": "psychic",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:aircutter",
+      "moveId": "aircutter",
+      "moveName": "Air Cutter",
+      "type": "flying",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tutor:aircutter",
+      "moveId": "aircutter",
+      "moveName": "Air Cutter",
+      "type": "flying",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "55:airslash",
+      "moveId": "airslash",
+      "moveName": "Air Slash",
+      "type": "flying",
+      "sourceType": "level",
+      "sourceValue": 55,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:airslash",
+      "moveId": "airslash",
+      "moveName": "Air Slash",
+      "type": "flying",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:assurance",
+      "moveId": "assurance",
+      "moveName": "Assurance",
+      "type": "dark",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "legacy:attract",
+      "moveId": "attract",
+      "moveName": "Attract",
+      "type": "normal",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:bodyslam",
+      "moveId": "bodyslam",
+      "moveName": "Body Slam",
+      "type": "normal",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "72:bravebird",
+      "moveId": "bravebird",
+      "moveName": "Brave Bird",
+      "type": "flying",
+      "sourceType": "level",
+      "sourceValue": 72,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:bravebird",
+      "moveId": "bravebird",
+      "moveName": "Brave Bird",
+      "type": "flying",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:bulkup",
+      "moveId": "bulkup",
+      "moveName": "Bulk Up",
+      "type": "fighting",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tutor:bulkup",
+      "moveId": "bulkup",
+      "moveName": "Bulk Up",
+      "type": "fighting",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:closecombat",
+      "moveId": "closecombat",
+      "moveName": "Close Combat",
+      "type": "fighting",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "legacy:confide",
+      "moveId": "confide",
+      "moveName": "Confide",
+      "type": "normal",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "48:crushclaw",
+      "moveId": "crushclaw",
+      "moveName": "Crush Claw",
+      "type": "normal",
+      "sourceType": "level",
+      "sourceValue": 48,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:cut",
+      "moveId": "cut",
+      "moveName": "Cut",
+      "type": "normal",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "60:defog",
+      "moveId": "defog",
+      "moveName": "Defog",
+      "type": "flying",
+      "sourceType": "level",
+      "sourceValue": 60,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:defog",
+      "moveId": "defog",
+      "moveName": "Defog",
+      "type": "flying",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tutor:defog",
+      "moveId": "defog",
+      "moveName": "Defog",
+      "type": "flying",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "legacy:doubleteam",
+      "moveId": "doubleteam",
+      "moveName": "Double Team",
+      "type": "normal",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:doubleedge",
+      "moveId": "doubleedge",
+      "moveName": "Double-Edge",
+      "type": "normal",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:dualwingbeat",
+      "moveId": "dualwingbeat",
+      "moveName": "Dual Wingbeat",
+      "type": "flying",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tutor:dualwingbeat",
+      "moveId": "dualwingbeat",
+      "moveName": "Dual Wingbeat",
+      "type": "flying",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:endure",
+      "moveId": "endure",
+      "moveName": "Endure",
+      "type": "normal",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:facade",
+      "moveId": "facade",
+      "moveName": "Facade",
+      "type": "normal",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:featherdance",
+      "moveId": "featherdance",
+      "moveName": "Feather Dance",
+      "type": "flying",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:fly",
+      "moveId": "fly",
+      "moveName": "Fly",
+      "type": "flying",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "legacy:frustration",
+      "moveId": "frustration",
+      "moveName": "Frustration",
+      "type": "normal",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "1:furyattack",
+      "moveId": "furyattack",
+      "moveName": "Fury Attack",
+      "type": "normal",
+      "sourceType": "level",
+      "sourceValue": 1,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:heatwave",
+      "moveId": "heatwave",
+      "moveName": "Heat Wave",
+      "type": "fire",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tutor:heatwave",
+      "moveId": "heatwave",
+      "moveName": "Heat Wave",
+      "type": "fire",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:helpinghand",
+      "moveId": "helpinghand",
+      "moveName": "Helping Hand",
+      "type": "normal",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tutor:helpinghand",
+      "moveId": "helpinghand",
+      "moveName": "Helping Hand",
+      "type": "normal",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "legacy:hiddenpower",
+      "moveId": "hiddenpower",
+      "moveName": "Hidden Power",
+      "type": "normal",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "6:honeclaws",
+      "moveId": "honeclaws",
+      "moveName": "Hone Claws",
+      "type": "dark",
+      "sourceType": "level",
+      "sourceValue": 6,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:honeclaws",
+      "moveId": "honeclaws",
+      "moveName": "Hone Claws",
+      "type": "dark",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:hurricane",
+      "moveId": "hurricane",
+      "moveName": "Hurricane",
+      "type": "flying",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "1:leer",
+      "moveId": "leer",
+      "moveName": "Leer",
+      "type": "normal",
+      "sourceType": "level",
+      "sourceValue": 1,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:ominouswind",
+      "moveId": "ominouswind",
+      "moveName": "Ominous Wind",
+      "type": "ghost",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tutor:ominouswind",
+      "moveId": "ominouswind",
+      "moveName": "Ominous Wind",
+      "type": "ghost",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "1:peck",
+      "moveId": "peck",
+      "moveName": "Peck",
+      "type": "flying",
+      "sourceType": "level",
+      "sourceValue": 1,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:pluck",
+      "moveId": "pluck",
+      "moveName": "Pluck",
+      "type": "flying",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:protect",
+      "moveId": "protect",
+      "moveName": "Protect",
+      "type": "normal",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:raindance",
+      "moveId": "raindance",
+      "moveName": "Rain Dance",
+      "type": "water",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:rest",
+      "moveId": "rest",
+      "moveName": "Rest",
+      "type": "psychic",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tutor:rest",
+      "moveId": "rest",
+      "moveName": "Rest",
+      "type": "psychic",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:retaliate",
+      "moveId": "retaliate",
+      "moveName": "Retaliate",
+      "type": "normal",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "legacy:return",
+      "moveId": "return",
+      "moveName": "Return",
+      "type": "normal",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:rockslide",
+      "moveId": "rockslide",
+      "moveName": "Rock Slide",
+      "type": "rock",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tutor:rockslide",
+      "moveId": "rockslide",
+      "moveName": "Rock Slide",
+      "type": "rock",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "egg:rocksmash",
+      "moveId": "rocksmash",
+      "moveName": "Rock Smash",
+      "type": "fighting",
+      "sourceType": "egg",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:rocksmash",
+      "moveId": "rocksmash",
+      "moveName": "Rock Smash",
+      "type": "fighting",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tutor:rocksmash",
+      "moveId": "rocksmash",
+      "moveName": "Rock Smash",
+      "type": "fighting",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:rocktomb",
+      "moveId": "rocktomb",
+      "moveName": "Rock Tomb",
+      "type": "rock",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "egg:roost",
+      "moveId": "roost",
+      "moveName": "Roost",
+      "type": "flying",
+      "sourceType": "egg",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:roost",
+      "moveId": "roost",
+      "moveName": "Roost",
+      "type": "flying",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tutor:roost",
+      "moveId": "roost",
+      "moveName": "Roost",
+      "type": "flying",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "legacy:round",
+      "moveId": "round",
+      "moveName": "Round",
+      "type": "normal",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "24:scaryface",
+      "moveId": "scaryface",
+      "moveName": "Scary Face",
+      "type": "normal",
+      "sourceType": "level",
+      "sourceValue": 24,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:scaryface",
+      "moveId": "scaryface",
+      "moveName": "Scary Face",
+      "type": "normal",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "legacy:secretpower",
+      "moveId": "secretpower",
+      "moveName": "Secret Power",
+      "type": "normal",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:shadowclaw",
+      "moveId": "shadowclaw",
+      "moveName": "Shadow Claw",
+      "type": "ghost",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tutor:shadowclaw",
+      "moveId": "shadowclaw",
+      "moveName": "Shadow Claw",
+      "type": "ghost",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:skydrop",
+      "moveId": "skydrop",
+      "moveName": "Sky Drop",
+      "type": "flying",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "36:slash",
+      "moveId": "slash",
+      "moveName": "Slash",
+      "type": "normal",
+      "sourceType": "level",
+      "sourceValue": 36,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:sleeptalk",
+      "moveId": "sleeptalk",
+      "moveName": "Sleep Talk",
+      "type": "normal",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tutor:sleeptalk",
+      "moveId": "sleeptalk",
+      "moveName": "Sleep Talk",
+      "type": "normal",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "legacy:snore",
+      "moveId": "snore",
+      "moveName": "Snore",
+      "type": "normal",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:steelwing",
+      "moveId": "steelwing",
+      "moveName": "Steel Wing",
+      "type": "steel",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:strength",
+      "moveId": "strength",
+      "moveName": "Strength",
+      "type": "normal",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:substitute",
+      "moveId": "substitute",
+      "moveName": "Substitute",
+      "type": "normal",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:sunnyday",
+      "moveId": "sunnyday",
+      "moveName": "Sunny Day",
+      "type": "fire",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:superpower",
+      "moveId": "superpower",
+      "moveName": "Superpower",
+      "type": "fighting",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tutor:superpower",
+      "moveId": "superpower",
+      "moveName": "Superpower",
+      "type": "fighting",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "legacy:swagger",
+      "moveId": "swagger",
+      "moveName": "Swagger",
+      "type": "normal",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:swift",
+      "moveId": "swift",
+      "moveName": "Swift",
+      "type": "normal",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tutor:swift",
+      "moveId": "swift",
+      "moveName": "Swift",
+      "type": "normal",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "18:tailwind",
+      "moveId": "tailwind",
+      "moveName": "Tailwind",
+      "type": "flying",
+      "sourceType": "level",
+      "sourceValue": 18,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:tailwind",
+      "moveId": "tailwind",
+      "moveName": "Tailwind",
+      "type": "flying",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tutor:tailwind",
+      "moveId": "tailwind",
+      "moveName": "Tailwind",
+      "type": "flying",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:takedown",
+      "moveId": "takedown",
+      "moveName": "Take Down",
+      "type": "normal",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:terablast",
+      "moveId": "terablast",
+      "moveName": "Tera Blast",
+      "type": "normal",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "66:thrash",
+      "moveId": "thrash",
+      "moveName": "Thrash",
+      "type": "normal",
+      "sourceType": "level",
+      "sourceValue": 66,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "legacy:toxic",
+      "moveId": "toxic",
+      "moveName": "Toxic",
+      "type": "poison",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:uturn",
+      "moveId": "uturn",
+      "moveName": "U-turn",
+      "type": "bug",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "42:whirlwind",
+      "moveId": "whirlwind",
+      "moveName": "Whirlwind",
+      "type": "normal",
+      "sourceType": "level",
+      "sourceValue": 42,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "12:wingattack",
+      "moveId": "wingattack",
+      "moveName": "Wing Attack",
+      "type": "flying",
+      "sourceType": "level",
+      "sourceValue": 12,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:workup",
+      "moveId": "workup",
+      "moveName": "Work Up",
+      "type": "normal",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:zenheadbutt",
+      "moveId": "zenheadbutt",
+      "moveName": "Zen Headbutt",
+      "type": "psychic",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tutor:zenheadbutt",
+      "moveId": "zenheadbutt",
+      "moveName": "Zen Headbutt",
+      "type": "psychic",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    }
+  ],
+  "spawnEntries": [
+    {
+      "id": "rufflet-1",
+      "sourceFile": "0627_rufflet.json",
+      "pokemon": {
+        "raw": "rufflet",
+        "slug": "rufflet",
+        "aspectTokens": []
+      },
+      "type": "pokemon",
+      "spawnablePositionType": "grounded",
+      "bucket": "uncommon",
+      "bucketWeight": 5,
+      "levelText": "10-35",
+      "levelMin": 10,
+      "levelMax": 35,
+      "weight": 8.4,
+      "presets": [
+        "natural",
+        "treetop",
+        "wild"
+      ],
+      "biomeHints": [
+        "Is Badlands",
+        "Is Hills",
+        "Is Hill",
+        "Is Highlands"
+      ],
+      "condition": {
+        "neededBaseBlocks": [
+          "#cobblemon:natural",
+          "#cobblemon:trees"
+        ],
+        "minSkyLight": 8,
+        "maxSkyLight": 15,
+        "biomes": [
+          "#cobblemon:is_badlands",
+          "#cobblemon:is_hills"
+        ],
+        "timeRange": "day"
+      },
+      "anticondition": {
+        "neededBaseBlocks": [
+          "minecraft:farmland"
+        ],
+        "structures": [
+          "#minecraft:village"
+        ],
+        "neededNearbyBlocks": [
+          "#cobblemon:concrete_blocks"
+        ]
+      },
+      "weightMultipliers": [],
+      "raw": {
+        "id": "rufflet-1",
+        "pokemon": "rufflet",
+        "presets": [
+          "natural",
+          "treetop",
+          "wild"
+        ],
+        "type": "pokemon",
+        "spawnablePositionType": "grounded",
+        "bucket": "uncommon",
+        "level": "10-35",
+        "weight": 8.4,
+        "condition": {
+          "minSkyLight": 8,
+          "maxSkyLight": 15,
+          "biomes": [
+            "#cobblemon:is_badlands",
+            "#cobblemon:is_hills"
+          ],
+          "timeRange": "day"
+        }
+      }
+    },
+    {
+      "id": "rufflet-2",
+      "sourceFile": "0627_rufflet.json",
+      "pokemon": {
+        "raw": "rufflet",
+        "slug": "rufflet",
+        "aspectTokens": []
+      },
+      "type": "pokemon",
+      "spawnablePositionType": "grounded",
+      "bucket": "common",
+      "bucketWeight": 94.3,
+      "levelText": "10-35",
+      "levelMin": 10,
+      "levelMax": 35,
+      "weight": 9,
+      "presets": [
+        "natural",
+        "treetop",
+        "wild"
+      ],
+      "biomeHints": [
+        "Is Sky",
+        "Skylands Autumn",
+        "Skylands Spring"
+      ],
+      "condition": {
+        "neededBaseBlocks": [
+          "#cobblemon:natural",
+          "#cobblemon:trees"
+        ],
+        "minSkyLight": 8,
+        "maxSkyLight": 15,
+        "biomes": [
+          "#cobblemon:is_sky"
+        ],
+        "timeRange": "day"
+      },
+      "anticondition": {
+        "neededBaseBlocks": [
+          "minecraft:farmland"
+        ],
+        "structures": [
+          "#minecraft:village"
+        ],
+        "neededNearbyBlocks": [
+          "#cobblemon:concrete_blocks"
+        ]
+      },
+      "weightMultipliers": [],
+      "raw": {
+        "id": "rufflet-2",
+        "pokemon": "rufflet",
+        "presets": [
+          "natural",
+          "treetop",
+          "wild"
+        ],
+        "type": "pokemon",
+        "spawnablePositionType": "grounded",
+        "bucket": "common",
+        "level": "10-35",
+        "weight": 9,
+        "condition": {
+          "minSkyLight": 8,
+          "maxSkyLight": 15,
+          "biomes": [
+            "#cobblemon:is_sky"
+          ],
+          "timeRange": "day"
+        }
+      }
+    },
+    {
+      "id": "rufflet-hisui-5",
+      "sourceFile": "0627_rufflet.json",
+      "pokemon": {
+        "raw": "rufflet region_bias=hisui",
+        "slug": "rufflet",
+        "aspectTokens": [
+          "region_bias=hisui"
+        ]
+      },
+      "type": "pokemon",
+      "spawnablePositionType": "grounded",
+      "bucket": "uncommon",
+      "bucketWeight": 5,
+      "levelText": "10-35",
+      "levelMin": 10,
+      "levelMax": 35,
+      "weight": 8.4,
+      "presets": [
+        "natural",
+        "treetop",
+        "wild"
+      ],
+      "biomeHints": [
+        "Is Mountain",
+        "Is Hills"
+      ],
+      "condition": {
+        "neededBaseBlocks": [
+          "#cobblemon:natural",
+          "#cobblemon:trees"
+        ],
+        "minSkyLight": 8,
+        "maxSkyLight": 15,
+        "biomes": [
+          "#cobblemon:is_mountain"
+        ]
+      },
+      "anticondition": {
+        "neededBaseBlocks": [
+          "minecraft:farmland"
+        ],
+        "structures": [
+          "#minecraft:village"
+        ],
+        "neededNearbyBlocks": [
+          "#cobblemon:concrete_blocks"
+        ],
+        "biomes": [
+          "#cobblemon:is_badlands",
+          "#cobblemon:is_hills",
+          "#cobblemon:is_volcanic"
+        ]
+      },
+      "weightMultipliers": [
+        {
+          "multiplier": 0.25,
+          "condition": {
+            "timeRange": "night"
+          }
+        }
+      ],
+      "raw": {
+        "id": "rufflet-hisui-5",
+        "pokemon": "rufflet region_bias=hisui",
+        "presets": [
+          "natural",
+          "treetop",
+          "wild"
+        ],
+        "type": "pokemon",
+        "spawnablePositionType": "grounded",
+        "bucket": "uncommon",
+        "level": "10-35",
+        "weight": 8.4,
+        "weightMultiplier": {
+          "multiplier": 0.25,
+          "condition": {
+            "timeRange": "night"
+          }
+        },
+        "condition": {
+          "minSkyLight": 8,
+          "maxSkyLight": 15,
+          "biomes": [
+            "#cobblemon:is_mountain"
+          ]
+        },
+        "anticondition": {
+          "biomes": [
+            "#cobblemon:is_badlands",
+            "#cobblemon:is_hills",
+            "#cobblemon:is_volcanic"
+          ]
+        }
+      }
+    },
+    {
+      "id": "rufflet-hisui-6",
+      "sourceFile": "0627_rufflet.json",
+      "pokemon": {
+        "raw": "rufflet region_bias=hisui",
+        "slug": "rufflet",
+        "aspectTokens": [
+          "region_bias=hisui"
+        ]
+      },
+      "type": "pokemon",
+      "spawnablePositionType": "grounded",
+      "bucket": "common",
+      "bucketWeight": 94.3,
+      "levelText": "10-35",
+      "levelMin": 10,
+      "levelMax": 35,
+      "weight": 9,
+      "presets": [
+        "natural",
+        "treetop",
+        "wild"
+      ],
+      "biomeHints": [
+        "Is Sky",
+        "Skylands Autumn",
+        "Skylands Spring"
+      ],
+      "condition": {
+        "neededBaseBlocks": [
+          "#cobblemon:natural",
+          "#cobblemon:trees"
+        ],
+        "minSkyLight": 8,
+        "maxSkyLight": 15,
+        "biomes": [
+          "#cobblemon:is_sky"
+        ]
+      },
+      "anticondition": {
+        "neededBaseBlocks": [
+          "minecraft:farmland"
+        ],
+        "structures": [
+          "#minecraft:village"
+        ],
+        "neededNearbyBlocks": [
+          "#cobblemon:concrete_blocks"
+        ]
+      },
+      "weightMultipliers": [
+        {
+          "multiplier": 0.25,
+          "condition": {
+            "timeRange": "night"
+          }
+        }
+      ],
+      "raw": {
+        "id": "rufflet-hisui-6",
+        "pokemon": "rufflet region_bias=hisui",
+        "presets": [
+          "natural",
+          "treetop",
+          "wild"
+        ],
+        "type": "pokemon",
+        "spawnablePositionType": "grounded",
+        "bucket": "common",
+        "level": "10-35",
+        "weight": 9,
+        "weightMultiplier": {
+          "multiplier": 0.25,
+          "condition": {
+            "timeRange": "night"
+          }
+        },
+        "condition": {
+          "minSkyLight": 8,
+          "maxSkyLight": 15,
+          "biomes": [
+            "#cobblemon:is_sky"
+          ]
+        }
+      }
+    }
+  ],
+  "forms": [
+    {
+      "name": "Hisui-Bias",
+      "slug": "rufflet-hisuibias",
+      "aspects": [
+        "region-bias-hisui"
+      ],
+      "labels": [
+        "gen8a",
+        "customized_official",
+        "hisuian_form"
+      ],
+      "types": [
+        "normal",
+        "flying"
+      ],
+      "maleRatio": 1,
+      "height": 5,
+      "weight": 105,
+      "catchRate": null,
+      "baseExperienceYield": null,
+      "baseFriendship": null,
+      "eggCycles": null,
+      "baseStats": {},
+      "evYield": {},
+      "battleOnly": false,
+      "abilities": [],
+      "moves": [],
+      "evolutions": [
+        {
+          "id": "rufflet_braviary",
+          "variant": "level_up",
+          "result": {
+            "raw": "braviary",
+            "slug": "braviary",
+            "aspectTokens": []
+          },
+          "consumeHeldItem": false,
+          "learnableMoves": [
+            "superpower"
+          ],
+          "requirementText": [
+            "Level 54+",
+            "Biome Evolution Regional Rufflet Unovabiome"
+          ],
+          "requirements": [
+            {
+              "variant": "level",
+              "text": "Level 54+",
+              "raw": {
+                "variant": "level",
+                "minLevel": 54
+              }
+            },
+            {
+              "variant": "biome",
+              "text": "Biome Evolution Regional Rufflet Unovabiome",
+              "raw": {
+                "variant": "biome",
+                "biomeCondition": "#cobblemon:evolution/regional/rufflet_unovabiome"
+              }
+            }
+          ],
+          "requiredContext": null,
+          "fromForm": "Hisui-Bias",
+          "raw": {
+            "id": "rufflet_braviary",
+            "variant": "level_up",
+            "result": "braviary",
+            "consumeHeldItem": false,
+            "learnableMoves": [
+              "superpower"
+            ],
+            "requirements": [
+              {
+                "variant": "level",
+                "minLevel": 54
+              },
+              {
+                "variant": "biome",
+                "biomeCondition": "#cobblemon:evolution/regional/rufflet_unovabiome"
+              }
+            ]
+          }
+        },
+        {
+          "id": "rufflet_braviaryhisui",
+          "variant": "level_up",
+          "result": {
+            "raw": "braviary hisuian",
+            "slug": "braviary",
+            "aspectTokens": [
+              "hisuian"
+            ]
+          },
+          "consumeHeldItem": false,
+          "learnableMoves": [
+            "esperwing"
+          ],
+          "requirementText": [
+            "Level 54+"
+          ],
+          "requirements": [
+            {
+              "variant": "level",
+              "text": "Level 54+",
+              "raw": {
+                "variant": "level",
+                "minLevel": 54
+              }
+            }
+          ],
+          "requiredContext": null,
+          "fromForm": "Hisui-Bias",
+          "raw": {
+            "id": "rufflet_braviaryhisui",
+            "variant": "level_up",
+            "result": "braviary hisuian",
+            "consumeHeldItem": false,
+            "learnableMoves": [
+              "esperwing"
+            ],
+            "requirements": [
+              {
+                "variant": "level",
+                "minLevel": 54
+              }
+            ]
+          }
+        }
+      ],
+      "raw": {
+        "name": "Hisui-Bias",
+        "primaryType": "normal",
+        "secondaryType": "flying",
+        "maleRatio": 1,
+        "height": 5,
+        "weight": 105,
+        "pokedex": [
+          "cobblemon.species.rufflet-hisuibias.desc"
+        ],
+        "labels": [
+          "gen8a",
+          "customized_official",
+          "hisuian_form"
+        ],
+        "aspects": [
+          "region-bias-hisui"
+        ],
+        "dynamaxBlocked": false,
+        "evolutions": [
+          {
+            "id": "rufflet_braviary",
+            "variant": "level_up",
+            "result": "braviary",
+            "consumeHeldItem": false,
+            "learnableMoves": [
+              "superpower"
+            ],
+            "requirements": [
+              {
+                "variant": "level",
+                "minLevel": 54
+              },
+              {
+                "variant": "biome",
+                "biomeCondition": "#cobblemon:evolution/regional/rufflet_unovabiome"
+              }
+            ]
+          },
+          {
+            "id": "rufflet_braviaryhisui",
+            "variant": "level_up",
+            "result": "braviary hisuian",
+            "consumeHeldItem": false,
+            "learnableMoves": [
+              "esperwing"
+            ],
+            "requirements": [
+              {
+                "variant": "level",
+                "minLevel": 54
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ],
+  "rawSpecies": {
+    "implemented": true,
+    "nationalPokedexNumber": 627,
+    "name": "Rufflet",
+    "primaryType": "normal",
+    "secondaryType": "flying",
+    "maleRatio": 1,
+    "height": 5,
+    "weight": 105,
+    "pokedex": [
+      "cobblemon.species.rufflet.desc"
+    ],
+    "labels": [
+      "gen5",
+      "unovan_form"
+    ],
+    "aspects": [],
+    "abilities": [
+      "keeneye",
+      "sheerforce",
+      "h:hustle"
+    ],
+    "eggGroups": [
+      "flying"
+    ],
+    "baseStats": {
+      "hp": 70,
+      "attack": 83,
+      "defence": 50,
+      "special_attack": 37,
+      "special_defence": 50,
+      "speed": 60
+    },
+    "evYield": {
+      "hp": 0,
+      "attack": 1,
+      "defence": 0,
+      "special_attack": 0,
+      "special_defence": 0,
+      "speed": 0
+    },
+    "baseExperienceYield": 70,
+    "experienceGroup": "slow",
+    "catchRate": 190,
+    "eggCycles": 20,
+    "baseFriendship": 50,
+    "baseScale": 0.75,
+    "hitbox": {
+      "width": 0.8,
+      "height": 1.2,
+      "standingEyeHeight": 0.7,
+      "fixed": false
+    },
+    "behaviour": {
+      "moving": {
+        "walk": {
+          "walkSpeed": 0.17
+        },
+        "fly": {
+          "canFly": true
+        },
+        "swim": {
+          "avoidsWater": true
+        }
+      },
+      "resting": {
+        "canSleep": true,
+        "light": "0-4",
+        "willSleepOnBed": true,
+        "drowsyChance": 0.0333,
+        "rouseChance": 0.0042
+      },
+      "herd": {
+        "maxSize": "9",
+        "toleratedLeaders": [
+          {
+            "pokemon": "rufflet",
+            "tier": 1
+          },
+          {
+            "pokemon": "braviary",
+            "tier": 2
+          }
+        ]
+      },
+      "combat": {
+        "willDefendSelf": true,
+        "willDefendOwner": true,
+        "willFlee": false
+      }
+    },
+    "drops": {
+      "amount": 3,
+      "entries": [
+        {
+          "item": "minecraft:feather",
+          "quantityRange": "0-1"
+        },
+        {
+          "item": "minecraft:chicken"
+        },
+        {
+          "item": "cobblemon:razz_berry",
+          "percentage": 2.5
+        }
+      ]
+    },
+    "moves": [
+      "1:peck",
+      "1:leer",
+      "1:furyattack",
+      "6:honeclaws",
+      "12:wingattack",
+      "18:tailwind",
+      "24:scaryface",
+      "30:aerialace",
+      "36:slash",
+      "42:whirlwind",
+      "48:crushclaw",
+      "55:airslash",
+      "60:defog",
+      "66:thrash",
+      "72:bravebird",
+      "egg:rocksmash",
+      "egg:roost",
+      "tm:acrobatics",
+      "tm:aerialace",
+      "tm:agility",
+      "tm:aircutter",
+      "tm:airslash",
+      "tm:assurance",
+      "tm:bodyslam",
+      "tm:bravebird",
+      "tm:bulkup",
+      "tm:closecombat",
+      "tm:cut",
+      "tm:defog",
+      "tm:doubleedge",
+      "tm:dualwingbeat",
+      "tm:endure",
+      "tm:facade",
+      "tm:featherdance",
+      "tm:fly",
+      "tm:heatwave",
+      "tm:helpinghand",
+      "tm:honeclaws",
+      "tm:hurricane",
+      "tm:ominouswind",
+      "tm:pluck",
+      "tm:protect",
+      "tm:raindance",
+      "tm:rest",
+      "tm:retaliate",
+      "tm:rockslide",
+      "tm:rocksmash",
+      "tm:rocktomb",
+      "tm:roost",
+      "tm:scaryface",
+      "tm:shadowclaw",
+      "tm:skydrop",
+      "tm:sleeptalk",
+      "tm:steelwing",
+      "tm:strength",
+      "tm:substitute",
+      "tm:sunnyday",
+      "tm:superpower",
+      "tm:swift",
+      "tm:tailwind",
+      "tm:takedown",
+      "tm:terablast",
+      "tm:uturn",
+      "tm:workup",
+      "tm:zenheadbutt",
+      "tutor:aerialace",
+      "tutor:aircutter",
+      "tutor:bulkup",
+      "tutor:defog",
+      "tutor:dualwingbeat",
+      "tutor:heatwave",
+      "tutor:helpinghand",
+      "tutor:ominouswind",
+      "tutor:rest",
+      "tutor:rockslide",
+      "tutor:rocksmash",
+      "tutor:roost",
+      "tutor:shadowclaw",
+      "tutor:sleeptalk",
+      "tutor:superpower",
+      "tutor:swift",
+      "tutor:tailwind",
+      "tutor:zenheadbutt",
+      "legacy:attract",
+      "legacy:confide",
+      "legacy:doubleteam",
+      "legacy:frustration",
+      "legacy:hiddenpower",
+      "legacy:return",
+      "legacy:round",
+      "legacy:secretpower",
+      "legacy:snore",
+      "legacy:swagger",
+      "legacy:toxic"
+    ],
+    "evolutions": [
+      {
+        "id": "rufflet_braviary",
+        "variant": "level_up",
+        "result": "braviary",
+        "consumeHeldItem": false,
+        "learnableMoves": [
+          "superpower"
+        ],
+        "requirements": [
+          {
+            "variant": "level",
+            "minLevel": 54
+          }
+        ]
+      },
+      {
+        "id": "rufflet_braviaryhisui",
+        "variant": "level_up",
+        "result": "braviary hisuian",
+        "consumeHeldItem": false,
+        "learnableMoves": [
+          "esperwing"
+        ],
+        "requirements": [
+          {
+            "variant": "level",
+            "minLevel": 54
+          },
+          {
+            "variant": "biome",
+            "biomeCondition": "#cobblemon:evolution/regional/rufflet_hisuibiome"
+          }
+        ]
+      }
+    ],
+    "forms": [
+      {
+        "name": "Hisui-Bias",
+        "primaryType": "normal",
+        "secondaryType": "flying",
+        "maleRatio": 1,
+        "height": 5,
+        "weight": 105,
+        "pokedex": [
+          "cobblemon.species.rufflet-hisuibias.desc"
+        ],
+        "labels": [
+          "gen8a",
+          "customized_official",
+          "hisuian_form"
+        ],
+        "aspects": [
+          "region-bias-hisui"
+        ],
+        "dynamaxBlocked": false,
+        "evolutions": [
+          {
+            "id": "rufflet_braviary",
+            "variant": "level_up",
+            "result": "braviary",
+            "consumeHeldItem": false,
+            "learnableMoves": [
+              "superpower"
+            ],
+            "requirements": [
+              {
+                "variant": "level",
+                "minLevel": 54
+              },
+              {
+                "variant": "biome",
+                "biomeCondition": "#cobblemon:evolution/regional/rufflet_unovabiome"
+              }
+            ]
+          },
+          {
+            "id": "rufflet_braviaryhisui",
+            "variant": "level_up",
+            "result": "braviary hisuian",
+            "consumeHeldItem": false,
+            "learnableMoves": [
+              "esperwing"
+            ],
+            "requirements": [
+              {
+                "variant": "level",
+                "minLevel": 54
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

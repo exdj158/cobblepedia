@@ -1,0 +1,1403 @@
+{
+  "slug": "swellow",
+  "name": "Swellow",
+  "dexNumber": 277,
+  "implemented": true,
+  "types": [
+    "normal",
+    "flying"
+  ],
+  "abilities": [
+    {
+      "id": "guts",
+      "hidden": false,
+      "label": "Guts",
+      "slot": "first"
+    },
+    {
+      "id": "scrappy",
+      "hidden": true,
+      "label": "Scrappy",
+      "slot": "hidden"
+    }
+  ],
+  "eggGroups": [
+    "flying"
+  ],
+  "labels": [
+    "gen3"
+  ],
+  "aspects": [],
+  "aliases": [
+    "swellow"
+  ],
+  "maleRatio": 0.5,
+  "height": 7,
+  "weight": 198,
+  "catchRate": 45,
+  "baseExperienceYield": 159,
+  "baseFriendship": 50,
+  "eggCycles": 15,
+  "baseStats": {
+    "hp": 60,
+    "attack": 85,
+    "defence": 60,
+    "special_attack": 75,
+    "special_defence": 50,
+    "speed": 125
+  },
+  "evYield": {
+    "hp": 0,
+    "attack": 0,
+    "defence": 0,
+    "special_attack": 0,
+    "special_defence": 0,
+    "speed": 2
+  },
+  "preEvolution": {
+    "raw": "taillow",
+    "slug": "taillow",
+    "aspectTokens": []
+  },
+  "evolutions": [],
+  "evolutionFamily": {
+    "members": [
+      {
+        "nodeId": "taillow",
+        "slug": "taillow",
+        "name": "Taillow",
+        "dexNumber": 276,
+        "formSlug": null,
+        "formName": null
+      },
+      {
+        "nodeId": "swellow",
+        "slug": "swellow",
+        "name": "Swellow",
+        "dexNumber": 277,
+        "formSlug": null,
+        "formName": null
+      }
+    ],
+    "edges": [
+      {
+        "fromNodeId": "taillow",
+        "toNodeId": "swellow",
+        "fromSlug": "taillow",
+        "toSlug": "swellow",
+        "method": "level_up",
+        "requirementText": [
+          "Level 22+"
+        ]
+      }
+    ],
+    "roots": [
+      "taillow"
+    ]
+  },
+  "moves": [
+    {
+      "raw": "21:aerialace",
+      "moveId": "aerialace",
+      "moveName": "Aerial Ace",
+      "type": "flying",
+      "sourceType": "level",
+      "sourceValue": 21,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:aerialace",
+      "moveId": "aerialace",
+      "moveName": "Aerial Ace",
+      "type": "flying",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tutor:aerialace",
+      "moveId": "aerialace",
+      "moveName": "Aerial Ace",
+      "type": "flying",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "33:agility",
+      "moveId": "agility",
+      "moveName": "Agility",
+      "type": "psychic",
+      "sourceType": "level",
+      "sourceValue": 33,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:agility",
+      "moveId": "agility",
+      "moveName": "Agility",
+      "type": "psychic",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:aircutter",
+      "moveId": "aircutter",
+      "moveName": "Air Cutter",
+      "type": "flying",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tutor:aircutter",
+      "moveId": "aircutter",
+      "moveName": "Air Cutter",
+      "type": "flying",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "1:airslash",
+      "moveId": "airslash",
+      "moveName": "Air Slash",
+      "type": "flying",
+      "sourceType": "level",
+      "sourceValue": 1,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:airslash",
+      "moveId": "airslash",
+      "moveName": "Air Slash",
+      "type": "flying",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:assurance",
+      "moveId": "assurance",
+      "moveName": "Assurance",
+      "type": "dark",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "legacy:attract",
+      "moveId": "attract",
+      "moveName": "Attract",
+      "type": "normal",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:batonpass",
+      "moveId": "batonpass",
+      "moveName": "Baton Pass",
+      "type": "normal",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "egg:boomburst",
+      "moveId": "boomburst",
+      "moveName": "Boomburst",
+      "type": "normal",
+      "sourceType": "egg",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "1:bravebird",
+      "moveId": "bravebird",
+      "moveName": "Brave Bird",
+      "type": "flying",
+      "sourceType": "level",
+      "sourceValue": 1,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:bravebird",
+      "moveId": "bravebird",
+      "moveName": "Brave Bird",
+      "type": "flying",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "legacy:captivate",
+      "moveId": "captivate",
+      "moveName": "Captivate",
+      "type": "normal",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "legacy:confide",
+      "moveId": "confide",
+      "moveName": "Confide",
+      "type": "normal",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "legacy:counter",
+      "moveId": "counter",
+      "moveName": "Counter",
+      "type": "fighting",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:defog",
+      "moveId": "defog",
+      "moveName": "Defog",
+      "type": "flying",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tutor:defog",
+      "moveId": "defog",
+      "moveName": "Defog",
+      "type": "flying",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "17:doubleteam",
+      "moveId": "doubleteam",
+      "moveName": "Double Team",
+      "type": "normal",
+      "sourceType": "level",
+      "sourceValue": 17,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:doubleteam",
+      "moveId": "doubleteam",
+      "moveName": "Double Team",
+      "type": "normal",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "legacy:doubleedge",
+      "moveId": "doubleedge",
+      "moveName": "Double-Edge",
+      "type": "normal",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:dualwingbeat",
+      "moveId": "dualwingbeat",
+      "moveName": "Dual Wingbeat",
+      "type": "flying",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tutor:dualwingbeat",
+      "moveId": "dualwingbeat",
+      "moveName": "Dual Wingbeat",
+      "type": "flying",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:echoedvoice",
+      "moveId": "echoedvoice",
+      "moveName": "Echoed Voice",
+      "type": "normal",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "45:endeavor",
+      "moveId": "endeavor",
+      "moveName": "Endeavor",
+      "type": "normal",
+      "sourceType": "level",
+      "sourceValue": 45,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:endeavor",
+      "moveId": "endeavor",
+      "moveName": "Endeavor",
+      "type": "normal",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tutor:endeavor",
+      "moveId": "endeavor",
+      "moveName": "Endeavor",
+      "type": "normal",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:endure",
+      "moveId": "endure",
+      "moveName": "Endure",
+      "type": "normal",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:facade",
+      "moveId": "facade",
+      "moveName": "Facade",
+      "type": "normal",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "special:featherdance",
+      "moveId": "featherdance",
+      "moveName": "Feather Dance",
+      "type": "flying",
+      "sourceType": "special",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:fly",
+      "moveId": "fly",
+      "moveName": "Fly",
+      "type": "flying",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "1:focusenergy",
+      "moveId": "focusenergy",
+      "moveName": "Focus Energy",
+      "type": "normal",
+      "sourceType": "level",
+      "sourceValue": 1,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:focusenergy",
+      "moveId": "focusenergy",
+      "moveName": "Focus Energy",
+      "type": "normal",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tutor:focusenergy",
+      "moveId": "focusenergy",
+      "moveName": "Focus Energy",
+      "type": "normal",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "legacy:frustration",
+      "moveId": "frustration",
+      "moveName": "Frustration",
+      "type": "normal",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:gigaimpact",
+      "moveId": "gigaimpact",
+      "moveName": "Giga Impact",
+      "type": "normal",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tutor:gigaimpact",
+      "moveId": "gigaimpact",
+      "moveName": "Giga Impact",
+      "type": "normal",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "1:growl",
+      "moveId": "growl",
+      "moveName": "Growl",
+      "type": "normal",
+      "sourceType": "level",
+      "sourceValue": 1,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:heatwave",
+      "moveId": "heatwave",
+      "moveName": "Heat Wave",
+      "type": "fire",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tutor:heatwave",
+      "moveId": "heatwave",
+      "moveName": "Heat Wave",
+      "type": "fire",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "legacy:hiddenpower",
+      "moveId": "hiddenpower",
+      "moveName": "Hidden Power",
+      "type": "normal",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:hurricane",
+      "moveId": "hurricane",
+      "moveName": "Hurricane",
+      "type": "flying",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:hyperbeam",
+      "moveId": "hyperbeam",
+      "moveName": "Hyper Beam",
+      "type": "normal",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tutor:hyperbeam",
+      "moveId": "hyperbeam",
+      "moveName": "Hyper Beam",
+      "type": "normal",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:laserfocus",
+      "moveId": "laserfocus",
+      "moveName": "Laser Focus",
+      "type": "normal",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tutor:laserfocus",
+      "moveId": "laserfocus",
+      "moveName": "Laser Focus",
+      "type": "normal",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "legacy:mimic",
+      "moveId": "mimic",
+      "moveName": "Mimic",
+      "type": "normal",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "egg:mirrormove",
+      "moveId": "mirrormove",
+      "moveName": "Mirror Move",
+      "type": "flying",
+      "sourceType": "egg",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:mudslap",
+      "moveId": "mudslap",
+      "moveName": "Mud-Slap",
+      "type": "ground",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tutor:mudslap",
+      "moveId": "mudslap",
+      "moveName": "Mud-Slap",
+      "type": "ground",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "legacy:naturalgift",
+      "moveId": "naturalgift",
+      "moveName": "Natural Gift",
+      "type": "normal",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:ominouswind",
+      "moveId": "ominouswind",
+      "moveName": "Ominous Wind",
+      "type": "ghost",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tutor:ominouswind",
+      "moveId": "ominouswind",
+      "moveName": "Ominous Wind",
+      "type": "ghost",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "1:peck",
+      "moveId": "peck",
+      "moveName": "Peck",
+      "type": "flying",
+      "sourceType": "level",
+      "sourceValue": 1,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "1:pluck",
+      "moveId": "pluck",
+      "moveName": "Pluck",
+      "type": "flying",
+      "sourceType": "level",
+      "sourceValue": 1,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:pluck",
+      "moveId": "pluck",
+      "moveName": "Pluck",
+      "type": "flying",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:protect",
+      "moveId": "protect",
+      "moveName": "Protect",
+      "type": "normal",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "egg:pursuit",
+      "moveId": "pursuit",
+      "moveName": "Pursuit",
+      "type": "dark",
+      "sourceType": "egg",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "1:quickattack",
+      "moveId": "quickattack",
+      "moveName": "Quick Attack",
+      "type": "normal",
+      "sourceType": "level",
+      "sourceValue": 1,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "27:quickguard",
+      "moveId": "quickguard",
+      "moveName": "Quick Guard",
+      "type": "fighting",
+      "sourceType": "level",
+      "sourceValue": 27,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "egg:rage",
+      "moveId": "rage",
+      "moveName": "Rage",
+      "type": "normal",
+      "sourceType": "egg",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:raindance",
+      "moveId": "raindance",
+      "moveName": "Rain Dance",
+      "type": "water",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "egg:refresh",
+      "moveId": "refresh",
+      "moveName": "Refresh",
+      "type": "normal",
+      "sourceType": "egg",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:rest",
+      "moveId": "rest",
+      "moveName": "Rest",
+      "type": "psychic",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tutor:rest",
+      "moveId": "rest",
+      "moveName": "Rest",
+      "type": "psychic",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "legacy:return",
+      "moveId": "return",
+      "moveName": "Return",
+      "type": "normal",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "57:reversal",
+      "moveId": "reversal",
+      "moveName": "Reversal",
+      "type": "fighting",
+      "sourceType": "level",
+      "sourceValue": 57,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:reversal",
+      "moveId": "reversal",
+      "moveName": "Reversal",
+      "type": "fighting",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:roost",
+      "moveId": "roost",
+      "moveName": "Roost",
+      "type": "flying",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tutor:roost",
+      "moveId": "roost",
+      "moveName": "Roost",
+      "type": "flying",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "legacy:round",
+      "moveId": "round",
+      "moveName": "Round",
+      "type": "normal",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "legacy:secretpower",
+      "moveId": "secretpower",
+      "moveName": "Secret Power",
+      "type": "normal",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:skyattack",
+      "moveId": "skyattack",
+      "moveName": "Sky Attack",
+      "type": "flying",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tutor:skyattack",
+      "moveId": "skyattack",
+      "moveName": "Sky Attack",
+      "type": "flying",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:sleeptalk",
+      "moveId": "sleeptalk",
+      "moveName": "Sleep Talk",
+      "type": "normal",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tutor:sleeptalk",
+      "moveId": "sleeptalk",
+      "moveName": "Sleep Talk",
+      "type": "normal",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "legacy:snore",
+      "moveId": "snore",
+      "moveName": "Snore",
+      "type": "normal",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:steelwing",
+      "moveId": "steelwing",
+      "moveName": "Steel Wing",
+      "type": "steel",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:substitute",
+      "moveId": "substitute",
+      "moveName": "Substitute",
+      "type": "normal",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:sunnyday",
+      "moveId": "sunnyday",
+      "moveName": "Sunny Day",
+      "type": "fire",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "egg:supersonic",
+      "moveId": "supersonic",
+      "moveName": "Supersonic",
+      "type": "normal",
+      "sourceType": "egg",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "legacy:swagger",
+      "moveId": "swagger",
+      "moveName": "Swagger",
+      "type": "normal",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "legacy:swift",
+      "moveId": "swift",
+      "moveName": "Swift",
+      "type": "normal",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:tailwind",
+      "moveId": "tailwind",
+      "moveName": "Tailwind",
+      "type": "flying",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tutor:tailwind",
+      "moveId": "tailwind",
+      "moveName": "Tailwind",
+      "type": "flying",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:terablast",
+      "moveId": "terablast",
+      "moveName": "Tera Blast",
+      "type": "normal",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:thief",
+      "moveId": "thief",
+      "moveName": "Thief",
+      "type": "dark",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "legacy:toxic",
+      "moveId": "toxic",
+      "moveName": "Toxic",
+      "type": "poison",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:twister",
+      "moveId": "twister",
+      "moveName": "Twister",
+      "type": "dragon",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tutor:twister",
+      "moveId": "twister",
+      "moveName": "Twister",
+      "type": "dragon",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:uturn",
+      "moveId": "uturn",
+      "moveName": "U-turn",
+      "type": "bug",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "egg:whirlwind",
+      "moveId": "whirlwind",
+      "moveName": "Whirlwind",
+      "type": "normal",
+      "sourceType": "egg",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "13:wingattack",
+      "moveId": "wingattack",
+      "moveName": "Wing Attack",
+      "type": "flying",
+      "sourceType": "level",
+      "sourceValue": 13,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:workup",
+      "moveId": "workup",
+      "moveName": "Work Up",
+      "type": "normal",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    }
+  ],
+  "spawnEntries": [
+    {
+      "id": "swellow-1",
+      "sourceFile": "0277_swellow.json",
+      "pokemon": {
+        "raw": "swellow",
+        "slug": "swellow",
+        "aspectTokens": []
+      },
+      "type": "pokemon",
+      "spawnablePositionType": "grounded",
+      "bucket": "common",
+      "bucketWeight": 94.3,
+      "levelText": "22-46",
+      "levelMin": 22,
+      "levelMax": 46,
+      "weight": 1,
+      "presets": [
+        "natural",
+        "treetop"
+      ],
+      "biomeHints": [
+        "Is Sky",
+        "Skylands Autumn",
+        "Skylands Spring",
+        "Is Temperate",
+        "Is Forest",
+        "Is Plains"
+      ],
+      "condition": {
+        "neededBaseBlocks": [
+          "#cobblemon:natural",
+          "#cobblemon:trees"
+        ],
+        "minSkyLight": 8,
+        "maxSkyLight": 15,
+        "biomes": [
+          "#cobblemon:is_sky",
+          "#cobblemon:is_temperate"
+        ],
+        "timeRange": "day"
+      },
+      "anticondition": {
+        "neededBaseBlocks": [
+          "minecraft:farmland"
+        ],
+        "biomes": [
+          "#cobblemon:is_spooky"
+        ]
+      },
+      "weightMultipliers": [],
+      "raw": {
+        "id": "swellow-1",
+        "pokemon": "swellow",
+        "presets": [
+          "natural",
+          "treetop"
+        ],
+        "type": "pokemon",
+        "spawnablePositionType": "grounded",
+        "bucket": "common",
+        "level": "22-46",
+        "weight": 1,
+        "condition": {
+          "minSkyLight": 8,
+          "maxSkyLight": 15,
+          "biomes": [
+            "#cobblemon:is_sky",
+            "#cobblemon:is_temperate"
+          ],
+          "timeRange": "day"
+        },
+        "anticondition": {
+          "biomes": [
+            "#cobblemon:is_spooky"
+          ]
+        }
+      }
+    },
+    {
+      "id": "swellow-3",
+      "sourceFile": "0277_swellow.json",
+      "pokemon": {
+        "raw": "swellow",
+        "slug": "swellow",
+        "aspectTokens": []
+      },
+      "type": "pokemon",
+      "spawnablePositionType": "grounded",
+      "bucket": "common",
+      "bucketWeight": 94.3,
+      "levelText": "22-46",
+      "levelMin": 22,
+      "levelMax": 46,
+      "weight": 1,
+      "presets": [
+        "natural",
+        "treetop"
+      ],
+      "biomeHints": [
+        "Is Aether"
+      ],
+      "condition": {
+        "neededBaseBlocks": [
+          "#cobblemon:natural",
+          "#cobblemon:trees"
+        ],
+        "minSkyLight": 8,
+        "maxSkyLight": 15,
+        "biomes": [
+          "#aether:is_aether"
+        ]
+      },
+      "anticondition": {
+        "neededBaseBlocks": [
+          "minecraft:farmland"
+        ]
+      },
+      "weightMultipliers": [],
+      "raw": {
+        "id": "swellow-3",
+        "pokemon": "swellow",
+        "presets": [
+          "natural",
+          "treetop"
+        ],
+        "type": "pokemon",
+        "spawnablePositionType": "grounded",
+        "bucket": "common",
+        "level": "22-46",
+        "weight": 1,
+        "condition": {
+          "minSkyLight": 8,
+          "maxSkyLight": 15,
+          "biomes": [
+            "#aether:is_aether"
+          ]
+        }
+      }
+    }
+  ],
+  "forms": [],
+  "rawSpecies": {
+    "implemented": true,
+    "nationalPokedexNumber": 277,
+    "name": "Swellow",
+    "primaryType": "normal",
+    "secondaryType": "flying",
+    "maleRatio": 0.5,
+    "height": 7,
+    "weight": 198,
+    "pokedex": [
+      "cobblemon.species.swellow.desc"
+    ],
+    "labels": [
+      "gen3"
+    ],
+    "aspects": [],
+    "abilities": [
+      "guts",
+      "h:scrappy"
+    ],
+    "eggGroups": [
+      "flying"
+    ],
+    "baseStats": {
+      "hp": 60,
+      "attack": 85,
+      "defence": 60,
+      "special_attack": 75,
+      "special_defence": 50,
+      "speed": 125
+    },
+    "evYield": {
+      "hp": 0,
+      "attack": 0,
+      "defence": 0,
+      "special_attack": 0,
+      "special_defence": 0,
+      "speed": 2
+    },
+    "baseExperienceYield": 159,
+    "experienceGroup": "medium_slow",
+    "catchRate": 45,
+    "eggCycles": 15,
+    "baseFriendship": 50,
+    "baseScale": 0.9,
+    "hitbox": {
+      "width": 0.7,
+      "height": 1.2,
+      "fixed": false
+    },
+    "behaviour": {
+      "moving": {
+        "fly": {
+          "canFly": true
+        },
+        "swim": {
+          "avoidsWater": true
+        }
+      },
+      "resting": {
+        "canSleep": true,
+        "light": "0-4",
+        "drowsyChance": 0.0333,
+        "rouseChance": 0.0042
+      },
+      "herd": {
+        "maxSize": "9",
+        "toleratedLeaders": [
+          {
+            "pokemon": "swellow",
+            "tier": 1
+          }
+        ]
+      },
+      "combat": {
+        "willDefendSelf": true,
+        "willDefendOwner": true,
+        "willFlee": false
+      }
+    },
+    "drops": {
+      "amount": 5,
+      "entries": [
+        {
+          "item": "minecraft:feather",
+          "quantityRange": "0-2"
+        },
+        {
+          "item": "minecraft:chicken"
+        },
+        {
+          "item": "cobblemon:sharp_beak",
+          "percentage": 2.5
+        },
+        {
+          "item": "cobblemon:charti_berry",
+          "percentage": 5
+        }
+      ]
+    },
+    "moves": [
+      "1:pluck",
+      "1:peck",
+      "1:growl",
+      "1:focusenergy",
+      "1:quickattack",
+      "1:airslash",
+      "1:bravebird",
+      "13:wingattack",
+      "17:doubleteam",
+      "21:aerialace",
+      "27:quickguard",
+      "33:agility",
+      "45:endeavor",
+      "57:reversal",
+      "egg:boomburst",
+      "egg:mirrormove",
+      "egg:pursuit",
+      "egg:rage",
+      "egg:refresh",
+      "egg:supersonic",
+      "egg:whirlwind",
+      "tm:aerialace",
+      "tm:agility",
+      "tm:aircutter",
+      "tm:airslash",
+      "tm:assurance",
+      "tm:batonpass",
+      "tm:bravebird",
+      "tm:defog",
+      "tm:doubleteam",
+      "tm:dualwingbeat",
+      "tm:echoedvoice",
+      "tm:endeavor",
+      "tm:endure",
+      "tm:facade",
+      "tm:fly",
+      "tm:focusenergy",
+      "tm:gigaimpact",
+      "tm:heatwave",
+      "tm:hurricane",
+      "tm:hyperbeam",
+      "tm:laserfocus",
+      "tm:mudslap",
+      "tm:ominouswind",
+      "tm:pluck",
+      "tm:protect",
+      "tm:raindance",
+      "tm:rest",
+      "tm:reversal",
+      "tm:roost",
+      "tm:skyattack",
+      "tm:sleeptalk",
+      "tm:steelwing",
+      "tm:substitute",
+      "tm:sunnyday",
+      "tm:tailwind",
+      "tm:terablast",
+      "tm:thief",
+      "tm:twister",
+      "tm:uturn",
+      "tm:workup",
+      "tutor:aerialace",
+      "tutor:aircutter",
+      "tutor:defog",
+      "tutor:dualwingbeat",
+      "tutor:endeavor",
+      "tutor:focusenergy",
+      "tutor:gigaimpact",
+      "tutor:heatwave",
+      "tutor:hyperbeam",
+      "tutor:laserfocus",
+      "tutor:mudslap",
+      "tutor:ominouswind",
+      "tutor:rest",
+      "tutor:roost",
+      "tutor:skyattack",
+      "tutor:sleeptalk",
+      "tutor:tailwind",
+      "tutor:twister",
+      "legacy:attract",
+      "legacy:captivate",
+      "legacy:confide",
+      "legacy:counter",
+      "legacy:doubleedge",
+      "legacy:frustration",
+      "legacy:hiddenpower",
+      "legacy:mimic",
+      "legacy:naturalgift",
+      "legacy:return",
+      "legacy:round",
+      "legacy:secretpower",
+      "legacy:snore",
+      "legacy:swagger",
+      "legacy:swift",
+      "legacy:toxic",
+      "special:featherdance"
+    ],
+    "preEvolution": "taillow",
+    "evolutions": []
+  }
+}

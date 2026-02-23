@@ -1,0 +1,2624 @@
+{
+  "slug": "aegislash",
+  "name": "Aegislash",
+  "dexNumber": 681,
+  "implemented": true,
+  "types": [
+    "steel",
+    "ghost"
+  ],
+  "abilities": [
+    {
+      "id": "stancechange",
+      "hidden": false,
+      "label": "Stancechange",
+      "slot": "first"
+    },
+    {
+      "id": "stancechange",
+      "hidden": true,
+      "label": "Stancechange",
+      "slot": "hidden"
+    }
+  ],
+  "eggGroups": [
+    "mineral"
+  ],
+  "labels": [
+    "gen6"
+  ],
+  "aspects": [
+    "shield-forme"
+  ],
+  "aliases": [
+    "aegislash",
+    "aegislash blade",
+    "blade"
+  ],
+  "maleRatio": 0.5,
+  "height": 17,
+  "weight": 530,
+  "catchRate": 45,
+  "baseExperienceYield": 250,
+  "baseFriendship": 50,
+  "eggCycles": 20,
+  "baseStats": {
+    "hp": 60,
+    "attack": 50,
+    "defence": 140,
+    "special_attack": 50,
+    "special_defence": 140,
+    "speed": 60
+  },
+  "evYield": {
+    "hp": 0,
+    "attack": 0,
+    "defence": 2,
+    "special_attack": 0,
+    "special_defence": 1,
+    "speed": 0
+  },
+  "preEvolution": {
+    "raw": "doublade",
+    "slug": "doublade",
+    "aspectTokens": []
+  },
+  "evolutions": [],
+  "evolutionFamily": {
+    "members": [
+      {
+        "nodeId": "honedge",
+        "slug": "honedge",
+        "name": "Honedge",
+        "dexNumber": 679,
+        "formSlug": null,
+        "formName": null
+      },
+      {
+        "nodeId": "doublade",
+        "slug": "doublade",
+        "name": "Doublade",
+        "dexNumber": 680,
+        "formSlug": null,
+        "formName": null
+      },
+      {
+        "nodeId": "aegislash",
+        "slug": "aegislash",
+        "name": "Aegislash",
+        "dexNumber": 681,
+        "formSlug": null,
+        "formName": null
+      }
+    ],
+    "edges": [
+      {
+        "fromNodeId": "doublade",
+        "toNodeId": "aegislash",
+        "fromSlug": "doublade",
+        "toSlug": "aegislash",
+        "method": "item_interact",
+        "requirementText": [
+          "Use Dusk Stone"
+        ]
+      },
+      {
+        "fromNodeId": "honedge",
+        "toNodeId": "doublade",
+        "fromSlug": "honedge",
+        "toSlug": "doublade",
+        "method": "level_up",
+        "requirementText": [
+          "Level 35+"
+        ]
+      }
+    ],
+    "roots": [
+      "honedge"
+    ]
+  },
+  "moves": [
+    {
+      "raw": "1:aerialace",
+      "moveId": "aerialace",
+      "moveName": "Aerial Ace",
+      "type": "flying",
+      "sourceType": "level",
+      "sourceValue": 1,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:aerialace",
+      "moveId": "aerialace",
+      "moveName": "Aerial Ace",
+      "type": "flying",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tutor:aerialace",
+      "moveId": "aerialace",
+      "moveName": "Aerial Ace",
+      "type": "flying",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:afteryou",
+      "moveId": "afteryou",
+      "moveName": "After You",
+      "type": "normal",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tutor:afteryou",
+      "moveId": "afteryou",
+      "moveName": "After You",
+      "type": "normal",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:airslash",
+      "moveId": "airslash",
+      "moveName": "Air Slash",
+      "type": "flying",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "legacy:attract",
+      "moveId": "attract",
+      "moveName": "Attract",
+      "type": "normal",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "1:autotomize",
+      "moveId": "autotomize",
+      "moveName": "Autotomize",
+      "type": "steel",
+      "sourceType": "level",
+      "sourceValue": 1,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "egg:block",
+      "moveId": "block",
+      "moveName": "Block",
+      "type": "normal",
+      "sourceType": "egg",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:block",
+      "moveId": "block",
+      "moveName": "Block",
+      "type": "normal",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tutor:block",
+      "moveId": "block",
+      "moveName": "Block",
+      "type": "normal",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:brickbreak",
+      "moveId": "brickbreak",
+      "moveName": "Brick Break",
+      "type": "fighting",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:brutalswing",
+      "moveId": "brutalswing",
+      "moveName": "Brutal Swing",
+      "type": "dark",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:closecombat",
+      "moveId": "closecombat",
+      "moveName": "Close Combat",
+      "type": "fighting",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "legacy:confide",
+      "moveId": "confide",
+      "moveName": "Confide",
+      "type": "normal",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:cut",
+      "moveId": "cut",
+      "moveName": "Cut",
+      "type": "normal",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "egg:destinybond",
+      "moveId": "destinybond",
+      "moveName": "Destiny Bond",
+      "type": "ghost",
+      "sourceType": "egg",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "legacy:doubleteam",
+      "moveId": "doubleteam",
+      "moveName": "Double Team",
+      "type": "normal",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:endure",
+      "moveId": "endure",
+      "moveName": "Endure",
+      "type": "normal",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:facade",
+      "moveId": "facade",
+      "moveName": "Facade",
+      "type": "normal",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:falseswipe",
+      "moveId": "falseswipe",
+      "moveName": "False Swipe",
+      "type": "normal",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tutor:falseswipe",
+      "moveId": "falseswipe",
+      "moveName": "False Swipe",
+      "type": "normal",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:flashcannon",
+      "moveId": "flashcannon",
+      "moveName": "Flash Cannon",
+      "type": "steel",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tutor:flashcannon",
+      "moveId": "flashcannon",
+      "moveName": "Flash Cannon",
+      "type": "steel",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "legacy:frustration",
+      "moveId": "frustration",
+      "moveName": "Frustration",
+      "type": "normal",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "1:furycutter",
+      "moveId": "furycutter",
+      "moveName": "Fury Cutter",
+      "type": "bug",
+      "sourceType": "level",
+      "sourceValue": 1,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:furycutter",
+      "moveId": "furycutter",
+      "moveName": "Fury Cutter",
+      "type": "bug",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tutor:furycutter",
+      "moveId": "furycutter",
+      "moveName": "Fury Cutter",
+      "type": "bug",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:gigaimpact",
+      "moveId": "gigaimpact",
+      "moveName": "Giga Impact",
+      "type": "normal",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tutor:gigaimpact",
+      "moveId": "gigaimpact",
+      "moveName": "Giga Impact",
+      "type": "normal",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:gyroball",
+      "moveId": "gyroball",
+      "moveName": "Gyro Ball",
+      "type": "steel",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "1:headsmash",
+      "moveId": "headsmash",
+      "moveName": "Head Smash",
+      "type": "rock",
+      "sourceType": "level",
+      "sourceValue": 1,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "legacy:hiddenpower",
+      "moveId": "hiddenpower",
+      "moveName": "Hidden Power",
+      "type": "normal",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:hyperbeam",
+      "moveId": "hyperbeam",
+      "moveName": "Hyper Beam",
+      "type": "normal",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tutor:hyperbeam",
+      "moveId": "hyperbeam",
+      "moveName": "Hyper Beam",
+      "type": "normal",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "1:irondefense",
+      "moveId": "irondefense",
+      "moveName": "Iron Defense",
+      "type": "steel",
+      "sourceType": "level",
+      "sourceValue": 1,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:irondefense",
+      "moveId": "irondefense",
+      "moveName": "Iron Defense",
+      "type": "steel",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tutor:irondefense",
+      "moveId": "irondefense",
+      "moveName": "Iron Defense",
+      "type": "steel",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "1:ironhead",
+      "moveId": "ironhead",
+      "moveName": "Iron Head",
+      "type": "steel",
+      "sourceType": "level",
+      "sourceValue": 1,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:ironhead",
+      "moveId": "ironhead",
+      "moveName": "Iron Head",
+      "type": "steel",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tutor:ironhead",
+      "moveId": "ironhead",
+      "moveName": "Iron Head",
+      "type": "steel",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "1:kingsshield",
+      "moveId": "kingsshield",
+      "moveName": "King's Shield",
+      "type": "steel",
+      "sourceType": "level",
+      "sourceValue": 1,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:laserfocus",
+      "moveId": "laserfocus",
+      "moveName": "Laser Focus",
+      "type": "normal",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tutor:laserfocus",
+      "moveId": "laserfocus",
+      "moveName": "Laser Focus",
+      "type": "normal",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:magnetrise",
+      "moveId": "magnetrise",
+      "moveName": "Magnet Rise",
+      "type": "electric",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tutor:magnetrise",
+      "moveId": "magnetrise",
+      "moveName": "Magnet Rise",
+      "type": "electric",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "1:metalsound",
+      "moveId": "metalsound",
+      "moveName": "Metal Sound",
+      "type": "steel",
+      "sourceType": "level",
+      "sourceValue": 1,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:metalsound",
+      "moveId": "metalsound",
+      "moveName": "Metal Sound",
+      "type": "steel",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "1:nightslash",
+      "moveId": "nightslash",
+      "moveName": "Night Slash",
+      "type": "dark",
+      "sourceType": "level",
+      "sourceValue": 1,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "1:powertrick",
+      "moveId": "powertrick",
+      "moveName": "Power Trick",
+      "type": "psychic",
+      "sourceType": "level",
+      "sourceValue": 1,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:protect",
+      "moveId": "protect",
+      "moveName": "Protect",
+      "type": "normal",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:psychocut",
+      "moveId": "psychocut",
+      "moveName": "Psycho Cut",
+      "type": "psychic",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tutor:psychocut",
+      "moveId": "psychocut",
+      "moveName": "Psycho Cut",
+      "type": "psychic",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "1:pursuit",
+      "moveId": "pursuit",
+      "moveName": "Pursuit",
+      "type": "dark",
+      "sourceType": "level",
+      "sourceValue": 1,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:raindance",
+      "moveId": "raindance",
+      "moveName": "Rain Dance",
+      "type": "water",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:reflect",
+      "moveId": "reflect",
+      "moveName": "Reflect",
+      "type": "psychic",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:rest",
+      "moveId": "rest",
+      "moveName": "Rest",
+      "type": "psychic",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tutor:rest",
+      "moveId": "rest",
+      "moveName": "Rest",
+      "type": "psychic",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "1:retaliate",
+      "moveId": "retaliate",
+      "moveName": "Retaliate",
+      "type": "normal",
+      "sourceType": "level",
+      "sourceValue": 1,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:retaliate",
+      "moveId": "retaliate",
+      "moveName": "Retaliate",
+      "type": "normal",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "legacy:return",
+      "moveId": "return",
+      "moveName": "Return",
+      "type": "normal",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:reversal",
+      "moveId": "reversal",
+      "moveName": "Reversal",
+      "type": "fighting",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:rockslide",
+      "moveId": "rockslide",
+      "moveName": "Rock Slide",
+      "type": "rock",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tutor:rockslide",
+      "moveId": "rockslide",
+      "moveName": "Rock Slide",
+      "type": "rock",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:rocksmash",
+      "moveId": "rocksmash",
+      "moveName": "Rock Smash",
+      "type": "fighting",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tutor:rocksmash",
+      "moveId": "rocksmash",
+      "moveName": "Rock Smash",
+      "type": "fighting",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "legacy:round",
+      "moveId": "round",
+      "moveName": "Round",
+      "type": "normal",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "1:sacredsword",
+      "moveId": "sacredsword",
+      "moveName": "Sacred Sword",
+      "type": "fighting",
+      "sourceType": "level",
+      "sourceValue": 1,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:screech",
+      "moveId": "screech",
+      "moveName": "Screech",
+      "type": "normal",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "legacy:secretpower",
+      "moveId": "secretpower",
+      "moveName": "Secret Power",
+      "type": "normal",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:shadowball",
+      "moveId": "shadowball",
+      "moveName": "Shadow Ball",
+      "type": "ghost",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tutor:shadowball",
+      "moveId": "shadowball",
+      "moveName": "Shadow Ball",
+      "type": "ghost",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:shadowclaw",
+      "moveId": "shadowclaw",
+      "moveName": "Shadow Claw",
+      "type": "ghost",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tutor:shadowclaw",
+      "moveId": "shadowclaw",
+      "moveName": "Shadow Claw",
+      "type": "ghost",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "1:shadowsneak",
+      "moveId": "shadowsneak",
+      "moveName": "Shadow Sneak",
+      "type": "ghost",
+      "sourceType": "level",
+      "sourceValue": 1,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:shockwave",
+      "moveId": "shockwave",
+      "moveName": "Shock Wave",
+      "type": "electric",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tutor:shockwave",
+      "moveId": "shockwave",
+      "moveName": "Shock Wave",
+      "type": "electric",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "1:slash",
+      "moveId": "slash",
+      "moveName": "Slash",
+      "type": "normal",
+      "sourceType": "level",
+      "sourceValue": 1,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:sleeptalk",
+      "moveId": "sleeptalk",
+      "moveName": "Sleep Talk",
+      "type": "normal",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tutor:sleeptalk",
+      "moveId": "sleeptalk",
+      "moveName": "Sleep Talk",
+      "type": "normal",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "legacy:snore",
+      "moveId": "snore",
+      "moveName": "Snore",
+      "type": "normal",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:solarblade",
+      "moveId": "solarblade",
+      "moveName": "Solar Blade",
+      "type": "grass",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:spite",
+      "moveId": "spite",
+      "moveName": "Spite",
+      "type": "ghost",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tutor:spite",
+      "moveId": "spite",
+      "moveName": "Spite",
+      "type": "ghost",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:steelbeam",
+      "moveId": "steelbeam",
+      "moveName": "Steel Beam",
+      "type": "steel",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tutor:steelbeam",
+      "moveId": "steelbeam",
+      "moveName": "Steel Beam",
+      "type": "steel",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:substitute",
+      "moveId": "substitute",
+      "moveName": "Substitute",
+      "type": "normal",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:sunnyday",
+      "moveId": "sunnyday",
+      "moveName": "Sunny Day",
+      "type": "fire",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "legacy:swagger",
+      "moveId": "swagger",
+      "moveName": "Swagger",
+      "type": "normal",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "1:swordsdance",
+      "moveId": "swordsdance",
+      "moveName": "Swords Dance",
+      "type": "normal",
+      "sourceType": "level",
+      "sourceValue": 1,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:swordsdance",
+      "moveId": "swordsdance",
+      "moveName": "Swords Dance",
+      "type": "normal",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "1:tackle",
+      "moveId": "tackle",
+      "moveName": "Tackle",
+      "type": "normal",
+      "sourceType": "level",
+      "sourceValue": 1,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:terablast",
+      "moveId": "terablast",
+      "moveName": "Tera Blast",
+      "type": "normal",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "legacy:toxic",
+      "moveId": "toxic",
+      "moveName": "Toxic",
+      "type": "poison",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "egg:wideguard",
+      "moveId": "wideguard",
+      "moveName": "Wide Guard",
+      "type": "rock",
+      "sourceType": "egg",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    }
+  ],
+  "spawnEntries": [
+    {
+      "id": "aegislash-1",
+      "sourceFile": "0681_aegislash.json",
+      "pokemon": {
+        "raw": "aegislash",
+        "slug": "aegislash",
+        "aspectTokens": []
+      },
+      "type": "pokemon",
+      "spawnablePositionType": "grounded",
+      "bucket": "uncommon",
+      "bucketWeight": 5,
+      "levelText": "40-50",
+      "levelMin": 40,
+      "levelMax": 50,
+      "weight": 0.8,
+      "presets": [
+        "natural",
+        "nether_structures"
+      ],
+      "biomeHints": [
+        "Is Nether"
+      ],
+      "condition": {
+        "neededBaseBlocks": [
+          "#cobblemon:natural",
+          "minecraft:chiseled_polished_blackstone",
+          "minecraft:cracked_polished_blackstone_bricks",
+          "minecraft:gilded_blackstone",
+          "minecraft:nether_bricks",
+          "minecraft:polished_basalt",
+          "minecraft:polished_blackstone_bricks"
+        ],
+        "structures": [
+          "minecraft:bastion_remnant",
+          "minecraft:fortress"
+        ],
+        "neededNearbyBlocks": [
+          "#cobblemon:nether_structure_blocks"
+        ],
+        "biomes": [
+          "#minecraft:is_nether"
+        ]
+      },
+      "anticondition": {
+        "neededBaseBlocks": [
+          "minecraft:farmland"
+        ]
+      },
+      "weightMultipliers": [],
+      "raw": {
+        "id": "aegislash-1",
+        "pokemon": "aegislash",
+        "presets": [
+          "natural",
+          "nether_structures"
+        ],
+        "type": "pokemon",
+        "spawnablePositionType": "grounded",
+        "bucket": "uncommon",
+        "level": "40-50",
+        "weight": 0.8,
+        "condition": {
+          "biomes": [
+            "#minecraft:is_nether"
+          ]
+        }
+      }
+    },
+    {
+      "id": "aegislash-2",
+      "sourceFile": "0681_aegislash.json",
+      "pokemon": {
+        "raw": "aegislash",
+        "slug": "aegislash",
+        "aspectTokens": []
+      },
+      "type": "pokemon",
+      "spawnablePositionType": "grounded",
+      "bucket": "uncommon",
+      "bucketWeight": 5,
+      "levelText": "40-50",
+      "levelMin": 40,
+      "levelMax": 50,
+      "weight": 0.48,
+      "presets": [],
+      "biomeHints": [
+        "Is Overworld"
+      ],
+      "condition": {
+        "minSkyLight": 8,
+        "maxSkyLight": 15,
+        "biomes": [
+          "#cobblemon:is_overworld"
+        ],
+        "structures": [
+          "#cobblemon:ruin"
+        ]
+      },
+      "anticondition": null,
+      "weightMultipliers": [],
+      "raw": {
+        "id": "aegislash-2",
+        "pokemon": "aegislash",
+        "type": "pokemon",
+        "spawnablePositionType": "grounded",
+        "bucket": "uncommon",
+        "level": "40-50",
+        "weight": 0.48,
+        "condition": {
+          "minSkyLight": 8,
+          "maxSkyLight": 15,
+          "biomes": [
+            "#cobblemon:is_overworld"
+          ],
+          "structures": [
+            "#cobblemon:ruin"
+          ]
+        }
+      }
+    },
+    {
+      "id": "aegislash-3",
+      "sourceFile": "0681_aegislash.json",
+      "pokemon": {
+        "raw": "aegislash",
+        "slug": "aegislash",
+        "aspectTokens": []
+      },
+      "type": "pokemon",
+      "spawnablePositionType": "grounded",
+      "bucket": "uncommon",
+      "bucketWeight": 5,
+      "levelText": "40-50",
+      "levelMin": 40,
+      "levelMax": 50,
+      "weight": 0.8,
+      "presets": [
+        "stronghold"
+      ],
+      "biomeHints": [
+        "Is Overworld"
+      ],
+      "condition": {
+        "structures": [
+          "minecraft:stronghold"
+        ],
+        "maxY": 62,
+        "neededBaseBlocks": [
+          "#minecraft:stone_bricks"
+        ],
+        "neededNearbyBlocks": [
+          "minecraft:cracked_stone_bricks",
+          "minecraft:mossy_stone_bricks"
+        ],
+        "minSkyLight": 0,
+        "maxSkyLight": 7,
+        "biomes": [
+          "#cobblemon:is_overworld"
+        ]
+      },
+      "anticondition": null,
+      "weightMultipliers": [],
+      "raw": {
+        "id": "aegislash-3",
+        "pokemon": "aegislash",
+        "presets": [
+          "stronghold"
+        ],
+        "type": "pokemon",
+        "spawnablePositionType": "grounded",
+        "bucket": "uncommon",
+        "level": "40-50",
+        "weight": 0.8,
+        "condition": {
+          "minSkyLight": 0,
+          "maxSkyLight": 7,
+          "biomes": [
+            "#cobblemon:is_overworld"
+          ]
+        }
+      }
+    },
+    {
+      "id": "aegislash-4",
+      "sourceFile": "0681_aegislash.json",
+      "pokemon": {
+        "raw": "aegislash",
+        "slug": "aegislash",
+        "aspectTokens": []
+      },
+      "type": "pokemon",
+      "spawnablePositionType": "grounded",
+      "bucket": "uncommon",
+      "bucketWeight": 5,
+      "levelText": "40-50",
+      "levelMin": 40,
+      "levelMax": 50,
+      "weight": 0.048,
+      "presets": [],
+      "biomeHints": [
+        "Is Aether"
+      ],
+      "condition": {
+        "minSkyLight": 0,
+        "maxSkyLight": 7,
+        "biomes": [
+          "#aether:is_aether"
+        ],
+        "structures": [
+          "#aether:dungeons"
+        ]
+      },
+      "anticondition": null,
+      "weightMultipliers": [],
+      "raw": {
+        "id": "aegislash-4",
+        "pokemon": "aegislash",
+        "type": "pokemon",
+        "spawnablePositionType": "grounded",
+        "bucket": "uncommon",
+        "level": "40-50",
+        "weight": 0.048,
+        "condition": {
+          "minSkyLight": 0,
+          "maxSkyLight": 7,
+          "biomes": [
+            "#aether:is_aether"
+          ],
+          "structures": [
+            "#aether:dungeons"
+          ]
+        }
+      }
+    }
+  ],
+  "forms": [
+    {
+      "name": "Blade",
+      "slug": "aegislash-blade",
+      "aspects": [
+        "blade-forme"
+      ],
+      "labels": [
+        "gen6"
+      ],
+      "types": [
+        "steel",
+        "ghost"
+      ],
+      "maleRatio": 0.5,
+      "height": 17,
+      "weight": 530,
+      "catchRate": null,
+      "baseExperienceYield": null,
+      "baseFriendship": null,
+      "eggCycles": null,
+      "baseStats": {
+        "hp": 60,
+        "attack": 140,
+        "defence": 50,
+        "special_attack": 140,
+        "special_defence": 50,
+        "speed": 60
+      },
+      "evYield": {
+        "hp": 0,
+        "attack": 2,
+        "defence": 0,
+        "special_attack": 1,
+        "special_defence": 0,
+        "speed": 0
+      },
+      "battleOnly": true,
+      "abilities": [],
+      "moves": [
+        {
+          "raw": "1:furycutter",
+          "moveId": "furycutter",
+          "moveName": "Fury Cutter",
+          "type": "bug",
+          "sourceType": "level",
+          "sourceValue": 1,
+          "fromForm": "Blade",
+          "fromFormSlug": "aegislash-blade"
+        },
+        {
+          "raw": "1:pursuit",
+          "moveId": "pursuit",
+          "moveName": "Pursuit",
+          "type": "dark",
+          "sourceType": "level",
+          "sourceValue": 1,
+          "fromForm": "Blade",
+          "fromFormSlug": "aegislash-blade"
+        },
+        {
+          "raw": "1:autotomize",
+          "moveId": "autotomize",
+          "moveName": "Autotomize",
+          "type": "steel",
+          "sourceType": "level",
+          "sourceValue": 1,
+          "fromForm": "Blade",
+          "fromFormSlug": "aegislash-blade"
+        },
+        {
+          "raw": "1:shadowsneak",
+          "moveId": "shadowsneak",
+          "moveName": "Shadow Sneak",
+          "type": "ghost",
+          "sourceType": "level",
+          "sourceValue": 1,
+          "fromForm": "Blade",
+          "fromFormSlug": "aegislash-blade"
+        },
+        {
+          "raw": "1:slash",
+          "moveId": "slash",
+          "moveName": "Slash",
+          "type": "normal",
+          "sourceType": "level",
+          "sourceValue": 1,
+          "fromForm": "Blade",
+          "fromFormSlug": "aegislash-blade"
+        },
+        {
+          "raw": "1:irondefense",
+          "moveId": "irondefense",
+          "moveName": "Iron Defense",
+          "type": "steel",
+          "sourceType": "level",
+          "sourceValue": 1,
+          "fromForm": "Blade",
+          "fromFormSlug": "aegislash-blade"
+        },
+        {
+          "raw": "1:nightslash",
+          "moveId": "nightslash",
+          "moveName": "Night Slash",
+          "type": "dark",
+          "sourceType": "level",
+          "sourceValue": 1,
+          "fromForm": "Blade",
+          "fromFormSlug": "aegislash-blade"
+        },
+        {
+          "raw": "1:powertrick",
+          "moveId": "powertrick",
+          "moveName": "Power Trick",
+          "type": "psychic",
+          "sourceType": "level",
+          "sourceValue": 1,
+          "fromForm": "Blade",
+          "fromFormSlug": "aegislash-blade"
+        },
+        {
+          "raw": "1:ironhead",
+          "moveId": "ironhead",
+          "moveName": "Iron Head",
+          "type": "steel",
+          "sourceType": "level",
+          "sourceValue": 1,
+          "fromForm": "Blade",
+          "fromFormSlug": "aegislash-blade"
+        },
+        {
+          "raw": "1:headsmash",
+          "moveId": "headsmash",
+          "moveName": "Head Smash",
+          "type": "rock",
+          "sourceType": "level",
+          "sourceValue": 1,
+          "fromForm": "Blade",
+          "fromFormSlug": "aegislash-blade"
+        },
+        {
+          "raw": "1:swordsdance",
+          "moveId": "swordsdance",
+          "moveName": "Swords Dance",
+          "type": "normal",
+          "sourceType": "level",
+          "sourceValue": 1,
+          "fromForm": "Blade",
+          "fromFormSlug": "aegislash-blade"
+        },
+        {
+          "raw": "1:aerialace",
+          "moveId": "aerialace",
+          "moveName": "Aerial Ace",
+          "type": "flying",
+          "sourceType": "level",
+          "sourceValue": 1,
+          "fromForm": "Blade",
+          "fromFormSlug": "aegislash-blade"
+        },
+        {
+          "raw": "1:kingsshield",
+          "moveId": "kingsshield",
+          "moveName": "King's Shield",
+          "type": "steel",
+          "sourceType": "level",
+          "sourceValue": 1,
+          "fromForm": "Blade",
+          "fromFormSlug": "aegislash-blade"
+        },
+        {
+          "raw": "1:sacredsword",
+          "moveId": "sacredsword",
+          "moveName": "Sacred Sword",
+          "type": "fighting",
+          "sourceType": "level",
+          "sourceValue": 1,
+          "fromForm": "Blade",
+          "fromFormSlug": "aegislash-blade"
+        },
+        {
+          "raw": "1:retaliate",
+          "moveId": "retaliate",
+          "moveName": "Retaliate",
+          "type": "normal",
+          "sourceType": "level",
+          "sourceValue": 1,
+          "fromForm": "Blade",
+          "fromFormSlug": "aegislash-blade"
+        },
+        {
+          "raw": "1:metalsound",
+          "moveId": "metalsound",
+          "moveName": "Metal Sound",
+          "type": "steel",
+          "sourceType": "level",
+          "sourceValue": 1,
+          "fromForm": "Blade",
+          "fromFormSlug": "aegislash-blade"
+        },
+        {
+          "raw": "1:tackle",
+          "moveId": "tackle",
+          "moveName": "Tackle",
+          "type": "normal",
+          "sourceType": "level",
+          "sourceValue": 1,
+          "fromForm": "Blade",
+          "fromFormSlug": "aegislash-blade"
+        },
+        {
+          "raw": "tm:aerialace",
+          "moveId": "aerialace",
+          "moveName": "Aerial Ace",
+          "type": "flying",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Blade",
+          "fromFormSlug": "aegislash-blade"
+        },
+        {
+          "raw": "tm:afteryou",
+          "moveId": "afteryou",
+          "moveName": "After You",
+          "type": "normal",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Blade",
+          "fromFormSlug": "aegislash-blade"
+        },
+        {
+          "raw": "tm:airslash",
+          "moveId": "airslash",
+          "moveName": "Air Slash",
+          "type": "flying",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Blade",
+          "fromFormSlug": "aegislash-blade"
+        },
+        {
+          "raw": "tm:block",
+          "moveId": "block",
+          "moveName": "Block",
+          "type": "normal",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Blade",
+          "fromFormSlug": "aegislash-blade"
+        },
+        {
+          "raw": "tm:brickbreak",
+          "moveId": "brickbreak",
+          "moveName": "Brick Break",
+          "type": "fighting",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Blade",
+          "fromFormSlug": "aegislash-blade"
+        },
+        {
+          "raw": "tm:brutalswing",
+          "moveId": "brutalswing",
+          "moveName": "Brutal Swing",
+          "type": "dark",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Blade",
+          "fromFormSlug": "aegislash-blade"
+        },
+        {
+          "raw": "tm:closecombat",
+          "moveId": "closecombat",
+          "moveName": "Close Combat",
+          "type": "fighting",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Blade",
+          "fromFormSlug": "aegislash-blade"
+        },
+        {
+          "raw": "tm:cut",
+          "moveId": "cut",
+          "moveName": "Cut",
+          "type": "normal",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Blade",
+          "fromFormSlug": "aegislash-blade"
+        },
+        {
+          "raw": "tm:destinybond",
+          "moveId": "destinybond",
+          "moveName": "Destiny Bond",
+          "type": "ghost",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Blade",
+          "fromFormSlug": "aegislash-blade"
+        },
+        {
+          "raw": "tm:endure",
+          "moveId": "endure",
+          "moveName": "Endure",
+          "type": "normal",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Blade",
+          "fromFormSlug": "aegislash-blade"
+        },
+        {
+          "raw": "tm:facade",
+          "moveId": "facade",
+          "moveName": "Facade",
+          "type": "normal",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Blade",
+          "fromFormSlug": "aegislash-blade"
+        },
+        {
+          "raw": "tm:falseswipe",
+          "moveId": "falseswipe",
+          "moveName": "False Swipe",
+          "type": "normal",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Blade",
+          "fromFormSlug": "aegislash-blade"
+        },
+        {
+          "raw": "tm:flashcannon",
+          "moveId": "flashcannon",
+          "moveName": "Flash Cannon",
+          "type": "steel",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Blade",
+          "fromFormSlug": "aegislash-blade"
+        },
+        {
+          "raw": "tm:furycutter",
+          "moveId": "furycutter",
+          "moveName": "Fury Cutter",
+          "type": "bug",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Blade",
+          "fromFormSlug": "aegislash-blade"
+        },
+        {
+          "raw": "tm:gigaimpact",
+          "moveId": "gigaimpact",
+          "moveName": "Giga Impact",
+          "type": "normal",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Blade",
+          "fromFormSlug": "aegislash-blade"
+        },
+        {
+          "raw": "tm:gyroball",
+          "moveId": "gyroball",
+          "moveName": "Gyro Ball",
+          "type": "steel",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Blade",
+          "fromFormSlug": "aegislash-blade"
+        },
+        {
+          "raw": "tm:hyperbeam",
+          "moveId": "hyperbeam",
+          "moveName": "Hyper Beam",
+          "type": "normal",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Blade",
+          "fromFormSlug": "aegislash-blade"
+        },
+        {
+          "raw": "tm:irondefense",
+          "moveId": "irondefense",
+          "moveName": "Iron Defense",
+          "type": "steel",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Blade",
+          "fromFormSlug": "aegislash-blade"
+        },
+        {
+          "raw": "tm:ironhead",
+          "moveId": "ironhead",
+          "moveName": "Iron Head",
+          "type": "steel",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Blade",
+          "fromFormSlug": "aegislash-blade"
+        },
+        {
+          "raw": "tm:laserfocus",
+          "moveId": "laserfocus",
+          "moveName": "Laser Focus",
+          "type": "normal",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Blade",
+          "fromFormSlug": "aegislash-blade"
+        },
+        {
+          "raw": "tm:magnetrise",
+          "moveId": "magnetrise",
+          "moveName": "Magnet Rise",
+          "type": "electric",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Blade",
+          "fromFormSlug": "aegislash-blade"
+        },
+        {
+          "raw": "tm:metalsound",
+          "moveId": "metalsound",
+          "moveName": "Metal Sound",
+          "type": "steel",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Blade",
+          "fromFormSlug": "aegislash-blade"
+        },
+        {
+          "raw": "tm:protect",
+          "moveId": "protect",
+          "moveName": "Protect",
+          "type": "normal",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Blade",
+          "fromFormSlug": "aegislash-blade"
+        },
+        {
+          "raw": "tm:psychocut",
+          "moveId": "psychocut",
+          "moveName": "Psycho Cut",
+          "type": "psychic",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Blade",
+          "fromFormSlug": "aegislash-blade"
+        },
+        {
+          "raw": "tm:raindance",
+          "moveId": "raindance",
+          "moveName": "Rain Dance",
+          "type": "water",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Blade",
+          "fromFormSlug": "aegislash-blade"
+        },
+        {
+          "raw": "tm:reflect",
+          "moveId": "reflect",
+          "moveName": "Reflect",
+          "type": "psychic",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Blade",
+          "fromFormSlug": "aegislash-blade"
+        },
+        {
+          "raw": "tm:rest",
+          "moveId": "rest",
+          "moveName": "Rest",
+          "type": "psychic",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Blade",
+          "fromFormSlug": "aegislash-blade"
+        },
+        {
+          "raw": "tm:retaliate",
+          "moveId": "retaliate",
+          "moveName": "Retaliate",
+          "type": "normal",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Blade",
+          "fromFormSlug": "aegislash-blade"
+        },
+        {
+          "raw": "tm:reversal",
+          "moveId": "reversal",
+          "moveName": "Reversal",
+          "type": "fighting",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Blade",
+          "fromFormSlug": "aegislash-blade"
+        },
+        {
+          "raw": "tm:rockslide",
+          "moveId": "rockslide",
+          "moveName": "Rock Slide",
+          "type": "rock",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Blade",
+          "fromFormSlug": "aegislash-blade"
+        },
+        {
+          "raw": "tm:rocksmash",
+          "moveId": "rocksmash",
+          "moveName": "Rock Smash",
+          "type": "fighting",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Blade",
+          "fromFormSlug": "aegislash-blade"
+        },
+        {
+          "raw": "tm:screech",
+          "moveId": "screech",
+          "moveName": "Screech",
+          "type": "normal",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Blade",
+          "fromFormSlug": "aegislash-blade"
+        },
+        {
+          "raw": "tm:shadowball",
+          "moveId": "shadowball",
+          "moveName": "Shadow Ball",
+          "type": "ghost",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Blade",
+          "fromFormSlug": "aegislash-blade"
+        },
+        {
+          "raw": "tm:shadowclaw",
+          "moveId": "shadowclaw",
+          "moveName": "Shadow Claw",
+          "type": "ghost",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Blade",
+          "fromFormSlug": "aegislash-blade"
+        },
+        {
+          "raw": "tm:shockwave",
+          "moveId": "shockwave",
+          "moveName": "Shock Wave",
+          "type": "electric",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Blade",
+          "fromFormSlug": "aegislash-blade"
+        },
+        {
+          "raw": "tm:sleeptalk",
+          "moveId": "sleeptalk",
+          "moveName": "Sleep Talk",
+          "type": "normal",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Blade",
+          "fromFormSlug": "aegislash-blade"
+        },
+        {
+          "raw": "tm:solarblade",
+          "moveId": "solarblade",
+          "moveName": "Solar Blade",
+          "type": "grass",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Blade",
+          "fromFormSlug": "aegislash-blade"
+        },
+        {
+          "raw": "tm:spite",
+          "moveId": "spite",
+          "moveName": "Spite",
+          "type": "ghost",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Blade",
+          "fromFormSlug": "aegislash-blade"
+        },
+        {
+          "raw": "tm:steelbeam",
+          "moveId": "steelbeam",
+          "moveName": "Steel Beam",
+          "type": "steel",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Blade",
+          "fromFormSlug": "aegislash-blade"
+        },
+        {
+          "raw": "tm:substitute",
+          "moveId": "substitute",
+          "moveName": "Substitute",
+          "type": "normal",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Blade",
+          "fromFormSlug": "aegislash-blade"
+        },
+        {
+          "raw": "tm:sunnyday",
+          "moveId": "sunnyday",
+          "moveName": "Sunny Day",
+          "type": "fire",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Blade",
+          "fromFormSlug": "aegislash-blade"
+        },
+        {
+          "raw": "tm:swordsdance",
+          "moveId": "swordsdance",
+          "moveName": "Swords Dance",
+          "type": "normal",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Blade",
+          "fromFormSlug": "aegislash-blade"
+        },
+        {
+          "raw": "tm:terablast",
+          "moveId": "terablast",
+          "moveName": "Tera Blast",
+          "type": "normal",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Blade",
+          "fromFormSlug": "aegislash-blade"
+        },
+        {
+          "raw": "tm:wideguard",
+          "moveId": "wideguard",
+          "moveName": "Wide Guard",
+          "type": "rock",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Blade",
+          "fromFormSlug": "aegislash-blade"
+        },
+        {
+          "raw": "tutor:aerialace",
+          "moveId": "aerialace",
+          "moveName": "Aerial Ace",
+          "type": "flying",
+          "sourceType": "tutor",
+          "sourceValue": null,
+          "fromForm": "Blade",
+          "fromFormSlug": "aegislash-blade"
+        },
+        {
+          "raw": "tutor:afteryou",
+          "moveId": "afteryou",
+          "moveName": "After You",
+          "type": "normal",
+          "sourceType": "tutor",
+          "sourceValue": null,
+          "fromForm": "Blade",
+          "fromFormSlug": "aegislash-blade"
+        },
+        {
+          "raw": "tutor:block",
+          "moveId": "block",
+          "moveName": "Block",
+          "type": "normal",
+          "sourceType": "tutor",
+          "sourceValue": null,
+          "fromForm": "Blade",
+          "fromFormSlug": "aegislash-blade"
+        },
+        {
+          "raw": "tutor:falseswipe",
+          "moveId": "falseswipe",
+          "moveName": "False Swipe",
+          "type": "normal",
+          "sourceType": "tutor",
+          "sourceValue": null,
+          "fromForm": "Blade",
+          "fromFormSlug": "aegislash-blade"
+        },
+        {
+          "raw": "tutor:flashcannon",
+          "moveId": "flashcannon",
+          "moveName": "Flash Cannon",
+          "type": "steel",
+          "sourceType": "tutor",
+          "sourceValue": null,
+          "fromForm": "Blade",
+          "fromFormSlug": "aegislash-blade"
+        },
+        {
+          "raw": "tutor:furycutter",
+          "moveId": "furycutter",
+          "moveName": "Fury Cutter",
+          "type": "bug",
+          "sourceType": "tutor",
+          "sourceValue": null,
+          "fromForm": "Blade",
+          "fromFormSlug": "aegislash-blade"
+        },
+        {
+          "raw": "tutor:gigaimpact",
+          "moveId": "gigaimpact",
+          "moveName": "Giga Impact",
+          "type": "normal",
+          "sourceType": "tutor",
+          "sourceValue": null,
+          "fromForm": "Blade",
+          "fromFormSlug": "aegislash-blade"
+        },
+        {
+          "raw": "tutor:hyperbeam",
+          "moveId": "hyperbeam",
+          "moveName": "Hyper Beam",
+          "type": "normal",
+          "sourceType": "tutor",
+          "sourceValue": null,
+          "fromForm": "Blade",
+          "fromFormSlug": "aegislash-blade"
+        },
+        {
+          "raw": "tutor:irondefense",
+          "moveId": "irondefense",
+          "moveName": "Iron Defense",
+          "type": "steel",
+          "sourceType": "tutor",
+          "sourceValue": null,
+          "fromForm": "Blade",
+          "fromFormSlug": "aegislash-blade"
+        },
+        {
+          "raw": "tutor:ironhead",
+          "moveId": "ironhead",
+          "moveName": "Iron Head",
+          "type": "steel",
+          "sourceType": "tutor",
+          "sourceValue": null,
+          "fromForm": "Blade",
+          "fromFormSlug": "aegislash-blade"
+        },
+        {
+          "raw": "tutor:laserfocus",
+          "moveId": "laserfocus",
+          "moveName": "Laser Focus",
+          "type": "normal",
+          "sourceType": "tutor",
+          "sourceValue": null,
+          "fromForm": "Blade",
+          "fromFormSlug": "aegislash-blade"
+        },
+        {
+          "raw": "tutor:magnetrise",
+          "moveId": "magnetrise",
+          "moveName": "Magnet Rise",
+          "type": "electric",
+          "sourceType": "tutor",
+          "sourceValue": null,
+          "fromForm": "Blade",
+          "fromFormSlug": "aegislash-blade"
+        },
+        {
+          "raw": "tutor:psychocut",
+          "moveId": "psychocut",
+          "moveName": "Psycho Cut",
+          "type": "psychic",
+          "sourceType": "tutor",
+          "sourceValue": null,
+          "fromForm": "Blade",
+          "fromFormSlug": "aegislash-blade"
+        },
+        {
+          "raw": "tutor:rest",
+          "moveId": "rest",
+          "moveName": "Rest",
+          "type": "psychic",
+          "sourceType": "tutor",
+          "sourceValue": null,
+          "fromForm": "Blade",
+          "fromFormSlug": "aegislash-blade"
+        },
+        {
+          "raw": "tutor:rockslide",
+          "moveId": "rockslide",
+          "moveName": "Rock Slide",
+          "type": "rock",
+          "sourceType": "tutor",
+          "sourceValue": null,
+          "fromForm": "Blade",
+          "fromFormSlug": "aegislash-blade"
+        },
+        {
+          "raw": "tutor:rocksmash",
+          "moveId": "rocksmash",
+          "moveName": "Rock Smash",
+          "type": "fighting",
+          "sourceType": "tutor",
+          "sourceValue": null,
+          "fromForm": "Blade",
+          "fromFormSlug": "aegislash-blade"
+        },
+        {
+          "raw": "tutor:shadowball",
+          "moveId": "shadowball",
+          "moveName": "Shadow Ball",
+          "type": "ghost",
+          "sourceType": "tutor",
+          "sourceValue": null,
+          "fromForm": "Blade",
+          "fromFormSlug": "aegislash-blade"
+        },
+        {
+          "raw": "tutor:shadowclaw",
+          "moveId": "shadowclaw",
+          "moveName": "Shadow Claw",
+          "type": "ghost",
+          "sourceType": "tutor",
+          "sourceValue": null,
+          "fromForm": "Blade",
+          "fromFormSlug": "aegislash-blade"
+        },
+        {
+          "raw": "tutor:shockwave",
+          "moveId": "shockwave",
+          "moveName": "Shock Wave",
+          "type": "electric",
+          "sourceType": "tutor",
+          "sourceValue": null,
+          "fromForm": "Blade",
+          "fromFormSlug": "aegislash-blade"
+        },
+        {
+          "raw": "tutor:sleeptalk",
+          "moveId": "sleeptalk",
+          "moveName": "Sleep Talk",
+          "type": "normal",
+          "sourceType": "tutor",
+          "sourceValue": null,
+          "fromForm": "Blade",
+          "fromFormSlug": "aegislash-blade"
+        },
+        {
+          "raw": "tutor:spite",
+          "moveId": "spite",
+          "moveName": "Spite",
+          "type": "ghost",
+          "sourceType": "tutor",
+          "sourceValue": null,
+          "fromForm": "Blade",
+          "fromFormSlug": "aegislash-blade"
+        },
+        {
+          "raw": "tutor:steelbeam",
+          "moveId": "steelbeam",
+          "moveName": "Steel Beam",
+          "type": "steel",
+          "sourceType": "tutor",
+          "sourceValue": null,
+          "fromForm": "Blade",
+          "fromFormSlug": "aegislash-blade"
+        }
+      ],
+      "evolutions": [],
+      "raw": {
+        "name": "Blade",
+        "primaryType": "steel",
+        "secondaryType": "ghost",
+        "maleRatio": 0.5,
+        "height": 17,
+        "weight": 530,
+        "pokedex": [
+          "cobblemon.species.aegislash-blade.desc"
+        ],
+        "labels": [
+          "gen6"
+        ],
+        "aspects": [
+          "blade-forme"
+        ],
+        "baseStats": {
+          "hp": 60,
+          "attack": 140,
+          "defence": 50,
+          "special_attack": 140,
+          "special_defence": 50,
+          "speed": 60
+        },
+        "evYield": {
+          "hp": 0,
+          "attack": 2,
+          "defence": 0,
+          "special_attack": 1,
+          "special_defence": 0,
+          "speed": 0
+        },
+        "moves": [
+          "1:furycutter",
+          "1:pursuit",
+          "1:autotomize",
+          "1:shadowsneak",
+          "1:slash",
+          "1:irondefense",
+          "1:nightslash",
+          "1:powertrick",
+          "1:ironhead",
+          "1:headsmash",
+          "1:swordsdance",
+          "1:aerialace",
+          "1:kingsshield",
+          "1:sacredsword",
+          "1:retaliate",
+          "1:metalsound",
+          "1:tackle",
+          "tm:aerialace",
+          "tm:afteryou",
+          "tm:airslash",
+          "tm:block",
+          "tm:brickbreak",
+          "tm:brutalswing",
+          "tm:closecombat",
+          "tm:cut",
+          "tm:destinybond",
+          "tm:endure",
+          "tm:facade",
+          "tm:falseswipe",
+          "tm:flashcannon",
+          "tm:furycutter",
+          "tm:gigaimpact",
+          "tm:gyroball",
+          "tm:hyperbeam",
+          "tm:irondefense",
+          "tm:ironhead",
+          "tm:laserfocus",
+          "tm:magnetrise",
+          "tm:metalsound",
+          "tm:protect",
+          "tm:psychocut",
+          "tm:raindance",
+          "tm:reflect",
+          "tm:rest",
+          "tm:retaliate",
+          "tm:reversal",
+          "tm:rockslide",
+          "tm:rocksmash",
+          "tm:screech",
+          "tm:shadowball",
+          "tm:shadowclaw",
+          "tm:shockwave",
+          "tm:sleeptalk",
+          "tm:solarblade",
+          "tm:spite",
+          "tm:steelbeam",
+          "tm:substitute",
+          "tm:sunnyday",
+          "tm:swordsdance",
+          "tm:terablast",
+          "tm:wideguard",
+          "tutor:aerialace",
+          "tutor:afteryou",
+          "tutor:block",
+          "tutor:falseswipe",
+          "tutor:flashcannon",
+          "tutor:furycutter",
+          "tutor:gigaimpact",
+          "tutor:hyperbeam",
+          "tutor:irondefense",
+          "tutor:ironhead",
+          "tutor:laserfocus",
+          "tutor:magnetrise",
+          "tutor:psychocut",
+          "tutor:rest",
+          "tutor:rockslide",
+          "tutor:rocksmash",
+          "tutor:shadowball",
+          "tutor:shadowclaw",
+          "tutor:shockwave",
+          "tutor:sleeptalk",
+          "tutor:spite",
+          "tutor:steelbeam"
+        ],
+        "evolutions": [],
+        "battleOnly": true
+      }
+    }
+  ],
+  "rawSpecies": {
+    "implemented": true,
+    "nationalPokedexNumber": 681,
+    "name": "Aegislash",
+    "primaryType": "steel",
+    "secondaryType": "ghost",
+    "maleRatio": 0.5,
+    "height": 17,
+    "weight": 530,
+    "pokedex": [
+      "cobblemon.species.aegislash.desc"
+    ],
+    "labels": [
+      "gen6"
+    ],
+    "aspects": [
+      "shield-forme"
+    ],
+    "abilities": [
+      "stancechange",
+      "h:stancechange"
+    ],
+    "eggGroups": [
+      "mineral"
+    ],
+    "baseStats": {
+      "hp": 60,
+      "attack": 50,
+      "defence": 140,
+      "special_attack": 50,
+      "special_defence": 140,
+      "speed": 60
+    },
+    "evYield": {
+      "hp": 0,
+      "attack": 0,
+      "defence": 2,
+      "special_attack": 0,
+      "special_defence": 1,
+      "speed": 0
+    },
+    "baseExperienceYield": 250,
+    "experienceGroup": "medium_fast",
+    "catchRate": 45,
+    "eggCycles": 20,
+    "baseFriendship": 50,
+    "baseScale": 0.9,
+    "hitbox": {
+      "width": 1.1,
+      "height": 3,
+      "fixed": false
+    },
+    "behaviour": {
+      "moving": {
+        "swim": {
+          "avoidsWater": true
+        },
+        "fly": {
+          "canFly": true
+        },
+        "walk": {
+          "walkSpeed": 0.4,
+          "canWalk": false
+        }
+      },
+      "resting": {
+        "times": [
+          "any"
+        ],
+        "drowsyChance": 0.0014,
+        "rouseChance": 0.0042
+      },
+      "combat": {
+        "willDefendSelf": true,
+        "willDefendOwner": true,
+        "willFlee": false
+      }
+    },
+    "drops": {
+      "amount": 6,
+      "entries": [
+        {
+          "item": "minecraft:iron_nugget",
+          "quantityRange": "0-3"
+        },
+        {
+          "item": "minecraft:iron_sword",
+          "percentage": 10
+        },
+        {
+          "item": "cobblemon:dusk_stone",
+          "percentage": 10
+        },
+        {
+          "item": "cobblemon:ability_shield",
+          "percentage": 10
+        }
+      ]
+    },
+    "moves": [
+      "1:furycutter",
+      "1:pursuit",
+      "1:autotomize",
+      "1:shadowsneak",
+      "1:slash",
+      "1:irondefense",
+      "1:nightslash",
+      "1:powertrick",
+      "1:ironhead",
+      "1:headsmash",
+      "1:swordsdance",
+      "1:aerialace",
+      "1:kingsshield",
+      "1:sacredsword",
+      "1:retaliate",
+      "1:metalsound",
+      "1:tackle",
+      "egg:block",
+      "egg:destinybond",
+      "egg:wideguard",
+      "tm:aerialace",
+      "tm:afteryou",
+      "tm:airslash",
+      "tm:block",
+      "tm:brickbreak",
+      "tm:brutalswing",
+      "tm:closecombat",
+      "tm:cut",
+      "tm:endure",
+      "tm:facade",
+      "tm:falseswipe",
+      "tm:flashcannon",
+      "tm:furycutter",
+      "tm:gigaimpact",
+      "tm:gyroball",
+      "tm:hyperbeam",
+      "tm:irondefense",
+      "tm:ironhead",
+      "tm:laserfocus",
+      "tm:magnetrise",
+      "tm:metalsound",
+      "tm:protect",
+      "tm:psychocut",
+      "tm:raindance",
+      "tm:reflect",
+      "tm:rest",
+      "tm:retaliate",
+      "tm:reversal",
+      "tm:rockslide",
+      "tm:rocksmash",
+      "tm:screech",
+      "tm:shadowball",
+      "tm:shadowclaw",
+      "tm:shockwave",
+      "tm:sleeptalk",
+      "tm:solarblade",
+      "tm:spite",
+      "tm:steelbeam",
+      "tm:substitute",
+      "tm:sunnyday",
+      "tm:swordsdance",
+      "tm:terablast",
+      "tutor:aerialace",
+      "tutor:afteryou",
+      "tutor:block",
+      "tutor:falseswipe",
+      "tutor:flashcannon",
+      "tutor:furycutter",
+      "tutor:gigaimpact",
+      "tutor:hyperbeam",
+      "tutor:irondefense",
+      "tutor:ironhead",
+      "tutor:laserfocus",
+      "tutor:magnetrise",
+      "tutor:psychocut",
+      "tutor:rest",
+      "tutor:rockslide",
+      "tutor:rocksmash",
+      "tutor:shadowball",
+      "tutor:shadowclaw",
+      "tutor:shockwave",
+      "tutor:sleeptalk",
+      "tutor:spite",
+      "tutor:steelbeam",
+      "legacy:attract",
+      "legacy:confide",
+      "legacy:doubleteam",
+      "legacy:frustration",
+      "legacy:hiddenpower",
+      "legacy:return",
+      "legacy:round",
+      "legacy:secretpower",
+      "legacy:snore",
+      "legacy:swagger",
+      "legacy:toxic"
+    ],
+    "preEvolution": "doublade",
+    "evolutions": [],
+    "forms": [
+      {
+        "name": "Blade",
+        "primaryType": "steel",
+        "secondaryType": "ghost",
+        "maleRatio": 0.5,
+        "height": 17,
+        "weight": 530,
+        "pokedex": [
+          "cobblemon.species.aegislash-blade.desc"
+        ],
+        "labels": [
+          "gen6"
+        ],
+        "aspects": [
+          "blade-forme"
+        ],
+        "baseStats": {
+          "hp": 60,
+          "attack": 140,
+          "defence": 50,
+          "special_attack": 140,
+          "special_defence": 50,
+          "speed": 60
+        },
+        "evYield": {
+          "hp": 0,
+          "attack": 2,
+          "defence": 0,
+          "special_attack": 1,
+          "special_defence": 0,
+          "speed": 0
+        },
+        "moves": [
+          "1:furycutter",
+          "1:pursuit",
+          "1:autotomize",
+          "1:shadowsneak",
+          "1:slash",
+          "1:irondefense",
+          "1:nightslash",
+          "1:powertrick",
+          "1:ironhead",
+          "1:headsmash",
+          "1:swordsdance",
+          "1:aerialace",
+          "1:kingsshield",
+          "1:sacredsword",
+          "1:retaliate",
+          "1:metalsound",
+          "1:tackle",
+          "tm:aerialace",
+          "tm:afteryou",
+          "tm:airslash",
+          "tm:block",
+          "tm:brickbreak",
+          "tm:brutalswing",
+          "tm:closecombat",
+          "tm:cut",
+          "tm:destinybond",
+          "tm:endure",
+          "tm:facade",
+          "tm:falseswipe",
+          "tm:flashcannon",
+          "tm:furycutter",
+          "tm:gigaimpact",
+          "tm:gyroball",
+          "tm:hyperbeam",
+          "tm:irondefense",
+          "tm:ironhead",
+          "tm:laserfocus",
+          "tm:magnetrise",
+          "tm:metalsound",
+          "tm:protect",
+          "tm:psychocut",
+          "tm:raindance",
+          "tm:reflect",
+          "tm:rest",
+          "tm:retaliate",
+          "tm:reversal",
+          "tm:rockslide",
+          "tm:rocksmash",
+          "tm:screech",
+          "tm:shadowball",
+          "tm:shadowclaw",
+          "tm:shockwave",
+          "tm:sleeptalk",
+          "tm:solarblade",
+          "tm:spite",
+          "tm:steelbeam",
+          "tm:substitute",
+          "tm:sunnyday",
+          "tm:swordsdance",
+          "tm:terablast",
+          "tm:wideguard",
+          "tutor:aerialace",
+          "tutor:afteryou",
+          "tutor:block",
+          "tutor:falseswipe",
+          "tutor:flashcannon",
+          "tutor:furycutter",
+          "tutor:gigaimpact",
+          "tutor:hyperbeam",
+          "tutor:irondefense",
+          "tutor:ironhead",
+          "tutor:laserfocus",
+          "tutor:magnetrise",
+          "tutor:psychocut",
+          "tutor:rest",
+          "tutor:rockslide",
+          "tutor:rocksmash",
+          "tutor:shadowball",
+          "tutor:shadowclaw",
+          "tutor:shockwave",
+          "tutor:sleeptalk",
+          "tutor:spite",
+          "tutor:steelbeam"
+        ],
+        "evolutions": [],
+        "battleOnly": true
+      }
+    ]
+  }
+}

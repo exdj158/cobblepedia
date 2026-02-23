@@ -1,0 +1,918 @@
+{
+  "slug": "poipole",
+  "name": "Poipole",
+  "dexNumber": 803,
+  "implemented": true,
+  "types": [
+    "poison"
+  ],
+  "abilities": [
+    {
+      "id": "beastboost",
+      "hidden": false,
+      "label": "Beastboost",
+      "slot": "first"
+    },
+    {
+      "id": "beastboost",
+      "hidden": true,
+      "label": "Beastboost",
+      "slot": "hidden"
+    }
+  ],
+  "eggGroups": [
+    "undiscovered"
+  ],
+  "labels": [
+    "gen7",
+    "ultra_beast"
+  ],
+  "aspects": [],
+  "aliases": [
+    "poipole"
+  ],
+  "maleRatio": -1,
+  "height": 6,
+  "weight": 18,
+  "catchRate": 45,
+  "baseExperienceYield": 210,
+  "baseFriendship": 0,
+  "eggCycles": 120,
+  "baseStats": {
+    "hp": 67,
+    "attack": 73,
+    "defence": 67,
+    "special_attack": 73,
+    "special_defence": 67,
+    "speed": 73
+  },
+  "evYield": {
+    "hp": 0,
+    "attack": 0,
+    "defence": 0,
+    "special_attack": 0,
+    "special_defence": 0,
+    "speed": 1
+  },
+  "preEvolution": null,
+  "evolutions": [
+    {
+      "id": "poipole_naganadel",
+      "variant": "level_up",
+      "result": {
+        "raw": "naganadel",
+        "slug": "naganadel",
+        "aspectTokens": []
+      },
+      "consumeHeldItem": false,
+      "learnableMoves": [
+        "aircutter"
+      ],
+      "requirementText": [
+        "Knows Dragonpulse"
+      ],
+      "requirements": [
+        {
+          "variant": "has_move",
+          "text": "Knows Dragonpulse",
+          "raw": {
+            "variant": "has_move",
+            "move": "dragonpulse"
+          }
+        }
+      ],
+      "requiredContext": null,
+      "fromForm": null,
+      "raw": {
+        "id": "poipole_naganadel",
+        "variant": "level_up",
+        "result": "naganadel",
+        "consumeHeldItem": false,
+        "learnableMoves": [
+          "aircutter"
+        ],
+        "requirements": [
+          {
+            "variant": "has_move",
+            "move": "dragonpulse"
+          }
+        ]
+      }
+    }
+  ],
+  "evolutionFamily": {
+    "members": [
+      {
+        "nodeId": "poipole",
+        "slug": "poipole",
+        "name": "Poipole",
+        "dexNumber": 803,
+        "formSlug": null,
+        "formName": null
+      },
+      {
+        "nodeId": "naganadel",
+        "slug": "naganadel",
+        "name": "Naganadel",
+        "dexNumber": 804,
+        "formSlug": null,
+        "formName": null
+      }
+    ],
+    "edges": [
+      {
+        "fromNodeId": "poipole",
+        "toNodeId": "naganadel",
+        "fromSlug": "poipole",
+        "toSlug": "naganadel",
+        "method": "level_up",
+        "requirementText": [
+          "Knows Dragonpulse"
+        ]
+      }
+    ],
+    "roots": [
+      "poipole"
+    ]
+  },
+  "moves": [
+    {
+      "raw": "1:acid",
+      "moveId": "acid",
+      "moveName": "Acid",
+      "type": "poison",
+      "sourceType": "level",
+      "sourceValue": 1,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "21:charm",
+      "moveId": "charm",
+      "moveName": "Charm",
+      "type": "fairy",
+      "sourceType": "level",
+      "sourceValue": 21,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:charm",
+      "moveId": "charm",
+      "moveName": "Charm",
+      "type": "fairy",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "legacy:confide",
+      "moveId": "confide",
+      "moveName": "Confide",
+      "type": "normal",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:covet",
+      "moveId": "covet",
+      "moveName": "Covet",
+      "type": "normal",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tutor:covet",
+      "moveId": "covet",
+      "moveName": "Covet",
+      "type": "normal",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "1:dragonpulse",
+      "moveId": "dragonpulse",
+      "moveName": "Dragon Pulse",
+      "type": "dragon",
+      "sourceType": "level",
+      "sourceValue": 1,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:dragonpulse",
+      "moveId": "dragonpulse",
+      "moveName": "Dragon Pulse",
+      "type": "dragon",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tutor:dragonpulse",
+      "moveId": "dragonpulse",
+      "moveName": "Dragon Pulse",
+      "type": "dragon",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:echoedvoice",
+      "moveId": "echoedvoice",
+      "moveName": "Echoed Voice",
+      "type": "normal",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:endure",
+      "moveId": "endure",
+      "moveName": "Endure",
+      "type": "normal",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:facade",
+      "moveId": "facade",
+      "moveName": "Facade",
+      "type": "normal",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "14:fellstinger",
+      "moveId": "fellstinger",
+      "moveName": "Fell Stinger",
+      "type": "bug",
+      "sourceType": "level",
+      "sourceValue": 14,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "legacy:frustration",
+      "moveId": "frustration",
+      "moveName": "Frustration",
+      "type": "normal",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "7:furyattack",
+      "moveId": "furyattack",
+      "moveName": "Fury Attack",
+      "type": "normal",
+      "sourceType": "level",
+      "sourceValue": 7,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "56:gastroacid",
+      "moveId": "gastroacid",
+      "moveName": "Gastro Acid",
+      "type": "poison",
+      "sourceType": "level",
+      "sourceValue": 56,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:gastroacid",
+      "moveId": "gastroacid",
+      "moveName": "Gastro Acid",
+      "type": "poison",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tutor:gastroacid",
+      "moveId": "gastroacid",
+      "moveName": "Gastro Acid",
+      "type": "poison",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "1:growl",
+      "moveId": "growl",
+      "moveName": "Growl",
+      "type": "normal",
+      "sourceType": "level",
+      "sourceValue": 1,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:gunkshot",
+      "moveId": "gunkshot",
+      "moveName": "Gunk Shot",
+      "type": "poison",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tutor:gunkshot",
+      "moveId": "gunkshot",
+      "moveName": "Gunk Shot",
+      "type": "poison",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "1:helpinghand",
+      "moveId": "helpinghand",
+      "moveName": "Helping Hand",
+      "type": "normal",
+      "sourceType": "level",
+      "sourceValue": 1,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:helpinghand",
+      "moveId": "helpinghand",
+      "moveName": "Helping Hand",
+      "type": "normal",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tutor:helpinghand",
+      "moveId": "helpinghand",
+      "moveName": "Helping Hand",
+      "type": "normal",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "legacy:hiddenpower",
+      "moveId": "hiddenpower",
+      "moveName": "Hidden Power",
+      "type": "normal",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:irontail",
+      "moveId": "irontail",
+      "moveName": "Iron Tail",
+      "type": "steel",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tutor:irontail",
+      "moveId": "irontail",
+      "moveName": "Iron Tail",
+      "type": "steel",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "42:nastyplot",
+      "moveId": "nastyplot",
+      "moveName": "Nasty Plot",
+      "type": "dark",
+      "sourceType": "level",
+      "sourceValue": 42,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:nastyplot",
+      "moveId": "nastyplot",
+      "moveName": "Nasty Plot",
+      "type": "dark",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "1:peck",
+      "moveId": "peck",
+      "moveName": "Peck",
+      "type": "flying",
+      "sourceType": "level",
+      "sourceValue": 1,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:pinmissile",
+      "moveId": "pinmissile",
+      "moveName": "Pin Missile",
+      "type": "bug",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "49:poisonjab",
+      "moveId": "poisonjab",
+      "moveName": "Poison Jab",
+      "type": "poison",
+      "sourceType": "level",
+      "sourceValue": 49,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:poisonjab",
+      "moveId": "poisonjab",
+      "moveName": "Poison Jab",
+      "type": "poison",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tutor:poisonjab",
+      "moveId": "poisonjab",
+      "moveName": "Poison Jab",
+      "type": "poison",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:protect",
+      "moveId": "protect",
+      "moveName": "Protect",
+      "type": "normal",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:rest",
+      "moveId": "rest",
+      "moveName": "Rest",
+      "type": "psychic",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tutor:rest",
+      "moveId": "rest",
+      "moveName": "Rest",
+      "type": "psychic",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "legacy:return",
+      "moveId": "return",
+      "moveName": "Return",
+      "type": "normal",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "legacy:round",
+      "moveId": "round",
+      "moveName": "Round",
+      "type": "normal",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:signalbeam",
+      "moveId": "signalbeam",
+      "moveName": "Signal Beam",
+      "type": "bug",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tutor:signalbeam",
+      "moveId": "signalbeam",
+      "moveName": "Signal Beam",
+      "type": "bug",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:sleeptalk",
+      "moveId": "sleeptalk",
+      "moveName": "Sleep Talk",
+      "type": "normal",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tutor:sleeptalk",
+      "moveId": "sleeptalk",
+      "moveName": "Sleep Talk",
+      "type": "normal",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:sludgebomb",
+      "moveId": "sludgebomb",
+      "moveName": "Sludge Bomb",
+      "type": "poison",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tutor:sludgebomb",
+      "moveId": "sludgebomb",
+      "moveName": "Sludge Bomb",
+      "type": "poison",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:sludgewave",
+      "moveId": "sludgewave",
+      "moveName": "Sludge Wave",
+      "type": "poison",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:snatch",
+      "moveId": "snatch",
+      "moveName": "Snatch",
+      "type": "dark",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tutor:snatch",
+      "moveId": "snatch",
+      "moveName": "Snatch",
+      "type": "dark",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "legacy:snore",
+      "moveId": "snore",
+      "moveName": "Snore",
+      "type": "normal",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:substitute",
+      "moveId": "substitute",
+      "moveName": "Substitute",
+      "type": "normal",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:terablast",
+      "moveId": "terablast",
+      "moveName": "Tera Blast",
+      "type": "normal",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "63:toxic",
+      "moveId": "toxic",
+      "moveName": "Toxic",
+      "type": "poison",
+      "sourceType": "level",
+      "sourceValue": 63,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:toxic",
+      "moveId": "toxic",
+      "moveName": "Toxic",
+      "type": "poison",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:toxicspikes",
+      "moveId": "toxicspikes",
+      "moveName": "Toxic Spikes",
+      "type": "poison",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:uproar",
+      "moveId": "uproar",
+      "moveName": "Uproar",
+      "type": "normal",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tutor:uproar",
+      "moveId": "uproar",
+      "moveName": "Uproar",
+      "type": "normal",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "35:venomdrench",
+      "moveId": "venomdrench",
+      "moveName": "Venom Drench",
+      "type": "poison",
+      "sourceType": "level",
+      "sourceValue": 35,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:venomdrench",
+      "moveId": "venomdrench",
+      "moveName": "Venom Drench",
+      "type": "poison",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "28:venoshock",
+      "moveId": "venoshock",
+      "moveName": "Venoshock",
+      "type": "poison",
+      "sourceType": "level",
+      "sourceValue": 28,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:venoshock",
+      "moveId": "venoshock",
+      "moveName": "Venoshock",
+      "type": "poison",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    }
+  ],
+  "spawnEntries": [],
+  "forms": [],
+  "rawSpecies": {
+    "implemented": true,
+    "nationalPokedexNumber": 803,
+    "name": "Poipole",
+    "primaryType": "poison",
+    "maleRatio": -1,
+    "height": 6,
+    "weight": 18,
+    "pokedex": [
+      "cobblemon.species.poipole.desc"
+    ],
+    "labels": [
+      "gen7",
+      "ultra_beast"
+    ],
+    "aspects": [],
+    "abilities": [
+      "beastboost",
+      "h:beastboost"
+    ],
+    "eggGroups": [
+      "undiscovered"
+    ],
+    "baseStats": {
+      "hp": 67,
+      "attack": 73,
+      "defence": 67,
+      "special_attack": 73,
+      "special_defence": 67,
+      "speed": 73
+    },
+    "evYield": {
+      "hp": 0,
+      "attack": 0,
+      "defence": 0,
+      "special_attack": 0,
+      "special_defence": 0,
+      "speed": 1
+    },
+    "baseExperienceYield": 210,
+    "experienceGroup": "slow",
+    "catchRate": 45,
+    "eggCycles": 120,
+    "baseFriendship": 0,
+    "baseScale": 0.6,
+    "hitbox": {
+      "width": 0.7,
+      "height": 1.4,
+      "fixed": false
+    },
+    "drops": {
+      "amount": 2,
+      "entries": [
+        {
+          "item": "minecraft:echo_shard",
+          "quantityRange": "1-2"
+        }
+      ]
+    },
+    "moves": [
+      "1:dragonpulse",
+      "1:peck",
+      "1:growl",
+      "1:helpinghand",
+      "1:acid",
+      "7:furyattack",
+      "14:fellstinger",
+      "21:charm",
+      "28:venoshock",
+      "35:venomdrench",
+      "42:nastyplot",
+      "49:poisonjab",
+      "56:gastroacid",
+      "63:toxic",
+      "tm:charm",
+      "tm:covet",
+      "tm:dragonpulse",
+      "tm:echoedvoice",
+      "tm:endure",
+      "tm:facade",
+      "tm:gastroacid",
+      "tm:gunkshot",
+      "tm:helpinghand",
+      "tm:irontail",
+      "tm:nastyplot",
+      "tm:pinmissile",
+      "tm:poisonjab",
+      "tm:protect",
+      "tm:rest",
+      "tm:signalbeam",
+      "tm:sleeptalk",
+      "tm:sludgebomb",
+      "tm:sludgewave",
+      "tm:snatch",
+      "tm:substitute",
+      "tm:terablast",
+      "tm:toxic",
+      "tm:toxicspikes",
+      "tm:uproar",
+      "tm:venomdrench",
+      "tm:venoshock",
+      "tutor:covet",
+      "tutor:dragonpulse",
+      "tutor:gastroacid",
+      "tutor:gunkshot",
+      "tutor:helpinghand",
+      "tutor:irontail",
+      "tutor:poisonjab",
+      "tutor:rest",
+      "tutor:signalbeam",
+      "tutor:sleeptalk",
+      "tutor:sludgebomb",
+      "tutor:snatch",
+      "tutor:uproar",
+      "legacy:confide",
+      "legacy:frustration",
+      "legacy:hiddenpower",
+      "legacy:return",
+      "legacy:round",
+      "legacy:snore"
+    ],
+    "evolutions": [
+      {
+        "id": "poipole_naganadel",
+        "variant": "level_up",
+        "result": "naganadel",
+        "consumeHeldItem": false,
+        "learnableMoves": [
+          "aircutter"
+        ],
+        "requirements": [
+          {
+            "variant": "has_move",
+            "move": "dragonpulse"
+          }
+        ]
+      }
+    ],
+    "behaviour": {
+      "herd": {
+        "maxSize": "4",
+        "toleratedLeaders": [
+          {
+            "pokemon": "poipole",
+            "tier": 1
+          },
+          {
+            "pokemon": "naganadel",
+            "tier": 2
+          }
+        ]
+      },
+      "resting": {
+        "willSleepOnBed": true,
+        "times": [
+          "any"
+        ],
+        "drowsyChance": 0.0014,
+        "rouseChance": 0.0042
+      },
+      "moving": {
+        "swim": {
+          "avoidsWater": true
+        },
+        "fly": {
+          "canFly": true
+        },
+        "walk": {
+          "canWalk": false
+        }
+      },
+      "combat": {
+        "willDefendOwner": true
+      }
+    }
+  }
+}

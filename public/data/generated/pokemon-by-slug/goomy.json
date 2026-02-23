@@ -1,0 +1,2535 @@
+{
+  "slug": "goomy",
+  "name": "Goomy",
+  "dexNumber": 704,
+  "implemented": true,
+  "types": [
+    "dragon"
+  ],
+  "abilities": [
+    {
+      "id": "sapsipper",
+      "hidden": false,
+      "label": "Sapsipper",
+      "slot": "first"
+    },
+    {
+      "id": "hydration",
+      "hidden": false,
+      "label": "Hydration",
+      "slot": "second"
+    },
+    {
+      "id": "gooey",
+      "hidden": true,
+      "label": "Gooey",
+      "slot": "hidden"
+    }
+  ],
+  "eggGroups": [
+    "dragon"
+  ],
+  "labels": [
+    "gen6",
+    "kalosian_form"
+  ],
+  "aspects": [],
+  "aliases": [
+    "goomy",
+    "goomy hisui-bias",
+    "hisui-bias"
+  ],
+  "maleRatio": 0.5,
+  "height": 3,
+  "weight": 28,
+  "catchRate": 45,
+  "baseExperienceYield": 60,
+  "baseFriendship": 35,
+  "eggCycles": 40,
+  "baseStats": {
+    "hp": 45,
+    "attack": 50,
+    "defence": 35,
+    "special_attack": 55,
+    "special_defence": 75,
+    "speed": 40
+  },
+  "evYield": {
+    "hp": 0,
+    "attack": 0,
+    "defence": 0,
+    "special_attack": 0,
+    "special_defence": 1,
+    "speed": 0
+  },
+  "preEvolution": null,
+  "evolutions": [
+    {
+      "id": "goomy_sliggoo",
+      "variant": "level_up",
+      "result": {
+        "raw": "sliggoo",
+        "slug": "sliggoo",
+        "aspectTokens": []
+      },
+      "consumeHeldItem": false,
+      "learnableMoves": [
+        "acidspray"
+      ],
+      "requirementText": [
+        "Level 40+"
+      ],
+      "requirements": [
+        {
+          "variant": "level",
+          "text": "Level 40+",
+          "raw": {
+            "variant": "level",
+            "minLevel": 40
+          }
+        }
+      ],
+      "requiredContext": null,
+      "fromForm": null,
+      "raw": {
+        "id": "goomy_sliggoo",
+        "variant": "level_up",
+        "result": "sliggoo",
+        "consumeHeldItem": false,
+        "learnableMoves": [
+          "acidspray"
+        ],
+        "requirements": [
+          {
+            "variant": "level",
+            "minLevel": 40
+          }
+        ]
+      }
+    },
+    {
+      "id": "goomy_sliggoohisui",
+      "variant": "level_up",
+      "result": {
+        "raw": "sliggoo hisuian",
+        "slug": "sliggoo",
+        "aspectTokens": [
+          "hisuian"
+        ]
+      },
+      "consumeHeldItem": false,
+      "learnableMoves": [
+        "shelter"
+      ],
+      "requirementText": [
+        "Level 40+",
+        "Biome Evolution Regional Goomy Hisuibiome"
+      ],
+      "requirements": [
+        {
+          "variant": "level",
+          "text": "Level 40+",
+          "raw": {
+            "variant": "level",
+            "minLevel": 40
+          }
+        },
+        {
+          "variant": "biome",
+          "text": "Biome Evolution Regional Goomy Hisuibiome",
+          "raw": {
+            "variant": "biome",
+            "biomeCondition": "#cobblemon:evolution/regional/goomy_hisuibiome"
+          }
+        }
+      ],
+      "requiredContext": null,
+      "fromForm": null,
+      "raw": {
+        "id": "goomy_sliggoohisui",
+        "variant": "level_up",
+        "result": "sliggoo hisuian",
+        "consumeHeldItem": false,
+        "learnableMoves": [
+          "shelter"
+        ],
+        "requirements": [
+          {
+            "variant": "level",
+            "minLevel": 40
+          },
+          {
+            "variant": "biome",
+            "biomeCondition": "#cobblemon:evolution/regional/goomy_hisuibiome"
+          }
+        ]
+      }
+    }
+  ],
+  "evolutionFamily": {
+    "members": [
+      {
+        "nodeId": "goomy",
+        "slug": "goomy",
+        "name": "Goomy",
+        "dexNumber": 704,
+        "formSlug": null,
+        "formName": null
+      },
+      {
+        "nodeId": "goomy-hisuibias",
+        "slug": "goomy",
+        "name": "Goomy",
+        "dexNumber": 704,
+        "formSlug": "goomy-hisuibias",
+        "formName": "Hisui-Bias"
+      },
+      {
+        "nodeId": "sliggoo",
+        "slug": "sliggoo",
+        "name": "Sliggoo",
+        "dexNumber": 705,
+        "formSlug": null,
+        "formName": null
+      },
+      {
+        "nodeId": "sliggoo-hisui",
+        "slug": "sliggoo",
+        "name": "Sliggoo",
+        "dexNumber": 705,
+        "formSlug": "sliggoo-hisui",
+        "formName": "Hisui"
+      },
+      {
+        "nodeId": "goodra",
+        "slug": "goodra",
+        "name": "Goodra",
+        "dexNumber": 706,
+        "formSlug": null,
+        "formName": null
+      },
+      {
+        "nodeId": "goodra-hisui",
+        "slug": "goodra",
+        "name": "Goodra",
+        "dexNumber": 706,
+        "formSlug": "goodra-hisui",
+        "formName": "Hisui"
+      }
+    ],
+    "edges": [
+      {
+        "fromNodeId": "goomy",
+        "toNodeId": "sliggoo",
+        "fromSlug": "goomy",
+        "toSlug": "sliggoo",
+        "method": "level_up",
+        "requirementText": [
+          "Level 40+"
+        ]
+      },
+      {
+        "fromNodeId": "goomy-hisuibias",
+        "toNodeId": "sliggoo-hisui",
+        "fromSlug": "goomy",
+        "toSlug": "sliggoo",
+        "method": "level_up",
+        "requirementText": [
+          "Level 40+"
+        ]
+      },
+      {
+        "fromNodeId": "sliggoo",
+        "toNodeId": "goodra",
+        "fromSlug": "sliggoo",
+        "toSlug": "goodra",
+        "method": "level_up",
+        "requirementText": [
+          "Level 50+",
+          "During rain"
+        ]
+      },
+      {
+        "fromNodeId": "sliggoo-hisui",
+        "toNodeId": "goodra-hisui",
+        "fromSlug": "sliggoo",
+        "toSlug": "goodra",
+        "method": "level_up",
+        "requirementText": [
+          "Level 50+",
+          "During rain"
+        ]
+      }
+    ],
+    "roots": [
+      "goomy",
+      "goomy-hisuibias"
+    ]
+  },
+  "moves": [
+    {
+      "raw": "1:absorb",
+      "moveId": "absorb",
+      "moveName": "Absorb",
+      "type": "grass",
+      "sourceType": "level",
+      "sourceValue": 1,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:acidarmor",
+      "moveId": "acidarmor",
+      "moveName": "Acid Armor",
+      "type": "poison",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "legacy:attract",
+      "moveId": "attract",
+      "moveName": "Attract",
+      "type": "normal",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "1:bide",
+      "moveId": "bide",
+      "moveName": "Bide",
+      "type": "normal",
+      "sourceType": "level",
+      "sourceValue": 1,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "45:bodyslam",
+      "moveId": "bodyslam",
+      "moveName": "Body Slam",
+      "type": "normal",
+      "sourceType": "level",
+      "sourceValue": 45,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:bodyslam",
+      "moveId": "bodyslam",
+      "moveName": "Body Slam",
+      "type": "normal",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "1:bubble",
+      "moveId": "bubble",
+      "moveName": "Bubble",
+      "type": "water",
+      "sourceType": "level",
+      "sourceValue": 1,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:charm",
+      "moveId": "charm",
+      "moveName": "Charm",
+      "type": "fairy",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:chillingwater",
+      "moveId": "chillingwater",
+      "moveName": "Chilling Water",
+      "type": "water",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "legacy:confide",
+      "moveId": "confide",
+      "moveName": "Confide",
+      "type": "normal",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "egg:counter",
+      "moveId": "counter",
+      "moveName": "Counter",
+      "type": "fighting",
+      "sourceType": "egg",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "41:curse",
+      "moveId": "curse",
+      "moveName": "Curse",
+      "type": "ghost",
+      "sourceType": "level",
+      "sourceValue": 41,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:curse",
+      "moveId": "curse",
+      "moveName": "Curse",
+      "type": "ghost",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "legacy:doubleteam",
+      "moveId": "doubleteam",
+      "moveName": "Double Team",
+      "type": "normal",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:dracometeor",
+      "moveId": "dracometeor",
+      "moveName": "Draco Meteor",
+      "type": "dragon",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tutor:dracometeor",
+      "moveId": "dracometeor",
+      "moveName": "Draco Meteor",
+      "type": "dragon",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "10:dragonbreath",
+      "moveId": "dragonbreath",
+      "moveName": "Dragon Breath",
+      "type": "dragon",
+      "sourceType": "level",
+      "sourceValue": 10,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "35:dragonpulse",
+      "moveId": "dragonpulse",
+      "moveName": "Dragon Pulse",
+      "type": "dragon",
+      "sourceType": "level",
+      "sourceValue": 35,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:dragonpulse",
+      "moveId": "dragonpulse",
+      "moveName": "Dragon Pulse",
+      "type": "dragon",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tutor:dragonpulse",
+      "moveId": "dragonpulse",
+      "moveName": "Dragon Pulse",
+      "type": "dragon",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:endure",
+      "moveId": "endure",
+      "moveName": "Endure",
+      "type": "normal",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:facade",
+      "moveId": "facade",
+      "moveName": "Facade",
+      "type": "normal",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "20:flail",
+      "moveId": "flail",
+      "moveName": "Flail",
+      "type": "normal",
+      "sourceType": "level",
+      "sourceValue": 20,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "legacy:frustration",
+      "moveId": "frustration",
+      "moveName": "Frustration",
+      "type": "normal",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "legacy:hiddenpower",
+      "moveId": "hiddenpower",
+      "moveName": "Hidden Power",
+      "type": "normal",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:infestation",
+      "moveId": "infestation",
+      "moveName": "Infestation",
+      "type": "bug",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:irontail",
+      "moveId": "irontail",
+      "moveName": "Iron Tail",
+      "type": "steel",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tutor:irontail",
+      "moveId": "irontail",
+      "moveName": "Iron Tail",
+      "type": "steel",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "egg:lifedew",
+      "moveId": "lifedew",
+      "moveName": "Life Dew",
+      "type": "water",
+      "sourceType": "egg",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:mudshot",
+      "moveId": "mudshot",
+      "moveName": "Mud Shot",
+      "type": "ground",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "50:muddywater",
+      "moveId": "muddywater",
+      "moveName": "Muddy Water",
+      "type": "water",
+      "sourceType": "level",
+      "sourceValue": 50,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:muddywater",
+      "moveId": "muddywater",
+      "moveName": "Muddy Water",
+      "type": "water",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:outrage",
+      "moveId": "outrage",
+      "moveName": "Outrage",
+      "type": "dragon",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tutor:outrage",
+      "moveId": "outrage",
+      "moveName": "Outrage",
+      "type": "dragon",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "legacy:poisontail",
+      "moveId": "poisontail",
+      "moveName": "Poison Tail",
+      "type": "poison",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "15:protect",
+      "moveId": "protect",
+      "moveName": "Protect",
+      "type": "normal",
+      "sourceType": "level",
+      "sourceValue": 15,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:protect",
+      "moveId": "protect",
+      "moveName": "Protect",
+      "type": "normal",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "30:raindance",
+      "moveId": "raindance",
+      "moveName": "Rain Dance",
+      "type": "water",
+      "sourceType": "level",
+      "sourceValue": 30,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:raindance",
+      "moveId": "raindance",
+      "moveName": "Rain Dance",
+      "type": "water",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:rest",
+      "moveId": "rest",
+      "moveName": "Rest",
+      "type": "psychic",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tutor:rest",
+      "moveId": "rest",
+      "moveName": "Rest",
+      "type": "psychic",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "legacy:return",
+      "moveId": "return",
+      "moveName": "Return",
+      "type": "normal",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:rockslide",
+      "moveId": "rockslide",
+      "moveName": "Rock Slide",
+      "type": "rock",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tutor:rockslide",
+      "moveId": "rockslide",
+      "moveName": "Rock Slide",
+      "type": "rock",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "legacy:round",
+      "moveId": "round",
+      "moveName": "Round",
+      "type": "normal",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "legacy:secretpower",
+      "moveId": "secretpower",
+      "moveName": "Secret Power",
+      "type": "normal",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:shockwave",
+      "moveId": "shockwave",
+      "moveName": "Shock Wave",
+      "type": "electric",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tutor:shockwave",
+      "moveId": "shockwave",
+      "moveName": "Shock Wave",
+      "type": "electric",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:skittersmack",
+      "moveId": "skittersmack",
+      "moveName": "Skitter Smack",
+      "type": "bug",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tutor:skittersmack",
+      "moveId": "skittersmack",
+      "moveName": "Skitter Smack",
+      "type": "bug",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:sleeptalk",
+      "moveId": "sleeptalk",
+      "moveName": "Sleep Talk",
+      "type": "normal",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tutor:sleeptalk",
+      "moveId": "sleeptalk",
+      "moveName": "Sleep Talk",
+      "type": "normal",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:sludgebomb",
+      "moveId": "sludgebomb",
+      "moveName": "Sludge Bomb",
+      "type": "poison",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tutor:sludgebomb",
+      "moveId": "sludgebomb",
+      "moveName": "Sludge Bomb",
+      "type": "poison",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:sludgewave",
+      "moveId": "sludgewave",
+      "moveName": "Sludge Wave",
+      "type": "poison",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "legacy:snore",
+      "moveId": "snore",
+      "moveName": "Snore",
+      "type": "normal",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:substitute",
+      "moveId": "substitute",
+      "moveName": "Substitute",
+      "type": "normal",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:sunnyday",
+      "moveId": "sunnyday",
+      "moveName": "Sunny Day",
+      "type": "fire",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "legacy:swagger",
+      "moveId": "swagger",
+      "moveName": "Swagger",
+      "type": "normal",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "1:tackle",
+      "moveId": "tackle",
+      "moveName": "Tackle",
+      "type": "normal",
+      "sourceType": "level",
+      "sourceValue": 1,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:takedown",
+      "moveId": "takedown",
+      "moveName": "Take Down",
+      "type": "normal",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:terablast",
+      "moveId": "terablast",
+      "moveName": "Tera Blast",
+      "type": "normal",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:thunderbolt",
+      "moveId": "thunderbolt",
+      "moveName": "Thunderbolt",
+      "type": "electric",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tutor:thunderbolt",
+      "moveId": "thunderbolt",
+      "moveName": "Thunderbolt",
+      "type": "electric",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "legacy:toxic",
+      "moveId": "toxic",
+      "moveName": "Toxic",
+      "type": "poison",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "5:watergun",
+      "moveId": "watergun",
+      "moveName": "Water Gun",
+      "type": "water",
+      "sourceType": "level",
+      "sourceValue": 5,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "25:waterpulse",
+      "moveId": "waterpulse",
+      "moveName": "Water Pulse",
+      "type": "water",
+      "sourceType": "level",
+      "sourceValue": 25,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:waterpulse",
+      "moveId": "waterpulse",
+      "moveName": "Water Pulse",
+      "type": "water",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tutor:waterpulse",
+      "moveId": "waterpulse",
+      "moveName": "Water Pulse",
+      "type": "water",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    }
+  ],
+  "spawnEntries": [
+    {
+      "id": "goomy-1",
+      "sourceFile": "0704_goomy.json",
+      "pokemon": {
+        "raw": "goomy",
+        "slug": "goomy",
+        "aspectTokens": []
+      },
+      "type": "pokemon",
+      "spawnablePositionType": "grounded",
+      "bucket": "rare",
+      "bucketWeight": 0.5,
+      "levelText": "5-30",
+      "levelMin": 5,
+      "levelMax": 30,
+      "weight": 7.5,
+      "presets": [
+        "natural",
+        "wild"
+      ],
+      "biomeHints": [
+        "Is Swamp",
+        "Mangrove Swamp",
+        "Swamp"
+      ],
+      "condition": {
+        "neededBaseBlocks": [
+          "#cobblemon:natural"
+        ],
+        "minSkyLight": 8,
+        "maxSkyLight": 15,
+        "biomes": [
+          "#cobblemon:is_swamp"
+        ],
+        "isRaining": true
+      },
+      "anticondition": {
+        "neededBaseBlocks": [
+          "minecraft:farmland"
+        ],
+        "structures": [
+          "#minecraft:village"
+        ],
+        "neededNearbyBlocks": [
+          "#cobblemon:concrete_blocks"
+        ]
+      },
+      "weightMultipliers": [],
+      "raw": {
+        "id": "goomy-1",
+        "pokemon": "goomy",
+        "presets": [
+          "natural",
+          "wild"
+        ],
+        "type": "pokemon",
+        "spawnablePositionType": "grounded",
+        "bucket": "rare",
+        "level": "5-30",
+        "weight": 7.5,
+        "condition": {
+          "minSkyLight": 8,
+          "maxSkyLight": 15,
+          "biomes": [
+            "#cobblemon:is_swamp"
+          ],
+          "isRaining": true
+        }
+      }
+    },
+    {
+      "id": "goomy-2",
+      "sourceFile": "0704_goomy.json",
+      "pokemon": {
+        "raw": "goomy",
+        "slug": "goomy",
+        "aspectTokens": []
+      },
+      "type": "pokemon",
+      "spawnablePositionType": "grounded",
+      "bucket": "ultra-rare",
+      "bucketWeight": 0.2,
+      "levelText": "5-30",
+      "levelMin": 5,
+      "levelMax": 30,
+      "weight": 6,
+      "presets": [
+        "natural",
+        "wild"
+      ],
+      "biomeHints": [
+        "Is Swamp",
+        "Mangrove Swamp",
+        "Swamp"
+      ],
+      "condition": {
+        "neededBaseBlocks": [
+          "#cobblemon:natural"
+        ],
+        "minSkyLight": 8,
+        "maxSkyLight": 15,
+        "biomes": [
+          "#cobblemon:is_swamp"
+        ],
+        "isRaining": false
+      },
+      "anticondition": {
+        "neededBaseBlocks": [
+          "minecraft:farmland"
+        ],
+        "structures": [
+          "#minecraft:village"
+        ],
+        "neededNearbyBlocks": [
+          "#cobblemon:concrete_blocks"
+        ],
+        "isSlimeChunk": true
+      },
+      "weightMultipliers": [],
+      "raw": {
+        "id": "goomy-2",
+        "pokemon": "goomy",
+        "presets": [
+          "natural",
+          "wild"
+        ],
+        "type": "pokemon",
+        "spawnablePositionType": "grounded",
+        "bucket": "ultra-rare",
+        "level": "5-30",
+        "weight": 6,
+        "condition": {
+          "minSkyLight": 8,
+          "maxSkyLight": 15,
+          "biomes": [
+            "#cobblemon:is_swamp"
+          ],
+          "isRaining": false
+        },
+        "anticondition": {
+          "isSlimeChunk": true
+        }
+      }
+    },
+    {
+      "id": "goomy-3",
+      "sourceFile": "0704_goomy.json",
+      "pokemon": {
+        "raw": "goomy",
+        "slug": "goomy",
+        "aspectTokens": []
+      },
+      "type": "pokemon",
+      "spawnablePositionType": "grounded",
+      "bucket": "rare",
+      "bucketWeight": 0.5,
+      "levelText": "5-30",
+      "levelMin": 5,
+      "levelMax": 30,
+      "weight": 7.5,
+      "presets": [
+        "natural",
+        "wild"
+      ],
+      "biomeHints": [
+        "Is Swamp",
+        "Mangrove Swamp",
+        "Swamp"
+      ],
+      "condition": {
+        "neededBaseBlocks": [
+          "#cobblemon:natural"
+        ],
+        "minSkyLight": 8,
+        "maxSkyLight": 15,
+        "biomes": [
+          "#cobblemon:is_swamp"
+        ],
+        "isRaining": false,
+        "isSlimeChunk": true
+      },
+      "anticondition": {
+        "neededBaseBlocks": [
+          "minecraft:farmland"
+        ],
+        "structures": [
+          "#minecraft:village"
+        ],
+        "neededNearbyBlocks": [
+          "#cobblemon:concrete_blocks"
+        ]
+      },
+      "weightMultipliers": [],
+      "raw": {
+        "id": "goomy-3",
+        "pokemon": "goomy",
+        "presets": [
+          "natural",
+          "wild"
+        ],
+        "type": "pokemon",
+        "spawnablePositionType": "grounded",
+        "bucket": "rare",
+        "level": "5-30",
+        "weight": 7.5,
+        "condition": {
+          "minSkyLight": 8,
+          "maxSkyLight": 15,
+          "biomes": [
+            "#cobblemon:is_swamp"
+          ],
+          "isRaining": false,
+          "isSlimeChunk": true
+        }
+      }
+    },
+    {
+      "id": "goomy-4",
+      "sourceFile": "0704_goomy.json",
+      "pokemon": {
+        "raw": "goomy",
+        "slug": "goomy",
+        "aspectTokens": []
+      },
+      "type": "pokemon",
+      "spawnablePositionType": "fishing",
+      "bucket": "ultra-rare",
+      "bucketWeight": 0.2,
+      "levelText": "5-30",
+      "levelMin": 5,
+      "levelMax": 30,
+      "weight": 6,
+      "presets": [],
+      "biomeHints": [
+        "Is Swamp",
+        "Mangrove Swamp",
+        "Swamp"
+      ],
+      "condition": {
+        "minSkyLight": 8,
+        "maxSkyLight": 15,
+        "biomes": [
+          "#cobblemon:is_swamp"
+        ]
+      },
+      "anticondition": {
+        "isSlimeChunk": true
+      },
+      "weightMultipliers": [],
+      "raw": {
+        "id": "goomy-4",
+        "pokemon": "goomy",
+        "type": "pokemon",
+        "spawnablePositionType": "fishing",
+        "bucket": "ultra-rare",
+        "level": "5-30",
+        "weight": 6,
+        "condition": {
+          "minSkyLight": 8,
+          "maxSkyLight": 15,
+          "biomes": [
+            "#cobblemon:is_swamp"
+          ]
+        },
+        "anticondition": {
+          "isSlimeChunk": true
+        }
+      }
+    },
+    {
+      "id": "goomy-5",
+      "sourceFile": "0704_goomy.json",
+      "pokemon": {
+        "raw": "goomy",
+        "slug": "goomy",
+        "aspectTokens": []
+      },
+      "type": "pokemon",
+      "spawnablePositionType": "fishing",
+      "bucket": "rare",
+      "bucketWeight": 0.5,
+      "levelText": "5-30",
+      "levelMin": 5,
+      "levelMax": 30,
+      "weight": 7.5,
+      "presets": [],
+      "biomeHints": [
+        "Is Swamp",
+        "Mangrove Swamp",
+        "Swamp"
+      ],
+      "condition": {
+        "minSkyLight": 8,
+        "maxSkyLight": 15,
+        "biomes": [
+          "#cobblemon:is_swamp"
+        ],
+        "isSlimeChunk": true
+      },
+      "anticondition": null,
+      "weightMultipliers": [],
+      "raw": {
+        "id": "goomy-5",
+        "pokemon": "goomy",
+        "type": "pokemon",
+        "spawnablePositionType": "fishing",
+        "bucket": "rare",
+        "level": "5-30",
+        "weight": 7.5,
+        "condition": {
+          "minSkyLight": 8,
+          "maxSkyLight": 15,
+          "biomes": [
+            "#cobblemon:is_swamp"
+          ],
+          "isSlimeChunk": true
+        }
+      }
+    },
+    {
+      "id": "goomy-6",
+      "sourceFile": "0704_goomy.json",
+      "pokemon": {
+        "raw": "goomy",
+        "slug": "goomy",
+        "aspectTokens": []
+      },
+      "type": "pokemon",
+      "spawnablePositionType": "fishing",
+      "bucket": "ultra-rare",
+      "bucketWeight": 0.2,
+      "levelText": "5-30",
+      "levelMin": 5,
+      "levelMax": 30,
+      "weight": 6,
+      "presets": [],
+      "biomeHints": [
+        "Is Overworld"
+      ],
+      "condition": {
+        "minSkyLight": 8,
+        "maxSkyLight": 15,
+        "biomes": [
+          "#cobblemon:is_overworld"
+        ],
+        "isSlimeChunk": true
+      },
+      "anticondition": {
+        "biomes": [
+          "#cobblemon:is_arid",
+          "#cobblemon:is_coast",
+          "#cobblemon:is_ocean",
+          "#cobblemon:is_freezing",
+          "#cobblemon:is_swamp"
+        ]
+      },
+      "weightMultipliers": [],
+      "raw": {
+        "id": "goomy-6",
+        "pokemon": "goomy",
+        "type": "pokemon",
+        "spawnablePositionType": "fishing",
+        "bucket": "ultra-rare",
+        "level": "5-30",
+        "weight": 6,
+        "condition": {
+          "minSkyLight": 8,
+          "maxSkyLight": 15,
+          "biomes": [
+            "#cobblemon:is_overworld"
+          ],
+          "isSlimeChunk": true
+        },
+        "anticondition": {
+          "biomes": [
+            "#cobblemon:is_arid",
+            "#cobblemon:is_coast",
+            "#cobblemon:is_ocean",
+            "#cobblemon:is_freezing",
+            "#cobblemon:is_swamp"
+          ]
+        }
+      }
+    },
+    {
+      "id": "goomy-hisui-10",
+      "sourceFile": "0704_goomy.json",
+      "pokemon": {
+        "raw": "goomy region_bias=hisui",
+        "slug": "goomy",
+        "aspectTokens": [
+          "region_bias=hisui"
+        ]
+      },
+      "type": "pokemon",
+      "spawnablePositionType": "fishing",
+      "bucket": "rare",
+      "bucketWeight": 0.5,
+      "levelText": "5-30",
+      "levelMin": 5,
+      "levelMax": 30,
+      "weight": 7.5,
+      "presets": [
+        "natural"
+      ],
+      "biomeHints": [
+        "Is Dripstone",
+        "Dripstone Caves",
+        "Fractured Savanna",
+        "Is Lush",
+        "Lush Caves"
+      ],
+      "condition": {
+        "neededBaseBlocks": [
+          "#cobblemon:natural"
+        ],
+        "minSkyLight": 0,
+        "maxSkyLight": 7,
+        "biomes": [
+          "#cobblemon:is_dripstone",
+          "#cobblemon:is_lush"
+        ]
+      },
+      "anticondition": {
+        "neededBaseBlocks": [
+          "minecraft:farmland"
+        ],
+        "minLureLevel": 2
+      },
+      "weightMultipliers": [],
+      "raw": {
+        "id": "goomy-hisui-10",
+        "pokemon": "goomy region_bias=hisui",
+        "presets": [
+          "natural"
+        ],
+        "type": "pokemon",
+        "spawnablePositionType": "fishing",
+        "bucket": "rare",
+        "level": "5-30",
+        "weight": 7.5,
+        "condition": {
+          "minSkyLight": 0,
+          "maxSkyLight": 7,
+          "biomes": [
+            "#cobblemon:is_dripstone",
+            "#cobblemon:is_lush"
+          ]
+        },
+        "anticondition": {
+          "minLureLevel": 2
+        }
+      }
+    },
+    {
+      "id": "goomy-hisui-11",
+      "sourceFile": "0704_goomy.json",
+      "pokemon": {
+        "raw": "goomy region_bias=hisui",
+        "slug": "goomy",
+        "aspectTokens": [
+          "region_bias=hisui"
+        ]
+      },
+      "type": "pokemon",
+      "spawnablePositionType": "fishing",
+      "bucket": "common",
+      "bucketWeight": 94.3,
+      "levelText": "5-30",
+      "levelMin": 5,
+      "levelMax": 30,
+      "weight": 1.8,
+      "presets": [
+        "natural"
+      ],
+      "biomeHints": [
+        "Is Dripstone",
+        "Dripstone Caves",
+        "Fractured Savanna",
+        "Is Lush",
+        "Lush Caves"
+      ],
+      "condition": {
+        "neededBaseBlocks": [
+          "#cobblemon:natural"
+        ],
+        "minSkyLight": 0,
+        "maxSkyLight": 7,
+        "biomes": [
+          "#cobblemon:is_dripstone",
+          "#cobblemon:is_lush"
+        ],
+        "minLureLevel": 2
+      },
+      "anticondition": {
+        "neededBaseBlocks": [
+          "minecraft:farmland"
+        ]
+      },
+      "weightMultipliers": [
+        {
+          "multiplier": 3,
+          "condition": {
+            "minLureLevel": 3
+          }
+        }
+      ],
+      "raw": {
+        "id": "goomy-hisui-11",
+        "pokemon": "goomy region_bias=hisui",
+        "presets": [
+          "natural"
+        ],
+        "type": "pokemon",
+        "spawnablePositionType": "fishing",
+        "bucket": "common",
+        "level": "5-30",
+        "weight": 1.8,
+        "weightMultiplier": {
+          "multiplier": 3,
+          "condition": {
+            "minLureLevel": 3
+          }
+        },
+        "condition": {
+          "minSkyLight": 0,
+          "maxSkyLight": 7,
+          "biomes": [
+            "#cobblemon:is_dripstone",
+            "#cobblemon:is_lush"
+          ],
+          "minLureLevel": 2
+        }
+      }
+    },
+    {
+      "id": "goomy-hisui-12",
+      "sourceFile": "0704_goomy.json",
+      "pokemon": {
+        "raw": "goomy region_bias=hisui",
+        "slug": "goomy",
+        "aspectTokens": [
+          "region_bias=hisui"
+        ]
+      },
+      "type": "pokemon",
+      "spawnablePositionType": "fishing",
+      "bucket": "ultra-rare",
+      "bucketWeight": 0.2,
+      "levelText": "5-30",
+      "levelMin": 5,
+      "levelMax": 30,
+      "weight": 6,
+      "presets": [
+        "natural"
+      ],
+      "biomeHints": [
+        "Is Overworld"
+      ],
+      "condition": {
+        "neededBaseBlocks": [
+          "#cobblemon:natural"
+        ],
+        "minSkyLight": 0,
+        "maxSkyLight": 7,
+        "biomes": [
+          "#cobblemon:is_overworld"
+        ]
+      },
+      "anticondition": {
+        "neededBaseBlocks": [
+          "minecraft:farmland"
+        ],
+        "minLureLevel": 2,
+        "isSlimeChunk": true,
+        "biomes": [
+          "#cobblemon:is_dripstone",
+          "#cobblemon:is_lush"
+        ]
+      },
+      "weightMultipliers": [],
+      "raw": {
+        "id": "goomy-hisui-12",
+        "pokemon": "goomy region_bias=hisui",
+        "presets": [
+          "natural"
+        ],
+        "type": "pokemon",
+        "spawnablePositionType": "fishing",
+        "bucket": "ultra-rare",
+        "level": "5-30",
+        "weight": 6,
+        "condition": {
+          "minSkyLight": 0,
+          "maxSkyLight": 7,
+          "biomes": [
+            "#cobblemon:is_overworld"
+          ]
+        },
+        "anticondition": {
+          "minLureLevel": 2,
+          "isSlimeChunk": true,
+          "biomes": [
+            "#cobblemon:is_dripstone",
+            "#cobblemon:is_lush"
+          ]
+        }
+      }
+    },
+    {
+      "id": "goomy-hisui-13",
+      "sourceFile": "0704_goomy.json",
+      "pokemon": {
+        "raw": "goomy region_bias=hisui",
+        "slug": "goomy",
+        "aspectTokens": [
+          "region_bias=hisui"
+        ]
+      },
+      "type": "pokemon",
+      "spawnablePositionType": "fishing",
+      "bucket": "rare",
+      "bucketWeight": 0.5,
+      "levelText": "5-30",
+      "levelMin": 5,
+      "levelMax": 30,
+      "weight": 7.5,
+      "presets": [
+        "natural"
+      ],
+      "biomeHints": [
+        "Is Overworld"
+      ],
+      "condition": {
+        "neededBaseBlocks": [
+          "#cobblemon:natural"
+        ],
+        "minSkyLight": 0,
+        "maxSkyLight": 7,
+        "biomes": [
+          "#cobblemon:is_overworld"
+        ],
+        "minLureLevel": 2,
+        "maxLureLevel": 2
+      },
+      "anticondition": {
+        "neededBaseBlocks": [
+          "minecraft:farmland"
+        ],
+        "isSlimeChunk": true,
+        "biomes": [
+          "#cobblemon:is_dripstone",
+          "#cobblemon:is_lush"
+        ]
+      },
+      "weightMultipliers": [],
+      "raw": {
+        "id": "goomy-hisui-13",
+        "pokemon": "goomy region_bias=hisui",
+        "presets": [
+          "natural"
+        ],
+        "type": "pokemon",
+        "spawnablePositionType": "fishing",
+        "bucket": "rare",
+        "level": "5-30",
+        "weight": 7.5,
+        "condition": {
+          "minSkyLight": 0,
+          "maxSkyLight": 7,
+          "biomes": [
+            "#cobblemon:is_overworld"
+          ],
+          "minLureLevel": 2,
+          "maxLureLevel": 2
+        },
+        "anticondition": {
+          "isSlimeChunk": true,
+          "biomes": [
+            "#cobblemon:is_dripstone",
+            "#cobblemon:is_lush"
+          ]
+        }
+      }
+    },
+    {
+      "id": "goomy-hisui-14",
+      "sourceFile": "0704_goomy.json",
+      "pokemon": {
+        "raw": "goomy region_bias=hisui",
+        "slug": "goomy",
+        "aspectTokens": [
+          "region_bias=hisui"
+        ]
+      },
+      "type": "pokemon",
+      "spawnablePositionType": "fishing",
+      "bucket": "common",
+      "bucketWeight": 94.3,
+      "levelText": "5-30",
+      "levelMin": 5,
+      "levelMax": 30,
+      "weight": 1.8,
+      "presets": [
+        "natural"
+      ],
+      "biomeHints": [
+        "Is Overworld"
+      ],
+      "condition": {
+        "neededBaseBlocks": [
+          "#cobblemon:natural"
+        ],
+        "minSkyLight": 0,
+        "maxSkyLight": 7,
+        "biomes": [
+          "#cobblemon:is_overworld"
+        ],
+        "minLureLevel": 3
+      },
+      "anticondition": {
+        "neededBaseBlocks": [
+          "minecraft:farmland"
+        ],
+        "isSlimeChunk": true,
+        "biomes": [
+          "#cobblemon:is_dripstone",
+          "#cobblemon:is_lush"
+        ]
+      },
+      "weightMultipliers": [],
+      "raw": {
+        "id": "goomy-hisui-14",
+        "pokemon": "goomy region_bias=hisui",
+        "presets": [
+          "natural"
+        ],
+        "type": "pokemon",
+        "spawnablePositionType": "fishing",
+        "bucket": "common",
+        "level": "5-30",
+        "weight": 1.8,
+        "condition": {
+          "minSkyLight": 0,
+          "maxSkyLight": 7,
+          "biomes": [
+            "#cobblemon:is_overworld"
+          ],
+          "minLureLevel": 3
+        },
+        "anticondition": {
+          "isSlimeChunk": true,
+          "biomes": [
+            "#cobblemon:is_dripstone",
+            "#cobblemon:is_lush"
+          ]
+        }
+      }
+    },
+    {
+      "id": "goomy-hisui-15",
+      "sourceFile": "0704_goomy.json",
+      "pokemon": {
+        "raw": "goomy region_bias=hisui",
+        "slug": "goomy",
+        "aspectTokens": [
+          "region_bias=hisui"
+        ]
+      },
+      "type": "pokemon",
+      "spawnablePositionType": "fishing",
+      "bucket": "rare",
+      "bucketWeight": 0.5,
+      "levelText": "5-30",
+      "levelMin": 5,
+      "levelMax": 30,
+      "weight": 7.5,
+      "presets": [
+        "natural"
+      ],
+      "biomeHints": [
+        "Is Overworld"
+      ],
+      "condition": {
+        "neededBaseBlocks": [
+          "#cobblemon:natural"
+        ],
+        "minSkyLight": 0,
+        "maxSkyLight": 7,
+        "biomes": [
+          "#cobblemon:is_overworld"
+        ],
+        "isSlimeChunk": true
+      },
+      "anticondition": {
+        "neededBaseBlocks": [
+          "minecraft:farmland"
+        ],
+        "minLureLevel": 2,
+        "biomes": [
+          "#cobblemon:is_dripstone",
+          "#cobblemon:is_lush"
+        ]
+      },
+      "weightMultipliers": [],
+      "raw": {
+        "id": "goomy-hisui-15",
+        "pokemon": "goomy region_bias=hisui",
+        "presets": [
+          "natural"
+        ],
+        "type": "pokemon",
+        "spawnablePositionType": "fishing",
+        "bucket": "rare",
+        "level": "5-30",
+        "weight": 7.5,
+        "condition": {
+          "minSkyLight": 0,
+          "maxSkyLight": 7,
+          "biomes": [
+            "#cobblemon:is_overworld"
+          ],
+          "isSlimeChunk": true
+        },
+        "anticondition": {
+          "minLureLevel": 2,
+          "biomes": [
+            "#cobblemon:is_dripstone",
+            "#cobblemon:is_lush"
+          ]
+        }
+      }
+    },
+    {
+      "id": "goomy-hisui-16",
+      "sourceFile": "0704_goomy.json",
+      "pokemon": {
+        "raw": "goomy region_bias=hisui",
+        "slug": "goomy",
+        "aspectTokens": [
+          "region_bias=hisui"
+        ]
+      },
+      "type": "pokemon",
+      "spawnablePositionType": "fishing",
+      "bucket": "common",
+      "bucketWeight": 94.3,
+      "levelText": "5-30",
+      "levelMin": 5,
+      "levelMax": 30,
+      "weight": 1.8,
+      "presets": [
+        "natural"
+      ],
+      "biomeHints": [
+        "Is Overworld"
+      ],
+      "condition": {
+        "neededBaseBlocks": [
+          "#cobblemon:natural"
+        ],
+        "minSkyLight": 0,
+        "maxSkyLight": 7,
+        "biomes": [
+          "#cobblemon:is_overworld"
+        ],
+        "minLureLevel": 2,
+        "isSlimeChunk": true
+      },
+      "anticondition": {
+        "neededBaseBlocks": [
+          "minecraft:farmland"
+        ],
+        "biomes": [
+          "#cobblemon:is_dripstone",
+          "#cobblemon:is_lush"
+        ]
+      },
+      "weightMultipliers": [
+        {
+          "multiplier": 3,
+          "condition": {
+            "minLureLevel": 3
+          }
+        }
+      ],
+      "raw": {
+        "id": "goomy-hisui-16",
+        "pokemon": "goomy region_bias=hisui",
+        "presets": [
+          "natural"
+        ],
+        "type": "pokemon",
+        "spawnablePositionType": "fishing",
+        "bucket": "common",
+        "level": "5-30",
+        "weight": 1.8,
+        "weightMultiplier": {
+          "multiplier": 3,
+          "condition": {
+            "minLureLevel": 3
+          }
+        },
+        "condition": {
+          "minSkyLight": 0,
+          "maxSkyLight": 7,
+          "biomes": [
+            "#cobblemon:is_overworld"
+          ],
+          "minLureLevel": 2,
+          "isSlimeChunk": true
+        },
+        "anticondition": {
+          "biomes": [
+            "#cobblemon:is_dripstone",
+            "#cobblemon:is_lush"
+          ]
+        }
+      }
+    },
+    {
+      "id": "goomy-hisui-7",
+      "sourceFile": "0704_goomy.json",
+      "pokemon": {
+        "raw": "goomy region_bias=hisui",
+        "slug": "goomy",
+        "aspectTokens": [
+          "region_bias=hisui"
+        ]
+      },
+      "type": "pokemon",
+      "spawnablePositionType": "grounded",
+      "bucket": "rare",
+      "bucketWeight": 0.5,
+      "levelText": "5-30",
+      "levelMin": 5,
+      "levelMax": 30,
+      "weight": 7.5,
+      "presets": [
+        "natural"
+      ],
+      "biomeHints": [
+        "Is Dripstone",
+        "Dripstone Caves",
+        "Fractured Savanna",
+        "Is Lush",
+        "Lush Caves"
+      ],
+      "condition": {
+        "neededBaseBlocks": [
+          "#cobblemon:natural"
+        ],
+        "minSkyLight": 0,
+        "maxSkyLight": 7,
+        "biomes": [
+          "#cobblemon:is_dripstone",
+          "#cobblemon:is_lush"
+        ]
+      },
+      "anticondition": {
+        "neededBaseBlocks": [
+          "minecraft:farmland"
+        ]
+      },
+      "weightMultipliers": [],
+      "raw": {
+        "id": "goomy-hisui-7",
+        "pokemon": "goomy region_bias=hisui",
+        "presets": [
+          "natural"
+        ],
+        "type": "pokemon",
+        "spawnablePositionType": "grounded",
+        "bucket": "rare",
+        "level": "5-30",
+        "weight": 7.5,
+        "condition": {
+          "minSkyLight": 0,
+          "maxSkyLight": 7,
+          "biomes": [
+            "#cobblemon:is_dripstone",
+            "#cobblemon:is_lush"
+          ]
+        }
+      }
+    },
+    {
+      "id": "goomy-hisui-8",
+      "sourceFile": "0704_goomy.json",
+      "pokemon": {
+        "raw": "goomy region_bias=hisui",
+        "slug": "goomy",
+        "aspectTokens": [
+          "region_bias=hisui"
+        ]
+      },
+      "type": "pokemon",
+      "spawnablePositionType": "grounded",
+      "bucket": "ultra-rare",
+      "bucketWeight": 0.2,
+      "levelText": "5-30",
+      "levelMin": 5,
+      "levelMax": 30,
+      "weight": 6,
+      "presets": [
+        "natural"
+      ],
+      "biomeHints": [
+        "Is Overworld"
+      ],
+      "condition": {
+        "neededBaseBlocks": [
+          "#cobblemon:natural"
+        ],
+        "minSkyLight": 0,
+        "maxSkyLight": 7,
+        "biomes": [
+          "#cobblemon:is_overworld"
+        ],
+        "neededNearbyBlocks": [
+          "minecraft:water"
+        ]
+      },
+      "anticondition": {
+        "neededBaseBlocks": [
+          "minecraft:farmland"
+        ],
+        "isSlimeChunk": true,
+        "biomes": [
+          "#cobblemon:is_dripstone",
+          "#cobblemon:is_lush"
+        ]
+      },
+      "weightMultipliers": [],
+      "raw": {
+        "id": "goomy-hisui-8",
+        "pokemon": "goomy region_bias=hisui",
+        "presets": [
+          "natural"
+        ],
+        "type": "pokemon",
+        "spawnablePositionType": "grounded",
+        "bucket": "ultra-rare",
+        "level": "5-30",
+        "weight": 6,
+        "condition": {
+          "minSkyLight": 0,
+          "maxSkyLight": 7,
+          "biomes": [
+            "#cobblemon:is_overworld"
+          ],
+          "neededNearbyBlocks": [
+            "minecraft:water"
+          ]
+        },
+        "anticondition": {
+          "isSlimeChunk": true,
+          "biomes": [
+            "#cobblemon:is_dripstone",
+            "#cobblemon:is_lush"
+          ]
+        }
+      }
+    },
+    {
+      "id": "goomy-hisui-9",
+      "sourceFile": "0704_goomy.json",
+      "pokemon": {
+        "raw": "goomy region_bias=hisui",
+        "slug": "goomy",
+        "aspectTokens": [
+          "region_bias=hisui"
+        ]
+      },
+      "type": "pokemon",
+      "spawnablePositionType": "grounded",
+      "bucket": "rare",
+      "bucketWeight": 0.5,
+      "levelText": "5-30",
+      "levelMin": 5,
+      "levelMax": 30,
+      "weight": 7.5,
+      "presets": [
+        "natural"
+      ],
+      "biomeHints": [
+        "Is Overworld"
+      ],
+      "condition": {
+        "neededBaseBlocks": [
+          "#cobblemon:natural"
+        ],
+        "minSkyLight": 0,
+        "maxSkyLight": 7,
+        "biomes": [
+          "#cobblemon:is_overworld"
+        ],
+        "isSlimeChunk": true
+      },
+      "anticondition": {
+        "neededBaseBlocks": [
+          "minecraft:farmland"
+        ],
+        "biomes": [
+          "#cobblemon:is_dripstone",
+          "#cobblemon:is_lush"
+        ]
+      },
+      "weightMultipliers": [],
+      "raw": {
+        "id": "goomy-hisui-9",
+        "pokemon": "goomy region_bias=hisui",
+        "presets": [
+          "natural"
+        ],
+        "type": "pokemon",
+        "spawnablePositionType": "grounded",
+        "bucket": "rare",
+        "level": "5-30",
+        "weight": 7.5,
+        "condition": {
+          "minSkyLight": 0,
+          "maxSkyLight": 7,
+          "biomes": [
+            "#cobblemon:is_overworld"
+          ],
+          "isSlimeChunk": true
+        },
+        "anticondition": {
+          "biomes": [
+            "#cobblemon:is_dripstone",
+            "#cobblemon:is_lush"
+          ]
+        }
+      }
+    }
+  ],
+  "forms": [
+    {
+      "name": "Hisui-Bias",
+      "slug": "goomy-hisuibias",
+      "aspects": [
+        "region-bias-hisui"
+      ],
+      "labels": [
+        "gen8a",
+        "customized_official",
+        "hisuian_form"
+      ],
+      "types": [
+        "dragon"
+      ],
+      "maleRatio": 0.5,
+      "height": 3,
+      "weight": 28,
+      "catchRate": null,
+      "baseExperienceYield": null,
+      "baseFriendship": null,
+      "eggCycles": null,
+      "baseStats": {},
+      "evYield": {},
+      "battleOnly": false,
+      "abilities": [],
+      "moves": [],
+      "evolutions": [
+        {
+          "id": "goomy_sliggoo",
+          "variant": "level_up",
+          "result": {
+            "raw": "sliggoo",
+            "slug": "sliggoo",
+            "aspectTokens": []
+          },
+          "consumeHeldItem": false,
+          "learnableMoves": [
+            "acidspray"
+          ],
+          "requirementText": [
+            "Level 40+",
+            "Biome Evolution Regional Goomy Kalosbiome"
+          ],
+          "requirements": [
+            {
+              "variant": "level",
+              "text": "Level 40+",
+              "raw": {
+                "variant": "level",
+                "minLevel": 40
+              }
+            },
+            {
+              "variant": "biome",
+              "text": "Biome Evolution Regional Goomy Kalosbiome",
+              "raw": {
+                "variant": "biome",
+                "biomeCondition": "#cobblemon:evolution/regional/goomy_kalosbiome"
+              }
+            }
+          ],
+          "requiredContext": null,
+          "fromForm": "Hisui-Bias",
+          "raw": {
+            "id": "goomy_sliggoo",
+            "variant": "level_up",
+            "result": "sliggoo",
+            "consumeHeldItem": false,
+            "learnableMoves": [
+              "acidspray"
+            ],
+            "requirements": [
+              {
+                "variant": "level",
+                "minLevel": 40
+              },
+              {
+                "variant": "biome",
+                "biomeCondition": "#cobblemon:evolution/regional/goomy_kalosbiome"
+              }
+            ]
+          }
+        },
+        {
+          "id": "goomy_sliggoohisui",
+          "variant": "level_up",
+          "result": {
+            "raw": "sliggoo hisuian",
+            "slug": "sliggoo",
+            "aspectTokens": [
+              "hisuian"
+            ]
+          },
+          "consumeHeldItem": false,
+          "learnableMoves": [
+            "shelter"
+          ],
+          "requirementText": [
+            "Level 40+"
+          ],
+          "requirements": [
+            {
+              "variant": "level",
+              "text": "Level 40+",
+              "raw": {
+                "variant": "level",
+                "minLevel": 40
+              }
+            }
+          ],
+          "requiredContext": null,
+          "fromForm": "Hisui-Bias",
+          "raw": {
+            "id": "goomy_sliggoohisui",
+            "variant": "level_up",
+            "result": "sliggoo hisuian",
+            "consumeHeldItem": false,
+            "learnableMoves": [
+              "shelter"
+            ],
+            "requirements": [
+              {
+                "variant": "level",
+                "minLevel": 40
+              }
+            ]
+          }
+        }
+      ],
+      "raw": {
+        "name": "Hisui-Bias",
+        "primaryType": "dragon",
+        "maleRatio": 0.5,
+        "height": 3,
+        "weight": 28,
+        "pokedex": [
+          "cobblemon.species.goomy-hisuibias.desc"
+        ],
+        "labels": [
+          "gen8a",
+          "customized_official",
+          "hisuian_form"
+        ],
+        "aspects": [
+          "region-bias-hisui"
+        ],
+        "dynamaxBlocked": false,
+        "evolutions": [
+          {
+            "id": "goomy_sliggoo",
+            "variant": "level_up",
+            "result": "sliggoo",
+            "consumeHeldItem": false,
+            "learnableMoves": [
+              "acidspray"
+            ],
+            "requirements": [
+              {
+                "variant": "level",
+                "minLevel": 40
+              },
+              {
+                "variant": "biome",
+                "biomeCondition": "#cobblemon:evolution/regional/goomy_kalosbiome"
+              }
+            ]
+          },
+          {
+            "id": "goomy_sliggoohisui",
+            "variant": "level_up",
+            "result": "sliggoo hisuian",
+            "consumeHeldItem": false,
+            "learnableMoves": [
+              "shelter"
+            ],
+            "requirements": [
+              {
+                "variant": "level",
+                "minLevel": 40
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ],
+  "rawSpecies": {
+    "implemented": true,
+    "nationalPokedexNumber": 704,
+    "name": "Goomy",
+    "primaryType": "dragon",
+    "maleRatio": 0.5,
+    "height": 3,
+    "weight": 28,
+    "pokedex": [
+      "cobblemon.species.goomy.desc"
+    ],
+    "labels": [
+      "gen6",
+      "kalosian_form"
+    ],
+    "aspects": [],
+    "abilities": [
+      "sapsipper",
+      "hydration",
+      "h:gooey"
+    ],
+    "eggGroups": [
+      "dragon"
+    ],
+    "baseStats": {
+      "hp": 45,
+      "attack": 50,
+      "defence": 35,
+      "special_attack": 55,
+      "special_defence": 75,
+      "speed": 40
+    },
+    "evYield": {
+      "hp": 0,
+      "attack": 0,
+      "defence": 0,
+      "special_attack": 0,
+      "special_defence": 1,
+      "speed": 0
+    },
+    "baseExperienceYield": 60,
+    "experienceGroup": "slow",
+    "catchRate": 45,
+    "eggCycles": 40,
+    "baseFriendship": 35,
+    "features": [
+      "region_bias"
+    ],
+    "baseScale": 0.8,
+    "hitbox": {
+      "width": 0.83,
+      "height": 0.7,
+      "fixed": false
+    },
+    "drops": {
+      "amount": 3,
+      "entries": [
+        {
+          "item": "minecraft:slime_ball",
+          "quantityRange": "0-1"
+        },
+        {
+          "item": "cobblemon:shed_shell",
+          "percentage": 2.5
+        },
+        {
+          "item": "cobblemon:haban_berry",
+          "percentage": 2.5
+        }
+      ]
+    },
+    "moves": [
+      "1:tackle",
+      "1:bubble",
+      "1:absorb",
+      "1:bide",
+      "5:watergun",
+      "10:dragonbreath",
+      "15:protect",
+      "20:flail",
+      "25:waterpulse",
+      "30:raindance",
+      "35:dragonpulse",
+      "41:curse",
+      "45:bodyslam",
+      "50:muddywater",
+      "egg:counter",
+      "egg:lifedew",
+      "tm:acidarmor",
+      "tm:bodyslam",
+      "tm:charm",
+      "tm:chillingwater",
+      "tm:curse",
+      "tm:dracometeor",
+      "tm:dragonpulse",
+      "tm:endure",
+      "tm:facade",
+      "tm:infestation",
+      "tm:irontail",
+      "tm:muddywater",
+      "tm:mudshot",
+      "tm:outrage",
+      "tm:protect",
+      "tm:raindance",
+      "tm:rest",
+      "tm:rockslide",
+      "tm:shockwave",
+      "tm:skittersmack",
+      "tm:sleeptalk",
+      "tm:sludgebomb",
+      "tm:sludgewave",
+      "tm:substitute",
+      "tm:sunnyday",
+      "tm:takedown",
+      "tm:terablast",
+      "tm:thunderbolt",
+      "tm:waterpulse",
+      "tutor:dracometeor",
+      "tutor:dragonpulse",
+      "tutor:irontail",
+      "tutor:outrage",
+      "tutor:rest",
+      "tutor:rockslide",
+      "tutor:shockwave",
+      "tutor:skittersmack",
+      "tutor:sleeptalk",
+      "tutor:sludgebomb",
+      "tutor:thunderbolt",
+      "tutor:waterpulse",
+      "legacy:attract",
+      "legacy:confide",
+      "legacy:doubleteam",
+      "legacy:frustration",
+      "legacy:hiddenpower",
+      "legacy:poisontail",
+      "legacy:return",
+      "legacy:round",
+      "legacy:secretpower",
+      "legacy:snore",
+      "legacy:swagger",
+      "legacy:toxic"
+    ],
+    "evolutions": [
+      {
+        "id": "goomy_sliggoo",
+        "variant": "level_up",
+        "result": "sliggoo",
+        "consumeHeldItem": false,
+        "learnableMoves": [
+          "acidspray"
+        ],
+        "requirements": [
+          {
+            "variant": "level",
+            "minLevel": 40
+          }
+        ]
+      },
+      {
+        "id": "goomy_sliggoohisui",
+        "variant": "level_up",
+        "result": "sliggoo hisuian",
+        "consumeHeldItem": false,
+        "learnableMoves": [
+          "shelter"
+        ],
+        "requirements": [
+          {
+            "variant": "level",
+            "minLevel": 40
+          },
+          {
+            "variant": "biome",
+            "biomeCondition": "#cobblemon:evolution/regional/goomy_hisuibiome"
+          }
+        ]
+      }
+    ],
+    "forms": [
+      {
+        "name": "Hisui-Bias",
+        "primaryType": "dragon",
+        "maleRatio": 0.5,
+        "height": 3,
+        "weight": 28,
+        "pokedex": [
+          "cobblemon.species.goomy-hisuibias.desc"
+        ],
+        "labels": [
+          "gen8a",
+          "customized_official",
+          "hisuian_form"
+        ],
+        "aspects": [
+          "region-bias-hisui"
+        ],
+        "dynamaxBlocked": false,
+        "evolutions": [
+          {
+            "id": "goomy_sliggoo",
+            "variant": "level_up",
+            "result": "sliggoo",
+            "consumeHeldItem": false,
+            "learnableMoves": [
+              "acidspray"
+            ],
+            "requirements": [
+              {
+                "variant": "level",
+                "minLevel": 40
+              },
+              {
+                "variant": "biome",
+                "biomeCondition": "#cobblemon:evolution/regional/goomy_kalosbiome"
+              }
+            ]
+          },
+          {
+            "id": "goomy_sliggoohisui",
+            "variant": "level_up",
+            "result": "sliggoo hisuian",
+            "consumeHeldItem": false,
+            "learnableMoves": [
+              "shelter"
+            ],
+            "requirements": [
+              {
+                "variant": "level",
+                "minLevel": 40
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "behaviour": {
+      "resting": {
+        "willSleepOnBed": true,
+        "drowsyChance": 0.0333,
+        "rouseChance": 0.0042
+      },
+      "moving": {
+        "swim": {}
+      },
+      "combat": {
+        "willDefendOwner": true
+      }
+    }
+  }
+}

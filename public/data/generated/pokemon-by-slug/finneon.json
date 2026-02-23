@@ -1,0 +1,1764 @@
+{
+  "slug": "finneon",
+  "name": "Finneon",
+  "dexNumber": 456,
+  "implemented": true,
+  "types": [
+    "water"
+  ],
+  "abilities": [
+    {
+      "id": "swiftswim",
+      "hidden": false,
+      "label": "Swiftswim",
+      "slot": "first"
+    },
+    {
+      "id": "stormdrain",
+      "hidden": false,
+      "label": "Stormdrain",
+      "slot": "second"
+    },
+    {
+      "id": "waterveil",
+      "hidden": true,
+      "label": "Waterveil",
+      "slot": "hidden"
+    }
+  ],
+  "eggGroups": [
+    "water_2"
+  ],
+  "labels": [
+    "gen4"
+  ],
+  "aspects": [],
+  "aliases": [
+    "finneon"
+  ],
+  "maleRatio": 0.5,
+  "height": 4,
+  "weight": 70,
+  "catchRate": 190,
+  "baseExperienceYield": 66,
+  "baseFriendship": 50,
+  "eggCycles": 20,
+  "baseStats": {
+    "hp": 49,
+    "attack": 49,
+    "defence": 56,
+    "special_attack": 49,
+    "special_defence": 61,
+    "speed": 66
+  },
+  "evYield": {
+    "hp": 0,
+    "attack": 0,
+    "defence": 0,
+    "special_attack": 0,
+    "special_defence": 0,
+    "speed": 1
+  },
+  "preEvolution": null,
+  "evolutions": [
+    {
+      "id": "finneon_lumineon",
+      "variant": "level_up",
+      "result": {
+        "raw": "lumineon",
+        "slug": "lumineon",
+        "aspectTokens": []
+      },
+      "consumeHeldItem": false,
+      "learnableMoves": [],
+      "requirementText": [
+        "Level 31+"
+      ],
+      "requirements": [
+        {
+          "variant": "level",
+          "text": "Level 31+",
+          "raw": {
+            "variant": "level",
+            "minLevel": 31
+          }
+        }
+      ],
+      "requiredContext": null,
+      "fromForm": null,
+      "raw": {
+        "id": "finneon_lumineon",
+        "variant": "level_up",
+        "result": "lumineon",
+        "consumeHeldItem": false,
+        "learnableMoves": [],
+        "requirements": [
+          {
+            "variant": "level",
+            "minLevel": 31
+          }
+        ]
+      }
+    }
+  ],
+  "evolutionFamily": {
+    "members": [
+      {
+        "nodeId": "finneon",
+        "slug": "finneon",
+        "name": "Finneon",
+        "dexNumber": 456,
+        "formSlug": null,
+        "formName": null
+      },
+      {
+        "nodeId": "lumineon",
+        "slug": "lumineon",
+        "name": "Lumineon",
+        "dexNumber": 457,
+        "formSlug": null,
+        "formName": null
+      }
+    ],
+    "edges": [
+      {
+        "fromNodeId": "finneon",
+        "toNodeId": "lumineon",
+        "fromSlug": "finneon",
+        "toSlug": "lumineon",
+        "method": "level_up",
+        "requirementText": [
+          "Level 31+"
+        ]
+      }
+    ],
+    "roots": [
+      "finneon"
+    ]
+  },
+  "moves": [
+    {
+      "raw": "tm:acrobatics",
+      "moveId": "acrobatics",
+      "moveName": "Acrobatics",
+      "type": "flying",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "egg:agility",
+      "moveId": "agility",
+      "moveName": "Agility",
+      "type": "psychic",
+      "sourceType": "egg",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:agility",
+      "moveId": "agility",
+      "moveName": "Agility",
+      "type": "psychic",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "legacy:aircutter",
+      "moveId": "aircutter",
+      "moveName": "Air Cutter",
+      "type": "flying",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:alluringvoice",
+      "moveId": "alluringvoice",
+      "moveName": "Alluring Voice",
+      "type": "fairy",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "33:aquaring",
+      "moveId": "aquaring",
+      "moveName": "Aqua Ring",
+      "type": "water",
+      "sourceType": "level",
+      "sourceValue": 33,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "egg:aquatail",
+      "moveId": "aquatail",
+      "moveName": "Aqua Tail",
+      "type": "water",
+      "sourceType": "egg",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:aquatail",
+      "moveId": "aquatail",
+      "moveName": "Aqua Tail",
+      "type": "water",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tutor:aquatail",
+      "moveId": "aquatail",
+      "moveName": "Aqua Tail",
+      "type": "water",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "egg:attract",
+      "moveId": "attract",
+      "moveName": "Attract",
+      "type": "normal",
+      "sourceType": "egg",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:attract",
+      "moveId": "attract",
+      "moveName": "Attract",
+      "type": "normal",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "egg:aurorabeam",
+      "moveId": "aurorabeam",
+      "moveName": "Aurora Beam",
+      "type": "ice",
+      "sourceType": "egg",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:babydolleyes",
+      "moveId": "babydolleyes",
+      "moveName": "Baby-Doll Eyes",
+      "type": "fairy",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tutor:babydolleyes",
+      "moveId": "babydolleyes",
+      "moveName": "Baby-Doll Eyes",
+      "type": "fairy",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:blizzard",
+      "moveId": "blizzard",
+      "moveName": "Blizzard",
+      "type": "ice",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "45:bounce",
+      "moveId": "bounce",
+      "moveName": "Bounce",
+      "type": "flying",
+      "sourceType": "level",
+      "sourceValue": 45,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:bounce",
+      "moveId": "bounce",
+      "moveName": "Bounce",
+      "type": "flying",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tutor:bounce",
+      "moveId": "bounce",
+      "moveName": "Bounce",
+      "type": "flying",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:brine",
+      "moveId": "brine",
+      "moveName": "Brine",
+      "type": "water",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "1:bubble",
+      "moveId": "bubble",
+      "moveName": "Bubble",
+      "type": "water",
+      "sourceType": "level",
+      "sourceValue": 1,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "26:captivate",
+      "moveId": "captivate",
+      "moveName": "Captivate",
+      "type": "normal",
+      "sourceType": "level",
+      "sourceValue": 26,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:captivate",
+      "moveId": "captivate",
+      "moveName": "Captivate",
+      "type": "normal",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "egg:charm",
+      "moveId": "charm",
+      "moveName": "Charm",
+      "type": "fairy",
+      "sourceType": "egg",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:charm",
+      "moveId": "charm",
+      "moveName": "Charm",
+      "type": "fairy",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:chillingwater",
+      "moveId": "chillingwater",
+      "moveName": "Chilling Water",
+      "type": "water",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "legacy:confide",
+      "moveId": "confide",
+      "moveName": "Confide",
+      "type": "normal",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "egg:confuseray",
+      "moveId": "confuseray",
+      "moveName": "Confuse Ray",
+      "type": "ghost",
+      "sourceType": "egg",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:confuseray",
+      "moveId": "confuseray",
+      "moveName": "Confuse Ray",
+      "type": "ghost",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:dazzlinggleam",
+      "moveId": "dazzlinggleam",
+      "moveName": "Dazzling Gleam",
+      "type": "fairy",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tutor:dazzlinggleam",
+      "moveId": "dazzlinggleam",
+      "moveName": "Dazzling Gleam",
+      "type": "fairy",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:defog",
+      "moveId": "defog",
+      "moveName": "Defog",
+      "type": "flying",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tutor:defog",
+      "moveId": "defog",
+      "moveName": "Defog",
+      "type": "flying",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:dive",
+      "moveId": "dive",
+      "moveName": "Dive",
+      "type": "water",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tutor:dive",
+      "moveId": "dive",
+      "moveName": "Dive",
+      "type": "water",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "legacy:doubleteam",
+      "moveId": "doubleteam",
+      "moveName": "Double Team",
+      "type": "normal",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:endure",
+      "moveId": "endure",
+      "moveName": "Endure",
+      "type": "normal",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:facade",
+      "moveId": "facade",
+      "moveName": "Facade",
+      "type": "normal",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "egg:flail",
+      "moveId": "flail",
+      "moveName": "Flail",
+      "type": "normal",
+      "sourceType": "egg",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:flash",
+      "moveId": "flash",
+      "moveName": "Flash",
+      "type": "normal",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:flipturn",
+      "moveId": "flipturn",
+      "moveName": "Flip Turn",
+      "type": "water",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tutor:flipturn",
+      "moveId": "flipturn",
+      "moveName": "Flip Turn",
+      "type": "water",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "legacy:frustration",
+      "moveId": "frustration",
+      "moveName": "Frustration",
+      "type": "normal",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "17:gust",
+      "moveId": "gust",
+      "moveName": "Gust",
+      "type": "flying",
+      "sourceType": "level",
+      "sourceValue": 17,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:hail",
+      "moveId": "hail",
+      "moveName": "Hail",
+      "type": "ice",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:helpinghand",
+      "moveId": "helpinghand",
+      "moveName": "Helping Hand",
+      "type": "normal",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tutor:helpinghand",
+      "moveId": "helpinghand",
+      "moveName": "Helping Hand",
+      "type": "normal",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "legacy:hiddenpower",
+      "moveId": "hiddenpower",
+      "moveName": "Hidden Power",
+      "type": "normal",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:hydropump",
+      "moveId": "hydropump",
+      "moveName": "Hydro Pump",
+      "type": "water",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:icebeam",
+      "moveId": "icebeam",
+      "moveName": "Ice Beam",
+      "type": "ice",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tutor:icebeam",
+      "moveId": "icebeam",
+      "moveName": "Ice Beam",
+      "type": "ice",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:icywind",
+      "moveId": "icywind",
+      "moveName": "Icy Wind",
+      "type": "ice",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tutor:icywind",
+      "moveId": "icywind",
+      "moveName": "Icy Wind",
+      "type": "ice",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "legacy:naturalgift",
+      "moveId": "naturalgift",
+      "moveName": "Natural Gift",
+      "type": "normal",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:naturepower",
+      "moveId": "naturepower",
+      "moveName": "Nature Power",
+      "type": "normal",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:ominouswind",
+      "moveId": "ominouswind",
+      "moveName": "Ominous Wind",
+      "type": "ghost",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tutor:ominouswind",
+      "moveId": "ominouswind",
+      "moveName": "Ominous Wind",
+      "type": "ghost",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:payback",
+      "moveId": "payback",
+      "moveName": "Payback",
+      "type": "dark",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "1:pound",
+      "moveId": "pound",
+      "moveName": "Pound",
+      "type": "normal",
+      "sourceType": "level",
+      "sourceValue": 1,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:protect",
+      "moveId": "protect",
+      "moveName": "Protect",
+      "type": "normal",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "egg:psybeam",
+      "moveId": "psybeam",
+      "moveName": "Psybeam",
+      "type": "psychic",
+      "sourceType": "egg",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:psybeam",
+      "moveId": "psybeam",
+      "moveName": "Psybeam",
+      "type": "psychic",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:psychup",
+      "moveId": "psychup",
+      "moveName": "Psych Up",
+      "type": "normal",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "13:raindance",
+      "moveId": "raindance",
+      "moveName": "Rain Dance",
+      "type": "water",
+      "sourceType": "level",
+      "sourceValue": 13,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:raindance",
+      "moveId": "raindance",
+      "moveName": "Rain Dance",
+      "type": "water",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:rest",
+      "moveId": "rest",
+      "moveName": "Rest",
+      "type": "psychic",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tutor:rest",
+      "moveId": "rest",
+      "moveName": "Rest",
+      "type": "psychic",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "legacy:return",
+      "moveId": "return",
+      "moveName": "Return",
+      "type": "normal",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "legacy:round",
+      "moveId": "round",
+      "moveName": "Round",
+      "type": "normal",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "29:safeguard",
+      "moveId": "safeguard",
+      "moveName": "Safeguard",
+      "type": "normal",
+      "sourceType": "level",
+      "sourceValue": 29,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:safeguard",
+      "moveId": "safeguard",
+      "moveName": "Safeguard",
+      "type": "normal",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "legacy:scald",
+      "moveId": "scald",
+      "moveName": "Scald",
+      "type": "water",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "legacy:secretpower",
+      "moveId": "secretpower",
+      "moveName": "Secret Power",
+      "type": "normal",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:signalbeam",
+      "moveId": "signalbeam",
+      "moveName": "Signal Beam",
+      "type": "bug",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tutor:signalbeam",
+      "moveId": "signalbeam",
+      "moveName": "Signal Beam",
+      "type": "bug",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:silverwind",
+      "moveId": "silverwind",
+      "moveName": "Silver Wind",
+      "type": "bug",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:sleeptalk",
+      "moveId": "sleeptalk",
+      "moveName": "Sleep Talk",
+      "type": "normal",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tutor:sleeptalk",
+      "moveId": "sleeptalk",
+      "moveName": "Sleep Talk",
+      "type": "normal",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "legacy:snore",
+      "moveId": "snore",
+      "moveName": "Snore",
+      "type": "normal",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "54:soak",
+      "moveId": "soak",
+      "moveName": "Soak",
+      "type": "water",
+      "sourceType": "level",
+      "sourceValue": 54,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "egg:splash",
+      "moveId": "splash",
+      "moveName": "Splash",
+      "type": "normal",
+      "sourceType": "egg",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:substitute",
+      "moveId": "substitute",
+      "moveName": "Substitute",
+      "type": "normal",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:surf",
+      "moveId": "surf",
+      "moveName": "Surf",
+      "type": "water",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "legacy:swagger",
+      "moveId": "swagger",
+      "moveName": "Swagger",
+      "type": "normal",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "egg:sweetkiss",
+      "moveId": "sweetkiss",
+      "moveName": "Sweet Kiss",
+      "type": "fairy",
+      "sourceType": "egg",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:swift",
+      "moveId": "swift",
+      "moveName": "Swift",
+      "type": "normal",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tutor:swift",
+      "moveId": "swift",
+      "moveName": "Swift",
+      "type": "normal",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "49:tailwind",
+      "moveId": "tailwind",
+      "moveName": "Tailwind",
+      "type": "flying",
+      "sourceType": "level",
+      "sourceValue": 49,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:tailwind",
+      "moveId": "tailwind",
+      "moveName": "Tailwind",
+      "type": "flying",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tutor:tailwind",
+      "moveId": "tailwind",
+      "moveName": "Tailwind",
+      "type": "flying",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:takedown",
+      "moveId": "takedown",
+      "moveName": "Take Down",
+      "type": "normal",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:terablast",
+      "moveId": "terablast",
+      "moveName": "Tera Blast",
+      "type": "normal",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:thief",
+      "moveId": "thief",
+      "moveName": "Thief",
+      "type": "dark",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "egg:tickle",
+      "moveId": "tickle",
+      "moveName": "Tickle",
+      "type": "normal",
+      "sourceType": "egg",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "legacy:toxic",
+      "moveId": "toxic",
+      "moveName": "Toxic",
+      "type": "poison",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:twister",
+      "moveId": "twister",
+      "moveName": "Twister",
+      "type": "dragon",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tutor:twister",
+      "moveId": "twister",
+      "moveName": "Twister",
+      "type": "dragon",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "42:uturn",
+      "moveId": "uturn",
+      "moveName": "U-turn",
+      "type": "bug",
+      "sourceType": "level",
+      "sourceValue": 42,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:uturn",
+      "moveId": "uturn",
+      "moveName": "U-turn",
+      "type": "bug",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "6:watergun",
+      "moveId": "watergun",
+      "moveName": "Water Gun",
+      "type": "water",
+      "sourceType": "level",
+      "sourceValue": 6,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "22:waterpulse",
+      "moveId": "waterpulse",
+      "moveName": "Water Pulse",
+      "type": "water",
+      "sourceType": "level",
+      "sourceValue": 22,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:waterpulse",
+      "moveId": "waterpulse",
+      "moveName": "Water Pulse",
+      "type": "water",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tutor:waterpulse",
+      "moveId": "waterpulse",
+      "moveName": "Water Pulse",
+      "type": "water",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:waterfall",
+      "moveId": "waterfall",
+      "moveName": "Waterfall",
+      "type": "water",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "38:whirlpool",
+      "moveId": "whirlpool",
+      "moveName": "Whirlpool",
+      "type": "water",
+      "sourceType": "level",
+      "sourceValue": 38,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:whirlpool",
+      "moveId": "whirlpool",
+      "moveName": "Whirlpool",
+      "type": "water",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    }
+  ],
+  "spawnEntries": [
+    {
+      "id": "finneon-1",
+      "sourceFile": "0456_finneon.json",
+      "pokemon": {
+        "raw": "finneon",
+        "slug": "finneon",
+        "aspectTokens": []
+      },
+      "type": "pokemon",
+      "spawnablePositionType": "submerged",
+      "bucket": "common",
+      "bucketWeight": 94.3,
+      "levelText": "8-33",
+      "levelMin": 8,
+      "levelMax": 33,
+      "weight": 9,
+      "presets": [
+        "water"
+      ],
+      "biomeHints": [
+        "Is Deep Ocean"
+      ],
+      "condition": {
+        "fluid": "#minecraft:water",
+        "canSeeSky": true,
+        "biomes": [
+          "#cobblemon:is_deep_ocean"
+        ],
+        "maxY": 48
+      },
+      "anticondition": null,
+      "weightMultipliers": [],
+      "raw": {
+        "id": "finneon-1",
+        "pokemon": "finneon",
+        "presets": [
+          "water"
+        ],
+        "type": "pokemon",
+        "spawnablePositionType": "submerged",
+        "bucket": "common",
+        "level": "8-33",
+        "weight": 9,
+        "condition": {
+          "canSeeSky": true,
+          "biomes": [
+            "#cobblemon:is_deep_ocean"
+          ],
+          "maxY": 48
+        }
+      }
+    },
+    {
+      "id": "finneon-2",
+      "sourceFile": "0456_finneon.json",
+      "pokemon": {
+        "raw": "finneon",
+        "slug": "finneon",
+        "aspectTokens": []
+      },
+      "type": "pokemon",
+      "spawnablePositionType": "fishing",
+      "bucket": "common",
+      "bucketWeight": 94.3,
+      "levelText": "8-33",
+      "levelMin": 8,
+      "levelMax": 33,
+      "weight": 9,
+      "presets": [],
+      "biomeHints": [
+        "Is Ocean",
+        "Is Cold Ocean"
+      ],
+      "condition": {
+        "canSeeSky": true,
+        "biomes": [
+          "#cobblemon:is_ocean"
+        ]
+      },
+      "anticondition": null,
+      "weightMultipliers": [],
+      "raw": {
+        "id": "finneon-2",
+        "pokemon": "finneon",
+        "type": "pokemon",
+        "spawnablePositionType": "fishing",
+        "bucket": "common",
+        "level": "8-33",
+        "weight": 9,
+        "condition": {
+          "canSeeSky": true,
+          "biomes": [
+            "#cobblemon:is_ocean"
+          ]
+        }
+      }
+    },
+    {
+      "id": "finneon-3",
+      "sourceFile": "0456_finneon.json",
+      "pokemon": {
+        "raw": "finneon",
+        "slug": "finneon",
+        "aspectTokens": []
+      },
+      "type": "pokemon",
+      "spawnablePositionType": "submerged",
+      "bucket": "common",
+      "bucketWeight": 94.3,
+      "levelText": "8-33",
+      "levelMin": 8,
+      "levelMax": 33,
+      "weight": 9,
+      "presets": [
+        "water"
+      ],
+      "biomeHints": [
+        "Is Deep Ocean"
+      ],
+      "condition": {
+        "fluid": "#minecraft:water",
+        "canSeeSky": false,
+        "minSkyLight": 8,
+        "maxSkyLight": 15,
+        "biomes": [
+          "#cobblemon:is_deep_ocean"
+        ],
+        "maxY": 48
+      },
+      "anticondition": null,
+      "weightMultipliers": [],
+      "raw": {
+        "id": "finneon-3",
+        "pokemon": "finneon",
+        "presets": [
+          "water"
+        ],
+        "type": "pokemon",
+        "spawnablePositionType": "submerged",
+        "bucket": "common",
+        "level": "8-33",
+        "weight": 9,
+        "condition": {
+          "canSeeSky": false,
+          "minSkyLight": 8,
+          "maxSkyLight": 15,
+          "biomes": [
+            "#cobblemon:is_deep_ocean"
+          ],
+          "maxY": 48
+        }
+      }
+    },
+    {
+      "id": "finneon-4",
+      "sourceFile": "0456_finneon.json",
+      "pokemon": {
+        "raw": "finneon",
+        "slug": "finneon",
+        "aspectTokens": []
+      },
+      "type": "pokemon",
+      "spawnablePositionType": "fishing",
+      "bucket": "common",
+      "bucketWeight": 94.3,
+      "levelText": "8-33",
+      "levelMin": 8,
+      "levelMax": 33,
+      "weight": 9,
+      "presets": [],
+      "biomeHints": [
+        "Is Ocean",
+        "Is Cold Ocean"
+      ],
+      "condition": {
+        "canSeeSky": false,
+        "minSkyLight": 8,
+        "maxSkyLight": 15,
+        "biomes": [
+          "#cobblemon:is_ocean"
+        ]
+      },
+      "anticondition": null,
+      "weightMultipliers": [],
+      "raw": {
+        "id": "finneon-4",
+        "pokemon": "finneon",
+        "type": "pokemon",
+        "spawnablePositionType": "fishing",
+        "bucket": "common",
+        "level": "8-33",
+        "weight": 9,
+        "condition": {
+          "canSeeSky": false,
+          "minSkyLight": 8,
+          "maxSkyLight": 15,
+          "biomes": [
+            "#cobblemon:is_ocean"
+          ]
+        }
+      }
+    },
+    {
+      "id": "finneon-5",
+      "sourceFile": "0456_finneon.json",
+      "pokemon": {
+        "raw": "finneon",
+        "slug": "finneon",
+        "aspectTokens": []
+      },
+      "type": "pokemon",
+      "spawnablePositionType": "submerged",
+      "bucket": "common",
+      "bucketWeight": 94.3,
+      "levelText": "8-33",
+      "levelMin": 8,
+      "levelMax": 33,
+      "weight": 9,
+      "presets": [
+        "water"
+      ],
+      "biomeHints": [
+        "Is Overworld"
+      ],
+      "condition": {
+        "fluid": "#minecraft:water",
+        "canSeeSky": false,
+        "biomes": [
+          "#cobblemon:is_overworld"
+        ],
+        "structures": [
+          "cobblemon:shipwreck_coves/submerged_shipwreck_cove"
+        ],
+        "minY": -60,
+        "maxY": 13
+      },
+      "anticondition": null,
+      "weightMultipliers": [],
+      "raw": {
+        "id": "finneon-5",
+        "pokemon": "finneon",
+        "presets": [
+          "water"
+        ],
+        "type": "pokemon",
+        "spawnablePositionType": "submerged",
+        "bucket": "common",
+        "level": "8-33",
+        "weight": 9,
+        "condition": {
+          "canSeeSky": false,
+          "biomes": [
+            "#cobblemon:is_overworld"
+          ],
+          "structures": [
+            "cobblemon:shipwreck_coves/submerged_shipwreck_cove"
+          ],
+          "minY": -60,
+          "maxY": 13
+        }
+      }
+    },
+    {
+      "id": "finneon-6",
+      "sourceFile": "0456_finneon.json",
+      "pokemon": {
+        "raw": "finneon",
+        "slug": "finneon",
+        "aspectTokens": []
+      },
+      "type": "pokemon",
+      "spawnablePositionType": "fishing",
+      "bucket": "common",
+      "bucketWeight": 94.3,
+      "levelText": "8-33",
+      "levelMin": 8,
+      "levelMax": 33,
+      "weight": 9,
+      "presets": [],
+      "biomeHints": [
+        "Is Overworld"
+      ],
+      "condition": {
+        "canSeeSky": false,
+        "biomes": [
+          "#cobblemon:is_overworld"
+        ],
+        "structures": [
+          "cobblemon:shipwreck_coves/submerged_shipwreck_cove"
+        ],
+        "minY": -60,
+        "maxY": 13
+      },
+      "anticondition": null,
+      "weightMultipliers": [],
+      "raw": {
+        "id": "finneon-6",
+        "pokemon": "finneon",
+        "type": "pokemon",
+        "spawnablePositionType": "fishing",
+        "bucket": "common",
+        "level": "8-33",
+        "weight": 9,
+        "condition": {
+          "canSeeSky": false,
+          "biomes": [
+            "#cobblemon:is_overworld"
+          ],
+          "structures": [
+            "cobblemon:shipwreck_coves/submerged_shipwreck_cove"
+          ],
+          "minY": -60,
+          "maxY": 13
+        }
+      }
+    }
+  ],
+  "forms": [],
+  "rawSpecies": {
+    "implemented": true,
+    "nationalPokedexNumber": 456,
+    "name": "Finneon",
+    "primaryType": "water",
+    "maleRatio": 0.5,
+    "height": 4,
+    "weight": 70,
+    "pokedex": [
+      "cobblemon.species.finneon.desc"
+    ],
+    "labels": [
+      "gen4"
+    ],
+    "aspects": [],
+    "abilities": [
+      "swiftswim",
+      "stormdrain",
+      "h:waterveil"
+    ],
+    "eggGroups": [
+      "water_2"
+    ],
+    "baseStats": {
+      "hp": 49,
+      "attack": 49,
+      "defence": 56,
+      "special_attack": 49,
+      "special_defence": 61,
+      "speed": 66
+    },
+    "evYield": {
+      "hp": 0,
+      "attack": 0,
+      "defence": 0,
+      "special_attack": 0,
+      "special_defence": 0,
+      "speed": 1
+    },
+    "baseExperienceYield": 66,
+    "experienceGroup": "erratic",
+    "catchRate": 190,
+    "eggCycles": 20,
+    "baseFriendship": 50,
+    "baseScale": 0.8,
+    "hitbox": {
+      "width": 0.8,
+      "height": 0.5,
+      "fixed": false
+    },
+    "behaviour": {
+      "moving": {
+        "walking": {
+          "avoidsLand": true
+        },
+        "swim": {
+          "swimSpeed": 0.25,
+          "canBreatheUnderwater": true
+        },
+        "walk": {
+          "avoidsLand": true
+        }
+      },
+      "herd": {
+        "maxSize": "9",
+        "toleratedLeaders": [
+          {
+            "pokemon": "goldeen",
+            "tier": 1
+          },
+          {
+            "pokemon": "remoraid",
+            "tier": 1
+          },
+          {
+            "pokemon": "alomomola",
+            "tier": 2
+          },
+          {
+            "pokemon": "seaking",
+            "tier": 3
+          },
+          {
+            "pokemon": "finneon",
+            "tier": 4
+          },
+          {
+            "pokemon": "lumineon",
+            "tier": 5
+          },
+          {
+            "pokemon": "manaphy",
+            "tier": 6
+          }
+        ]
+      },
+      "resting": {
+        "times": [
+          "any"
+        ],
+        "drowsyChance": 0.0014,
+        "rouseChance": 0.0042
+      },
+      "combat": {
+        "willDefendOwner": true
+      }
+    },
+    "drops": {
+      "amount": 4,
+      "entries": [
+        {
+          "item": "minecraft:cod"
+        },
+        {
+          "item": "minecraft:bone_meal",
+          "percentage": 5
+        },
+        {
+          "item": "cobblemon:rindo_berry",
+          "percentage": 2.5
+        },
+        {
+          "item": "cobblemon:prism_scale",
+          "percentage": 2.5
+        }
+      ]
+    },
+    "moves": [
+      "1:pound",
+      "1:bubble",
+      "6:watergun",
+      "13:raindance",
+      "17:gust",
+      "22:waterpulse",
+      "26:captivate",
+      "29:safeguard",
+      "33:aquaring",
+      "38:whirlpool",
+      "42:uturn",
+      "45:bounce",
+      "49:tailwind",
+      "54:soak",
+      "egg:agility",
+      "egg:aquatail",
+      "egg:attract",
+      "egg:aurorabeam",
+      "egg:charm",
+      "egg:confuseray",
+      "egg:flail",
+      "egg:psybeam",
+      "egg:splash",
+      "egg:sweetkiss",
+      "egg:tickle",
+      "tm:acrobatics",
+      "tm:agility",
+      "tm:alluringvoice",
+      "tm:aquatail",
+      "tm:attract",
+      "tm:babydolleyes",
+      "tm:blizzard",
+      "tm:bounce",
+      "tm:brine",
+      "tm:captivate",
+      "tm:charm",
+      "tm:chillingwater",
+      "tm:confuseray",
+      "tm:dazzlinggleam",
+      "tm:defog",
+      "tm:dive",
+      "tm:endure",
+      "tm:facade",
+      "tm:flash",
+      "tm:flipturn",
+      "tm:hail",
+      "tm:helpinghand",
+      "tm:hydropump",
+      "tm:icebeam",
+      "tm:icywind",
+      "tm:naturepower",
+      "tm:ominouswind",
+      "tm:payback",
+      "tm:protect",
+      "tm:psybeam",
+      "tm:psychup",
+      "tm:raindance",
+      "tm:rest",
+      "tm:safeguard",
+      "tm:signalbeam",
+      "tm:silverwind",
+      "tm:sleeptalk",
+      "tm:substitute",
+      "tm:surf",
+      "tm:swift",
+      "tm:tailwind",
+      "tm:takedown",
+      "tm:terablast",
+      "tm:thief",
+      "tm:twister",
+      "tm:uturn",
+      "tm:waterfall",
+      "tm:waterpulse",
+      "tm:whirlpool",
+      "tutor:aquatail",
+      "tutor:babydolleyes",
+      "tutor:bounce",
+      "tutor:dazzlinggleam",
+      "tutor:defog",
+      "tutor:dive",
+      "tutor:flipturn",
+      "tutor:helpinghand",
+      "tutor:icebeam",
+      "tutor:icywind",
+      "tutor:ominouswind",
+      "tutor:rest",
+      "tutor:signalbeam",
+      "tutor:sleeptalk",
+      "tutor:swift",
+      "tutor:tailwind",
+      "tutor:twister",
+      "tutor:waterpulse",
+      "legacy:aircutter",
+      "legacy:confide",
+      "legacy:doubleteam",
+      "legacy:frustration",
+      "legacy:hiddenpower",
+      "legacy:naturalgift",
+      "legacy:return",
+      "legacy:round",
+      "legacy:scald",
+      "legacy:secretpower",
+      "legacy:snore",
+      "legacy:swagger",
+      "legacy:toxic"
+    ],
+    "evolutions": [
+      {
+        "id": "finneon_lumineon",
+        "variant": "level_up",
+        "result": "lumineon",
+        "consumeHeldItem": false,
+        "learnableMoves": [],
+        "requirements": [
+          {
+            "variant": "level",
+            "minLevel": 31
+          }
+        ]
+      }
+    ],
+    "lightingData": {
+      "lightLevel": 7,
+      "liquidGlowMode": "BOTH"
+    }
+  }
+}

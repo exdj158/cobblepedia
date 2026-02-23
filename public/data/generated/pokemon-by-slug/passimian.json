@@ -1,0 +1,1620 @@
+{
+  "slug": "passimian",
+  "name": "Passimian",
+  "dexNumber": 766,
+  "implemented": false,
+  "types": [
+    "fighting"
+  ],
+  "abilities": [
+    {
+      "id": "receiver",
+      "hidden": false,
+      "label": "Receiver",
+      "slot": "first"
+    },
+    {
+      "id": "defiant",
+      "hidden": true,
+      "label": "Defiant",
+      "slot": "hidden"
+    }
+  ],
+  "eggGroups": [
+    "field"
+  ],
+  "labels": [
+    "gen7"
+  ],
+  "aspects": [],
+  "aliases": [
+    "passimian"
+  ],
+  "maleRatio": 0.5,
+  "height": 20,
+  "weight": 828,
+  "catchRate": 45,
+  "baseExperienceYield": 172,
+  "baseFriendship": 50,
+  "eggCycles": 20,
+  "baseStats": {
+    "hp": 100,
+    "attack": 120,
+    "defence": 90,
+    "special_attack": 40,
+    "special_defence": 60,
+    "speed": 80
+  },
+  "evYield": {
+    "hp": 0,
+    "attack": 2,
+    "defence": 0,
+    "special_attack": 0,
+    "special_defence": 0,
+    "speed": 0
+  },
+  "preEvolution": null,
+  "evolutions": [],
+  "evolutionFamily": {
+    "members": [
+      {
+        "nodeId": "passimian",
+        "slug": "passimian",
+        "name": "Passimian",
+        "dexNumber": 766,
+        "formSlug": null,
+        "formName": null
+      }
+    ],
+    "edges": [],
+    "roots": [
+      "passimian"
+    ]
+  },
+  "moves": [
+    {
+      "raw": "tm:acrobatics",
+      "moveId": "acrobatics",
+      "moveName": "Acrobatics",
+      "type": "flying",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "legacy:aerialace",
+      "moveId": "aerialace",
+      "moveName": "Aerial Ace",
+      "type": "flying",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:assurance",
+      "moveId": "assurance",
+      "moveName": "Assurance",
+      "type": "dark",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "legacy:attract",
+      "moveId": "attract",
+      "moveName": "Attract",
+      "type": "normal",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:batonpass",
+      "moveId": "batonpass",
+      "moveName": "Baton Pass",
+      "type": "normal",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "15:beatup",
+      "moveId": "beatup",
+      "moveName": "Beat Up",
+      "type": "dark",
+      "sourceType": "level",
+      "sourceValue": 15,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:beatup",
+      "moveId": "beatup",
+      "moveName": "Beat Up",
+      "type": "dark",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "1:bestow",
+      "moveId": "bestow",
+      "moveName": "Bestow",
+      "type": "normal",
+      "sourceType": "level",
+      "sourceValue": 1,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:block",
+      "moveId": "block",
+      "moveName": "Block",
+      "type": "normal",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tutor:block",
+      "moveId": "block",
+      "moveName": "Block",
+      "type": "normal",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:bodyslam",
+      "moveId": "bodyslam",
+      "moveName": "Body Slam",
+      "type": "normal",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:brickbreak",
+      "moveId": "brickbreak",
+      "moveName": "Brick Break",
+      "type": "fighting",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:brutalswing",
+      "moveId": "brutalswing",
+      "moveName": "Brutal Swing",
+      "type": "dark",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "35:bulkup",
+      "moveId": "bulkup",
+      "moveName": "Bulk Up",
+      "type": "fighting",
+      "sourceType": "level",
+      "sourceValue": 35,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:bulkup",
+      "moveId": "bulkup",
+      "moveName": "Bulk Up",
+      "type": "fighting",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tutor:bulkup",
+      "moveId": "bulkup",
+      "moveName": "Bulk Up",
+      "type": "fighting",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:bulldoze",
+      "moveId": "bulldoze",
+      "moveName": "Bulldoze",
+      "type": "ground",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tutor:bulldoze",
+      "moveId": "bulldoze",
+      "moveName": "Bulldoze",
+      "type": "ground",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:chillingwater",
+      "moveId": "chillingwater",
+      "moveName": "Chilling Water",
+      "type": "water",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "50:closecombat",
+      "moveId": "closecombat",
+      "moveName": "Close Combat",
+      "type": "fighting",
+      "sourceType": "level",
+      "sourceValue": 50,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:closecombat",
+      "moveId": "closecombat",
+      "moveName": "Close Combat",
+      "type": "fighting",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:coaching",
+      "moveId": "coaching",
+      "moveName": "Coaching",
+      "type": "fighting",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tutor:coaching",
+      "moveId": "coaching",
+      "moveName": "Coaching",
+      "type": "fighting",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "legacy:confide",
+      "moveId": "confide",
+      "moveName": "Confide",
+      "type": "normal",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "egg:counter",
+      "moveId": "counter",
+      "moveName": "Counter",
+      "type": "fighting",
+      "sourceType": "egg",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:curse",
+      "moveId": "curse",
+      "moveName": "Curse",
+      "type": "ghost",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "legacy:doubleteam",
+      "moveId": "doubleteam",
+      "moveName": "Double Team",
+      "type": "normal",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "45:doubleedge",
+      "moveId": "doubleedge",
+      "moveName": "Double-Edge",
+      "type": "normal",
+      "sourceType": "level",
+      "sourceValue": 45,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:doubleedge",
+      "moveId": "doubleedge",
+      "moveName": "Double-Edge",
+      "type": "normal",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:drainpunch",
+      "moveId": "drainpunch",
+      "moveName": "Drain Punch",
+      "type": "fighting",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tutor:drainpunch",
+      "moveId": "drainpunch",
+      "moveName": "Drain Punch",
+      "type": "fighting",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:earthquake",
+      "moveId": "earthquake",
+      "moveName": "Earthquake",
+      "type": "ground",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:electroweb",
+      "moveId": "electroweb",
+      "moveName": "Electroweb",
+      "type": "electric",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tutor:electroweb",
+      "moveId": "electroweb",
+      "moveName": "Electroweb",
+      "type": "electric",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "legacy:endeavor",
+      "moveId": "endeavor",
+      "moveName": "Endeavor",
+      "type": "normal",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:endure",
+      "moveId": "endure",
+      "moveName": "Endure",
+      "type": "normal",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:energyball",
+      "moveId": "energyball",
+      "moveName": "Energy Ball",
+      "type": "grass",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tutor:energyball",
+      "moveId": "energyball",
+      "moveName": "Energy Ball",
+      "type": "grass",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:facade",
+      "moveId": "facade",
+      "moveName": "Facade",
+      "type": "normal",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "egg:feint",
+      "moveId": "feint",
+      "moveName": "Feint",
+      "type": "normal",
+      "sourceType": "egg",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "30:fling",
+      "moveId": "fling",
+      "moveName": "Fling",
+      "type": "dark",
+      "sourceType": "level",
+      "sourceValue": 30,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:fling",
+      "moveId": "fling",
+      "moveName": "Fling",
+      "type": "dark",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:focusblast",
+      "moveId": "focusblast",
+      "moveName": "Focus Blast",
+      "type": "fighting",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "10:focusenergy",
+      "moveId": "focusenergy",
+      "moveName": "Focus Energy",
+      "type": "normal",
+      "sourceType": "level",
+      "sourceValue": 10,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:focusenergy",
+      "moveId": "focusenergy",
+      "moveName": "Focus Energy",
+      "type": "normal",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tutor:focusenergy",
+      "moveId": "focusenergy",
+      "moveName": "Focus Energy",
+      "type": "normal",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:focuspunch",
+      "moveId": "focuspunch",
+      "moveName": "Focus Punch",
+      "type": "fighting",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tutor:focuspunch",
+      "moveId": "focuspunch",
+      "moveName": "Focus Punch",
+      "type": "fighting",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "legacy:frustration",
+      "moveId": "frustration",
+      "moveName": "Frustration",
+      "type": "normal",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "60:gigaimpact",
+      "moveId": "gigaimpact",
+      "moveName": "Giga Impact",
+      "type": "normal",
+      "sourceType": "level",
+      "sourceValue": 60,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:gigaimpact",
+      "moveId": "gigaimpact",
+      "moveName": "Giga Impact",
+      "type": "normal",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tutor:gigaimpact",
+      "moveId": "gigaimpact",
+      "moveName": "Giga Impact",
+      "type": "normal",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:grassknot",
+      "moveId": "grassknot",
+      "moveName": "Grass Knot",
+      "type": "grass",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:gunkshot",
+      "moveId": "gunkshot",
+      "moveName": "Gunk Shot",
+      "type": "poison",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tutor:gunkshot",
+      "moveId": "gunkshot",
+      "moveName": "Gunk Shot",
+      "type": "poison",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:gyroball",
+      "moveId": "gyroball",
+      "moveName": "Gyro Ball",
+      "type": "steel",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "legacy:hiddenpower",
+      "moveId": "hiddenpower",
+      "moveName": "Hidden Power",
+      "type": "normal",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:hyperbeam",
+      "moveId": "hyperbeam",
+      "moveName": "Hyper Beam",
+      "type": "normal",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tutor:hyperbeam",
+      "moveId": "hyperbeam",
+      "moveName": "Hyper Beam",
+      "type": "normal",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:ironhead",
+      "moveId": "ironhead",
+      "moveName": "Iron Head",
+      "type": "steel",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tutor:ironhead",
+      "moveId": "ironhead",
+      "moveName": "Iron Head",
+      "type": "steel",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:irontail",
+      "moveId": "irontail",
+      "moveName": "Iron Tail",
+      "type": "steel",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tutor:irontail",
+      "moveId": "irontail",
+      "moveName": "Iron Tail",
+      "type": "steel",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "egg:knockoff",
+      "moveId": "knockoff",
+      "moveName": "Knock Off",
+      "type": "dark",
+      "sourceType": "egg",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:knockoff",
+      "moveId": "knockoff",
+      "moveName": "Knock Off",
+      "type": "dark",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tutor:knockoff",
+      "moveId": "knockoff",
+      "moveName": "Knock Off",
+      "type": "dark",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:laserfocus",
+      "moveId": "laserfocus",
+      "moveName": "Laser Focus",
+      "type": "normal",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tutor:laserfocus",
+      "moveId": "laserfocus",
+      "moveName": "Laser Focus",
+      "type": "normal",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "1:leer",
+      "moveId": "leer",
+      "moveName": "Leer",
+      "type": "normal",
+      "sourceType": "level",
+      "sourceValue": 1,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:lowkick",
+      "moveId": "lowkick",
+      "moveName": "Low Kick",
+      "type": "fighting",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tutor:lowkick",
+      "moveId": "lowkick",
+      "moveName": "Low Kick",
+      "type": "fighting",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:lowsweep",
+      "moveId": "lowsweep",
+      "moveName": "Low Sweep",
+      "type": "fighting",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:megakick",
+      "moveId": "megakick",
+      "moveName": "Mega Kick",
+      "type": "normal",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:megapunch",
+      "moveId": "megapunch",
+      "moveName": "Mega Punch",
+      "type": "normal",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:painsplit",
+      "moveId": "painsplit",
+      "moveName": "Pain Split",
+      "type": "normal",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tutor:painsplit",
+      "moveId": "painsplit",
+      "moveName": "Pain Split",
+      "type": "normal",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:payback",
+      "moveId": "payback",
+      "moveName": "Payback",
+      "type": "dark",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:protect",
+      "moveId": "protect",
+      "moveName": "Protect",
+      "type": "normal",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "egg:quickattack",
+      "moveId": "quickattack",
+      "moveName": "Quick Attack",
+      "type": "normal",
+      "sourceType": "egg",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "egg:quickguard",
+      "moveId": "quickguard",
+      "moveName": "Quick Guard",
+      "type": "fighting",
+      "sourceType": "egg",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:raindance",
+      "moveId": "raindance",
+      "moveName": "Rain Dance",
+      "type": "water",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:rest",
+      "moveId": "rest",
+      "moveName": "Rest",
+      "type": "psychic",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tutor:rest",
+      "moveId": "rest",
+      "moveName": "Rest",
+      "type": "psychic",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:retaliate",
+      "moveId": "retaliate",
+      "moveName": "Retaliate",
+      "type": "normal",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "legacy:return",
+      "moveId": "return",
+      "moveName": "Return",
+      "type": "normal",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:revenge",
+      "moveId": "revenge",
+      "moveName": "Revenge",
+      "type": "fighting",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "55:reversal",
+      "moveId": "reversal",
+      "moveName": "Reversal",
+      "type": "fighting",
+      "sourceType": "level",
+      "sourceValue": 55,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:reversal",
+      "moveId": "reversal",
+      "moveName": "Reversal",
+      "type": "fighting",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:rockslide",
+      "moveId": "rockslide",
+      "moveName": "Rock Slide",
+      "type": "rock",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tutor:rockslide",
+      "moveId": "rockslide",
+      "moveName": "Rock Slide",
+      "type": "rock",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "5:rocksmash",
+      "moveId": "rocksmash",
+      "moveName": "Rock Smash",
+      "type": "fighting",
+      "sourceType": "level",
+      "sourceValue": 5,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:rocksmash",
+      "moveId": "rocksmash",
+      "moveName": "Rock Smash",
+      "type": "fighting",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tutor:rocksmash",
+      "moveId": "rocksmash",
+      "moveName": "Rock Smash",
+      "type": "fighting",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:rocktomb",
+      "moveId": "rocktomb",
+      "moveName": "Rock Tomb",
+      "type": "rock",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "legacy:round",
+      "moveId": "round",
+      "moveName": "Round",
+      "type": "normal",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "20:scaryface",
+      "moveId": "scaryface",
+      "moveName": "Scary Face",
+      "type": "normal",
+      "sourceType": "level",
+      "sourceValue": 20,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:scaryface",
+      "moveId": "scaryface",
+      "moveName": "Scary Face",
+      "type": "normal",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:seedbomb",
+      "moveId": "seedbomb",
+      "moveName": "Seed Bomb",
+      "type": "grass",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tutor:seedbomb",
+      "moveId": "seedbomb",
+      "moveName": "Seed Bomb",
+      "type": "grass",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "egg:seismictoss",
+      "moveId": "seismictoss",
+      "moveName": "Seismic Toss",
+      "type": "fighting",
+      "sourceType": "egg",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:shadowball",
+      "moveId": "shadowball",
+      "moveName": "Shadow Ball",
+      "type": "ghost",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tutor:shadowball",
+      "moveId": "shadowball",
+      "moveName": "Shadow Ball",
+      "type": "ghost",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:shockwave",
+      "moveId": "shockwave",
+      "moveName": "Shock Wave",
+      "type": "electric",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tutor:shockwave",
+      "moveId": "shockwave",
+      "moveName": "Shock Wave",
+      "type": "electric",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:sleeptalk",
+      "moveId": "sleeptalk",
+      "moveName": "Sleep Talk",
+      "type": "normal",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tutor:sleeptalk",
+      "moveId": "sleeptalk",
+      "moveName": "Sleep Talk",
+      "type": "normal",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:smackdown",
+      "moveId": "smackdown",
+      "moveName": "Smack Down",
+      "type": "rock",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:snatch",
+      "moveId": "snatch",
+      "moveName": "Snatch",
+      "type": "dark",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tutor:snatch",
+      "moveId": "snatch",
+      "moveName": "Snatch",
+      "type": "dark",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "legacy:snore",
+      "moveId": "snore",
+      "moveName": "Snore",
+      "type": "normal",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:substitute",
+      "moveId": "substitute",
+      "moveName": "Substitute",
+      "type": "normal",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:sunnyday",
+      "moveId": "sunnyday",
+      "moveName": "Sunny Day",
+      "type": "fire",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:superpower",
+      "moveId": "superpower",
+      "moveName": "Superpower",
+      "type": "fighting",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tutor:superpower",
+      "moveId": "superpower",
+      "moveName": "Superpower",
+      "type": "fighting",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "legacy:swagger",
+      "moveId": "swagger",
+      "moveName": "Swagger",
+      "type": "normal",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "1:tackle",
+      "moveId": "tackle",
+      "moveName": "Tackle",
+      "type": "normal",
+      "sourceType": "level",
+      "sourceValue": 1,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "25:takedown",
+      "moveId": "takedown",
+      "moveName": "Take Down",
+      "type": "normal",
+      "sourceType": "level",
+      "sourceValue": 25,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:takedown",
+      "moveId": "takedown",
+      "moveName": "Take Down",
+      "type": "normal",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:taunt",
+      "moveId": "taunt",
+      "moveName": "Taunt",
+      "type": "dark",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:terablast",
+      "moveId": "terablast",
+      "moveName": "Tera Blast",
+      "type": "normal",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:thief",
+      "moveId": "thief",
+      "moveName": "Thief",
+      "type": "dark",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "40:thrash",
+      "moveId": "thrash",
+      "moveName": "Thrash",
+      "type": "normal",
+      "sourceType": "level",
+      "sourceValue": 40,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "legacy:toxic",
+      "moveId": "toxic",
+      "moveName": "Toxic",
+      "type": "poison",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:trailblaze",
+      "moveId": "trailblaze",
+      "moveName": "Trailblaze",
+      "type": "grass",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:uturn",
+      "moveId": "uturn",
+      "moveName": "U-turn",
+      "type": "bug",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:upperhand",
+      "moveId": "upperhand",
+      "moveName": "Upper Hand",
+      "type": "fighting",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:uproar",
+      "moveId": "uproar",
+      "moveName": "Uproar",
+      "type": "normal",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tutor:uproar",
+      "moveId": "uproar",
+      "moveName": "Uproar",
+      "type": "normal",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:vacuumwave",
+      "moveId": "vacuumwave",
+      "moveName": "Vacuum Wave",
+      "type": "fighting",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tutor:vacuumwave",
+      "moveId": "vacuumwave",
+      "moveName": "Vacuum Wave",
+      "type": "fighting",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "egg:vitalthrow",
+      "moveId": "vitalthrow",
+      "moveName": "Vital Throw",
+      "type": "fighting",
+      "sourceType": "egg",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:workup",
+      "moveId": "workup",
+      "moveName": "Work Up",
+      "type": "normal",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    }
+  ],
+  "spawnEntries": [],
+  "forms": [],
+  "rawSpecies": {
+    "nationalPokedexNumber": 766,
+    "name": "Passimian",
+    "primaryType": "fighting",
+    "maleRatio": 0.5,
+    "height": 20,
+    "weight": 828,
+    "pokedex": [
+      "cobblemon.species.passimian.desc"
+    ],
+    "labels": [
+      "gen7"
+    ],
+    "aspects": [],
+    "abilities": [
+      "receiver",
+      "h:defiant"
+    ],
+    "eggGroups": [
+      "field"
+    ],
+    "baseStats": {
+      "hp": 100,
+      "attack": 120,
+      "defence": 90,
+      "special_attack": 40,
+      "special_defence": 60,
+      "speed": 80
+    },
+    "evYield": {
+      "hp": 0,
+      "attack": 2,
+      "defence": 0,
+      "special_attack": 0,
+      "special_defence": 0,
+      "speed": 0
+    },
+    "baseExperienceYield": 172,
+    "experienceGroup": "slow",
+    "catchRate": 45,
+    "eggCycles": 20,
+    "baseFriendship": 50,
+    "baseScale": 1,
+    "hitbox": {
+      "width": 1,
+      "height": 1,
+      "fixed": false
+    },
+    "drops": {
+      "amount": 2,
+      "entries": [
+        {
+          "item": "cobblemon:muscle_band",
+          "percentage": 5
+        },
+        {
+          "item": "cobblemon:payapa_berry",
+          "percentage": 5
+        }
+      ]
+    },
+    "moves": [
+      "1:tackle",
+      "1:leer",
+      "1:bestow",
+      "5:rocksmash",
+      "10:focusenergy",
+      "15:beatup",
+      "20:scaryface",
+      "25:takedown",
+      "30:fling",
+      "35:bulkup",
+      "40:thrash",
+      "45:doubleedge",
+      "50:closecombat",
+      "55:reversal",
+      "60:gigaimpact",
+      "egg:counter",
+      "egg:feint",
+      "egg:knockoff",
+      "egg:quickattack",
+      "egg:quickguard",
+      "egg:seismictoss",
+      "egg:vitalthrow",
+      "tm:acrobatics",
+      "tm:assurance",
+      "tm:batonpass",
+      "tm:beatup",
+      "tm:block",
+      "tm:bodyslam",
+      "tm:brickbreak",
+      "tm:brutalswing",
+      "tm:bulkup",
+      "tm:bulldoze",
+      "tm:chillingwater",
+      "tm:closecombat",
+      "tm:coaching",
+      "tm:curse",
+      "tm:doubleedge",
+      "tm:drainpunch",
+      "tm:earthquake",
+      "tm:electroweb",
+      "tm:endure",
+      "tm:energyball",
+      "tm:facade",
+      "tm:fling",
+      "tm:focusblast",
+      "tm:focusenergy",
+      "tm:focuspunch",
+      "tm:gigaimpact",
+      "tm:grassknot",
+      "tm:gunkshot",
+      "tm:gyroball",
+      "tm:hyperbeam",
+      "tm:ironhead",
+      "tm:irontail",
+      "tm:knockoff",
+      "tm:laserfocus",
+      "tm:lowkick",
+      "tm:lowsweep",
+      "tm:megakick",
+      "tm:megapunch",
+      "tm:painsplit",
+      "tm:payback",
+      "tm:protect",
+      "tm:raindance",
+      "tm:rest",
+      "tm:retaliate",
+      "tm:revenge",
+      "tm:reversal",
+      "tm:rockslide",
+      "tm:rocksmash",
+      "tm:rocktomb",
+      "tm:scaryface",
+      "tm:seedbomb",
+      "tm:shadowball",
+      "tm:shockwave",
+      "tm:sleeptalk",
+      "tm:smackdown",
+      "tm:snatch",
+      "tm:substitute",
+      "tm:sunnyday",
+      "tm:superpower",
+      "tm:takedown",
+      "tm:taunt",
+      "tm:terablast",
+      "tm:thief",
+      "tm:trailblaze",
+      "tm:upperhand",
+      "tm:uproar",
+      "tm:uturn",
+      "tm:vacuumwave",
+      "tm:workup",
+      "tutor:block",
+      "tutor:bulkup",
+      "tutor:bulldoze",
+      "tutor:coaching",
+      "tutor:drainpunch",
+      "tutor:electroweb",
+      "tutor:energyball",
+      "tutor:focusenergy",
+      "tutor:focuspunch",
+      "tutor:gigaimpact",
+      "tutor:gunkshot",
+      "tutor:hyperbeam",
+      "tutor:ironhead",
+      "tutor:irontail",
+      "tutor:knockoff",
+      "tutor:laserfocus",
+      "tutor:lowkick",
+      "tutor:painsplit",
+      "tutor:rest",
+      "tutor:rockslide",
+      "tutor:rocksmash",
+      "tutor:seedbomb",
+      "tutor:shadowball",
+      "tutor:shockwave",
+      "tutor:sleeptalk",
+      "tutor:snatch",
+      "tutor:superpower",
+      "tutor:uproar",
+      "tutor:vacuumwave",
+      "legacy:aerialace",
+      "legacy:attract",
+      "legacy:confide",
+      "legacy:doubleteam",
+      "legacy:endeavor",
+      "legacy:frustration",
+      "legacy:hiddenpower",
+      "legacy:return",
+      "legacy:round",
+      "legacy:snore",
+      "legacy:swagger",
+      "legacy:toxic"
+    ],
+    "evolutions": [],
+    "behaviour": {
+      "herd": {
+        "maxSize": "4",
+        "toleratedLeaders": [
+          {
+            "pokemon": "passimian",
+            "tier": 1
+          }
+        ]
+      },
+      "moving": {
+        "swim": {
+          "avoidsWater": true
+        }
+      },
+      "combat": {
+        "willDefendSelf": true,
+        "willDefendOwner": true,
+        "willFlee": false
+      },
+      "resting": {
+        "drowsyChance": 0.0333,
+        "rouseChance": 0.0042
+      }
+    }
+  }
+}

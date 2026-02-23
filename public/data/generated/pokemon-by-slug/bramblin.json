@@ -1,0 +1,1113 @@
+{
+  "slug": "bramblin",
+  "name": "Bramblin",
+  "dexNumber": 946,
+  "implemented": true,
+  "types": [
+    "grass",
+    "ghost"
+  ],
+  "abilities": [
+    {
+      "id": "windrider",
+      "hidden": false,
+      "label": "Windrider",
+      "slot": "first"
+    },
+    {
+      "id": "infiltrator",
+      "hidden": true,
+      "label": "Infiltrator",
+      "slot": "hidden"
+    }
+  ],
+  "eggGroups": [
+    "grass"
+  ],
+  "labels": [
+    "gen9"
+  ],
+  "aspects": [],
+  "aliases": [
+    "bramblin"
+  ],
+  "maleRatio": 0.5,
+  "height": 6,
+  "weight": 6,
+  "catchRate": 190,
+  "baseExperienceYield": 55,
+  "baseFriendship": 50,
+  "eggCycles": 20,
+  "baseStats": {
+    "hp": 40,
+    "attack": 65,
+    "defence": 30,
+    "special_attack": 45,
+    "special_defence": 35,
+    "speed": 60
+  },
+  "evYield": {
+    "hp": 0,
+    "attack": 1,
+    "defence": 0,
+    "special_attack": 0,
+    "special_defence": 0,
+    "speed": 0
+  },
+  "preEvolution": null,
+  "evolutions": [
+    {
+      "id": "bramblin_brambleghast",
+      "variant": "level_up",
+      "result": {
+        "raw": "brambleghast",
+        "slug": "brambleghast",
+        "aspectTokens": []
+      },
+      "consumeHeldItem": false,
+      "learnableMoves": [],
+      "requirementText": [
+        "1000 blocks traveled"
+      ],
+      "requirements": [
+        {
+          "variant": "blocks_traveled",
+          "text": "1000 blocks traveled",
+          "raw": {
+            "variant": "blocks_traveled",
+            "amount": 1000
+          }
+        }
+      ],
+      "requiredContext": null,
+      "fromForm": null,
+      "raw": {
+        "id": "bramblin_brambleghast",
+        "variant": "level_up",
+        "result": "brambleghast",
+        "consumeHeldItem": false,
+        "learnableMoves": [],
+        "requirements": [
+          {
+            "variant": "blocks_traveled",
+            "amount": 1000
+          }
+        ]
+      }
+    }
+  ],
+  "evolutionFamily": {
+    "members": [
+      {
+        "nodeId": "bramblin",
+        "slug": "bramblin",
+        "name": "Bramblin",
+        "dexNumber": 946,
+        "formSlug": null,
+        "formName": null
+      },
+      {
+        "nodeId": "brambleghast",
+        "slug": "brambleghast",
+        "name": "Brambleghast",
+        "dexNumber": 947,
+        "formSlug": null,
+        "formName": null
+      }
+    ],
+    "edges": [
+      {
+        "fromNodeId": "bramblin",
+        "toNodeId": "brambleghast",
+        "fromSlug": "bramblin",
+        "toSlug": "brambleghast",
+        "method": "level_up",
+        "requirementText": [
+          "1000 blocks traveled"
+        ]
+      }
+    ],
+    "roots": [
+      "bramblin"
+    ]
+  },
+  "moves": [
+    {
+      "raw": "5:absorb",
+      "moveId": "absorb",
+      "moveName": "Absorb",
+      "type": "grass",
+      "sourceType": "level",
+      "sourceValue": 5,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "1:astonish",
+      "moveId": "astonish",
+      "moveName": "Astonish",
+      "type": "ghost",
+      "sourceType": "level",
+      "sourceValue": 1,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "egg:beatup",
+      "moveId": "beatup",
+      "moveName": "Beat Up",
+      "type": "dark",
+      "sourceType": "egg",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:beatup",
+      "moveId": "beatup",
+      "moveName": "Beat Up",
+      "type": "dark",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "egg:block",
+      "moveId": "block",
+      "moveName": "Block",
+      "type": "normal",
+      "sourceType": "egg",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:block",
+      "moveId": "block",
+      "moveName": "Block",
+      "type": "normal",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tutor:block",
+      "moveId": "block",
+      "moveName": "Block",
+      "type": "normal",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "13:bulletseed",
+      "moveId": "bulletseed",
+      "moveName": "Bullet Seed",
+      "type": "grass",
+      "sourceType": "level",
+      "sourceValue": 13,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:bulletseed",
+      "moveId": "bulletseed",
+      "moveName": "Bullet Seed",
+      "type": "grass",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:confuseray",
+      "moveId": "confuseray",
+      "moveName": "Confuse Ray",
+      "type": "ghost",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "45:curse",
+      "moveId": "curse",
+      "moveName": "Curse",
+      "type": "ghost",
+      "sourceType": "level",
+      "sourceValue": 45,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:curse",
+      "moveId": "curse",
+      "moveName": "Curse",
+      "type": "ghost",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "1:defensecurl",
+      "moveId": "defensecurl",
+      "moveName": "Defense Curl",
+      "type": "normal",
+      "sourceType": "level",
+      "sourceValue": 1,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "29:disable",
+      "moveId": "disable",
+      "moveName": "Disable",
+      "type": "normal",
+      "sourceType": "level",
+      "sourceValue": 29,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:endure",
+      "moveId": "endure",
+      "moveName": "Endure",
+      "type": "normal",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:energyball",
+      "moveId": "energyball",
+      "moveName": "Energy Ball",
+      "type": "grass",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tutor:energyball",
+      "moveId": "energyball",
+      "moveName": "Energy Ball",
+      "type": "grass",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:facade",
+      "moveId": "facade",
+      "moveName": "Facade",
+      "type": "normal",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "40:gigadrain",
+      "moveId": "gigadrain",
+      "moveName": "Giga Drain",
+      "type": "grass",
+      "sourceType": "level",
+      "sourceValue": 40,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:gigadrain",
+      "moveId": "gigadrain",
+      "moveName": "Giga Drain",
+      "type": "grass",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tutor:gigadrain",
+      "moveId": "gigadrain",
+      "moveName": "Giga Drain",
+      "type": "grass",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:grassknot",
+      "moveId": "grassknot",
+      "moveName": "Grass Knot",
+      "type": "grass",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:grassyglide",
+      "moveId": "grassyglide",
+      "moveName": "Grassy Glide",
+      "type": "grass",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tutor:grassyglide",
+      "moveId": "grassyglide",
+      "moveName": "Grassy Glide",
+      "type": "grass",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:grassyterrain",
+      "moveId": "grassyterrain",
+      "moveName": "Grassy Terrain",
+      "type": "grass",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "21:hex",
+      "moveId": "hex",
+      "moveName": "Hex",
+      "type": "ghost",
+      "sourceType": "level",
+      "sourceValue": 21,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:hex",
+      "moveId": "hex",
+      "moveName": "Hex",
+      "type": "ghost",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "17:infestation",
+      "moveId": "infestation",
+      "moveName": "Infestation",
+      "type": "bug",
+      "sourceType": "level",
+      "sourceValue": 17,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:infestation",
+      "moveId": "infestation",
+      "moveName": "Infestation",
+      "type": "bug",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:leafstorm",
+      "moveId": "leafstorm",
+      "moveName": "Leaf Storm",
+      "type": "grass",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "egg:leechseed",
+      "moveId": "leechseed",
+      "moveName": "Leech Seed",
+      "type": "grass",
+      "sourceType": "egg",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "25:megadrain",
+      "moveId": "megadrain",
+      "moveName": "Mega Drain",
+      "type": "grass",
+      "sourceType": "level",
+      "sourceValue": 25,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:nightshade",
+      "moveId": "nightshade",
+      "moveName": "Night Shade",
+      "type": "ghost",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "50:painsplit",
+      "moveId": "painsplit",
+      "moveName": "Pain Split",
+      "type": "normal",
+      "sourceType": "level",
+      "sourceValue": 50,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:painsplit",
+      "moveId": "painsplit",
+      "moveName": "Pain Split",
+      "type": "normal",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tutor:painsplit",
+      "moveId": "painsplit",
+      "moveName": "Pain Split",
+      "type": "normal",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "35:phantomforce",
+      "moveId": "phantomforce",
+      "moveName": "Phantom Force",
+      "type": "ghost",
+      "sourceType": "level",
+      "sourceValue": 35,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:phantomforce",
+      "moveId": "phantomforce",
+      "moveName": "Phantom Force",
+      "type": "ghost",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:poltergeist",
+      "moveId": "poltergeist",
+      "moveName": "Poltergeist",
+      "type": "ghost",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tutor:poltergeist",
+      "moveId": "poltergeist",
+      "moveName": "Poltergeist",
+      "type": "ghost",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:pounce",
+      "moveId": "pounce",
+      "moveName": "Pounce",
+      "type": "bug",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "55:powerwhip",
+      "moveId": "powerwhip",
+      "moveName": "Power Whip",
+      "type": "grass",
+      "sourceType": "level",
+      "sourceValue": 55,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:powerwhip",
+      "moveId": "powerwhip",
+      "moveName": "Power Whip",
+      "type": "grass",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:protect",
+      "moveId": "protect",
+      "moveName": "Protect",
+      "type": "normal",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "9:rapidspin",
+      "moveId": "rapidspin",
+      "moveName": "Rapid Spin",
+      "type": "normal",
+      "sourceType": "level",
+      "sourceValue": 9,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:rest",
+      "moveId": "rest",
+      "moveName": "Rest",
+      "type": "psychic",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tutor:rest",
+      "moveId": "rest",
+      "moveName": "Rest",
+      "type": "psychic",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "1:rollout",
+      "moveId": "rollout",
+      "moveName": "Rollout",
+      "type": "rock",
+      "sourceType": "level",
+      "sourceValue": 1,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:rollout",
+      "moveId": "rollout",
+      "moveName": "Rollout",
+      "type": "rock",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tutor:rollout",
+      "moveId": "rollout",
+      "moveName": "Rollout",
+      "type": "rock",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:scaryface",
+      "moveId": "scaryface",
+      "moveName": "Scary Face",
+      "type": "normal",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:seedbomb",
+      "moveId": "seedbomb",
+      "moveName": "Seed Bomb",
+      "type": "grass",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tutor:seedbomb",
+      "moveId": "seedbomb",
+      "moveName": "Seed Bomb",
+      "type": "grass",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:shadowball",
+      "moveId": "shadowball",
+      "moveName": "Shadow Ball",
+      "type": "ghost",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tutor:shadowball",
+      "moveId": "shadowball",
+      "moveName": "Shadow Ball",
+      "type": "ghost",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "egg:shadowsneak",
+      "moveId": "shadowsneak",
+      "moveName": "Shadow Sneak",
+      "type": "ghost",
+      "sourceType": "egg",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:sleeptalk",
+      "moveId": "sleeptalk",
+      "moveName": "Sleep Talk",
+      "type": "normal",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tutor:sleeptalk",
+      "moveId": "sleeptalk",
+      "moveName": "Sleep Talk",
+      "type": "normal",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:solarbeam",
+      "moveId": "solarbeam",
+      "moveName": "Solar Beam",
+      "type": "grass",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:spikes",
+      "moveId": "spikes",
+      "moveName": "Spikes",
+      "type": "ground",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tutor:spikes",
+      "moveId": "spikes",
+      "moveName": "Spikes",
+      "type": "ground",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:spite",
+      "moveId": "spite",
+      "moveName": "Spite",
+      "type": "ghost",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tutor:spite",
+      "moveId": "spite",
+      "moveName": "Spite",
+      "type": "ghost",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "egg:strengthsap",
+      "moveId": "strengthsap",
+      "moveName": "Strength Sap",
+      "type": "grass",
+      "sourceType": "egg",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:substitute",
+      "moveId": "substitute",
+      "moveName": "Substitute",
+      "type": "normal",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:terablast",
+      "moveId": "terablast",
+      "moveName": "Tera Blast",
+      "type": "normal",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:thief",
+      "moveId": "thief",
+      "moveName": "Thief",
+      "type": "dark",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:trailblaze",
+      "moveId": "trailblaze",
+      "moveName": "Trailblaze",
+      "type": "grass",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    }
+  ],
+  "spawnEntries": [
+    {
+      "id": "bramblin-1",
+      "sourceFile": "0946_bramblin.json",
+      "pokemon": {
+        "raw": "bramblin",
+        "slug": "bramblin",
+        "aspectTokens": []
+      },
+      "type": "pokemon",
+      "spawnablePositionType": "grounded",
+      "bucket": "common",
+      "bucketWeight": 94.3,
+      "levelText": "3-28",
+      "levelMin": 3,
+      "levelMax": 28,
+      "weight": 9,
+      "presets": [
+        "natural"
+      ],
+      "biomeHints": [
+        "Is Badlands",
+        "Is Desert",
+        "Soul Sand Valley",
+        "Gravel Desert"
+      ],
+      "condition": {
+        "neededBaseBlocks": [
+          "#cobblemon:natural"
+        ],
+        "minSkyLight": 8,
+        "maxSkyLight": 15,
+        "biomes": [
+          "#cobblemon:is_badlands",
+          "#cobblemon:is_desert"
+        ]
+      },
+      "anticondition": {
+        "neededBaseBlocks": [
+          "minecraft:farmland"
+        ]
+      },
+      "weightMultipliers": [
+        {
+          "multiplier": 1.5,
+          "condition": {
+            "timeRange": "night"
+          }
+        }
+      ],
+      "raw": {
+        "id": "bramblin-1",
+        "pokemon": "bramblin",
+        "presets": [
+          "natural"
+        ],
+        "type": "pokemon",
+        "spawnablePositionType": "grounded",
+        "bucket": "common",
+        "level": "3-28",
+        "weight": 9,
+        "weightMultiplier": {
+          "multiplier": 1.5,
+          "condition": {
+            "timeRange": "night"
+          }
+        },
+        "condition": {
+          "minSkyLight": 8,
+          "maxSkyLight": 15,
+          "biomes": [
+            "#cobblemon:is_badlands",
+            "#cobblemon:is_desert"
+          ]
+        }
+      }
+    },
+    {
+      "id": "bramblin-2",
+      "sourceFile": "0946_bramblin.json",
+      "pokemon": {
+        "raw": "bramblin",
+        "slug": "bramblin",
+        "aspectTokens": []
+      },
+      "type": "pokemon",
+      "spawnablePositionType": "grounded",
+      "bucket": "common",
+      "bucketWeight": 94.3,
+      "levelText": "3-28",
+      "levelMin": 3,
+      "levelMax": 28,
+      "weight": 9,
+      "presets": [
+        "natural"
+      ],
+      "biomeHints": [
+        "Nether/is Desert"
+      ],
+      "condition": {
+        "neededBaseBlocks": [
+          "#cobblemon:natural"
+        ],
+        "biomes": [
+          "#cobblemon:nether/is_desert"
+        ]
+      },
+      "anticondition": {
+        "neededBaseBlocks": [
+          "minecraft:farmland"
+        ]
+      },
+      "weightMultipliers": [],
+      "raw": {
+        "id": "bramblin-2",
+        "pokemon": "bramblin",
+        "presets": [
+          "natural"
+        ],
+        "type": "pokemon",
+        "spawnablePositionType": "grounded",
+        "bucket": "common",
+        "level": "3-28",
+        "weight": 9,
+        "condition": {
+          "biomes": [
+            "#cobblemon:nether/is_desert"
+          ]
+        }
+      }
+    }
+  ],
+  "forms": [],
+  "rawSpecies": {
+    "implemented": true,
+    "nationalPokedexNumber": 946,
+    "name": "Bramblin",
+    "primaryType": "grass",
+    "secondaryType": "ghost",
+    "maleRatio": 0.5,
+    "height": 6,
+    "weight": 6,
+    "pokedex": [
+      "cobblemon.species.bramblin.desc"
+    ],
+    "labels": [
+      "gen9"
+    ],
+    "aspects": [],
+    "abilities": [
+      "windrider",
+      "h:infiltrator"
+    ],
+    "eggGroups": [
+      "grass"
+    ],
+    "baseStats": {
+      "hp": 40,
+      "attack": 65,
+      "defence": 30,
+      "special_attack": 45,
+      "special_defence": 35,
+      "speed": 60
+    },
+    "evYield": {
+      "hp": 0,
+      "attack": 1,
+      "defence": 0,
+      "special_attack": 0,
+      "special_defence": 0,
+      "speed": 0
+    },
+    "baseExperienceYield": 55,
+    "experienceGroup": "medium_fast",
+    "catchRate": 190,
+    "eggCycles": 20,
+    "baseFriendship": 50,
+    "drops": {
+      "amount": 3,
+      "entries": [
+        {
+          "item": "minecraft:dead_bush",
+          "quantityRange": "0-1"
+        },
+        {
+          "item": "minecraft:stick",
+          "quantityRange": "0-1"
+        },
+        {
+          "item": "cobblemon:kasib_berry",
+          "percentage": 2.5
+        }
+      ]
+    },
+    "moves": [
+      "1:defensecurl",
+      "1:rollout",
+      "1:astonish",
+      "5:absorb",
+      "9:rapidspin",
+      "13:bulletseed",
+      "17:infestation",
+      "21:hex",
+      "25:megadrain",
+      "29:disable",
+      "35:phantomforce",
+      "40:gigadrain",
+      "45:curse",
+      "50:painsplit",
+      "55:powerwhip",
+      "egg:beatup",
+      "egg:block",
+      "egg:leechseed",
+      "egg:shadowsneak",
+      "egg:strengthsap",
+      "tm:beatup",
+      "tm:block",
+      "tm:bulletseed",
+      "tm:confuseray",
+      "tm:curse",
+      "tm:endure",
+      "tm:energyball",
+      "tm:facade",
+      "tm:gigadrain",
+      "tm:grassknot",
+      "tm:grassyglide",
+      "tm:grassyterrain",
+      "tm:hex",
+      "tm:infestation",
+      "tm:leafstorm",
+      "tm:nightshade",
+      "tm:painsplit",
+      "tm:phantomforce",
+      "tm:poltergeist",
+      "tm:pounce",
+      "tm:powerwhip",
+      "tm:protect",
+      "tm:rest",
+      "tm:rollout",
+      "tm:scaryface",
+      "tm:seedbomb",
+      "tm:shadowball",
+      "tm:sleeptalk",
+      "tm:solarbeam",
+      "tm:spikes",
+      "tm:spite",
+      "tm:substitute",
+      "tm:terablast",
+      "tm:thief",
+      "tm:trailblaze",
+      "tutor:block",
+      "tutor:energyball",
+      "tutor:gigadrain",
+      "tutor:grassyglide",
+      "tutor:painsplit",
+      "tutor:poltergeist",
+      "tutor:rest",
+      "tutor:rollout",
+      "tutor:seedbomb",
+      "tutor:shadowball",
+      "tutor:sleeptalk",
+      "tutor:spikes",
+      "tutor:spite"
+    ],
+    "evolutions": [
+      {
+        "id": "bramblin_brambleghast",
+        "variant": "level_up",
+        "result": "brambleghast",
+        "consumeHeldItem": false,
+        "learnableMoves": [],
+        "requirements": [
+          {
+            "variant": "blocks_traveled",
+            "amount": 1000
+          }
+        ]
+      }
+    ],
+    "behaviour": {
+      "moving": {
+        "swim": {
+          "avoidsWater": true
+        }
+      },
+      "combat": {
+        "willDefendOwner": true
+      },
+      "resting": {
+        "times": [
+          "any"
+        ],
+        "drowsyChance": 0.0014,
+        "rouseChance": 0.0042
+      }
+    }
+  }
+}

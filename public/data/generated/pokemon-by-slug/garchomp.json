@@ -1,0 +1,2486 @@
+{
+  "slug": "garchomp",
+  "name": "Garchomp",
+  "dexNumber": 445,
+  "implemented": true,
+  "types": [
+    "dragon",
+    "ground"
+  ],
+  "abilities": [
+    {
+      "id": "sandveil",
+      "hidden": false,
+      "label": "Sandveil",
+      "slot": "first"
+    },
+    {
+      "id": "roughskin",
+      "hidden": true,
+      "label": "Roughskin",
+      "slot": "hidden"
+    }
+  ],
+  "eggGroups": [
+    "monster",
+    "dragon"
+  ],
+  "labels": [
+    "gen4",
+    "powerhouse"
+  ],
+  "aspects": [],
+  "aliases": [
+    "garchomp",
+    "garchomp mega",
+    "mega"
+  ],
+  "maleRatio": 0.5,
+  "height": 19,
+  "weight": 950,
+  "catchRate": 45,
+  "baseExperienceYield": 300,
+  "baseFriendship": 50,
+  "eggCycles": 40,
+  "baseStats": {
+    "hp": 108,
+    "attack": 130,
+    "defence": 95,
+    "special_attack": 80,
+    "special_defence": 85,
+    "speed": 102
+  },
+  "evYield": {
+    "hp": 0,
+    "attack": 3,
+    "defence": 0,
+    "special_attack": 0,
+    "special_defence": 0,
+    "speed": 0
+  },
+  "preEvolution": {
+    "raw": "gabite",
+    "slug": "gabite",
+    "aspectTokens": []
+  },
+  "evolutions": [],
+  "evolutionFamily": {
+    "members": [
+      {
+        "nodeId": "gible",
+        "slug": "gible",
+        "name": "Gible",
+        "dexNumber": 443,
+        "formSlug": null,
+        "formName": null
+      },
+      {
+        "nodeId": "gabite",
+        "slug": "gabite",
+        "name": "Gabite",
+        "dexNumber": 444,
+        "formSlug": null,
+        "formName": null
+      },
+      {
+        "nodeId": "garchomp",
+        "slug": "garchomp",
+        "name": "Garchomp",
+        "dexNumber": 445,
+        "formSlug": null,
+        "formName": null
+      }
+    ],
+    "edges": [
+      {
+        "fromNodeId": "gabite",
+        "toNodeId": "garchomp",
+        "fromSlug": "gabite",
+        "toSlug": "garchomp",
+        "method": "level_up",
+        "requirementText": [
+          "Level 48+"
+        ]
+      },
+      {
+        "fromNodeId": "gible",
+        "toNodeId": "gabite",
+        "fromSlug": "gible",
+        "toSlug": "gabite",
+        "method": "level_up",
+        "requirementText": [
+          "Level 24+"
+        ]
+      }
+    ],
+    "roots": [
+      "gible"
+    ]
+  },
+  "moves": [
+    {
+      "raw": "tm:aerialace",
+      "moveId": "aerialace",
+      "moveName": "Aerial Ace",
+      "type": "flying",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:aquatail",
+      "moveId": "aquatail",
+      "moveName": "Aqua Tail",
+      "type": "water",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tutor:aquatail",
+      "moveId": "aquatail",
+      "moveName": "Aqua Tail",
+      "type": "water",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "legacy:attract",
+      "moveId": "attract",
+      "moveName": "Attract",
+      "type": "normal",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "27:bite",
+      "moveId": "bite",
+      "moveName": "Bite",
+      "type": "dark",
+      "sourceType": "level",
+      "sourceValue": 27,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:bodyslam",
+      "moveId": "bodyslam",
+      "moveName": "Body Slam",
+      "type": "normal",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:breakingswipe",
+      "moveId": "breakingswipe",
+      "moveName": "Breaking Swipe",
+      "type": "dragon",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:brickbreak",
+      "moveId": "brickbreak",
+      "moveName": "Brick Break",
+      "type": "fighting",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:brutalswing",
+      "moveId": "brutalswing",
+      "moveName": "Brutal Swing",
+      "type": "dark",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "18:bulldoze",
+      "moveId": "bulldoze",
+      "moveName": "Bulldoze",
+      "type": "ground",
+      "sourceType": "level",
+      "sourceValue": 18,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:bulldoze",
+      "moveId": "bulldoze",
+      "moveName": "Bulldoze",
+      "type": "ground",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tutor:bulldoze",
+      "moveId": "bulldoze",
+      "moveName": "Bulldoze",
+      "type": "ground",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "legacy:captivate",
+      "moveId": "captivate",
+      "moveName": "Captivate",
+      "type": "normal",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "legacy:confide",
+      "moveId": "confide",
+      "moveName": "Confide",
+      "type": "normal",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "1:crunch",
+      "moveId": "crunch",
+      "moveName": "Crunch",
+      "type": "dark",
+      "sourceType": "level",
+      "sourceValue": 1,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:crunch",
+      "moveId": "crunch",
+      "moveName": "Crunch",
+      "type": "dark",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:cut",
+      "moveId": "cut",
+      "moveName": "Cut",
+      "type": "normal",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "52:dig",
+      "moveId": "dig",
+      "moveName": "Dig",
+      "type": "ground",
+      "sourceType": "level",
+      "sourceValue": 52,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:dig",
+      "moveId": "dig",
+      "moveName": "Dig",
+      "type": "ground",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "legacy:doubleteam",
+      "moveId": "doubleteam",
+      "moveName": "Double Team",
+      "type": "normal",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "egg:doubleedge",
+      "moveId": "doubleedge",
+      "moveName": "Double-Edge",
+      "type": "normal",
+      "sourceType": "egg",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:doubleedge",
+      "moveId": "doubleedge",
+      "moveName": "Double-Edge",
+      "type": "normal",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:dracometeor",
+      "moveId": "dracometeor",
+      "moveName": "Draco Meteor",
+      "type": "dragon",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tutor:dracometeor",
+      "moveId": "dracometeor",
+      "moveName": "Draco Meteor",
+      "type": "dragon",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "1:dragonbreath",
+      "moveId": "dragonbreath",
+      "moveName": "Dragon Breath",
+      "type": "dragon",
+      "sourceType": "level",
+      "sourceValue": 1,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:dragoncheer",
+      "moveId": "dragoncheer",
+      "moveName": "Dragon Cheer",
+      "type": "dragon",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "42:dragonclaw",
+      "moveId": "dragonclaw",
+      "moveName": "Dragon Claw",
+      "type": "dragon",
+      "sourceType": "level",
+      "sourceValue": 42,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:dragonclaw",
+      "moveId": "dragonclaw",
+      "moveName": "Dragon Claw",
+      "type": "dragon",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:dragonpulse",
+      "moveId": "dragonpulse",
+      "moveName": "Dragon Pulse",
+      "type": "dragon",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tutor:dragonpulse",
+      "moveId": "dragonpulse",
+      "moveName": "Dragon Pulse",
+      "type": "dragon",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "1:dragonrage",
+      "moveId": "dragonrage",
+      "moveName": "Dragon Rage",
+      "type": "dragon",
+      "sourceType": "level",
+      "sourceValue": 1,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "82:dragonrush",
+      "moveId": "dragonrush",
+      "moveName": "Dragon Rush",
+      "type": "dragon",
+      "sourceType": "level",
+      "sourceValue": 82,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:dragontail",
+      "moveId": "dragontail",
+      "moveName": "Dragon Tail",
+      "type": "dragon",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "1:dualchop",
+      "moveId": "dualchop",
+      "moveName": "Dual Chop",
+      "type": "dragon",
+      "sourceType": "level",
+      "sourceValue": 1,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:dualchop",
+      "moveId": "dualchop",
+      "moveName": "Dual Chop",
+      "type": "dragon",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tutor:dualchop",
+      "moveId": "dualchop",
+      "moveName": "Dual Chop",
+      "type": "dragon",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:earthpower",
+      "moveId": "earthpower",
+      "moveName": "Earth Power",
+      "type": "ground",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tutor:earthpower",
+      "moveId": "earthpower",
+      "moveName": "Earth Power",
+      "type": "ground",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:earthquake",
+      "moveId": "earthquake",
+      "moveName": "Earthquake",
+      "type": "ground",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:endure",
+      "moveId": "endure",
+      "moveName": "Endure",
+      "type": "normal",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:facade",
+      "moveId": "facade",
+      "moveName": "Facade",
+      "type": "normal",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:falseswipe",
+      "moveId": "falseswipe",
+      "moveName": "False Swipe",
+      "type": "normal",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tutor:falseswipe",
+      "moveId": "falseswipe",
+      "moveName": "False Swipe",
+      "type": "normal",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:fireblast",
+      "moveId": "fireblast",
+      "moveName": "Fire Blast",
+      "type": "fire",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:firefang",
+      "moveId": "firefang",
+      "moveName": "Fire Fang",
+      "type": "fire",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tutor:firefang",
+      "moveId": "firefang",
+      "moveName": "Fire Fang",
+      "type": "fire",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:flamethrower",
+      "moveId": "flamethrower",
+      "moveName": "Flamethrower",
+      "type": "fire",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tutor:flamethrower",
+      "moveId": "flamethrower",
+      "moveName": "Flamethrower",
+      "type": "fire",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:fling",
+      "moveId": "fling",
+      "moveName": "Fling",
+      "type": "dark",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "legacy:frustration",
+      "moveId": "frustration",
+      "moveName": "Frustration",
+      "type": "normal",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:furycutter",
+      "moveId": "furycutter",
+      "moveName": "Fury Cutter",
+      "type": "bug",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tutor:furycutter",
+      "moveId": "furycutter",
+      "moveName": "Fury Cutter",
+      "type": "bug",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:gigaimpact",
+      "moveId": "gigaimpact",
+      "moveName": "Giga Impact",
+      "type": "normal",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tutor:gigaimpact",
+      "moveId": "gigaimpact",
+      "moveName": "Giga Impact",
+      "type": "normal",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:headbutt",
+      "moveId": "headbutt",
+      "moveName": "Headbutt",
+      "type": "normal",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:helpinghand",
+      "moveId": "helpinghand",
+      "moveName": "Helping Hand",
+      "type": "normal",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tutor:helpinghand",
+      "moveId": "helpinghand",
+      "moveName": "Helping Hand",
+      "type": "normal",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "legacy:hiddenpower",
+      "moveId": "hiddenpower",
+      "moveName": "Hidden Power",
+      "type": "normal",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:honeclaws",
+      "moveId": "honeclaws",
+      "moveName": "Hone Claws",
+      "type": "dark",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:hyperbeam",
+      "moveId": "hyperbeam",
+      "moveName": "Hyper Beam",
+      "type": "normal",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tutor:hyperbeam",
+      "moveId": "hyperbeam",
+      "moveName": "Hyper Beam",
+      "type": "normal",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:incinerate",
+      "moveId": "incinerate",
+      "moveName": "Incinerate",
+      "type": "fire",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:ironhead",
+      "moveId": "ironhead",
+      "moveName": "Iron Head",
+      "type": "steel",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tutor:ironhead",
+      "moveId": "ironhead",
+      "moveName": "Iron Head",
+      "type": "steel",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:irontail",
+      "moveId": "irontail",
+      "moveName": "Iron Tail",
+      "type": "steel",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tutor:irontail",
+      "moveId": "irontail",
+      "moveName": "Iron Tail",
+      "type": "steel",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:laserfocus",
+      "moveId": "laserfocus",
+      "moveName": "Laser Focus",
+      "type": "normal",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tutor:laserfocus",
+      "moveId": "laserfocus",
+      "moveName": "Laser Focus",
+      "type": "normal",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:liquidation",
+      "moveId": "liquidation",
+      "moveName": "Liquidation",
+      "type": "water",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tutor:liquidation",
+      "moveId": "liquidation",
+      "moveName": "Liquidation",
+      "type": "water",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "egg:metalclaw",
+      "moveId": "metalclaw",
+      "moveName": "Metal Claw",
+      "type": "steel",
+      "sourceType": "egg",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:metalclaw",
+      "moveId": "metalclaw",
+      "moveName": "Metal Claw",
+      "type": "steel",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:mudshot",
+      "moveId": "mudshot",
+      "moveName": "Mud Shot",
+      "type": "ground",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "legacy:mudslap",
+      "moveId": "mudslap",
+      "moveName": "Mud-Slap",
+      "type": "ground",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "legacy:naturalgift",
+      "moveId": "naturalgift",
+      "moveName": "Natural Gift",
+      "type": "normal",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:outrage",
+      "moveId": "outrage",
+      "moveName": "Outrage",
+      "type": "dragon",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tutor:outrage",
+      "moveId": "outrage",
+      "moveName": "Outrage",
+      "type": "dragon",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:poisonjab",
+      "moveId": "poisonjab",
+      "moveName": "Poison Jab",
+      "type": "poison",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tutor:poisonjab",
+      "moveId": "poisonjab",
+      "moveName": "Poison Jab",
+      "type": "poison",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:powergem",
+      "moveId": "powergem",
+      "moveName": "Power Gem",
+      "type": "rock",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:protect",
+      "moveId": "protect",
+      "moveName": "Protect",
+      "type": "normal",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:raindance",
+      "moveId": "raindance",
+      "moveName": "Rain Dance",
+      "type": "water",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:rest",
+      "moveId": "rest",
+      "moveName": "Rest",
+      "type": "psychic",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tutor:rest",
+      "moveId": "rest",
+      "moveName": "Rest",
+      "type": "psychic",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "legacy:return",
+      "moveId": "return",
+      "moveName": "Return",
+      "type": "normal",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "legacy:roar",
+      "moveId": "roar",
+      "moveName": "Roar",
+      "type": "normal",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:rockclimb",
+      "moveId": "rockclimb",
+      "moveName": "Rock Climb",
+      "type": "normal",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:rockslide",
+      "moveId": "rockslide",
+      "moveName": "Rock Slide",
+      "type": "rock",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tutor:rockslide",
+      "moveId": "rockslide",
+      "moveName": "Rock Slide",
+      "type": "rock",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:rocksmash",
+      "moveId": "rocksmash",
+      "moveName": "Rock Smash",
+      "type": "fighting",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tutor:rocksmash",
+      "moveId": "rocksmash",
+      "moveName": "Rock Smash",
+      "type": "fighting",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:rocktomb",
+      "moveId": "rocktomb",
+      "moveName": "Rock Tomb",
+      "type": "rock",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "legacy:round",
+      "moveId": "round",
+      "moveName": "Round",
+      "type": "normal",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "1:sandattack",
+      "moveId": "sandattack",
+      "moveName": "Sand Attack",
+      "type": "ground",
+      "sourceType": "level",
+      "sourceValue": 1,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "1:sandtomb",
+      "moveId": "sandtomb",
+      "moveName": "Sand Tomb",
+      "type": "ground",
+      "sourceType": "level",
+      "sourceValue": 1,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:sandtomb",
+      "moveId": "sandtomb",
+      "moveName": "Sand Tomb",
+      "type": "ground",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "62:sandstorm",
+      "moveId": "sandstorm",
+      "moveName": "Sandstorm",
+      "type": "rock",
+      "sourceType": "level",
+      "sourceValue": 62,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:sandstorm",
+      "moveId": "sandstorm",
+      "moveName": "Sandstorm",
+      "type": "rock",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:scaleshot",
+      "moveId": "scaleshot",
+      "moveName": "Scale Shot",
+      "type": "dragon",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tutor:scaleshot",
+      "moveId": "scaleshot",
+      "moveName": "Scale Shot",
+      "type": "dragon",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:scaryface",
+      "moveId": "scaryface",
+      "moveName": "Scary Face",
+      "type": "normal",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:scorchingsands",
+      "moveId": "scorchingsands",
+      "moveName": "Scorching Sands",
+      "type": "ground",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tutor:scorchingsands",
+      "moveId": "scorchingsands",
+      "moveName": "Scorching Sands",
+      "type": "ground",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "legacy:secretpower",
+      "moveId": "secretpower",
+      "moveName": "Secret Power",
+      "type": "normal",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:shadowclaw",
+      "moveId": "shadowclaw",
+      "moveName": "Shadow Claw",
+      "type": "ghost",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tutor:shadowclaw",
+      "moveId": "shadowclaw",
+      "moveName": "Shadow Claw",
+      "type": "ghost",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "34:slash",
+      "moveId": "slash",
+      "moveName": "Slash",
+      "type": "normal",
+      "sourceType": "level",
+      "sourceValue": 34,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:sleeptalk",
+      "moveId": "sleeptalk",
+      "moveName": "Sleep Talk",
+      "type": "normal",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tutor:sleeptalk",
+      "moveId": "sleeptalk",
+      "moveName": "Sleep Talk",
+      "type": "normal",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "legacy:snore",
+      "moveId": "snore",
+      "moveName": "Snore",
+      "type": "normal",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:spikes",
+      "moveId": "spikes",
+      "moveName": "Spikes",
+      "type": "ground",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tutor:spikes",
+      "moveId": "spikes",
+      "moveName": "Spikes",
+      "type": "ground",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:stealthrock",
+      "moveId": "stealthrock",
+      "moveName": "Stealth Rock",
+      "type": "rock",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tutor:stealthrock",
+      "moveId": "stealthrock",
+      "moveName": "Stealth Rock",
+      "type": "rock",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:stompingtantrum",
+      "moveId": "stompingtantrum",
+      "moveName": "Stomping Tantrum",
+      "type": "ground",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tutor:stompingtantrum",
+      "moveId": "stompingtantrum",
+      "moveName": "Stomping Tantrum",
+      "type": "ground",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:stoneedge",
+      "moveId": "stoneedge",
+      "moveName": "Stone Edge",
+      "type": "rock",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tutor:stoneedge",
+      "moveId": "stoneedge",
+      "moveName": "Stone Edge",
+      "type": "rock",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:strength",
+      "moveId": "strength",
+      "moveName": "Strength",
+      "type": "normal",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:substitute",
+      "moveId": "substitute",
+      "moveName": "Substitute",
+      "type": "normal",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:sunnyday",
+      "moveId": "sunnyday",
+      "moveName": "Sunny Day",
+      "type": "fire",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:surf",
+      "moveId": "surf",
+      "moveName": "Surf",
+      "type": "water",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "legacy:swagger",
+      "moveId": "swagger",
+      "moveName": "Swagger",
+      "type": "normal",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:swift",
+      "moveId": "swift",
+      "moveName": "Swift",
+      "type": "normal",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tutor:swift",
+      "moveId": "swift",
+      "moveName": "Swift",
+      "type": "normal",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:swordsdance",
+      "moveId": "swordsdance",
+      "moveName": "Swords Dance",
+      "type": "normal",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "1:tackle",
+      "moveId": "tackle",
+      "moveName": "Tackle",
+      "type": "normal",
+      "sourceType": "level",
+      "sourceValue": 1,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "72:takedown",
+      "moveId": "takedown",
+      "moveName": "Take Down",
+      "type": "normal",
+      "sourceType": "level",
+      "sourceValue": 72,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:takedown",
+      "moveId": "takedown",
+      "moveName": "Take Down",
+      "type": "normal",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:terablast",
+      "moveId": "terablast",
+      "moveName": "Tera Blast",
+      "type": "normal",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "egg:thrash",
+      "moveId": "thrash",
+      "moveName": "Thrash",
+      "type": "normal",
+      "sourceType": "egg",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:thunderfang",
+      "moveId": "thunderfang",
+      "moveName": "Thunder Fang",
+      "type": "electric",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tutor:thunderfang",
+      "moveId": "thunderfang",
+      "moveName": "Thunder Fang",
+      "type": "electric",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "legacy:toxic",
+      "moveId": "toxic",
+      "moveName": "Toxic",
+      "type": "poison",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "egg:twister",
+      "moveId": "twister",
+      "moveName": "Twister",
+      "type": "dragon",
+      "sourceType": "egg",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:twister",
+      "moveId": "twister",
+      "moveName": "Twister",
+      "type": "dragon",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tutor:twister",
+      "moveId": "twister",
+      "moveName": "Twister",
+      "type": "dragon",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "legacy:whirlpool",
+      "moveId": "whirlpool",
+      "moveName": "Whirlpool",
+      "type": "water",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    }
+  ],
+  "spawnEntries": [
+    {
+      "id": "garchomp-1",
+      "sourceFile": "0445_garchomp.json",
+      "pokemon": {
+        "raw": "garchomp",
+        "slug": "garchomp",
+        "aspectTokens": []
+      },
+      "type": "pokemon",
+      "spawnablePositionType": "grounded",
+      "bucket": "rare",
+      "bucketWeight": 0.5,
+      "levelText": "48-60",
+      "levelMin": 48,
+      "levelMax": 60,
+      "weight": 0.25,
+      "presets": [
+        "natural"
+      ],
+      "biomeHints": [
+        "Is Badlands",
+        "Is Mountain",
+        "Is Hills"
+      ],
+      "condition": {
+        "neededBaseBlocks": [
+          "#cobblemon:natural"
+        ],
+        "minSkyLight": 0,
+        "maxSkyLight": 7,
+        "biomes": [
+          "#cobblemon:is_badlands",
+          "#cobblemon:is_mountain"
+        ],
+        "minY": 0
+      },
+      "anticondition": {
+        "neededBaseBlocks": [
+          "minecraft:farmland"
+        ]
+      },
+      "weightMultipliers": [],
+      "raw": {
+        "id": "garchomp-1",
+        "pokemon": "garchomp",
+        "presets": [
+          "natural"
+        ],
+        "type": "pokemon",
+        "spawnablePositionType": "grounded",
+        "bucket": "rare",
+        "level": "48-60",
+        "weight": 0.25,
+        "condition": {
+          "minSkyLight": 0,
+          "maxSkyLight": 7,
+          "biomes": [
+            "#cobblemon:is_badlands",
+            "#cobblemon:is_mountain"
+          ],
+          "minY": 0
+        }
+      }
+    },
+    {
+      "id": "garchomp-2",
+      "sourceFile": "0445_garchomp.json",
+      "pokemon": {
+        "raw": "garchomp",
+        "slug": "garchomp",
+        "aspectTokens": []
+      },
+      "type": "pokemon",
+      "spawnablePositionType": "grounded",
+      "bucket": "ultra-rare",
+      "bucketWeight": 0.2,
+      "levelText": "48-60",
+      "levelMin": 48,
+      "levelMax": 60,
+      "weight": 0.4,
+      "presets": [
+        "natural",
+        "wild"
+      ],
+      "biomeHints": [
+        "Is Badlands",
+        "Is Mountain",
+        "Is Hills"
+      ],
+      "condition": {
+        "neededBaseBlocks": [
+          "#cobblemon:natural"
+        ],
+        "minSkyLight": 8,
+        "maxSkyLight": 15,
+        "biomes": [
+          "#cobblemon:is_badlands",
+          "#cobblemon:is_mountain"
+        ]
+      },
+      "anticondition": {
+        "neededBaseBlocks": [
+          "minecraft:farmland"
+        ],
+        "structures": [
+          "#minecraft:village"
+        ],
+        "neededNearbyBlocks": [
+          "#cobblemon:concrete_blocks"
+        ]
+      },
+      "weightMultipliers": [],
+      "raw": {
+        "id": "garchomp-2",
+        "pokemon": "garchomp",
+        "presets": [
+          "natural",
+          "wild"
+        ],
+        "type": "pokemon",
+        "spawnablePositionType": "grounded",
+        "bucket": "ultra-rare",
+        "level": "48-60",
+        "weight": 0.4,
+        "condition": {
+          "minSkyLight": 8,
+          "maxSkyLight": 15,
+          "biomes": [
+            "#cobblemon:is_badlands",
+            "#cobblemon:is_mountain"
+          ]
+        }
+      }
+    },
+    {
+      "id": "garchomp-3",
+      "sourceFile": "0445_garchomp.json",
+      "pokemon": {
+        "raw": "garchomp",
+        "slug": "garchomp",
+        "aspectTokens": []
+      },
+      "type": "pokemon",
+      "spawnablePositionType": "grounded",
+      "bucket": "ultra-rare",
+      "bucketWeight": 0.2,
+      "levelText": "48-60",
+      "levelMin": 48,
+      "levelMax": 60,
+      "weight": 0.4,
+      "presets": [
+        "natural"
+      ],
+      "biomeHints": [
+        "Is Overworld"
+      ],
+      "condition": {
+        "neededBaseBlocks": [
+          "#cobblemon:natural"
+        ],
+        "minSkyLight": 0,
+        "maxSkyLight": 7,
+        "biomes": [
+          "#cobblemon:is_overworld"
+        ],
+        "minY": 0
+      },
+      "anticondition": {
+        "neededBaseBlocks": [
+          "minecraft:farmland"
+        ],
+        "neededNearbyBlocks": [
+          "minecraft:magma_block"
+        ],
+        "biomes": [
+          "#cobblemon:is_badlands",
+          "#cobblemon:is_deep_dark",
+          "#cobblemon:is_mountain",
+          "#cobblemon:is_thermal"
+        ]
+      },
+      "weightMultipliers": [],
+      "raw": {
+        "id": "garchomp-3",
+        "pokemon": "garchomp",
+        "presets": [
+          "natural"
+        ],
+        "type": "pokemon",
+        "spawnablePositionType": "grounded",
+        "bucket": "ultra-rare",
+        "level": "48-60",
+        "weight": 0.4,
+        "condition": {
+          "minSkyLight": 0,
+          "maxSkyLight": 7,
+          "biomes": [
+            "#cobblemon:is_overworld"
+          ],
+          "minY": 0
+        },
+        "anticondition": {
+          "neededNearbyBlocks": [
+            "minecraft:magma_block"
+          ],
+          "biomes": [
+            "#cobblemon:is_badlands",
+            "#cobblemon:is_deep_dark",
+            "#cobblemon:is_mountain",
+            "#cobblemon:is_thermal"
+          ]
+        }
+      }
+    },
+    {
+      "id": "garchomp-4",
+      "sourceFile": "0445_garchomp.json",
+      "pokemon": {
+        "raw": "garchomp",
+        "slug": "garchomp",
+        "aspectTokens": []
+      },
+      "type": "pokemon",
+      "spawnablePositionType": "grounded",
+      "bucket": "rare",
+      "bucketWeight": 0.5,
+      "levelText": "48-60",
+      "levelMin": 48,
+      "levelMax": 60,
+      "weight": 0.25,
+      "presets": [
+        "natural"
+      ],
+      "biomeHints": [
+        "Is Overworld"
+      ],
+      "condition": {
+        "neededBaseBlocks": [
+          "#cobblemon:natural"
+        ],
+        "minSkyLight": 0,
+        "maxSkyLight": 7,
+        "biomes": [
+          "#cobblemon:is_overworld"
+        ],
+        "minY": 0,
+        "neededNearbyBlocks": [
+          "minecraft:magma_block"
+        ]
+      },
+      "anticondition": {
+        "neededBaseBlocks": [
+          "minecraft:farmland"
+        ],
+        "biomes": [
+          "#cobblemon:is_badlands",
+          "#cobblemon:is_deep_dark",
+          "#cobblemon:is_mountain",
+          "#cobblemon:is_thermal"
+        ]
+      },
+      "weightMultipliers": [],
+      "raw": {
+        "id": "garchomp-4",
+        "pokemon": "garchomp",
+        "presets": [
+          "natural"
+        ],
+        "type": "pokemon",
+        "spawnablePositionType": "grounded",
+        "bucket": "rare",
+        "level": "48-60",
+        "weight": 0.25,
+        "condition": {
+          "minSkyLight": 0,
+          "maxSkyLight": 7,
+          "biomes": [
+            "#cobblemon:is_overworld"
+          ],
+          "minY": 0,
+          "neededNearbyBlocks": [
+            "minecraft:magma_block"
+          ]
+        },
+        "anticondition": {
+          "biomes": [
+            "#cobblemon:is_badlands",
+            "#cobblemon:is_deep_dark",
+            "#cobblemon:is_mountain",
+            "#cobblemon:is_thermal"
+          ]
+        }
+      }
+    },
+    {
+      "id": "garchomp-5",
+      "sourceFile": "0445_garchomp.json",
+      "pokemon": {
+        "raw": "garchomp",
+        "slug": "garchomp",
+        "aspectTokens": []
+      },
+      "type": "pokemon",
+      "spawnablePositionType": "grounded",
+      "bucket": "rare",
+      "bucketWeight": 0.5,
+      "levelText": "48-60",
+      "levelMin": 48,
+      "levelMax": 60,
+      "weight": 0.25,
+      "presets": [
+        "natural"
+      ],
+      "biomeHints": [
+        "Is Thermal",
+        "Hot Springs",
+        "Inferno"
+      ],
+      "condition": {
+        "neededBaseBlocks": [
+          "#cobblemon:natural"
+        ],
+        "minSkyLight": 0,
+        "maxSkyLight": 7,
+        "biomes": [
+          "#cobblemon:is_thermal"
+        ],
+        "minY": 0
+      },
+      "anticondition": {
+        "neededBaseBlocks": [
+          "minecraft:farmland"
+        ]
+      },
+      "weightMultipliers": [],
+      "raw": {
+        "id": "garchomp-5",
+        "pokemon": "garchomp",
+        "presets": [
+          "natural"
+        ],
+        "type": "pokemon",
+        "spawnablePositionType": "grounded",
+        "bucket": "rare",
+        "level": "48-60",
+        "weight": 0.25,
+        "condition": {
+          "minSkyLight": 0,
+          "maxSkyLight": 7,
+          "biomes": [
+            "#cobblemon:is_thermal"
+          ],
+          "minY": 0
+        }
+      }
+    },
+    {
+      "id": "garchomp-6",
+      "sourceFile": "0445_garchomp.json",
+      "pokemon": {
+        "raw": "garchomp",
+        "slug": "garchomp",
+        "aspectTokens": []
+      },
+      "type": "pokemon",
+      "spawnablePositionType": "grounded",
+      "bucket": "rare",
+      "bucketWeight": 0.5,
+      "levelText": "48-60",
+      "levelMin": 48,
+      "levelMax": 60,
+      "weight": 0.25,
+      "presets": [
+        "natural"
+      ],
+      "biomeHints": [
+        "Is Aether"
+      ],
+      "condition": {
+        "neededBaseBlocks": [
+          "#cobblemon:natural"
+        ],
+        "minSkyLight": 0,
+        "maxSkyLight": 7,
+        "biomes": [
+          "#aether:is_aether"
+        ]
+      },
+      "anticondition": {
+        "neededBaseBlocks": [
+          "minecraft:farmland"
+        ]
+      },
+      "weightMultipliers": [],
+      "raw": {
+        "id": "garchomp-6",
+        "pokemon": "garchomp",
+        "presets": [
+          "natural"
+        ],
+        "type": "pokemon",
+        "spawnablePositionType": "grounded",
+        "bucket": "rare",
+        "level": "48-60",
+        "weight": 0.25,
+        "condition": {
+          "minSkyLight": 0,
+          "maxSkyLight": 7,
+          "biomes": [
+            "#aether:is_aether"
+          ]
+        }
+      }
+    }
+  ],
+  "forms": [
+    {
+      "name": "Mega",
+      "slug": "garchomp-mega",
+      "aspects": [
+        "mega"
+      ],
+      "labels": [
+        "gen6",
+        "mega"
+      ],
+      "types": [
+        "dragon",
+        "ground"
+      ],
+      "maleRatio": 0.5,
+      "height": 19,
+      "weight": 950,
+      "catchRate": null,
+      "baseExperienceYield": 350,
+      "baseFriendship": null,
+      "eggCycles": null,
+      "baseStats": {
+        "hp": 108,
+        "attack": 170,
+        "defence": 115,
+        "special_attack": 120,
+        "special_defence": 95,
+        "speed": 92
+      },
+      "evYield": {},
+      "battleOnly": true,
+      "abilities": [
+        {
+          "id": "sandforce",
+          "hidden": false,
+          "label": "Sandforce",
+          "slot": "first"
+        },
+        {
+          "id": "sandforce",
+          "hidden": true,
+          "label": "Sandforce",
+          "slot": "hidden"
+        }
+      ],
+      "moves": [],
+      "evolutions": [],
+      "raw": {
+        "name": "Mega",
+        "primaryType": "dragon",
+        "secondaryType": "ground",
+        "maleRatio": 0.5,
+        "height": 19,
+        "weight": 950,
+        "pokedex": [
+          "cobblemon.species.garchomp-mega.desc"
+        ],
+        "labels": [
+          "gen6",
+          "mega"
+        ],
+        "aspects": [
+          "mega"
+        ],
+        "abilities": [
+          "sandforce",
+          "h:sandforce"
+        ],
+        "baseStats": {
+          "hp": 108,
+          "attack": 170,
+          "defence": 115,
+          "special_attack": 120,
+          "special_defence": 95,
+          "speed": 92
+        },
+        "baseExperienceYield": 350,
+        "behaviour": {
+          "combat": {
+            "willDefendOwner": true,
+            "willDefendSelf": true,
+            "willFlee": false
+          },
+          "herd": {
+            "maxSize": "8"
+          },
+          "moving": {
+            "fly": {
+              "canFly": true
+            },
+            "swim": {
+              "avoidsWater": true
+            }
+          },
+          "resting": {
+            "drowsyChance": 0.0333,
+            "rouseChance": 0.0042
+          }
+        },
+        "evolutions": [],
+        "battleOnly": true,
+        "dynamaxBlocked": true
+      }
+    }
+  ],
+  "rawSpecies": {
+    "implemented": true,
+    "nationalPokedexNumber": 445,
+    "name": "Garchomp",
+    "primaryType": "dragon",
+    "secondaryType": "ground",
+    "maleRatio": 0.5,
+    "height": 19,
+    "weight": 950,
+    "pokedex": [
+      "cobblemon.species.garchomp.desc"
+    ],
+    "labels": [
+      "gen4",
+      "powerhouse"
+    ],
+    "aspects": [],
+    "abilities": [
+      "sandveil",
+      "h:roughskin"
+    ],
+    "eggGroups": [
+      "monster",
+      "dragon"
+    ],
+    "baseStats": {
+      "hp": 108,
+      "attack": 130,
+      "defence": 95,
+      "special_attack": 80,
+      "special_defence": 85,
+      "speed": 102
+    },
+    "evYield": {
+      "hp": 0,
+      "attack": 3,
+      "defence": 0,
+      "special_attack": 0,
+      "special_defence": 0,
+      "speed": 0
+    },
+    "baseExperienceYield": 300,
+    "experienceGroup": "slow",
+    "catchRate": 45,
+    "eggCycles": 40,
+    "baseFriendship": 50,
+    "baseScale": 1.1,
+    "hitbox": {
+      "height": 2.3,
+      "fixed": false,
+      "width": 1.3
+    },
+    "riding": {
+      "behaviours": {
+        "AIR": {
+          "speed": "Math.clamp(q.entity.velocity.horizontal_magnitude + 0.33, 0, 1)",
+          "key": "cobblemon:air/jet",
+          "rideSounds": [
+            {
+              "muffleEnabled": true,
+              "pitchExpr": "math.max(1.0 ,0.2 + math.pow(math.min(q.ride_velocity() / 1.5, 1.0),2))",
+              "playForNonPassengers": false,
+              "playForPassengers": true,
+              "soundLocation": "cobblemon:ride.loop.wind.stereo",
+              "volumeExpr": "math.pow(math.min(q.ride_velocity() / 1.5, 1.0),2)"
+            },
+            {
+              "muffleEnabled": true,
+              "pitchExpr": "math.max(1.0 ,0.2 + math.pow(math.min(q.ride_velocity() / 1.5, 1.0),2))",
+              "playForNonPassengers": true,
+              "playForPassengers": false,
+              "soundLocation": "cobblemon:ride.loop.wind.mono",
+              "volumeExpr": "math.pow(math.min(q.ride_velocity() / 1.5, 1.0),2)"
+            }
+          ],
+          "gravity": "q.gravity * (0.1 + (q.passenger_count - 1) * 0.1)",
+          "jumpVector": [
+            0,
+            "0.3*q.jump_strength/50",
+            0
+          ],
+          "stats": {
+            "ACCELERATION": "50-70",
+            "JUMP": "20-70",
+            "SKILL": "50-60",
+            "SPEED": "70-80",
+            "STAMINA": "30-50"
+          }
+        },
+        "LAND": {
+          "speed": "Math.clamp(q.entity.velocity.horizontal_magnitude + 0.33, 0, 1)",
+          "key": "cobblemon:land/horse",
+          "rideSounds": [],
+          "gravity": "q.gravity * (0.1 + (q.passenger_count - 1) * 0.1)",
+          "jumpVector": [
+            0,
+            "0.3*q.jump_strength/50",
+            "-1 * 0.5*q.jump_strength/50"
+          ],
+          "stats": {
+            "ACCELERATION": "65-75",
+            "JUMP": "30-50",
+            "SKILL": "40-70",
+            "SPEED": "40-55",
+            "STAMINA": "30-45"
+          }
+        },
+        "LIQUID": {
+          "key": "cobblemon:liquid/boat",
+          "rideSounds": [
+            {
+              "muffleEnabled": true,
+              "pitchExpr": "math.max(1.0 ,0.2 + math.pow(math.min(q.ride_velocity() / 1.5, 1.0),2))",
+              "playForNonPassengers": false,
+              "playForPassengers": true,
+              "soundLocation": "cobblemon:ride.loop.water_sufrace.stereo",
+              "volumeExpr": "math.pow(math.min(q.ride_velocity() / 1.5, 1.0),2)"
+            },
+            {
+              "muffleEnabled": true,
+              "pitchExpr": "math.max(1.0 ,0.2 + math.pow(math.min(q.ride_velocity() / 1.5, 1.0),2))",
+              "playForNonPassengers": true,
+              "playForPassengers": false,
+              "soundLocation": "cobblemon:ride.loop.water_surface.mono",
+              "volumeExpr": "math.pow(math.min(q.ride_velocity() / 1.5, 1.0),2)"
+            }
+          ],
+          "stats": {
+            "ACCELERATION": "75-85",
+            "JUMP": "40-80",
+            "SKILL": "10-25",
+            "SPEED": "35-60",
+            "STAMINA": "5-10"
+          },
+          "surfaceLevelOffset": -1.7
+        }
+      },
+      "seats": [
+        {
+          "offset": {
+            "x": 0,
+            "y": 0,
+            "z": 0
+          },
+          "poseOffsets": [
+            {
+              "offset": {
+                "x": 0,
+                "y": -2.1011124,
+                "z": 0.16987759
+              },
+              "poseTypes": [
+                "STAND"
+              ]
+            },
+            {
+              "offset": {
+                "x": 0.01469376,
+                "y": -1.9109085,
+                "z": -0.45310298
+              },
+              "poseTypes": [
+                "WALK"
+              ]
+            },
+            {
+              "offset": {
+                "x": 0.05311563,
+                "y": -1.1318469,
+                "z": -0.39360297
+              },
+              "poseTypes": [
+                "HOVER"
+              ]
+            },
+            {
+              "offset": {
+                "x": 0.05311563,
+                "y": -1.1318469,
+                "z": -0.39360297
+              },
+              "poseTypes": [
+                "FLY"
+              ]
+            },
+            {
+              "offset": {
+                "x": 0.0006860052,
+                "y": -2.1426969,
+                "z": -0.23987202
+              },
+              "poseTypes": [
+                "FLOAT"
+              ]
+            },
+            {
+              "offset": {
+                "x": 0.14164889,
+                "y": -1.6177647,
+                "z": -0.14327948
+              },
+              "poseTypes": [
+                "SWIM"
+              ]
+            },
+            {
+              "offset": {
+                "x": 0.0008643751,
+                "y": -2.4092257,
+                "z": -0.33146888
+              },
+              "poseTypes": [
+                "GLIDE"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "behaviour": {
+      "combat": {
+        "willDefendOwner": true,
+        "willDefendSelf": true,
+        "willFlee": false
+      },
+      "herd": {
+        "maxSize": "7"
+      },
+      "moving": {
+        "fly": {
+          "canFly": true
+        },
+        "swim": {
+          "avoidsWater": true,
+          "canSwim": true,
+          "canWalkOnWater": true
+        },
+        "walk": {
+          "walkSpeed": 0.55
+        }
+      },
+      "resting": {
+        "canSleep": true,
+        "drowsyChance": 0.0333,
+        "light": "0-4",
+        "rouseChance": 0.0042
+      }
+    },
+    "drops": {
+      "amount": 2,
+      "entries": [
+        {
+          "item": "cobblemon:dragon_fang",
+          "percentage": 10
+        },
+        {
+          "item": "cobblemon:haban_berry",
+          "percentage": 10
+        }
+      ]
+    },
+    "moves": [
+      "1:tackle",
+      "1:sandattack",
+      "1:dragonrage",
+      "1:sandtomb",
+      "1:crunch",
+      "1:dualchop",
+      "1:dragonbreath",
+      "18:bulldoze",
+      "27:bite",
+      "34:slash",
+      "42:dragonclaw",
+      "52:dig",
+      "62:sandstorm",
+      "72:takedown",
+      "82:dragonrush",
+      "egg:doubleedge",
+      "egg:metalclaw",
+      "egg:thrash",
+      "egg:twister",
+      "tm:aerialace",
+      "tm:aquatail",
+      "tm:bodyslam",
+      "tm:breakingswipe",
+      "tm:brickbreak",
+      "tm:brutalswing",
+      "tm:bulldoze",
+      "tm:crunch",
+      "tm:cut",
+      "tm:dig",
+      "tm:doubleedge",
+      "tm:dracometeor",
+      "tm:dragoncheer",
+      "tm:dragonclaw",
+      "tm:dragonpulse",
+      "tm:dragontail",
+      "tm:dualchop",
+      "tm:earthpower",
+      "tm:earthquake",
+      "tm:endure",
+      "tm:facade",
+      "tm:falseswipe",
+      "tm:fireblast",
+      "tm:firefang",
+      "tm:flamethrower",
+      "tm:fling",
+      "tm:furycutter",
+      "tm:gigaimpact",
+      "tm:headbutt",
+      "tm:helpinghand",
+      "tm:honeclaws",
+      "tm:hyperbeam",
+      "tm:incinerate",
+      "tm:ironhead",
+      "tm:irontail",
+      "tm:laserfocus",
+      "tm:liquidation",
+      "tm:metalclaw",
+      "tm:mudshot",
+      "tm:outrage",
+      "tm:poisonjab",
+      "tm:powergem",
+      "tm:protect",
+      "tm:raindance",
+      "tm:rest",
+      "tm:rockclimb",
+      "tm:rockslide",
+      "tm:rocksmash",
+      "tm:rocktomb",
+      "tm:sandstorm",
+      "tm:sandtomb",
+      "tm:scaleshot",
+      "tm:scaryface",
+      "tm:scorchingsands",
+      "tm:shadowclaw",
+      "tm:sleeptalk",
+      "tm:spikes",
+      "tm:stealthrock",
+      "tm:stompingtantrum",
+      "tm:stoneedge",
+      "tm:strength",
+      "tm:substitute",
+      "tm:sunnyday",
+      "tm:surf",
+      "tm:swift",
+      "tm:swordsdance",
+      "tm:takedown",
+      "tm:terablast",
+      "tm:thunderfang",
+      "tm:twister",
+      "tutor:aquatail",
+      "tutor:bulldoze",
+      "tutor:dracometeor",
+      "tutor:dragonpulse",
+      "tutor:dualchop",
+      "tutor:earthpower",
+      "tutor:falseswipe",
+      "tutor:firefang",
+      "tutor:flamethrower",
+      "tutor:furycutter",
+      "tutor:gigaimpact",
+      "tutor:helpinghand",
+      "tutor:hyperbeam",
+      "tutor:ironhead",
+      "tutor:irontail",
+      "tutor:laserfocus",
+      "tutor:liquidation",
+      "tutor:outrage",
+      "tutor:poisonjab",
+      "tutor:rest",
+      "tutor:rockslide",
+      "tutor:rocksmash",
+      "tutor:scaleshot",
+      "tutor:scorchingsands",
+      "tutor:shadowclaw",
+      "tutor:sleeptalk",
+      "tutor:spikes",
+      "tutor:stealthrock",
+      "tutor:stompingtantrum",
+      "tutor:stoneedge",
+      "tutor:swift",
+      "tutor:thunderfang",
+      "tutor:twister",
+      "legacy:attract",
+      "legacy:captivate",
+      "legacy:confide",
+      "legacy:doubleteam",
+      "legacy:frustration",
+      "legacy:hiddenpower",
+      "legacy:mudslap",
+      "legacy:naturalgift",
+      "legacy:return",
+      "legacy:roar",
+      "legacy:round",
+      "legacy:secretpower",
+      "legacy:snore",
+      "legacy:swagger",
+      "legacy:toxic",
+      "legacy:whirlpool"
+    ],
+    "preEvolution": "gabite",
+    "evolutions": [],
+    "forms": [
+      {
+        "name": "Mega",
+        "primaryType": "dragon",
+        "secondaryType": "ground",
+        "maleRatio": 0.5,
+        "height": 19,
+        "weight": 950,
+        "pokedex": [
+          "cobblemon.species.garchomp-mega.desc"
+        ],
+        "labels": [
+          "gen6",
+          "mega"
+        ],
+        "aspects": [
+          "mega"
+        ],
+        "abilities": [
+          "sandforce",
+          "h:sandforce"
+        ],
+        "baseStats": {
+          "hp": 108,
+          "attack": 170,
+          "defence": 115,
+          "special_attack": 120,
+          "special_defence": 95,
+          "speed": 92
+        },
+        "baseExperienceYield": 350,
+        "behaviour": {
+          "combat": {
+            "willDefendOwner": true,
+            "willDefendSelf": true,
+            "willFlee": false
+          },
+          "herd": {
+            "maxSize": "8"
+          },
+          "moving": {
+            "fly": {
+              "canFly": true
+            },
+            "swim": {
+              "avoidsWater": true
+            }
+          },
+          "resting": {
+            "drowsyChance": 0.0333,
+            "rouseChance": 0.0042
+          }
+        },
+        "evolutions": [],
+        "battleOnly": true,
+        "dynamaxBlocked": true
+      }
+    ]
+  }
+}

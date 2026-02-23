@@ -1,0 +1,81 @@
+{
+  "kinesis": {
+    "moveId": "kinesis",
+    "moveName": "Kinesis",
+    "type": "psychic",
+    "category": "status",
+    "basePower": 0,
+    "accuracy": 80,
+    "alwaysHits": false,
+    "shortDescription": "Lowers the target's accuracy by 1.",
+    "description": "Lowers the target's accuracy by 1 stage.",
+    "learners": [
+      {
+        "slug": "kadabra",
+        "name": "Kadabra",
+        "dexNumber": 64,
+        "methods": [
+          "level"
+        ],
+        "eggGroups": [
+          "human_like"
+        ],
+        "levelUpLevels": [
+          1
+        ],
+        "baseAvailable": true,
+        "forms": []
+      },
+      {
+        "slug": "alakazam",
+        "name": "Alakazam",
+        "dexNumber": 65,
+        "methods": [
+          "level"
+        ],
+        "eggGroups": [
+          "human_like"
+        ],
+        "levelUpLevels": [
+          1
+        ],
+        "baseAvailable": true,
+        "forms": []
+      }
+    ]
+  },
+  "kingsshield": {
+    "moveId": "kingsshield",
+    "moveName": "King's Shield",
+    "type": "steel",
+    "category": "status",
+    "basePower": 0,
+    "accuracy": null,
+    "alwaysHits": true,
+    "shortDescription": "Protects from damaging attacks. Contact: -1 Atk.",
+    "description": "The user is protected from most attacks made by other Pokemon during this turn, and Pokemon trying to make contact with the user have their Attack lowered by 1 stage. Non-damaging moves go through this protection. This move has a 1/X chance of being successful, where X starts at 1 and triples each time this move is successfully used. X resets to 1 if this move fails, if the user's last move used is not Baneful Bunker, Burning Bulwark, Detect, Endure, King's Shield, Max Guard, Obstruct, Protect, Quick Guard, Silk Trap, Spiky Shield, or Wide Guard, or if it was one of those moves and the user's protection was broken. Fails if the user moves last this turn.",
+    "learners": [
+      {
+        "slug": "aegislash",
+        "name": "Aegislash",
+        "dexNumber": 681,
+        "methods": [
+          "level"
+        ],
+        "eggGroups": [
+          "mineral"
+        ],
+        "levelUpLevels": [
+          1
+        ],
+        "baseAvailable": true,
+        "forms": [
+          {
+            "name": "Blade",
+            "slug": "aegislash-blade"
+          }
+        ]
+      }
+    ]
+  }
+}

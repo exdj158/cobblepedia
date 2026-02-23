@@ -20,7 +20,7 @@ import type {
   PokemonDexNavItem,
   RideableSummaryRecord,
 } from "@/data/cobblemon-types"
-import { loadItemIndex, loadPokemonDetail } from "@/data/data-loader"
+import { loadItemIndex, loadPokemonDetail, loadPokemonDexNav } from "@/data/data-loader"
 import {
   formatConditionChips,
   formatEggGroup,
@@ -28,7 +28,6 @@ import {
   sortMovesForTab,
   titleCaseFromId,
 } from "@/data/formatters"
-import pokemonDexNavData from "@/data/generated/pokemon-dex-nav.json"
 import { formatRideableCategory, parseRideableSummaryFromSpecies } from "@/data/rideable"
 import { resolvePokemonArtworkUrls } from "@/lib/pokeapi-artwork"
 import { useLeaderNavigationHotkeys } from "@/lib/use-leader-navigation-hotkeys"
@@ -39,12 +38,6 @@ import getTitle from "@/utils/get-title"
 const PAGE_MOVE_TABS = ["all", "level", "egg", "tm", "tutor"] as const
 type PageMoveTab = (typeof PAGE_MOVE_TABS)[number]
 type ArtworkView = "official" | "shiny"
-
-const POKEMON_DEX_NAV = pokemonDexNavData as PokemonDexNavItem[]
-const POKEMON_DEX_NAV_INDEX_BY_SLUG = new Map<string, number>()
-for (const [index, pokemon] of POKEMON_DEX_NAV.entries()) {
-  POKEMON_DEX_NAV_INDEX_BY_SLUG.set(pokemon.slug, index)
-}
 
 const TYPE_COLORS: Record<string, string> = {
   normal: "#A8A878",
@@ -107,9 +100,10 @@ export default function Page() {
     }
     return loadPokemonDetail(nextSlug)
   })
+  const [pokemonDexNav] = createResource(loadPokemonDexNav)
   const [itemIndex] = createResource(loadItemIndex)
 
-  const dexNeighbors = createMemo(() => findDexNeighborsByOffset(slug()))
+  const dexNeighbors = createMemo(() => findDexNeighborsByOffset(slug(), pokemonDexNav() ?? []))
 
   useMetadata({
     title: getTitle("Pokemon"),
@@ -1185,16 +1179,16 @@ function MoveTypeBadge(props: { type: string | null }) {
   )
 }
 
-function findDexNeighborsByOffset(currentSlug: string) {
-  if (!currentSlug || POKEMON_DEX_NAV.length === 0) {
+function findDexNeighborsByOffset(currentSlug: string, pokemonDexNav: PokemonDexNavItem[]) {
+  if (!currentSlug || pokemonDexNav.length === 0) {
     return {
       previous: null,
       next: null,
     }
   }
 
-  const index = POKEMON_DEX_NAV_INDEX_BY_SLUG.get(currentSlug)
-  if (index === undefined) {
+  const index = pokemonDexNav.findIndex((pokemon) => pokemon.slug === currentSlug)
+  if (index < 0) {
     return {
       previous: null,
       next: null,
@@ -1202,8 +1196,8 @@ function findDexNeighborsByOffset(currentSlug: string) {
   }
 
   return {
-    previous: POKEMON_DEX_NAV[index - 1] ?? null,
-    next: POKEMON_DEX_NAV[index + 1] ?? null,
+    previous: pokemonDexNav[index - 1] ?? null,
+    next: pokemonDexNav[index + 1] ?? null,
   }
 }
 

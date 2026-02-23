@@ -5,7 +5,7 @@ import { IconEgg } from "@/assets/icons"
 import { DualEggGroupSelector } from "@/components/dual-egg-group-selector"
 import { PokemonSprite } from "@/components/pokemon-sprite"
 import type { MoveLearnerEntryRecord, MoveSourceType } from "@/data/cobblemon-types"
-import { loadMoveLearners } from "@/data/data-loader"
+import { loadMoveLearnerEntry } from "@/data/data-loader"
 import { canonicalId, formatEggGroup, formatMoveSource, titleCaseFromId } from "@/data/formatters"
 import { cn } from "@/utils/cn"
 import getTitle from "@/utils/get-title"
@@ -49,14 +49,16 @@ export default function Page() {
   const pageContext = usePageContext()
   const moveId = createMemo(() => canonicalId(String(pageContext.routeParams.moveId ?? "")))
 
-  const [entry] = createResource(moveId, async (nextMoveId) => {
-    if (!nextMoveId) {
-      return null
-    }
+  const [entry] = createResource(
+    () => moveId(),
+    async (nextMoveId) => {
+      if (!nextMoveId) {
+        return null
+      }
 
-    const moveLearners = await loadMoveLearners()
-    return moveLearners[nextMoveId] ?? null
-  })
+      return loadMoveLearnerEntry(nextMoveId)
+    }
+  )
 
   useMetadata({
     title: getTitle("Move"),

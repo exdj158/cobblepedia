@@ -1,0 +1,31 @@
+{
+  "eternabeam": {
+    "moveId": "eternabeam",
+    "moveName": "Eternabeam",
+    "type": "dragon",
+    "category": "special",
+    "basePower": 160,
+    "accuracy": 90,
+    "alwaysHits": false,
+    "shortDescription": "User cannot move next turn.",
+    "description": "If this move is successful, the user must recharge on the following turn and cannot select a move.",
+    "learners": [
+      {
+        "slug": "eternatus",
+        "name": "Eternatus",
+        "dexNumber": 890,
+        "methods": [
+          "level"
+        ],
+        "eggGroups": [
+          "undiscovered"
+        ],
+        "levelUpLevels": [
+          88
+        ],
+        "baseAvailable": true,
+        "forms": []
+      }
+    ]
+  }
+}

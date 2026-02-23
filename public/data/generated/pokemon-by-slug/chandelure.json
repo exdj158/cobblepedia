@@ -1,0 +1,1592 @@
+{
+  "slug": "chandelure",
+  "name": "Chandelure",
+  "dexNumber": 609,
+  "implemented": true,
+  "types": [
+    "ghost",
+    "fire"
+  ],
+  "abilities": [
+    {
+      "id": "flashfire",
+      "hidden": false,
+      "label": "Flashfire",
+      "slot": "first"
+    },
+    {
+      "id": "flamebody",
+      "hidden": false,
+      "label": "Flamebody",
+      "slot": "second"
+    },
+    {
+      "id": "infiltrator",
+      "hidden": true,
+      "label": "Infiltrator",
+      "slot": "hidden"
+    }
+  ],
+  "eggGroups": [
+    "amorphous"
+  ],
+  "labels": [
+    "gen5"
+  ],
+  "aspects": [],
+  "aliases": [
+    "chandelure"
+  ],
+  "maleRatio": 0.5,
+  "height": 10,
+  "weight": 343,
+  "catchRate": 45,
+  "baseExperienceYield": 260,
+  "baseFriendship": 50,
+  "eggCycles": 20,
+  "baseStats": {
+    "hp": 60,
+    "attack": 55,
+    "defence": 90,
+    "special_attack": 145,
+    "special_defence": 90,
+    "speed": 80
+  },
+  "evYield": {
+    "hp": 0,
+    "attack": 0,
+    "defence": 0,
+    "special_attack": 3,
+    "special_defence": 0,
+    "speed": 0
+  },
+  "preEvolution": {
+    "raw": "lampent",
+    "slug": "lampent",
+    "aspectTokens": []
+  },
+  "evolutions": [],
+  "evolutionFamily": {
+    "members": [
+      {
+        "nodeId": "litwick",
+        "slug": "litwick",
+        "name": "Litwick",
+        "dexNumber": 607,
+        "formSlug": null,
+        "formName": null
+      },
+      {
+        "nodeId": "lampent",
+        "slug": "lampent",
+        "name": "Lampent",
+        "dexNumber": 608,
+        "formSlug": null,
+        "formName": null
+      },
+      {
+        "nodeId": "chandelure",
+        "slug": "chandelure",
+        "name": "Chandelure",
+        "dexNumber": 609,
+        "formSlug": null,
+        "formName": null
+      }
+    ],
+    "edges": [
+      {
+        "fromNodeId": "lampent",
+        "toNodeId": "chandelure",
+        "fromSlug": "lampent",
+        "toSlug": "chandelure",
+        "method": "item_interact",
+        "requirementText": [
+          "Use Dusk Stone"
+        ]
+      },
+      {
+        "fromNodeId": "litwick",
+        "toNodeId": "lampent",
+        "fromSlug": "litwick",
+        "toSlug": "lampent",
+        "method": "level_up",
+        "requirementText": [
+          "Level 41+"
+        ]
+      }
+    ],
+    "roots": [
+      "litwick"
+    ]
+  },
+  "moves": [
+    {
+      "raw": "egg:acid",
+      "moveId": "acid",
+      "moveName": "Acid",
+      "type": "poison",
+      "sourceType": "egg",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "egg:acidarmor",
+      "moveId": "acidarmor",
+      "moveName": "Acid Armor",
+      "type": "poison",
+      "sourceType": "egg",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:allyswitch",
+      "moveId": "allyswitch",
+      "moveName": "Ally Switch",
+      "type": "psychic",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tutor:allyswitch",
+      "moveId": "allyswitch",
+      "moveName": "Ally Switch",
+      "type": "psychic",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "1:astonish",
+      "moveId": "astonish",
+      "moveName": "Astonish",
+      "type": "ghost",
+      "sourceType": "level",
+      "sourceValue": 1,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "legacy:attract",
+      "moveId": "attract",
+      "moveName": "Attract",
+      "type": "normal",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:burningjealousy",
+      "moveId": "burningjealousy",
+      "moveName": "Burning Jealousy",
+      "type": "fire",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tutor:burningjealousy",
+      "moveId": "burningjealousy",
+      "moveName": "Burning Jealousy",
+      "type": "fire",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:calmmind",
+      "moveId": "calmmind",
+      "moveName": "Calm Mind",
+      "type": "psychic",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tutor:calmmind",
+      "moveId": "calmmind",
+      "moveName": "Calm Mind",
+      "type": "psychic",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "egg:captivate",
+      "moveId": "captivate",
+      "moveName": "Captivate",
+      "type": "normal",
+      "sourceType": "egg",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:captivate",
+      "moveId": "captivate",
+      "moveName": "Captivate",
+      "type": "normal",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "egg:clearsmog",
+      "moveId": "clearsmog",
+      "moveName": "Clear Smog",
+      "type": "poison",
+      "sourceType": "egg",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "legacy:confide",
+      "moveId": "confide",
+      "moveName": "Confide",
+      "type": "normal",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "1:confuseray",
+      "moveId": "confuseray",
+      "moveName": "Confuse Ray",
+      "type": "ghost",
+      "sourceType": "level",
+      "sourceValue": 1,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:confuseray",
+      "moveId": "confuseray",
+      "moveName": "Confuse Ray",
+      "type": "ghost",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "1:curse",
+      "moveId": "curse",
+      "moveName": "Curse",
+      "type": "ghost",
+      "sourceType": "level",
+      "sourceValue": 1,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:curse",
+      "moveId": "curse",
+      "moveName": "Curse",
+      "type": "ghost",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:darkpulse",
+      "moveId": "darkpulse",
+      "moveName": "Dark Pulse",
+      "type": "dark",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tutor:darkpulse",
+      "moveId": "darkpulse",
+      "moveName": "Dark Pulse",
+      "type": "dark",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "legacy:doubleteam",
+      "moveId": "doubleteam",
+      "moveName": "Double Team",
+      "type": "normal",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:dreameater",
+      "moveId": "dreameater",
+      "moveName": "Dream Eater",
+      "type": "psychic",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:embargo",
+      "moveId": "embargo",
+      "moveName": "Embargo",
+      "type": "dark",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "1:ember",
+      "moveId": "ember",
+      "moveName": "Ember",
+      "type": "fire",
+      "sourceType": "level",
+      "sourceValue": 1,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:endure",
+      "moveId": "endure",
+      "moveName": "Endure",
+      "type": "normal",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:energyball",
+      "moveId": "energyball",
+      "moveName": "Energy Ball",
+      "type": "grass",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tutor:energyball",
+      "moveId": "energyball",
+      "moveName": "Energy Ball",
+      "type": "grass",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:facade",
+      "moveId": "facade",
+      "moveName": "Facade",
+      "type": "normal",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:fireblast",
+      "moveId": "fireblast",
+      "moveName": "Fire Blast",
+      "type": "fire",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "1:firespin",
+      "moveId": "firespin",
+      "moveName": "Fire Spin",
+      "type": "fire",
+      "sourceType": "level",
+      "sourceValue": 1,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:firespin",
+      "moveId": "firespin",
+      "moveName": "Fire Spin",
+      "type": "fire",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "1:flameburst",
+      "moveId": "flameburst",
+      "moveName": "Flame Burst",
+      "type": "fire",
+      "sourceType": "level",
+      "sourceValue": 1,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:flamecharge",
+      "moveId": "flamecharge",
+      "moveName": "Flame Charge",
+      "type": "fire",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:flamethrower",
+      "moveId": "flamethrower",
+      "moveName": "Flamethrower",
+      "type": "fire",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tutor:flamethrower",
+      "moveId": "flamethrower",
+      "moveName": "Flamethrower",
+      "type": "fire",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:flareblitz",
+      "moveId": "flareblitz",
+      "moveName": "Flare Blitz",
+      "type": "fire",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:flash",
+      "moveId": "flash",
+      "moveName": "Flash",
+      "type": "normal",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "legacy:frustration",
+      "moveId": "frustration",
+      "moveName": "Frustration",
+      "type": "normal",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:gigaimpact",
+      "moveId": "gigaimpact",
+      "moveName": "Giga Impact",
+      "type": "normal",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tutor:gigaimpact",
+      "moveId": "gigaimpact",
+      "moveName": "Giga Impact",
+      "type": "normal",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "egg:haze",
+      "moveId": "haze",
+      "moveName": "Haze",
+      "type": "ice",
+      "sourceType": "egg",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:haze",
+      "moveId": "haze",
+      "moveName": "Haze",
+      "type": "ice",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:heatwave",
+      "moveId": "heatwave",
+      "moveName": "Heat Wave",
+      "type": "fire",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tutor:heatwave",
+      "moveId": "heatwave",
+      "moveName": "Heat Wave",
+      "type": "fire",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "1:hex",
+      "moveId": "hex",
+      "moveName": "Hex",
+      "type": "ghost",
+      "sourceType": "level",
+      "sourceValue": 1,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:hex",
+      "moveId": "hex",
+      "moveName": "Hex",
+      "type": "ghost",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "legacy:hiddenpower",
+      "moveId": "hiddenpower",
+      "moveName": "Hidden Power",
+      "type": "normal",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:hyperbeam",
+      "moveId": "hyperbeam",
+      "moveName": "Hyper Beam",
+      "type": "normal",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tutor:hyperbeam",
+      "moveId": "hyperbeam",
+      "moveName": "Hyper Beam",
+      "type": "normal",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "1:imprison",
+      "moveId": "imprison",
+      "moveName": "Imprison",
+      "type": "psychic",
+      "sourceType": "level",
+      "sourceValue": 1,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:imprison",
+      "moveId": "imprison",
+      "moveName": "Imprison",
+      "type": "psychic",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:incinerate",
+      "moveId": "incinerate",
+      "moveName": "Incinerate",
+      "type": "fire",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "1:inferno",
+      "moveId": "inferno",
+      "moveName": "Inferno",
+      "type": "fire",
+      "sourceType": "level",
+      "sourceValue": 1,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:laserfocus",
+      "moveId": "laserfocus",
+      "moveName": "Laser Focus",
+      "type": "normal",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tutor:laserfocus",
+      "moveId": "laserfocus",
+      "moveName": "Laser Focus",
+      "type": "normal",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:lashout",
+      "moveId": "lashout",
+      "moveName": "Lash Out",
+      "type": "dark",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tutor:lashout",
+      "moveId": "lashout",
+      "moveName": "Lash Out",
+      "type": "dark",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "1:memento",
+      "moveId": "memento",
+      "moveName": "Memento",
+      "type": "dark",
+      "sourceType": "level",
+      "sourceValue": 1,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "1:minimize",
+      "moveId": "minimize",
+      "moveName": "Minimize",
+      "type": "normal",
+      "sourceType": "level",
+      "sourceValue": 1,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:mysticalfire",
+      "moveId": "mysticalfire",
+      "moveName": "Mystical Fire",
+      "type": "fire",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tutor:mysticalfire",
+      "moveId": "mysticalfire",
+      "moveName": "Mystical Fire",
+      "type": "fire",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "1:nightshade",
+      "moveId": "nightshade",
+      "moveName": "Night Shade",
+      "type": "ghost",
+      "sourceType": "level",
+      "sourceValue": 1,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:nightshade",
+      "moveId": "nightshade",
+      "moveName": "Night Shade",
+      "type": "ghost",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "1:overheat",
+      "moveId": "overheat",
+      "moveName": "Overheat",
+      "type": "fire",
+      "sourceType": "level",
+      "sourceValue": 1,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:overheat",
+      "moveId": "overheat",
+      "moveName": "Overheat",
+      "type": "fire",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "1:painsplit",
+      "moveId": "painsplit",
+      "moveName": "Pain Split",
+      "type": "normal",
+      "sourceType": "level",
+      "sourceValue": 1,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:painsplit",
+      "moveId": "painsplit",
+      "moveName": "Pain Split",
+      "type": "normal",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tutor:painsplit",
+      "moveId": "painsplit",
+      "moveName": "Pain Split",
+      "type": "normal",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:payback",
+      "moveId": "payback",
+      "moveName": "Payback",
+      "type": "dark",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:poltergeist",
+      "moveId": "poltergeist",
+      "moveName": "Poltergeist",
+      "type": "ghost",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tutor:poltergeist",
+      "moveId": "poltergeist",
+      "moveName": "Poltergeist",
+      "type": "ghost",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "egg:powersplit",
+      "moveId": "powersplit",
+      "moveName": "Power Split",
+      "type": "psychic",
+      "sourceType": "egg",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:protect",
+      "moveId": "protect",
+      "moveName": "Protect",
+      "type": "normal",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:psychup",
+      "moveId": "psychup",
+      "moveName": "Psych Up",
+      "type": "normal",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:psychic",
+      "moveId": "psychic",
+      "moveName": "Psychic",
+      "type": "psychic",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tutor:psychic",
+      "moveId": "psychic",
+      "moveName": "Psychic",
+      "type": "psychic",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:rest",
+      "moveId": "rest",
+      "moveName": "Rest",
+      "type": "psychic",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tutor:rest",
+      "moveId": "rest",
+      "moveName": "Rest",
+      "type": "psychic",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "legacy:return",
+      "moveId": "return",
+      "moveName": "Return",
+      "type": "normal",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "legacy:round",
+      "moveId": "round",
+      "moveName": "Round",
+      "type": "normal",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:safeguard",
+      "moveId": "safeguard",
+      "moveName": "Safeguard",
+      "type": "normal",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "legacy:secretpower",
+      "moveId": "secretpower",
+      "moveName": "Secret Power",
+      "type": "normal",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "1:shadowball",
+      "moveId": "shadowball",
+      "moveName": "Shadow Ball",
+      "type": "ghost",
+      "sourceType": "level",
+      "sourceValue": 1,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:shadowball",
+      "moveId": "shadowball",
+      "moveName": "Shadow Ball",
+      "type": "ghost",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tutor:shadowball",
+      "moveId": "shadowball",
+      "moveName": "Shadow Ball",
+      "type": "ghost",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:shockwave",
+      "moveId": "shockwave",
+      "moveName": "Shock Wave",
+      "type": "electric",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tutor:shockwave",
+      "moveId": "shockwave",
+      "moveName": "Shock Wave",
+      "type": "electric",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:skittersmack",
+      "moveId": "skittersmack",
+      "moveName": "Skitter Smack",
+      "type": "bug",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tutor:skittersmack",
+      "moveId": "skittersmack",
+      "moveName": "Skitter Smack",
+      "type": "bug",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:sleeptalk",
+      "moveId": "sleeptalk",
+      "moveName": "Sleep Talk",
+      "type": "normal",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tutor:sleeptalk",
+      "moveId": "sleeptalk",
+      "moveName": "Sleep Talk",
+      "type": "normal",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "1:smog",
+      "moveId": "smog",
+      "moveName": "Smog",
+      "type": "poison",
+      "sourceType": "level",
+      "sourceValue": 1,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "legacy:snore",
+      "moveId": "snore",
+      "moveName": "Snore",
+      "type": "normal",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:solarbeam",
+      "moveId": "solarbeam",
+      "moveName": "Solar Beam",
+      "type": "grass",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:spite",
+      "moveId": "spite",
+      "moveName": "Spite",
+      "type": "ghost",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tutor:spite",
+      "moveId": "spite",
+      "moveName": "Spite",
+      "type": "ghost",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:substitute",
+      "moveId": "substitute",
+      "moveName": "Substitute",
+      "type": "normal",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:sunnyday",
+      "moveId": "sunnyday",
+      "moveName": "Sunny Day",
+      "type": "fire",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "legacy:swagger",
+      "moveId": "swagger",
+      "moveName": "Swagger",
+      "type": "normal",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:taunt",
+      "moveId": "taunt",
+      "moveName": "Taunt",
+      "type": "dark",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:telekinesis",
+      "moveId": "telekinesis",
+      "moveName": "Telekinesis",
+      "type": "psychic",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tutor:telekinesis",
+      "moveId": "telekinesis",
+      "moveName": "Telekinesis",
+      "type": "psychic",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:temperflare",
+      "moveId": "temperflare",
+      "moveName": "Temper Flare",
+      "type": "fire",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:terablast",
+      "moveId": "terablast",
+      "moveName": "Tera Blast",
+      "type": "normal",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:thief",
+      "moveId": "thief",
+      "moveName": "Thief",
+      "type": "dark",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "legacy:toxic",
+      "moveId": "toxic",
+      "moveName": "Toxic",
+      "type": "poison",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:trailblaze",
+      "moveId": "trailblaze",
+      "moveName": "Trailblaze",
+      "type": "grass",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:trick",
+      "moveId": "trick",
+      "moveName": "Trick",
+      "type": "psychic",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tutor:trick",
+      "moveId": "trick",
+      "moveName": "Trick",
+      "type": "psychic",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:trickroom",
+      "moveId": "trickroom",
+      "moveName": "Trick Room",
+      "type": "psychic",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "1:willowisp",
+      "moveId": "willowisp",
+      "moveName": "Will-O-Wisp",
+      "type": "fire",
+      "sourceType": "level",
+      "sourceValue": 1,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:willowisp",
+      "moveId": "willowisp",
+      "moveName": "Will-O-Wisp",
+      "type": "fire",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    }
+  ],
+  "spawnEntries": [
+    {
+      "id": "chandelure-1",
+      "sourceFile": "0609_chandelure.json",
+      "pokemon": {
+        "raw": "chandelure",
+        "slug": "chandelure",
+        "aspectTokens": []
+      },
+      "type": "pokemon",
+      "spawnablePositionType": "grounded",
+      "bucket": "common",
+      "bucketWeight": 94.3,
+      "levelText": "41-52",
+      "levelMin": 41,
+      "levelMax": 52,
+      "weight": 0.01,
+      "presets": [
+        "natural"
+      ],
+      "biomeHints": [
+        "Nether/is Soul Fire"
+      ],
+      "condition": {
+        "neededBaseBlocks": [
+          "#cobblemon:natural"
+        ],
+        "biomes": [
+          "#cobblemon:nether/is_soul_fire"
+        ]
+      },
+      "anticondition": {
+        "neededBaseBlocks": [
+          "minecraft:farmland"
+        ]
+      },
+      "weightMultipliers": [],
+      "raw": {
+        "id": "chandelure-1",
+        "pokemon": "chandelure",
+        "presets": [
+          "natural"
+        ],
+        "type": "pokemon",
+        "spawnablePositionType": "grounded",
+        "bucket": "common",
+        "level": "41-52",
+        "weight": 0.01,
+        "condition": {
+          "biomes": [
+            "#cobblemon:nether/is_soul_fire"
+          ]
+        }
+      }
+    },
+    {
+      "id": "chandelure-2",
+      "sourceFile": "0609_chandelure.json",
+      "pokemon": {
+        "raw": "chandelure",
+        "slug": "chandelure",
+        "aspectTokens": []
+      },
+      "type": "pokemon",
+      "spawnablePositionType": "grounded",
+      "bucket": "common",
+      "bucketWeight": 94.3,
+      "levelText": "41-52",
+      "levelMin": 41,
+      "levelMax": 52,
+      "weight": 0.05,
+      "presets": [
+        "mansion"
+      ],
+      "biomeHints": [
+        "Is Overworld"
+      ],
+      "condition": {
+        "structures": [
+          "minecraft:mansion",
+          "minecraft:woodland_mansion"
+        ],
+        "minY": 62,
+        "neededBaseBlocks": [
+          "minecraft:birch_planks",
+          "minecraft:double_smooth_stone_slab",
+          "minecraft:oak_planks",
+          "minecraft:polished_andesite",
+          "#minecraft:wool",
+          "#minecraft:wool_carpets"
+        ],
+        "neededNearbyBlocks": [
+          "#cobblemon:mansion_blocks"
+        ],
+        "canSeeSky": false,
+        "biomes": [
+          "#cobblemon:is_overworld"
+        ],
+        "timeRange": "night"
+      },
+      "anticondition": null,
+      "weightMultipliers": [],
+      "raw": {
+        "id": "chandelure-2",
+        "pokemon": "chandelure",
+        "presets": [
+          "mansion"
+        ],
+        "type": "pokemon",
+        "spawnablePositionType": "grounded",
+        "bucket": "common",
+        "level": "41-52",
+        "weight": 0.05,
+        "condition": {
+          "canSeeSky": false,
+          "biomes": [
+            "#cobblemon:is_overworld"
+          ],
+          "timeRange": "night"
+        }
+      }
+    }
+  ],
+  "forms": [],
+  "rawSpecies": {
+    "implemented": true,
+    "nationalPokedexNumber": 609,
+    "name": "Chandelure",
+    "primaryType": "ghost",
+    "secondaryType": "fire",
+    "maleRatio": 0.5,
+    "height": 10,
+    "weight": 343,
+    "pokedex": [
+      "cobblemon.species.chandelure.desc"
+    ],
+    "labels": [
+      "gen5"
+    ],
+    "aspects": [],
+    "abilities": [
+      "flashfire",
+      "flamebody",
+      "h:infiltrator"
+    ],
+    "eggGroups": [
+      "amorphous"
+    ],
+    "baseStats": {
+      "hp": 60,
+      "attack": 55,
+      "defence": 90,
+      "special_attack": 145,
+      "special_defence": 90,
+      "speed": 80
+    },
+    "evYield": {
+      "hp": 0,
+      "attack": 0,
+      "defence": 0,
+      "special_attack": 3,
+      "special_defence": 0,
+      "speed": 0
+    },
+    "baseExperienceYield": 260,
+    "experienceGroup": "medium_slow",
+    "catchRate": 45,
+    "eggCycles": 20,
+    "baseFriendship": 50,
+    "standingEyeHeight": 0.75,
+    "swimmingEyeHeight": 0.75,
+    "flyingEyeHeight": 0.75,
+    "baseScale": 0.6,
+    "hitbox": {
+      "width": 1.2,
+      "height": 1.5,
+      "fixed": false
+    },
+    "behaviour": {
+      "resting": {
+        "canSleep": true,
+        "light": "12-15",
+        "times": [
+          "day"
+        ],
+        "drowsyChance": 0.0033,
+        "rouseChance": 0.0042
+      },
+      "moving": {
+        "fly": {
+          "canFly": true
+        },
+        "swim": {
+          "avoidsWater": true,
+          "canSwimInLava": true
+        },
+        "walk": {
+          "canWalk": false
+        }
+      },
+      "herd": {
+        "maxSize": "4"
+      },
+      "combat": {
+        "willDefendSelf": true,
+        "willDefendOwner": true,
+        "willFlee": false
+      },
+      "fireImmune": true
+    },
+    "drops": {
+      "amount": 5,
+      "entries": [
+        {
+          "item": "minecraft:candle",
+          "quantityRange": "1-3"
+        },
+        {
+          "item": "cobblemon:dusk_stone",
+          "percentage": 10
+        },
+        {
+          "item": "cobblemon:rawst_berry",
+          "percentage": 10
+        }
+      ]
+    },
+    "moves": [
+      "1:smog",
+      "1:confuseray",
+      "1:flameburst",
+      "1:hex",
+      "1:painsplit",
+      "1:shadowball",
+      "1:willowisp",
+      "1:overheat",
+      "1:firespin",
+      "1:nightshade",
+      "1:curse",
+      "1:inferno",
+      "1:imprison",
+      "1:memento",
+      "1:astonish",
+      "1:ember",
+      "1:minimize",
+      "egg:acid",
+      "egg:acidarmor",
+      "egg:captivate",
+      "egg:clearsmog",
+      "egg:haze",
+      "egg:powersplit",
+      "tm:allyswitch",
+      "tm:burningjealousy",
+      "tm:calmmind",
+      "tm:captivate",
+      "tm:confuseray",
+      "tm:curse",
+      "tm:darkpulse",
+      "tm:dreameater",
+      "tm:embargo",
+      "tm:endure",
+      "tm:energyball",
+      "tm:facade",
+      "tm:fireblast",
+      "tm:firespin",
+      "tm:flamecharge",
+      "tm:flamethrower",
+      "tm:flareblitz",
+      "tm:flash",
+      "tm:gigaimpact",
+      "tm:haze",
+      "tm:heatwave",
+      "tm:hex",
+      "tm:hyperbeam",
+      "tm:imprison",
+      "tm:incinerate",
+      "tm:laserfocus",
+      "tm:lashout",
+      "tm:mysticalfire",
+      "tm:nightshade",
+      "tm:overheat",
+      "tm:painsplit",
+      "tm:payback",
+      "tm:poltergeist",
+      "tm:protect",
+      "tm:psychic",
+      "tm:psychup",
+      "tm:rest",
+      "tm:safeguard",
+      "tm:shadowball",
+      "tm:shockwave",
+      "tm:skittersmack",
+      "tm:sleeptalk",
+      "tm:solarbeam",
+      "tm:spite",
+      "tm:substitute",
+      "tm:sunnyday",
+      "tm:taunt",
+      "tm:telekinesis",
+      "tm:temperflare",
+      "tm:terablast",
+      "tm:thief",
+      "tm:trailblaze",
+      "tm:trick",
+      "tm:trickroom",
+      "tm:willowisp",
+      "tutor:allyswitch",
+      "tutor:burningjealousy",
+      "tutor:calmmind",
+      "tutor:darkpulse",
+      "tutor:energyball",
+      "tutor:flamethrower",
+      "tutor:gigaimpact",
+      "tutor:heatwave",
+      "tutor:hyperbeam",
+      "tutor:laserfocus",
+      "tutor:lashout",
+      "tutor:mysticalfire",
+      "tutor:painsplit",
+      "tutor:poltergeist",
+      "tutor:psychic",
+      "tutor:rest",
+      "tutor:shadowball",
+      "tutor:shockwave",
+      "tutor:skittersmack",
+      "tutor:sleeptalk",
+      "tutor:spite",
+      "tutor:telekinesis",
+      "tutor:trick",
+      "legacy:attract",
+      "legacy:confide",
+      "legacy:doubleteam",
+      "legacy:frustration",
+      "legacy:hiddenpower",
+      "legacy:return",
+      "legacy:round",
+      "legacy:secretpower",
+      "legacy:snore",
+      "legacy:swagger",
+      "legacy:toxic"
+    ],
+    "preEvolution": "lampent",
+    "evolutions": [],
+    "lightingData": {
+      "lightLevel": 13,
+      "liquidGlowMode": "LAND"
+    }
+  }
+}

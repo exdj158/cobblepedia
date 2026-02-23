@@ -1,0 +1,36 @@
+{
+  "esperwing": {
+    "moveId": "esperwing",
+    "moveName": "Esper Wing",
+    "type": "psychic",
+    "category": "special",
+    "basePower": 80,
+    "accuracy": 100,
+    "alwaysHits": false,
+    "shortDescription": "100% chance to raise user Speed by 1. High crit.",
+    "description": "Has a 100% chance to raise the user's Speed by 1 stage and a higher chance for a critical hit.",
+    "learners": [
+      {
+        "slug": "braviary",
+        "name": "Braviary",
+        "dexNumber": 628,
+        "methods": [
+          "level"
+        ],
+        "eggGroups": [
+          "flying"
+        ],
+        "levelUpLevels": [
+          1
+        ],
+        "baseAvailable": false,
+        "forms": [
+          {
+            "name": "Hisui",
+            "slug": "braviary-hisui"
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -30,6 +30,7 @@ import {
   parsePokemonRef,
   titleCaseFromId,
 } from "../src/data/formatters"
+import { getMoveLearnerShardId } from "../src/data/move-learner-sharding"
 import { parseRideableSummary } from "../src/data/rideable"
 
 const PROJECT_ROOT = path.resolve(import.meta.dir, "..")
@@ -92,6 +93,10 @@ const EN_US_LANG_PATH = path.join(
 
 const GENERATED_ROOT = path.join(PROJECT_ROOT, "src/data/generated")
 const GENERATED_BY_SLUG_ROOT = path.join(GENERATED_ROOT, "pokemon-by-slug")
+const GENERATED_MOVE_LEARNER_SHARDS_ROOT = path.join(GENERATED_ROOT, "move-learners-shards")
+const PUBLIC_GENERATED_ROOT = path.join(PROJECT_ROOT, "public/data/generated")
+const PUBLIC_GENERATED_BY_SLUG_ROOT = path.join(PUBLIC_GENERATED_ROOT, "pokemon-by-slug")
+const PUBLIC_MOVE_LEARNER_SHARDS_ROOT = path.join(PUBLIC_GENERATED_ROOT, "move-learners-shards")
 
 type RawSpeciesFile = {
   slug: string
@@ -222,6 +227,7 @@ async function main() {
   const pokemonDexNav = buildPokemonDexNav(pokemonList)
   const pokemonTypeEntries = buildPokemonTypeEntries(detailsBySlug)
   const moveLearners = buildMoveLearnersIndex(detailsBySlug, moveLearnersBuild, showdownData.moves)
+  const moveLearnerShards = buildMoveLearnerShards(moveLearners)
   const abilityIndex = buildAbilityIndex(detailsBySlug, showdownData.abilities)
   const itemIndex = await loadItemIndex()
   const rideableMons = buildRideableMons(detailsBySlug)
@@ -254,7 +260,7 @@ async function main() {
     pokemonList,
     pokemonDexNav,
     pokemonTypeEntries,
-    moveLearners,
+    moveLearnerShards,
     abilityIndex,
     itemIndex,
     rideableMons,
@@ -2039,6 +2045,34 @@ function buildMoveLearnersIndex(
   return index
 }
 
+function buildMoveLearnerShards(moveLearners: MoveLearnersIndex): Map<string, MoveLearnersIndex> {
+  const shardMap = new Map<string, MoveLearnersIndex>()
+  const sortedEntries = Object.entries(moveLearners).sort(([leftMoveId], [rightMoveId]) => {
+    return leftMoveId.localeCompare(rightMoveId)
+  })
+
+  for (const [moveId, moveEntry] of sortedEntries) {
+    const shardId = getMoveLearnerShardId(moveId)
+
+    if (!shardMap.has(shardId)) {
+      shardMap.set(shardId, {})
+    }
+
+    const shard = shardMap.get(shardId)
+    if (!shard) {
+      continue
+    }
+
+    shard[moveId] = moveEntry
+  }
+
+  return new Map(
+    Array.from(shardMap.entries()).sort(([leftShardId], [rightShardId]) => {
+      return leftShardId.localeCompare(rightShardId)
+    })
+  )
+}
+
 function buildAbilityIndex(
   detailsBySlug: Map<string, PokemonDetailRecord>,
   abilityMap: ShowdownData["abilities"]
@@ -2289,8 +2323,14 @@ function buildSearchIndex(
       resultType: "move-learners",
       name: entry.moveName,
       normalizedName: normalizeSearchText(entry.moveName),
-      tokens: buildTokens([entry.moveId, entry.moveName]),
-      aliases: [normalizeSearchText(entry.moveId)],
+      tokens: buildTokens([
+        entry.moveId,
+        entry.moveName,
+        entry.type ?? "",
+        entry.category ?? "",
+        entry.shortDescription ?? "",
+      ]),
+      aliases: [normalizeSearchText(entry.moveId), normalizeSearchText(entry.moveName)],
       slug: null,
       moveId: entry.moveId,
       facet: null,
@@ -2309,7 +2349,7 @@ async function writeArtifacts(params: {
   pokemonList: PokemonListItem[]
   pokemonDexNav: PokemonDexNavItem[]
   pokemonTypeEntries: PokemonTypeEntryRecord[]
-  moveLearners: MoveLearnersIndex
+  moveLearnerShards: Map<string, MoveLearnersIndex>
   abilityIndex: AbilityIndex
   itemIndex: ItemIndex
   rideableMons: RideableMonRecord[]
@@ -2318,19 +2358,31 @@ async function writeArtifacts(params: {
 }) {
   await rm(GENERATED_ROOT, { recursive: true, force: true })
   await mkdir(GENERATED_BY_SLUG_ROOT, { recursive: true })
+  await mkdir(GENERATED_MOVE_LEARNER_SHARDS_ROOT, { recursive: true })
 
-  await writeJsonFile(path.join(GENERATED_ROOT, "meta.json"), params.meta)
-  await writeJsonFile(path.join(GENERATED_ROOT, "pokemon-list.json"), params.pokemonList)
-  await writeJsonFile(path.join(GENERATED_ROOT, "pokemon-dex-nav.json"), params.pokemonDexNav)
-  await writeJsonFile(
-    path.join(GENERATED_ROOT, "pokemon-type-entries.json"),
-    params.pokemonTypeEntries
-  )
-  await writeJsonFile(path.join(GENERATED_ROOT, "move-learners.json"), params.moveLearners)
-  await writeJsonFile(path.join(GENERATED_ROOT, "ability-index.json"), params.abilityIndex)
-  await writeJsonFile(path.join(GENERATED_ROOT, "item-index.json"), params.itemIndex)
-  await writeJsonFile(path.join(GENERATED_ROOT, "rideable-mons.json"), params.rideableMons)
-  await writeJsonFile(path.join(GENERATED_ROOT, "search-index.json"), params.searchIndex)
+  await rm(PUBLIC_GENERATED_ROOT, { recursive: true, force: true })
+  await mkdir(PUBLIC_GENERATED_BY_SLUG_ROOT, { recursive: true })
+  await mkdir(PUBLIC_MOVE_LEARNER_SHARDS_ROOT, { recursive: true })
+
+  const writeSharedArtifact = async (fileName: string, data: unknown) => {
+    await writeJsonFile(path.join(GENERATED_ROOT, fileName), data)
+    await writeJsonFile(path.join(PUBLIC_GENERATED_ROOT, fileName), data)
+  }
+
+  await writeSharedArtifact("meta.json", params.meta)
+  await writeSharedArtifact("pokemon-list.json", params.pokemonList)
+  await writeSharedArtifact("pokemon-dex-nav.json", params.pokemonDexNav)
+  await writeSharedArtifact("pokemon-type-entries.json", params.pokemonTypeEntries)
+  await writeSharedArtifact("ability-index.json", params.abilityIndex)
+  await writeSharedArtifact("item-index.json", params.itemIndex)
+  await writeSharedArtifact("rideable-mons.json", params.rideableMons)
+  await writeSharedArtifact("search-index.json", params.searchIndex)
+
+  for (const [shardId, shardData] of params.moveLearnerShards) {
+    const shardFileName = `${shardId}.json`
+    await writeJsonFile(path.join(GENERATED_MOVE_LEARNER_SHARDS_ROOT, shardFileName), shardData)
+    await writeJsonFile(path.join(PUBLIC_MOVE_LEARNER_SHARDS_ROOT, shardFileName), shardData)
+  }
 
   const sortedDetails = Array.from(params.detailsBySlug.entries()).sort(([left], [right]) => {
     return left.localeCompare(right)
@@ -2338,6 +2390,7 @@ async function writeArtifacts(params: {
 
   for (const [slug, detail] of sortedDetails) {
     await writeJsonFile(path.join(GENERATED_BY_SLUG_ROOT, `${slug}.json`), detail)
+    await writeJsonFile(path.join(PUBLIC_GENERATED_BY_SLUG_ROOT, `${slug}.json`), detail)
   }
 }
 

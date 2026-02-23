@@ -1,0 +1,4967 @@
+{
+  "slug": "toxtricity",
+  "name": "Toxtricity",
+  "dexNumber": 849,
+  "implemented": true,
+  "types": [
+    "electric",
+    "poison"
+  ],
+  "abilities": [
+    {
+      "id": "punkrock",
+      "hidden": false,
+      "label": "Punkrock",
+      "slot": "first"
+    },
+    {
+      "id": "plus",
+      "hidden": false,
+      "label": "Plus",
+      "slot": "second"
+    },
+    {
+      "id": "technician",
+      "hidden": true,
+      "label": "Technician",
+      "slot": "hidden"
+    }
+  ],
+  "eggGroups": [
+    "human_like"
+  ],
+  "labels": [
+    "gen8"
+  ],
+  "aspects": [
+    "amped-form"
+  ],
+  "aliases": [
+    "gmax",
+    "low-key",
+    "low-key-gmax",
+    "toxtricity",
+    "toxtricity gmax",
+    "toxtricity low-key",
+    "toxtricity low-key-gmax"
+  ],
+  "maleRatio": 0.5,
+  "height": 16,
+  "weight": 400,
+  "catchRate": 45,
+  "baseExperienceYield": 176,
+  "baseFriendship": 50,
+  "eggCycles": 25,
+  "baseStats": {
+    "hp": 75,
+    "attack": 98,
+    "defence": 70,
+    "special_attack": 114,
+    "special_defence": 70,
+    "speed": 75
+  },
+  "evYield": {
+    "hp": 0,
+    "attack": 0,
+    "defence": 0,
+    "special_attack": 2,
+    "special_defence": 0,
+    "speed": 0
+  },
+  "preEvolution": {
+    "raw": "toxel",
+    "slug": "toxel",
+    "aspectTokens": []
+  },
+  "evolutions": [],
+  "evolutionFamily": {
+    "members": [
+      {
+        "nodeId": "toxel",
+        "slug": "toxel",
+        "name": "Toxel",
+        "dexNumber": 848,
+        "formSlug": null,
+        "formName": null
+      },
+      {
+        "nodeId": "toxtricity",
+        "slug": "toxtricity",
+        "name": "Toxtricity",
+        "dexNumber": 849,
+        "formSlug": null,
+        "formName": null
+      },
+      {
+        "nodeId": "toxtricity-gmax",
+        "slug": "toxtricity",
+        "name": "Toxtricity",
+        "dexNumber": 849,
+        "formSlug": "toxtricity-gmax",
+        "formName": "Gmax"
+      },
+      {
+        "nodeId": "toxtricity-lowkey",
+        "slug": "toxtricity",
+        "name": "Toxtricity",
+        "dexNumber": 849,
+        "formSlug": "toxtricity-lowkey",
+        "formName": "Low-Key"
+      }
+    ],
+    "edges": [
+      {
+        "fromNodeId": "toxel",
+        "toNodeId": "toxtricity-gmax",
+        "fromSlug": "toxel",
+        "toSlug": "toxtricity",
+        "method": "level_up",
+        "requirementText": [
+          "Level 30+",
+          "Property toxel nature=hardy"
+        ]
+      },
+      {
+        "fromNodeId": "toxel",
+        "toNodeId": "toxtricity-gmax",
+        "fromSlug": "toxel",
+        "toSlug": "toxtricity",
+        "method": "level_up",
+        "requirementText": [
+          "Level 30+",
+          "Property toxel nature=brave"
+        ]
+      },
+      {
+        "fromNodeId": "toxel",
+        "toNodeId": "toxtricity-gmax",
+        "fromSlug": "toxel",
+        "toSlug": "toxtricity",
+        "method": "level_up",
+        "requirementText": [
+          "Level 30+",
+          "Property toxel nature=adamant"
+        ]
+      },
+      {
+        "fromNodeId": "toxel",
+        "toNodeId": "toxtricity-gmax",
+        "fromSlug": "toxel",
+        "toSlug": "toxtricity",
+        "method": "level_up",
+        "requirementText": [
+          "Level 30+",
+          "Property toxel nature=naughty"
+        ]
+      },
+      {
+        "fromNodeId": "toxel",
+        "toNodeId": "toxtricity-gmax",
+        "fromSlug": "toxel",
+        "toSlug": "toxtricity",
+        "method": "level_up",
+        "requirementText": [
+          "Level 30+",
+          "Property toxel nature=docile"
+        ]
+      },
+      {
+        "fromNodeId": "toxel",
+        "toNodeId": "toxtricity-gmax",
+        "fromSlug": "toxel",
+        "toSlug": "toxtricity",
+        "method": "level_up",
+        "requirementText": [
+          "Level 30+",
+          "Property toxel nature=impish"
+        ]
+      },
+      {
+        "fromNodeId": "toxel",
+        "toNodeId": "toxtricity-gmax",
+        "fromSlug": "toxel",
+        "toSlug": "toxtricity",
+        "method": "level_up",
+        "requirementText": [
+          "Level 30+",
+          "Property toxel nature=lax"
+        ]
+      },
+      {
+        "fromNodeId": "toxel",
+        "toNodeId": "toxtricity-gmax",
+        "fromSlug": "toxel",
+        "toSlug": "toxtricity",
+        "method": "level_up",
+        "requirementText": [
+          "Level 30+",
+          "Property toxel nature=hasty"
+        ]
+      },
+      {
+        "fromNodeId": "toxel",
+        "toNodeId": "toxtricity-gmax",
+        "fromSlug": "toxel",
+        "toSlug": "toxtricity",
+        "method": "level_up",
+        "requirementText": [
+          "Level 30+",
+          "Property toxel nature=jolly"
+        ]
+      },
+      {
+        "fromNodeId": "toxel",
+        "toNodeId": "toxtricity-gmax",
+        "fromSlug": "toxel",
+        "toSlug": "toxtricity",
+        "method": "level_up",
+        "requirementText": [
+          "Level 30+",
+          "Property toxel nature=naive"
+        ]
+      },
+      {
+        "fromNodeId": "toxel",
+        "toNodeId": "toxtricity-gmax",
+        "fromSlug": "toxel",
+        "toSlug": "toxtricity",
+        "method": "level_up",
+        "requirementText": [
+          "Level 30+",
+          "Property toxel nature=rash"
+        ]
+      },
+      {
+        "fromNodeId": "toxel",
+        "toNodeId": "toxtricity-gmax",
+        "fromSlug": "toxel",
+        "toSlug": "toxtricity",
+        "method": "level_up",
+        "requirementText": [
+          "Level 30+",
+          "Property toxel nature=sassy"
+        ]
+      },
+      {
+        "fromNodeId": "toxel",
+        "toNodeId": "toxtricity-gmax",
+        "fromSlug": "toxel",
+        "toSlug": "toxtricity",
+        "method": "level_up",
+        "requirementText": [
+          "Level 30+",
+          "Property toxel nature=quirky"
+        ]
+      },
+      {
+        "fromNodeId": "toxel",
+        "toNodeId": "toxtricity-lowkey",
+        "fromSlug": "toxel",
+        "toSlug": "toxtricity",
+        "method": "level_up",
+        "requirementText": [
+          "Level 30+",
+          "Property toxel nature=lonely"
+        ]
+      },
+      {
+        "fromNodeId": "toxel",
+        "toNodeId": "toxtricity-lowkey",
+        "fromSlug": "toxel",
+        "toSlug": "toxtricity",
+        "method": "level_up",
+        "requirementText": [
+          "Level 30+",
+          "Property toxel nature=bold"
+        ]
+      },
+      {
+        "fromNodeId": "toxel",
+        "toNodeId": "toxtricity-lowkey",
+        "fromSlug": "toxel",
+        "toSlug": "toxtricity",
+        "method": "level_up",
+        "requirementText": [
+          "Level 30+",
+          "Property toxel nature=relaxed"
+        ]
+      },
+      {
+        "fromNodeId": "toxel",
+        "toNodeId": "toxtricity-lowkey",
+        "fromSlug": "toxel",
+        "toSlug": "toxtricity",
+        "method": "level_up",
+        "requirementText": [
+          "Level 30+",
+          "Property toxel nature=timid"
+        ]
+      },
+      {
+        "fromNodeId": "toxel",
+        "toNodeId": "toxtricity-lowkey",
+        "fromSlug": "toxel",
+        "toSlug": "toxtricity",
+        "method": "level_up",
+        "requirementText": [
+          "Level 30+",
+          "Property toxel nature=serious"
+        ]
+      },
+      {
+        "fromNodeId": "toxel",
+        "toNodeId": "toxtricity-lowkey",
+        "fromSlug": "toxel",
+        "toSlug": "toxtricity",
+        "method": "level_up",
+        "requirementText": [
+          "Level 30+",
+          "Property toxel nature=modest"
+        ]
+      },
+      {
+        "fromNodeId": "toxel",
+        "toNodeId": "toxtricity-lowkey",
+        "fromSlug": "toxel",
+        "toSlug": "toxtricity",
+        "method": "level_up",
+        "requirementText": [
+          "Level 30+",
+          "Property toxel nature=mild"
+        ]
+      },
+      {
+        "fromNodeId": "toxel",
+        "toNodeId": "toxtricity-lowkey",
+        "fromSlug": "toxel",
+        "toSlug": "toxtricity",
+        "method": "level_up",
+        "requirementText": [
+          "Level 30+",
+          "Property toxel nature=quiet"
+        ]
+      },
+      {
+        "fromNodeId": "toxel",
+        "toNodeId": "toxtricity-lowkey",
+        "fromSlug": "toxel",
+        "toSlug": "toxtricity",
+        "method": "level_up",
+        "requirementText": [
+          "Level 30+",
+          "Property toxel nature=bashful"
+        ]
+      },
+      {
+        "fromNodeId": "toxel",
+        "toNodeId": "toxtricity-lowkey",
+        "fromSlug": "toxel",
+        "toSlug": "toxtricity",
+        "method": "level_up",
+        "requirementText": [
+          "Level 30+",
+          "Property toxel nature=calm"
+        ]
+      },
+      {
+        "fromNodeId": "toxel",
+        "toNodeId": "toxtricity-lowkey",
+        "fromSlug": "toxel",
+        "toSlug": "toxtricity",
+        "method": "level_up",
+        "requirementText": [
+          "Level 30+",
+          "Property toxel nature=gentle"
+        ]
+      },
+      {
+        "fromNodeId": "toxel",
+        "toNodeId": "toxtricity-lowkey",
+        "fromSlug": "toxel",
+        "toSlug": "toxtricity",
+        "method": "level_up",
+        "requirementText": [
+          "Level 30+",
+          "Property toxel nature=careful"
+        ]
+      }
+    ],
+    "roots": [
+      "toxel",
+      "toxtricity"
+    ]
+  },
+  "moves": [
+    {
+      "raw": "1:acid",
+      "moveId": "acid",
+      "moveName": "Acid",
+      "type": "poison",
+      "sourceType": "level",
+      "sourceValue": 1,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "1:acidspray",
+      "moveId": "acidspray",
+      "moveName": "Acid Spray",
+      "type": "poison",
+      "sourceType": "level",
+      "sourceValue": 1,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:acidspray",
+      "moveId": "acidspray",
+      "moveName": "Acid Spray",
+      "type": "poison",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "legacy:attract",
+      "moveId": "attract",
+      "moveName": "Attract",
+      "type": "normal",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "1:belch",
+      "moveId": "belch",
+      "moveName": "Belch",
+      "type": "poison",
+      "sourceType": "level",
+      "sourceValue": 1,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "48:boomburst",
+      "moveId": "boomburst",
+      "moveName": "Boomburst",
+      "type": "normal",
+      "sourceType": "level",
+      "sourceValue": 48,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:brickbreak",
+      "moveId": "brickbreak",
+      "moveName": "Brick Break",
+      "type": "fighting",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "4:charge",
+      "moveId": "charge",
+      "moveName": "Charge",
+      "type": "electric",
+      "sourceType": "level",
+      "sourceValue": 4,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:charge",
+      "moveId": "charge",
+      "moveName": "Charge",
+      "type": "electric",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:chargebeam",
+      "moveId": "chargebeam",
+      "moveName": "Charge Beam",
+      "type": "electric",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tutor:chargebeam",
+      "moveId": "chargebeam",
+      "moveName": "Charge Beam",
+      "type": "electric",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:charm",
+      "moveId": "charm",
+      "moveName": "Charm",
+      "type": "fairy",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "36:discharge",
+      "moveId": "discharge",
+      "moveName": "Discharge",
+      "type": "electric",
+      "sourceType": "level",
+      "sourceValue": 36,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:drainpunch",
+      "moveId": "drainpunch",
+      "moveName": "Drain Punch",
+      "type": "fighting",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tutor:drainpunch",
+      "moveId": "drainpunch",
+      "moveName": "Drain Punch",
+      "type": "fighting",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:eerieimpulse",
+      "moveId": "eerieimpulse",
+      "moveName": "Eerie Impulse",
+      "type": "electric",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:electricterrain",
+      "moveId": "electricterrain",
+      "moveName": "Electric Terrain",
+      "type": "electric",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:electroball",
+      "moveId": "electroball",
+      "moveName": "Electro Ball",
+      "type": "electric",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:electroweb",
+      "moveId": "electroweb",
+      "moveName": "Electroweb",
+      "type": "electric",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tutor:electroweb",
+      "moveId": "electroweb",
+      "moveName": "Electroweb",
+      "type": "electric",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:encore",
+      "moveId": "encore",
+      "moveName": "Encore",
+      "type": "normal",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "egg:endeavor",
+      "moveId": "endeavor",
+      "moveName": "Endeavor",
+      "type": "normal",
+      "sourceType": "egg",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:endeavor",
+      "moveId": "endeavor",
+      "moveName": "Endeavor",
+      "type": "normal",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tutor:endeavor",
+      "moveId": "endeavor",
+      "moveName": "Endeavor",
+      "type": "normal",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:endure",
+      "moveId": "endure",
+      "moveName": "Endure",
+      "type": "normal",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:facade",
+      "moveId": "facade",
+      "moveName": "Facade",
+      "type": "normal",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:firepunch",
+      "moveId": "firepunch",
+      "moveName": "Fire Punch",
+      "type": "fire",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tutor:firepunch",
+      "moveId": "firepunch",
+      "moveName": "Fire Punch",
+      "type": "fire",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "1:flail",
+      "moveId": "flail",
+      "moveName": "Flail",
+      "type": "normal",
+      "sourceType": "level",
+      "sourceValue": 1,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:fling",
+      "moveId": "fling",
+      "moveName": "Fling",
+      "type": "dark",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:gigaimpact",
+      "moveId": "gigaimpact",
+      "moveName": "Giga Impact",
+      "type": "normal",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tutor:gigaimpact",
+      "moveId": "gigaimpact",
+      "moveName": "Giga Impact",
+      "type": "normal",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "1:growl",
+      "moveId": "growl",
+      "moveName": "Growl",
+      "type": "normal",
+      "sourceType": "level",
+      "sourceValue": 1,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:gunkshot",
+      "moveId": "gunkshot",
+      "moveName": "Gunk Shot",
+      "type": "poison",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tutor:gunkshot",
+      "moveId": "gunkshot",
+      "moveName": "Gunk Shot",
+      "type": "poison",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:helpinghand",
+      "moveId": "helpinghand",
+      "moveName": "Helping Hand",
+      "type": "normal",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tutor:helpinghand",
+      "moveId": "helpinghand",
+      "moveName": "Helping Hand",
+      "type": "normal",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:hex",
+      "moveId": "hex",
+      "moveName": "Hex",
+      "type": "ghost",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:hyperbeam",
+      "moveId": "hyperbeam",
+      "moveName": "Hyper Beam",
+      "type": "normal",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tutor:hyperbeam",
+      "moveId": "hyperbeam",
+      "moveName": "Hyper Beam",
+      "type": "normal",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:hypervoice",
+      "moveId": "hypervoice",
+      "moveName": "Hyper Voice",
+      "type": "normal",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tutor:hypervoice",
+      "moveId": "hypervoice",
+      "moveName": "Hyper Voice",
+      "type": "normal",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "1:leer",
+      "moveId": "leer",
+      "moveName": "Leer",
+      "type": "normal",
+      "sourceType": "level",
+      "sourceValue": 1,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:megakick",
+      "moveId": "megakick",
+      "moveName": "Mega Kick",
+      "type": "normal",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:megapunch",
+      "moveId": "megapunch",
+      "moveName": "Mega Punch",
+      "type": "normal",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "egg:metalsound",
+      "moveId": "metalsound",
+      "moveName": "Metal Sound",
+      "type": "steel",
+      "sourceType": "egg",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:metalsound",
+      "moveId": "metalsound",
+      "moveName": "Metal Sound",
+      "type": "steel",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:metronome",
+      "moveId": "metronome",
+      "moveName": "Metronome",
+      "type": "normal",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "1:nobleroar",
+      "moveId": "nobleroar",
+      "moveName": "Noble Roar",
+      "type": "normal",
+      "sourceType": "level",
+      "sourceValue": 1,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "1:nuzzle",
+      "moveId": "nuzzle",
+      "moveName": "Nuzzle",
+      "type": "electric",
+      "sourceType": "level",
+      "sourceValue": 1,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "44:overdrive",
+      "moveId": "overdrive",
+      "moveName": "Overdrive",
+      "type": "electric",
+      "sourceType": "level",
+      "sourceValue": 44,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:payback",
+      "moveId": "payback",
+      "moveName": "Payback",
+      "type": "dark",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "40:poisonjab",
+      "moveId": "poisonjab",
+      "moveName": "Poison Jab",
+      "type": "poison",
+      "sourceType": "level",
+      "sourceValue": 40,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:poisonjab",
+      "moveId": "poisonjab",
+      "moveName": "Poison Jab",
+      "type": "poison",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tutor:poisonjab",
+      "moveId": "poisonjab",
+      "moveName": "Poison Jab",
+      "type": "poison",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:poisontail",
+      "moveId": "poisontail",
+      "moveName": "Poison Tail",
+      "type": "poison",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:poweruppunch",
+      "moveId": "poweruppunch",
+      "moveName": "Power-Up Punch",
+      "type": "fighting",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:protect",
+      "moveId": "protect",
+      "moveName": "Protect",
+      "type": "normal",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:psychicnoise",
+      "moveId": "psychicnoise",
+      "moveName": "Psychic Noise",
+      "type": "psychic",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:raindance",
+      "moveId": "raindance",
+      "moveName": "Rain Dance",
+      "type": "water",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:rest",
+      "moveId": "rest",
+      "moveName": "Rest",
+      "type": "psychic",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tutor:rest",
+      "moveId": "rest",
+      "moveName": "Rest",
+      "type": "psychic",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:risingvoltage",
+      "moveId": "risingvoltage",
+      "moveName": "Rising Voltage",
+      "type": "electric",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tutor:risingvoltage",
+      "moveId": "risingvoltage",
+      "moveName": "Rising Voltage",
+      "type": "electric",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "legacy:round",
+      "moveId": "round",
+      "moveName": "Round",
+      "type": "normal",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "12:scaryface",
+      "moveId": "scaryface",
+      "moveName": "Scary Face",
+      "type": "normal",
+      "sourceType": "level",
+      "sourceValue": 12,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:scaryface",
+      "moveId": "scaryface",
+      "moveName": "Scary Face",
+      "type": "normal",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "24:screech",
+      "moveId": "screech",
+      "moveName": "Screech",
+      "type": "normal",
+      "sourceType": "level",
+      "sourceValue": 24,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:screech",
+      "moveId": "screech",
+      "moveName": "Screech",
+      "type": "normal",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "52:shiftgear",
+      "moveId": "shiftgear",
+      "moveName": "Shift Gear",
+      "type": "steel",
+      "sourceType": "level",
+      "sourceValue": 52,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "8:shockwave",
+      "moveId": "shockwave",
+      "moveName": "Shock Wave",
+      "type": "electric",
+      "sourceType": "level",
+      "sourceValue": 8,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:shockwave",
+      "moveId": "shockwave",
+      "moveName": "Shock Wave",
+      "type": "electric",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tutor:shockwave",
+      "moveId": "shockwave",
+      "moveName": "Shock Wave",
+      "type": "electric",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:sleeptalk",
+      "moveId": "sleeptalk",
+      "moveName": "Sleep Talk",
+      "type": "normal",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tutor:sleeptalk",
+      "moveId": "sleeptalk",
+      "moveName": "Sleep Talk",
+      "type": "normal",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:sludgebomb",
+      "moveId": "sludgebomb",
+      "moveName": "Sludge Bomb",
+      "type": "poison",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tutor:sludgebomb",
+      "moveId": "sludgebomb",
+      "moveName": "Sludge Bomb",
+      "type": "poison",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:sludgewave",
+      "moveId": "sludgewave",
+      "moveName": "Sludge Wave",
+      "type": "poison",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:snarl",
+      "moveId": "snarl",
+      "moveName": "Snarl",
+      "type": "dark",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tutor:snarl",
+      "moveId": "snarl",
+      "moveName": "Snarl",
+      "type": "dark",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "legacy:snore",
+      "moveId": "snore",
+      "moveName": "Snore",
+      "type": "normal",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "1:spark",
+      "moveId": "spark",
+      "moveName": "Spark",
+      "type": "electric",
+      "sourceType": "level",
+      "sourceValue": 1,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:storedpower",
+      "moveId": "storedpower",
+      "moveName": "Stored Power",
+      "type": "psychic",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:substitute",
+      "moveId": "substitute",
+      "moveName": "Substitute",
+      "type": "normal",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:sunnyday",
+      "moveId": "sunnyday",
+      "moveName": "Sunny Day",
+      "type": "fire",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "28:swagger",
+      "moveId": "swagger",
+      "moveName": "Swagger",
+      "type": "normal",
+      "sourceType": "level",
+      "sourceValue": 28,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:swagger",
+      "moveId": "swagger",
+      "moveName": "Swagger",
+      "type": "normal",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:swift",
+      "moveId": "swift",
+      "moveName": "Swift",
+      "type": "normal",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tutor:swift",
+      "moveId": "swift",
+      "moveName": "Swift",
+      "type": "normal",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:takedown",
+      "moveId": "takedown",
+      "moveName": "Take Down",
+      "type": "normal",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "16:taunt",
+      "moveId": "taunt",
+      "moveName": "Taunt",
+      "type": "dark",
+      "sourceType": "level",
+      "sourceValue": 16,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:taunt",
+      "moveId": "taunt",
+      "moveName": "Taunt",
+      "type": "dark",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "1:tearfullook",
+      "moveId": "tearfullook",
+      "moveName": "Tearful Look",
+      "type": "normal",
+      "sourceType": "level",
+      "sourceValue": 1,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:terablast",
+      "moveId": "terablast",
+      "moveName": "Tera Blast",
+      "type": "normal",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:thief",
+      "moveId": "thief",
+      "moveName": "Thief",
+      "type": "dark",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:throatchop",
+      "moveId": "throatchop",
+      "moveName": "Throat Chop",
+      "type": "dark",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tutor:throatchop",
+      "moveId": "throatchop",
+      "moveName": "Throat Chop",
+      "type": "dark",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:thunder",
+      "moveId": "thunder",
+      "moveName": "Thunder",
+      "type": "electric",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:thunderfang",
+      "moveId": "thunderfang",
+      "moveName": "Thunder Fang",
+      "type": "electric",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tutor:thunderfang",
+      "moveId": "thunderfang",
+      "moveName": "Thunder Fang",
+      "type": "electric",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:thunderpunch",
+      "moveId": "thunderpunch",
+      "moveName": "Thunder Punch",
+      "type": "electric",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tutor:thunderpunch",
+      "moveId": "thunderpunch",
+      "moveName": "Thunder Punch",
+      "type": "electric",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "1:thundershock",
+      "moveId": "thundershock",
+      "moveName": "Thunder Shock",
+      "type": "electric",
+      "sourceType": "level",
+      "sourceValue": 1,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:thunderwave",
+      "moveId": "thunderwave",
+      "moveName": "Thunder Wave",
+      "type": "electric",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:thunderbolt",
+      "moveId": "thunderbolt",
+      "moveName": "Thunderbolt",
+      "type": "electric",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tutor:thunderbolt",
+      "moveId": "thunderbolt",
+      "moveName": "Thunderbolt",
+      "type": "electric",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "32:toxic",
+      "moveId": "toxic",
+      "moveName": "Toxic",
+      "type": "poison",
+      "sourceType": "level",
+      "sourceValue": 32,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:toxic",
+      "moveId": "toxic",
+      "moveName": "Toxic",
+      "type": "poison",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:toxicspikes",
+      "moveId": "toxicspikes",
+      "moveName": "Toxic Spikes",
+      "type": "poison",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:trailblaze",
+      "moveId": "trailblaze",
+      "moveName": "Trailblaze",
+      "type": "grass",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:uproar",
+      "moveId": "uproar",
+      "moveName": "Uproar",
+      "type": "normal",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tutor:uproar",
+      "moveId": "uproar",
+      "moveName": "Uproar",
+      "type": "normal",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:venoshock",
+      "moveId": "venoshock",
+      "moveName": "Venoshock",
+      "type": "poison",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:voltswitch",
+      "moveId": "voltswitch",
+      "moveName": "Volt Switch",
+      "type": "electric",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:wildcharge",
+      "moveId": "wildcharge",
+      "moveName": "Wild Charge",
+      "type": "electric",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tutor:wildcharge",
+      "moveId": "wildcharge",
+      "moveName": "Wild Charge",
+      "type": "electric",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    }
+  ],
+  "spawnEntries": [
+    {
+      "id": "toxtricity-1",
+      "sourceFile": "0849_toxtricity.json",
+      "pokemon": {
+        "raw": "toxtricity",
+        "slug": "toxtricity",
+        "aspectTokens": []
+      },
+      "type": "pokemon",
+      "spawnablePositionType": "grounded",
+      "bucket": "uncommon",
+      "bucketWeight": 5,
+      "levelText": "30-50",
+      "levelMin": 30,
+      "levelMax": 50,
+      "weight": 0.32,
+      "presets": [
+        "natural"
+      ],
+      "biomeHints": [
+        "Is Overworld"
+      ],
+      "condition": {
+        "neededBaseBlocks": [
+          "#cobblemon:natural"
+        ],
+        "minSkyLight": 0,
+        "maxSkyLight": 7,
+        "biomes": [
+          "#cobblemon:is_overworld"
+        ]
+      },
+      "anticondition": {
+        "neededBaseBlocks": [
+          "minecraft:farmland"
+        ]
+      },
+      "weightMultipliers": [],
+      "raw": {
+        "id": "toxtricity-1",
+        "pokemon": "toxtricity",
+        "presets": [
+          "natural"
+        ],
+        "type": "pokemon",
+        "spawnablePositionType": "grounded",
+        "bucket": "uncommon",
+        "level": "30-50",
+        "weight": 0.32,
+        "condition": {
+          "minSkyLight": 0,
+          "maxSkyLight": 7,
+          "biomes": [
+            "#cobblemon:is_overworld"
+          ]
+        }
+      }
+    },
+    {
+      "id": "toxtricity-2",
+      "sourceFile": "0849_toxtricity.json",
+      "pokemon": {
+        "raw": "toxtricity",
+        "slug": "toxtricity",
+        "aspectTokens": []
+      },
+      "type": "pokemon",
+      "spawnablePositionType": "grounded",
+      "bucket": "common",
+      "bucketWeight": 94.3,
+      "levelText": "30-50",
+      "levelMin": 30,
+      "levelMax": 50,
+      "weight": 0.2,
+      "presets": [
+        "natural",
+        "urban"
+      ],
+      "biomeHints": [
+        "Is Overworld"
+      ],
+      "condition": {
+        "neededBaseBlocks": [
+          "#cobblemon:natural"
+        ],
+        "neededNearbyBlocks": [
+          "#cobblemon:concrete_blocks"
+        ],
+        "minSkyLight": 8,
+        "maxSkyLight": 15,
+        "biomes": [
+          "#cobblemon:is_overworld"
+        ]
+      },
+      "anticondition": {
+        "neededBaseBlocks": [
+          "minecraft:farmland"
+        ],
+        "structures": [
+          "#minecraft:village",
+          "minecraft:trail_ruins"
+        ]
+      },
+      "weightMultipliers": [
+        {
+          "multiplier": 1.5,
+          "condition": {
+            "timeRange": "night"
+          }
+        }
+      ],
+      "raw": {
+        "id": "toxtricity-2",
+        "pokemon": "toxtricity",
+        "presets": [
+          "natural",
+          "urban"
+        ],
+        "type": "pokemon",
+        "spawnablePositionType": "grounded",
+        "bucket": "common",
+        "level": "30-50",
+        "weight": 0.2,
+        "weightMultiplier": {
+          "multiplier": 1.5,
+          "condition": {
+            "timeRange": "night"
+          }
+        },
+        "condition": {
+          "minSkyLight": 8,
+          "maxSkyLight": 15,
+          "biomes": [
+            "#cobblemon:is_overworld"
+          ]
+        }
+      }
+    }
+  ],
+  "forms": [
+    {
+      "name": "Low-Key",
+      "slug": "toxtricity-lowkey",
+      "aspects": [
+        "low_key-form"
+      ],
+      "labels": [
+        "gen8"
+      ],
+      "types": [
+        "electric",
+        "poison"
+      ],
+      "maleRatio": 0.5,
+      "height": 16,
+      "weight": 400,
+      "catchRate": null,
+      "baseExperienceYield": null,
+      "baseFriendship": null,
+      "eggCycles": null,
+      "baseStats": {},
+      "evYield": {},
+      "battleOnly": false,
+      "abilities": [
+        {
+          "id": "punkrock",
+          "hidden": false,
+          "label": "Punkrock",
+          "slot": "first"
+        },
+        {
+          "id": "minus",
+          "hidden": false,
+          "label": "Minus",
+          "slot": "second"
+        },
+        {
+          "id": "technician",
+          "hidden": true,
+          "label": "Technician",
+          "slot": "hidden"
+        }
+      ],
+      "moves": [
+        {
+          "raw": "1:spark",
+          "moveId": "spark",
+          "moveName": "Spark",
+          "type": "electric",
+          "sourceType": "level",
+          "sourceValue": 1,
+          "fromForm": "Low-Key",
+          "fromFormSlug": "toxtricity-lowkey"
+        },
+        {
+          "raw": "1:belch",
+          "moveId": "belch",
+          "moveName": "Belch",
+          "type": "poison",
+          "sourceType": "level",
+          "sourceValue": 1,
+          "fromForm": "Low-Key",
+          "fromFormSlug": "toxtricity-lowkey"
+        },
+        {
+          "raw": "1:tearfullook",
+          "moveId": "tearfullook",
+          "moveName": "Tearful Look",
+          "type": "normal",
+          "sourceType": "level",
+          "sourceValue": 1,
+          "fromForm": "Low-Key",
+          "fromFormSlug": "toxtricity-lowkey"
+        },
+        {
+          "raw": "1:nuzzle",
+          "moveId": "nuzzle",
+          "moveName": "Nuzzle",
+          "type": "electric",
+          "sourceType": "level",
+          "sourceValue": 1,
+          "fromForm": "Low-Key",
+          "fromFormSlug": "toxtricity-lowkey"
+        },
+        {
+          "raw": "1:growl",
+          "moveId": "growl",
+          "moveName": "Growl",
+          "type": "normal",
+          "sourceType": "level",
+          "sourceValue": 1,
+          "fromForm": "Low-Key",
+          "fromFormSlug": "toxtricity-lowkey"
+        },
+        {
+          "raw": "1:flail",
+          "moveId": "flail",
+          "moveName": "Flail",
+          "type": "normal",
+          "sourceType": "level",
+          "sourceValue": 1,
+          "fromForm": "Low-Key",
+          "fromFormSlug": "toxtricity-lowkey"
+        },
+        {
+          "raw": "1:acid",
+          "moveId": "acid",
+          "moveName": "Acid",
+          "type": "poison",
+          "sourceType": "level",
+          "sourceValue": 1,
+          "fromForm": "Low-Key",
+          "fromFormSlug": "toxtricity-lowkey"
+        },
+        {
+          "raw": "1:thundershock",
+          "moveId": "thundershock",
+          "moveName": "Thunder Shock",
+          "type": "electric",
+          "sourceType": "level",
+          "sourceValue": 1,
+          "fromForm": "Low-Key",
+          "fromFormSlug": "toxtricity-lowkey"
+        },
+        {
+          "raw": "1:acidspray",
+          "moveId": "acidspray",
+          "moveName": "Acid Spray",
+          "type": "poison",
+          "sourceType": "level",
+          "sourceValue": 1,
+          "fromForm": "Low-Key",
+          "fromFormSlug": "toxtricity-lowkey"
+        },
+        {
+          "raw": "1:leer",
+          "moveId": "leer",
+          "moveName": "Leer",
+          "type": "normal",
+          "sourceType": "level",
+          "sourceValue": 1,
+          "fromForm": "Low-Key",
+          "fromFormSlug": "toxtricity-lowkey"
+        },
+        {
+          "raw": "1:nobleroar",
+          "moveId": "nobleroar",
+          "moveName": "Noble Roar",
+          "type": "normal",
+          "sourceType": "level",
+          "sourceValue": 1,
+          "fromForm": "Low-Key",
+          "fromFormSlug": "toxtricity-lowkey"
+        },
+        {
+          "raw": "4:charge",
+          "moveId": "charge",
+          "moveName": "Charge",
+          "type": "electric",
+          "sourceType": "level",
+          "sourceValue": 4,
+          "fromForm": "Low-Key",
+          "fromFormSlug": "toxtricity-lowkey"
+        },
+        {
+          "raw": "8:shockwave",
+          "moveId": "shockwave",
+          "moveName": "Shock Wave",
+          "type": "electric",
+          "sourceType": "level",
+          "sourceValue": 8,
+          "fromForm": "Low-Key",
+          "fromFormSlug": "toxtricity-lowkey"
+        },
+        {
+          "raw": "12:scaryface",
+          "moveId": "scaryface",
+          "moveName": "Scary Face",
+          "type": "normal",
+          "sourceType": "level",
+          "sourceValue": 12,
+          "fromForm": "Low-Key",
+          "fromFormSlug": "toxtricity-lowkey"
+        },
+        {
+          "raw": "16:taunt",
+          "moveId": "taunt",
+          "moveName": "Taunt",
+          "type": "dark",
+          "sourceType": "level",
+          "sourceValue": 16,
+          "fromForm": "Low-Key",
+          "fromFormSlug": "toxtricity-lowkey"
+        },
+        {
+          "raw": "24:screech",
+          "moveId": "screech",
+          "moveName": "Screech",
+          "type": "normal",
+          "sourceType": "level",
+          "sourceValue": 24,
+          "fromForm": "Low-Key",
+          "fromFormSlug": "toxtricity-lowkey"
+        },
+        {
+          "raw": "28:swagger",
+          "moveId": "swagger",
+          "moveName": "Swagger",
+          "type": "normal",
+          "sourceType": "level",
+          "sourceValue": 28,
+          "fromForm": "Low-Key",
+          "fromFormSlug": "toxtricity-lowkey"
+        },
+        {
+          "raw": "32:toxic",
+          "moveId": "toxic",
+          "moveName": "Toxic",
+          "type": "poison",
+          "sourceType": "level",
+          "sourceValue": 32,
+          "fromForm": "Low-Key",
+          "fromFormSlug": "toxtricity-lowkey"
+        },
+        {
+          "raw": "36:discharge",
+          "moveId": "discharge",
+          "moveName": "Discharge",
+          "type": "electric",
+          "sourceType": "level",
+          "sourceValue": 36,
+          "fromForm": "Low-Key",
+          "fromFormSlug": "toxtricity-lowkey"
+        },
+        {
+          "raw": "40:poisonjab",
+          "moveId": "poisonjab",
+          "moveName": "Poison Jab",
+          "type": "poison",
+          "sourceType": "level",
+          "sourceValue": 40,
+          "fromForm": "Low-Key",
+          "fromFormSlug": "toxtricity-lowkey"
+        },
+        {
+          "raw": "44:overdrive",
+          "moveId": "overdrive",
+          "moveName": "Overdrive",
+          "type": "electric",
+          "sourceType": "level",
+          "sourceValue": 44,
+          "fromForm": "Low-Key",
+          "fromFormSlug": "toxtricity-lowkey"
+        },
+        {
+          "raw": "48:boomburst",
+          "moveId": "boomburst",
+          "moveName": "Boomburst",
+          "type": "normal",
+          "sourceType": "level",
+          "sourceValue": 48,
+          "fromForm": "Low-Key",
+          "fromFormSlug": "toxtricity-lowkey"
+        },
+        {
+          "raw": "52:magneticflux",
+          "moveId": "magneticflux",
+          "moveName": "Magnetic Flux",
+          "type": "electric",
+          "sourceType": "level",
+          "sourceValue": 52,
+          "fromForm": "Low-Key",
+          "fromFormSlug": "toxtricity-lowkey"
+        },
+        {
+          "raw": "egg:endeavor",
+          "moveId": "endeavor",
+          "moveName": "Endeavor",
+          "type": "normal",
+          "sourceType": "egg",
+          "sourceValue": null,
+          "fromForm": "Low-Key",
+          "fromFormSlug": "toxtricity-lowkey"
+        },
+        {
+          "raw": "egg:metalsound",
+          "moveId": "metalsound",
+          "moveName": "Metal Sound",
+          "type": "steel",
+          "sourceType": "egg",
+          "sourceValue": null,
+          "fromForm": "Low-Key",
+          "fromFormSlug": "toxtricity-lowkey"
+        },
+        {
+          "raw": "tm:acidspray",
+          "moveId": "acidspray",
+          "moveName": "Acid Spray",
+          "type": "poison",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Low-Key",
+          "fromFormSlug": "toxtricity-lowkey"
+        },
+        {
+          "raw": "tm:brickbreak",
+          "moveId": "brickbreak",
+          "moveName": "Brick Break",
+          "type": "fighting",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Low-Key",
+          "fromFormSlug": "toxtricity-lowkey"
+        },
+        {
+          "raw": "tm:charge",
+          "moveId": "charge",
+          "moveName": "Charge",
+          "type": "electric",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Low-Key",
+          "fromFormSlug": "toxtricity-lowkey"
+        },
+        {
+          "raw": "tm:chargebeam",
+          "moveId": "chargebeam",
+          "moveName": "Charge Beam",
+          "type": "electric",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Low-Key",
+          "fromFormSlug": "toxtricity-lowkey"
+        },
+        {
+          "raw": "tm:charm",
+          "moveId": "charm",
+          "moveName": "Charm",
+          "type": "fairy",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Low-Key",
+          "fromFormSlug": "toxtricity-lowkey"
+        },
+        {
+          "raw": "tm:drainpunch",
+          "moveId": "drainpunch",
+          "moveName": "Drain Punch",
+          "type": "fighting",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Low-Key",
+          "fromFormSlug": "toxtricity-lowkey"
+        },
+        {
+          "raw": "tm:eerieimpulse",
+          "moveId": "eerieimpulse",
+          "moveName": "Eerie Impulse",
+          "type": "electric",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Low-Key",
+          "fromFormSlug": "toxtricity-lowkey"
+        },
+        {
+          "raw": "tm:electricterrain",
+          "moveId": "electricterrain",
+          "moveName": "Electric Terrain",
+          "type": "electric",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Low-Key",
+          "fromFormSlug": "toxtricity-lowkey"
+        },
+        {
+          "raw": "tm:electroball",
+          "moveId": "electroball",
+          "moveName": "Electro Ball",
+          "type": "electric",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Low-Key",
+          "fromFormSlug": "toxtricity-lowkey"
+        },
+        {
+          "raw": "tm:electroweb",
+          "moveId": "electroweb",
+          "moveName": "Electroweb",
+          "type": "electric",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Low-Key",
+          "fromFormSlug": "toxtricity-lowkey"
+        },
+        {
+          "raw": "tm:encore",
+          "moveId": "encore",
+          "moveName": "Encore",
+          "type": "normal",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Low-Key",
+          "fromFormSlug": "toxtricity-lowkey"
+        },
+        {
+          "raw": "tm:endeavor",
+          "moveId": "endeavor",
+          "moveName": "Endeavor",
+          "type": "normal",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Low-Key",
+          "fromFormSlug": "toxtricity-lowkey"
+        },
+        {
+          "raw": "tm:endure",
+          "moveId": "endure",
+          "moveName": "Endure",
+          "type": "normal",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Low-Key",
+          "fromFormSlug": "toxtricity-lowkey"
+        },
+        {
+          "raw": "tm:facade",
+          "moveId": "facade",
+          "moveName": "Facade",
+          "type": "normal",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Low-Key",
+          "fromFormSlug": "toxtricity-lowkey"
+        },
+        {
+          "raw": "tm:firepunch",
+          "moveId": "firepunch",
+          "moveName": "Fire Punch",
+          "type": "fire",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Low-Key",
+          "fromFormSlug": "toxtricity-lowkey"
+        },
+        {
+          "raw": "tm:fling",
+          "moveId": "fling",
+          "moveName": "Fling",
+          "type": "dark",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Low-Key",
+          "fromFormSlug": "toxtricity-lowkey"
+        },
+        {
+          "raw": "tm:gigaimpact",
+          "moveId": "gigaimpact",
+          "moveName": "Giga Impact",
+          "type": "normal",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Low-Key",
+          "fromFormSlug": "toxtricity-lowkey"
+        },
+        {
+          "raw": "tm:gunkshot",
+          "moveId": "gunkshot",
+          "moveName": "Gunk Shot",
+          "type": "poison",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Low-Key",
+          "fromFormSlug": "toxtricity-lowkey"
+        },
+        {
+          "raw": "tm:helpinghand",
+          "moveId": "helpinghand",
+          "moveName": "Helping Hand",
+          "type": "normal",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Low-Key",
+          "fromFormSlug": "toxtricity-lowkey"
+        },
+        {
+          "raw": "tm:hex",
+          "moveId": "hex",
+          "moveName": "Hex",
+          "type": "ghost",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Low-Key",
+          "fromFormSlug": "toxtricity-lowkey"
+        },
+        {
+          "raw": "tm:hyperbeam",
+          "moveId": "hyperbeam",
+          "moveName": "Hyper Beam",
+          "type": "normal",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Low-Key",
+          "fromFormSlug": "toxtricity-lowkey"
+        },
+        {
+          "raw": "tm:hypervoice",
+          "moveId": "hypervoice",
+          "moveName": "Hyper Voice",
+          "type": "normal",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Low-Key",
+          "fromFormSlug": "toxtricity-lowkey"
+        },
+        {
+          "raw": "tm:megakick",
+          "moveId": "megakick",
+          "moveName": "Mega Kick",
+          "type": "normal",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Low-Key",
+          "fromFormSlug": "toxtricity-lowkey"
+        },
+        {
+          "raw": "tm:megapunch",
+          "moveId": "megapunch",
+          "moveName": "Mega Punch",
+          "type": "normal",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Low-Key",
+          "fromFormSlug": "toxtricity-lowkey"
+        },
+        {
+          "raw": "tm:metalsound",
+          "moveId": "metalsound",
+          "moveName": "Metal Sound",
+          "type": "steel",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Low-Key",
+          "fromFormSlug": "toxtricity-lowkey"
+        },
+        {
+          "raw": "tm:metronome",
+          "moveId": "metronome",
+          "moveName": "Metronome",
+          "type": "normal",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Low-Key",
+          "fromFormSlug": "toxtricity-lowkey"
+        },
+        {
+          "raw": "tm:payback",
+          "moveId": "payback",
+          "moveName": "Payback",
+          "type": "dark",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Low-Key",
+          "fromFormSlug": "toxtricity-lowkey"
+        },
+        {
+          "raw": "tm:poisonjab",
+          "moveId": "poisonjab",
+          "moveName": "Poison Jab",
+          "type": "poison",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Low-Key",
+          "fromFormSlug": "toxtricity-lowkey"
+        },
+        {
+          "raw": "tm:poisontail",
+          "moveId": "poisontail",
+          "moveName": "Poison Tail",
+          "type": "poison",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Low-Key",
+          "fromFormSlug": "toxtricity-lowkey"
+        },
+        {
+          "raw": "tm:poweruppunch",
+          "moveId": "poweruppunch",
+          "moveName": "Power-Up Punch",
+          "type": "fighting",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Low-Key",
+          "fromFormSlug": "toxtricity-lowkey"
+        },
+        {
+          "raw": "tm:protect",
+          "moveId": "protect",
+          "moveName": "Protect",
+          "type": "normal",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Low-Key",
+          "fromFormSlug": "toxtricity-lowkey"
+        },
+        {
+          "raw": "tm:psychicnoise",
+          "moveId": "psychicnoise",
+          "moveName": "Psychic Noise",
+          "type": "psychic",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Low-Key",
+          "fromFormSlug": "toxtricity-lowkey"
+        },
+        {
+          "raw": "tm:raindance",
+          "moveId": "raindance",
+          "moveName": "Rain Dance",
+          "type": "water",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Low-Key",
+          "fromFormSlug": "toxtricity-lowkey"
+        },
+        {
+          "raw": "tm:rest",
+          "moveId": "rest",
+          "moveName": "Rest",
+          "type": "psychic",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Low-Key",
+          "fromFormSlug": "toxtricity-lowkey"
+        },
+        {
+          "raw": "tm:risingvoltage",
+          "moveId": "risingvoltage",
+          "moveName": "Rising Voltage",
+          "type": "electric",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Low-Key",
+          "fromFormSlug": "toxtricity-lowkey"
+        },
+        {
+          "raw": "tm:scaryface",
+          "moveId": "scaryface",
+          "moveName": "Scary Face",
+          "type": "normal",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Low-Key",
+          "fromFormSlug": "toxtricity-lowkey"
+        },
+        {
+          "raw": "tm:screech",
+          "moveId": "screech",
+          "moveName": "Screech",
+          "type": "normal",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Low-Key",
+          "fromFormSlug": "toxtricity-lowkey"
+        },
+        {
+          "raw": "tm:shockwave",
+          "moveId": "shockwave",
+          "moveName": "Shock Wave",
+          "type": "electric",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Low-Key",
+          "fromFormSlug": "toxtricity-lowkey"
+        },
+        {
+          "raw": "tm:sleeptalk",
+          "moveId": "sleeptalk",
+          "moveName": "Sleep Talk",
+          "type": "normal",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Low-Key",
+          "fromFormSlug": "toxtricity-lowkey"
+        },
+        {
+          "raw": "tm:sludgebomb",
+          "moveId": "sludgebomb",
+          "moveName": "Sludge Bomb",
+          "type": "poison",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Low-Key",
+          "fromFormSlug": "toxtricity-lowkey"
+        },
+        {
+          "raw": "tm:sludgewave",
+          "moveId": "sludgewave",
+          "moveName": "Sludge Wave",
+          "type": "poison",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Low-Key",
+          "fromFormSlug": "toxtricity-lowkey"
+        },
+        {
+          "raw": "tm:snarl",
+          "moveId": "snarl",
+          "moveName": "Snarl",
+          "type": "dark",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Low-Key",
+          "fromFormSlug": "toxtricity-lowkey"
+        },
+        {
+          "raw": "tm:storedpower",
+          "moveId": "storedpower",
+          "moveName": "Stored Power",
+          "type": "psychic",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Low-Key",
+          "fromFormSlug": "toxtricity-lowkey"
+        },
+        {
+          "raw": "tm:substitute",
+          "moveId": "substitute",
+          "moveName": "Substitute",
+          "type": "normal",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Low-Key",
+          "fromFormSlug": "toxtricity-lowkey"
+        },
+        {
+          "raw": "tm:sunnyday",
+          "moveId": "sunnyday",
+          "moveName": "Sunny Day",
+          "type": "fire",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Low-Key",
+          "fromFormSlug": "toxtricity-lowkey"
+        },
+        {
+          "raw": "tm:swagger",
+          "moveId": "swagger",
+          "moveName": "Swagger",
+          "type": "normal",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Low-Key",
+          "fromFormSlug": "toxtricity-lowkey"
+        },
+        {
+          "raw": "tm:swift",
+          "moveId": "swift",
+          "moveName": "Swift",
+          "type": "normal",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Low-Key",
+          "fromFormSlug": "toxtricity-lowkey"
+        },
+        {
+          "raw": "tm:takedown",
+          "moveId": "takedown",
+          "moveName": "Take Down",
+          "type": "normal",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Low-Key",
+          "fromFormSlug": "toxtricity-lowkey"
+        },
+        {
+          "raw": "tm:taunt",
+          "moveId": "taunt",
+          "moveName": "Taunt",
+          "type": "dark",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Low-Key",
+          "fromFormSlug": "toxtricity-lowkey"
+        },
+        {
+          "raw": "tm:terablast",
+          "moveId": "terablast",
+          "moveName": "Tera Blast",
+          "type": "normal",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Low-Key",
+          "fromFormSlug": "toxtricity-lowkey"
+        },
+        {
+          "raw": "tm:thief",
+          "moveId": "thief",
+          "moveName": "Thief",
+          "type": "dark",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Low-Key",
+          "fromFormSlug": "toxtricity-lowkey"
+        },
+        {
+          "raw": "tm:throatchop",
+          "moveId": "throatchop",
+          "moveName": "Throat Chop",
+          "type": "dark",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Low-Key",
+          "fromFormSlug": "toxtricity-lowkey"
+        },
+        {
+          "raw": "tm:thunder",
+          "moveId": "thunder",
+          "moveName": "Thunder",
+          "type": "electric",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Low-Key",
+          "fromFormSlug": "toxtricity-lowkey"
+        },
+        {
+          "raw": "tm:thunderbolt",
+          "moveId": "thunderbolt",
+          "moveName": "Thunderbolt",
+          "type": "electric",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Low-Key",
+          "fromFormSlug": "toxtricity-lowkey"
+        },
+        {
+          "raw": "tm:thunderfang",
+          "moveId": "thunderfang",
+          "moveName": "Thunder Fang",
+          "type": "electric",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Low-Key",
+          "fromFormSlug": "toxtricity-lowkey"
+        },
+        {
+          "raw": "tm:thunderpunch",
+          "moveId": "thunderpunch",
+          "moveName": "Thunder Punch",
+          "type": "electric",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Low-Key",
+          "fromFormSlug": "toxtricity-lowkey"
+        },
+        {
+          "raw": "tm:thunderwave",
+          "moveId": "thunderwave",
+          "moveName": "Thunder Wave",
+          "type": "electric",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Low-Key",
+          "fromFormSlug": "toxtricity-lowkey"
+        },
+        {
+          "raw": "tm:toxic",
+          "moveId": "toxic",
+          "moveName": "Toxic",
+          "type": "poison",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Low-Key",
+          "fromFormSlug": "toxtricity-lowkey"
+        },
+        {
+          "raw": "tm:toxicspikes",
+          "moveId": "toxicspikes",
+          "moveName": "Toxic Spikes",
+          "type": "poison",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Low-Key",
+          "fromFormSlug": "toxtricity-lowkey"
+        },
+        {
+          "raw": "tm:trailblaze",
+          "moveId": "trailblaze",
+          "moveName": "Trailblaze",
+          "type": "grass",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Low-Key",
+          "fromFormSlug": "toxtricity-lowkey"
+        },
+        {
+          "raw": "tm:uproar",
+          "moveId": "uproar",
+          "moveName": "Uproar",
+          "type": "normal",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Low-Key",
+          "fromFormSlug": "toxtricity-lowkey"
+        },
+        {
+          "raw": "tm:venomdrench",
+          "moveId": "venomdrench",
+          "moveName": "Venom Drench",
+          "type": "poison",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Low-Key",
+          "fromFormSlug": "toxtricity-lowkey"
+        },
+        {
+          "raw": "tm:venoshock",
+          "moveId": "venoshock",
+          "moveName": "Venoshock",
+          "type": "poison",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Low-Key",
+          "fromFormSlug": "toxtricity-lowkey"
+        },
+        {
+          "raw": "tm:voltswitch",
+          "moveId": "voltswitch",
+          "moveName": "Volt Switch",
+          "type": "electric",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Low-Key",
+          "fromFormSlug": "toxtricity-lowkey"
+        },
+        {
+          "raw": "tm:wildcharge",
+          "moveId": "wildcharge",
+          "moveName": "Wild Charge",
+          "type": "electric",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Low-Key",
+          "fromFormSlug": "toxtricity-lowkey"
+        },
+        {
+          "raw": "tutor:chargebeam",
+          "moveId": "chargebeam",
+          "moveName": "Charge Beam",
+          "type": "electric",
+          "sourceType": "tutor",
+          "sourceValue": null,
+          "fromForm": "Low-Key",
+          "fromFormSlug": "toxtricity-lowkey"
+        },
+        {
+          "raw": "tutor:drainpunch",
+          "moveId": "drainpunch",
+          "moveName": "Drain Punch",
+          "type": "fighting",
+          "sourceType": "tutor",
+          "sourceValue": null,
+          "fromForm": "Low-Key",
+          "fromFormSlug": "toxtricity-lowkey"
+        },
+        {
+          "raw": "tutor:electroweb",
+          "moveId": "electroweb",
+          "moveName": "Electroweb",
+          "type": "electric",
+          "sourceType": "tutor",
+          "sourceValue": null,
+          "fromForm": "Low-Key",
+          "fromFormSlug": "toxtricity-lowkey"
+        },
+        {
+          "raw": "tutor:endeavor",
+          "moveId": "endeavor",
+          "moveName": "Endeavor",
+          "type": "normal",
+          "sourceType": "tutor",
+          "sourceValue": null,
+          "fromForm": "Low-Key",
+          "fromFormSlug": "toxtricity-lowkey"
+        },
+        {
+          "raw": "tutor:firepunch",
+          "moveId": "firepunch",
+          "moveName": "Fire Punch",
+          "type": "fire",
+          "sourceType": "tutor",
+          "sourceValue": null,
+          "fromForm": "Low-Key",
+          "fromFormSlug": "toxtricity-lowkey"
+        },
+        {
+          "raw": "tutor:gigaimpact",
+          "moveId": "gigaimpact",
+          "moveName": "Giga Impact",
+          "type": "normal",
+          "sourceType": "tutor",
+          "sourceValue": null,
+          "fromForm": "Low-Key",
+          "fromFormSlug": "toxtricity-lowkey"
+        },
+        {
+          "raw": "tutor:gunkshot",
+          "moveId": "gunkshot",
+          "moveName": "Gunk Shot",
+          "type": "poison",
+          "sourceType": "tutor",
+          "sourceValue": null,
+          "fromForm": "Low-Key",
+          "fromFormSlug": "toxtricity-lowkey"
+        },
+        {
+          "raw": "tutor:helpinghand",
+          "moveId": "helpinghand",
+          "moveName": "Helping Hand",
+          "type": "normal",
+          "sourceType": "tutor",
+          "sourceValue": null,
+          "fromForm": "Low-Key",
+          "fromFormSlug": "toxtricity-lowkey"
+        },
+        {
+          "raw": "tutor:hyperbeam",
+          "moveId": "hyperbeam",
+          "moveName": "Hyper Beam",
+          "type": "normal",
+          "sourceType": "tutor",
+          "sourceValue": null,
+          "fromForm": "Low-Key",
+          "fromFormSlug": "toxtricity-lowkey"
+        },
+        {
+          "raw": "tutor:hypervoice",
+          "moveId": "hypervoice",
+          "moveName": "Hyper Voice",
+          "type": "normal",
+          "sourceType": "tutor",
+          "sourceValue": null,
+          "fromForm": "Low-Key",
+          "fromFormSlug": "toxtricity-lowkey"
+        },
+        {
+          "raw": "tutor:poisonjab",
+          "moveId": "poisonjab",
+          "moveName": "Poison Jab",
+          "type": "poison",
+          "sourceType": "tutor",
+          "sourceValue": null,
+          "fromForm": "Low-Key",
+          "fromFormSlug": "toxtricity-lowkey"
+        },
+        {
+          "raw": "tutor:rest",
+          "moveId": "rest",
+          "moveName": "Rest",
+          "type": "psychic",
+          "sourceType": "tutor",
+          "sourceValue": null,
+          "fromForm": "Low-Key",
+          "fromFormSlug": "toxtricity-lowkey"
+        },
+        {
+          "raw": "tutor:risingvoltage",
+          "moveId": "risingvoltage",
+          "moveName": "Rising Voltage",
+          "type": "electric",
+          "sourceType": "tutor",
+          "sourceValue": null,
+          "fromForm": "Low-Key",
+          "fromFormSlug": "toxtricity-lowkey"
+        },
+        {
+          "raw": "tutor:shockwave",
+          "moveId": "shockwave",
+          "moveName": "Shock Wave",
+          "type": "electric",
+          "sourceType": "tutor",
+          "sourceValue": null,
+          "fromForm": "Low-Key",
+          "fromFormSlug": "toxtricity-lowkey"
+        },
+        {
+          "raw": "tutor:sleeptalk",
+          "moveId": "sleeptalk",
+          "moveName": "Sleep Talk",
+          "type": "normal",
+          "sourceType": "tutor",
+          "sourceValue": null,
+          "fromForm": "Low-Key",
+          "fromFormSlug": "toxtricity-lowkey"
+        },
+        {
+          "raw": "tutor:sludgebomb",
+          "moveId": "sludgebomb",
+          "moveName": "Sludge Bomb",
+          "type": "poison",
+          "sourceType": "tutor",
+          "sourceValue": null,
+          "fromForm": "Low-Key",
+          "fromFormSlug": "toxtricity-lowkey"
+        },
+        {
+          "raw": "tutor:snarl",
+          "moveId": "snarl",
+          "moveName": "Snarl",
+          "type": "dark",
+          "sourceType": "tutor",
+          "sourceValue": null,
+          "fromForm": "Low-Key",
+          "fromFormSlug": "toxtricity-lowkey"
+        },
+        {
+          "raw": "tutor:swift",
+          "moveId": "swift",
+          "moveName": "Swift",
+          "type": "normal",
+          "sourceType": "tutor",
+          "sourceValue": null,
+          "fromForm": "Low-Key",
+          "fromFormSlug": "toxtricity-lowkey"
+        },
+        {
+          "raw": "tutor:throatchop",
+          "moveId": "throatchop",
+          "moveName": "Throat Chop",
+          "type": "dark",
+          "sourceType": "tutor",
+          "sourceValue": null,
+          "fromForm": "Low-Key",
+          "fromFormSlug": "toxtricity-lowkey"
+        },
+        {
+          "raw": "tutor:thunderbolt",
+          "moveId": "thunderbolt",
+          "moveName": "Thunderbolt",
+          "type": "electric",
+          "sourceType": "tutor",
+          "sourceValue": null,
+          "fromForm": "Low-Key",
+          "fromFormSlug": "toxtricity-lowkey"
+        },
+        {
+          "raw": "tutor:thunderfang",
+          "moveId": "thunderfang",
+          "moveName": "Thunder Fang",
+          "type": "electric",
+          "sourceType": "tutor",
+          "sourceValue": null,
+          "fromForm": "Low-Key",
+          "fromFormSlug": "toxtricity-lowkey"
+        },
+        {
+          "raw": "tutor:thunderpunch",
+          "moveId": "thunderpunch",
+          "moveName": "Thunder Punch",
+          "type": "electric",
+          "sourceType": "tutor",
+          "sourceValue": null,
+          "fromForm": "Low-Key",
+          "fromFormSlug": "toxtricity-lowkey"
+        },
+        {
+          "raw": "tutor:uproar",
+          "moveId": "uproar",
+          "moveName": "Uproar",
+          "type": "normal",
+          "sourceType": "tutor",
+          "sourceValue": null,
+          "fromForm": "Low-Key",
+          "fromFormSlug": "toxtricity-lowkey"
+        },
+        {
+          "raw": "tutor:wildcharge",
+          "moveId": "wildcharge",
+          "moveName": "Wild Charge",
+          "type": "electric",
+          "sourceType": "tutor",
+          "sourceValue": null,
+          "fromForm": "Low-Key",
+          "fromFormSlug": "toxtricity-lowkey"
+        },
+        {
+          "raw": "legacy:attract",
+          "moveId": "attract",
+          "moveName": "Attract",
+          "type": "normal",
+          "sourceType": "legacy",
+          "sourceValue": null,
+          "fromForm": "Low-Key",
+          "fromFormSlug": "toxtricity-lowkey"
+        },
+        {
+          "raw": "legacy:round",
+          "moveId": "round",
+          "moveName": "Round",
+          "type": "normal",
+          "sourceType": "legacy",
+          "sourceValue": null,
+          "fromForm": "Low-Key",
+          "fromFormSlug": "toxtricity-lowkey"
+        },
+        {
+          "raw": "legacy:snore",
+          "moveId": "snore",
+          "moveName": "Snore",
+          "type": "normal",
+          "sourceType": "legacy",
+          "sourceValue": null,
+          "fromForm": "Low-Key",
+          "fromFormSlug": "toxtricity-lowkey"
+        }
+      ],
+      "evolutions": [],
+      "raw": {
+        "name": "Low-Key",
+        "primaryType": "electric",
+        "secondaryType": "poison",
+        "maleRatio": 0.5,
+        "height": 16,
+        "weight": 400,
+        "pokedex": [
+          "cobblemon.species.toxtricity-lowkey.desc"
+        ],
+        "labels": [
+          "gen8"
+        ],
+        "aspects": [
+          "low_key-form"
+        ],
+        "abilities": [
+          "punkrock",
+          "minus",
+          "h:technician"
+        ],
+        "moves": [
+          "1:spark",
+          "1:belch",
+          "1:tearfullook",
+          "1:nuzzle",
+          "1:growl",
+          "1:flail",
+          "1:acid",
+          "1:thundershock",
+          "1:acidspray",
+          "1:leer",
+          "1:nobleroar",
+          "4:charge",
+          "8:shockwave",
+          "12:scaryface",
+          "16:taunt",
+          "24:screech",
+          "28:swagger",
+          "32:toxic",
+          "36:discharge",
+          "40:poisonjab",
+          "44:overdrive",
+          "48:boomburst",
+          "52:magneticflux",
+          "egg:endeavor",
+          "egg:metalsound",
+          "tm:acidspray",
+          "tm:brickbreak",
+          "tm:charge",
+          "tm:chargebeam",
+          "tm:charm",
+          "tm:drainpunch",
+          "tm:eerieimpulse",
+          "tm:electricterrain",
+          "tm:electroball",
+          "tm:electroweb",
+          "tm:encore",
+          "tm:endeavor",
+          "tm:endure",
+          "tm:facade",
+          "tm:firepunch",
+          "tm:fling",
+          "tm:gigaimpact",
+          "tm:gunkshot",
+          "tm:helpinghand",
+          "tm:hex",
+          "tm:hyperbeam",
+          "tm:hypervoice",
+          "tm:megakick",
+          "tm:megapunch",
+          "tm:metalsound",
+          "tm:metronome",
+          "tm:payback",
+          "tm:poisonjab",
+          "tm:poisontail",
+          "tm:poweruppunch",
+          "tm:protect",
+          "tm:psychicnoise",
+          "tm:raindance",
+          "tm:rest",
+          "tm:risingvoltage",
+          "tm:scaryface",
+          "tm:screech",
+          "tm:shockwave",
+          "tm:sleeptalk",
+          "tm:sludgebomb",
+          "tm:sludgewave",
+          "tm:snarl",
+          "tm:storedpower",
+          "tm:substitute",
+          "tm:sunnyday",
+          "tm:swagger",
+          "tm:swift",
+          "tm:takedown",
+          "tm:taunt",
+          "tm:terablast",
+          "tm:thief",
+          "tm:throatchop",
+          "tm:thunder",
+          "tm:thunderbolt",
+          "tm:thunderfang",
+          "tm:thunderpunch",
+          "tm:thunderwave",
+          "tm:toxic",
+          "tm:toxicspikes",
+          "tm:trailblaze",
+          "tm:uproar",
+          "tm:venomdrench",
+          "tm:venoshock",
+          "tm:voltswitch",
+          "tm:wildcharge",
+          "tutor:chargebeam",
+          "tutor:drainpunch",
+          "tutor:electroweb",
+          "tutor:endeavor",
+          "tutor:firepunch",
+          "tutor:gigaimpact",
+          "tutor:gunkshot",
+          "tutor:helpinghand",
+          "tutor:hyperbeam",
+          "tutor:hypervoice",
+          "tutor:poisonjab",
+          "tutor:rest",
+          "tutor:risingvoltage",
+          "tutor:shockwave",
+          "tutor:sleeptalk",
+          "tutor:sludgebomb",
+          "tutor:snarl",
+          "tutor:swift",
+          "tutor:throatchop",
+          "tutor:thunderbolt",
+          "tutor:thunderfang",
+          "tutor:thunderpunch",
+          "tutor:uproar",
+          "tutor:wildcharge",
+          "legacy:attract",
+          "legacy:round",
+          "legacy:snore"
+        ],
+        "preEvolution": "toxel",
+        "evolutions": [],
+        "battleOnly": false,
+        "lightingData": {
+          "lightLevel": 8,
+          "liquidGlowMode": "BOTH"
+        }
+      }
+    },
+    {
+      "name": "Gmax",
+      "slug": "toxtricity-gmax",
+      "aspects": [
+        "gmax",
+        "amped-form"
+      ],
+      "labels": [
+        "gen8",
+        "gmax"
+      ],
+      "types": [
+        "electric",
+        "poison"
+      ],
+      "maleRatio": 0.5,
+      "height": 240,
+      "weight": 0,
+      "catchRate": null,
+      "baseExperienceYield": null,
+      "baseFriendship": null,
+      "eggCycles": null,
+      "baseStats": {},
+      "evYield": {},
+      "battleOnly": true,
+      "abilities": [],
+      "moves": [],
+      "evolutions": [],
+      "raw": {
+        "name": "Gmax",
+        "primaryType": "electric",
+        "secondaryType": "poison",
+        "maleRatio": 0.5,
+        "height": 240,
+        "weight": 0,
+        "pokedex": [
+          "cobblemon.species.toxtricity-gmax.desc"
+        ],
+        "labels": [
+          "gen8",
+          "gmax"
+        ],
+        "aspects": [
+          "gmax",
+          "amped-form"
+        ],
+        "dynamaxBlocked": true,
+        "evolutions": [],
+        "battleOnly": true
+      }
+    },
+    {
+      "name": "Low-Key-Gmax",
+      "slug": "toxtricity-lowkeygmax",
+      "aspects": [
+        "gmax",
+        "low_key-form"
+      ],
+      "labels": [
+        "gen8",
+        "gmax"
+      ],
+      "types": [
+        "electric",
+        "poison"
+      ],
+      "maleRatio": 0.5,
+      "height": 240,
+      "weight": 0,
+      "catchRate": null,
+      "baseExperienceYield": null,
+      "baseFriendship": null,
+      "eggCycles": null,
+      "baseStats": {},
+      "evYield": {},
+      "battleOnly": true,
+      "abilities": [
+        {
+          "id": "punkrock",
+          "hidden": false,
+          "label": "Punkrock",
+          "slot": "first"
+        },
+        {
+          "id": "minus",
+          "hidden": false,
+          "label": "Minus",
+          "slot": "second"
+        },
+        {
+          "id": "technician",
+          "hidden": true,
+          "label": "Technician",
+          "slot": "hidden"
+        }
+      ],
+      "moves": [
+        {
+          "raw": "1:spark",
+          "moveId": "spark",
+          "moveName": "Spark",
+          "type": "electric",
+          "sourceType": "level",
+          "sourceValue": 1,
+          "fromForm": "Low-Key-Gmax",
+          "fromFormSlug": "toxtricity-lowkeygmax"
+        },
+        {
+          "raw": "1:belch",
+          "moveId": "belch",
+          "moveName": "Belch",
+          "type": "poison",
+          "sourceType": "level",
+          "sourceValue": 1,
+          "fromForm": "Low-Key-Gmax",
+          "fromFormSlug": "toxtricity-lowkeygmax"
+        },
+        {
+          "raw": "1:tearfullook",
+          "moveId": "tearfullook",
+          "moveName": "Tearful Look",
+          "type": "normal",
+          "sourceType": "level",
+          "sourceValue": 1,
+          "fromForm": "Low-Key-Gmax",
+          "fromFormSlug": "toxtricity-lowkeygmax"
+        },
+        {
+          "raw": "1:nuzzle",
+          "moveId": "nuzzle",
+          "moveName": "Nuzzle",
+          "type": "electric",
+          "sourceType": "level",
+          "sourceValue": 1,
+          "fromForm": "Low-Key-Gmax",
+          "fromFormSlug": "toxtricity-lowkeygmax"
+        },
+        {
+          "raw": "1:growl",
+          "moveId": "growl",
+          "moveName": "Growl",
+          "type": "normal",
+          "sourceType": "level",
+          "sourceValue": 1,
+          "fromForm": "Low-Key-Gmax",
+          "fromFormSlug": "toxtricity-lowkeygmax"
+        },
+        {
+          "raw": "1:flail",
+          "moveId": "flail",
+          "moveName": "Flail",
+          "type": "normal",
+          "sourceType": "level",
+          "sourceValue": 1,
+          "fromForm": "Low-Key-Gmax",
+          "fromFormSlug": "toxtricity-lowkeygmax"
+        },
+        {
+          "raw": "1:acid",
+          "moveId": "acid",
+          "moveName": "Acid",
+          "type": "poison",
+          "sourceType": "level",
+          "sourceValue": 1,
+          "fromForm": "Low-Key-Gmax",
+          "fromFormSlug": "toxtricity-lowkeygmax"
+        },
+        {
+          "raw": "1:thundershock",
+          "moveId": "thundershock",
+          "moveName": "Thunder Shock",
+          "type": "electric",
+          "sourceType": "level",
+          "sourceValue": 1,
+          "fromForm": "Low-Key-Gmax",
+          "fromFormSlug": "toxtricity-lowkeygmax"
+        },
+        {
+          "raw": "1:acidspray",
+          "moveId": "acidspray",
+          "moveName": "Acid Spray",
+          "type": "poison",
+          "sourceType": "level",
+          "sourceValue": 1,
+          "fromForm": "Low-Key-Gmax",
+          "fromFormSlug": "toxtricity-lowkeygmax"
+        },
+        {
+          "raw": "1:leer",
+          "moveId": "leer",
+          "moveName": "Leer",
+          "type": "normal",
+          "sourceType": "level",
+          "sourceValue": 1,
+          "fromForm": "Low-Key-Gmax",
+          "fromFormSlug": "toxtricity-lowkeygmax"
+        },
+        {
+          "raw": "1:nobleroar",
+          "moveId": "nobleroar",
+          "moveName": "Noble Roar",
+          "type": "normal",
+          "sourceType": "level",
+          "sourceValue": 1,
+          "fromForm": "Low-Key-Gmax",
+          "fromFormSlug": "toxtricity-lowkeygmax"
+        },
+        {
+          "raw": "4:charge",
+          "moveId": "charge",
+          "moveName": "Charge",
+          "type": "electric",
+          "sourceType": "level",
+          "sourceValue": 4,
+          "fromForm": "Low-Key-Gmax",
+          "fromFormSlug": "toxtricity-lowkeygmax"
+        },
+        {
+          "raw": "8:shockwave",
+          "moveId": "shockwave",
+          "moveName": "Shock Wave",
+          "type": "electric",
+          "sourceType": "level",
+          "sourceValue": 8,
+          "fromForm": "Low-Key-Gmax",
+          "fromFormSlug": "toxtricity-lowkeygmax"
+        },
+        {
+          "raw": "12:scaryface",
+          "moveId": "scaryface",
+          "moveName": "Scary Face",
+          "type": "normal",
+          "sourceType": "level",
+          "sourceValue": 12,
+          "fromForm": "Low-Key-Gmax",
+          "fromFormSlug": "toxtricity-lowkeygmax"
+        },
+        {
+          "raw": "16:taunt",
+          "moveId": "taunt",
+          "moveName": "Taunt",
+          "type": "dark",
+          "sourceType": "level",
+          "sourceValue": 16,
+          "fromForm": "Low-Key-Gmax",
+          "fromFormSlug": "toxtricity-lowkeygmax"
+        },
+        {
+          "raw": "24:screech",
+          "moveId": "screech",
+          "moveName": "Screech",
+          "type": "normal",
+          "sourceType": "level",
+          "sourceValue": 24,
+          "fromForm": "Low-Key-Gmax",
+          "fromFormSlug": "toxtricity-lowkeygmax"
+        },
+        {
+          "raw": "28:swagger",
+          "moveId": "swagger",
+          "moveName": "Swagger",
+          "type": "normal",
+          "sourceType": "level",
+          "sourceValue": 28,
+          "fromForm": "Low-Key-Gmax",
+          "fromFormSlug": "toxtricity-lowkeygmax"
+        },
+        {
+          "raw": "32:toxic",
+          "moveId": "toxic",
+          "moveName": "Toxic",
+          "type": "poison",
+          "sourceType": "level",
+          "sourceValue": 32,
+          "fromForm": "Low-Key-Gmax",
+          "fromFormSlug": "toxtricity-lowkeygmax"
+        },
+        {
+          "raw": "36:discharge",
+          "moveId": "discharge",
+          "moveName": "Discharge",
+          "type": "electric",
+          "sourceType": "level",
+          "sourceValue": 36,
+          "fromForm": "Low-Key-Gmax",
+          "fromFormSlug": "toxtricity-lowkeygmax"
+        },
+        {
+          "raw": "40:poisonjab",
+          "moveId": "poisonjab",
+          "moveName": "Poison Jab",
+          "type": "poison",
+          "sourceType": "level",
+          "sourceValue": 40,
+          "fromForm": "Low-Key-Gmax",
+          "fromFormSlug": "toxtricity-lowkeygmax"
+        },
+        {
+          "raw": "44:overdrive",
+          "moveId": "overdrive",
+          "moveName": "Overdrive",
+          "type": "electric",
+          "sourceType": "level",
+          "sourceValue": 44,
+          "fromForm": "Low-Key-Gmax",
+          "fromFormSlug": "toxtricity-lowkeygmax"
+        },
+        {
+          "raw": "48:boomburst",
+          "moveId": "boomburst",
+          "moveName": "Boomburst",
+          "type": "normal",
+          "sourceType": "level",
+          "sourceValue": 48,
+          "fromForm": "Low-Key-Gmax",
+          "fromFormSlug": "toxtricity-lowkeygmax"
+        },
+        {
+          "raw": "52:magneticflux",
+          "moveId": "magneticflux",
+          "moveName": "Magnetic Flux",
+          "type": "electric",
+          "sourceType": "level",
+          "sourceValue": 52,
+          "fromForm": "Low-Key-Gmax",
+          "fromFormSlug": "toxtricity-lowkeygmax"
+        },
+        {
+          "raw": "egg:endeavor",
+          "moveId": "endeavor",
+          "moveName": "Endeavor",
+          "type": "normal",
+          "sourceType": "egg",
+          "sourceValue": null,
+          "fromForm": "Low-Key-Gmax",
+          "fromFormSlug": "toxtricity-lowkeygmax"
+        },
+        {
+          "raw": "egg:metalsound",
+          "moveId": "metalsound",
+          "moveName": "Metal Sound",
+          "type": "steel",
+          "sourceType": "egg",
+          "sourceValue": null,
+          "fromForm": "Low-Key-Gmax",
+          "fromFormSlug": "toxtricity-lowkeygmax"
+        },
+        {
+          "raw": "tm:acidspray",
+          "moveId": "acidspray",
+          "moveName": "Acid Spray",
+          "type": "poison",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Low-Key-Gmax",
+          "fromFormSlug": "toxtricity-lowkeygmax"
+        },
+        {
+          "raw": "tm:brickbreak",
+          "moveId": "brickbreak",
+          "moveName": "Brick Break",
+          "type": "fighting",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Low-Key-Gmax",
+          "fromFormSlug": "toxtricity-lowkeygmax"
+        },
+        {
+          "raw": "tm:charge",
+          "moveId": "charge",
+          "moveName": "Charge",
+          "type": "electric",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Low-Key-Gmax",
+          "fromFormSlug": "toxtricity-lowkeygmax"
+        },
+        {
+          "raw": "tm:chargebeam",
+          "moveId": "chargebeam",
+          "moveName": "Charge Beam",
+          "type": "electric",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Low-Key-Gmax",
+          "fromFormSlug": "toxtricity-lowkeygmax"
+        },
+        {
+          "raw": "tm:charm",
+          "moveId": "charm",
+          "moveName": "Charm",
+          "type": "fairy",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Low-Key-Gmax",
+          "fromFormSlug": "toxtricity-lowkeygmax"
+        },
+        {
+          "raw": "tm:drainpunch",
+          "moveId": "drainpunch",
+          "moveName": "Drain Punch",
+          "type": "fighting",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Low-Key-Gmax",
+          "fromFormSlug": "toxtricity-lowkeygmax"
+        },
+        {
+          "raw": "tm:eerieimpulse",
+          "moveId": "eerieimpulse",
+          "moveName": "Eerie Impulse",
+          "type": "electric",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Low-Key-Gmax",
+          "fromFormSlug": "toxtricity-lowkeygmax"
+        },
+        {
+          "raw": "tm:electricterrain",
+          "moveId": "electricterrain",
+          "moveName": "Electric Terrain",
+          "type": "electric",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Low-Key-Gmax",
+          "fromFormSlug": "toxtricity-lowkeygmax"
+        },
+        {
+          "raw": "tm:electroball",
+          "moveId": "electroball",
+          "moveName": "Electro Ball",
+          "type": "electric",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Low-Key-Gmax",
+          "fromFormSlug": "toxtricity-lowkeygmax"
+        },
+        {
+          "raw": "tm:electroweb",
+          "moveId": "electroweb",
+          "moveName": "Electroweb",
+          "type": "electric",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Low-Key-Gmax",
+          "fromFormSlug": "toxtricity-lowkeygmax"
+        },
+        {
+          "raw": "tm:encore",
+          "moveId": "encore",
+          "moveName": "Encore",
+          "type": "normal",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Low-Key-Gmax",
+          "fromFormSlug": "toxtricity-lowkeygmax"
+        },
+        {
+          "raw": "tm:endeavor",
+          "moveId": "endeavor",
+          "moveName": "Endeavor",
+          "type": "normal",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Low-Key-Gmax",
+          "fromFormSlug": "toxtricity-lowkeygmax"
+        },
+        {
+          "raw": "tm:endure",
+          "moveId": "endure",
+          "moveName": "Endure",
+          "type": "normal",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Low-Key-Gmax",
+          "fromFormSlug": "toxtricity-lowkeygmax"
+        },
+        {
+          "raw": "tm:facade",
+          "moveId": "facade",
+          "moveName": "Facade",
+          "type": "normal",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Low-Key-Gmax",
+          "fromFormSlug": "toxtricity-lowkeygmax"
+        },
+        {
+          "raw": "tm:firepunch",
+          "moveId": "firepunch",
+          "moveName": "Fire Punch",
+          "type": "fire",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Low-Key-Gmax",
+          "fromFormSlug": "toxtricity-lowkeygmax"
+        },
+        {
+          "raw": "tm:fling",
+          "moveId": "fling",
+          "moveName": "Fling",
+          "type": "dark",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Low-Key-Gmax",
+          "fromFormSlug": "toxtricity-lowkeygmax"
+        },
+        {
+          "raw": "tm:gigaimpact",
+          "moveId": "gigaimpact",
+          "moveName": "Giga Impact",
+          "type": "normal",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Low-Key-Gmax",
+          "fromFormSlug": "toxtricity-lowkeygmax"
+        },
+        {
+          "raw": "tm:gunkshot",
+          "moveId": "gunkshot",
+          "moveName": "Gunk Shot",
+          "type": "poison",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Low-Key-Gmax",
+          "fromFormSlug": "toxtricity-lowkeygmax"
+        },
+        {
+          "raw": "tm:helpinghand",
+          "moveId": "helpinghand",
+          "moveName": "Helping Hand",
+          "type": "normal",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Low-Key-Gmax",
+          "fromFormSlug": "toxtricity-lowkeygmax"
+        },
+        {
+          "raw": "tm:hex",
+          "moveId": "hex",
+          "moveName": "Hex",
+          "type": "ghost",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Low-Key-Gmax",
+          "fromFormSlug": "toxtricity-lowkeygmax"
+        },
+        {
+          "raw": "tm:hyperbeam",
+          "moveId": "hyperbeam",
+          "moveName": "Hyper Beam",
+          "type": "normal",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Low-Key-Gmax",
+          "fromFormSlug": "toxtricity-lowkeygmax"
+        },
+        {
+          "raw": "tm:hypervoice",
+          "moveId": "hypervoice",
+          "moveName": "Hyper Voice",
+          "type": "normal",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Low-Key-Gmax",
+          "fromFormSlug": "toxtricity-lowkeygmax"
+        },
+        {
+          "raw": "tm:megakick",
+          "moveId": "megakick",
+          "moveName": "Mega Kick",
+          "type": "normal",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Low-Key-Gmax",
+          "fromFormSlug": "toxtricity-lowkeygmax"
+        },
+        {
+          "raw": "tm:megapunch",
+          "moveId": "megapunch",
+          "moveName": "Mega Punch",
+          "type": "normal",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Low-Key-Gmax",
+          "fromFormSlug": "toxtricity-lowkeygmax"
+        },
+        {
+          "raw": "tm:metalsound",
+          "moveId": "metalsound",
+          "moveName": "Metal Sound",
+          "type": "steel",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Low-Key-Gmax",
+          "fromFormSlug": "toxtricity-lowkeygmax"
+        },
+        {
+          "raw": "tm:metronome",
+          "moveId": "metronome",
+          "moveName": "Metronome",
+          "type": "normal",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Low-Key-Gmax",
+          "fromFormSlug": "toxtricity-lowkeygmax"
+        },
+        {
+          "raw": "tm:payback",
+          "moveId": "payback",
+          "moveName": "Payback",
+          "type": "dark",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Low-Key-Gmax",
+          "fromFormSlug": "toxtricity-lowkeygmax"
+        },
+        {
+          "raw": "tm:poisonjab",
+          "moveId": "poisonjab",
+          "moveName": "Poison Jab",
+          "type": "poison",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Low-Key-Gmax",
+          "fromFormSlug": "toxtricity-lowkeygmax"
+        },
+        {
+          "raw": "tm:poisontail",
+          "moveId": "poisontail",
+          "moveName": "Poison Tail",
+          "type": "poison",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Low-Key-Gmax",
+          "fromFormSlug": "toxtricity-lowkeygmax"
+        },
+        {
+          "raw": "tm:poweruppunch",
+          "moveId": "poweruppunch",
+          "moveName": "Power-Up Punch",
+          "type": "fighting",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Low-Key-Gmax",
+          "fromFormSlug": "toxtricity-lowkeygmax"
+        },
+        {
+          "raw": "tm:protect",
+          "moveId": "protect",
+          "moveName": "Protect",
+          "type": "normal",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Low-Key-Gmax",
+          "fromFormSlug": "toxtricity-lowkeygmax"
+        },
+        {
+          "raw": "tm:psychicnoise",
+          "moveId": "psychicnoise",
+          "moveName": "Psychic Noise",
+          "type": "psychic",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Low-Key-Gmax",
+          "fromFormSlug": "toxtricity-lowkeygmax"
+        },
+        {
+          "raw": "tm:raindance",
+          "moveId": "raindance",
+          "moveName": "Rain Dance",
+          "type": "water",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Low-Key-Gmax",
+          "fromFormSlug": "toxtricity-lowkeygmax"
+        },
+        {
+          "raw": "tm:rest",
+          "moveId": "rest",
+          "moveName": "Rest",
+          "type": "psychic",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Low-Key-Gmax",
+          "fromFormSlug": "toxtricity-lowkeygmax"
+        },
+        {
+          "raw": "tm:risingvoltage",
+          "moveId": "risingvoltage",
+          "moveName": "Rising Voltage",
+          "type": "electric",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Low-Key-Gmax",
+          "fromFormSlug": "toxtricity-lowkeygmax"
+        },
+        {
+          "raw": "tm:scaryface",
+          "moveId": "scaryface",
+          "moveName": "Scary Face",
+          "type": "normal",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Low-Key-Gmax",
+          "fromFormSlug": "toxtricity-lowkeygmax"
+        },
+        {
+          "raw": "tm:screech",
+          "moveId": "screech",
+          "moveName": "Screech",
+          "type": "normal",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Low-Key-Gmax",
+          "fromFormSlug": "toxtricity-lowkeygmax"
+        },
+        {
+          "raw": "tm:shockwave",
+          "moveId": "shockwave",
+          "moveName": "Shock Wave",
+          "type": "electric",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Low-Key-Gmax",
+          "fromFormSlug": "toxtricity-lowkeygmax"
+        },
+        {
+          "raw": "tm:sleeptalk",
+          "moveId": "sleeptalk",
+          "moveName": "Sleep Talk",
+          "type": "normal",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Low-Key-Gmax",
+          "fromFormSlug": "toxtricity-lowkeygmax"
+        },
+        {
+          "raw": "tm:sludgebomb",
+          "moveId": "sludgebomb",
+          "moveName": "Sludge Bomb",
+          "type": "poison",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Low-Key-Gmax",
+          "fromFormSlug": "toxtricity-lowkeygmax"
+        },
+        {
+          "raw": "tm:sludgewave",
+          "moveId": "sludgewave",
+          "moveName": "Sludge Wave",
+          "type": "poison",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Low-Key-Gmax",
+          "fromFormSlug": "toxtricity-lowkeygmax"
+        },
+        {
+          "raw": "tm:snarl",
+          "moveId": "snarl",
+          "moveName": "Snarl",
+          "type": "dark",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Low-Key-Gmax",
+          "fromFormSlug": "toxtricity-lowkeygmax"
+        },
+        {
+          "raw": "tm:storedpower",
+          "moveId": "storedpower",
+          "moveName": "Stored Power",
+          "type": "psychic",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Low-Key-Gmax",
+          "fromFormSlug": "toxtricity-lowkeygmax"
+        },
+        {
+          "raw": "tm:substitute",
+          "moveId": "substitute",
+          "moveName": "Substitute",
+          "type": "normal",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Low-Key-Gmax",
+          "fromFormSlug": "toxtricity-lowkeygmax"
+        },
+        {
+          "raw": "tm:sunnyday",
+          "moveId": "sunnyday",
+          "moveName": "Sunny Day",
+          "type": "fire",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Low-Key-Gmax",
+          "fromFormSlug": "toxtricity-lowkeygmax"
+        },
+        {
+          "raw": "tm:swagger",
+          "moveId": "swagger",
+          "moveName": "Swagger",
+          "type": "normal",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Low-Key-Gmax",
+          "fromFormSlug": "toxtricity-lowkeygmax"
+        },
+        {
+          "raw": "tm:swift",
+          "moveId": "swift",
+          "moveName": "Swift",
+          "type": "normal",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Low-Key-Gmax",
+          "fromFormSlug": "toxtricity-lowkeygmax"
+        },
+        {
+          "raw": "tm:takedown",
+          "moveId": "takedown",
+          "moveName": "Take Down",
+          "type": "normal",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Low-Key-Gmax",
+          "fromFormSlug": "toxtricity-lowkeygmax"
+        },
+        {
+          "raw": "tm:taunt",
+          "moveId": "taunt",
+          "moveName": "Taunt",
+          "type": "dark",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Low-Key-Gmax",
+          "fromFormSlug": "toxtricity-lowkeygmax"
+        },
+        {
+          "raw": "tm:terablast",
+          "moveId": "terablast",
+          "moveName": "Tera Blast",
+          "type": "normal",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Low-Key-Gmax",
+          "fromFormSlug": "toxtricity-lowkeygmax"
+        },
+        {
+          "raw": "tm:thief",
+          "moveId": "thief",
+          "moveName": "Thief",
+          "type": "dark",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Low-Key-Gmax",
+          "fromFormSlug": "toxtricity-lowkeygmax"
+        },
+        {
+          "raw": "tm:throatchop",
+          "moveId": "throatchop",
+          "moveName": "Throat Chop",
+          "type": "dark",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Low-Key-Gmax",
+          "fromFormSlug": "toxtricity-lowkeygmax"
+        },
+        {
+          "raw": "tm:thunder",
+          "moveId": "thunder",
+          "moveName": "Thunder",
+          "type": "electric",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Low-Key-Gmax",
+          "fromFormSlug": "toxtricity-lowkeygmax"
+        },
+        {
+          "raw": "tm:thunderbolt",
+          "moveId": "thunderbolt",
+          "moveName": "Thunderbolt",
+          "type": "electric",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Low-Key-Gmax",
+          "fromFormSlug": "toxtricity-lowkeygmax"
+        },
+        {
+          "raw": "tm:thunderfang",
+          "moveId": "thunderfang",
+          "moveName": "Thunder Fang",
+          "type": "electric",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Low-Key-Gmax",
+          "fromFormSlug": "toxtricity-lowkeygmax"
+        },
+        {
+          "raw": "tm:thunderpunch",
+          "moveId": "thunderpunch",
+          "moveName": "Thunder Punch",
+          "type": "electric",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Low-Key-Gmax",
+          "fromFormSlug": "toxtricity-lowkeygmax"
+        },
+        {
+          "raw": "tm:thunderwave",
+          "moveId": "thunderwave",
+          "moveName": "Thunder Wave",
+          "type": "electric",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Low-Key-Gmax",
+          "fromFormSlug": "toxtricity-lowkeygmax"
+        },
+        {
+          "raw": "tm:toxic",
+          "moveId": "toxic",
+          "moveName": "Toxic",
+          "type": "poison",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Low-Key-Gmax",
+          "fromFormSlug": "toxtricity-lowkeygmax"
+        },
+        {
+          "raw": "tm:toxicspikes",
+          "moveId": "toxicspikes",
+          "moveName": "Toxic Spikes",
+          "type": "poison",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Low-Key-Gmax",
+          "fromFormSlug": "toxtricity-lowkeygmax"
+        },
+        {
+          "raw": "tm:trailblaze",
+          "moveId": "trailblaze",
+          "moveName": "Trailblaze",
+          "type": "grass",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Low-Key-Gmax",
+          "fromFormSlug": "toxtricity-lowkeygmax"
+        },
+        {
+          "raw": "tm:uproar",
+          "moveId": "uproar",
+          "moveName": "Uproar",
+          "type": "normal",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Low-Key-Gmax",
+          "fromFormSlug": "toxtricity-lowkeygmax"
+        },
+        {
+          "raw": "tm:venomdrench",
+          "moveId": "venomdrench",
+          "moveName": "Venom Drench",
+          "type": "poison",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Low-Key-Gmax",
+          "fromFormSlug": "toxtricity-lowkeygmax"
+        },
+        {
+          "raw": "tm:venoshock",
+          "moveId": "venoshock",
+          "moveName": "Venoshock",
+          "type": "poison",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Low-Key-Gmax",
+          "fromFormSlug": "toxtricity-lowkeygmax"
+        },
+        {
+          "raw": "tm:voltswitch",
+          "moveId": "voltswitch",
+          "moveName": "Volt Switch",
+          "type": "electric",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Low-Key-Gmax",
+          "fromFormSlug": "toxtricity-lowkeygmax"
+        },
+        {
+          "raw": "tm:wildcharge",
+          "moveId": "wildcharge",
+          "moveName": "Wild Charge",
+          "type": "electric",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Low-Key-Gmax",
+          "fromFormSlug": "toxtricity-lowkeygmax"
+        },
+        {
+          "raw": "tutor:chargebeam",
+          "moveId": "chargebeam",
+          "moveName": "Charge Beam",
+          "type": "electric",
+          "sourceType": "tutor",
+          "sourceValue": null,
+          "fromForm": "Low-Key-Gmax",
+          "fromFormSlug": "toxtricity-lowkeygmax"
+        },
+        {
+          "raw": "tutor:drainpunch",
+          "moveId": "drainpunch",
+          "moveName": "Drain Punch",
+          "type": "fighting",
+          "sourceType": "tutor",
+          "sourceValue": null,
+          "fromForm": "Low-Key-Gmax",
+          "fromFormSlug": "toxtricity-lowkeygmax"
+        },
+        {
+          "raw": "tutor:electroweb",
+          "moveId": "electroweb",
+          "moveName": "Electroweb",
+          "type": "electric",
+          "sourceType": "tutor",
+          "sourceValue": null,
+          "fromForm": "Low-Key-Gmax",
+          "fromFormSlug": "toxtricity-lowkeygmax"
+        },
+        {
+          "raw": "tutor:endeavor",
+          "moveId": "endeavor",
+          "moveName": "Endeavor",
+          "type": "normal",
+          "sourceType": "tutor",
+          "sourceValue": null,
+          "fromForm": "Low-Key-Gmax",
+          "fromFormSlug": "toxtricity-lowkeygmax"
+        },
+        {
+          "raw": "tutor:firepunch",
+          "moveId": "firepunch",
+          "moveName": "Fire Punch",
+          "type": "fire",
+          "sourceType": "tutor",
+          "sourceValue": null,
+          "fromForm": "Low-Key-Gmax",
+          "fromFormSlug": "toxtricity-lowkeygmax"
+        },
+        {
+          "raw": "tutor:gigaimpact",
+          "moveId": "gigaimpact",
+          "moveName": "Giga Impact",
+          "type": "normal",
+          "sourceType": "tutor",
+          "sourceValue": null,
+          "fromForm": "Low-Key-Gmax",
+          "fromFormSlug": "toxtricity-lowkeygmax"
+        },
+        {
+          "raw": "tutor:gunkshot",
+          "moveId": "gunkshot",
+          "moveName": "Gunk Shot",
+          "type": "poison",
+          "sourceType": "tutor",
+          "sourceValue": null,
+          "fromForm": "Low-Key-Gmax",
+          "fromFormSlug": "toxtricity-lowkeygmax"
+        },
+        {
+          "raw": "tutor:helpinghand",
+          "moveId": "helpinghand",
+          "moveName": "Helping Hand",
+          "type": "normal",
+          "sourceType": "tutor",
+          "sourceValue": null,
+          "fromForm": "Low-Key-Gmax",
+          "fromFormSlug": "toxtricity-lowkeygmax"
+        },
+        {
+          "raw": "tutor:hyperbeam",
+          "moveId": "hyperbeam",
+          "moveName": "Hyper Beam",
+          "type": "normal",
+          "sourceType": "tutor",
+          "sourceValue": null,
+          "fromForm": "Low-Key-Gmax",
+          "fromFormSlug": "toxtricity-lowkeygmax"
+        },
+        {
+          "raw": "tutor:hypervoice",
+          "moveId": "hypervoice",
+          "moveName": "Hyper Voice",
+          "type": "normal",
+          "sourceType": "tutor",
+          "sourceValue": null,
+          "fromForm": "Low-Key-Gmax",
+          "fromFormSlug": "toxtricity-lowkeygmax"
+        },
+        {
+          "raw": "tutor:poisonjab",
+          "moveId": "poisonjab",
+          "moveName": "Poison Jab",
+          "type": "poison",
+          "sourceType": "tutor",
+          "sourceValue": null,
+          "fromForm": "Low-Key-Gmax",
+          "fromFormSlug": "toxtricity-lowkeygmax"
+        },
+        {
+          "raw": "tutor:rest",
+          "moveId": "rest",
+          "moveName": "Rest",
+          "type": "psychic",
+          "sourceType": "tutor",
+          "sourceValue": null,
+          "fromForm": "Low-Key-Gmax",
+          "fromFormSlug": "toxtricity-lowkeygmax"
+        },
+        {
+          "raw": "tutor:risingvoltage",
+          "moveId": "risingvoltage",
+          "moveName": "Rising Voltage",
+          "type": "electric",
+          "sourceType": "tutor",
+          "sourceValue": null,
+          "fromForm": "Low-Key-Gmax",
+          "fromFormSlug": "toxtricity-lowkeygmax"
+        },
+        {
+          "raw": "tutor:shockwave",
+          "moveId": "shockwave",
+          "moveName": "Shock Wave",
+          "type": "electric",
+          "sourceType": "tutor",
+          "sourceValue": null,
+          "fromForm": "Low-Key-Gmax",
+          "fromFormSlug": "toxtricity-lowkeygmax"
+        },
+        {
+          "raw": "tutor:sleeptalk",
+          "moveId": "sleeptalk",
+          "moveName": "Sleep Talk",
+          "type": "normal",
+          "sourceType": "tutor",
+          "sourceValue": null,
+          "fromForm": "Low-Key-Gmax",
+          "fromFormSlug": "toxtricity-lowkeygmax"
+        },
+        {
+          "raw": "tutor:sludgebomb",
+          "moveId": "sludgebomb",
+          "moveName": "Sludge Bomb",
+          "type": "poison",
+          "sourceType": "tutor",
+          "sourceValue": null,
+          "fromForm": "Low-Key-Gmax",
+          "fromFormSlug": "toxtricity-lowkeygmax"
+        },
+        {
+          "raw": "tutor:snarl",
+          "moveId": "snarl",
+          "moveName": "Snarl",
+          "type": "dark",
+          "sourceType": "tutor",
+          "sourceValue": null,
+          "fromForm": "Low-Key-Gmax",
+          "fromFormSlug": "toxtricity-lowkeygmax"
+        },
+        {
+          "raw": "tutor:swift",
+          "moveId": "swift",
+          "moveName": "Swift",
+          "type": "normal",
+          "sourceType": "tutor",
+          "sourceValue": null,
+          "fromForm": "Low-Key-Gmax",
+          "fromFormSlug": "toxtricity-lowkeygmax"
+        },
+        {
+          "raw": "tutor:throatchop",
+          "moveId": "throatchop",
+          "moveName": "Throat Chop",
+          "type": "dark",
+          "sourceType": "tutor",
+          "sourceValue": null,
+          "fromForm": "Low-Key-Gmax",
+          "fromFormSlug": "toxtricity-lowkeygmax"
+        },
+        {
+          "raw": "tutor:thunderbolt",
+          "moveId": "thunderbolt",
+          "moveName": "Thunderbolt",
+          "type": "electric",
+          "sourceType": "tutor",
+          "sourceValue": null,
+          "fromForm": "Low-Key-Gmax",
+          "fromFormSlug": "toxtricity-lowkeygmax"
+        },
+        {
+          "raw": "tutor:thunderfang",
+          "moveId": "thunderfang",
+          "moveName": "Thunder Fang",
+          "type": "electric",
+          "sourceType": "tutor",
+          "sourceValue": null,
+          "fromForm": "Low-Key-Gmax",
+          "fromFormSlug": "toxtricity-lowkeygmax"
+        },
+        {
+          "raw": "tutor:thunderpunch",
+          "moveId": "thunderpunch",
+          "moveName": "Thunder Punch",
+          "type": "electric",
+          "sourceType": "tutor",
+          "sourceValue": null,
+          "fromForm": "Low-Key-Gmax",
+          "fromFormSlug": "toxtricity-lowkeygmax"
+        },
+        {
+          "raw": "tutor:uproar",
+          "moveId": "uproar",
+          "moveName": "Uproar",
+          "type": "normal",
+          "sourceType": "tutor",
+          "sourceValue": null,
+          "fromForm": "Low-Key-Gmax",
+          "fromFormSlug": "toxtricity-lowkeygmax"
+        },
+        {
+          "raw": "tutor:wildcharge",
+          "moveId": "wildcharge",
+          "moveName": "Wild Charge",
+          "type": "electric",
+          "sourceType": "tutor",
+          "sourceValue": null,
+          "fromForm": "Low-Key-Gmax",
+          "fromFormSlug": "toxtricity-lowkeygmax"
+        }
+      ],
+      "evolutions": [],
+      "raw": {
+        "name": "Low-Key-Gmax",
+        "primaryType": "electric",
+        "secondaryType": "poison",
+        "maleRatio": 0.5,
+        "height": 240,
+        "weight": 0,
+        "pokedex": [
+          "cobblemon.species.toxtricity-lowkeygmax.desc"
+        ],
+        "labels": [
+          "gen8",
+          "gmax"
+        ],
+        "aspects": [
+          "gmax",
+          "low_key-form"
+        ],
+        "abilities": [
+          "punkrock",
+          "minus",
+          "h:technician"
+        ],
+        "dynamaxBlocked": true,
+        "moves": [
+          "1:spark",
+          "1:belch",
+          "1:tearfullook",
+          "1:nuzzle",
+          "1:growl",
+          "1:flail",
+          "1:acid",
+          "1:thundershock",
+          "1:acidspray",
+          "1:leer",
+          "1:nobleroar",
+          "4:charge",
+          "8:shockwave",
+          "12:scaryface",
+          "16:taunt",
+          "24:screech",
+          "28:swagger",
+          "32:toxic",
+          "36:discharge",
+          "40:poisonjab",
+          "44:overdrive",
+          "48:boomburst",
+          "52:magneticflux",
+          "egg:endeavor",
+          "egg:metalsound",
+          "tm:acidspray",
+          "tm:brickbreak",
+          "tm:charge",
+          "tm:chargebeam",
+          "tm:charm",
+          "tm:drainpunch",
+          "tm:eerieimpulse",
+          "tm:electricterrain",
+          "tm:electroball",
+          "tm:electroweb",
+          "tm:encore",
+          "tm:endeavor",
+          "tm:endure",
+          "tm:facade",
+          "tm:firepunch",
+          "tm:fling",
+          "tm:gigaimpact",
+          "tm:gunkshot",
+          "tm:helpinghand",
+          "tm:hex",
+          "tm:hyperbeam",
+          "tm:hypervoice",
+          "tm:megakick",
+          "tm:megapunch",
+          "tm:metalsound",
+          "tm:metronome",
+          "tm:payback",
+          "tm:poisonjab",
+          "tm:poisontail",
+          "tm:poweruppunch",
+          "tm:protect",
+          "tm:psychicnoise",
+          "tm:raindance",
+          "tm:rest",
+          "tm:risingvoltage",
+          "tm:scaryface",
+          "tm:screech",
+          "tm:shockwave",
+          "tm:sleeptalk",
+          "tm:sludgebomb",
+          "tm:sludgewave",
+          "tm:snarl",
+          "tm:storedpower",
+          "tm:substitute",
+          "tm:sunnyday",
+          "tm:swagger",
+          "tm:swift",
+          "tm:takedown",
+          "tm:taunt",
+          "tm:terablast",
+          "tm:thief",
+          "tm:throatchop",
+          "tm:thunder",
+          "tm:thunderbolt",
+          "tm:thunderfang",
+          "tm:thunderpunch",
+          "tm:thunderwave",
+          "tm:toxic",
+          "tm:toxicspikes",
+          "tm:trailblaze",
+          "tm:uproar",
+          "tm:venomdrench",
+          "tm:venoshock",
+          "tm:voltswitch",
+          "tm:wildcharge",
+          "tutor:chargebeam",
+          "tutor:drainpunch",
+          "tutor:electroweb",
+          "tutor:endeavor",
+          "tutor:firepunch",
+          "tutor:gigaimpact",
+          "tutor:gunkshot",
+          "tutor:helpinghand",
+          "tutor:hyperbeam",
+          "tutor:hypervoice",
+          "tutor:poisonjab",
+          "tutor:rest",
+          "tutor:risingvoltage",
+          "tutor:shockwave",
+          "tutor:sleeptalk",
+          "tutor:sludgebomb",
+          "tutor:snarl",
+          "tutor:swift",
+          "tutor:throatchop",
+          "tutor:thunderbolt",
+          "tutor:thunderfang",
+          "tutor:thunderpunch",
+          "tutor:uproar",
+          "tutor:wildcharge"
+        ],
+        "evolutions": [],
+        "battleOnly": true
+      }
+    }
+  ],
+  "rawSpecies": {
+    "implemented": true,
+    "nationalPokedexNumber": 849,
+    "name": "Toxtricity",
+    "primaryType": "electric",
+    "secondaryType": "poison",
+    "maleRatio": 0.5,
+    "height": 16,
+    "weight": 400,
+    "pokedex": [
+      "cobblemon.species.toxtricity.desc"
+    ],
+    "labels": [
+      "gen8"
+    ],
+    "aspects": [
+      "amped-form"
+    ],
+    "abilities": [
+      "punkrock",
+      "plus",
+      "h:technician"
+    ],
+    "eggGroups": [
+      "human_like"
+    ],
+    "baseStats": {
+      "hp": 75,
+      "attack": 98,
+      "defence": 70,
+      "special_attack": 114,
+      "special_defence": 70,
+      "speed": 75
+    },
+    "evYield": {
+      "hp": 0,
+      "attack": 0,
+      "defence": 0,
+      "special_attack": 2,
+      "special_defence": 0,
+      "speed": 0
+    },
+    "baseExperienceYield": 176,
+    "experienceGroup": "medium_slow",
+    "catchRate": 45,
+    "eggCycles": 25,
+    "baseFriendship": 50,
+    "baseScale": 0.8,
+    "hitbox": {
+      "width": 1.15,
+      "height": 2.75,
+      "fixed": false
+    },
+    "drops": {
+      "amount": 1,
+      "entries": [
+        {
+          "item": "cobblemon:shuca_berry",
+          "percentage": 5
+        }
+      ]
+    },
+    "moves": [
+      "1:spark",
+      "1:belch",
+      "1:tearfullook",
+      "1:nuzzle",
+      "1:growl",
+      "1:flail",
+      "1:acid",
+      "1:thundershock",
+      "1:acidspray",
+      "1:leer",
+      "1:nobleroar",
+      "4:charge",
+      "8:shockwave",
+      "12:scaryface",
+      "16:taunt",
+      "24:screech",
+      "28:swagger",
+      "32:toxic",
+      "36:discharge",
+      "40:poisonjab",
+      "44:overdrive",
+      "48:boomburst",
+      "52:shiftgear",
+      "egg:endeavor",
+      "egg:metalsound",
+      "tm:acidspray",
+      "tm:brickbreak",
+      "tm:charge",
+      "tm:chargebeam",
+      "tm:charm",
+      "tm:drainpunch",
+      "tm:eerieimpulse",
+      "tm:electricterrain",
+      "tm:electroball",
+      "tm:electroweb",
+      "tm:encore",
+      "tm:endeavor",
+      "tm:endure",
+      "tm:facade",
+      "tm:firepunch",
+      "tm:fling",
+      "tm:gigaimpact",
+      "tm:gunkshot",
+      "tm:helpinghand",
+      "tm:hex",
+      "tm:hyperbeam",
+      "tm:hypervoice",
+      "tm:megakick",
+      "tm:megapunch",
+      "tm:metalsound",
+      "tm:metronome",
+      "tm:payback",
+      "tm:poisonjab",
+      "tm:poisontail",
+      "tm:poweruppunch",
+      "tm:protect",
+      "tm:psychicnoise",
+      "tm:raindance",
+      "tm:rest",
+      "tm:risingvoltage",
+      "tm:scaryface",
+      "tm:screech",
+      "tm:shockwave",
+      "tm:sleeptalk",
+      "tm:sludgebomb",
+      "tm:sludgewave",
+      "tm:snarl",
+      "tm:storedpower",
+      "tm:substitute",
+      "tm:sunnyday",
+      "tm:swagger",
+      "tm:swift",
+      "tm:takedown",
+      "tm:taunt",
+      "tm:terablast",
+      "tm:thief",
+      "tm:throatchop",
+      "tm:thunder",
+      "tm:thunderbolt",
+      "tm:thunderfang",
+      "tm:thunderpunch",
+      "tm:thunderwave",
+      "tm:toxic",
+      "tm:toxicspikes",
+      "tm:trailblaze",
+      "tm:uproar",
+      "tm:venoshock",
+      "tm:voltswitch",
+      "tm:wildcharge",
+      "tutor:chargebeam",
+      "tutor:drainpunch",
+      "tutor:electroweb",
+      "tutor:endeavor",
+      "tutor:firepunch",
+      "tutor:gigaimpact",
+      "tutor:gunkshot",
+      "tutor:helpinghand",
+      "tutor:hyperbeam",
+      "tutor:hypervoice",
+      "tutor:poisonjab",
+      "tutor:rest",
+      "tutor:risingvoltage",
+      "tutor:shockwave",
+      "tutor:sleeptalk",
+      "tutor:sludgebomb",
+      "tutor:snarl",
+      "tutor:swift",
+      "tutor:throatchop",
+      "tutor:thunderbolt",
+      "tutor:thunderfang",
+      "tutor:thunderpunch",
+      "tutor:uproar",
+      "tutor:wildcharge",
+      "legacy:attract",
+      "legacy:round",
+      "legacy:snore"
+    ],
+    "preEvolution": "toxel",
+    "evolutions": [],
+    "forms": [
+      {
+        "name": "Low-Key",
+        "primaryType": "electric",
+        "secondaryType": "poison",
+        "maleRatio": 0.5,
+        "height": 16,
+        "weight": 400,
+        "pokedex": [
+          "cobblemon.species.toxtricity-lowkey.desc"
+        ],
+        "labels": [
+          "gen8"
+        ],
+        "aspects": [
+          "low_key-form"
+        ],
+        "abilities": [
+          "punkrock",
+          "minus",
+          "h:technician"
+        ],
+        "moves": [
+          "1:spark",
+          "1:belch",
+          "1:tearfullook",
+          "1:nuzzle",
+          "1:growl",
+          "1:flail",
+          "1:acid",
+          "1:thundershock",
+          "1:acidspray",
+          "1:leer",
+          "1:nobleroar",
+          "4:charge",
+          "8:shockwave",
+          "12:scaryface",
+          "16:taunt",
+          "24:screech",
+          "28:swagger",
+          "32:toxic",
+          "36:discharge",
+          "40:poisonjab",
+          "44:overdrive",
+          "48:boomburst",
+          "52:magneticflux",
+          "egg:endeavor",
+          "egg:metalsound",
+          "tm:acidspray",
+          "tm:brickbreak",
+          "tm:charge",
+          "tm:chargebeam",
+          "tm:charm",
+          "tm:drainpunch",
+          "tm:eerieimpulse",
+          "tm:electricterrain",
+          "tm:electroball",
+          "tm:electroweb",
+          "tm:encore",
+          "tm:endeavor",
+          "tm:endure",
+          "tm:facade",
+          "tm:firepunch",
+          "tm:fling",
+          "tm:gigaimpact",
+          "tm:gunkshot",
+          "tm:helpinghand",
+          "tm:hex",
+          "tm:hyperbeam",
+          "tm:hypervoice",
+          "tm:megakick",
+          "tm:megapunch",
+          "tm:metalsound",
+          "tm:metronome",
+          "tm:payback",
+          "tm:poisonjab",
+          "tm:poisontail",
+          "tm:poweruppunch",
+          "tm:protect",
+          "tm:psychicnoise",
+          "tm:raindance",
+          "tm:rest",
+          "tm:risingvoltage",
+          "tm:scaryface",
+          "tm:screech",
+          "tm:shockwave",
+          "tm:sleeptalk",
+          "tm:sludgebomb",
+          "tm:sludgewave",
+          "tm:snarl",
+          "tm:storedpower",
+          "tm:substitute",
+          "tm:sunnyday",
+          "tm:swagger",
+          "tm:swift",
+          "tm:takedown",
+          "tm:taunt",
+          "tm:terablast",
+          "tm:thief",
+          "tm:throatchop",
+          "tm:thunder",
+          "tm:thunderbolt",
+          "tm:thunderfang",
+          "tm:thunderpunch",
+          "tm:thunderwave",
+          "tm:toxic",
+          "tm:toxicspikes",
+          "tm:trailblaze",
+          "tm:uproar",
+          "tm:venomdrench",
+          "tm:venoshock",
+          "tm:voltswitch",
+          "tm:wildcharge",
+          "tutor:chargebeam",
+          "tutor:drainpunch",
+          "tutor:electroweb",
+          "tutor:endeavor",
+          "tutor:firepunch",
+          "tutor:gigaimpact",
+          "tutor:gunkshot",
+          "tutor:helpinghand",
+          "tutor:hyperbeam",
+          "tutor:hypervoice",
+          "tutor:poisonjab",
+          "tutor:rest",
+          "tutor:risingvoltage",
+          "tutor:shockwave",
+          "tutor:sleeptalk",
+          "tutor:sludgebomb",
+          "tutor:snarl",
+          "tutor:swift",
+          "tutor:throatchop",
+          "tutor:thunderbolt",
+          "tutor:thunderfang",
+          "tutor:thunderpunch",
+          "tutor:uproar",
+          "tutor:wildcharge",
+          "legacy:attract",
+          "legacy:round",
+          "legacy:snore"
+        ],
+        "preEvolution": "toxel",
+        "evolutions": [],
+        "battleOnly": false,
+        "lightingData": {
+          "lightLevel": 8,
+          "liquidGlowMode": "BOTH"
+        }
+      },
+      {
+        "name": "Gmax",
+        "primaryType": "electric",
+        "secondaryType": "poison",
+        "maleRatio": 0.5,
+        "height": 240,
+        "weight": 0,
+        "pokedex": [
+          "cobblemon.species.toxtricity-gmax.desc"
+        ],
+        "labels": [
+          "gen8",
+          "gmax"
+        ],
+        "aspects": [
+          "gmax",
+          "amped-form"
+        ],
+        "dynamaxBlocked": true,
+        "evolutions": [],
+        "battleOnly": true
+      },
+      {
+        "name": "Low-Key-Gmax",
+        "primaryType": "electric",
+        "secondaryType": "poison",
+        "maleRatio": 0.5,
+        "height": 240,
+        "weight": 0,
+        "pokedex": [
+          "cobblemon.species.toxtricity-lowkeygmax.desc"
+        ],
+        "labels": [
+          "gen8",
+          "gmax"
+        ],
+        "aspects": [
+          "gmax",
+          "low_key-form"
+        ],
+        "abilities": [
+          "punkrock",
+          "minus",
+          "h:technician"
+        ],
+        "dynamaxBlocked": true,
+        "moves": [
+          "1:spark",
+          "1:belch",
+          "1:tearfullook",
+          "1:nuzzle",
+          "1:growl",
+          "1:flail",
+          "1:acid",
+          "1:thundershock",
+          "1:acidspray",
+          "1:leer",
+          "1:nobleroar",
+          "4:charge",
+          "8:shockwave",
+          "12:scaryface",
+          "16:taunt",
+          "24:screech",
+          "28:swagger",
+          "32:toxic",
+          "36:discharge",
+          "40:poisonjab",
+          "44:overdrive",
+          "48:boomburst",
+          "52:magneticflux",
+          "egg:endeavor",
+          "egg:metalsound",
+          "tm:acidspray",
+          "tm:brickbreak",
+          "tm:charge",
+          "tm:chargebeam",
+          "tm:charm",
+          "tm:drainpunch",
+          "tm:eerieimpulse",
+          "tm:electricterrain",
+          "tm:electroball",
+          "tm:electroweb",
+          "tm:encore",
+          "tm:endeavor",
+          "tm:endure",
+          "tm:facade",
+          "tm:firepunch",
+          "tm:fling",
+          "tm:gigaimpact",
+          "tm:gunkshot",
+          "tm:helpinghand",
+          "tm:hex",
+          "tm:hyperbeam",
+          "tm:hypervoice",
+          "tm:megakick",
+          "tm:megapunch",
+          "tm:metalsound",
+          "tm:metronome",
+          "tm:payback",
+          "tm:poisonjab",
+          "tm:poisontail",
+          "tm:poweruppunch",
+          "tm:protect",
+          "tm:psychicnoise",
+          "tm:raindance",
+          "tm:rest",
+          "tm:risingvoltage",
+          "tm:scaryface",
+          "tm:screech",
+          "tm:shockwave",
+          "tm:sleeptalk",
+          "tm:sludgebomb",
+          "tm:sludgewave",
+          "tm:snarl",
+          "tm:storedpower",
+          "tm:substitute",
+          "tm:sunnyday",
+          "tm:swagger",
+          "tm:swift",
+          "tm:takedown",
+          "tm:taunt",
+          "tm:terablast",
+          "tm:thief",
+          "tm:throatchop",
+          "tm:thunder",
+          "tm:thunderbolt",
+          "tm:thunderfang",
+          "tm:thunderpunch",
+          "tm:thunderwave",
+          "tm:toxic",
+          "tm:toxicspikes",
+          "tm:trailblaze",
+          "tm:uproar",
+          "tm:venomdrench",
+          "tm:venoshock",
+          "tm:voltswitch",
+          "tm:wildcharge",
+          "tutor:chargebeam",
+          "tutor:drainpunch",
+          "tutor:electroweb",
+          "tutor:endeavor",
+          "tutor:firepunch",
+          "tutor:gigaimpact",
+          "tutor:gunkshot",
+          "tutor:helpinghand",
+          "tutor:hyperbeam",
+          "tutor:hypervoice",
+          "tutor:poisonjab",
+          "tutor:rest",
+          "tutor:risingvoltage",
+          "tutor:shockwave",
+          "tutor:sleeptalk",
+          "tutor:sludgebomb",
+          "tutor:snarl",
+          "tutor:swift",
+          "tutor:throatchop",
+          "tutor:thunderbolt",
+          "tutor:thunderfang",
+          "tutor:thunderpunch",
+          "tutor:uproar",
+          "tutor:wildcharge"
+        ],
+        "evolutions": [],
+        "battleOnly": true
+      }
+    ],
+    "behaviour": {
+      "herd": {
+        "maxSize": "3"
+      },
+      "moving": {
+        "swim": {
+          "avoidsWater": true
+        }
+      },
+      "combat": {
+        "willDefendSelf": true,
+        "willDefendOwner": true,
+        "willFlee": false
+      },
+      "resting": {
+        "drowsyChance": 0.0333,
+        "rouseChance": 0.0042
+      }
+    },
+    "lightingData": {
+      "lightLevel": 10,
+      "liquidGlowMode": "BOTH"
+    }
+  }
+}

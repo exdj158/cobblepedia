@@ -1,0 +1,1505 @@
+{
+  "slug": "terapagos",
+  "name": "Terapagos",
+  "dexNumber": 1024,
+  "implemented": false,
+  "types": [
+    "normal"
+  ],
+  "abilities": [
+    {
+      "id": "terashift",
+      "hidden": false,
+      "label": "Terashift",
+      "slot": "first"
+    },
+    {
+      "id": "terashift",
+      "hidden": true,
+      "label": "Terashift",
+      "slot": "hidden"
+    }
+  ],
+  "eggGroups": [
+    "undiscovered"
+  ],
+  "labels": [
+    "gen9",
+    "legendary",
+    "restricted"
+  ],
+  "aspects": [
+    "normal-form"
+  ],
+  "aliases": [
+    "stellar",
+    "terapagos",
+    "terapagos stellar",
+    "terapagos terastal",
+    "terastal"
+  ],
+  "maleRatio": 0.5,
+  "height": 2,
+  "weight": 65,
+  "catchRate": 255,
+  "baseExperienceYield": 90,
+  "baseFriendship": 50,
+  "eggCycles": 5,
+  "baseStats": {
+    "hp": 90,
+    "attack": 65,
+    "defence": 85,
+    "special_attack": 65,
+    "special_defence": 85,
+    "speed": 60
+  },
+  "evYield": {
+    "hp": 0,
+    "attack": 0,
+    "defence": 1,
+    "special_attack": 0,
+    "special_defence": 0,
+    "speed": 0
+  },
+  "preEvolution": null,
+  "evolutions": [],
+  "evolutionFamily": {
+    "members": [
+      {
+        "nodeId": "terapagos",
+        "slug": "terapagos",
+        "name": "Terapagos",
+        "dexNumber": 1024,
+        "formSlug": null,
+        "formName": null
+      }
+    ],
+    "edges": [],
+    "roots": [
+      "terapagos"
+    ]
+  },
+  "moves": [
+    {
+      "raw": "10:ancientpower",
+      "moveId": "ancientpower",
+      "moveName": "Ancient Power",
+      "type": "rock",
+      "sourceType": "level",
+      "sourceValue": 10,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:ancientpower",
+      "moveId": "ancientpower",
+      "moveName": "Ancient Power",
+      "type": "rock",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tutor:ancientpower",
+      "moveId": "ancientpower",
+      "moveName": "Ancient Power",
+      "type": "rock",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:aurasphere",
+      "moveId": "aurasphere",
+      "moveName": "Aura Sphere",
+      "type": "fighting",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:bodypress",
+      "moveId": "bodypress",
+      "moveName": "Body Press",
+      "type": "fighting",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:bodyslam",
+      "moveId": "bodyslam",
+      "moveName": "Body Slam",
+      "type": "normal",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:bugbuzz",
+      "moveId": "bugbuzz",
+      "moveName": "Bug Buzz",
+      "type": "bug",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:calmmind",
+      "moveId": "calmmind",
+      "moveName": "Calm Mind",
+      "type": "psychic",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tutor:calmmind",
+      "moveId": "calmmind",
+      "moveName": "Calm Mind",
+      "type": "psychic",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:crunch",
+      "moveId": "crunch",
+      "moveName": "Crunch",
+      "type": "dark",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:darkpulse",
+      "moveId": "darkpulse",
+      "moveName": "Dark Pulse",
+      "type": "dark",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tutor:darkpulse",
+      "moveId": "darkpulse",
+      "moveName": "Dark Pulse",
+      "type": "dark",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:dazzlinggleam",
+      "moveId": "dazzlinggleam",
+      "moveName": "Dazzling Gleam",
+      "type": "fairy",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tutor:dazzlinggleam",
+      "moveId": "dazzlinggleam",
+      "moveName": "Dazzling Gleam",
+      "type": "fairy",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "70:doubleedge",
+      "moveId": "doubleedge",
+      "moveName": "Double-Edge",
+      "type": "normal",
+      "sourceType": "level",
+      "sourceValue": 70,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:doubleedge",
+      "moveId": "doubleedge",
+      "moveName": "Double-Edge",
+      "type": "normal",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:dragonpulse",
+      "moveId": "dragonpulse",
+      "moveName": "Dragon Pulse",
+      "type": "dragon",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tutor:dragonpulse",
+      "moveId": "dragonpulse",
+      "moveName": "Dragon Pulse",
+      "type": "dragon",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "40:earthpower",
+      "moveId": "earthpower",
+      "moveName": "Earth Power",
+      "type": "ground",
+      "sourceType": "level",
+      "sourceValue": 40,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:earthpower",
+      "moveId": "earthpower",
+      "moveName": "Earth Power",
+      "type": "ground",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tutor:earthpower",
+      "moveId": "earthpower",
+      "moveName": "Earth Power",
+      "type": "ground",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:earthquake",
+      "moveId": "earthquake",
+      "moveName": "Earthquake",
+      "type": "ground",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:endure",
+      "moveId": "endure",
+      "moveName": "Endure",
+      "type": "normal",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:energyball",
+      "moveId": "energyball",
+      "moveName": "Energy Ball",
+      "type": "grass",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tutor:energyball",
+      "moveId": "energyball",
+      "moveName": "Energy Ball",
+      "type": "grass",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:facade",
+      "moveId": "facade",
+      "moveName": "Facade",
+      "type": "normal",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:flamethrower",
+      "moveId": "flamethrower",
+      "moveName": "Flamethrower",
+      "type": "fire",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tutor:flamethrower",
+      "moveId": "flamethrower",
+      "moveName": "Flamethrower",
+      "type": "fire",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:flareblitz",
+      "moveId": "flareblitz",
+      "moveName": "Flare Blitz",
+      "type": "fire",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:flashcannon",
+      "moveId": "flashcannon",
+      "moveName": "Flash Cannon",
+      "type": "steel",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tutor:flashcannon",
+      "moveId": "flashcannon",
+      "moveName": "Flash Cannon",
+      "type": "steel",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:gigaimpact",
+      "moveId": "gigaimpact",
+      "moveName": "Giga Impact",
+      "type": "normal",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tutor:gigaimpact",
+      "moveId": "gigaimpact",
+      "moveName": "Giga Impact",
+      "type": "normal",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:gravity",
+      "moveId": "gravity",
+      "moveName": "Gravity",
+      "type": "psychic",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tutor:gravity",
+      "moveId": "gravity",
+      "moveName": "Gravity",
+      "type": "psychic",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "90:gyroball",
+      "moveId": "gyroball",
+      "moveName": "Gyro Ball",
+      "type": "steel",
+      "sourceType": "level",
+      "sourceValue": 90,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:gyroball",
+      "moveId": "gyroball",
+      "moveName": "Gyro Ball",
+      "type": "steel",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "20:headbutt",
+      "moveId": "headbutt",
+      "moveName": "Headbutt",
+      "type": "normal",
+      "sourceType": "level",
+      "sourceValue": 20,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:headbutt",
+      "moveId": "headbutt",
+      "moveName": "Headbutt",
+      "type": "normal",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:heatcrash",
+      "moveId": "heatcrash",
+      "moveName": "Heat Crash",
+      "type": "fire",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "50:heavyslam",
+      "moveId": "heavyslam",
+      "moveName": "Heavy Slam",
+      "type": "steel",
+      "sourceType": "level",
+      "sourceValue": 50,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:heavyslam",
+      "moveId": "heavyslam",
+      "moveName": "Heavy Slam",
+      "type": "steel",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:hyperbeam",
+      "moveId": "hyperbeam",
+      "moveName": "Hyper Beam",
+      "type": "normal",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tutor:hyperbeam",
+      "moveId": "hyperbeam",
+      "moveName": "Hyper Beam",
+      "type": "normal",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:icebeam",
+      "moveId": "icebeam",
+      "moveName": "Ice Beam",
+      "type": "ice",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tutor:icebeam",
+      "moveId": "icebeam",
+      "moveName": "Ice Beam",
+      "type": "ice",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:icespinner",
+      "moveId": "icespinner",
+      "moveName": "Ice Spinner",
+      "type": "ice",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:ironhead",
+      "moveId": "ironhead",
+      "moveName": "Iron Head",
+      "type": "steel",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tutor:ironhead",
+      "moveId": "ironhead",
+      "moveName": "Iron Head",
+      "type": "steel",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:meteorbeam",
+      "moveId": "meteorbeam",
+      "moveName": "Meteor Beam",
+      "type": "rock",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tutor:meteorbeam",
+      "moveId": "meteorbeam",
+      "moveName": "Meteor Beam",
+      "type": "rock",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:powergem",
+      "moveId": "powergem",
+      "moveName": "Power Gem",
+      "type": "rock",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "30:protect",
+      "moveId": "protect",
+      "moveName": "Protect",
+      "type": "normal",
+      "sourceType": "level",
+      "sourceValue": 30,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:protect",
+      "moveId": "protect",
+      "moveName": "Protect",
+      "type": "normal",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:raindance",
+      "moveId": "raindance",
+      "moveName": "Rain Dance",
+      "type": "water",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "1:rapidspin",
+      "moveId": "rapidspin",
+      "moveName": "Rapid Spin",
+      "type": "normal",
+      "sourceType": "level",
+      "sourceValue": 1,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:rest",
+      "moveId": "rest",
+      "moveName": "Rest",
+      "type": "psychic",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tutor:rest",
+      "moveId": "rest",
+      "moveName": "Rest",
+      "type": "psychic",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:roar",
+      "moveId": "roar",
+      "moveName": "Roar",
+      "type": "normal",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "80:rockpolish",
+      "moveId": "rockpolish",
+      "moveName": "Rock Polish",
+      "type": "rock",
+      "sourceType": "level",
+      "sourceValue": 80,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:rockpolish",
+      "moveId": "rockpolish",
+      "moveName": "Rock Polish",
+      "type": "rock",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:rockslide",
+      "moveId": "rockslide",
+      "moveName": "Rock Slide",
+      "type": "rock",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tutor:rockslide",
+      "moveId": "rockslide",
+      "moveName": "Rock Slide",
+      "type": "rock",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:scorchingsands",
+      "moveId": "scorchingsands",
+      "moveName": "Scorching Sands",
+      "type": "ground",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tutor:scorchingsands",
+      "moveId": "scorchingsands",
+      "moveName": "Scorching Sands",
+      "type": "ground",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:sleeptalk",
+      "moveId": "sleeptalk",
+      "moveName": "Sleep Talk",
+      "type": "normal",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tutor:sleeptalk",
+      "moveId": "sleeptalk",
+      "moveName": "Sleep Talk",
+      "type": "normal",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:solarbeam",
+      "moveId": "solarbeam",
+      "moveName": "Solar Beam",
+      "type": "grass",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:stealthrock",
+      "moveId": "stealthrock",
+      "moveName": "Stealth Rock",
+      "type": "rock",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tutor:stealthrock",
+      "moveId": "stealthrock",
+      "moveName": "Stealth Rock",
+      "type": "rock",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:stoneedge",
+      "moveId": "stoneedge",
+      "moveName": "Stone Edge",
+      "type": "rock",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tutor:stoneedge",
+      "moveId": "stoneedge",
+      "moveName": "Stone Edge",
+      "type": "rock",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:storedpower",
+      "moveId": "storedpower",
+      "moveName": "Stored Power",
+      "type": "psychic",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:substitute",
+      "moveId": "substitute",
+      "moveName": "Substitute",
+      "type": "normal",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:sunnyday",
+      "moveId": "sunnyday",
+      "moveName": "Sunny Day",
+      "type": "fire",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:supercellslam",
+      "moveId": "supercellslam",
+      "moveName": "Supercell Slam",
+      "type": "electric",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:surf",
+      "moveId": "surf",
+      "moveName": "Surf",
+      "type": "water",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:takedown",
+      "moveId": "takedown",
+      "moveName": "Take Down",
+      "type": "normal",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "60:terastarstorm",
+      "moveId": "terastarstorm",
+      "moveName": "Tera Starstorm",
+      "type": "normal",
+      "sourceType": "level",
+      "sourceValue": 60,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:thunder",
+      "moveId": "thunder",
+      "moveName": "Thunder",
+      "type": "electric",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:thunderbolt",
+      "moveId": "thunderbolt",
+      "moveName": "Thunderbolt",
+      "type": "electric",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tutor:thunderbolt",
+      "moveId": "thunderbolt",
+      "moveName": "Thunderbolt",
+      "type": "electric",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:toxic",
+      "moveId": "toxic",
+      "moveName": "Toxic",
+      "type": "poison",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "1:triattack",
+      "moveId": "triattack",
+      "moveName": "Tri Attack",
+      "type": "normal",
+      "sourceType": "level",
+      "sourceValue": 1,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:triattack",
+      "moveId": "triattack",
+      "moveName": "Tri Attack",
+      "type": "normal",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:waterpulse",
+      "moveId": "waterpulse",
+      "moveName": "Water Pulse",
+      "type": "water",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tutor:waterpulse",
+      "moveId": "waterpulse",
+      "moveName": "Water Pulse",
+      "type": "water",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:weatherball",
+      "moveId": "weatherball",
+      "moveName": "Weather Ball",
+      "type": "normal",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:wildcharge",
+      "moveId": "wildcharge",
+      "moveName": "Wild Charge",
+      "type": "electric",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tutor:wildcharge",
+      "moveId": "wildcharge",
+      "moveName": "Wild Charge",
+      "type": "electric",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "1:withdraw",
+      "moveId": "withdraw",
+      "moveName": "Withdraw",
+      "type": "water",
+      "sourceType": "level",
+      "sourceValue": 1,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:zenheadbutt",
+      "moveId": "zenheadbutt",
+      "moveName": "Zen Headbutt",
+      "type": "psychic",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tutor:zenheadbutt",
+      "moveId": "zenheadbutt",
+      "moveName": "Zen Headbutt",
+      "type": "psychic",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    }
+  ],
+  "spawnEntries": [],
+  "forms": [
+    {
+      "name": "Terastal",
+      "slug": "terapagos-terastal",
+      "aspects": [
+        "terastal-form"
+      ],
+      "labels": [
+        "gen9",
+        "legendary",
+        "restricted"
+      ],
+      "types": [
+        "normal"
+      ],
+      "maleRatio": 0.5,
+      "height": 3,
+      "weight": 160,
+      "catchRate": null,
+      "baseExperienceYield": 120,
+      "baseFriendship": null,
+      "eggCycles": null,
+      "baseStats": {
+        "hp": 95,
+        "attack": 95,
+        "defence": 110,
+        "special_attack": 105,
+        "special_defence": 110,
+        "speed": 85
+      },
+      "evYield": {
+        "hp": 0,
+        "attack": 0,
+        "defence": 2,
+        "special_attack": 0,
+        "special_defence": 2,
+        "speed": 0
+      },
+      "battleOnly": true,
+      "abilities": [
+        {
+          "id": "terashell",
+          "hidden": false,
+          "label": "Terashell",
+          "slot": "first"
+        },
+        {
+          "id": "terashell",
+          "hidden": true,
+          "label": "Terashell",
+          "slot": "hidden"
+        }
+      ],
+      "moves": [],
+      "evolutions": [],
+      "raw": {
+        "name": "Terastal",
+        "primaryType": "normal",
+        "maleRatio": 0.5,
+        "height": 3,
+        "weight": 160,
+        "pokedex": [
+          "cobblemon.species.terapagos-terastal.desc"
+        ],
+        "labels": [
+          "gen9",
+          "legendary",
+          "restricted"
+        ],
+        "aspects": [
+          "terastal-form"
+        ],
+        "abilities": [
+          "terashell",
+          "h:terashell"
+        ],
+        "baseStats": {
+          "hp": 95,
+          "attack": 95,
+          "defence": 110,
+          "special_attack": 105,
+          "special_defence": 110,
+          "speed": 85
+        },
+        "evYield": {
+          "hp": 0,
+          "attack": 0,
+          "defence": 2,
+          "special_attack": 0,
+          "special_defence": 2,
+          "speed": 0
+        },
+        "baseExperienceYield": 120,
+        "evolutions": [],
+        "battleOnly": true,
+        "behaviour": {
+          "moving": {
+            "swim": {
+              "avoidsWater": true
+            },
+            "fly": {
+              "canFly": true
+            }
+          },
+          "combat": {
+            "willDefendSelf": true,
+            "willDefendOwner": true,
+            "willFlee": false
+          },
+          "resting": {
+            "drowsyChance": 0.0333,
+            "rouseChance": 0.0042
+          }
+        },
+        "lightingData": {
+          "lightLevel": 10,
+          "liquidGlowMode": "BOTH"
+        }
+      }
+    },
+    {
+      "name": "Stellar",
+      "slug": "terapagos-stellar",
+      "aspects": [
+        "stellar-form"
+      ],
+      "labels": [
+        "gen9",
+        "legendary",
+        "restricted"
+      ],
+      "types": [
+        "normal"
+      ],
+      "maleRatio": 0.5,
+      "height": 17,
+      "weight": 770,
+      "catchRate": null,
+      "baseExperienceYield": 140,
+      "baseFriendship": null,
+      "eggCycles": null,
+      "baseStats": {
+        "hp": 160,
+        "attack": 105,
+        "defence": 110,
+        "special_attack": 130,
+        "special_defence": 110,
+        "speed": 85
+      },
+      "evYield": {
+        "hp": 3,
+        "attack": 0,
+        "defence": 0,
+        "special_attack": 0,
+        "special_defence": 0,
+        "speed": 0
+      },
+      "battleOnly": true,
+      "abilities": [
+        {
+          "id": "teraformzero",
+          "hidden": false,
+          "label": "Teraformzero",
+          "slot": "first"
+        },
+        {
+          "id": "teraformzero",
+          "hidden": true,
+          "label": "Teraformzero",
+          "slot": "hidden"
+        }
+      ],
+      "moves": [],
+      "evolutions": [],
+      "raw": {
+        "name": "Stellar",
+        "primaryType": "normal",
+        "maleRatio": 0.5,
+        "height": 17,
+        "weight": 770,
+        "pokedex": [
+          "cobblemon.species.terapagos-stellar.desc"
+        ],
+        "labels": [
+          "gen9",
+          "legendary",
+          "restricted"
+        ],
+        "aspects": [
+          "stellar-form"
+        ],
+        "abilities": [
+          "teraformzero",
+          "h:teraformzero"
+        ],
+        "baseStats": {
+          "hp": 160,
+          "attack": 105,
+          "defence": 110,
+          "special_attack": 130,
+          "special_defence": 110,
+          "speed": 85
+        },
+        "evYield": {
+          "hp": 3,
+          "attack": 0,
+          "defence": 0,
+          "special_attack": 0,
+          "special_defence": 0,
+          "speed": 0
+        },
+        "baseExperienceYield": 140,
+        "dynamaxBlocked": true,
+        "evolutions": [],
+        "battleOnly": true
+      }
+    }
+  ],
+  "rawSpecies": {
+    "nationalPokedexNumber": 1024,
+    "name": "Terapagos",
+    "primaryType": "normal",
+    "maleRatio": 0.5,
+    "height": 2,
+    "weight": 65,
+    "pokedex": [
+      "cobblemon.species.terapagos.desc"
+    ],
+    "labels": [
+      "gen9",
+      "legendary",
+      "restricted"
+    ],
+    "aspects": [
+      "normal-form"
+    ],
+    "abilities": [
+      "terashift",
+      "h:terashift"
+    ],
+    "eggGroups": [
+      "undiscovered"
+    ],
+    "baseStats": {
+      "hp": 90,
+      "attack": 65,
+      "defence": 85,
+      "special_attack": 65,
+      "special_defence": 85,
+      "speed": 60
+    },
+    "evYield": {
+      "hp": 0,
+      "attack": 0,
+      "defence": 1,
+      "special_attack": 0,
+      "special_defence": 0,
+      "speed": 0
+    },
+    "baseExperienceYield": 90,
+    "experienceGroup": "slow",
+    "catchRate": 255,
+    "eggCycles": 5,
+    "baseFriendship": 50,
+    "moves": [
+      "1:withdraw",
+      "1:triattack",
+      "1:rapidspin",
+      "10:ancientpower",
+      "20:headbutt",
+      "30:protect",
+      "40:earthpower",
+      "50:heavyslam",
+      "60:terastarstorm",
+      "70:doubleedge",
+      "80:rockpolish",
+      "90:gyroball",
+      "tm:ancientpower",
+      "tm:aurasphere",
+      "tm:bodypress",
+      "tm:bodyslam",
+      "tm:bugbuzz",
+      "tm:calmmind",
+      "tm:crunch",
+      "tm:darkpulse",
+      "tm:dazzlinggleam",
+      "tm:doubleedge",
+      "tm:dragonpulse",
+      "tm:earthpower",
+      "tm:earthquake",
+      "tm:endure",
+      "tm:energyball",
+      "tm:facade",
+      "tm:flamethrower",
+      "tm:flareblitz",
+      "tm:flashcannon",
+      "tm:gigaimpact",
+      "tm:gravity",
+      "tm:gyroball",
+      "tm:headbutt",
+      "tm:heatcrash",
+      "tm:heavyslam",
+      "tm:hyperbeam",
+      "tm:icebeam",
+      "tm:icespinner",
+      "tm:ironhead",
+      "tm:meteorbeam",
+      "tm:powergem",
+      "tm:protect",
+      "tm:raindance",
+      "tm:rest",
+      "tm:roar",
+      "tm:rockpolish",
+      "tm:rockslide",
+      "tm:scorchingsands",
+      "tm:sleeptalk",
+      "tm:solarbeam",
+      "tm:stealthrock",
+      "tm:stoneedge",
+      "tm:storedpower",
+      "tm:substitute",
+      "tm:sunnyday",
+      "tm:supercellslam",
+      "tm:surf",
+      "tm:takedown",
+      "tm:thunder",
+      "tm:thunderbolt",
+      "tm:toxic",
+      "tm:triattack",
+      "tm:waterpulse",
+      "tm:weatherball",
+      "tm:wildcharge",
+      "tm:zenheadbutt",
+      "tutor:ancientpower",
+      "tutor:calmmind",
+      "tutor:darkpulse",
+      "tutor:dazzlinggleam",
+      "tutor:dragonpulse",
+      "tutor:earthpower",
+      "tutor:energyball",
+      "tutor:flamethrower",
+      "tutor:flashcannon",
+      "tutor:gigaimpact",
+      "tutor:gravity",
+      "tutor:hyperbeam",
+      "tutor:icebeam",
+      "tutor:ironhead",
+      "tutor:meteorbeam",
+      "tutor:rest",
+      "tutor:rockslide",
+      "tutor:scorchingsands",
+      "tutor:sleeptalk",
+      "tutor:stealthrock",
+      "tutor:stoneedge",
+      "tutor:thunderbolt",
+      "tutor:waterpulse",
+      "tutor:wildcharge",
+      "tutor:zenheadbutt"
+    ],
+    "evolutions": [],
+    "forms": [
+      {
+        "name": "Terastal",
+        "primaryType": "normal",
+        "maleRatio": 0.5,
+        "height": 3,
+        "weight": 160,
+        "pokedex": [
+          "cobblemon.species.terapagos-terastal.desc"
+        ],
+        "labels": [
+          "gen9",
+          "legendary",
+          "restricted"
+        ],
+        "aspects": [
+          "terastal-form"
+        ],
+        "abilities": [
+          "terashell",
+          "h:terashell"
+        ],
+        "baseStats": {
+          "hp": 95,
+          "attack": 95,
+          "defence": 110,
+          "special_attack": 105,
+          "special_defence": 110,
+          "speed": 85
+        },
+        "evYield": {
+          "hp": 0,
+          "attack": 0,
+          "defence": 2,
+          "special_attack": 0,
+          "special_defence": 2,
+          "speed": 0
+        },
+        "baseExperienceYield": 120,
+        "evolutions": [],
+        "battleOnly": true,
+        "behaviour": {
+          "moving": {
+            "swim": {
+              "avoidsWater": true
+            },
+            "fly": {
+              "canFly": true
+            }
+          },
+          "combat": {
+            "willDefendSelf": true,
+            "willDefendOwner": true,
+            "willFlee": false
+          },
+          "resting": {
+            "drowsyChance": 0.0333,
+            "rouseChance": 0.0042
+          }
+        },
+        "lightingData": {
+          "lightLevel": 10,
+          "liquidGlowMode": "BOTH"
+        }
+      },
+      {
+        "name": "Stellar",
+        "primaryType": "normal",
+        "maleRatio": 0.5,
+        "height": 17,
+        "weight": 770,
+        "pokedex": [
+          "cobblemon.species.terapagos-stellar.desc"
+        ],
+        "labels": [
+          "gen9",
+          "legendary",
+          "restricted"
+        ],
+        "aspects": [
+          "stellar-form"
+        ],
+        "abilities": [
+          "teraformzero",
+          "h:teraformzero"
+        ],
+        "baseStats": {
+          "hp": 160,
+          "attack": 105,
+          "defence": 110,
+          "special_attack": 130,
+          "special_defence": 110,
+          "speed": 85
+        },
+        "evYield": {
+          "hp": 3,
+          "attack": 0,
+          "defence": 0,
+          "special_attack": 0,
+          "special_defence": 0,
+          "speed": 0
+        },
+        "baseExperienceYield": 140,
+        "dynamaxBlocked": true,
+        "evolutions": [],
+        "battleOnly": true
+      }
+    ],
+    "behaviour": {
+      "resting": {
+        "willSleepOnBed": true,
+        "drowsyChance": 0.0333,
+        "rouseChance": 0.0042
+      },
+      "moving": {
+        "swim": {
+          "avoidsWater": true
+        }
+      },
+      "combat": {
+        "willDefendSelf": true,
+        "willDefendOwner": true,
+        "willFlee": false
+      }
+    },
+    "lightingData": {
+      "lightLevel": 7,
+      "liquidGlowMode": "BOTH"
+    }
+  }
+}

@@ -12,6 +12,7 @@ import {
   Show,
   Switch,
 } from "solid-js"
+import { navigate } from "vike/client/router"
 import { ItemSprite } from "@/components/item-sprite"
 import { PokemonSprite } from "@/components/pokemon-sprite"
 import {
@@ -28,7 +29,6 @@ import type {
   ItemEntryRecord,
   ItemIndex,
   MoveLearnerEntryRecord,
-  MoveLearnersIndex,
   MoveSourceType,
   PaletteResult,
   PokemonDetailRecord,
@@ -41,7 +41,7 @@ import type {
 import {
   loadAbilityIndex,
   loadItemIndex,
-  loadMoveLearners,
+  loadMoveLearnerEntry,
   loadPokemonDetail,
   loadPokemonList,
   loadPokemonTypeEntries,
@@ -104,7 +104,6 @@ export default function CommandPalette() {
   const [pokemonTypeEntries, setPokemonTypeEntries] = createSignal<PokemonTypeEntryRecord[] | null>(
     null
   )
-  const [moveLearners, setMoveLearners] = createSignal<MoveLearnersIndex | null>(null)
   const [abilityIndex, setAbilityIndex] = createSignal<AbilityIndex | null>(null)
   const [itemIndex, setItemIndex] = createSignal<ItemIndex | null>(null)
   const [loadError, setLoadError] = createSignal<string | null>(null)
@@ -116,7 +115,6 @@ export default function CommandPalette() {
       searchIndex() !== null &&
       pokemonList() !== null &&
       pokemonTypeEntries() !== null &&
-      moveLearners() !== null &&
       abilityIndex() !== null &&
       itemIndex() !== null
     )
@@ -159,20 +157,24 @@ export default function CommandPalette() {
   })
 
   const flexSearch = createMemo(() => {
+    const docs = searchIndex()
     const list = pokemonList()
     const typeEntries = pokemonTypeEntries()
-    const moves = moveLearners()
     const abilities = abilityIndex()
     const items = itemIndex()
 
-    if (!list || !typeEntries || !moves || !abilities || !items) {
+    if (!docs || !list || !typeEntries || !abilities || !items) {
       return null
     }
+
+    const moveSearchDocs = docs.filter((doc) => {
+      return doc.resultType === "move-learners" && doc.moveId !== null
+    })
 
     return createPaletteFlexSearch({
       pokemonList: list,
       pokemonTypeEntries: typeEntries,
-      moveLearners: moves,
+      moveSearchDocs,
       abilityIndex: abilities,
       itemIndex: items,
     })
@@ -199,12 +201,7 @@ export default function CommandPalette() {
       }
     }
 
-    const parserResolution = resolveQuery(
-      query(),
-      searchIndex() ?? [],
-      pokemonList() ?? [],
-      moveLearners() ?? {}
-    )
+    const parserResolution = resolveQuery(query(), searchIndex() ?? [], pokemonList() ?? [])
 
     const entityResults = flexSearch()?.search(currentQuery, 90) ?? []
 
@@ -283,15 +280,23 @@ export default function CommandPalette() {
     }
   )
 
-  const activeMoveEntry = createMemo<MoveLearnerEntryRecord | null>(() => {
-    const result = activeResult()
-    const index = moveLearners()
-    if (!result || result.type !== "move-learners" || !result.moveId || !index) {
-      return null
-    }
+  const [activeMoveEntry] = createResource(
+    () => {
+      const result = activeResult()
+      if (!result || result.type !== "move-learners" || !result.moveId) {
+        return null
+      }
 
-    return index[result.moveId] ?? null
-  })
+      return result.moveId
+    },
+    async (moveId) => {
+      if (!moveId) {
+        return null
+      }
+
+      return loadMoveLearnerEntry(moveId)
+    }
+  )
 
   const activeAbilityEntry = createMemo<AbilityEntryRecord | null>(() => {
     const result = activeResult()
@@ -338,7 +343,6 @@ export default function CommandPalette() {
       loadSearchIndex(),
       loadPokemonList(),
       loadPokemonTypeEntries(),
-      loadMoveLearners(),
       loadAbilityIndex(),
       loadItemIndex(),
     ])
@@ -347,14 +351,12 @@ export default function CommandPalette() {
           nextSearchIndex,
           nextPokemonList,
           nextPokemonTypeEntries,
-          nextMoveLearners,
           nextAbilityIndex,
           nextItemIndex,
         ]) => {
           setSearchIndex(nextSearchIndex)
           setPokemonList(nextPokemonList)
           setPokemonTypeEntries(nextPokemonTypeEntries)
-          setMoveLearners(nextMoveLearners)
           setAbilityIndex(nextAbilityIndex)
           setItemIndex(nextItemIndex)
         }
@@ -424,29 +426,29 @@ export default function CommandPalette() {
       return
     }
 
-    const navigate = (url: string) => {
+    const navigateTo = (url: string) => {
       if (openInNewTab) {
         window.open(url, "_blank")
       } else {
-        window.location.assign(url)
+        void navigate(url)
       }
     }
 
     if (result.url) {
       closePalette()
-      navigate(result.url)
+      navigateTo(result.url)
       return
     }
 
     if (result.slug) {
       closePalette()
-      navigate(`/pokemon/${result.slug}`)
+      navigateTo(`/pokemon/${result.slug}`)
       return
     }
 
     if (result.type === "move-learners" && result.moveId) {
       closePalette()
-      navigate(`/moves/${result.moveId}`)
+      navigateTo(`/moves/${result.moveId}`)
     }
   }
 
@@ -585,11 +587,12 @@ export default function CommandPalette() {
             <QuickviewPanel
               result={activeResult()}
               pokemonDetail={activePokemonDetail()}
-              moveEntry={activeMoveEntry()}
+              moveEntry={activeMoveEntry() ?? null}
               abilityEntry={activeAbilityEntry()}
               itemEntry={activeItemEntry()}
               pokemonList={pokemonList()}
               loadingPokemon={activePokemonDetail.loading}
+              loadingMove={activeMoveEntry.loading}
             />
           </div>
         </div>
@@ -611,6 +614,7 @@ function QuickviewPanel(props: {
   itemEntry: ItemEntryRecord | null
   pokemonList: PokemonListItem[] | null
   loadingPokemon: boolean
+  loadingMove: boolean
 }) {
   return (
     <Show
@@ -633,7 +637,7 @@ function QuickviewPanel(props: {
             </Match>
 
             <Match when={result().type === "move-learners"}>
-              <MoveLearnersQuickview entry={props.moveEntry} />
+              <MoveLearnersQuickview entry={props.moveEntry} loading={props.loadingMove} />
             </Match>
 
             <Match when={result().type === "ability-entry"}>
@@ -1139,12 +1143,14 @@ function formatEvolutionFamilyMemberLabel(
   return `${member.name} (${member.formName})`
 }
 
-function MoveLearnersQuickview(props: { entry: MoveLearnerEntryRecord | null }) {
+function MoveLearnersQuickview(props: { entry: MoveLearnerEntryRecord | null; loading: boolean }) {
   return (
     <Show
       when={props.entry}
       fallback={
-        <div class="p-12 text-center text-muted-foreground text-sm">Move details unavailable.</div>
+        <div class="p-12 text-center text-muted-foreground text-sm">
+          {props.loading ? "Loading move details..." : "Move details unavailable."}
+        </div>
       }
     >
       {(entrySignal) => {

@@ -1,0 +1,1344 @@
+{
+  "slug": "steenee",
+  "name": "Steenee",
+  "dexNumber": 762,
+  "implemented": true,
+  "types": [
+    "grass"
+  ],
+  "abilities": [
+    {
+      "id": "leafguard",
+      "hidden": false,
+      "label": "Leafguard",
+      "slot": "first"
+    },
+    {
+      "id": "oblivious",
+      "hidden": false,
+      "label": "Oblivious",
+      "slot": "second"
+    },
+    {
+      "id": "sweetveil",
+      "hidden": true,
+      "label": "Sweetveil",
+      "slot": "hidden"
+    }
+  ],
+  "eggGroups": [
+    "grass"
+  ],
+  "labels": [
+    "gen7"
+  ],
+  "aspects": [],
+  "aliases": [
+    "steenee"
+  ],
+  "maleRatio": 0,
+  "height": 7,
+  "weight": 82,
+  "catchRate": 120,
+  "baseExperienceYield": 102,
+  "baseFriendship": 50,
+  "eggCycles": 20,
+  "baseStats": {
+    "hp": 52,
+    "attack": 40,
+    "defence": 48,
+    "special_attack": 40,
+    "special_defence": 48,
+    "speed": 62
+  },
+  "evYield": {
+    "hp": 0,
+    "attack": 0,
+    "defence": 0,
+    "special_attack": 0,
+    "special_defence": 0,
+    "speed": 2
+  },
+  "preEvolution": {
+    "raw": "bounsweet",
+    "slug": "bounsweet",
+    "aspectTokens": []
+  },
+  "evolutions": [
+    {
+      "id": "steenee_tsareena",
+      "variant": "level_up",
+      "result": {
+        "raw": "tsareena",
+        "slug": "tsareena",
+        "aspectTokens": []
+      },
+      "consumeHeldItem": false,
+      "learnableMoves": [
+        "tropkick"
+      ],
+      "requirementText": [
+        "Knows Stomp"
+      ],
+      "requirements": [
+        {
+          "variant": "has_move",
+          "text": "Knows Stomp",
+          "raw": {
+            "variant": "has_move",
+            "move": "stomp"
+          }
+        }
+      ],
+      "requiredContext": null,
+      "fromForm": null,
+      "raw": {
+        "id": "steenee_tsareena",
+        "variant": "level_up",
+        "result": "tsareena",
+        "consumeHeldItem": false,
+        "learnableMoves": [
+          "tropkick"
+        ],
+        "requirements": [
+          {
+            "variant": "has_move",
+            "move": "stomp"
+          }
+        ]
+      }
+    }
+  ],
+  "evolutionFamily": {
+    "members": [
+      {
+        "nodeId": "bounsweet",
+        "slug": "bounsweet",
+        "name": "Bounsweet",
+        "dexNumber": 761,
+        "formSlug": null,
+        "formName": null
+      },
+      {
+        "nodeId": "steenee",
+        "slug": "steenee",
+        "name": "Steenee",
+        "dexNumber": 762,
+        "formSlug": null,
+        "formName": null
+      },
+      {
+        "nodeId": "tsareena",
+        "slug": "tsareena",
+        "name": "Tsareena",
+        "dexNumber": 763,
+        "formSlug": null,
+        "formName": null
+      }
+    ],
+    "edges": [
+      {
+        "fromNodeId": "bounsweet",
+        "toNodeId": "steenee",
+        "fromSlug": "bounsweet",
+        "toSlug": "steenee",
+        "method": "level_up",
+        "requirementText": [
+          "Level 18+"
+        ]
+      },
+      {
+        "fromNodeId": "steenee",
+        "toNodeId": "tsareena",
+        "fromSlug": "steenee",
+        "toSlug": "tsareena",
+        "method": "level_up",
+        "requirementText": [
+          "Knows Stomp"
+        ]
+      }
+    ],
+    "roots": [
+      "bounsweet"
+    ]
+  },
+  "moves": [
+    {
+      "raw": "egg:acupressure",
+      "moveId": "acupressure",
+      "moveName": "Acupressure",
+      "type": "normal",
+      "sourceType": "egg",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "egg:aromatherapy",
+      "moveId": "aromatherapy",
+      "moveName": "Aromatherapy",
+      "type": "grass",
+      "sourceType": "egg",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "46:aromatherapy",
+      "moveId": "aromatherapy",
+      "moveName": "Aromatherapy",
+      "type": "grass",
+      "sourceType": "level",
+      "sourceValue": 46,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "40:aromaticmist",
+      "moveId": "aromaticmist",
+      "moveName": "Aromatic Mist",
+      "type": "fairy",
+      "sourceType": "level",
+      "sourceValue": 40,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "legacy:attract",
+      "moveId": "attract",
+      "moveName": "Attract",
+      "type": "normal",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:bounce",
+      "moveId": "bounce",
+      "moveName": "Bounce",
+      "type": "flying",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tutor:bounce",
+      "moveId": "bounce",
+      "moveName": "Bounce",
+      "type": "flying",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:bulletseed",
+      "moveId": "bulletseed",
+      "moveName": "Bullet Seed",
+      "type": "grass",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "1:captivate",
+      "moveId": "captivate",
+      "moveName": "Captivate",
+      "type": "normal",
+      "sourceType": "level",
+      "sourceValue": 1,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:captivate",
+      "moveId": "captivate",
+      "moveName": "Captivate",
+      "type": "normal",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "special:celebrate",
+      "moveId": "celebrate",
+      "moveName": "Celebrate",
+      "type": "normal",
+      "sourceType": "special",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:charm",
+      "moveId": "charm",
+      "moveName": "Charm",
+      "type": "fairy",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "legacy:confide",
+      "moveId": "confide",
+      "moveName": "Confide",
+      "type": "normal",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:covet",
+      "moveId": "covet",
+      "moveName": "Covet",
+      "type": "normal",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tutor:covet",
+      "moveId": "covet",
+      "moveName": "Covet",
+      "type": "normal",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:dazzlinggleam",
+      "moveId": "dazzlinggleam",
+      "moveName": "Dazzling Gleam",
+      "type": "fairy",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tutor:dazzlinggleam",
+      "moveId": "dazzlinggleam",
+      "moveName": "Dazzling Gleam",
+      "type": "fairy",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "1:doubleslap",
+      "moveId": "doubleslap",
+      "moveName": "Double Slap",
+      "type": "normal",
+      "sourceType": "level",
+      "sourceValue": 1,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "legacy:doubleteam",
+      "moveId": "doubleteam",
+      "moveName": "Double Team",
+      "type": "normal",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:drainingkiss",
+      "moveId": "drainingkiss",
+      "moveName": "Draining Kiss",
+      "type": "fairy",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "egg:endeavor",
+      "moveId": "endeavor",
+      "moveName": "Endeavor",
+      "type": "normal",
+      "sourceType": "egg",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:endeavor",
+      "moveId": "endeavor",
+      "moveName": "Endeavor",
+      "type": "normal",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tutor:endeavor",
+      "moveId": "endeavor",
+      "moveName": "Endeavor",
+      "type": "normal",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:endure",
+      "moveId": "endure",
+      "moveName": "Endure",
+      "type": "normal",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:energyball",
+      "moveId": "energyball",
+      "moveName": "Energy Ball",
+      "type": "grass",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tutor:energyball",
+      "moveId": "energyball",
+      "moveName": "Energy Ball",
+      "type": "grass",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:facade",
+      "moveId": "facade",
+      "moveName": "Facade",
+      "type": "normal",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "egg:feint",
+      "moveId": "feint",
+      "moveName": "Feint",
+      "type": "normal",
+      "sourceType": "egg",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "1:flail",
+      "moveId": "flail",
+      "moveName": "Flail",
+      "type": "normal",
+      "sourceType": "level",
+      "sourceValue": 1,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:fling",
+      "moveId": "fling",
+      "moveName": "Fling",
+      "type": "dark",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "legacy:frustration",
+      "moveId": "frustration",
+      "moveName": "Frustration",
+      "type": "normal",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:gigadrain",
+      "moveId": "gigadrain",
+      "moveName": "Giga Drain",
+      "type": "grass",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tutor:gigadrain",
+      "moveId": "gigadrain",
+      "moveName": "Giga Drain",
+      "type": "grass",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:grassknot",
+      "moveId": "grassknot",
+      "moveName": "Grass Knot",
+      "type": "grass",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "egg:grasswhistle",
+      "moveId": "grasswhistle",
+      "moveName": "Grass Whistle",
+      "type": "grass",
+      "sourceType": "egg",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:grassyglide",
+      "moveId": "grassyglide",
+      "moveName": "Grassy Glide",
+      "type": "grass",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tutor:grassyglide",
+      "moveId": "grassyglide",
+      "moveName": "Grassy Glide",
+      "type": "grass",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:grassyterrain",
+      "moveId": "grassyterrain",
+      "moveName": "Grassy Terrain",
+      "type": "grass",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:helpinghand",
+      "moveId": "helpinghand",
+      "moveName": "Helping Hand",
+      "type": "normal",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tutor:helpinghand",
+      "moveId": "helpinghand",
+      "moveName": "Helping Hand",
+      "type": "normal",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "legacy:hiddenpower",
+      "moveId": "hiddenpower",
+      "moveName": "Hidden Power",
+      "type": "normal",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "legacy:knockoff",
+      "moveId": "knockoff",
+      "moveName": "Knock Off",
+      "type": "dark",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:leafstorm",
+      "moveId": "leafstorm",
+      "moveName": "Leaf Storm",
+      "type": "grass",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:lightscreen",
+      "moveId": "lightscreen",
+      "moveName": "Light Screen",
+      "type": "psychic",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:lowsweep",
+      "moveId": "lowsweep",
+      "moveName": "Low Sweep",
+      "type": "fighting",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "22:magicalleaf",
+      "moveId": "magicalleaf",
+      "moveName": "Magical Leaf",
+      "type": "grass",
+      "sourceType": "level",
+      "sourceValue": 22,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:magicalleaf",
+      "moveId": "magicalleaf",
+      "moveName": "Magical Leaf",
+      "type": "grass",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tutor:magicalleaf",
+      "moveId": "magicalleaf",
+      "moveName": "Magical Leaf",
+      "type": "grass",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:naturepower",
+      "moveId": "naturepower",
+      "moveName": "Nature Power",
+      "type": "normal",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:payback",
+      "moveId": "payback",
+      "moveName": "Payback",
+      "type": "dark",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:petalblizzard",
+      "moveId": "petalblizzard",
+      "moveName": "Petal Blizzard",
+      "type": "grass",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "1:playnice",
+      "moveId": "playnice",
+      "moveName": "Play Nice",
+      "type": "normal",
+      "sourceType": "level",
+      "sourceValue": 1,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:playrough",
+      "moveId": "playrough",
+      "moveName": "Play Rough",
+      "type": "fairy",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tutor:playrough",
+      "moveId": "playrough",
+      "moveName": "Play Rough",
+      "type": "fairy",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:protect",
+      "moveId": "protect",
+      "moveName": "Protect",
+      "type": "normal",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "1:rapidspin",
+      "moveId": "rapidspin",
+      "moveName": "Rapid Spin",
+      "type": "normal",
+      "sourceType": "level",
+      "sourceValue": 1,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "1:razorleaf",
+      "moveId": "razorleaf",
+      "moveName": "Razor Leaf",
+      "type": "grass",
+      "sourceType": "level",
+      "sourceValue": 1,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:reflect",
+      "moveId": "reflect",
+      "moveName": "Reflect",
+      "type": "psychic",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:rest",
+      "moveId": "rest",
+      "moveName": "Rest",
+      "type": "psychic",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tutor:rest",
+      "moveId": "rest",
+      "moveName": "Rest",
+      "type": "psychic",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "legacy:return",
+      "moveId": "return",
+      "moveName": "Return",
+      "type": "normal",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "legacy:round",
+      "moveId": "round",
+      "moveName": "Round",
+      "type": "normal",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:safeguard",
+      "moveId": "safeguard",
+      "moveName": "Safeguard",
+      "type": "normal",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:seedbomb",
+      "moveId": "seedbomb",
+      "moveName": "Seed Bomb",
+      "type": "grass",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tutor:seedbomb",
+      "moveId": "seedbomb",
+      "moveName": "Seed Bomb",
+      "type": "grass",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:sleeptalk",
+      "moveId": "sleeptalk",
+      "moveName": "Sleep Talk",
+      "type": "normal",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tutor:sleeptalk",
+      "moveId": "sleeptalk",
+      "moveName": "Sleep Talk",
+      "type": "normal",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "legacy:snore",
+      "moveId": "snore",
+      "moveName": "Snore",
+      "type": "normal",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:solarbeam",
+      "moveId": "solarbeam",
+      "moveName": "Solar Beam",
+      "type": "grass",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "1:splash",
+      "moveId": "splash",
+      "moveName": "Splash",
+      "type": "normal",
+      "sourceType": "level",
+      "sourceValue": 1,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "28:stomp",
+      "moveId": "stomp",
+      "moveName": "Stomp",
+      "type": "normal",
+      "sourceType": "level",
+      "sourceValue": 28,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:substitute",
+      "moveId": "substitute",
+      "moveName": "Substitute",
+      "type": "normal",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:sunnyday",
+      "moveId": "sunnyday",
+      "moveName": "Sunny Day",
+      "type": "fire",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "legacy:swagger",
+      "moveId": "swagger",
+      "moveName": "Swagger",
+      "type": "normal",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "16:sweetscent",
+      "moveId": "sweetscent",
+      "moveName": "Sweet Scent",
+      "type": "normal",
+      "sourceType": "level",
+      "sourceValue": 16,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:swift",
+      "moveId": "swift",
+      "moveName": "Swift",
+      "type": "normal",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tutor:swift",
+      "moveId": "swift",
+      "moveName": "Swift",
+      "type": "normal",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "egg:synthesis",
+      "moveId": "synthesis",
+      "moveName": "Synthesis",
+      "type": "grass",
+      "sourceType": "egg",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:synthesis",
+      "moveId": "synthesis",
+      "moveName": "Synthesis",
+      "type": "grass",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tutor:synthesis",
+      "moveId": "synthesis",
+      "moveName": "Synthesis",
+      "type": "grass",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:takedown",
+      "moveId": "takedown",
+      "moveName": "Take Down",
+      "type": "normal",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "34:teeterdance",
+      "moveId": "teeterdance",
+      "moveName": "Teeter Dance",
+      "type": "normal",
+      "sourceType": "level",
+      "sourceValue": 34,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:terablast",
+      "moveId": "terablast",
+      "moveName": "Tera Blast",
+      "type": "normal",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "legacy:toxic",
+      "moveId": "toxic",
+      "moveName": "Toxic",
+      "type": "poison",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:trailblaze",
+      "moveId": "trailblaze",
+      "moveName": "Trailblaze",
+      "type": "grass",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:tripleaxel",
+      "moveId": "tripleaxel",
+      "moveName": "Triple Axel",
+      "type": "ice",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tutor:tripleaxel",
+      "moveId": "tripleaxel",
+      "moveName": "Triple Axel",
+      "type": "ice",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:worryseed",
+      "moveId": "worryseed",
+      "moveName": "Worry Seed",
+      "type": "grass",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tutor:worryseed",
+      "moveId": "worryseed",
+      "moveName": "Worry Seed",
+      "type": "grass",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:zenheadbutt",
+      "moveId": "zenheadbutt",
+      "moveName": "Zen Headbutt",
+      "type": "psychic",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tutor:zenheadbutt",
+      "moveId": "zenheadbutt",
+      "moveName": "Zen Headbutt",
+      "type": "psychic",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    }
+  ],
+  "spawnEntries": [
+    {
+      "id": "steenee-1",
+      "sourceFile": "0762_steenee.json",
+      "pokemon": {
+        "raw": "steenee",
+        "slug": "steenee",
+        "aspectTokens": []
+      },
+      "type": "pokemon",
+      "spawnablePositionType": "grounded",
+      "bucket": "common",
+      "bucketWeight": 94.3,
+      "levelText": "18-29",
+      "levelMin": 18,
+      "levelMax": 29,
+      "weight": 0.18,
+      "presets": [
+        "natural"
+      ],
+      "biomeHints": [
+        "Is Jungle",
+        "Is Tropical Island",
+        "Tropics",
+        "Tropical Beach"
+      ],
+      "condition": {
+        "neededBaseBlocks": [
+          "#cobblemon:natural"
+        ],
+        "minSkyLight": 8,
+        "maxSkyLight": 15,
+        "biomes": [
+          "#cobblemon:is_jungle",
+          "#cobblemon:is_tropical_island"
+        ]
+      },
+      "anticondition": {
+        "neededBaseBlocks": [
+          "minecraft:farmland"
+        ]
+      },
+      "weightMultipliers": [],
+      "raw": {
+        "id": "steenee-1",
+        "pokemon": "steenee",
+        "presets": [
+          "natural"
+        ],
+        "type": "pokemon",
+        "spawnablePositionType": "grounded",
+        "bucket": "common",
+        "level": "18-29",
+        "weight": 0.18,
+        "condition": {
+          "minSkyLight": 8,
+          "maxSkyLight": 15,
+          "biomes": [
+            "#cobblemon:is_jungle",
+            "#cobblemon:is_tropical_island"
+          ]
+        }
+      }
+    }
+  ],
+  "forms": [],
+  "rawSpecies": {
+    "implemented": true,
+    "nationalPokedexNumber": 762,
+    "name": "Steenee",
+    "primaryType": "grass",
+    "maleRatio": 0,
+    "height": 7,
+    "weight": 82,
+    "pokedex": [
+      "cobblemon.species.steenee.desc"
+    ],
+    "labels": [
+      "gen7"
+    ],
+    "aspects": [],
+    "abilities": [
+      "leafguard",
+      "oblivious",
+      "h:sweetveil"
+    ],
+    "eggGroups": [
+      "grass"
+    ],
+    "baseStats": {
+      "hp": 52,
+      "attack": 40,
+      "defence": 48,
+      "special_attack": 40,
+      "special_defence": 48,
+      "speed": 62
+    },
+    "evYield": {
+      "hp": 0,
+      "attack": 0,
+      "defence": 0,
+      "special_attack": 0,
+      "special_defence": 0,
+      "speed": 2
+    },
+    "baseExperienceYield": 102,
+    "experienceGroup": "medium_slow",
+    "catchRate": 120,
+    "eggCycles": 20,
+    "baseFriendship": 50,
+    "baseScale": 0.65,
+    "hitbox": {
+      "width": 1,
+      "height": 1.4,
+      "fixed": false
+    },
+    "drops": {
+      "amount": 2,
+      "entries": [
+        {
+          "item": "cobblemon:grassy_seed",
+          "percentage": 5
+        },
+        {
+          "item": "cobblemon:persim_berry",
+          "percentage": 5
+        }
+      ]
+    },
+    "moves": [
+      "1:doubleslap",
+      "1:splash",
+      "1:playnice",
+      "1:rapidspin",
+      "1:razorleaf",
+      "1:captivate",
+      "1:flail",
+      "16:sweetscent",
+      "22:magicalleaf",
+      "28:stomp",
+      "34:teeterdance",
+      "40:aromaticmist",
+      "46:aromatherapy",
+      "egg:acupressure",
+      "egg:aromatherapy",
+      "egg:endeavor",
+      "egg:feint",
+      "egg:grasswhistle",
+      "egg:synthesis",
+      "tm:bounce",
+      "tm:bulletseed",
+      "tm:captivate",
+      "tm:charm",
+      "tm:covet",
+      "tm:dazzlinggleam",
+      "tm:drainingkiss",
+      "tm:endeavor",
+      "tm:endure",
+      "tm:energyball",
+      "tm:facade",
+      "tm:fling",
+      "tm:gigadrain",
+      "tm:grassknot",
+      "tm:grassyglide",
+      "tm:grassyterrain",
+      "tm:helpinghand",
+      "tm:leafstorm",
+      "tm:lightscreen",
+      "tm:lowsweep",
+      "tm:magicalleaf",
+      "tm:naturepower",
+      "tm:payback",
+      "tm:petalblizzard",
+      "tm:playrough",
+      "tm:protect",
+      "tm:reflect",
+      "tm:rest",
+      "tm:safeguard",
+      "tm:seedbomb",
+      "tm:sleeptalk",
+      "tm:solarbeam",
+      "tm:substitute",
+      "tm:sunnyday",
+      "tm:swift",
+      "tm:synthesis",
+      "tm:takedown",
+      "tm:terablast",
+      "tm:trailblaze",
+      "tm:tripleaxel",
+      "tm:worryseed",
+      "tm:zenheadbutt",
+      "tutor:bounce",
+      "tutor:covet",
+      "tutor:dazzlinggleam",
+      "tutor:endeavor",
+      "tutor:energyball",
+      "tutor:gigadrain",
+      "tutor:grassyglide",
+      "tutor:helpinghand",
+      "tutor:magicalleaf",
+      "tutor:playrough",
+      "tutor:rest",
+      "tutor:seedbomb",
+      "tutor:sleeptalk",
+      "tutor:swift",
+      "tutor:synthesis",
+      "tutor:tripleaxel",
+      "tutor:worryseed",
+      "tutor:zenheadbutt",
+      "legacy:attract",
+      "legacy:confide",
+      "legacy:doubleteam",
+      "legacy:frustration",
+      "legacy:hiddenpower",
+      "legacy:knockoff",
+      "legacy:return",
+      "legacy:round",
+      "legacy:snore",
+      "legacy:swagger",
+      "legacy:toxic",
+      "special:celebrate"
+    ],
+    "preEvolution": "bounsweet",
+    "evolutions": [
+      {
+        "id": "steenee_tsareena",
+        "variant": "level_up",
+        "result": "tsareena",
+        "consumeHeldItem": false,
+        "learnableMoves": [
+          "tropkick"
+        ],
+        "requirements": [
+          {
+            "variant": "has_move",
+            "move": "stomp"
+          }
+        ]
+      }
+    ],
+    "behaviour": {
+      "herd": {
+        "maxSize": "3",
+        "toleratedLeaders": [
+          {
+            "pokemon": "tsareena",
+            "tier": 1
+          }
+        ]
+      },
+      "resting": {
+        "willSleepOnBed": true,
+        "drowsyChance": 0.0333,
+        "rouseChance": 0.0042
+      },
+      "moving": {
+        "swim": {
+          "avoidsWater": true
+        }
+      },
+      "combat": {
+        "willDefendSelf": true,
+        "willDefendOwner": true,
+        "willFlee": false
+      }
+    }
+  }
+}

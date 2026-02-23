@@ -1,0 +1,45 @@
+{
+  "vcreate": {
+    "moveId": "vcreate",
+    "moveName": "V-create",
+    "type": "fire",
+    "category": "physical",
+    "basePower": 180,
+    "accuracy": 95,
+    "alwaysHits": false,
+    "shortDescription": "Lowers the user's Defense, Sp. Def, Speed by 1.",
+    "description": "Lowers the user's Speed, Defense, and Special Defense by 1 stage.",
+    "learners": [
+      {
+        "slug": "rayquaza",
+        "name": "Rayquaza",
+        "dexNumber": 384,
+        "methods": [
+          "special"
+        ],
+        "eggGroups": [
+          "undiscovered"
+        ],
+        "levelUpLevels": [],
+        "baseAvailable": true,
+        "forms": []
+      },
+      {
+        "slug": "victini",
+        "name": "Victini",
+        "dexNumber": 494,
+        "methods": [
+          "level"
+        ],
+        "eggGroups": [
+          "undiscovered"
+        ],
+        "levelUpLevels": [
+          1
+        ],
+        "baseAvailable": true,
+        "forms": []
+      }
+    ]
+  }
+}

@@ -1,0 +1,1226 @@
+{
+  "slug": "clamperl",
+  "name": "Clamperl",
+  "dexNumber": 366,
+  "implemented": true,
+  "types": [
+    "water"
+  ],
+  "abilities": [
+    {
+      "id": "shellarmor",
+      "hidden": false,
+      "label": "Shellarmor",
+      "slot": "first"
+    },
+    {
+      "id": "rattled",
+      "hidden": true,
+      "label": "Rattled",
+      "slot": "hidden"
+    }
+  ],
+  "eggGroups": [
+    "water_1"
+  ],
+  "labels": [
+    "gen3"
+  ],
+  "aspects": [],
+  "aliases": [
+    "clamperl"
+  ],
+  "maleRatio": 0.5,
+  "height": 4,
+  "weight": 525,
+  "catchRate": 255,
+  "baseExperienceYield": 69,
+  "baseFriendship": 50,
+  "eggCycles": 20,
+  "baseStats": {
+    "hp": 35,
+    "attack": 64,
+    "defence": 85,
+    "special_attack": 74,
+    "special_defence": 55,
+    "speed": 32
+  },
+  "evYield": {
+    "hp": 0,
+    "attack": 0,
+    "defence": 1,
+    "special_attack": 0,
+    "special_defence": 0,
+    "speed": 0
+  },
+  "preEvolution": null,
+  "evolutions": [
+    {
+      "id": "clamperl_huntail",
+      "variant": "trade",
+      "result": {
+        "raw": "huntail",
+        "slug": "huntail",
+        "aspectTokens": []
+      },
+      "consumeHeldItem": true,
+      "learnableMoves": [],
+      "requirementText": [
+        "Hold Deep Sea Tooth"
+      ],
+      "requirements": [
+        {
+          "variant": "held_item",
+          "text": "Hold Deep Sea Tooth",
+          "raw": {
+            "variant": "held_item",
+            "itemCondition": "cobblemon:deep_sea_tooth"
+          }
+        }
+      ],
+      "requiredContext": null,
+      "fromForm": null,
+      "raw": {
+        "id": "clamperl_huntail",
+        "variant": "trade",
+        "result": "huntail",
+        "consumeHeldItem": true,
+        "learnableMoves": [],
+        "requirements": [
+          {
+            "variant": "held_item",
+            "itemCondition": "cobblemon:deep_sea_tooth"
+          }
+        ]
+      }
+    },
+    {
+      "id": "clamperl_gorebyss",
+      "variant": "trade",
+      "result": {
+        "raw": "gorebyss",
+        "slug": "gorebyss",
+        "aspectTokens": []
+      },
+      "consumeHeldItem": true,
+      "learnableMoves": [],
+      "requirementText": [
+        "Hold Deep Sea Scale"
+      ],
+      "requirements": [
+        {
+          "variant": "held_item",
+          "text": "Hold Deep Sea Scale",
+          "raw": {
+            "variant": "held_item",
+            "itemCondition": "cobblemon:deep_sea_scale"
+          }
+        }
+      ],
+      "requiredContext": null,
+      "fromForm": null,
+      "raw": {
+        "id": "clamperl_gorebyss",
+        "variant": "trade",
+        "result": "gorebyss",
+        "consumeHeldItem": true,
+        "learnableMoves": [],
+        "requirements": [
+          {
+            "variant": "held_item",
+            "itemCondition": "cobblemon:deep_sea_scale"
+          }
+        ]
+      }
+    }
+  ],
+  "evolutionFamily": {
+    "members": [
+      {
+        "nodeId": "clamperl",
+        "slug": "clamperl",
+        "name": "Clamperl",
+        "dexNumber": 366,
+        "formSlug": null,
+        "formName": null
+      },
+      {
+        "nodeId": "huntail",
+        "slug": "huntail",
+        "name": "Huntail",
+        "dexNumber": 367,
+        "formSlug": null,
+        "formName": null
+      },
+      {
+        "nodeId": "gorebyss",
+        "slug": "gorebyss",
+        "name": "Gorebyss",
+        "dexNumber": 368,
+        "formSlug": null,
+        "formName": null
+      }
+    ],
+    "edges": [
+      {
+        "fromNodeId": "clamperl",
+        "toNodeId": "gorebyss",
+        "fromSlug": "clamperl",
+        "toSlug": "gorebyss",
+        "method": "trade",
+        "requirementText": [
+          "Hold Deep Sea Scale"
+        ]
+      },
+      {
+        "fromNodeId": "clamperl",
+        "toNodeId": "huntail",
+        "fromSlug": "clamperl",
+        "toSlug": "huntail",
+        "method": "trade",
+        "requirementText": [
+          "Hold Deep Sea Tooth"
+        ]
+      }
+    ],
+    "roots": [
+      "clamperl"
+    ]
+  },
+  "moves": [
+    {
+      "raw": "egg:aquaring",
+      "moveId": "aquaring",
+      "moveName": "Aqua Ring",
+      "type": "water",
+      "sourceType": "egg",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "legacy:attract",
+      "moveId": "attract",
+      "moveName": "Attract",
+      "type": "normal",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "egg:barrier",
+      "moveId": "barrier",
+      "moveName": "Barrier",
+      "type": "psychic",
+      "sourceType": "egg",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:blizzard",
+      "moveId": "blizzard",
+      "moveName": "Blizzard",
+      "type": "ice",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:bodyslam",
+      "moveId": "bodyslam",
+      "moveName": "Body Slam",
+      "type": "normal",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:brine",
+      "moveId": "brine",
+      "moveName": "Brine",
+      "type": "water",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "legacy:captivate",
+      "moveId": "captivate",
+      "moveName": "Captivate",
+      "type": "normal",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "1:clamp",
+      "moveId": "clamp",
+      "moveName": "Clamp",
+      "type": "water",
+      "sourceType": "level",
+      "sourceValue": 1,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "legacy:confide",
+      "moveId": "confide",
+      "moveName": "Confide",
+      "type": "normal",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:confuseray",
+      "moveId": "confuseray",
+      "moveName": "Confuse Ray",
+      "type": "ghost",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:dive",
+      "moveId": "dive",
+      "moveName": "Dive",
+      "type": "water",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tutor:dive",
+      "moveId": "dive",
+      "moveName": "Dive",
+      "type": "water",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "legacy:doubleteam",
+      "moveId": "doubleteam",
+      "moveName": "Double Team",
+      "type": "normal",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "legacy:doubleedge",
+      "moveId": "doubleedge",
+      "moveName": "Double-Edge",
+      "type": "normal",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:endure",
+      "moveId": "endure",
+      "moveName": "Endure",
+      "type": "normal",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:facade",
+      "moveId": "facade",
+      "moveName": "Facade",
+      "type": "normal",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "legacy:frustration",
+      "moveId": "frustration",
+      "moveName": "Frustration",
+      "type": "normal",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:hail",
+      "moveId": "hail",
+      "moveName": "Hail",
+      "type": "ice",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "legacy:hiddenpower",
+      "moveId": "hiddenpower",
+      "moveName": "Hidden Power",
+      "type": "normal",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:icebeam",
+      "moveId": "icebeam",
+      "moveName": "Ice Beam",
+      "type": "ice",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tutor:icebeam",
+      "moveId": "icebeam",
+      "moveName": "Ice Beam",
+      "type": "ice",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:icywind",
+      "moveId": "icywind",
+      "moveName": "Icy Wind",
+      "type": "ice",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tutor:icywind",
+      "moveId": "icywind",
+      "moveName": "Icy Wind",
+      "type": "ice",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "1:irondefense",
+      "moveId": "irondefense",
+      "moveName": "Iron Defense",
+      "type": "steel",
+      "sourceType": "level",
+      "sourceValue": 1,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:irondefense",
+      "moveId": "irondefense",
+      "moveName": "Iron Defense",
+      "type": "steel",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tutor:irondefense",
+      "moveId": "irondefense",
+      "moveName": "Iron Defense",
+      "type": "steel",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "legacy:mimic",
+      "moveId": "mimic",
+      "moveName": "Mimic",
+      "type": "normal",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "egg:mudsport",
+      "moveId": "mudsport",
+      "moveName": "Mud Sport",
+      "type": "ground",
+      "sourceType": "egg",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:muddywater",
+      "moveId": "muddywater",
+      "moveName": "Muddy Water",
+      "type": "water",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "legacy:naturalgift",
+      "moveId": "naturalgift",
+      "moveName": "Natural Gift",
+      "type": "normal",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:protect",
+      "moveId": "protect",
+      "moveName": "Protect",
+      "type": "normal",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:raindance",
+      "moveId": "raindance",
+      "moveName": "Rain Dance",
+      "type": "water",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "egg:refresh",
+      "moveId": "refresh",
+      "moveName": "Refresh",
+      "type": "normal",
+      "sourceType": "egg",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:rest",
+      "moveId": "rest",
+      "moveName": "Rest",
+      "type": "psychic",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tutor:rest",
+      "moveId": "rest",
+      "moveName": "Rest",
+      "type": "psychic",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "legacy:return",
+      "moveId": "return",
+      "moveName": "Return",
+      "type": "normal",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "legacy:round",
+      "moveId": "round",
+      "moveName": "Round",
+      "type": "normal",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:scald",
+      "moveId": "scald",
+      "moveName": "Scald",
+      "type": "water",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "legacy:secretpower",
+      "moveId": "secretpower",
+      "moveName": "Secret Power",
+      "type": "normal",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "50:shellsmash",
+      "moveId": "shellsmash",
+      "moveName": "Shell Smash",
+      "type": "normal",
+      "sourceType": "level",
+      "sourceValue": 50,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:sleeptalk",
+      "moveId": "sleeptalk",
+      "moveName": "Sleep Talk",
+      "type": "normal",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tutor:sleeptalk",
+      "moveId": "sleeptalk",
+      "moveName": "Sleep Talk",
+      "type": "normal",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "legacy:snore",
+      "moveId": "snore",
+      "moveName": "Snore",
+      "type": "normal",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:substitute",
+      "moveId": "substitute",
+      "moveName": "Substitute",
+      "type": "normal",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "egg:supersonic",
+      "moveId": "supersonic",
+      "moveName": "Supersonic",
+      "type": "normal",
+      "sourceType": "egg",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:surf",
+      "moveId": "surf",
+      "moveName": "Surf",
+      "type": "water",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "legacy:swagger",
+      "moveId": "swagger",
+      "moveName": "Swagger",
+      "type": "normal",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:terablast",
+      "moveId": "terablast",
+      "moveName": "Tera Blast",
+      "type": "normal",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "legacy:toxic",
+      "moveId": "toxic",
+      "moveName": "Toxic",
+      "type": "poison",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "1:watergun",
+      "moveId": "watergun",
+      "moveName": "Water Gun",
+      "type": "water",
+      "sourceType": "level",
+      "sourceValue": 1,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:waterpulse",
+      "moveId": "waterpulse",
+      "moveName": "Water Pulse",
+      "type": "water",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tutor:waterpulse",
+      "moveId": "waterpulse",
+      "moveName": "Water Pulse",
+      "type": "water",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:waterfall",
+      "moveId": "waterfall",
+      "moveName": "Waterfall",
+      "type": "water",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "1:whirlpool",
+      "moveId": "whirlpool",
+      "moveName": "Whirlpool",
+      "type": "water",
+      "sourceType": "level",
+      "sourceValue": 1,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:whirlpool",
+      "moveId": "whirlpool",
+      "moveName": "Whirlpool",
+      "type": "water",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    }
+  ],
+  "spawnEntries": [
+    {
+      "id": "clamperl-1",
+      "sourceFile": "0366_clamperl.json",
+      "pokemon": {
+        "raw": "clamperl",
+        "slug": "clamperl",
+        "aspectTokens": []
+      },
+      "type": "pokemon",
+      "spawnablePositionType": "seafloor",
+      "bucket": "uncommon",
+      "bucketWeight": 5,
+      "levelText": "10-35",
+      "levelMin": 10,
+      "levelMax": 35,
+      "weight": 9.2,
+      "presets": [
+        "water"
+      ],
+      "biomeHints": [
+        "Is Deep Ocean"
+      ],
+      "condition": {
+        "fluid": "#minecraft:water",
+        "canSeeSky": true,
+        "biomes": [
+          "#cobblemon:is_deep_ocean"
+        ],
+        "maxY": 48
+      },
+      "anticondition": null,
+      "weightMultipliers": [],
+      "raw": {
+        "id": "clamperl-1",
+        "pokemon": "clamperl",
+        "presets": [
+          "water"
+        ],
+        "type": "pokemon",
+        "spawnablePositionType": "seafloor",
+        "bucket": "uncommon",
+        "level": "10-35",
+        "weight": 9.2,
+        "condition": {
+          "canSeeSky": true,
+          "biomes": [
+            "#cobblemon:is_deep_ocean"
+          ],
+          "maxY": 48
+        }
+      }
+    },
+    {
+      "id": "clamperl-2",
+      "sourceFile": "0366_clamperl.json",
+      "pokemon": {
+        "raw": "clamperl",
+        "slug": "clamperl",
+        "aspectTokens": []
+      },
+      "type": "pokemon",
+      "spawnablePositionType": "seafloor",
+      "bucket": "rare",
+      "bucketWeight": 0.5,
+      "levelText": "10-35",
+      "levelMin": 10,
+      "levelMax": 35,
+      "weight": 8.75,
+      "presets": [
+        "water"
+      ],
+      "biomeHints": [
+        "Is Warm Ocean",
+        "Warm Ocean",
+        "Tidepools"
+      ],
+      "condition": {
+        "fluid": "#minecraft:water",
+        "canSeeSky": true,
+        "biomes": [
+          "#cobblemon:is_warm_ocean"
+        ]
+      },
+      "anticondition": null,
+      "weightMultipliers": [],
+      "raw": {
+        "id": "clamperl-2",
+        "pokemon": "clamperl",
+        "presets": [
+          "water"
+        ],
+        "type": "pokemon",
+        "spawnablePositionType": "seafloor",
+        "bucket": "rare",
+        "level": "10-35",
+        "weight": 8.75,
+        "condition": {
+          "canSeeSky": true,
+          "biomes": [
+            "#cobblemon:is_warm_ocean"
+          ]
+        }
+      }
+    },
+    {
+      "id": "clamperl-3",
+      "sourceFile": "0366_clamperl.json",
+      "pokemon": {
+        "raw": "clamperl",
+        "slug": "clamperl",
+        "aspectTokens": []
+      },
+      "type": "pokemon",
+      "spawnablePositionType": "fishing",
+      "bucket": "rare",
+      "bucketWeight": 0.5,
+      "levelText": "10-35",
+      "levelMin": 10,
+      "levelMax": 35,
+      "weight": 5.25,
+      "presets": [],
+      "biomeHints": [
+        "Is Ocean",
+        "Is Cold Ocean"
+      ],
+      "condition": {
+        "canSeeSky": true,
+        "biomes": [
+          "#cobblemon:is_ocean"
+        ]
+      },
+      "anticondition": null,
+      "weightMultipliers": [],
+      "raw": {
+        "id": "clamperl-3",
+        "pokemon": "clamperl",
+        "type": "pokemon",
+        "spawnablePositionType": "fishing",
+        "bucket": "rare",
+        "level": "10-35",
+        "weight": 5.25,
+        "condition": {
+          "canSeeSky": true,
+          "biomes": [
+            "#cobblemon:is_ocean"
+          ]
+        }
+      }
+    },
+    {
+      "id": "clamperl-4",
+      "sourceFile": "0366_clamperl.json",
+      "pokemon": {
+        "raw": "clamperl",
+        "slug": "clamperl",
+        "aspectTokens": []
+      },
+      "type": "pokemon",
+      "spawnablePositionType": "fishing",
+      "bucket": "rare",
+      "bucketWeight": 0.5,
+      "levelText": "10-35",
+      "levelMin": 10,
+      "levelMax": 35,
+      "weight": 5.25,
+      "presets": [],
+      "biomeHints": [
+        "Is Ocean",
+        "Is Cold Ocean"
+      ],
+      "condition": {
+        "canSeeSky": false,
+        "minSkyLight": 8,
+        "maxSkyLight": 15,
+        "biomes": [
+          "#cobblemon:is_ocean"
+        ]
+      },
+      "anticondition": null,
+      "weightMultipliers": [],
+      "raw": {
+        "id": "clamperl-4",
+        "pokemon": "clamperl",
+        "type": "pokemon",
+        "spawnablePositionType": "fishing",
+        "bucket": "rare",
+        "level": "10-35",
+        "weight": 5.25,
+        "condition": {
+          "canSeeSky": false,
+          "minSkyLight": 8,
+          "maxSkyLight": 15,
+          "biomes": [
+            "#cobblemon:is_ocean"
+          ]
+        }
+      }
+    },
+    {
+      "id": "clamperl-5",
+      "sourceFile": "0366_clamperl.json",
+      "pokemon": {
+        "raw": "clamperl",
+        "slug": "clamperl",
+        "aspectTokens": []
+      },
+      "type": "pokemon",
+      "spawnablePositionType": "seafloor",
+      "bucket": "uncommon",
+      "bucketWeight": 5,
+      "levelText": "10-35",
+      "levelMin": 10,
+      "levelMax": 35,
+      "weight": 9.2,
+      "presets": [
+        "water"
+      ],
+      "biomeHints": [
+        "Is Overworld"
+      ],
+      "condition": {
+        "fluid": "#minecraft:water",
+        "canSeeSky": false,
+        "biomes": [
+          "#cobblemon:is_overworld"
+        ],
+        "structures": [
+          "cobblemon:shipwreck_coves/submerged_shipwreck_cove"
+        ],
+        "minY": -60,
+        "maxY": 13
+      },
+      "anticondition": null,
+      "weightMultipliers": [],
+      "raw": {
+        "id": "clamperl-5",
+        "pokemon": "clamperl",
+        "presets": [
+          "water"
+        ],
+        "type": "pokemon",
+        "spawnablePositionType": "seafloor",
+        "bucket": "uncommon",
+        "level": "10-35",
+        "weight": 9.2,
+        "condition": {
+          "canSeeSky": false,
+          "biomes": [
+            "#cobblemon:is_overworld"
+          ],
+          "structures": [
+            "cobblemon:shipwreck_coves/submerged_shipwreck_cove"
+          ],
+          "minY": -60,
+          "maxY": 13
+        }
+      }
+    },
+    {
+      "id": "clamperl-6",
+      "sourceFile": "0366_clamperl.json",
+      "pokemon": {
+        "raw": "clamperl",
+        "slug": "clamperl",
+        "aspectTokens": []
+      },
+      "type": "pokemon",
+      "spawnablePositionType": "fishing",
+      "bucket": "rare",
+      "bucketWeight": 0.5,
+      "levelText": "10-35",
+      "levelMin": 10,
+      "levelMax": 35,
+      "weight": 5.25,
+      "presets": [],
+      "biomeHints": [
+        "Is Overworld"
+      ],
+      "condition": {
+        "canSeeSky": false,
+        "biomes": [
+          "#cobblemon:is_overworld"
+        ],
+        "structures": [
+          "cobblemon:shipwreck_coves/submerged_shipwreck_cove"
+        ],
+        "minY": -60,
+        "maxY": 13
+      },
+      "anticondition": null,
+      "weightMultipliers": [],
+      "raw": {
+        "id": "clamperl-6",
+        "pokemon": "clamperl",
+        "type": "pokemon",
+        "spawnablePositionType": "fishing",
+        "bucket": "rare",
+        "level": "10-35",
+        "weight": 5.25,
+        "condition": {
+          "canSeeSky": false,
+          "biomes": [
+            "#cobblemon:is_overworld"
+          ],
+          "structures": [
+            "cobblemon:shipwreck_coves/submerged_shipwreck_cove"
+          ],
+          "minY": -60,
+          "maxY": 13
+        }
+      }
+    }
+  ],
+  "forms": [],
+  "rawSpecies": {
+    "implemented": true,
+    "nationalPokedexNumber": 366,
+    "name": "Clamperl",
+    "primaryType": "water",
+    "maleRatio": 0.5,
+    "height": 4,
+    "weight": 525,
+    "pokedex": [
+      "cobblemon.species.clamperl.desc"
+    ],
+    "labels": [
+      "gen3"
+    ],
+    "aspects": [],
+    "abilities": [
+      "shellarmor",
+      "h:rattled"
+    ],
+    "eggGroups": [
+      "water_1"
+    ],
+    "baseStats": {
+      "hp": 35,
+      "attack": 64,
+      "defence": 85,
+      "special_attack": 74,
+      "special_defence": 55,
+      "speed": 32
+    },
+    "evYield": {
+      "hp": 0,
+      "attack": 0,
+      "defence": 1,
+      "special_attack": 0,
+      "special_defence": 0,
+      "speed": 0
+    },
+    "baseExperienceYield": 69,
+    "experienceGroup": "erratic",
+    "catchRate": 255,
+    "eggCycles": 20,
+    "baseFriendship": 50,
+    "baseScale": 0.75,
+    "hitbox": {
+      "width": 0.75,
+      "height": 0.67,
+      "fixed": false
+    },
+    "behaviour": {
+      "moving": {
+        "walk": {
+          "walkSpeed": 0.175,
+          "avoidsLand": true
+        },
+        "swim": {
+          "swimSpeed": 0.1,
+          "canSwimInWater": false,
+          "canBreatheUnderwater": true
+        }
+      },
+      "resting": {
+        "canSleep": true,
+        "light": "0-4",
+        "times": [
+          "any"
+        ],
+        "drowsyChance": 0.0014,
+        "rouseChance": 0.0042
+      },
+      "herd": {
+        "maxSize": "9"
+      }
+    },
+    "drops": {
+      "amount": 1,
+      "entries": [
+        {
+          "item": "cobblemon:shell_bell",
+          "percentage": 2.5
+        }
+      ]
+    },
+    "moves": [
+      "1:clamp",
+      "1:watergun",
+      "1:whirlpool",
+      "1:irondefense",
+      "50:shellsmash",
+      "egg:aquaring",
+      "egg:barrier",
+      "egg:mudsport",
+      "egg:refresh",
+      "egg:supersonic",
+      "tm:blizzard",
+      "tm:bodyslam",
+      "tm:brine",
+      "tm:confuseray",
+      "tm:dive",
+      "tm:endure",
+      "tm:facade",
+      "tm:hail",
+      "tm:icebeam",
+      "tm:icywind",
+      "tm:irondefense",
+      "tm:muddywater",
+      "tm:protect",
+      "tm:raindance",
+      "tm:rest",
+      "tm:scald",
+      "tm:sleeptalk",
+      "tm:substitute",
+      "tm:surf",
+      "tm:terablast",
+      "tm:waterfall",
+      "tm:waterpulse",
+      "tm:whirlpool",
+      "tutor:dive",
+      "tutor:icebeam",
+      "tutor:icywind",
+      "tutor:irondefense",
+      "tutor:rest",
+      "tutor:sleeptalk",
+      "tutor:waterpulse",
+      "legacy:attract",
+      "legacy:captivate",
+      "legacy:confide",
+      "legacy:doubleedge",
+      "legacy:doubleteam",
+      "legacy:frustration",
+      "legacy:hiddenpower",
+      "legacy:mimic",
+      "legacy:naturalgift",
+      "legacy:return",
+      "legacy:round",
+      "legacy:secretpower",
+      "legacy:snore",
+      "legacy:swagger",
+      "legacy:toxic"
+    ],
+    "evolutions": [
+      {
+        "id": "clamperl_huntail",
+        "variant": "trade",
+        "result": "huntail",
+        "consumeHeldItem": true,
+        "learnableMoves": [],
+        "requirements": [
+          {
+            "variant": "held_item",
+            "itemCondition": "cobblemon:deep_sea_tooth"
+          }
+        ]
+      },
+      {
+        "id": "clamperl_gorebyss",
+        "variant": "trade",
+        "result": "gorebyss",
+        "consumeHeldItem": true,
+        "learnableMoves": [],
+        "requirements": [
+          {
+            "variant": "held_item",
+            "itemCondition": "cobblemon:deep_sea_scale"
+          }
+        ]
+      }
+    ]
+  }
+}

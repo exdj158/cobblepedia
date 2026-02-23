@@ -1,0 +1,4284 @@
+{
+  "slug": "goodra",
+  "name": "Goodra",
+  "dexNumber": 706,
+  "implemented": true,
+  "types": [
+    "dragon"
+  ],
+  "abilities": [
+    {
+      "id": "sapsipper",
+      "hidden": false,
+      "label": "Sapsipper",
+      "slot": "first"
+    },
+    {
+      "id": "hydration",
+      "hidden": false,
+      "label": "Hydration",
+      "slot": "second"
+    },
+    {
+      "id": "gooey",
+      "hidden": true,
+      "label": "Gooey",
+      "slot": "hidden"
+    }
+  ],
+  "eggGroups": [
+    "dragon"
+  ],
+  "labels": [
+    "gen6",
+    "powerhouse",
+    "kalosian_form"
+  ],
+  "aspects": [],
+  "aliases": [
+    "goodra",
+    "goodra hisui",
+    "hisui"
+  ],
+  "maleRatio": 0.5,
+  "height": 20,
+  "weight": 1505,
+  "catchRate": 45,
+  "baseExperienceYield": 300,
+  "baseFriendship": 35,
+  "eggCycles": 40,
+  "baseStats": {
+    "hp": 90,
+    "attack": 100,
+    "defence": 70,
+    "special_attack": 110,
+    "special_defence": 150,
+    "speed": 80
+  },
+  "evYield": {
+    "hp": 0,
+    "attack": 0,
+    "defence": 0,
+    "special_attack": 0,
+    "special_defence": 3,
+    "speed": 0
+  },
+  "preEvolution": {
+    "raw": "sliggoo",
+    "slug": "sliggoo",
+    "aspectTokens": []
+  },
+  "evolutions": [],
+  "evolutionFamily": {
+    "members": [
+      {
+        "nodeId": "goomy",
+        "slug": "goomy",
+        "name": "Goomy",
+        "dexNumber": 704,
+        "formSlug": null,
+        "formName": null
+      },
+      {
+        "nodeId": "goomy-hisuibias",
+        "slug": "goomy",
+        "name": "Goomy",
+        "dexNumber": 704,
+        "formSlug": "goomy-hisuibias",
+        "formName": "Hisui-Bias"
+      },
+      {
+        "nodeId": "sliggoo",
+        "slug": "sliggoo",
+        "name": "Sliggoo",
+        "dexNumber": 705,
+        "formSlug": null,
+        "formName": null
+      },
+      {
+        "nodeId": "sliggoo-hisui",
+        "slug": "sliggoo",
+        "name": "Sliggoo",
+        "dexNumber": 705,
+        "formSlug": "sliggoo-hisui",
+        "formName": "Hisui"
+      },
+      {
+        "nodeId": "goodra",
+        "slug": "goodra",
+        "name": "Goodra",
+        "dexNumber": 706,
+        "formSlug": null,
+        "formName": null
+      },
+      {
+        "nodeId": "goodra-hisui",
+        "slug": "goodra",
+        "name": "Goodra",
+        "dexNumber": 706,
+        "formSlug": "goodra-hisui",
+        "formName": "Hisui"
+      }
+    ],
+    "edges": [
+      {
+        "fromNodeId": "goomy",
+        "toNodeId": "sliggoo",
+        "fromSlug": "goomy",
+        "toSlug": "sliggoo",
+        "method": "level_up",
+        "requirementText": [
+          "Level 40+"
+        ]
+      },
+      {
+        "fromNodeId": "goomy-hisuibias",
+        "toNodeId": "sliggoo-hisui",
+        "fromSlug": "goomy",
+        "toSlug": "sliggoo",
+        "method": "level_up",
+        "requirementText": [
+          "Level 40+"
+        ]
+      },
+      {
+        "fromNodeId": "sliggoo",
+        "toNodeId": "goodra",
+        "fromSlug": "sliggoo",
+        "toSlug": "goodra",
+        "method": "level_up",
+        "requirementText": [
+          "Level 50+",
+          "During rain"
+        ]
+      },
+      {
+        "fromNodeId": "sliggoo-hisui",
+        "toNodeId": "goodra-hisui",
+        "fromSlug": "sliggoo",
+        "toSlug": "goodra",
+        "method": "level_up",
+        "requirementText": [
+          "Level 50+",
+          "During rain"
+        ]
+      }
+    ],
+    "roots": [
+      "goomy",
+      "goomy-hisuibias"
+    ]
+  },
+  "moves": [
+    {
+      "raw": "1:absorb",
+      "moveId": "absorb",
+      "moveName": "Absorb",
+      "type": "grass",
+      "sourceType": "level",
+      "sourceValue": 1,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "1:acidarmor",
+      "moveId": "acidarmor",
+      "moveName": "Acid Armor",
+      "type": "poison",
+      "sourceType": "level",
+      "sourceValue": 1,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "1:acidspray",
+      "moveId": "acidspray",
+      "moveName": "Acid Spray",
+      "type": "poison",
+      "sourceType": "level",
+      "sourceValue": 1,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:acidspray",
+      "moveId": "acidspray",
+      "moveName": "Acid Spray",
+      "type": "poison",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "1:aquatail",
+      "moveId": "aquatail",
+      "moveName": "Aqua Tail",
+      "type": "water",
+      "sourceType": "level",
+      "sourceValue": 1,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:aquatail",
+      "moveId": "aquatail",
+      "moveName": "Aqua Tail",
+      "type": "water",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tutor:aquatail",
+      "moveId": "aquatail",
+      "moveName": "Aqua Tail",
+      "type": "water",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:assurance",
+      "moveId": "assurance",
+      "moveName": "Assurance",
+      "type": "dark",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "legacy:attract",
+      "moveId": "attract",
+      "moveName": "Attract",
+      "type": "normal",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "1:bide",
+      "moveId": "bide",
+      "moveName": "Bide",
+      "type": "normal",
+      "sourceType": "level",
+      "sourceValue": 1,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:blizzard",
+      "moveId": "blizzard",
+      "moveName": "Blizzard",
+      "type": "ice",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:bodypress",
+      "moveId": "bodypress",
+      "moveName": "Body Press",
+      "type": "fighting",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "49:bodyslam",
+      "moveId": "bodyslam",
+      "moveName": "Body Slam",
+      "type": "normal",
+      "sourceType": "level",
+      "sourceValue": 49,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:bodyslam",
+      "moveId": "bodyslam",
+      "moveName": "Body Slam",
+      "type": "normal",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:breakingswipe",
+      "moveId": "breakingswipe",
+      "moveName": "Breaking Swipe",
+      "type": "dragon",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:brutalswing",
+      "moveId": "brutalswing",
+      "moveName": "Brutal Swing",
+      "type": "dark",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "1:bubble",
+      "moveId": "bubble",
+      "moveName": "Bubble",
+      "type": "water",
+      "sourceType": "level",
+      "sourceValue": 1,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:bulldoze",
+      "moveId": "bulldoze",
+      "moveName": "Bulldoze",
+      "type": "ground",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tutor:bulldoze",
+      "moveId": "bulldoze",
+      "moveName": "Bulldoze",
+      "type": "ground",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:charm",
+      "moveId": "charm",
+      "moveName": "Charm",
+      "type": "fairy",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:chillingwater",
+      "moveId": "chillingwater",
+      "moveName": "Chilling Water",
+      "type": "water",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "legacy:confide",
+      "moveId": "confide",
+      "moveName": "Confide",
+      "type": "normal",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "egg:counter",
+      "moveId": "counter",
+      "moveName": "Counter",
+      "type": "fighting",
+      "sourceType": "egg",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "43:curse",
+      "moveId": "curse",
+      "moveName": "Curse",
+      "type": "ghost",
+      "sourceType": "level",
+      "sourceValue": 43,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:curse",
+      "moveId": "curse",
+      "moveName": "Curse",
+      "type": "ghost",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "legacy:doubleteam",
+      "moveId": "doubleteam",
+      "moveName": "Double Team",
+      "type": "normal",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:dracometeor",
+      "moveId": "dracometeor",
+      "moveName": "Draco Meteor",
+      "type": "dragon",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tutor:dracometeor",
+      "moveId": "dracometeor",
+      "moveName": "Draco Meteor",
+      "type": "dragon",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "1:dragonbreath",
+      "moveId": "dragonbreath",
+      "moveName": "Dragon Breath",
+      "type": "dragon",
+      "sourceType": "level",
+      "sourceValue": 1,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:dragoncheer",
+      "moveId": "dragoncheer",
+      "moveName": "Dragon Cheer",
+      "type": "dragon",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:dragonclaw",
+      "moveId": "dragonclaw",
+      "moveName": "Dragon Claw",
+      "type": "dragon",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:dragonpulse",
+      "moveId": "dragonpulse",
+      "moveName": "Dragon Pulse",
+      "type": "dragon",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tutor:dragonpulse",
+      "moveId": "dragonpulse",
+      "moveName": "Dragon Pulse",
+      "type": "dragon",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:dragontail",
+      "moveId": "dragontail",
+      "moveName": "Dragon Tail",
+      "type": "dragon",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:earthquake",
+      "moveId": "earthquake",
+      "moveName": "Earthquake",
+      "type": "ground",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:endure",
+      "moveId": "endure",
+      "moveName": "Endure",
+      "type": "normal",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:facade",
+      "moveId": "facade",
+      "moveName": "Facade",
+      "type": "normal",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "1:feint",
+      "moveId": "feint",
+      "moveName": "Feint",
+      "type": "normal",
+      "sourceType": "level",
+      "sourceValue": 1,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:fireblast",
+      "moveId": "fireblast",
+      "moveName": "Fire Blast",
+      "type": "fire",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:firepunch",
+      "moveId": "firepunch",
+      "moveName": "Fire Punch",
+      "type": "fire",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tutor:firepunch",
+      "moveId": "firepunch",
+      "moveName": "Fire Punch",
+      "type": "fire",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "20:flail",
+      "moveId": "flail",
+      "moveName": "Flail",
+      "type": "normal",
+      "sourceType": "level",
+      "sourceValue": 20,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:flamethrower",
+      "moveId": "flamethrower",
+      "moveName": "Flamethrower",
+      "type": "fire",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tutor:flamethrower",
+      "moveId": "flamethrower",
+      "moveName": "Flamethrower",
+      "type": "fire",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:focusblast",
+      "moveId": "focusblast",
+      "moveName": "Focus Blast",
+      "type": "fighting",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:focuspunch",
+      "moveId": "focuspunch",
+      "moveName": "Focus Punch",
+      "type": "fighting",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tutor:focuspunch",
+      "moveId": "focuspunch",
+      "moveName": "Focus Punch",
+      "type": "fighting",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "legacy:frustration",
+      "moveId": "frustration",
+      "moveName": "Frustration",
+      "type": "normal",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:gigaimpact",
+      "moveId": "gigaimpact",
+      "moveName": "Giga Impact",
+      "type": "normal",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tutor:gigaimpact",
+      "moveId": "gigaimpact",
+      "moveName": "Giga Impact",
+      "type": "normal",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:hail",
+      "moveId": "hail",
+      "moveName": "Hail",
+      "type": "ice",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "legacy:hiddenpower",
+      "moveId": "hiddenpower",
+      "moveName": "Hidden Power",
+      "type": "normal",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:hydropump",
+      "moveId": "hydropump",
+      "moveName": "Hydro Pump",
+      "type": "water",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:hyperbeam",
+      "moveId": "hyperbeam",
+      "moveName": "Hyper Beam",
+      "type": "normal",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tutor:hyperbeam",
+      "moveId": "hyperbeam",
+      "moveName": "Hyper Beam",
+      "type": "normal",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:icebeam",
+      "moveId": "icebeam",
+      "moveName": "Ice Beam",
+      "type": "ice",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tutor:icebeam",
+      "moveId": "icebeam",
+      "moveName": "Ice Beam",
+      "type": "ice",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:incinerate",
+      "moveId": "incinerate",
+      "moveName": "Incinerate",
+      "type": "fire",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:infestation",
+      "moveId": "infestation",
+      "moveName": "Infestation",
+      "type": "bug",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:irontail",
+      "moveId": "irontail",
+      "moveName": "Iron Tail",
+      "type": "steel",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tutor:irontail",
+      "moveId": "irontail",
+      "moveName": "Iron Tail",
+      "type": "steel",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:knockoff",
+      "moveId": "knockoff",
+      "moveName": "Knock Off",
+      "type": "dark",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tutor:knockoff",
+      "moveId": "knockoff",
+      "moveName": "Knock Off",
+      "type": "dark",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:laserfocus",
+      "moveId": "laserfocus",
+      "moveName": "Laser Focus",
+      "type": "normal",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tutor:laserfocus",
+      "moveId": "laserfocus",
+      "moveName": "Laser Focus",
+      "type": "normal",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "egg:lifedew",
+      "moveId": "lifedew",
+      "moveName": "Life Dew",
+      "type": "water",
+      "sourceType": "egg",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:megakick",
+      "moveId": "megakick",
+      "moveName": "Mega Kick",
+      "type": "normal",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:megapunch",
+      "moveId": "megapunch",
+      "moveName": "Mega Punch",
+      "type": "normal",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:mudshot",
+      "moveId": "mudshot",
+      "moveName": "Mud Shot",
+      "type": "ground",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "58:muddywater",
+      "moveId": "muddywater",
+      "moveName": "Muddy Water",
+      "type": "water",
+      "sourceType": "level",
+      "sourceValue": 58,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:muddywater",
+      "moveId": "muddywater",
+      "moveName": "Muddy Water",
+      "type": "water",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:outrage",
+      "moveId": "outrage",
+      "moveName": "Outrage",
+      "type": "dragon",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tutor:outrage",
+      "moveId": "outrage",
+      "moveName": "Outrage",
+      "type": "dragon",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "1:poisontail",
+      "moveId": "poisontail",
+      "moveName": "Poison Tail",
+      "type": "poison",
+      "sourceType": "level",
+      "sourceValue": 1,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:poisontail",
+      "moveId": "poisontail",
+      "moveName": "Poison Tail",
+      "type": "poison",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "67:powerwhip",
+      "moveId": "powerwhip",
+      "moveName": "Power Whip",
+      "type": "grass",
+      "sourceType": "level",
+      "sourceValue": 67,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:powerwhip",
+      "moveId": "powerwhip",
+      "moveName": "Power Whip",
+      "type": "grass",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "15:protect",
+      "moveId": "protect",
+      "moveName": "Protect",
+      "type": "normal",
+      "sourceType": "level",
+      "sourceValue": 15,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:protect",
+      "moveId": "protect",
+      "moveName": "Protect",
+      "type": "normal",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "30:raindance",
+      "moveId": "raindance",
+      "moveName": "Rain Dance",
+      "type": "water",
+      "sourceType": "level",
+      "sourceValue": 30,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:raindance",
+      "moveId": "raindance",
+      "moveName": "Rain Dance",
+      "type": "water",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:rest",
+      "moveId": "rest",
+      "moveName": "Rest",
+      "type": "psychic",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tutor:rest",
+      "moveId": "rest",
+      "moveName": "Rest",
+      "type": "psychic",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "legacy:return",
+      "moveId": "return",
+      "moveName": "Return",
+      "type": "normal",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:rockslide",
+      "moveId": "rockslide",
+      "moveName": "Rock Slide",
+      "type": "rock",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tutor:rockslide",
+      "moveId": "rockslide",
+      "moveName": "Rock Slide",
+      "type": "rock",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:rocksmash",
+      "moveId": "rocksmash",
+      "moveName": "Rock Smash",
+      "type": "fighting",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tutor:rocksmash",
+      "moveId": "rocksmash",
+      "moveName": "Rock Smash",
+      "type": "fighting",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "legacy:round",
+      "moveId": "round",
+      "moveName": "Round",
+      "type": "normal",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:scald",
+      "moveId": "scald",
+      "moveName": "Scald",
+      "type": "water",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "legacy:secretpower",
+      "moveId": "secretpower",
+      "moveName": "Secret Power",
+      "type": "normal",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:shockwave",
+      "moveId": "shockwave",
+      "moveName": "Shock Wave",
+      "type": "electric",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tutor:shockwave",
+      "moveId": "shockwave",
+      "moveName": "Shock Wave",
+      "type": "electric",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:skittersmack",
+      "moveId": "skittersmack",
+      "moveName": "Skitter Smack",
+      "type": "bug",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tutor:skittersmack",
+      "moveId": "skittersmack",
+      "moveName": "Skitter Smack",
+      "type": "bug",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:sleeptalk",
+      "moveId": "sleeptalk",
+      "moveName": "Sleep Talk",
+      "type": "normal",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tutor:sleeptalk",
+      "moveId": "sleeptalk",
+      "moveName": "Sleep Talk",
+      "type": "normal",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:sludgebomb",
+      "moveId": "sludgebomb",
+      "moveName": "Sludge Bomb",
+      "type": "poison",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tutor:sludgebomb",
+      "moveId": "sludgebomb",
+      "moveName": "Sludge Bomb",
+      "type": "poison",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:sludgewave",
+      "moveId": "sludgewave",
+      "moveName": "Sludge Wave",
+      "type": "poison",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "legacy:snore",
+      "moveId": "snore",
+      "moveName": "Snore",
+      "type": "normal",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:stompingtantrum",
+      "moveId": "stompingtantrum",
+      "moveName": "Stomping Tantrum",
+      "type": "ground",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tutor:stompingtantrum",
+      "moveId": "stompingtantrum",
+      "moveName": "Stomping Tantrum",
+      "type": "ground",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:strength",
+      "moveId": "strength",
+      "moveName": "Strength",
+      "type": "normal",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:substitute",
+      "moveId": "substitute",
+      "moveName": "Substitute",
+      "type": "normal",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:sunnyday",
+      "moveId": "sunnyday",
+      "moveName": "Sunny Day",
+      "type": "fire",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:superpower",
+      "moveId": "superpower",
+      "moveName": "Superpower",
+      "type": "fighting",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tutor:superpower",
+      "moveId": "superpower",
+      "moveName": "Superpower",
+      "type": "fighting",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:surf",
+      "moveId": "surf",
+      "moveName": "Surf",
+      "type": "water",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "legacy:swagger",
+      "moveId": "swagger",
+      "moveName": "Swagger",
+      "type": "normal",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "1:tackle",
+      "moveId": "tackle",
+      "moveName": "Tackle",
+      "type": "normal",
+      "sourceType": "level",
+      "sourceValue": 1,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:takedown",
+      "moveId": "takedown",
+      "moveName": "Take Down",
+      "type": "normal",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "1:tearfullook",
+      "moveId": "tearfullook",
+      "moveName": "Tearful Look",
+      "type": "normal",
+      "sourceType": "level",
+      "sourceValue": 1,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:terablast",
+      "moveId": "terablast",
+      "moveName": "Tera Blast",
+      "type": "normal",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:thunder",
+      "moveId": "thunder",
+      "moveName": "Thunder",
+      "type": "electric",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:thunderpunch",
+      "moveId": "thunderpunch",
+      "moveName": "Thunder Punch",
+      "type": "electric",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tutor:thunderpunch",
+      "moveId": "thunderpunch",
+      "moveName": "Thunder Punch",
+      "type": "electric",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:thunderbolt",
+      "moveId": "thunderbolt",
+      "moveName": "Thunderbolt",
+      "type": "electric",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tutor:thunderbolt",
+      "moveId": "thunderbolt",
+      "moveName": "Thunderbolt",
+      "type": "electric",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:toxic",
+      "moveId": "toxic",
+      "moveName": "Toxic",
+      "type": "poison",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "1:watergun",
+      "moveId": "watergun",
+      "moveName": "Water Gun",
+      "type": "water",
+      "sourceType": "level",
+      "sourceValue": 1,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "25:waterpulse",
+      "moveId": "waterpulse",
+      "moveName": "Water Pulse",
+      "type": "water",
+      "sourceType": "level",
+      "sourceValue": 25,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:waterpulse",
+      "moveId": "waterpulse",
+      "moveName": "Water Pulse",
+      "type": "water",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tutor:waterpulse",
+      "moveId": "waterpulse",
+      "moveName": "Water Pulse",
+      "type": "water",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:weatherball",
+      "moveId": "weatherball",
+      "moveName": "Weather Ball",
+      "type": "normal",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    }
+  ],
+  "spawnEntries": [
+    {
+      "id": "goodra-1",
+      "sourceFile": "0706_goodra.json",
+      "pokemon": {
+        "raw": "goodra",
+        "slug": "goodra",
+        "aspectTokens": []
+      },
+      "type": "pokemon",
+      "spawnablePositionType": "grounded",
+      "bucket": "rare",
+      "bucketWeight": 0.5,
+      "levelText": "50-60",
+      "levelMin": 50,
+      "levelMax": 60,
+      "weight": 0.25,
+      "presets": [
+        "natural",
+        "wild"
+      ],
+      "biomeHints": [
+        "Is Swamp",
+        "Mangrove Swamp",
+        "Swamp"
+      ],
+      "condition": {
+        "neededBaseBlocks": [
+          "#cobblemon:natural"
+        ],
+        "minSkyLight": 8,
+        "maxSkyLight": 15,
+        "biomes": [
+          "#cobblemon:is_swamp"
+        ],
+        "isRaining": true
+      },
+      "anticondition": {
+        "neededBaseBlocks": [
+          "minecraft:farmland"
+        ],
+        "structures": [
+          "#minecraft:village"
+        ],
+        "neededNearbyBlocks": [
+          "#cobblemon:concrete_blocks"
+        ]
+      },
+      "weightMultipliers": [],
+      "raw": {
+        "id": "goodra-1",
+        "pokemon": "goodra",
+        "presets": [
+          "natural",
+          "wild"
+        ],
+        "type": "pokemon",
+        "spawnablePositionType": "grounded",
+        "bucket": "rare",
+        "level": "50-60",
+        "weight": 0.25,
+        "condition": {
+          "minSkyLight": 8,
+          "maxSkyLight": 15,
+          "biomes": [
+            "#cobblemon:is_swamp"
+          ],
+          "isRaining": true
+        }
+      }
+    },
+    {
+      "id": "goodra-2",
+      "sourceFile": "0706_goodra.json",
+      "pokemon": {
+        "raw": "goodra",
+        "slug": "goodra",
+        "aspectTokens": []
+      },
+      "type": "pokemon",
+      "spawnablePositionType": "grounded",
+      "bucket": "ultra-rare",
+      "bucketWeight": 0.2,
+      "levelText": "50-60",
+      "levelMin": 50,
+      "levelMax": 60,
+      "weight": 0.4,
+      "presets": [
+        "natural",
+        "wild"
+      ],
+      "biomeHints": [
+        "Is Swamp",
+        "Mangrove Swamp",
+        "Swamp"
+      ],
+      "condition": {
+        "neededBaseBlocks": [
+          "#cobblemon:natural"
+        ],
+        "minSkyLight": 8,
+        "maxSkyLight": 15,
+        "biomes": [
+          "#cobblemon:is_swamp"
+        ],
+        "isRaining": false
+      },
+      "anticondition": {
+        "neededBaseBlocks": [
+          "minecraft:farmland"
+        ],
+        "structures": [
+          "#minecraft:village"
+        ],
+        "neededNearbyBlocks": [
+          "#cobblemon:concrete_blocks"
+        ],
+        "isSlimeChunk": true
+      },
+      "weightMultipliers": [],
+      "raw": {
+        "id": "goodra-2",
+        "pokemon": "goodra",
+        "presets": [
+          "natural",
+          "wild"
+        ],
+        "type": "pokemon",
+        "spawnablePositionType": "grounded",
+        "bucket": "ultra-rare",
+        "level": "50-60",
+        "weight": 0.4,
+        "condition": {
+          "minSkyLight": 8,
+          "maxSkyLight": 15,
+          "biomes": [
+            "#cobblemon:is_swamp"
+          ],
+          "isRaining": false
+        },
+        "anticondition": {
+          "isSlimeChunk": true
+        }
+      }
+    },
+    {
+      "id": "goodra-3",
+      "sourceFile": "0706_goodra.json",
+      "pokemon": {
+        "raw": "goodra",
+        "slug": "goodra",
+        "aspectTokens": []
+      },
+      "type": "pokemon",
+      "spawnablePositionType": "grounded",
+      "bucket": "rare",
+      "bucketWeight": 0.5,
+      "levelText": "50-60",
+      "levelMin": 50,
+      "levelMax": 60,
+      "weight": 0.25,
+      "presets": [
+        "natural",
+        "wild"
+      ],
+      "biomeHints": [
+        "Is Swamp",
+        "Mangrove Swamp",
+        "Swamp"
+      ],
+      "condition": {
+        "neededBaseBlocks": [
+          "#cobblemon:natural"
+        ],
+        "minSkyLight": 8,
+        "maxSkyLight": 15,
+        "biomes": [
+          "#cobblemon:is_swamp"
+        ],
+        "isRaining": false,
+        "isSlimeChunk": true
+      },
+      "anticondition": {
+        "neededBaseBlocks": [
+          "minecraft:farmland"
+        ],
+        "structures": [
+          "#minecraft:village"
+        ],
+        "neededNearbyBlocks": [
+          "#cobblemon:concrete_blocks"
+        ]
+      },
+      "weightMultipliers": [],
+      "raw": {
+        "id": "goodra-3",
+        "pokemon": "goodra",
+        "presets": [
+          "natural",
+          "wild"
+        ],
+        "type": "pokemon",
+        "spawnablePositionType": "grounded",
+        "bucket": "rare",
+        "level": "50-60",
+        "weight": 0.25,
+        "condition": {
+          "minSkyLight": 8,
+          "maxSkyLight": 15,
+          "biomes": [
+            "#cobblemon:is_swamp"
+          ],
+          "isRaining": false,
+          "isSlimeChunk": true
+        }
+      }
+    },
+    {
+      "id": "goodra-4",
+      "sourceFile": "0706_goodra.json",
+      "pokemon": {
+        "raw": "goodra",
+        "slug": "goodra",
+        "aspectTokens": []
+      },
+      "type": "pokemon",
+      "spawnablePositionType": "fishing",
+      "bucket": "ultra-rare",
+      "bucketWeight": 0.2,
+      "levelText": "50-60",
+      "levelMin": 50,
+      "levelMax": 60,
+      "weight": 0.4,
+      "presets": [],
+      "biomeHints": [
+        "Is Swamp",
+        "Mangrove Swamp",
+        "Swamp"
+      ],
+      "condition": {
+        "minSkyLight": 8,
+        "maxSkyLight": 15,
+        "biomes": [
+          "#cobblemon:is_swamp"
+        ]
+      },
+      "anticondition": {
+        "isSlimeChunk": true
+      },
+      "weightMultipliers": [],
+      "raw": {
+        "id": "goodra-4",
+        "pokemon": "goodra",
+        "type": "pokemon",
+        "spawnablePositionType": "fishing",
+        "bucket": "ultra-rare",
+        "level": "50-60",
+        "weight": 0.4,
+        "condition": {
+          "minSkyLight": 8,
+          "maxSkyLight": 15,
+          "biomes": [
+            "#cobblemon:is_swamp"
+          ]
+        },
+        "anticondition": {
+          "isSlimeChunk": true
+        }
+      }
+    },
+    {
+      "id": "goodra-5",
+      "sourceFile": "0706_goodra.json",
+      "pokemon": {
+        "raw": "goodra",
+        "slug": "goodra",
+        "aspectTokens": []
+      },
+      "type": "pokemon",
+      "spawnablePositionType": "fishing",
+      "bucket": "rare",
+      "bucketWeight": 0.5,
+      "levelText": "50-60",
+      "levelMin": 50,
+      "levelMax": 60,
+      "weight": 0.25,
+      "presets": [],
+      "biomeHints": [
+        "Is Swamp",
+        "Mangrove Swamp",
+        "Swamp"
+      ],
+      "condition": {
+        "minSkyLight": 8,
+        "maxSkyLight": 15,
+        "biomes": [
+          "#cobblemon:is_swamp"
+        ],
+        "isSlimeChunk": true
+      },
+      "anticondition": null,
+      "weightMultipliers": [],
+      "raw": {
+        "id": "goodra-5",
+        "pokemon": "goodra",
+        "type": "pokemon",
+        "spawnablePositionType": "fishing",
+        "bucket": "rare",
+        "level": "50-60",
+        "weight": 0.25,
+        "condition": {
+          "minSkyLight": 8,
+          "maxSkyLight": 15,
+          "biomes": [
+            "#cobblemon:is_swamp"
+          ],
+          "isSlimeChunk": true
+        }
+      }
+    },
+    {
+      "id": "goodra-6",
+      "sourceFile": "0706_goodra.json",
+      "pokemon": {
+        "raw": "goodra",
+        "slug": "goodra",
+        "aspectTokens": []
+      },
+      "type": "pokemon",
+      "spawnablePositionType": "fishing",
+      "bucket": "ultra-rare",
+      "bucketWeight": 0.2,
+      "levelText": "50-60",
+      "levelMin": 50,
+      "levelMax": 60,
+      "weight": 0.4,
+      "presets": [],
+      "biomeHints": [
+        "Is Overworld"
+      ],
+      "condition": {
+        "minSkyLight": 8,
+        "maxSkyLight": 15,
+        "biomes": [
+          "#cobblemon:is_overworld"
+        ],
+        "isSlimeChunk": true
+      },
+      "anticondition": {
+        "biomes": [
+          "#cobblemon:is_arid",
+          "#cobblemon:is_coast",
+          "#cobblemon:is_ocean",
+          "#cobblemon:is_freezing",
+          "#cobblemon:is_swamp"
+        ]
+      },
+      "weightMultipliers": [],
+      "raw": {
+        "id": "goodra-6",
+        "pokemon": "goodra",
+        "type": "pokemon",
+        "spawnablePositionType": "fishing",
+        "bucket": "ultra-rare",
+        "level": "50-60",
+        "weight": 0.4,
+        "condition": {
+          "minSkyLight": 8,
+          "maxSkyLight": 15,
+          "biomes": [
+            "#cobblemon:is_overworld"
+          ],
+          "isSlimeChunk": true
+        },
+        "anticondition": {
+          "biomes": [
+            "#cobblemon:is_arid",
+            "#cobblemon:is_coast",
+            "#cobblemon:is_ocean",
+            "#cobblemon:is_freezing",
+            "#cobblemon:is_swamp"
+          ]
+        }
+      }
+    },
+    {
+      "id": "goodra-hisuian-10",
+      "sourceFile": "0706_goodra.json",
+      "pokemon": {
+        "raw": "goodra hisuian",
+        "slug": "goodra",
+        "aspectTokens": [
+          "hisuian"
+        ]
+      },
+      "type": "pokemon",
+      "spawnablePositionType": "fishing",
+      "bucket": "rare",
+      "bucketWeight": 0.5,
+      "levelText": "50-60",
+      "levelMin": 50,
+      "levelMax": 60,
+      "weight": 0.25,
+      "presets": [
+        "natural"
+      ],
+      "biomeHints": [
+        "Is Dripstone",
+        "Dripstone Caves",
+        "Fractured Savanna",
+        "Is Lush",
+        "Lush Caves"
+      ],
+      "condition": {
+        "neededBaseBlocks": [
+          "#cobblemon:natural"
+        ],
+        "minSkyLight": 0,
+        "maxSkyLight": 7,
+        "biomes": [
+          "#cobblemon:is_dripstone",
+          "#cobblemon:is_lush"
+        ]
+      },
+      "anticondition": {
+        "neededBaseBlocks": [
+          "minecraft:farmland"
+        ],
+        "minLureLevel": 2
+      },
+      "weightMultipliers": [],
+      "raw": {
+        "id": "goodra-hisuian-10",
+        "pokemon": "goodra hisuian",
+        "presets": [
+          "natural"
+        ],
+        "type": "pokemon",
+        "spawnablePositionType": "fishing",
+        "bucket": "rare",
+        "level": "50-60",
+        "weight": 0.25,
+        "condition": {
+          "minSkyLight": 0,
+          "maxSkyLight": 7,
+          "biomes": [
+            "#cobblemon:is_dripstone",
+            "#cobblemon:is_lush"
+          ]
+        },
+        "anticondition": {
+          "minLureLevel": 2
+        }
+      }
+    },
+    {
+      "id": "goodra-hisuian-11",
+      "sourceFile": "0706_goodra.json",
+      "pokemon": {
+        "raw": "goodra hisuian",
+        "slug": "goodra",
+        "aspectTokens": [
+          "hisuian"
+        ]
+      },
+      "type": "pokemon",
+      "spawnablePositionType": "fishing",
+      "bucket": "common",
+      "bucketWeight": 94.3,
+      "levelText": "50-60",
+      "levelMin": 50,
+      "levelMax": 60,
+      "weight": 0.02,
+      "presets": [
+        "natural"
+      ],
+      "biomeHints": [
+        "Is Dripstone",
+        "Dripstone Caves",
+        "Fractured Savanna",
+        "Is Lush",
+        "Lush Caves"
+      ],
+      "condition": {
+        "neededBaseBlocks": [
+          "#cobblemon:natural"
+        ],
+        "minSkyLight": 0,
+        "maxSkyLight": 7,
+        "biomes": [
+          "#cobblemon:is_dripstone",
+          "#cobblemon:is_lush"
+        ],
+        "minLureLevel": 2
+      },
+      "anticondition": {
+        "neededBaseBlocks": [
+          "minecraft:farmland"
+        ]
+      },
+      "weightMultipliers": [
+        {
+          "multiplier": 3,
+          "condition": {
+            "minLureLevel": 3
+          }
+        }
+      ],
+      "raw": {
+        "id": "goodra-hisuian-11",
+        "pokemon": "goodra hisuian",
+        "presets": [
+          "natural"
+        ],
+        "type": "pokemon",
+        "spawnablePositionType": "fishing",
+        "bucket": "common",
+        "level": "50-60",
+        "weight": 0.02,
+        "weightMultiplier": {
+          "multiplier": 3,
+          "condition": {
+            "minLureLevel": 3
+          }
+        },
+        "condition": {
+          "minSkyLight": 0,
+          "maxSkyLight": 7,
+          "biomes": [
+            "#cobblemon:is_dripstone",
+            "#cobblemon:is_lush"
+          ],
+          "minLureLevel": 2
+        }
+      }
+    },
+    {
+      "id": "goodra-hisuian-12",
+      "sourceFile": "0706_goodra.json",
+      "pokemon": {
+        "raw": "goodra hisuian",
+        "slug": "goodra",
+        "aspectTokens": [
+          "hisuian"
+        ]
+      },
+      "type": "pokemon",
+      "spawnablePositionType": "fishing",
+      "bucket": "ultra-rare",
+      "bucketWeight": 0.2,
+      "levelText": "50-60",
+      "levelMin": 50,
+      "levelMax": 60,
+      "weight": 0.4,
+      "presets": [
+        "natural"
+      ],
+      "biomeHints": [
+        "Is Overworld"
+      ],
+      "condition": {
+        "neededBaseBlocks": [
+          "#cobblemon:natural"
+        ],
+        "minSkyLight": 0,
+        "maxSkyLight": 7,
+        "biomes": [
+          "#cobblemon:is_overworld"
+        ]
+      },
+      "anticondition": {
+        "neededBaseBlocks": [
+          "minecraft:farmland"
+        ],
+        "minLureLevel": 2,
+        "isSlimeChunk": true,
+        "biomes": [
+          "#cobblemon:is_dripstone",
+          "#cobblemon:is_lush"
+        ]
+      },
+      "weightMultipliers": [],
+      "raw": {
+        "id": "goodra-hisuian-12",
+        "pokemon": "goodra hisuian",
+        "presets": [
+          "natural"
+        ],
+        "type": "pokemon",
+        "spawnablePositionType": "fishing",
+        "bucket": "ultra-rare",
+        "level": "50-60",
+        "weight": 0.4,
+        "condition": {
+          "minSkyLight": 0,
+          "maxSkyLight": 7,
+          "biomes": [
+            "#cobblemon:is_overworld"
+          ]
+        },
+        "anticondition": {
+          "minLureLevel": 2,
+          "isSlimeChunk": true,
+          "biomes": [
+            "#cobblemon:is_dripstone",
+            "#cobblemon:is_lush"
+          ]
+        }
+      }
+    },
+    {
+      "id": "goodra-hisuian-13",
+      "sourceFile": "0706_goodra.json",
+      "pokemon": {
+        "raw": "goodra hisuian",
+        "slug": "goodra",
+        "aspectTokens": [
+          "hisuian"
+        ]
+      },
+      "type": "pokemon",
+      "spawnablePositionType": "fishing",
+      "bucket": "rare",
+      "bucketWeight": 0.5,
+      "levelText": "50-60",
+      "levelMin": 50,
+      "levelMax": 60,
+      "weight": 0.25,
+      "presets": [
+        "natural"
+      ],
+      "biomeHints": [
+        "Is Overworld"
+      ],
+      "condition": {
+        "neededBaseBlocks": [
+          "#cobblemon:natural"
+        ],
+        "minSkyLight": 0,
+        "maxSkyLight": 7,
+        "biomes": [
+          "#cobblemon:is_overworld"
+        ],
+        "minLureLevel": 2,
+        "maxLureLevel": 2
+      },
+      "anticondition": {
+        "neededBaseBlocks": [
+          "minecraft:farmland"
+        ],
+        "isSlimeChunk": true,
+        "biomes": [
+          "#cobblemon:is_dripstone",
+          "#cobblemon:is_lush"
+        ]
+      },
+      "weightMultipliers": [],
+      "raw": {
+        "id": "goodra-hisuian-13",
+        "pokemon": "goodra hisuian",
+        "presets": [
+          "natural"
+        ],
+        "type": "pokemon",
+        "spawnablePositionType": "fishing",
+        "bucket": "rare",
+        "level": "50-60",
+        "weight": 0.25,
+        "condition": {
+          "minSkyLight": 0,
+          "maxSkyLight": 7,
+          "biomes": [
+            "#cobblemon:is_overworld"
+          ],
+          "minLureLevel": 2,
+          "maxLureLevel": 2
+        },
+        "anticondition": {
+          "isSlimeChunk": true,
+          "biomes": [
+            "#cobblemon:is_dripstone",
+            "#cobblemon:is_lush"
+          ]
+        }
+      }
+    },
+    {
+      "id": "goodra-hisuian-14",
+      "sourceFile": "0706_goodra.json",
+      "pokemon": {
+        "raw": "goodra hisuian",
+        "slug": "goodra",
+        "aspectTokens": [
+          "hisuian"
+        ]
+      },
+      "type": "pokemon",
+      "spawnablePositionType": "fishing",
+      "bucket": "common",
+      "bucketWeight": 94.3,
+      "levelText": "50-60",
+      "levelMin": 50,
+      "levelMax": 60,
+      "weight": 0.02,
+      "presets": [
+        "natural"
+      ],
+      "biomeHints": [
+        "Is Overworld"
+      ],
+      "condition": {
+        "neededBaseBlocks": [
+          "#cobblemon:natural"
+        ],
+        "minSkyLight": 0,
+        "maxSkyLight": 7,
+        "biomes": [
+          "#cobblemon:is_overworld"
+        ],
+        "minLureLevel": 3
+      },
+      "anticondition": {
+        "neededBaseBlocks": [
+          "minecraft:farmland"
+        ],
+        "isSlimeChunk": true,
+        "biomes": [
+          "#cobblemon:is_dripstone",
+          "#cobblemon:is_lush"
+        ]
+      },
+      "weightMultipliers": [],
+      "raw": {
+        "id": "goodra-hisuian-14",
+        "pokemon": "goodra hisuian",
+        "presets": [
+          "natural"
+        ],
+        "type": "pokemon",
+        "spawnablePositionType": "fishing",
+        "bucket": "common",
+        "level": "50-60",
+        "weight": 0.02,
+        "condition": {
+          "minSkyLight": 0,
+          "maxSkyLight": 7,
+          "biomes": [
+            "#cobblemon:is_overworld"
+          ],
+          "minLureLevel": 3
+        },
+        "anticondition": {
+          "isSlimeChunk": true,
+          "biomes": [
+            "#cobblemon:is_dripstone",
+            "#cobblemon:is_lush"
+          ]
+        }
+      }
+    },
+    {
+      "id": "goodra-hisuian-15",
+      "sourceFile": "0706_goodra.json",
+      "pokemon": {
+        "raw": "goodra hisuian",
+        "slug": "goodra",
+        "aspectTokens": [
+          "hisuian"
+        ]
+      },
+      "type": "pokemon",
+      "spawnablePositionType": "fishing",
+      "bucket": "rare",
+      "bucketWeight": 0.5,
+      "levelText": "50-60",
+      "levelMin": 50,
+      "levelMax": 60,
+      "weight": 0.25,
+      "presets": [
+        "natural"
+      ],
+      "biomeHints": [
+        "Is Overworld"
+      ],
+      "condition": {
+        "neededBaseBlocks": [
+          "#cobblemon:natural"
+        ],
+        "minSkyLight": 0,
+        "maxSkyLight": 7,
+        "biomes": [
+          "#cobblemon:is_overworld"
+        ],
+        "isSlimeChunk": true
+      },
+      "anticondition": {
+        "neededBaseBlocks": [
+          "minecraft:farmland"
+        ],
+        "minLureLevel": 2,
+        "biomes": [
+          "#cobblemon:is_dripstone",
+          "#cobblemon:is_lush"
+        ]
+      },
+      "weightMultipliers": [],
+      "raw": {
+        "id": "goodra-hisuian-15",
+        "pokemon": "goodra hisuian",
+        "presets": [
+          "natural"
+        ],
+        "type": "pokemon",
+        "spawnablePositionType": "fishing",
+        "bucket": "rare",
+        "level": "50-60",
+        "weight": 0.25,
+        "condition": {
+          "minSkyLight": 0,
+          "maxSkyLight": 7,
+          "biomes": [
+            "#cobblemon:is_overworld"
+          ],
+          "isSlimeChunk": true
+        },
+        "anticondition": {
+          "minLureLevel": 2,
+          "biomes": [
+            "#cobblemon:is_dripstone",
+            "#cobblemon:is_lush"
+          ]
+        }
+      }
+    },
+    {
+      "id": "goodra-hisuian-16",
+      "sourceFile": "0706_goodra.json",
+      "pokemon": {
+        "raw": "goodra hisuian",
+        "slug": "goodra",
+        "aspectTokens": [
+          "hisuian"
+        ]
+      },
+      "type": "pokemon",
+      "spawnablePositionType": "fishing",
+      "bucket": "common",
+      "bucketWeight": 94.3,
+      "levelText": "50-60",
+      "levelMin": 50,
+      "levelMax": 60,
+      "weight": 0.02,
+      "presets": [
+        "natural"
+      ],
+      "biomeHints": [
+        "Is Overworld"
+      ],
+      "condition": {
+        "neededBaseBlocks": [
+          "#cobblemon:natural"
+        ],
+        "minSkyLight": 0,
+        "maxSkyLight": 7,
+        "biomes": [
+          "#cobblemon:is_overworld"
+        ],
+        "minLureLevel": 2,
+        "isSlimeChunk": true
+      },
+      "anticondition": {
+        "neededBaseBlocks": [
+          "minecraft:farmland"
+        ],
+        "biomes": [
+          "#cobblemon:is_dripstone",
+          "#cobblemon:is_lush"
+        ]
+      },
+      "weightMultipliers": [
+        {
+          "multiplier": 3,
+          "condition": {
+            "minLureLevel": 3
+          }
+        }
+      ],
+      "raw": {
+        "id": "goodra-hisuian-16",
+        "pokemon": "goodra hisuian",
+        "presets": [
+          "natural"
+        ],
+        "type": "pokemon",
+        "spawnablePositionType": "fishing",
+        "bucket": "common",
+        "level": "50-60",
+        "weight": 0.02,
+        "weightMultiplier": {
+          "multiplier": 3,
+          "condition": {
+            "minLureLevel": 3
+          }
+        },
+        "condition": {
+          "minSkyLight": 0,
+          "maxSkyLight": 7,
+          "biomes": [
+            "#cobblemon:is_overworld"
+          ],
+          "minLureLevel": 2,
+          "isSlimeChunk": true
+        },
+        "anticondition": {
+          "biomes": [
+            "#cobblemon:is_dripstone",
+            "#cobblemon:is_lush"
+          ]
+        }
+      }
+    },
+    {
+      "id": "goodra-hisuian-7",
+      "sourceFile": "0706_goodra.json",
+      "pokemon": {
+        "raw": "goodra hisuian",
+        "slug": "goodra",
+        "aspectTokens": [
+          "hisuian"
+        ]
+      },
+      "type": "pokemon",
+      "spawnablePositionType": "grounded",
+      "bucket": "rare",
+      "bucketWeight": 0.5,
+      "levelText": "50-60",
+      "levelMin": 50,
+      "levelMax": 60,
+      "weight": 0.25,
+      "presets": [
+        "natural"
+      ],
+      "biomeHints": [
+        "Is Dripstone",
+        "Dripstone Caves",
+        "Fractured Savanna",
+        "Is Lush",
+        "Lush Caves"
+      ],
+      "condition": {
+        "neededBaseBlocks": [
+          "#cobblemon:natural"
+        ],
+        "minSkyLight": 0,
+        "maxSkyLight": 7,
+        "biomes": [
+          "#cobblemon:is_dripstone",
+          "#cobblemon:is_lush"
+        ]
+      },
+      "anticondition": {
+        "neededBaseBlocks": [
+          "minecraft:farmland"
+        ]
+      },
+      "weightMultipliers": [],
+      "raw": {
+        "id": "goodra-hisuian-7",
+        "pokemon": "goodra hisuian",
+        "presets": [
+          "natural"
+        ],
+        "type": "pokemon",
+        "spawnablePositionType": "grounded",
+        "bucket": "rare",
+        "level": "50-60",
+        "weight": 0.25,
+        "condition": {
+          "minSkyLight": 0,
+          "maxSkyLight": 7,
+          "biomes": [
+            "#cobblemon:is_dripstone",
+            "#cobblemon:is_lush"
+          ]
+        }
+      }
+    },
+    {
+      "id": "goodra-hisuian-8",
+      "sourceFile": "0706_goodra.json",
+      "pokemon": {
+        "raw": "goodra hisuian",
+        "slug": "goodra",
+        "aspectTokens": [
+          "hisuian"
+        ]
+      },
+      "type": "pokemon",
+      "spawnablePositionType": "grounded",
+      "bucket": "ultra-rare",
+      "bucketWeight": 0.2,
+      "levelText": "50-60",
+      "levelMin": 50,
+      "levelMax": 60,
+      "weight": 0.4,
+      "presets": [
+        "natural"
+      ],
+      "biomeHints": [
+        "Is Overworld"
+      ],
+      "condition": {
+        "neededBaseBlocks": [
+          "#cobblemon:natural"
+        ],
+        "minSkyLight": 0,
+        "maxSkyLight": 7,
+        "biomes": [
+          "#cobblemon:is_overworld"
+        ],
+        "neededNearbyBlocks": [
+          "minecraft:water"
+        ]
+      },
+      "anticondition": {
+        "neededBaseBlocks": [
+          "minecraft:farmland"
+        ],
+        "isSlimeChunk": true,
+        "biomes": [
+          "#cobblemon:is_dripstone",
+          "#cobblemon:is_lush"
+        ]
+      },
+      "weightMultipliers": [],
+      "raw": {
+        "id": "goodra-hisuian-8",
+        "pokemon": "goodra hisuian",
+        "presets": [
+          "natural"
+        ],
+        "type": "pokemon",
+        "spawnablePositionType": "grounded",
+        "bucket": "ultra-rare",
+        "level": "50-60",
+        "weight": 0.4,
+        "condition": {
+          "minSkyLight": 0,
+          "maxSkyLight": 7,
+          "biomes": [
+            "#cobblemon:is_overworld"
+          ],
+          "neededNearbyBlocks": [
+            "minecraft:water"
+          ]
+        },
+        "anticondition": {
+          "isSlimeChunk": true,
+          "biomes": [
+            "#cobblemon:is_dripstone",
+            "#cobblemon:is_lush"
+          ]
+        }
+      }
+    },
+    {
+      "id": "goodra-hisuian-9",
+      "sourceFile": "0706_goodra.json",
+      "pokemon": {
+        "raw": "goodra hisuian",
+        "slug": "goodra",
+        "aspectTokens": [
+          "hisuian"
+        ]
+      },
+      "type": "pokemon",
+      "spawnablePositionType": "grounded",
+      "bucket": "rare",
+      "bucketWeight": 0.5,
+      "levelText": "50-60",
+      "levelMin": 50,
+      "levelMax": 60,
+      "weight": 0.25,
+      "presets": [
+        "natural"
+      ],
+      "biomeHints": [
+        "Is Overworld"
+      ],
+      "condition": {
+        "neededBaseBlocks": [
+          "#cobblemon:natural"
+        ],
+        "minSkyLight": 0,
+        "maxSkyLight": 7,
+        "biomes": [
+          "#cobblemon:is_overworld"
+        ],
+        "isSlimeChunk": true
+      },
+      "anticondition": {
+        "neededBaseBlocks": [
+          "minecraft:farmland"
+        ],
+        "biomes": [
+          "#cobblemon:is_dripstone",
+          "#cobblemon:is_lush"
+        ]
+      },
+      "weightMultipliers": [],
+      "raw": {
+        "id": "goodra-hisuian-9",
+        "pokemon": "goodra hisuian",
+        "presets": [
+          "natural"
+        ],
+        "type": "pokemon",
+        "spawnablePositionType": "grounded",
+        "bucket": "rare",
+        "level": "50-60",
+        "weight": 0.25,
+        "condition": {
+          "minSkyLight": 0,
+          "maxSkyLight": 7,
+          "biomes": [
+            "#cobblemon:is_overworld"
+          ],
+          "isSlimeChunk": true
+        },
+        "anticondition": {
+          "biomes": [
+            "#cobblemon:is_dripstone",
+            "#cobblemon:is_lush"
+          ]
+        }
+      }
+    }
+  ],
+  "forms": [
+    {
+      "name": "Hisui",
+      "slug": "goodra-hisui",
+      "aspects": [
+        "hisuian"
+      ],
+      "labels": [
+        "gen8a",
+        "powerhouse",
+        "hisuian_form"
+      ],
+      "types": [
+        "steel",
+        "dragon"
+      ],
+      "maleRatio": 0.5,
+      "height": 17,
+      "weight": 3341,
+      "catchRate": null,
+      "baseExperienceYield": null,
+      "baseFriendship": null,
+      "eggCycles": null,
+      "baseStats": {
+        "hp": 80,
+        "attack": 100,
+        "defence": 100,
+        "special_attack": 110,
+        "special_defence": 150,
+        "speed": 60
+      },
+      "evYield": {},
+      "battleOnly": false,
+      "abilities": [
+        {
+          "id": "sapsipper",
+          "hidden": false,
+          "label": "Sapsipper",
+          "slot": "first"
+        },
+        {
+          "id": "shellarmor",
+          "hidden": false,
+          "label": "Shellarmor",
+          "slot": "second"
+        },
+        {
+          "id": "gooey",
+          "hidden": true,
+          "label": "Gooey",
+          "slot": "hidden"
+        }
+      ],
+      "moves": [
+        {
+          "raw": "1:bubble",
+          "moveId": "bubble",
+          "moveName": "Bubble",
+          "type": "water",
+          "sourceType": "level",
+          "sourceValue": 1,
+          "fromForm": "Hisui",
+          "fromFormSlug": "goodra-hisui"
+        },
+        {
+          "raw": "1:irontail",
+          "moveId": "irontail",
+          "moveName": "Iron Tail",
+          "type": "steel",
+          "sourceType": "level",
+          "sourceValue": 1,
+          "fromForm": "Hisui",
+          "fromFormSlug": "goodra-hisui"
+        },
+        {
+          "raw": "1:shelter",
+          "moveId": "shelter",
+          "moveName": "Shelter",
+          "type": "steel",
+          "sourceType": "level",
+          "sourceValue": 1,
+          "fromForm": "Hisui",
+          "fromFormSlug": "goodra-hisui"
+        },
+        {
+          "raw": "1:acidspray",
+          "moveId": "acidspray",
+          "moveName": "Acid Spray",
+          "type": "poison",
+          "sourceType": "level",
+          "sourceValue": 1,
+          "fromForm": "Hisui",
+          "fromFormSlug": "goodra-hisui"
+        },
+        {
+          "raw": "1:feint",
+          "moveId": "feint",
+          "moveName": "Feint",
+          "type": "normal",
+          "sourceType": "level",
+          "sourceValue": 1,
+          "fromForm": "Hisui",
+          "fromFormSlug": "goodra-hisui"
+        },
+        {
+          "raw": "1:tearfullook",
+          "moveId": "tearfullook",
+          "moveName": "Tearful Look",
+          "type": "normal",
+          "sourceType": "level",
+          "sourceValue": 1,
+          "fromForm": "Hisui",
+          "fromFormSlug": "goodra-hisui"
+        },
+        {
+          "raw": "1:dragonbreath",
+          "moveId": "dragonbreath",
+          "moveName": "Dragon Breath",
+          "type": "dragon",
+          "sourceType": "level",
+          "sourceValue": 1,
+          "fromForm": "Hisui",
+          "fromFormSlug": "goodra-hisui"
+        },
+        {
+          "raw": "1:tackle",
+          "moveId": "tackle",
+          "moveName": "Tackle",
+          "type": "normal",
+          "sourceType": "level",
+          "sourceValue": 1,
+          "fromForm": "Hisui",
+          "fromFormSlug": "goodra-hisui"
+        },
+        {
+          "raw": "1:absorb",
+          "moveId": "absorb",
+          "moveName": "Absorb",
+          "type": "grass",
+          "sourceType": "level",
+          "sourceValue": 1,
+          "fromForm": "Hisui",
+          "fromFormSlug": "goodra-hisui"
+        },
+        {
+          "raw": "1:watergun",
+          "moveId": "watergun",
+          "moveName": "Water Gun",
+          "type": "water",
+          "sourceType": "level",
+          "sourceValue": 1,
+          "fromForm": "Hisui",
+          "fromFormSlug": "goodra-hisui"
+        },
+        {
+          "raw": "1:bide",
+          "moveId": "bide",
+          "moveName": "Bide",
+          "type": "normal",
+          "sourceType": "level",
+          "sourceValue": 1,
+          "fromForm": "Hisui",
+          "fromFormSlug": "goodra-hisui"
+        },
+        {
+          "raw": "1:acidarmor",
+          "moveId": "acidarmor",
+          "moveName": "Acid Armor",
+          "type": "poison",
+          "sourceType": "level",
+          "sourceValue": 1,
+          "fromForm": "Hisui",
+          "fromFormSlug": "goodra-hisui"
+        },
+        {
+          "raw": "15:protect",
+          "moveId": "protect",
+          "moveName": "Protect",
+          "type": "normal",
+          "sourceType": "level",
+          "sourceValue": 15,
+          "fromForm": "Hisui",
+          "fromFormSlug": "goodra-hisui"
+        },
+        {
+          "raw": "20:flail",
+          "moveId": "flail",
+          "moveName": "Flail",
+          "type": "normal",
+          "sourceType": "level",
+          "sourceValue": 20,
+          "fromForm": "Hisui",
+          "fromFormSlug": "goodra-hisui"
+        },
+        {
+          "raw": "25:waterpulse",
+          "moveId": "waterpulse",
+          "moveName": "Water Pulse",
+          "type": "water",
+          "sourceType": "level",
+          "sourceValue": 25,
+          "fromForm": "Hisui",
+          "fromFormSlug": "goodra-hisui"
+        },
+        {
+          "raw": "30:raindance",
+          "moveId": "raindance",
+          "moveName": "Rain Dance",
+          "type": "water",
+          "sourceType": "level",
+          "sourceValue": 30,
+          "fromForm": "Hisui",
+          "fromFormSlug": "goodra-hisui"
+        },
+        {
+          "raw": "35:dragonpulse",
+          "moveId": "dragonpulse",
+          "moveName": "Dragon Pulse",
+          "type": "dragon",
+          "sourceType": "level",
+          "sourceValue": 35,
+          "fromForm": "Hisui",
+          "fromFormSlug": "goodra-hisui"
+        },
+        {
+          "raw": "43:curse",
+          "moveId": "curse",
+          "moveName": "Curse",
+          "type": "ghost",
+          "sourceType": "level",
+          "sourceValue": 43,
+          "fromForm": "Hisui",
+          "fromFormSlug": "goodra-hisui"
+        },
+        {
+          "raw": "49:ironhead",
+          "moveId": "ironhead",
+          "moveName": "Iron Head",
+          "type": "steel",
+          "sourceType": "level",
+          "sourceValue": 49,
+          "fromForm": "Hisui",
+          "fromFormSlug": "goodra-hisui"
+        },
+        {
+          "raw": "49:bodyslam",
+          "moveId": "bodyslam",
+          "moveName": "Body Slam",
+          "type": "normal",
+          "sourceType": "level",
+          "sourceValue": 49,
+          "fromForm": "Hisui",
+          "fromFormSlug": "goodra-hisui"
+        },
+        {
+          "raw": "58:muddywater",
+          "moveId": "muddywater",
+          "moveName": "Muddy Water",
+          "type": "water",
+          "sourceType": "level",
+          "sourceValue": 58,
+          "fromForm": "Hisui",
+          "fromFormSlug": "goodra-hisui"
+        },
+        {
+          "raw": "67:heavyslam",
+          "moveId": "heavyslam",
+          "moveName": "Heavy Slam",
+          "type": "steel",
+          "sourceType": "level",
+          "sourceValue": 67,
+          "fromForm": "Hisui",
+          "fromFormSlug": "goodra-hisui"
+        },
+        {
+          "raw": "egg:counter",
+          "moveId": "counter",
+          "moveName": "Counter",
+          "type": "fighting",
+          "sourceType": "egg",
+          "sourceValue": null,
+          "fromForm": "Hisui",
+          "fromFormSlug": "goodra-hisui"
+        },
+        {
+          "raw": "egg:lifedew",
+          "moveId": "lifedew",
+          "moveName": "Life Dew",
+          "type": "water",
+          "sourceType": "egg",
+          "sourceValue": null,
+          "fromForm": "Hisui",
+          "fromFormSlug": "goodra-hisui"
+        },
+        {
+          "raw": "tm:acidspray",
+          "moveId": "acidspray",
+          "moveName": "Acid Spray",
+          "type": "poison",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Hisui",
+          "fromFormSlug": "goodra-hisui"
+        },
+        {
+          "raw": "tm:blizzard",
+          "moveId": "blizzard",
+          "moveName": "Blizzard",
+          "type": "ice",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Hisui",
+          "fromFormSlug": "goodra-hisui"
+        },
+        {
+          "raw": "tm:bodypress",
+          "moveId": "bodypress",
+          "moveName": "Body Press",
+          "type": "fighting",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Hisui",
+          "fromFormSlug": "goodra-hisui"
+        },
+        {
+          "raw": "tm:bodyslam",
+          "moveId": "bodyslam",
+          "moveName": "Body Slam",
+          "type": "normal",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Hisui",
+          "fromFormSlug": "goodra-hisui"
+        },
+        {
+          "raw": "tm:breakingswipe",
+          "moveId": "breakingswipe",
+          "moveName": "Breaking Swipe",
+          "type": "dragon",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Hisui",
+          "fromFormSlug": "goodra-hisui"
+        },
+        {
+          "raw": "tm:bulldoze",
+          "moveId": "bulldoze",
+          "moveName": "Bulldoze",
+          "type": "ground",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Hisui",
+          "fromFormSlug": "goodra-hisui"
+        },
+        {
+          "raw": "tm:charm",
+          "moveId": "charm",
+          "moveName": "Charm",
+          "type": "fairy",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Hisui",
+          "fromFormSlug": "goodra-hisui"
+        },
+        {
+          "raw": "tm:chillingwater",
+          "moveId": "chillingwater",
+          "moveName": "Chilling Water",
+          "type": "water",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Hisui",
+          "fromFormSlug": "goodra-hisui"
+        },
+        {
+          "raw": "tm:curse",
+          "moveId": "curse",
+          "moveName": "Curse",
+          "type": "ghost",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Hisui",
+          "fromFormSlug": "goodra-hisui"
+        },
+        {
+          "raw": "tm:dracometeor",
+          "moveId": "dracometeor",
+          "moveName": "Draco Meteor",
+          "type": "dragon",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Hisui",
+          "fromFormSlug": "goodra-hisui"
+        },
+        {
+          "raw": "tm:dragoncheer",
+          "moveId": "dragoncheer",
+          "moveName": "Dragon Cheer",
+          "type": "dragon",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Hisui",
+          "fromFormSlug": "goodra-hisui"
+        },
+        {
+          "raw": "tm:dragonclaw",
+          "moveId": "dragonclaw",
+          "moveName": "Dragon Claw",
+          "type": "dragon",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Hisui",
+          "fromFormSlug": "goodra-hisui"
+        },
+        {
+          "raw": "tm:dragonpulse",
+          "moveId": "dragonpulse",
+          "moveName": "Dragon Pulse",
+          "type": "dragon",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Hisui",
+          "fromFormSlug": "goodra-hisui"
+        },
+        {
+          "raw": "tm:dragontail",
+          "moveId": "dragontail",
+          "moveName": "Dragon Tail",
+          "type": "dragon",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Hisui",
+          "fromFormSlug": "goodra-hisui"
+        },
+        {
+          "raw": "tm:earthquake",
+          "moveId": "earthquake",
+          "moveName": "Earthquake",
+          "type": "ground",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Hisui",
+          "fromFormSlug": "goodra-hisui"
+        },
+        {
+          "raw": "tm:endure",
+          "moveId": "endure",
+          "moveName": "Endure",
+          "type": "normal",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Hisui",
+          "fromFormSlug": "goodra-hisui"
+        },
+        {
+          "raw": "tm:facade",
+          "moveId": "facade",
+          "moveName": "Facade",
+          "type": "normal",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Hisui",
+          "fromFormSlug": "goodra-hisui"
+        },
+        {
+          "raw": "tm:fireblast",
+          "moveId": "fireblast",
+          "moveName": "Fire Blast",
+          "type": "fire",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Hisui",
+          "fromFormSlug": "goodra-hisui"
+        },
+        {
+          "raw": "tm:firepunch",
+          "moveId": "firepunch",
+          "moveName": "Fire Punch",
+          "type": "fire",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Hisui",
+          "fromFormSlug": "goodra-hisui"
+        },
+        {
+          "raw": "tm:flamethrower",
+          "moveId": "flamethrower",
+          "moveName": "Flamethrower",
+          "type": "fire",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Hisui",
+          "fromFormSlug": "goodra-hisui"
+        },
+        {
+          "raw": "tm:flashcannon",
+          "moveId": "flashcannon",
+          "moveName": "Flash Cannon",
+          "type": "steel",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Hisui",
+          "fromFormSlug": "goodra-hisui"
+        },
+        {
+          "raw": "tm:gigaimpact",
+          "moveId": "gigaimpact",
+          "moveName": "Giga Impact",
+          "type": "normal",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Hisui",
+          "fromFormSlug": "goodra-hisui"
+        },
+        {
+          "raw": "tm:gyroball",
+          "moveId": "gyroball",
+          "moveName": "Gyro Ball",
+          "type": "steel",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Hisui",
+          "fromFormSlug": "goodra-hisui"
+        },
+        {
+          "raw": "tm:heavyslam",
+          "moveId": "heavyslam",
+          "moveName": "Heavy Slam",
+          "type": "steel",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Hisui",
+          "fromFormSlug": "goodra-hisui"
+        },
+        {
+          "raw": "tm:hydropump",
+          "moveId": "hydropump",
+          "moveName": "Hydro Pump",
+          "type": "water",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Hisui",
+          "fromFormSlug": "goodra-hisui"
+        },
+        {
+          "raw": "tm:hyperbeam",
+          "moveId": "hyperbeam",
+          "moveName": "Hyper Beam",
+          "type": "normal",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Hisui",
+          "fromFormSlug": "goodra-hisui"
+        },
+        {
+          "raw": "tm:icebeam",
+          "moveId": "icebeam",
+          "moveName": "Ice Beam",
+          "type": "ice",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Hisui",
+          "fromFormSlug": "goodra-hisui"
+        },
+        {
+          "raw": "tm:icespinner",
+          "moveId": "icespinner",
+          "moveName": "Ice Spinner",
+          "type": "ice",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Hisui",
+          "fromFormSlug": "goodra-hisui"
+        },
+        {
+          "raw": "tm:ironhead",
+          "moveId": "ironhead",
+          "moveName": "Iron Head",
+          "type": "steel",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Hisui",
+          "fromFormSlug": "goodra-hisui"
+        },
+        {
+          "raw": "tm:irontail",
+          "moveId": "irontail",
+          "moveName": "Iron Tail",
+          "type": "steel",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Hisui",
+          "fromFormSlug": "goodra-hisui"
+        },
+        {
+          "raw": "tm:knockoff",
+          "moveId": "knockoff",
+          "moveName": "Knock Off",
+          "type": "dark",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Hisui",
+          "fromFormSlug": "goodra-hisui"
+        },
+        {
+          "raw": "tm:lashout",
+          "moveId": "lashout",
+          "moveName": "Lash Out",
+          "type": "dark",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Hisui",
+          "fromFormSlug": "goodra-hisui"
+        },
+        {
+          "raw": "tm:muddywater",
+          "moveId": "muddywater",
+          "moveName": "Muddy Water",
+          "type": "water",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Hisui",
+          "fromFormSlug": "goodra-hisui"
+        },
+        {
+          "raw": "tm:mudshot",
+          "moveId": "mudshot",
+          "moveName": "Mud Shot",
+          "type": "ground",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Hisui",
+          "fromFormSlug": "goodra-hisui"
+        },
+        {
+          "raw": "tm:outrage",
+          "moveId": "outrage",
+          "moveName": "Outrage",
+          "type": "dragon",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Hisui",
+          "fromFormSlug": "goodra-hisui"
+        },
+        {
+          "raw": "tm:protect",
+          "moveId": "protect",
+          "moveName": "Protect",
+          "type": "normal",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Hisui",
+          "fromFormSlug": "goodra-hisui"
+        },
+        {
+          "raw": "tm:raindance",
+          "moveId": "raindance",
+          "moveName": "Rain Dance",
+          "type": "water",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Hisui",
+          "fromFormSlug": "goodra-hisui"
+        },
+        {
+          "raw": "tm:rest",
+          "moveId": "rest",
+          "moveName": "Rest",
+          "type": "psychic",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Hisui",
+          "fromFormSlug": "goodra-hisui"
+        },
+        {
+          "raw": "tm:rockslide",
+          "moveId": "rockslide",
+          "moveName": "Rock Slide",
+          "type": "rock",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Hisui",
+          "fromFormSlug": "goodra-hisui"
+        },
+        {
+          "raw": "tm:rocksmash",
+          "moveId": "rocksmash",
+          "moveName": "Rock Smash",
+          "type": "fighting",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Hisui",
+          "fromFormSlug": "goodra-hisui"
+        },
+        {
+          "raw": "tm:rocktomb",
+          "moveId": "rocktomb",
+          "moveName": "Rock Tomb",
+          "type": "rock",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Hisui",
+          "fromFormSlug": "goodra-hisui"
+        },
+        {
+          "raw": "tm:sandstorm",
+          "moveId": "sandstorm",
+          "moveName": "Sandstorm",
+          "type": "rock",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Hisui",
+          "fromFormSlug": "goodra-hisui"
+        },
+        {
+          "raw": "tm:scaryface",
+          "moveId": "scaryface",
+          "moveName": "Scary Face",
+          "type": "normal",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Hisui",
+          "fromFormSlug": "goodra-hisui"
+        },
+        {
+          "raw": "tm:skittersmack",
+          "moveId": "skittersmack",
+          "moveName": "Skitter Smack",
+          "type": "bug",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Hisui",
+          "fromFormSlug": "goodra-hisui"
+        },
+        {
+          "raw": "tm:sleeptalk",
+          "moveId": "sleeptalk",
+          "moveName": "Sleep Talk",
+          "type": "normal",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Hisui",
+          "fromFormSlug": "goodra-hisui"
+        },
+        {
+          "raw": "tm:sludgebomb",
+          "moveId": "sludgebomb",
+          "moveName": "Sludge Bomb",
+          "type": "poison",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Hisui",
+          "fromFormSlug": "goodra-hisui"
+        },
+        {
+          "raw": "tm:sludgewave",
+          "moveId": "sludgewave",
+          "moveName": "Sludge Wave",
+          "type": "poison",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Hisui",
+          "fromFormSlug": "goodra-hisui"
+        },
+        {
+          "raw": "tm:steelbeam",
+          "moveId": "steelbeam",
+          "moveName": "Steel Beam",
+          "type": "steel",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Hisui",
+          "fromFormSlug": "goodra-hisui"
+        },
+        {
+          "raw": "tm:stompingtantrum",
+          "moveId": "stompingtantrum",
+          "moveName": "Stomping Tantrum",
+          "type": "ground",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Hisui",
+          "fromFormSlug": "goodra-hisui"
+        },
+        {
+          "raw": "tm:substitute",
+          "moveId": "substitute",
+          "moveName": "Substitute",
+          "type": "normal",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Hisui",
+          "fromFormSlug": "goodra-hisui"
+        },
+        {
+          "raw": "tm:sunnyday",
+          "moveId": "sunnyday",
+          "moveName": "Sunny Day",
+          "type": "fire",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Hisui",
+          "fromFormSlug": "goodra-hisui"
+        },
+        {
+          "raw": "tm:surf",
+          "moveId": "surf",
+          "moveName": "Surf",
+          "type": "water",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Hisui",
+          "fromFormSlug": "goodra-hisui"
+        },
+        {
+          "raw": "tm:takedown",
+          "moveId": "takedown",
+          "moveName": "Take Down",
+          "type": "normal",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Hisui",
+          "fromFormSlug": "goodra-hisui"
+        },
+        {
+          "raw": "tm:terablast",
+          "moveId": "terablast",
+          "moveName": "Tera Blast",
+          "type": "normal",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Hisui",
+          "fromFormSlug": "goodra-hisui"
+        },
+        {
+          "raw": "tm:thunder",
+          "moveId": "thunder",
+          "moveName": "Thunder",
+          "type": "electric",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Hisui",
+          "fromFormSlug": "goodra-hisui"
+        },
+        {
+          "raw": "tm:thunderbolt",
+          "moveId": "thunderbolt",
+          "moveName": "Thunderbolt",
+          "type": "electric",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Hisui",
+          "fromFormSlug": "goodra-hisui"
+        },
+        {
+          "raw": "tm:thunderpunch",
+          "moveId": "thunderpunch",
+          "moveName": "Thunder Punch",
+          "type": "electric",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Hisui",
+          "fromFormSlug": "goodra-hisui"
+        },
+        {
+          "raw": "tm:waterpulse",
+          "moveId": "waterpulse",
+          "moveName": "Water Pulse",
+          "type": "water",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Hisui",
+          "fromFormSlug": "goodra-hisui"
+        },
+        {
+          "raw": "tm:weatherball",
+          "moveId": "weatherball",
+          "moveName": "Weather Ball",
+          "type": "normal",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Hisui",
+          "fromFormSlug": "goodra-hisui"
+        },
+        {
+          "raw": "tutor:bulldoze",
+          "moveId": "bulldoze",
+          "moveName": "Bulldoze",
+          "type": "ground",
+          "sourceType": "tutor",
+          "sourceValue": null,
+          "fromForm": "Hisui",
+          "fromFormSlug": "goodra-hisui"
+        },
+        {
+          "raw": "tutor:dracometeor",
+          "moveId": "dracometeor",
+          "moveName": "Draco Meteor",
+          "type": "dragon",
+          "sourceType": "tutor",
+          "sourceValue": null,
+          "fromForm": "Hisui",
+          "fromFormSlug": "goodra-hisui"
+        },
+        {
+          "raw": "tutor:dragonpulse",
+          "moveId": "dragonpulse",
+          "moveName": "Dragon Pulse",
+          "type": "dragon",
+          "sourceType": "tutor",
+          "sourceValue": null,
+          "fromForm": "Hisui",
+          "fromFormSlug": "goodra-hisui"
+        },
+        {
+          "raw": "tutor:firepunch",
+          "moveId": "firepunch",
+          "moveName": "Fire Punch",
+          "type": "fire",
+          "sourceType": "tutor",
+          "sourceValue": null,
+          "fromForm": "Hisui",
+          "fromFormSlug": "goodra-hisui"
+        },
+        {
+          "raw": "tutor:flamethrower",
+          "moveId": "flamethrower",
+          "moveName": "Flamethrower",
+          "type": "fire",
+          "sourceType": "tutor",
+          "sourceValue": null,
+          "fromForm": "Hisui",
+          "fromFormSlug": "goodra-hisui"
+        },
+        {
+          "raw": "tutor:flashcannon",
+          "moveId": "flashcannon",
+          "moveName": "Flash Cannon",
+          "type": "steel",
+          "sourceType": "tutor",
+          "sourceValue": null,
+          "fromForm": "Hisui",
+          "fromFormSlug": "goodra-hisui"
+        },
+        {
+          "raw": "tutor:gigaimpact",
+          "moveId": "gigaimpact",
+          "moveName": "Giga Impact",
+          "type": "normal",
+          "sourceType": "tutor",
+          "sourceValue": null,
+          "fromForm": "Hisui",
+          "fromFormSlug": "goodra-hisui"
+        },
+        {
+          "raw": "tutor:hyperbeam",
+          "moveId": "hyperbeam",
+          "moveName": "Hyper Beam",
+          "type": "normal",
+          "sourceType": "tutor",
+          "sourceValue": null,
+          "fromForm": "Hisui",
+          "fromFormSlug": "goodra-hisui"
+        },
+        {
+          "raw": "tutor:icebeam",
+          "moveId": "icebeam",
+          "moveName": "Ice Beam",
+          "type": "ice",
+          "sourceType": "tutor",
+          "sourceValue": null,
+          "fromForm": "Hisui",
+          "fromFormSlug": "goodra-hisui"
+        },
+        {
+          "raw": "tutor:ironhead",
+          "moveId": "ironhead",
+          "moveName": "Iron Head",
+          "type": "steel",
+          "sourceType": "tutor",
+          "sourceValue": null,
+          "fromForm": "Hisui",
+          "fromFormSlug": "goodra-hisui"
+        },
+        {
+          "raw": "tutor:irontail",
+          "moveId": "irontail",
+          "moveName": "Iron Tail",
+          "type": "steel",
+          "sourceType": "tutor",
+          "sourceValue": null,
+          "fromForm": "Hisui",
+          "fromFormSlug": "goodra-hisui"
+        },
+        {
+          "raw": "tutor:knockoff",
+          "moveId": "knockoff",
+          "moveName": "Knock Off",
+          "type": "dark",
+          "sourceType": "tutor",
+          "sourceValue": null,
+          "fromForm": "Hisui",
+          "fromFormSlug": "goodra-hisui"
+        },
+        {
+          "raw": "tutor:lashout",
+          "moveId": "lashout",
+          "moveName": "Lash Out",
+          "type": "dark",
+          "sourceType": "tutor",
+          "sourceValue": null,
+          "fromForm": "Hisui",
+          "fromFormSlug": "goodra-hisui"
+        },
+        {
+          "raw": "tutor:outrage",
+          "moveId": "outrage",
+          "moveName": "Outrage",
+          "type": "dragon",
+          "sourceType": "tutor",
+          "sourceValue": null,
+          "fromForm": "Hisui",
+          "fromFormSlug": "goodra-hisui"
+        },
+        {
+          "raw": "tutor:rest",
+          "moveId": "rest",
+          "moveName": "Rest",
+          "type": "psychic",
+          "sourceType": "tutor",
+          "sourceValue": null,
+          "fromForm": "Hisui",
+          "fromFormSlug": "goodra-hisui"
+        },
+        {
+          "raw": "tutor:rockslide",
+          "moveId": "rockslide",
+          "moveName": "Rock Slide",
+          "type": "rock",
+          "sourceType": "tutor",
+          "sourceValue": null,
+          "fromForm": "Hisui",
+          "fromFormSlug": "goodra-hisui"
+        },
+        {
+          "raw": "tutor:rocksmash",
+          "moveId": "rocksmash",
+          "moveName": "Rock Smash",
+          "type": "fighting",
+          "sourceType": "tutor",
+          "sourceValue": null,
+          "fromForm": "Hisui",
+          "fromFormSlug": "goodra-hisui"
+        },
+        {
+          "raw": "tutor:skittersmack",
+          "moveId": "skittersmack",
+          "moveName": "Skitter Smack",
+          "type": "bug",
+          "sourceType": "tutor",
+          "sourceValue": null,
+          "fromForm": "Hisui",
+          "fromFormSlug": "goodra-hisui"
+        },
+        {
+          "raw": "tutor:sleeptalk",
+          "moveId": "sleeptalk",
+          "moveName": "Sleep Talk",
+          "type": "normal",
+          "sourceType": "tutor",
+          "sourceValue": null,
+          "fromForm": "Hisui",
+          "fromFormSlug": "goodra-hisui"
+        },
+        {
+          "raw": "tutor:sludgebomb",
+          "moveId": "sludgebomb",
+          "moveName": "Sludge Bomb",
+          "type": "poison",
+          "sourceType": "tutor",
+          "sourceValue": null,
+          "fromForm": "Hisui",
+          "fromFormSlug": "goodra-hisui"
+        },
+        {
+          "raw": "tutor:steelbeam",
+          "moveId": "steelbeam",
+          "moveName": "Steel Beam",
+          "type": "steel",
+          "sourceType": "tutor",
+          "sourceValue": null,
+          "fromForm": "Hisui",
+          "fromFormSlug": "goodra-hisui"
+        },
+        {
+          "raw": "tutor:stompingtantrum",
+          "moveId": "stompingtantrum",
+          "moveName": "Stomping Tantrum",
+          "type": "ground",
+          "sourceType": "tutor",
+          "sourceValue": null,
+          "fromForm": "Hisui",
+          "fromFormSlug": "goodra-hisui"
+        },
+        {
+          "raw": "tutor:thunderbolt",
+          "moveId": "thunderbolt",
+          "moveName": "Thunderbolt",
+          "type": "electric",
+          "sourceType": "tutor",
+          "sourceValue": null,
+          "fromForm": "Hisui",
+          "fromFormSlug": "goodra-hisui"
+        },
+        {
+          "raw": "tutor:thunderpunch",
+          "moveId": "thunderpunch",
+          "moveName": "Thunder Punch",
+          "type": "electric",
+          "sourceType": "tutor",
+          "sourceValue": null,
+          "fromForm": "Hisui",
+          "fromFormSlug": "goodra-hisui"
+        },
+        {
+          "raw": "tutor:waterpulse",
+          "moveId": "waterpulse",
+          "moveName": "Water Pulse",
+          "type": "water",
+          "sourceType": "tutor",
+          "sourceValue": null,
+          "fromForm": "Hisui",
+          "fromFormSlug": "goodra-hisui"
+        }
+      ],
+      "evolutions": [],
+      "raw": {
+        "name": "Hisui",
+        "primaryType": "steel",
+        "secondaryType": "dragon",
+        "maleRatio": 0.5,
+        "height": 17,
+        "weight": 3341,
+        "pokedex": [
+          "cobblemon.species.goodra-hisui.desc"
+        ],
+        "labels": [
+          "gen8a",
+          "powerhouse",
+          "hisuian_form"
+        ],
+        "aspects": [
+          "hisuian"
+        ],
+        "abilities": [
+          "sapsipper",
+          "shellarmor",
+          "h:gooey"
+        ],
+        "baseStats": {
+          "hp": 80,
+          "attack": 100,
+          "defence": 100,
+          "special_attack": 110,
+          "special_defence": 150,
+          "speed": 60
+        },
+        "baseScale": 1,
+        "hitbox": {
+          "width": 2.5,
+          "height": 3.6,
+          "fixed": false
+        },
+        "drops": {
+          "amount": 8,
+          "entries": [
+            {
+              "item": "minecraft:slime_ball",
+              "quantityRange": "0-3"
+            },
+            {
+              "item": "cobblemon:shed_shell",
+              "percentage": 10
+            },
+            {
+              "item": "minecraft:iron_ingot",
+              "quantityRange": "0-3"
+            },
+            {
+              "item": "cobblemon:bluk_berry",
+              "percentage": 10
+            }
+          ]
+        },
+        "moves": [
+          "1:bubble",
+          "1:irontail",
+          "1:shelter",
+          "1:acidspray",
+          "1:feint",
+          "1:tearfullook",
+          "1:dragonbreath",
+          "1:tackle",
+          "1:absorb",
+          "1:watergun",
+          "1:bide",
+          "1:acidarmor",
+          "15:protect",
+          "20:flail",
+          "25:waterpulse",
+          "30:raindance",
+          "35:dragonpulse",
+          "43:curse",
+          "49:ironhead",
+          "49:bodyslam",
+          "58:muddywater",
+          "67:heavyslam",
+          "egg:counter",
+          "egg:lifedew",
+          "tm:acidspray",
+          "tm:blizzard",
+          "tm:bodypress",
+          "tm:bodyslam",
+          "tm:breakingswipe",
+          "tm:bulldoze",
+          "tm:charm",
+          "tm:chillingwater",
+          "tm:curse",
+          "tm:dracometeor",
+          "tm:dragoncheer",
+          "tm:dragonclaw",
+          "tm:dragonpulse",
+          "tm:dragontail",
+          "tm:earthquake",
+          "tm:endure",
+          "tm:facade",
+          "tm:fireblast",
+          "tm:firepunch",
+          "tm:flamethrower",
+          "tm:flashcannon",
+          "tm:gigaimpact",
+          "tm:gyroball",
+          "tm:heavyslam",
+          "tm:hydropump",
+          "tm:hyperbeam",
+          "tm:icebeam",
+          "tm:icespinner",
+          "tm:ironhead",
+          "tm:irontail",
+          "tm:knockoff",
+          "tm:lashout",
+          "tm:muddywater",
+          "tm:mudshot",
+          "tm:outrage",
+          "tm:protect",
+          "tm:raindance",
+          "tm:rest",
+          "tm:rockslide",
+          "tm:rocksmash",
+          "tm:rocktomb",
+          "tm:sandstorm",
+          "tm:scaryface",
+          "tm:skittersmack",
+          "tm:sleeptalk",
+          "tm:sludgebomb",
+          "tm:sludgewave",
+          "tm:steelbeam",
+          "tm:stompingtantrum",
+          "tm:substitute",
+          "tm:sunnyday",
+          "tm:surf",
+          "tm:takedown",
+          "tm:terablast",
+          "tm:thunder",
+          "tm:thunderbolt",
+          "tm:thunderpunch",
+          "tm:waterpulse",
+          "tm:weatherball",
+          "tutor:bulldoze",
+          "tutor:dracometeor",
+          "tutor:dragonpulse",
+          "tutor:firepunch",
+          "tutor:flamethrower",
+          "tutor:flashcannon",
+          "tutor:gigaimpact",
+          "tutor:hyperbeam",
+          "tutor:icebeam",
+          "tutor:ironhead",
+          "tutor:irontail",
+          "tutor:knockoff",
+          "tutor:lashout",
+          "tutor:outrage",
+          "tutor:rest",
+          "tutor:rockslide",
+          "tutor:rocksmash",
+          "tutor:skittersmack",
+          "tutor:sleeptalk",
+          "tutor:sludgebomb",
+          "tutor:steelbeam",
+          "tutor:stompingtantrum",
+          "tutor:thunderbolt",
+          "tutor:thunderpunch",
+          "tutor:waterpulse"
+        ],
+        "preEvolution": "sliggoo hisuian",
+        "evolutions": [],
+        "battleOnly": false,
+        "behaviour": {
+          "combat": {
+            "willDefendSelf": true,
+            "willDefendOwner": true,
+            "willFlee": false
+          },
+          "resting": {
+            "drowsyChance": 0.0333,
+            "rouseChance": 0.0042
+          }
+        }
+      }
+    }
+  ],
+  "rawSpecies": {
+    "implemented": true,
+    "nationalPokedexNumber": 706,
+    "name": "Goodra",
+    "primaryType": "dragon",
+    "maleRatio": 0.5,
+    "height": 20,
+    "weight": 1505,
+    "pokedex": [
+      "cobblemon.species.goodra.desc"
+    ],
+    "labels": [
+      "gen6",
+      "powerhouse",
+      "kalosian_form"
+    ],
+    "aspects": [],
+    "abilities": [
+      "sapsipper",
+      "hydration",
+      "h:gooey"
+    ],
+    "eggGroups": [
+      "dragon"
+    ],
+    "baseStats": {
+      "hp": 90,
+      "attack": 100,
+      "defence": 70,
+      "special_attack": 110,
+      "special_defence": 150,
+      "speed": 80
+    },
+    "evYield": {
+      "hp": 0,
+      "attack": 0,
+      "defence": 0,
+      "special_attack": 0,
+      "special_defence": 3,
+      "speed": 0
+    },
+    "baseExperienceYield": 300,
+    "experienceGroup": "slow",
+    "catchRate": 45,
+    "eggCycles": 40,
+    "baseFriendship": 35,
+    "features": [
+      "hisuian"
+    ],
+    "baseScale": 0.9,
+    "hitbox": {
+      "width": 1.8,
+      "height": 3.3,
+      "fixed": false
+    },
+    "drops": {
+      "amount": 5,
+      "entries": [
+        {
+          "item": "minecraft:slime_ball",
+          "quantityRange": "0-3"
+        },
+        {
+          "item": "cobblemon:shed_shell",
+          "percentage": 10
+        },
+        {
+          "item": "cobblemon:haban_berry",
+          "percentage": 10
+        }
+      ]
+    },
+    "moves": [
+      "1:feint",
+      "1:tackle",
+      "1:bubble",
+      "1:absorb",
+      "1:bide",
+      "1:dragonbreath",
+      "1:aquatail",
+      "1:acidspray",
+      "1:poisontail",
+      "1:tearfullook",
+      "1:watergun",
+      "1:acidarmor",
+      "15:protect",
+      "20:flail",
+      "25:waterpulse",
+      "30:raindance",
+      "43:curse",
+      "49:bodyslam",
+      "58:muddywater",
+      "67:powerwhip",
+      "egg:counter",
+      "egg:lifedew",
+      "tm:acidspray",
+      "tm:aquatail",
+      "tm:assurance",
+      "tm:blizzard",
+      "tm:bodypress",
+      "tm:bodyslam",
+      "tm:breakingswipe",
+      "tm:brutalswing",
+      "tm:bulldoze",
+      "tm:charm",
+      "tm:chillingwater",
+      "tm:curse",
+      "tm:dracometeor",
+      "tm:dragoncheer",
+      "tm:dragonclaw",
+      "tm:dragonpulse",
+      "tm:dragontail",
+      "tm:earthquake",
+      "tm:endure",
+      "tm:facade",
+      "tm:fireblast",
+      "tm:firepunch",
+      "tm:flamethrower",
+      "tm:focusblast",
+      "tm:focuspunch",
+      "tm:gigaimpact",
+      "tm:hail",
+      "tm:hydropump",
+      "tm:hyperbeam",
+      "tm:icebeam",
+      "tm:incinerate",
+      "tm:infestation",
+      "tm:irontail",
+      "tm:knockoff",
+      "tm:laserfocus",
+      "tm:megakick",
+      "tm:megapunch",
+      "tm:muddywater",
+      "tm:mudshot",
+      "tm:outrage",
+      "tm:poisontail",
+      "tm:powerwhip",
+      "tm:protect",
+      "tm:raindance",
+      "tm:rest",
+      "tm:rockslide",
+      "tm:rocksmash",
+      "tm:scald",
+      "tm:shockwave",
+      "tm:skittersmack",
+      "tm:sleeptalk",
+      "tm:sludgebomb",
+      "tm:sludgewave",
+      "tm:stompingtantrum",
+      "tm:strength",
+      "tm:substitute",
+      "tm:sunnyday",
+      "tm:superpower",
+      "tm:surf",
+      "tm:takedown",
+      "tm:terablast",
+      "tm:thunder",
+      "tm:thunderbolt",
+      "tm:thunderpunch",
+      "tm:toxic",
+      "tm:waterpulse",
+      "tm:weatherball",
+      "tutor:aquatail",
+      "tutor:bulldoze",
+      "tutor:dracometeor",
+      "tutor:dragonpulse",
+      "tutor:firepunch",
+      "tutor:flamethrower",
+      "tutor:focuspunch",
+      "tutor:gigaimpact",
+      "tutor:hyperbeam",
+      "tutor:icebeam",
+      "tutor:irontail",
+      "tutor:knockoff",
+      "tutor:laserfocus",
+      "tutor:outrage",
+      "tutor:rest",
+      "tutor:rockslide",
+      "tutor:rocksmash",
+      "tutor:shockwave",
+      "tutor:skittersmack",
+      "tutor:sleeptalk",
+      "tutor:sludgebomb",
+      "tutor:stompingtantrum",
+      "tutor:superpower",
+      "tutor:thunderbolt",
+      "tutor:thunderpunch",
+      "tutor:waterpulse",
+      "legacy:attract",
+      "legacy:confide",
+      "legacy:doubleteam",
+      "legacy:frustration",
+      "legacy:hiddenpower",
+      "legacy:return",
+      "legacy:round",
+      "legacy:secretpower",
+      "legacy:snore",
+      "legacy:swagger"
+    ],
+    "preEvolution": "sliggoo",
+    "evolutions": [],
+    "forms": [
+      {
+        "name": "Hisui",
+        "primaryType": "steel",
+        "secondaryType": "dragon",
+        "maleRatio": 0.5,
+        "height": 17,
+        "weight": 3341,
+        "pokedex": [
+          "cobblemon.species.goodra-hisui.desc"
+        ],
+        "labels": [
+          "gen8a",
+          "powerhouse",
+          "hisuian_form"
+        ],
+        "aspects": [
+          "hisuian"
+        ],
+        "abilities": [
+          "sapsipper",
+          "shellarmor",
+          "h:gooey"
+        ],
+        "baseStats": {
+          "hp": 80,
+          "attack": 100,
+          "defence": 100,
+          "special_attack": 110,
+          "special_defence": 150,
+          "speed": 60
+        },
+        "baseScale": 1,
+        "hitbox": {
+          "width": 2.5,
+          "height": 3.6,
+          "fixed": false
+        },
+        "drops": {
+          "amount": 8,
+          "entries": [
+            {
+              "item": "minecraft:slime_ball",
+              "quantityRange": "0-3"
+            },
+            {
+              "item": "cobblemon:shed_shell",
+              "percentage": 10
+            },
+            {
+              "item": "minecraft:iron_ingot",
+              "quantityRange": "0-3"
+            },
+            {
+              "item": "cobblemon:bluk_berry",
+              "percentage": 10
+            }
+          ]
+        },
+        "moves": [
+          "1:bubble",
+          "1:irontail",
+          "1:shelter",
+          "1:acidspray",
+          "1:feint",
+          "1:tearfullook",
+          "1:dragonbreath",
+          "1:tackle",
+          "1:absorb",
+          "1:watergun",
+          "1:bide",
+          "1:acidarmor",
+          "15:protect",
+          "20:flail",
+          "25:waterpulse",
+          "30:raindance",
+          "35:dragonpulse",
+          "43:curse",
+          "49:ironhead",
+          "49:bodyslam",
+          "58:muddywater",
+          "67:heavyslam",
+          "egg:counter",
+          "egg:lifedew",
+          "tm:acidspray",
+          "tm:blizzard",
+          "tm:bodypress",
+          "tm:bodyslam",
+          "tm:breakingswipe",
+          "tm:bulldoze",
+          "tm:charm",
+          "tm:chillingwater",
+          "tm:curse",
+          "tm:dracometeor",
+          "tm:dragoncheer",
+          "tm:dragonclaw",
+          "tm:dragonpulse",
+          "tm:dragontail",
+          "tm:earthquake",
+          "tm:endure",
+          "tm:facade",
+          "tm:fireblast",
+          "tm:firepunch",
+          "tm:flamethrower",
+          "tm:flashcannon",
+          "tm:gigaimpact",
+          "tm:gyroball",
+          "tm:heavyslam",
+          "tm:hydropump",
+          "tm:hyperbeam",
+          "tm:icebeam",
+          "tm:icespinner",
+          "tm:ironhead",
+          "tm:irontail",
+          "tm:knockoff",
+          "tm:lashout",
+          "tm:muddywater",
+          "tm:mudshot",
+          "tm:outrage",
+          "tm:protect",
+          "tm:raindance",
+          "tm:rest",
+          "tm:rockslide",
+          "tm:rocksmash",
+          "tm:rocktomb",
+          "tm:sandstorm",
+          "tm:scaryface",
+          "tm:skittersmack",
+          "tm:sleeptalk",
+          "tm:sludgebomb",
+          "tm:sludgewave",
+          "tm:steelbeam",
+          "tm:stompingtantrum",
+          "tm:substitute",
+          "tm:sunnyday",
+          "tm:surf",
+          "tm:takedown",
+          "tm:terablast",
+          "tm:thunder",
+          "tm:thunderbolt",
+          "tm:thunderpunch",
+          "tm:waterpulse",
+          "tm:weatherball",
+          "tutor:bulldoze",
+          "tutor:dracometeor",
+          "tutor:dragonpulse",
+          "tutor:firepunch",
+          "tutor:flamethrower",
+          "tutor:flashcannon",
+          "tutor:gigaimpact",
+          "tutor:hyperbeam",
+          "tutor:icebeam",
+          "tutor:ironhead",
+          "tutor:irontail",
+          "tutor:knockoff",
+          "tutor:lashout",
+          "tutor:outrage",
+          "tutor:rest",
+          "tutor:rockslide",
+          "tutor:rocksmash",
+          "tutor:skittersmack",
+          "tutor:sleeptalk",
+          "tutor:sludgebomb",
+          "tutor:steelbeam",
+          "tutor:stompingtantrum",
+          "tutor:thunderbolt",
+          "tutor:thunderpunch",
+          "tutor:waterpulse"
+        ],
+        "preEvolution": "sliggoo hisuian",
+        "evolutions": [],
+        "battleOnly": false,
+        "behaviour": {
+          "combat": {
+            "willDefendSelf": true,
+            "willDefendOwner": true,
+            "willFlee": false
+          },
+          "resting": {
+            "drowsyChance": 0.0333,
+            "rouseChance": 0.0042
+          }
+        }
+      }
+    ],
+    "behaviour": {
+      "moving": {
+        "swim": {}
+      },
+      "combat": {
+        "willDefendSelf": true,
+        "willDefendOwner": true,
+        "willFlee": false
+      },
+      "resting": {
+        "drowsyChance": 0.0333,
+        "rouseChance": 0.0042
+      }
+    }
+  }
+}

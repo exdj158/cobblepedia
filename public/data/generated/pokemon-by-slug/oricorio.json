@@ -1,0 +1,1579 @@
+{
+  "slug": "oricorio",
+  "name": "Oricorio",
+  "dexNumber": 741,
+  "implemented": false,
+  "types": [
+    "fire",
+    "flying"
+  ],
+  "abilities": [
+    {
+      "id": "dancer",
+      "hidden": false,
+      "label": "Dancer",
+      "slot": "first"
+    },
+    {
+      "id": "dancer",
+      "hidden": true,
+      "label": "Dancer",
+      "slot": "hidden"
+    }
+  ],
+  "eggGroups": [
+    "flying"
+  ],
+  "labels": [
+    "gen7"
+  ],
+  "aspects": [
+    "baile-style"
+  ],
+  "aliases": [
+    "oricorio",
+    "oricorio pa u",
+    "oricorio pom-pom",
+    "oricorio sensu",
+    "pa u",
+    "pom-pom",
+    "sensu"
+  ],
+  "maleRatio": 0.25,
+  "height": 6,
+  "weight": 34,
+  "catchRate": 45,
+  "baseExperienceYield": 167,
+  "baseFriendship": 50,
+  "eggCycles": 20,
+  "baseStats": {
+    "hp": 75,
+    "attack": 70,
+    "defence": 70,
+    "special_attack": 98,
+    "special_defence": 70,
+    "speed": 93
+  },
+  "evYield": {
+    "hp": 0,
+    "attack": 0,
+    "defence": 0,
+    "special_attack": 2,
+    "special_defence": 0,
+    "speed": 0
+  },
+  "preEvolution": null,
+  "evolutions": [],
+  "evolutionFamily": {
+    "members": [
+      {
+        "nodeId": "oricorio",
+        "slug": "oricorio",
+        "name": "Oricorio",
+        "dexNumber": 741,
+        "formSlug": null,
+        "formName": null
+      }
+    ],
+    "edges": [],
+    "roots": [
+      "oricorio"
+    ]
+  },
+  "moves": [
+    {
+      "raw": "23:acrobatics",
+      "moveId": "acrobatics",
+      "moveName": "Acrobatics",
+      "type": "flying",
+      "sourceType": "level",
+      "sourceValue": 23,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:acrobatics",
+      "moveId": "acrobatics",
+      "moveName": "Acrobatics",
+      "type": "flying",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:aerialace",
+      "moveId": "aerialace",
+      "moveName": "Aerial Ace",
+      "type": "flying",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tutor:aerialace",
+      "moveId": "aerialace",
+      "moveName": "Aerial Ace",
+      "type": "flying",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "43:agility",
+      "moveId": "agility",
+      "moveName": "Agility",
+      "type": "psychic",
+      "sourceType": "level",
+      "sourceValue": 43,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:agility",
+      "moveId": "agility",
+      "moveName": "Agility",
+      "type": "psychic",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "13:aircutter",
+      "moveId": "aircutter",
+      "moveName": "Air Cutter",
+      "type": "flying",
+      "sourceType": "level",
+      "sourceValue": 13,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:aircutter",
+      "moveId": "aircutter",
+      "moveName": "Air Cutter",
+      "type": "flying",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tutor:aircutter",
+      "moveId": "aircutter",
+      "moveName": "Air Cutter",
+      "type": "flying",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "36:airslash",
+      "moveId": "airslash",
+      "moveName": "Air Slash",
+      "type": "flying",
+      "sourceType": "level",
+      "sourceValue": 36,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:airslash",
+      "moveId": "airslash",
+      "moveName": "Air Slash",
+      "type": "flying",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:alluringvoice",
+      "moveId": "alluringvoice",
+      "moveName": "Alluring Voice",
+      "type": "fairy",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "egg:attract",
+      "moveId": "attract",
+      "moveName": "Attract",
+      "type": "normal",
+      "sourceType": "egg",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:attract",
+      "moveId": "attract",
+      "moveName": "Attract",
+      "type": "normal",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "16:batonpass",
+      "moveId": "batonpass",
+      "moveName": "Baton Pass",
+      "type": "normal",
+      "sourceType": "level",
+      "sourceValue": 16,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:batonpass",
+      "moveId": "batonpass",
+      "moveName": "Baton Pass",
+      "type": "normal",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:calmmind",
+      "moveId": "calmmind",
+      "moveName": "Calm Mind",
+      "type": "psychic",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tutor:calmmind",
+      "moveId": "calmmind",
+      "moveName": "Calm Mind",
+      "type": "psychic",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "egg:captivate",
+      "moveId": "captivate",
+      "moveName": "Captivate",
+      "type": "normal",
+      "sourceType": "egg",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:captivate",
+      "moveId": "captivate",
+      "moveName": "Captivate",
+      "type": "normal",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:charm",
+      "moveId": "charm",
+      "moveName": "Charm",
+      "type": "fairy",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "legacy:confide",
+      "moveId": "confide",
+      "moveName": "Confide",
+      "type": "normal",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:covet",
+      "moveId": "covet",
+      "moveName": "Covet",
+      "type": "normal",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tutor:covet",
+      "moveId": "covet",
+      "moveName": "Covet",
+      "type": "normal",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "egg:defog",
+      "moveId": "defog",
+      "moveName": "Defog",
+      "type": "flying",
+      "sourceType": "egg",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:defog",
+      "moveId": "defog",
+      "moveName": "Defog",
+      "type": "flying",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tutor:defog",
+      "moveId": "defog",
+      "moveName": "Defog",
+      "type": "flying",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "1:doubleslap",
+      "moveId": "doubleslap",
+      "moveName": "Double Slap",
+      "type": "normal",
+      "sourceType": "level",
+      "sourceValue": 1,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "legacy:doubleteam",
+      "moveId": "doubleteam",
+      "moveName": "Double Team",
+      "type": "normal",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:dualwingbeat",
+      "moveId": "dualwingbeat",
+      "moveName": "Dual Wingbeat",
+      "type": "flying",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tutor:dualwingbeat",
+      "moveId": "dualwingbeat",
+      "moveName": "Dual Wingbeat",
+      "type": "flying",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:embargo",
+      "moveId": "embargo",
+      "moveName": "Embargo",
+      "type": "dark",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:endure",
+      "moveId": "endure",
+      "moveName": "Endure",
+      "type": "normal",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:facade",
+      "moveId": "facade",
+      "moveName": "Facade",
+      "type": "normal",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "20:featherdance",
+      "moveId": "featherdance",
+      "moveName": "Feather Dance",
+      "type": "flying",
+      "sourceType": "level",
+      "sourceValue": 20,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:featherdance",
+      "moveId": "featherdance",
+      "moveName": "Feather Dance",
+      "type": "flying",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "33:flatter",
+      "moveId": "flatter",
+      "moveName": "Flatter",
+      "type": "dark",
+      "sourceType": "level",
+      "sourceValue": 33,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:fly",
+      "moveId": "fly",
+      "moveName": "Fly",
+      "type": "flying",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "legacy:frustration",
+      "moveId": "frustration",
+      "moveName": "Frustration",
+      "type": "normal",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "4:growl",
+      "moveId": "growl",
+      "moveName": "Growl",
+      "type": "normal",
+      "sourceType": "level",
+      "sourceValue": 4,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "10:helpinghand",
+      "moveId": "helpinghand",
+      "moveName": "Helping Hand",
+      "type": "normal",
+      "sourceType": "level",
+      "sourceValue": 10,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:helpinghand",
+      "moveId": "helpinghand",
+      "moveName": "Helping Hand",
+      "type": "normal",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tutor:helpinghand",
+      "moveId": "helpinghand",
+      "moveName": "Helping Hand",
+      "type": "normal",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "legacy:hiddenpower",
+      "moveId": "hiddenpower",
+      "moveName": "Hidden Power",
+      "type": "normal",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "47:hurricane",
+      "moveId": "hurricane",
+      "moveName": "Hurricane",
+      "type": "flying",
+      "sourceType": "level",
+      "sourceValue": 47,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:hurricane",
+      "moveId": "hurricane",
+      "moveName": "Hurricane",
+      "type": "flying",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:icywind",
+      "moveId": "icywind",
+      "moveName": "Icy Wind",
+      "type": "ice",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tutor:icywind",
+      "moveId": "icywind",
+      "moveName": "Icy Wind",
+      "type": "ice",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "1:mirrormove",
+      "moveId": "mirrormove",
+      "moveName": "Mirror Move",
+      "type": "flying",
+      "sourceType": "level",
+      "sourceValue": 1,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "6:peck",
+      "moveId": "peck",
+      "moveName": "Peck",
+      "type": "flying",
+      "sourceType": "level",
+      "sourceValue": 6,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "egg:pluck",
+      "moveId": "pluck",
+      "moveName": "Pluck",
+      "type": "flying",
+      "sourceType": "egg",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:pluck",
+      "moveId": "pluck",
+      "moveName": "Pluck",
+      "type": "flying",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "1:pound",
+      "moveId": "pound",
+      "moveName": "Pound",
+      "type": "normal",
+      "sourceType": "level",
+      "sourceValue": 1,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:protect",
+      "moveId": "protect",
+      "moveName": "Protect",
+      "type": "normal",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:psychup",
+      "moveId": "psychup",
+      "moveName": "Psych Up",
+      "type": "normal",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:quash",
+      "moveId": "quash",
+      "moveName": "Quash",
+      "type": "dark",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "egg:quiverdance",
+      "moveId": "quiverdance",
+      "moveName": "Quiver Dance",
+      "type": "bug",
+      "sourceType": "egg",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:raindance",
+      "moveId": "raindance",
+      "moveName": "Rain Dance",
+      "type": "water",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:rest",
+      "moveId": "rest",
+      "moveName": "Rest",
+      "type": "psychic",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tutor:rest",
+      "moveId": "rest",
+      "moveName": "Rest",
+      "type": "psychic",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "legacy:return",
+      "moveId": "return",
+      "moveName": "Return",
+      "type": "normal",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "40:revelationdance",
+      "moveId": "revelationdance",
+      "moveName": "Revelation Dance",
+      "type": "normal",
+      "sourceType": "level",
+      "sourceValue": 40,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:reversal",
+      "moveId": "reversal",
+      "moveName": "Reversal",
+      "type": "fighting",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:roleplay",
+      "moveId": "roleplay",
+      "moveName": "Role Play",
+      "type": "psychic",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tutor:roleplay",
+      "moveId": "roleplay",
+      "moveName": "Role Play",
+      "type": "psychic",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "30:roost",
+      "moveId": "roost",
+      "moveName": "Roost",
+      "type": "flying",
+      "sourceType": "level",
+      "sourceValue": 30,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:roost",
+      "moveId": "roost",
+      "moveName": "Roost",
+      "type": "flying",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tutor:roost",
+      "moveId": "roost",
+      "moveName": "Roost",
+      "type": "flying",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "legacy:round",
+      "moveId": "round",
+      "moveName": "Round",
+      "type": "normal",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "egg:safeguard",
+      "moveId": "safeguard",
+      "moveName": "Safeguard",
+      "type": "normal",
+      "sourceType": "egg",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:safeguard",
+      "moveId": "safeguard",
+      "moveName": "Safeguard",
+      "type": "normal",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:sandstorm",
+      "moveId": "sandstorm",
+      "moveName": "Sandstorm",
+      "type": "rock",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:skyattack",
+      "moveId": "skyattack",
+      "moveName": "Sky Attack",
+      "type": "flying",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tutor:skyattack",
+      "moveId": "skyattack",
+      "moveName": "Sky Attack",
+      "type": "flying",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:sleeptalk",
+      "moveId": "sleeptalk",
+      "moveName": "Sleep Talk",
+      "type": "normal",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tutor:sleeptalk",
+      "moveId": "sleeptalk",
+      "moveName": "Sleep Talk",
+      "type": "normal",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "legacy:snore",
+      "moveId": "snore",
+      "moveName": "Snore",
+      "type": "normal",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:steelwing",
+      "moveId": "steelwing",
+      "moveName": "Steel Wing",
+      "type": "steel",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:substitute",
+      "moveId": "substitute",
+      "moveName": "Substitute",
+      "type": "normal",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:sunnyday",
+      "moveId": "sunnyday",
+      "moveName": "Sunny Day",
+      "type": "fire",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "legacy:swagger",
+      "moveId": "swagger",
+      "moveName": "Swagger",
+      "type": "normal",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:swift",
+      "moveId": "swift",
+      "moveName": "Swift",
+      "type": "normal",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tutor:swift",
+      "moveId": "swift",
+      "moveName": "Swift",
+      "type": "normal",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:swordsdance",
+      "moveId": "swordsdance",
+      "moveName": "Swords Dance",
+      "type": "normal",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:tailwind",
+      "moveId": "tailwind",
+      "moveName": "Tailwind",
+      "type": "flying",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tutor:tailwind",
+      "moveId": "tailwind",
+      "moveName": "Tailwind",
+      "type": "flying",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:takedown",
+      "moveId": "takedown",
+      "moveName": "Take Down",
+      "type": "normal",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:taunt",
+      "moveId": "taunt",
+      "moveName": "Taunt",
+      "type": "dark",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "26:teeterdance",
+      "moveId": "teeterdance",
+      "moveName": "Teeter Dance",
+      "type": "normal",
+      "sourceType": "level",
+      "sourceValue": 26,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:terablast",
+      "moveId": "terablast",
+      "moveName": "Tera Blast",
+      "type": "normal",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "legacy:toxic",
+      "moveId": "toxic",
+      "moveName": "Toxic",
+      "type": "poison",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:trailblaze",
+      "moveId": "trailblaze",
+      "moveName": "Trailblaze",
+      "type": "grass",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:uturn",
+      "moveId": "uturn",
+      "moveName": "U-turn",
+      "type": "bug",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:workup",
+      "moveId": "workup",
+      "moveName": "Work Up",
+      "type": "normal",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    }
+  ],
+  "spawnEntries": [],
+  "forms": [
+    {
+      "name": "Pom-Pom",
+      "slug": "oricorio-pompom",
+      "aspects": [
+        "pom_pom-style"
+      ],
+      "labels": [
+        "gen7"
+      ],
+      "types": [
+        "electric",
+        "flying"
+      ],
+      "maleRatio": 0.25,
+      "height": 6,
+      "weight": 34,
+      "catchRate": null,
+      "baseExperienceYield": null,
+      "baseFriendship": null,
+      "eggCycles": null,
+      "baseStats": {},
+      "evYield": {},
+      "battleOnly": false,
+      "abilities": [],
+      "moves": [],
+      "evolutions": [],
+      "raw": {
+        "name": "Pom-Pom",
+        "primaryType": "electric",
+        "secondaryType": "flying",
+        "maleRatio": 0.25,
+        "height": 6,
+        "weight": 34,
+        "pokedex": [
+          "cobblemon.species.oricorio-pompom.desc"
+        ],
+        "labels": [
+          "gen7"
+        ],
+        "aspects": [
+          "pom_pom-style"
+        ],
+        "evolutions": [],
+        "battleOnly": false,
+        "behaviour": {
+          "resting": {
+            "willSleepOnBed": true,
+            "drowsyChance": 0.0333,
+            "rouseChance": 0.0042
+          },
+          "moving": {
+            "swim": {
+              "avoidsWater": true
+            },
+            "fly": {
+              "canFly": true
+            }
+          },
+          "combat": {
+            "willDefendOwner": true
+          },
+          "herd": {
+            "maxSize": "9",
+            "toleratedLeaders": [
+              {
+                "pokemon": "oricorio",
+                "tier": 1
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "name": "Pa'u",
+      "slug": "oricorio-pau",
+      "aspects": [
+        "pa'u-style"
+      ],
+      "labels": [
+        "gen7"
+      ],
+      "types": [
+        "psychic",
+        "flying"
+      ],
+      "maleRatio": 0.25,
+      "height": 6,
+      "weight": 34,
+      "catchRate": null,
+      "baseExperienceYield": null,
+      "baseFriendship": null,
+      "eggCycles": null,
+      "baseStats": {},
+      "evYield": {},
+      "battleOnly": false,
+      "abilities": [],
+      "moves": [],
+      "evolutions": [],
+      "raw": {
+        "name": "Pa'u",
+        "primaryType": "psychic",
+        "secondaryType": "flying",
+        "maleRatio": 0.25,
+        "height": 6,
+        "weight": 34,
+        "pokedex": [
+          "cobblemon.species.oricorio-pau.desc"
+        ],
+        "labels": [
+          "gen7"
+        ],
+        "aspects": [
+          "pa'u-style"
+        ],
+        "evolutions": [],
+        "battleOnly": false,
+        "behaviour": {
+          "resting": {
+            "willSleepOnBed": true,
+            "drowsyChance": 0.0333,
+            "rouseChance": 0.0042
+          },
+          "moving": {
+            "swim": {
+              "avoidsWater": true
+            },
+            "fly": {
+              "canFly": true
+            }
+          },
+          "combat": {
+            "willDefendOwner": true
+          },
+          "herd": {
+            "maxSize": "9",
+            "toleratedLeaders": [
+              {
+                "pokemon": "oricorio",
+                "tier": 1
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "name": "Sensu",
+      "slug": "oricorio-sensu",
+      "aspects": [
+        "sensu-style"
+      ],
+      "labels": [
+        "gen7"
+      ],
+      "types": [
+        "ghost",
+        "flying"
+      ],
+      "maleRatio": 0.25,
+      "height": 6,
+      "weight": 34,
+      "catchRate": null,
+      "baseExperienceYield": null,
+      "baseFriendship": null,
+      "eggCycles": null,
+      "baseStats": {},
+      "evYield": {},
+      "battleOnly": false,
+      "abilities": [],
+      "moves": [],
+      "evolutions": [],
+      "raw": {
+        "name": "Sensu",
+        "primaryType": "ghost",
+        "secondaryType": "flying",
+        "maleRatio": 0.25,
+        "height": 6,
+        "weight": 34,
+        "pokedex": [
+          "cobblemon.species.oricorio-sensu.desc"
+        ],
+        "labels": [
+          "gen7"
+        ],
+        "aspects": [
+          "sensu-style"
+        ],
+        "evolutions": [],
+        "battleOnly": false,
+        "behaviour": {
+          "resting": {
+            "willSleepOnBed": true,
+            "drowsyChance": 0.0333,
+            "rouseChance": 0.0042
+          },
+          "moving": {
+            "swim": {
+              "avoidsWater": true
+            },
+            "fly": {
+              "canFly": true
+            }
+          },
+          "combat": {
+            "willDefendOwner": true
+          },
+          "herd": {
+            "maxSize": "9",
+            "toleratedLeaders": [
+              {
+                "pokemon": "oricorio",
+                "tier": 1
+              }
+            ]
+          }
+        }
+      }
+    }
+  ],
+  "rawSpecies": {
+    "nationalPokedexNumber": 741,
+    "name": "Oricorio",
+    "primaryType": "fire",
+    "secondaryType": "flying",
+    "maleRatio": 0.25,
+    "height": 6,
+    "weight": 34,
+    "pokedex": [
+      "cobblemon.species.oricorio.desc"
+    ],
+    "labels": [
+      "gen7"
+    ],
+    "aspects": [
+      "baile-style"
+    ],
+    "abilities": [
+      "dancer",
+      "h:dancer"
+    ],
+    "eggGroups": [
+      "flying"
+    ],
+    "baseStats": {
+      "hp": 75,
+      "attack": 70,
+      "defence": 70,
+      "special_attack": 98,
+      "special_defence": 70,
+      "speed": 93
+    },
+    "evYield": {
+      "hp": 0,
+      "attack": 0,
+      "defence": 0,
+      "special_attack": 2,
+      "special_defence": 0,
+      "speed": 0
+    },
+    "baseExperienceYield": 167,
+    "experienceGroup": "medium_fast",
+    "catchRate": 45,
+    "eggCycles": 20,
+    "baseFriendship": 50,
+    "drops": {
+      "amount": 5,
+      "entries": [
+        {
+          "item": "minecraft:feather",
+          "quantityRange": "0-2"
+        },
+        {
+          "item": "minecraft:chicken"
+        },
+        {
+          "item": "minecraft:honey_bottle",
+          "percentage": 5
+        },
+        {
+          "item": "cobblemon:pinap_berry",
+          "percentage": 5
+        }
+      ]
+    },
+    "moves": [
+      "1:pound",
+      "1:doubleslap",
+      "1:mirrormove",
+      "4:growl",
+      "6:peck",
+      "10:helpinghand",
+      "13:aircutter",
+      "16:batonpass",
+      "20:featherdance",
+      "23:acrobatics",
+      "26:teeterdance",
+      "30:roost",
+      "33:flatter",
+      "36:airslash",
+      "40:revelationdance",
+      "43:agility",
+      "47:hurricane",
+      "egg:attract",
+      "egg:captivate",
+      "egg:defog",
+      "egg:pluck",
+      "egg:quiverdance",
+      "egg:safeguard",
+      "tm:acrobatics",
+      "tm:aerialace",
+      "tm:agility",
+      "tm:aircutter",
+      "tm:airslash",
+      "tm:alluringvoice",
+      "tm:attract",
+      "tm:batonpass",
+      "tm:calmmind",
+      "tm:captivate",
+      "tm:charm",
+      "tm:covet",
+      "tm:defog",
+      "tm:dualwingbeat",
+      "tm:embargo",
+      "tm:endure",
+      "tm:facade",
+      "tm:featherdance",
+      "tm:fly",
+      "tm:helpinghand",
+      "tm:hurricane",
+      "tm:icywind",
+      "tm:pluck",
+      "tm:protect",
+      "tm:psychup",
+      "tm:quash",
+      "tm:raindance",
+      "tm:rest",
+      "tm:reversal",
+      "tm:roleplay",
+      "tm:roost",
+      "tm:safeguard",
+      "tm:sandstorm",
+      "tm:skyattack",
+      "tm:sleeptalk",
+      "tm:steelwing",
+      "tm:substitute",
+      "tm:sunnyday",
+      "tm:swift",
+      "tm:swordsdance",
+      "tm:tailwind",
+      "tm:takedown",
+      "tm:taunt",
+      "tm:terablast",
+      "tm:trailblaze",
+      "tm:uturn",
+      "tm:workup",
+      "tutor:aerialace",
+      "tutor:aircutter",
+      "tutor:calmmind",
+      "tutor:covet",
+      "tutor:defog",
+      "tutor:dualwingbeat",
+      "tutor:helpinghand",
+      "tutor:icywind",
+      "tutor:rest",
+      "tutor:roleplay",
+      "tutor:roost",
+      "tutor:skyattack",
+      "tutor:sleeptalk",
+      "tutor:swift",
+      "tutor:tailwind",
+      "legacy:confide",
+      "legacy:doubleteam",
+      "legacy:frustration",
+      "legacy:hiddenpower",
+      "legacy:return",
+      "legacy:round",
+      "legacy:snore",
+      "legacy:swagger",
+      "legacy:toxic"
+    ],
+    "evolutions": [],
+    "forms": [
+      {
+        "name": "Pom-Pom",
+        "primaryType": "electric",
+        "secondaryType": "flying",
+        "maleRatio": 0.25,
+        "height": 6,
+        "weight": 34,
+        "pokedex": [
+          "cobblemon.species.oricorio-pompom.desc"
+        ],
+        "labels": [
+          "gen7"
+        ],
+        "aspects": [
+          "pom_pom-style"
+        ],
+        "evolutions": [],
+        "battleOnly": false,
+        "behaviour": {
+          "resting": {
+            "willSleepOnBed": true,
+            "drowsyChance": 0.0333,
+            "rouseChance": 0.0042
+          },
+          "moving": {
+            "swim": {
+              "avoidsWater": true
+            },
+            "fly": {
+              "canFly": true
+            }
+          },
+          "combat": {
+            "willDefendOwner": true
+          },
+          "herd": {
+            "maxSize": "9",
+            "toleratedLeaders": [
+              {
+                "pokemon": "oricorio",
+                "tier": 1
+              }
+            ]
+          }
+        }
+      },
+      {
+        "name": "Pa'u",
+        "primaryType": "psychic",
+        "secondaryType": "flying",
+        "maleRatio": 0.25,
+        "height": 6,
+        "weight": 34,
+        "pokedex": [
+          "cobblemon.species.oricorio-pau.desc"
+        ],
+        "labels": [
+          "gen7"
+        ],
+        "aspects": [
+          "pa'u-style"
+        ],
+        "evolutions": [],
+        "battleOnly": false,
+        "behaviour": {
+          "resting": {
+            "willSleepOnBed": true,
+            "drowsyChance": 0.0333,
+            "rouseChance": 0.0042
+          },
+          "moving": {
+            "swim": {
+              "avoidsWater": true
+            },
+            "fly": {
+              "canFly": true
+            }
+          },
+          "combat": {
+            "willDefendOwner": true
+          },
+          "herd": {
+            "maxSize": "9",
+            "toleratedLeaders": [
+              {
+                "pokemon": "oricorio",
+                "tier": 1
+              }
+            ]
+          }
+        }
+      },
+      {
+        "name": "Sensu",
+        "primaryType": "ghost",
+        "secondaryType": "flying",
+        "maleRatio": 0.25,
+        "height": 6,
+        "weight": 34,
+        "pokedex": [
+          "cobblemon.species.oricorio-sensu.desc"
+        ],
+        "labels": [
+          "gen7"
+        ],
+        "aspects": [
+          "sensu-style"
+        ],
+        "evolutions": [],
+        "battleOnly": false,
+        "behaviour": {
+          "resting": {
+            "willSleepOnBed": true,
+            "drowsyChance": 0.0333,
+            "rouseChance": 0.0042
+          },
+          "moving": {
+            "swim": {
+              "avoidsWater": true
+            },
+            "fly": {
+              "canFly": true
+            }
+          },
+          "combat": {
+            "willDefendOwner": true
+          },
+          "herd": {
+            "maxSize": "9",
+            "toleratedLeaders": [
+              {
+                "pokemon": "oricorio",
+                "tier": 1
+              }
+            ]
+          }
+        }
+      }
+    ],
+    "behaviour": {
+      "herd": {
+        "maxSize": "9",
+        "toleratedLeaders": [
+          {
+            "pokemon": "oricorio",
+            "tier": 1
+          }
+        ]
+      },
+      "resting": {
+        "willSleepOnBed": true,
+        "drowsyChance": 0.0333,
+        "rouseChance": 0.0042
+      },
+      "moving": {
+        "swim": {
+          "avoidsWater": true,
+          "canSwimInLava": true
+        },
+        "fly": {
+          "canFly": true
+        }
+      },
+      "combat": {
+        "willDefendOwner": true
+      },
+      "fireImmune": true
+    }
+  }
+}

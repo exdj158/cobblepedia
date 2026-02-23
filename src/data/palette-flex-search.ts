@@ -2,10 +2,10 @@ import { Index } from "flexsearch"
 import type {
   AbilityIndex,
   ItemIndex,
-  MoveLearnersIndex,
   PaletteResult,
   PokemonListItem,
   PokemonTypeEntryRecord,
+  SearchDocument,
 } from "@/data/cobblemon-types"
 import {
   canonicalId,
@@ -38,7 +38,7 @@ type PaletteSearchDoc = {
 type PaletteFlexSearchParams = {
   pokemonList: PokemonListItem[]
   pokemonTypeEntries: PokemonTypeEntryRecord[]
-  moveLearners: MoveLearnersIndex
+  moveSearchDocs: SearchDocument[]
   abilityIndex: AbilityIndex
   itemIndex: ItemIndex
 }
@@ -241,33 +241,34 @@ function buildPaletteSearchDocs(params: PaletteFlexSearchParams): PaletteSearchD
     }
   }
 
-  const moveEntries = Object.values(params.moveLearners)
-  for (const move of moveEntries) {
-    const learnerCount = move.learners.length
-    const aliases = uniqueNormalized([move.moveName, move.moveId, move.type ?? "", "move", "moves"])
+  for (const moveDoc of params.moveSearchDocs) {
+    if (moveDoc.resultType !== "move-learners" || !moveDoc.moveId) {
+      continue
+    }
+
+    const learnerCount = moveDoc.learnerCount ?? 0
+    const aliases = uniqueNormalized([
+      moveDoc.name,
+      moveDoc.moveId,
+      ...moveDoc.aliases,
+      "move",
+      "moves",
+    ])
 
     docs.push(
       createDoc({
-        id: `move:${move.moveId}`,
+        id: `move:${moveDoc.moveId}`,
         entityType: "move",
-        title: move.moveName,
+        title: moveDoc.name,
         aliases,
-        searchTextParts: [
-          move.moveName,
-          move.moveId,
-          move.type ?? "",
-          move.category ?? "",
-          move.shortDescription ?? "",
-          "move",
-          "moves",
-        ],
+        searchTextParts: [moveDoc.name, moveDoc.moveId, ...moveDoc.tokens, "move", "moves"],
         result: {
-          id: `move:${move.moveId}`,
+          id: `move:${moveDoc.moveId}`,
           type: "move-learners",
-          title: move.moveName,
+          title: moveDoc.name,
           subtitle: `${learnerCount} learners`,
           slug: null,
-          moveId: move.moveId,
+          moveId: moveDoc.moveId,
           facet: null,
           score: 0,
         },

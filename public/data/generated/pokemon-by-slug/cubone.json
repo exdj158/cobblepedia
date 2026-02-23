@@ -1,0 +1,2723 @@
+{
+  "slug": "cubone",
+  "name": "Cubone",
+  "dexNumber": 104,
+  "implemented": true,
+  "types": [
+    "ground"
+  ],
+  "abilities": [
+    {
+      "id": "rockhead",
+      "hidden": false,
+      "label": "Rockhead",
+      "slot": "first"
+    },
+    {
+      "id": "lightningrod",
+      "hidden": false,
+      "label": "Lightningrod",
+      "slot": "second"
+    },
+    {
+      "id": "battlearmor",
+      "hidden": true,
+      "label": "Battlearmor",
+      "slot": "hidden"
+    }
+  ],
+  "eggGroups": [
+    "monster"
+  ],
+  "labels": [
+    "gen1",
+    "kantonian_form"
+  ],
+  "aspects": [],
+  "aliases": [
+    "alola-bias",
+    "cubone",
+    "cubone alola-bias"
+  ],
+  "maleRatio": 0.5,
+  "height": 4,
+  "weight": 65,
+  "catchRate": 190,
+  "baseExperienceYield": 64,
+  "baseFriendship": 50,
+  "eggCycles": 20,
+  "baseStats": {
+    "hp": 50,
+    "attack": 50,
+    "defence": 95,
+    "special_attack": 40,
+    "special_defence": 50,
+    "speed": 35
+  },
+  "evYield": {
+    "hp": 0,
+    "attack": 0,
+    "defence": 1,
+    "special_attack": 0,
+    "special_defence": 0,
+    "speed": 0
+  },
+  "preEvolution": null,
+  "evolutions": [
+    {
+      "id": "cubone_marowak",
+      "variant": "level_up",
+      "result": {
+        "raw": "marowak",
+        "slug": "marowak",
+        "aspectTokens": []
+      },
+      "consumeHeldItem": false,
+      "learnableMoves": [],
+      "requirementText": [
+        "Level 28+",
+        "Not in biome Evolution Regional Cubone Alolabiome",
+        "Not in biome Is Nether"
+      ],
+      "requirements": [
+        {
+          "variant": "level",
+          "text": "Level 28+",
+          "raw": {
+            "variant": "level",
+            "minLevel": 28
+          }
+        },
+        {
+          "variant": "biome",
+          "text": "Not in biome Evolution Regional Cubone Alolabiome",
+          "raw": {
+            "variant": "biome",
+            "biomeAnticondition": "#cobblemon:evolution/regional/cubone_alolabiome"
+          }
+        },
+        {
+          "variant": "biome",
+          "text": "Not in biome Is Nether",
+          "raw": {
+            "variant": "biome",
+            "biomeAnticondition": "#minecraft:is_nether"
+          }
+        }
+      ],
+      "requiredContext": null,
+      "fromForm": null,
+      "raw": {
+        "id": "cubone_marowak",
+        "variant": "level_up",
+        "result": "marowak",
+        "consumeHeldItem": false,
+        "learnableMoves": [],
+        "requirements": [
+          {
+            "variant": "level",
+            "minLevel": 28
+          },
+          {
+            "variant": "biome",
+            "biomeAnticondition": "#cobblemon:evolution/regional/cubone_alolabiome"
+          },
+          {
+            "variant": "biome",
+            "biomeAnticondition": "#minecraft:is_nether"
+          }
+        ]
+      }
+    },
+    {
+      "id": "cubone_marowakalola",
+      "variant": "level_up",
+      "result": {
+        "raw": "marowak alolan",
+        "slug": "marowak",
+        "aspectTokens": [
+          "alolan"
+        ]
+      },
+      "consumeHeldItem": false,
+      "learnableMoves": [
+        "shadowbone"
+      ],
+      "requirementText": [
+        "Level 28+",
+        "Time: Night",
+        "Biome Evolution Regional Cubone Alolabiome",
+        "Not in biome Evolution Regional Cubone Kantobiome",
+        "Not in biome Is Nether"
+      ],
+      "requirements": [
+        {
+          "variant": "level",
+          "text": "Level 28+",
+          "raw": {
+            "variant": "level",
+            "minLevel": 28
+          }
+        },
+        {
+          "variant": "time_range",
+          "text": "Time: Night",
+          "raw": {
+            "variant": "time_range",
+            "range": "night"
+          }
+        },
+        {
+          "variant": "biome",
+          "text": "Biome Evolution Regional Cubone Alolabiome",
+          "raw": {
+            "variant": "biome",
+            "biomeCondition": "#cobblemon:evolution/regional/cubone_alolabiome"
+          }
+        },
+        {
+          "variant": "biome",
+          "text": "Not in biome Evolution Regional Cubone Kantobiome",
+          "raw": {
+            "variant": "biome",
+            "biomeAnticondition": "#cobblemon:evolution/regional/cubone_kantobiome"
+          }
+        },
+        {
+          "variant": "biome",
+          "text": "Not in biome Is Nether",
+          "raw": {
+            "variant": "biome",
+            "biomeAnticondition": "#minecraft:is_nether"
+          }
+        }
+      ],
+      "requiredContext": null,
+      "fromForm": null,
+      "raw": {
+        "id": "cubone_marowakalola",
+        "variant": "level_up",
+        "result": "marowak alolan",
+        "consumeHeldItem": false,
+        "learnableMoves": [
+          "shadowbone"
+        ],
+        "requirements": [
+          {
+            "variant": "level",
+            "minLevel": 28
+          },
+          {
+            "variant": "time_range",
+            "range": "night"
+          },
+          {
+            "variant": "biome",
+            "biomeCondition": "#cobblemon:evolution/regional/cubone_alolabiome"
+          },
+          {
+            "variant": "biome",
+            "biomeAnticondition": "#cobblemon:evolution/regional/cubone_kantobiome"
+          },
+          {
+            "variant": "biome",
+            "biomeAnticondition": "#minecraft:is_nether"
+          }
+        ]
+      }
+    },
+    {
+      "id": "cubone_nether_marowakalola",
+      "variant": "level_up",
+      "result": {
+        "raw": "marowak alolan",
+        "slug": "marowak",
+        "aspectTokens": [
+          "alolan"
+        ]
+      },
+      "consumeHeldItem": false,
+      "learnableMoves": [],
+      "requirementText": [
+        "Level 28+",
+        "Not in biome Is Overworld",
+        "Biome Is Nether"
+      ],
+      "requirements": [
+        {
+          "variant": "level",
+          "text": "Level 28+",
+          "raw": {
+            "variant": "level",
+            "minLevel": 28
+          }
+        },
+        {
+          "variant": "biome",
+          "text": "Not in biome Is Overworld",
+          "raw": {
+            "variant": "biome",
+            "biomeAnticondition": "#cobblemon:is_overworld"
+          }
+        },
+        {
+          "variant": "biome",
+          "text": "Biome Is Nether",
+          "raw": {
+            "variant": "biome",
+            "biomeCondition": "#minecraft:is_nether"
+          }
+        }
+      ],
+      "requiredContext": null,
+      "fromForm": null,
+      "raw": {
+        "id": "cubone_nether_marowakalola",
+        "variant": "level_up",
+        "result": "marowak alolan",
+        "consumeHeldItem": false,
+        "learnableMoves": [],
+        "requirements": [
+          {
+            "variant": "level",
+            "minLevel": 28
+          },
+          {
+            "variant": "biome",
+            "biomeAnticondition": "#cobblemon:is_overworld"
+          },
+          {
+            "variant": "biome",
+            "biomeCondition": "#minecraft:is_nether"
+          }
+        ]
+      }
+    }
+  ],
+  "evolutionFamily": {
+    "members": [
+      {
+        "nodeId": "cubone",
+        "slug": "cubone",
+        "name": "Cubone",
+        "dexNumber": 104,
+        "formSlug": null,
+        "formName": null
+      },
+      {
+        "nodeId": "cubone-alolabias",
+        "slug": "cubone",
+        "name": "Cubone",
+        "dexNumber": 104,
+        "formSlug": "cubone-alolabias",
+        "formName": "Alola-Bias"
+      },
+      {
+        "nodeId": "marowak",
+        "slug": "marowak",
+        "name": "Marowak",
+        "dexNumber": 105,
+        "formSlug": null,
+        "formName": null
+      },
+      {
+        "nodeId": "marowak-alola",
+        "slug": "marowak",
+        "name": "Marowak",
+        "dexNumber": 105,
+        "formSlug": "marowak-alola",
+        "formName": "Alola"
+      }
+    ],
+    "edges": [
+      {
+        "fromNodeId": "cubone",
+        "toNodeId": "marowak",
+        "fromSlug": "cubone",
+        "toSlug": "marowak",
+        "method": "level_up",
+        "requirementText": [
+          "Level 28+",
+          "Not in biome Evolution Regional Cubone Alolabiome",
+          "Not in biome Is Nether"
+        ]
+      },
+      {
+        "fromNodeId": "cubone-alolabias",
+        "toNodeId": "marowak-alola",
+        "fromSlug": "cubone",
+        "toSlug": "marowak",
+        "method": "level_up",
+        "requirementText": [
+          "Level 28+",
+          "Time: Night",
+          "Not in biome Evolution Regional Cubone Kantobiome",
+          "Not in biome Is Nether"
+        ]
+      },
+      {
+        "fromNodeId": "cubone-alolabias",
+        "toNodeId": "marowak-alola",
+        "fromSlug": "cubone",
+        "toSlug": "marowak",
+        "method": "level_up",
+        "requirementText": [
+          "Level 28+",
+          "Not in biome Is Overworld",
+          "Biome Is Nether"
+        ]
+      }
+    ],
+    "roots": [
+      "cubone",
+      "cubone-alolabias"
+    ]
+  },
+  "moves": [
+    {
+      "raw": "tm:aerialace",
+      "moveId": "aerialace",
+      "moveName": "Aerial Ace",
+      "type": "flying",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tutor:aerialace",
+      "moveId": "aerialace",
+      "moveName": "Aerial Ace",
+      "type": "flying",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "egg:ancientpower",
+      "moveId": "ancientpower",
+      "moveName": "Ancient Power",
+      "type": "rock",
+      "sourceType": "egg",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:ancientpower",
+      "moveId": "ancientpower",
+      "moveName": "Ancient Power",
+      "type": "rock",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tutor:ancientpower",
+      "moveId": "ancientpower",
+      "moveName": "Ancient Power",
+      "type": "rock",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "legacy:attract",
+      "moveId": "attract",
+      "moveName": "Attract",
+      "type": "normal",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "egg:bellydrum",
+      "moveId": "bellydrum",
+      "moveName": "Belly Drum",
+      "type": "normal",
+      "sourceType": "egg",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "legacy:bide",
+      "moveId": "bide",
+      "moveName": "Bide",
+      "type": "normal",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:blizzard",
+      "moveId": "blizzard",
+      "moveName": "Blizzard",
+      "type": "ice",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:bodyslam",
+      "moveId": "bodyslam",
+      "moveName": "Body Slam",
+      "type": "normal",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "1:boneclub",
+      "moveId": "boneclub",
+      "moveName": "Bone Club",
+      "type": "ground",
+      "sourceType": "level",
+      "sourceValue": 1,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "29:bonerush",
+      "moveId": "bonerush",
+      "moveName": "Bone Rush",
+      "type": "ground",
+      "sourceType": "level",
+      "sourceValue": 29,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "40:bonemerang",
+      "moveId": "bonemerang",
+      "moveName": "Bonemerang",
+      "type": "ground",
+      "sourceType": "level",
+      "sourceValue": 40,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:brickbreak",
+      "moveId": "brickbreak",
+      "moveName": "Brick Break",
+      "type": "fighting",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:brutalswing",
+      "moveId": "brutalswing",
+      "moveName": "Brutal Swing",
+      "type": "dark",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "legacy:bubblebeam",
+      "moveId": "bubblebeam",
+      "moveName": "Bubble Beam",
+      "type": "water",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:bulldoze",
+      "moveId": "bulldoze",
+      "moveName": "Bulldoze",
+      "type": "ground",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tutor:bulldoze",
+      "moveId": "bulldoze",
+      "moveName": "Bulldoze",
+      "type": "ground",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "legacy:captivate",
+      "moveId": "captivate",
+      "moveName": "Captivate",
+      "type": "normal",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "egg:chipaway",
+      "moveId": "chipaway",
+      "moveName": "Chip Away",
+      "type": "normal",
+      "sourceType": "egg",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "legacy:confide",
+      "moveId": "confide",
+      "moveName": "Confide",
+      "type": "normal",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "legacy:counter",
+      "moveId": "counter",
+      "moveName": "Counter",
+      "type": "fighting",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "egg:curse",
+      "moveId": "curse",
+      "moveName": "Curse",
+      "type": "ghost",
+      "sourceType": "egg",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:curse",
+      "moveId": "curse",
+      "moveName": "Curse",
+      "type": "ghost",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "egg:detect",
+      "moveId": "detect",
+      "moveName": "Detect",
+      "type": "fighting",
+      "sourceType": "egg",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:dig",
+      "moveId": "dig",
+      "moveName": "Dig",
+      "type": "ground",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "egg:doublekick",
+      "moveId": "doublekick",
+      "moveName": "Double Kick",
+      "type": "fighting",
+      "sourceType": "egg",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "legacy:doubleteam",
+      "moveId": "doubleteam",
+      "moveName": "Double Team",
+      "type": "normal",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "48:doubleedge",
+      "moveId": "doubleedge",
+      "moveName": "Double-Edge",
+      "type": "normal",
+      "sourceType": "level",
+      "sourceValue": 48,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:doubleedge",
+      "moveId": "doubleedge",
+      "moveName": "Double-Edge",
+      "type": "normal",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "legacy:dynamicpunch",
+      "moveId": "dynamicpunch",
+      "moveName": "Dynamic Punch",
+      "type": "fighting",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:earthpower",
+      "moveId": "earthpower",
+      "moveName": "Earth Power",
+      "type": "ground",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tutor:earthpower",
+      "moveId": "earthpower",
+      "moveName": "Earth Power",
+      "type": "ground",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:earthquake",
+      "moveId": "earthquake",
+      "moveName": "Earthquake",
+      "type": "ground",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:echoedvoice",
+      "moveId": "echoedvoice",
+      "moveName": "Echoed Voice",
+      "type": "normal",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "36:endeavor",
+      "moveId": "endeavor",
+      "moveName": "Endeavor",
+      "type": "normal",
+      "sourceType": "level",
+      "sourceValue": 36,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:endeavor",
+      "moveId": "endeavor",
+      "moveName": "Endeavor",
+      "type": "normal",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tutor:endeavor",
+      "moveId": "endeavor",
+      "moveName": "Endeavor",
+      "type": "normal",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:endure",
+      "moveId": "endure",
+      "moveName": "Endure",
+      "type": "normal",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:facade",
+      "moveId": "facade",
+      "moveName": "Facade",
+      "type": "normal",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "8:falseswipe",
+      "moveId": "falseswipe",
+      "moveName": "False Swipe",
+      "type": "normal",
+      "sourceType": "level",
+      "sourceValue": 8,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:falseswipe",
+      "moveId": "falseswipe",
+      "moveName": "False Swipe",
+      "type": "normal",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tutor:falseswipe",
+      "moveId": "falseswipe",
+      "moveName": "False Swipe",
+      "type": "normal",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:fireblast",
+      "moveId": "fireblast",
+      "moveName": "Fire Blast",
+      "type": "fire",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:firepunch",
+      "moveId": "firepunch",
+      "moveName": "Fire Punch",
+      "type": "fire",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tutor:firepunch",
+      "moveId": "firepunch",
+      "moveName": "Fire Punch",
+      "type": "fire",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "legacy:fissure",
+      "moveId": "fissure",
+      "moveName": "Fissure",
+      "type": "ground",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:flamethrower",
+      "moveId": "flamethrower",
+      "moveName": "Flamethrower",
+      "type": "fire",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tutor:flamethrower",
+      "moveId": "flamethrower",
+      "moveName": "Flamethrower",
+      "type": "fire",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "20:fling",
+      "moveId": "fling",
+      "moveName": "Fling",
+      "type": "dark",
+      "sourceType": "level",
+      "sourceValue": 20,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:fling",
+      "moveId": "fling",
+      "moveName": "Fling",
+      "type": "dark",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "32:focusenergy",
+      "moveId": "focusenergy",
+      "moveName": "Focus Energy",
+      "type": "normal",
+      "sourceType": "level",
+      "sourceValue": 32,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:focusenergy",
+      "moveId": "focusenergy",
+      "moveName": "Focus Energy",
+      "type": "normal",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tutor:focusenergy",
+      "moveId": "focusenergy",
+      "moveName": "Focus Energy",
+      "type": "normal",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:focuspunch",
+      "moveId": "focuspunch",
+      "moveName": "Focus Punch",
+      "type": "fighting",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tutor:focuspunch",
+      "moveId": "focuspunch",
+      "moveName": "Focus Punch",
+      "type": "fighting",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "legacy:frustration",
+      "moveId": "frustration",
+      "moveName": "Frustration",
+      "type": "normal",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:furycutter",
+      "moveId": "furycutter",
+      "moveName": "Fury Cutter",
+      "type": "bug",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tutor:furycutter",
+      "moveId": "furycutter",
+      "moveName": "Fury Cutter",
+      "type": "bug",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "1:growl",
+      "moveId": "growl",
+      "moveName": "Growl",
+      "type": "normal",
+      "sourceType": "level",
+      "sourceValue": 1,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "12:headbutt",
+      "moveId": "headbutt",
+      "moveName": "Headbutt",
+      "type": "normal",
+      "sourceType": "level",
+      "sourceValue": 12,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:headbutt",
+      "moveId": "headbutt",
+      "moveName": "Headbutt",
+      "type": "normal",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "legacy:hiddenpower",
+      "moveId": "hiddenpower",
+      "moveName": "Hidden Power",
+      "type": "normal",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:icebeam",
+      "moveId": "icebeam",
+      "moveName": "Ice Beam",
+      "type": "ice",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tutor:icebeam",
+      "moveId": "icebeam",
+      "moveName": "Ice Beam",
+      "type": "ice",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:icywind",
+      "moveId": "icywind",
+      "moveName": "Icy Wind",
+      "type": "ice",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tutor:icywind",
+      "moveId": "icywind",
+      "moveName": "Icy Wind",
+      "type": "ice",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:incinerate",
+      "moveId": "incinerate",
+      "moveName": "Incinerate",
+      "type": "fire",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:irondefense",
+      "moveId": "irondefense",
+      "moveName": "Iron Defense",
+      "type": "steel",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tutor:irondefense",
+      "moveId": "irondefense",
+      "moveName": "Iron Defense",
+      "type": "steel",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:ironhead",
+      "moveId": "ironhead",
+      "moveName": "Iron Head",
+      "type": "steel",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tutor:ironhead",
+      "moveId": "ironhead",
+      "moveName": "Iron Head",
+      "type": "steel",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:irontail",
+      "moveId": "irontail",
+      "moveName": "Iron Tail",
+      "type": "steel",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tutor:irontail",
+      "moveId": "irontail",
+      "moveName": "Iron Tail",
+      "type": "steel",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:knockoff",
+      "moveId": "knockoff",
+      "moveName": "Knock Off",
+      "type": "dark",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tutor:knockoff",
+      "moveId": "knockoff",
+      "moveName": "Knock Off",
+      "type": "dark",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "egg:leer",
+      "moveId": "leer",
+      "moveName": "Leer",
+      "type": "normal",
+      "sourceType": "egg",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "1:leer",
+      "moveId": "leer",
+      "moveName": "Leer",
+      "type": "normal",
+      "sourceType": "level",
+      "sourceValue": 1,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:lowkick",
+      "moveId": "lowkick",
+      "moveName": "Low Kick",
+      "type": "fighting",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tutor:lowkick",
+      "moveId": "lowkick",
+      "moveName": "Low Kick",
+      "type": "fighting",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:megakick",
+      "moveId": "megakick",
+      "moveName": "Mega Kick",
+      "type": "normal",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:megapunch",
+      "moveId": "megapunch",
+      "moveName": "Mega Punch",
+      "type": "normal",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "legacy:mimic",
+      "moveId": "mimic",
+      "moveName": "Mimic",
+      "type": "normal",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "1:mudslap",
+      "moveId": "mudslap",
+      "moveName": "Mud-Slap",
+      "type": "ground",
+      "sourceType": "level",
+      "sourceValue": 1,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:mudslap",
+      "moveId": "mudslap",
+      "moveName": "Mud-Slap",
+      "type": "ground",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tutor:mudslap",
+      "moveId": "mudslap",
+      "moveName": "Mud-Slap",
+      "type": "ground",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "legacy:naturalgift",
+      "moveId": "naturalgift",
+      "moveName": "Natural Gift",
+      "type": "normal",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "egg:perishsong",
+      "moveId": "perishsong",
+      "moveName": "Perish Song",
+      "type": "normal",
+      "sourceType": "egg",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:poweruppunch",
+      "moveId": "poweruppunch",
+      "moveName": "Power-Up Punch",
+      "type": "fighting",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:protect",
+      "moveId": "protect",
+      "moveName": "Protect",
+      "type": "normal",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "egg:rage",
+      "moveId": "rage",
+      "moveName": "Rage",
+      "type": "normal",
+      "sourceType": "egg",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:rest",
+      "moveId": "rest",
+      "moveName": "Rest",
+      "type": "psychic",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tutor:rest",
+      "moveId": "rest",
+      "moveName": "Rest",
+      "type": "psychic",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "16:retaliate",
+      "moveId": "retaliate",
+      "moveName": "Retaliate",
+      "type": "normal",
+      "sourceType": "level",
+      "sourceValue": 16,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:retaliate",
+      "moveId": "retaliate",
+      "moveName": "Retaliate",
+      "type": "normal",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "legacy:return",
+      "moveId": "return",
+      "moveName": "Return",
+      "type": "normal",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:rockclimb",
+      "moveId": "rockclimb",
+      "moveName": "Rock Climb",
+      "type": "normal",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:rockslide",
+      "moveId": "rockslide",
+      "moveName": "Rock Slide",
+      "type": "rock",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tutor:rockslide",
+      "moveId": "rockslide",
+      "moveName": "Rock Slide",
+      "type": "rock",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:rocksmash",
+      "moveId": "rocksmash",
+      "moveName": "Rock Smash",
+      "type": "fighting",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tutor:rocksmash",
+      "moveId": "rocksmash",
+      "moveName": "Rock Smash",
+      "type": "fighting",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:rocktomb",
+      "moveId": "rocktomb",
+      "moveName": "Rock Tomb",
+      "type": "rock",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "legacy:round",
+      "moveId": "round",
+      "moveName": "Round",
+      "type": "normal",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:sandstorm",
+      "moveId": "sandstorm",
+      "moveName": "Sandstorm",
+      "type": "rock",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:scorchingsands",
+      "moveId": "scorchingsands",
+      "moveName": "Scorching Sands",
+      "type": "ground",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tutor:scorchingsands",
+      "moveId": "scorchingsands",
+      "moveName": "Scorching Sands",
+      "type": "ground",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:screech",
+      "moveId": "screech",
+      "moveName": "Screech",
+      "type": "normal",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "legacy:secretpower",
+      "moveId": "secretpower",
+      "moveName": "Secret Power",
+      "type": "normal",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "legacy:seismictoss",
+      "moveId": "seismictoss",
+      "moveName": "Seismic Toss",
+      "type": "fighting",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "egg:skullbash",
+      "moveId": "skullbash",
+      "moveName": "Skull Bash",
+      "type": "normal",
+      "sourceType": "egg",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:sleeptalk",
+      "moveId": "sleeptalk",
+      "moveName": "Sleep Talk",
+      "type": "normal",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tutor:sleeptalk",
+      "moveId": "sleeptalk",
+      "moveName": "Sleep Talk",
+      "type": "normal",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:smackdown",
+      "moveId": "smackdown",
+      "moveName": "Smack Down",
+      "type": "rock",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "legacy:snore",
+      "moveId": "snore",
+      "moveName": "Snore",
+      "type": "normal",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:stealthrock",
+      "moveId": "stealthrock",
+      "moveName": "Stealth Rock",
+      "type": "rock",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tutor:stealthrock",
+      "moveId": "stealthrock",
+      "moveName": "Stealth Rock",
+      "type": "rock",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "24:stompingtantrum",
+      "moveId": "stompingtantrum",
+      "moveName": "Stomping Tantrum",
+      "type": "ground",
+      "sourceType": "level",
+      "sourceValue": 24,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:stompingtantrum",
+      "moveId": "stompingtantrum",
+      "moveName": "Stomping Tantrum",
+      "type": "ground",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tutor:stompingtantrum",
+      "moveId": "stompingtantrum",
+      "moveName": "Stomping Tantrum",
+      "type": "ground",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:strength",
+      "moveId": "strength",
+      "moveName": "Strength",
+      "type": "normal",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "legacy:submission",
+      "moveId": "submission",
+      "moveName": "Submission",
+      "type": "fighting",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:substitute",
+      "moveId": "substitute",
+      "moveName": "Substitute",
+      "type": "normal",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:sunnyday",
+      "moveId": "sunnyday",
+      "moveName": "Sunny Day",
+      "type": "fire",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "legacy:swagger",
+      "moveId": "swagger",
+      "moveName": "Swagger",
+      "type": "normal",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:swift",
+      "moveId": "swift",
+      "moveName": "Swift",
+      "type": "normal",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tutor:swift",
+      "moveId": "swift",
+      "moveName": "Swift",
+      "type": "normal",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:swordsdance",
+      "moveId": "swordsdance",
+      "moveName": "Swords Dance",
+      "type": "normal",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "4:tailwhip",
+      "moveId": "tailwhip",
+      "moveName": "Tail Whip",
+      "type": "normal",
+      "sourceType": "level",
+      "sourceValue": 4,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "legacy:takedown",
+      "moveId": "takedown",
+      "moveName": "Take Down",
+      "type": "normal",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:terablast",
+      "moveId": "terablast",
+      "moveName": "Tera Blast",
+      "type": "normal",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:thief",
+      "moveId": "thief",
+      "moveName": "Thief",
+      "type": "dark",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "44:thrash",
+      "moveId": "thrash",
+      "moveName": "Thrash",
+      "type": "normal",
+      "sourceType": "level",
+      "sourceValue": 44,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:thunderpunch",
+      "moveId": "thunderpunch",
+      "moveName": "Thunder Punch",
+      "type": "electric",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tutor:thunderpunch",
+      "moveId": "thunderpunch",
+      "moveName": "Thunder Punch",
+      "type": "electric",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "legacy:toxic",
+      "moveId": "toxic",
+      "moveName": "Toxic",
+      "type": "poison",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:uproar",
+      "moveId": "uproar",
+      "moveName": "Uproar",
+      "type": "normal",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tutor:uproar",
+      "moveId": "uproar",
+      "moveName": "Uproar",
+      "type": "normal",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "legacy:watergun",
+      "moveId": "watergun",
+      "moveName": "Water Gun",
+      "type": "water",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    }
+  ],
+  "spawnEntries": [
+    {
+      "id": "cubone-1",
+      "sourceFile": "0104_cubone.json",
+      "pokemon": {
+        "raw": "cubone",
+        "slug": "cubone",
+        "aspectTokens": []
+      },
+      "type": "pokemon",
+      "spawnablePositionType": "grounded",
+      "bucket": "common",
+      "bucketWeight": 94.3,
+      "levelText": "7-32",
+      "levelMin": 7,
+      "levelMax": 32,
+      "weight": 1.8,
+      "presets": [
+        "natural",
+        "wild"
+      ],
+      "biomeHints": [
+        "Is Badlands",
+        "Is Desert",
+        "Soul Sand Valley",
+        "Gravel Desert"
+      ],
+      "condition": {
+        "neededBaseBlocks": [
+          "#cobblemon:natural"
+        ],
+        "minSkyLight": 8,
+        "maxSkyLight": 15,
+        "biomes": [
+          "#cobblemon:is_badlands",
+          "#cobblemon:is_desert"
+        ]
+      },
+      "anticondition": {
+        "neededBaseBlocks": [
+          "minecraft:farmland"
+        ],
+        "structures": [
+          "#minecraft:village"
+        ],
+        "neededNearbyBlocks": [
+          "#cobblemon:concrete_blocks"
+        ]
+      },
+      "weightMultipliers": [],
+      "raw": {
+        "id": "cubone-1",
+        "pokemon": "cubone",
+        "presets": [
+          "natural",
+          "wild"
+        ],
+        "type": "pokemon",
+        "spawnablePositionType": "grounded",
+        "bucket": "common",
+        "level": "7-32",
+        "weight": 1.8,
+        "condition": {
+          "minSkyLight": 8,
+          "maxSkyLight": 15,
+          "biomes": [
+            "#cobblemon:is_badlands",
+            "#cobblemon:is_desert"
+          ]
+        }
+      }
+    },
+    {
+      "id": "cubone-alola-2",
+      "sourceFile": "0104_cubone.json",
+      "pokemon": {
+        "raw": "cubone region_bias=alola",
+        "slug": "cubone",
+        "aspectTokens": [
+          "region_bias=alola"
+        ]
+      },
+      "type": "pokemon",
+      "spawnablePositionType": "grounded",
+      "bucket": "common",
+      "bucketWeight": 94.3,
+      "levelText": "7-32",
+      "levelMin": 7,
+      "levelMax": 32,
+      "weight": 5.4,
+      "presets": [
+        "natural",
+        "wild"
+      ],
+      "biomeHints": [
+        "Is Volcanic",
+        "Volcanic Plains",
+        "Volcano"
+      ],
+      "condition": {
+        "neededBaseBlocks": [
+          "#cobblemon:natural"
+        ],
+        "minSkyLight": 8,
+        "maxSkyLight": 15,
+        "biomes": [
+          "#cobblemon:is_volcanic"
+        ]
+      },
+      "anticondition": {
+        "neededBaseBlocks": [
+          "minecraft:farmland"
+        ],
+        "structures": [
+          "#minecraft:village"
+        ],
+        "neededNearbyBlocks": [
+          "#cobblemon:concrete_blocks"
+        ]
+      },
+      "weightMultipliers": [],
+      "raw": {
+        "id": "cubone-alola-2",
+        "pokemon": "cubone region_bias=alola",
+        "presets": [
+          "natural",
+          "wild"
+        ],
+        "type": "pokemon",
+        "spawnablePositionType": "grounded",
+        "bucket": "common",
+        "level": "7-32",
+        "weight": 5.4,
+        "condition": {
+          "minSkyLight": 8,
+          "maxSkyLight": 15,
+          "biomes": [
+            "#cobblemon:is_volcanic"
+          ]
+        }
+      }
+    },
+    {
+      "id": "cubone-alola-3",
+      "sourceFile": "0104_cubone.json",
+      "pokemon": {
+        "raw": "cubone region_bias=alola",
+        "slug": "cubone",
+        "aspectTokens": [
+          "region_bias=alola"
+        ]
+      },
+      "type": "pokemon",
+      "spawnablePositionType": "grounded",
+      "bucket": "common",
+      "bucketWeight": 94.3,
+      "levelText": "7-32",
+      "levelMin": 7,
+      "levelMax": 32,
+      "weight": 9,
+      "presets": [
+        "natural",
+        "wild"
+      ],
+      "biomeHints": [
+        "Nether/is Desert"
+      ],
+      "condition": {
+        "neededBaseBlocks": [
+          "#cobblemon:natural"
+        ],
+        "biomes": [
+          "#cobblemon:nether/is_desert"
+        ]
+      },
+      "anticondition": {
+        "neededBaseBlocks": [
+          "minecraft:farmland"
+        ],
+        "structures": [
+          "#minecraft:village"
+        ],
+        "neededNearbyBlocks": [
+          "#cobblemon:concrete_blocks"
+        ]
+      },
+      "weightMultipliers": [],
+      "raw": {
+        "id": "cubone-alola-3",
+        "pokemon": "cubone region_bias=alola",
+        "presets": [
+          "natural",
+          "wild"
+        ],
+        "type": "pokemon",
+        "spawnablePositionType": "grounded",
+        "bucket": "common",
+        "level": "7-32",
+        "weight": 9,
+        "condition": {
+          "biomes": [
+            "#cobblemon:nether/is_desert"
+          ]
+        }
+      }
+    }
+  ],
+  "forms": [
+    {
+      "name": "Alola-Bias",
+      "slug": "cubone-alolabias",
+      "aspects": [
+        "region-bias-alola"
+      ],
+      "labels": [
+        "gen7",
+        "customized_official",
+        "alolan_form"
+      ],
+      "types": [
+        "ground"
+      ],
+      "maleRatio": 0.5,
+      "height": 4,
+      "weight": 65,
+      "catchRate": null,
+      "baseExperienceYield": null,
+      "baseFriendship": null,
+      "eggCycles": null,
+      "baseStats": {},
+      "evYield": {},
+      "battleOnly": false,
+      "abilities": [],
+      "moves": [],
+      "evolutions": [
+        {
+          "id": "cubone_marowak",
+          "variant": "level_up",
+          "result": {
+            "raw": "marowak",
+            "slug": "marowak",
+            "aspectTokens": []
+          },
+          "consumeHeldItem": false,
+          "learnableMoves": [],
+          "requirementText": [
+            "Level 28+",
+            "Not in biome Evolution Regional Cubone Alolabiome",
+            "Biome Evolution Regional Cubone Kantobiome",
+            "Not in biome Is Nether"
+          ],
+          "requirements": [
+            {
+              "variant": "level",
+              "text": "Level 28+",
+              "raw": {
+                "variant": "level",
+                "minLevel": 28
+              }
+            },
+            {
+              "variant": "biome",
+              "text": "Not in biome Evolution Regional Cubone Alolabiome",
+              "raw": {
+                "variant": "biome",
+                "biomeAnticondition": "#cobblemon:evolution/regional/cubone_alolabiome"
+              }
+            },
+            {
+              "variant": "biome",
+              "text": "Biome Evolution Regional Cubone Kantobiome",
+              "raw": {
+                "variant": "biome",
+                "biomeCondition": "#cobblemon:evolution/regional/cubone_kantobiome"
+              }
+            },
+            {
+              "variant": "biome",
+              "text": "Not in biome Is Nether",
+              "raw": {
+                "variant": "biome",
+                "biomeAnticondition": "#minecraft:is_nether"
+              }
+            }
+          ],
+          "requiredContext": null,
+          "fromForm": "Alola-Bias",
+          "raw": {
+            "id": "cubone_marowak",
+            "variant": "level_up",
+            "result": "marowak",
+            "consumeHeldItem": false,
+            "learnableMoves": [],
+            "requirements": [
+              {
+                "variant": "level",
+                "minLevel": 28
+              },
+              {
+                "variant": "biome",
+                "biomeAnticondition": "#cobblemon:evolution/regional/cubone_alolabiome"
+              },
+              {
+                "variant": "biome",
+                "biomeCondition": "#cobblemon:evolution/regional/cubone_kantobiome"
+              },
+              {
+                "variant": "biome",
+                "biomeAnticondition": "#minecraft:is_nether"
+              }
+            ]
+          }
+        },
+        {
+          "id": "cubone_marowakalola",
+          "variant": "level_up",
+          "result": {
+            "raw": "marowak alolan",
+            "slug": "marowak",
+            "aspectTokens": [
+              "alolan"
+            ]
+          },
+          "consumeHeldItem": false,
+          "learnableMoves": [
+            "shadowbone"
+          ],
+          "requirementText": [
+            "Level 28+",
+            "Time: Night",
+            "Not in biome Evolution Regional Cubone Kantobiome",
+            "Not in biome Is Nether"
+          ],
+          "requirements": [
+            {
+              "variant": "level",
+              "text": "Level 28+",
+              "raw": {
+                "variant": "level",
+                "minLevel": 28
+              }
+            },
+            {
+              "variant": "time_range",
+              "text": "Time: Night",
+              "raw": {
+                "variant": "time_range",
+                "range": "night"
+              }
+            },
+            {
+              "variant": "biome",
+              "text": "Not in biome Evolution Regional Cubone Kantobiome",
+              "raw": {
+                "variant": "biome",
+                "biomeAnticondition": "#cobblemon:evolution/regional/cubone_kantobiome"
+              }
+            },
+            {
+              "variant": "biome",
+              "text": "Not in biome Is Nether",
+              "raw": {
+                "variant": "biome",
+                "biomeAnticondition": "#minecraft:is_nether"
+              }
+            }
+          ],
+          "requiredContext": null,
+          "fromForm": "Alola-Bias",
+          "raw": {
+            "id": "cubone_marowakalola",
+            "variant": "level_up",
+            "result": "marowak alolan",
+            "consumeHeldItem": false,
+            "learnableMoves": [
+              "shadowbone"
+            ],
+            "requirements": [
+              {
+                "variant": "level",
+                "minLevel": 28
+              },
+              {
+                "variant": "time_range",
+                "range": "night"
+              },
+              {
+                "variant": "biome",
+                "biomeAnticondition": "#cobblemon:evolution/regional/cubone_kantobiome"
+              },
+              {
+                "variant": "biome",
+                "biomeAnticondition": "#minecraft:is_nether"
+              }
+            ]
+          }
+        },
+        {
+          "id": "cubone_nether_marowakalola",
+          "variant": "level_up",
+          "result": {
+            "raw": "marowak alolan",
+            "slug": "marowak",
+            "aspectTokens": [
+              "alolan"
+            ]
+          },
+          "consumeHeldItem": false,
+          "learnableMoves": [],
+          "requirementText": [
+            "Level 28+",
+            "Not in biome Is Overworld",
+            "Biome Is Nether"
+          ],
+          "requirements": [
+            {
+              "variant": "level",
+              "text": "Level 28+",
+              "raw": {
+                "variant": "level",
+                "minLevel": 28
+              }
+            },
+            {
+              "variant": "biome",
+              "text": "Not in biome Is Overworld",
+              "raw": {
+                "variant": "biome",
+                "biomeAnticondition": "#cobblemon:is_overworld"
+              }
+            },
+            {
+              "variant": "biome",
+              "text": "Biome Is Nether",
+              "raw": {
+                "variant": "biome",
+                "biomeCondition": "#minecraft:is_nether"
+              }
+            }
+          ],
+          "requiredContext": null,
+          "fromForm": "Alola-Bias",
+          "raw": {
+            "id": "cubone_nether_marowakalola",
+            "variant": "level_up",
+            "result": "marowak alolan",
+            "consumeHeldItem": false,
+            "learnableMoves": [],
+            "requirements": [
+              {
+                "variant": "level",
+                "minLevel": 28
+              },
+              {
+                "variant": "biome",
+                "biomeAnticondition": "#cobblemon:is_overworld"
+              },
+              {
+                "variant": "biome",
+                "biomeCondition": "#minecraft:is_nether"
+              }
+            ]
+          }
+        }
+      ],
+      "raw": {
+        "name": "Alola-Bias",
+        "primaryType": "ground",
+        "maleRatio": 0.5,
+        "height": 4,
+        "weight": 65,
+        "pokedex": [
+          "cobblemon.species.cubone-alolabias.desc"
+        ],
+        "labels": [
+          "gen7",
+          "customized_official",
+          "alolan_form"
+        ],
+        "aspects": [
+          "region-bias-alola"
+        ],
+        "dynamaxBlocked": false,
+        "evolutions": [
+          {
+            "id": "cubone_marowak",
+            "variant": "level_up",
+            "result": "marowak",
+            "consumeHeldItem": false,
+            "learnableMoves": [],
+            "requirements": [
+              {
+                "variant": "level",
+                "minLevel": 28
+              },
+              {
+                "variant": "biome",
+                "biomeAnticondition": "#cobblemon:evolution/regional/cubone_alolabiome"
+              },
+              {
+                "variant": "biome",
+                "biomeCondition": "#cobblemon:evolution/regional/cubone_kantobiome"
+              },
+              {
+                "variant": "biome",
+                "biomeAnticondition": "#minecraft:is_nether"
+              }
+            ]
+          },
+          {
+            "id": "cubone_marowakalola",
+            "variant": "level_up",
+            "result": "marowak alolan",
+            "consumeHeldItem": false,
+            "learnableMoves": [
+              "shadowbone"
+            ],
+            "requirements": [
+              {
+                "variant": "level",
+                "minLevel": 28
+              },
+              {
+                "variant": "time_range",
+                "range": "night"
+              },
+              {
+                "variant": "biome",
+                "biomeAnticondition": "#cobblemon:evolution/regional/cubone_kantobiome"
+              },
+              {
+                "variant": "biome",
+                "biomeAnticondition": "#minecraft:is_nether"
+              }
+            ]
+          },
+          {
+            "id": "cubone_nether_marowakalola",
+            "variant": "level_up",
+            "result": "marowak alolan",
+            "consumeHeldItem": false,
+            "learnableMoves": [],
+            "requirements": [
+              {
+                "variant": "level",
+                "minLevel": 28
+              },
+              {
+                "variant": "biome",
+                "biomeAnticondition": "#cobblemon:is_overworld"
+              },
+              {
+                "variant": "biome",
+                "biomeCondition": "#minecraft:is_nether"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ],
+  "rawSpecies": {
+    "implemented": true,
+    "nationalPokedexNumber": 104,
+    "name": "Cubone",
+    "primaryType": "ground",
+    "maleRatio": 0.5,
+    "height": 4,
+    "weight": 65,
+    "pokedex": [
+      "cobblemon.species.cubone.desc"
+    ],
+    "labels": [
+      "gen1",
+      "kantonian_form"
+    ],
+    "aspects": [],
+    "abilities": [
+      "rockhead",
+      "lightningrod",
+      "h:battlearmor"
+    ],
+    "eggGroups": [
+      "monster"
+    ],
+    "baseStats": {
+      "hp": 50,
+      "attack": 50,
+      "defence": 95,
+      "special_attack": 40,
+      "special_defence": 50,
+      "speed": 35
+    },
+    "evYield": {
+      "hp": 0,
+      "attack": 0,
+      "defence": 1,
+      "special_attack": 0,
+      "special_defence": 0,
+      "speed": 0
+    },
+    "baseExperienceYield": 64,
+    "experienceGroup": "medium_fast",
+    "catchRate": 190,
+    "eggCycles": 20,
+    "baseFriendship": 50,
+    "features": [
+      "alolan",
+      "region_bias"
+    ],
+    "baseScale": 0.7,
+    "hitbox": {
+      "width": 0.55,
+      "height": 0.87,
+      "fixed": false
+    },
+    "drops": {
+      "amount": 2,
+      "entries": [
+        {
+          "item": "minecraft:bone",
+          "quantityRange": "0-1"
+        },
+        {
+          "item": "cobblemon:nanab_berry",
+          "percentage": 2.5
+        }
+      ]
+    },
+    "moves": [
+      "1:growl",
+      "1:boneclub",
+      "1:leer",
+      "1:mudslap",
+      "4:tailwhip",
+      "8:falseswipe",
+      "12:headbutt",
+      "16:retaliate",
+      "20:fling",
+      "24:stompingtantrum",
+      "29:bonerush",
+      "32:focusenergy",
+      "36:endeavor",
+      "40:bonemerang",
+      "44:thrash",
+      "48:doubleedge",
+      "egg:ancientpower",
+      "egg:bellydrum",
+      "egg:chipaway",
+      "egg:curse",
+      "egg:detect",
+      "egg:doublekick",
+      "egg:leer",
+      "egg:perishsong",
+      "egg:rage",
+      "egg:skullbash",
+      "tm:aerialace",
+      "tm:ancientpower",
+      "tm:blizzard",
+      "tm:bodyslam",
+      "tm:brickbreak",
+      "tm:brutalswing",
+      "tm:bulldoze",
+      "tm:curse",
+      "tm:dig",
+      "tm:doubleedge",
+      "tm:earthpower",
+      "tm:earthquake",
+      "tm:echoedvoice",
+      "tm:endeavor",
+      "tm:endure",
+      "tm:facade",
+      "tm:falseswipe",
+      "tm:fireblast",
+      "tm:firepunch",
+      "tm:flamethrower",
+      "tm:fling",
+      "tm:focusenergy",
+      "tm:focuspunch",
+      "tm:furycutter",
+      "tm:headbutt",
+      "tm:icebeam",
+      "tm:icywind",
+      "tm:incinerate",
+      "tm:irondefense",
+      "tm:ironhead",
+      "tm:irontail",
+      "tm:knockoff",
+      "tm:lowkick",
+      "tm:megakick",
+      "tm:megapunch",
+      "tm:mudslap",
+      "tm:poweruppunch",
+      "tm:protect",
+      "tm:rest",
+      "tm:retaliate",
+      "tm:rockclimb",
+      "tm:rockslide",
+      "tm:rocksmash",
+      "tm:rocktomb",
+      "tm:sandstorm",
+      "tm:scorchingsands",
+      "tm:screech",
+      "tm:sleeptalk",
+      "tm:smackdown",
+      "tm:stealthrock",
+      "tm:stompingtantrum",
+      "tm:strength",
+      "tm:substitute",
+      "tm:sunnyday",
+      "tm:swift",
+      "tm:swordsdance",
+      "tm:terablast",
+      "tm:thief",
+      "tm:thunderpunch",
+      "tm:uproar",
+      "tutor:aerialace",
+      "tutor:ancientpower",
+      "tutor:bulldoze",
+      "tutor:earthpower",
+      "tutor:endeavor",
+      "tutor:falseswipe",
+      "tutor:firepunch",
+      "tutor:flamethrower",
+      "tutor:focusenergy",
+      "tutor:focuspunch",
+      "tutor:furycutter",
+      "tutor:icebeam",
+      "tutor:icywind",
+      "tutor:irondefense",
+      "tutor:ironhead",
+      "tutor:irontail",
+      "tutor:knockoff",
+      "tutor:lowkick",
+      "tutor:mudslap",
+      "tutor:rest",
+      "tutor:rockslide",
+      "tutor:rocksmash",
+      "tutor:scorchingsands",
+      "tutor:sleeptalk",
+      "tutor:stealthrock",
+      "tutor:stompingtantrum",
+      "tutor:swift",
+      "tutor:thunderpunch",
+      "tutor:uproar",
+      "legacy:attract",
+      "legacy:bide",
+      "legacy:bubblebeam",
+      "legacy:captivate",
+      "legacy:confide",
+      "legacy:counter",
+      "legacy:doubleteam",
+      "legacy:dynamicpunch",
+      "legacy:fissure",
+      "legacy:frustration",
+      "legacy:hiddenpower",
+      "legacy:mimic",
+      "legacy:naturalgift",
+      "legacy:return",
+      "legacy:round",
+      "legacy:secretpower",
+      "legacy:seismictoss",
+      "legacy:snore",
+      "legacy:submission",
+      "legacy:swagger",
+      "legacy:takedown",
+      "legacy:toxic",
+      "legacy:watergun"
+    ],
+    "evolutions": [
+      {
+        "id": "cubone_marowak",
+        "variant": "level_up",
+        "result": "marowak",
+        "consumeHeldItem": false,
+        "learnableMoves": [],
+        "requirements": [
+          {
+            "variant": "level",
+            "minLevel": 28
+          },
+          {
+            "variant": "biome",
+            "biomeAnticondition": "#cobblemon:evolution/regional/cubone_alolabiome"
+          },
+          {
+            "variant": "biome",
+            "biomeAnticondition": "#minecraft:is_nether"
+          }
+        ]
+      },
+      {
+        "id": "cubone_marowakalola",
+        "variant": "level_up",
+        "result": "marowak alolan",
+        "consumeHeldItem": false,
+        "learnableMoves": [
+          "shadowbone"
+        ],
+        "requirements": [
+          {
+            "variant": "level",
+            "minLevel": 28
+          },
+          {
+            "variant": "time_range",
+            "range": "night"
+          },
+          {
+            "variant": "biome",
+            "biomeCondition": "#cobblemon:evolution/regional/cubone_alolabiome"
+          },
+          {
+            "variant": "biome",
+            "biomeAnticondition": "#cobblemon:evolution/regional/cubone_kantobiome"
+          },
+          {
+            "variant": "biome",
+            "biomeAnticondition": "#minecraft:is_nether"
+          }
+        ]
+      },
+      {
+        "id": "cubone_nether_marowakalola",
+        "variant": "level_up",
+        "result": "marowak alolan",
+        "consumeHeldItem": false,
+        "learnableMoves": [],
+        "requirements": [
+          {
+            "variant": "level",
+            "minLevel": 28
+          },
+          {
+            "variant": "biome",
+            "biomeAnticondition": "#cobblemon:is_overworld"
+          },
+          {
+            "variant": "biome",
+            "biomeCondition": "#minecraft:is_nether"
+          }
+        ]
+      }
+    ],
+    "forms": [
+      {
+        "name": "Alola-Bias",
+        "primaryType": "ground",
+        "maleRatio": 0.5,
+        "height": 4,
+        "weight": 65,
+        "pokedex": [
+          "cobblemon.species.cubone-alolabias.desc"
+        ],
+        "labels": [
+          "gen7",
+          "customized_official",
+          "alolan_form"
+        ],
+        "aspects": [
+          "region-bias-alola"
+        ],
+        "dynamaxBlocked": false,
+        "evolutions": [
+          {
+            "id": "cubone_marowak",
+            "variant": "level_up",
+            "result": "marowak",
+            "consumeHeldItem": false,
+            "learnableMoves": [],
+            "requirements": [
+              {
+                "variant": "level",
+                "minLevel": 28
+              },
+              {
+                "variant": "biome",
+                "biomeAnticondition": "#cobblemon:evolution/regional/cubone_alolabiome"
+              },
+              {
+                "variant": "biome",
+                "biomeCondition": "#cobblemon:evolution/regional/cubone_kantobiome"
+              },
+              {
+                "variant": "biome",
+                "biomeAnticondition": "#minecraft:is_nether"
+              }
+            ]
+          },
+          {
+            "id": "cubone_marowakalola",
+            "variant": "level_up",
+            "result": "marowak alolan",
+            "consumeHeldItem": false,
+            "learnableMoves": [
+              "shadowbone"
+            ],
+            "requirements": [
+              {
+                "variant": "level",
+                "minLevel": 28
+              },
+              {
+                "variant": "time_range",
+                "range": "night"
+              },
+              {
+                "variant": "biome",
+                "biomeAnticondition": "#cobblemon:evolution/regional/cubone_kantobiome"
+              },
+              {
+                "variant": "biome",
+                "biomeAnticondition": "#minecraft:is_nether"
+              }
+            ]
+          },
+          {
+            "id": "cubone_nether_marowakalola",
+            "variant": "level_up",
+            "result": "marowak alolan",
+            "consumeHeldItem": false,
+            "learnableMoves": [],
+            "requirements": [
+              {
+                "variant": "level",
+                "minLevel": 28
+              },
+              {
+                "variant": "biome",
+                "biomeAnticondition": "#cobblemon:is_overworld"
+              },
+              {
+                "variant": "biome",
+                "biomeCondition": "#minecraft:is_nether"
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "behaviour": {
+      "herd": {
+        "maxSize": "2",
+        "toleratedLeaders": [
+          {
+            "pokemon": "marowak",
+            "tier": 1
+          }
+        ]
+      },
+      "resting": {
+        "willSleepOnBed": true,
+        "drowsyChance": 0.0333,
+        "rouseChance": 0.0042
+      },
+      "moving": {
+        "swim": {
+          "avoidsWater": true
+        }
+      },
+      "combat": {
+        "willDefendOwner": true
+      }
+    }
+  }
+}

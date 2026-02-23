@@ -1,5 +1,4 @@
 import type {
-  MoveLearnersIndex,
   PaletteResult,
   PokemonListItem,
   QueryFacet,
@@ -34,8 +33,7 @@ type FacetExtraction = {
 export function resolveQuery(
   query: string,
   searchIndex: SearchDocument[],
-  pokemonList: PokemonListItem[],
-  moveLearners: MoveLearnersIndex
+  pokemonList: PokemonListItem[]
 ): QueryResolution {
   const normalizedQuery = normalizeSearchText(query)
 
@@ -65,7 +63,7 @@ export function resolveQuery(
 
   if (tokens.length > 1 && MOVE_KEYWORDS.has(tokens[0])) {
     const moveTerm = tokens.slice(1).join(" ")
-    const moveResults = matchMoves(moveTerm, moveDocs, moveLearners)
+    const moveResults = matchMoves(moveTerm, moveDocs)
     if (moveResults.length > 0) {
       return {
         intent: "move-learners",
@@ -118,11 +116,7 @@ export function resolveQuery(
   }
 }
 
-function matchMoves(
-  term: string,
-  moveDocs: SearchDocument[],
-  moveLearners: MoveLearnersIndex
-): PaletteResult[] {
+function matchMoves(term: string, moveDocs: SearchDocument[]): PaletteResult[] {
   const normalizedTerm = normalizeSearchText(term)
   if (!normalizedTerm) {
     return []
@@ -162,7 +156,7 @@ function matchMoves(
         score += 10
       }
 
-      const learnerCount = doc.moveId ? (moveLearners[doc.moveId]?.learners.length ?? 0) : 0
+      const learnerCount = doc.learnerCount ?? 0
 
       return {
         doc,
@@ -181,7 +175,7 @@ function matchMoves(
 
   return scored.slice(0, MAX_MOVE_RESULTS).map((entry) => {
     const moveId = entry.doc.moveId ?? ""
-    const learnerCount = moveLearners[moveId]?.learners.length ?? 0
+    const learnerCount = entry.doc.learnerCount ?? 0
 
     return {
       id: entry.doc.id,

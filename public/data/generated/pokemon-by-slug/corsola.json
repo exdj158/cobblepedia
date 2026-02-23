@@ -1,0 +1,3907 @@
+{
+  "slug": "corsola",
+  "name": "Corsola",
+  "dexNumber": 222,
+  "implemented": true,
+  "types": [
+    "water",
+    "rock"
+  ],
+  "abilities": [
+    {
+      "id": "hustle",
+      "hidden": false,
+      "label": "Hustle",
+      "slot": "first"
+    },
+    {
+      "id": "naturalcure",
+      "hidden": false,
+      "label": "Naturalcure",
+      "slot": "second"
+    },
+    {
+      "id": "regenerator",
+      "hidden": true,
+      "label": "Regenerator",
+      "slot": "hidden"
+    }
+  ],
+  "eggGroups": [
+    "water_1",
+    "water_3"
+  ],
+  "labels": [
+    "gen2",
+    "johtonian_form"
+  ],
+  "aspects": [],
+  "aliases": [
+    "corsola",
+    "corsola galar",
+    "galar"
+  ],
+  "maleRatio": 0.25,
+  "height": 6,
+  "weight": 50,
+  "catchRate": 60,
+  "baseExperienceYield": 144,
+  "baseFriendship": 50,
+  "eggCycles": 20,
+  "baseStats": {
+    "hp": 65,
+    "attack": 55,
+    "defence": 95,
+    "special_attack": 65,
+    "special_defence": 95,
+    "speed": 35
+  },
+  "evYield": {
+    "hp": 0,
+    "attack": 0,
+    "defence": 1,
+    "special_attack": 0,
+    "special_defence": 1,
+    "speed": 0
+  },
+  "preEvolution": null,
+  "evolutions": [],
+  "evolutionFamily": {
+    "members": [
+      {
+        "nodeId": "corsola",
+        "slug": "corsola",
+        "name": "Corsola",
+        "dexNumber": 222,
+        "formSlug": null,
+        "formName": null
+      },
+      {
+        "nodeId": "corsola-galar",
+        "slug": "corsola",
+        "name": "Corsola",
+        "dexNumber": 222,
+        "formSlug": "corsola-galar",
+        "formName": "Galar"
+      },
+      {
+        "nodeId": "cursola",
+        "slug": "cursola",
+        "name": "Cursola",
+        "dexNumber": 864,
+        "formSlug": null,
+        "formName": null
+      }
+    ],
+    "edges": [
+      {
+        "fromNodeId": "corsola-galar",
+        "toNodeId": "cursola",
+        "fromSlug": "corsola",
+        "toSlug": "cursola",
+        "method": "level_up",
+        "requirementText": [
+          "Level 38+"
+        ]
+      }
+    ],
+    "roots": [
+      "corsola",
+      "corsola-galar"
+    ]
+  },
+  "moves": [
+    {
+      "raw": "tm:amnesia",
+      "moveId": "amnesia",
+      "moveName": "Amnesia",
+      "type": "psychic",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "20:ancientpower",
+      "moveId": "ancientpower",
+      "moveName": "Ancient Power",
+      "type": "rock",
+      "sourceType": "level",
+      "sourceValue": 20,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:ancientpower",
+      "moveId": "ancientpower",
+      "moveName": "Ancient Power",
+      "type": "rock",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tutor:ancientpower",
+      "moveId": "ancientpower",
+      "moveName": "Ancient Power",
+      "type": "rock",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "egg:aquaring",
+      "moveId": "aquaring",
+      "moveName": "Aqua Ring",
+      "type": "water",
+      "sourceType": "egg",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "10:aquaring",
+      "moveId": "aquaring",
+      "moveName": "Aqua Ring",
+      "type": "water",
+      "sourceType": "level",
+      "sourceValue": 10,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "legacy:attract",
+      "moveId": "attract",
+      "moveName": "Attract",
+      "type": "normal",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "egg:barrier",
+      "moveId": "barrier",
+      "moveName": "Barrier",
+      "type": "psychic",
+      "sourceType": "egg",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "egg:bide",
+      "moveId": "bide",
+      "moveName": "Bide",
+      "type": "normal",
+      "sourceType": "egg",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:blizzard",
+      "moveId": "blizzard",
+      "moveName": "Blizzard",
+      "type": "ice",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:bodyslam",
+      "moveId": "bodyslam",
+      "moveName": "Body Slam",
+      "type": "normal",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:brine",
+      "moveId": "brine",
+      "moveName": "Brine",
+      "type": "water",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "1:bubble",
+      "moveId": "bubble",
+      "moveName": "Bubble",
+      "type": "water",
+      "sourceType": "level",
+      "sourceValue": 1,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "25:bubblebeam",
+      "moveId": "bubblebeam",
+      "moveName": "Bubble Beam",
+      "type": "water",
+      "sourceType": "level",
+      "sourceValue": 25,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:bulldoze",
+      "moveId": "bulldoze",
+      "moveName": "Bulldoze",
+      "type": "ground",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tutor:bulldoze",
+      "moveId": "bulldoze",
+      "moveName": "Bulldoze",
+      "type": "ground",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:calmmind",
+      "moveId": "calmmind",
+      "moveName": "Calm Mind",
+      "type": "psychic",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tutor:calmmind",
+      "moveId": "calmmind",
+      "moveName": "Calm Mind",
+      "type": "psychic",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "egg:camouflage",
+      "moveId": "camouflage",
+      "moveName": "Camouflage",
+      "type": "normal",
+      "sourceType": "egg",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "legacy:captivate",
+      "moveId": "captivate",
+      "moveName": "Captivate",
+      "type": "normal",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "legacy:confide",
+      "moveId": "confide",
+      "moveName": "Confide",
+      "type": "normal",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "egg:confuseray",
+      "moveId": "confuseray",
+      "moveName": "Confuse Ray",
+      "type": "ghost",
+      "sourceType": "egg",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:confuseray",
+      "moveId": "confuseray",
+      "moveName": "Confuse Ray",
+      "type": "ghost",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "egg:curse",
+      "moveId": "curse",
+      "moveName": "Curse",
+      "type": "ghost",
+      "sourceType": "egg",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:curse",
+      "moveId": "curse",
+      "moveName": "Curse",
+      "type": "ghost",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "legacy:defensecurl",
+      "moveId": "defensecurl",
+      "moveName": "Defense Curl",
+      "type": "normal",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:dig",
+      "moveId": "dig",
+      "moveName": "Dig",
+      "type": "ground",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "legacy:doubleteam",
+      "moveId": "doubleteam",
+      "moveName": "Double Team",
+      "type": "normal",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "legacy:doubleedge",
+      "moveId": "doubleedge",
+      "moveName": "Double-Edge",
+      "type": "normal",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "45:earthpower",
+      "moveId": "earthpower",
+      "moveName": "Earth Power",
+      "type": "ground",
+      "sourceType": "level",
+      "sourceValue": 45,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:earthpower",
+      "moveId": "earthpower",
+      "moveName": "Earth Power",
+      "type": "ground",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tutor:earthpower",
+      "moveId": "earthpower",
+      "moveName": "Earth Power",
+      "type": "ground",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:earthquake",
+      "moveId": "earthquake",
+      "moveName": "Earthquake",
+      "type": "ground",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:endeavor",
+      "moveId": "endeavor",
+      "moveName": "Endeavor",
+      "type": "normal",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tutor:endeavor",
+      "moveId": "endeavor",
+      "moveName": "Endeavor",
+      "type": "normal",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "15:endure",
+      "moveId": "endure",
+      "moveName": "Endure",
+      "type": "normal",
+      "sourceType": "level",
+      "sourceValue": 15,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:endure",
+      "moveId": "endure",
+      "moveName": "Endure",
+      "type": "normal",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:explosion",
+      "moveId": "explosion",
+      "moveName": "Explosion",
+      "type": "normal",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:facade",
+      "moveId": "facade",
+      "moveName": "Facade",
+      "type": "normal",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "30:flail",
+      "moveId": "flail",
+      "moveName": "Flail",
+      "type": "normal",
+      "sourceType": "level",
+      "sourceValue": 30,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "legacy:frustration",
+      "moveId": "frustration",
+      "moveName": "Frustration",
+      "type": "normal",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:hail",
+      "moveId": "hail",
+      "moveName": "Hail",
+      "type": "ice",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "1:harden",
+      "moveId": "harden",
+      "moveName": "Harden",
+      "type": "normal",
+      "sourceType": "level",
+      "sourceValue": 1,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "egg:headsmash",
+      "moveId": "headsmash",
+      "moveName": "Head Smash",
+      "type": "rock",
+      "sourceType": "egg",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:headbutt",
+      "moveId": "headbutt",
+      "moveName": "Headbutt",
+      "type": "normal",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "legacy:hiddenpower",
+      "moveId": "hiddenpower",
+      "moveName": "Hidden Power",
+      "type": "normal",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:hydropump",
+      "moveId": "hydropump",
+      "moveName": "Hydro Pump",
+      "type": "water",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:icebeam",
+      "moveId": "icebeam",
+      "moveName": "Ice Beam",
+      "type": "ice",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tutor:icebeam",
+      "moveId": "icebeam",
+      "moveName": "Ice Beam",
+      "type": "ice",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:iciclespear",
+      "moveId": "iciclespear",
+      "moveName": "Icicle Spear",
+      "type": "ice",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:icywind",
+      "moveId": "icywind",
+      "moveName": "Icy Wind",
+      "type": "ice",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tutor:icywind",
+      "moveId": "icywind",
+      "moveName": "Icy Wind",
+      "type": "ice",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "egg:ingrain",
+      "moveId": "ingrain",
+      "moveName": "Ingrain",
+      "type": "grass",
+      "sourceType": "egg",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:irondefense",
+      "moveId": "irondefense",
+      "moveName": "Iron Defense",
+      "type": "steel",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tutor:irondefense",
+      "moveId": "irondefense",
+      "moveName": "Iron Defense",
+      "type": "steel",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "35:lifedew",
+      "moveId": "lifedew",
+      "moveName": "Life Dew",
+      "type": "water",
+      "sourceType": "level",
+      "sourceValue": 35,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:lightscreen",
+      "moveId": "lightscreen",
+      "moveName": "Light Screen",
+      "type": "psychic",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:liquidation",
+      "moveId": "liquidation",
+      "moveName": "Liquidation",
+      "type": "water",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tutor:liquidation",
+      "moveId": "liquidation",
+      "moveName": "Liquidation",
+      "type": "water",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "1:luckychant",
+      "moveId": "luckychant",
+      "moveName": "Lucky Chant",
+      "type": "normal",
+      "sourceType": "level",
+      "sourceValue": 1,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:magiccoat",
+      "moveId": "magiccoat",
+      "moveName": "Magic Coat",
+      "type": "psychic",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tutor:magiccoat",
+      "moveId": "magiccoat",
+      "moveName": "Magic Coat",
+      "type": "psychic",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:meteorbeam",
+      "moveId": "meteorbeam",
+      "moveName": "Meteor Beam",
+      "type": "rock",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tutor:meteorbeam",
+      "moveId": "meteorbeam",
+      "moveName": "Meteor Beam",
+      "type": "rock",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "legacy:mimic",
+      "moveId": "mimic",
+      "moveName": "Mimic",
+      "type": "normal",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "55:mirrorcoat",
+      "moveId": "mirrorcoat",
+      "moveName": "Mirror Coat",
+      "type": "psychic",
+      "sourceType": "level",
+      "sourceValue": 55,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "egg:mist",
+      "moveId": "mist",
+      "moveName": "Mist",
+      "type": "ice",
+      "sourceType": "egg",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "special:mudsport",
+      "moveId": "mudsport",
+      "moveName": "Mud Sport",
+      "type": "ground",
+      "sourceType": "special",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:mudslap",
+      "moveId": "mudslap",
+      "moveName": "Mud-Slap",
+      "type": "ground",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tutor:mudslap",
+      "moveId": "mudslap",
+      "moveName": "Mud-Slap",
+      "type": "ground",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "legacy:naturalgift",
+      "moveId": "naturalgift",
+      "moveName": "Natural Gift",
+      "type": "normal",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "egg:naturepower",
+      "moveId": "naturepower",
+      "moveName": "Nature Power",
+      "type": "normal",
+      "sourceType": "egg",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:naturepower",
+      "moveId": "naturepower",
+      "moveName": "Nature Power",
+      "type": "normal",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "40:powergem",
+      "moveId": "powergem",
+      "moveName": "Power Gem",
+      "type": "rock",
+      "sourceType": "level",
+      "sourceValue": 40,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:powergem",
+      "moveId": "powergem",
+      "moveName": "Power Gem",
+      "type": "rock",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:protect",
+      "moveId": "protect",
+      "moveName": "Protect",
+      "type": "normal",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:psychic",
+      "moveId": "psychic",
+      "moveName": "Psychic",
+      "type": "psychic",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tutor:psychic",
+      "moveId": "psychic",
+      "moveName": "Psychic",
+      "type": "psychic",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:raindance",
+      "moveId": "raindance",
+      "moveName": "Rain Dance",
+      "type": "water",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "50:recover",
+      "moveId": "recover",
+      "moveName": "Recover",
+      "type": "normal",
+      "sourceType": "level",
+      "sourceValue": 50,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:reflect",
+      "moveId": "reflect",
+      "moveName": "Reflect",
+      "type": "psychic",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "1:refresh",
+      "moveId": "refresh",
+      "moveName": "Refresh",
+      "type": "normal",
+      "sourceType": "level",
+      "sourceValue": 1,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:rest",
+      "moveId": "rest",
+      "moveName": "Rest",
+      "type": "psychic",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tutor:rest",
+      "moveId": "rest",
+      "moveName": "Rest",
+      "type": "psychic",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "legacy:return",
+      "moveId": "return",
+      "moveName": "Return",
+      "type": "normal",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:rockblast",
+      "moveId": "rockblast",
+      "moveName": "Rock Blast",
+      "type": "rock",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:rockpolish",
+      "moveId": "rockpolish",
+      "moveName": "Rock Polish",
+      "type": "rock",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:rockslide",
+      "moveId": "rockslide",
+      "moveName": "Rock Slide",
+      "type": "rock",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tutor:rockslide",
+      "moveId": "rockslide",
+      "moveName": "Rock Slide",
+      "type": "rock",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:rocksmash",
+      "moveId": "rocksmash",
+      "moveName": "Rock Smash",
+      "type": "fighting",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tutor:rocksmash",
+      "moveId": "rocksmash",
+      "moveName": "Rock Smash",
+      "type": "fighting",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:rocktomb",
+      "moveId": "rocktomb",
+      "moveName": "Rock Tomb",
+      "type": "rock",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:rollout",
+      "moveId": "rollout",
+      "moveName": "Rollout",
+      "type": "rock",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tutor:rollout",
+      "moveId": "rollout",
+      "moveName": "Rollout",
+      "type": "rock",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "legacy:round",
+      "moveId": "round",
+      "moveName": "Round",
+      "type": "normal",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:safeguard",
+      "moveId": "safeguard",
+      "moveName": "Safeguard",
+      "type": "normal",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:sandstorm",
+      "moveId": "sandstorm",
+      "moveName": "Sandstorm",
+      "type": "rock",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:scald",
+      "moveId": "scald",
+      "moveName": "Scald",
+      "type": "water",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:screech",
+      "moveId": "screech",
+      "moveName": "Screech",
+      "type": "normal",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "legacy:secretpower",
+      "moveId": "secretpower",
+      "moveName": "Secret Power",
+      "type": "normal",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:selfdestruct",
+      "moveId": "selfdestruct",
+      "moveName": "Self-Destruct",
+      "type": "normal",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:shadowball",
+      "moveId": "shadowball",
+      "moveName": "Shadow Ball",
+      "type": "ghost",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tutor:shadowball",
+      "moveId": "shadowball",
+      "moveName": "Shadow Ball",
+      "type": "ghost",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:sleeptalk",
+      "moveId": "sleeptalk",
+      "moveName": "Sleep Talk",
+      "type": "normal",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tutor:sleeptalk",
+      "moveId": "sleeptalk",
+      "moveName": "Sleep Talk",
+      "type": "normal",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "legacy:snore",
+      "moveId": "snore",
+      "moveName": "Snore",
+      "type": "normal",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "1:spikecannon",
+      "moveId": "spikecannon",
+      "moveName": "Spike Cannon",
+      "type": "normal",
+      "sourceType": "level",
+      "sourceValue": 1,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:stealthrock",
+      "moveId": "stealthrock",
+      "moveName": "Stealth Rock",
+      "type": "rock",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tutor:stealthrock",
+      "moveId": "stealthrock",
+      "moveName": "Stealth Rock",
+      "type": "rock",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:stompingtantrum",
+      "moveId": "stompingtantrum",
+      "moveName": "Stomping Tantrum",
+      "type": "ground",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tutor:stompingtantrum",
+      "moveId": "stompingtantrum",
+      "moveName": "Stomping Tantrum",
+      "type": "ground",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:stoneedge",
+      "moveId": "stoneedge",
+      "moveName": "Stone Edge",
+      "type": "rock",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tutor:stoneedge",
+      "moveId": "stoneedge",
+      "moveName": "Stone Edge",
+      "type": "rock",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:strength",
+      "moveId": "strength",
+      "moveName": "Strength",
+      "type": "normal",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:substitute",
+      "moveId": "substitute",
+      "moveName": "Substitute",
+      "type": "normal",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:suckerpunch",
+      "moveId": "suckerpunch",
+      "moveName": "Sucker Punch",
+      "type": "dark",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tutor:suckerpunch",
+      "moveId": "suckerpunch",
+      "moveName": "Sucker Punch",
+      "type": "dark",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:sunnyday",
+      "moveId": "sunnyday",
+      "moveName": "Sunny Day",
+      "type": "fire",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:surf",
+      "moveId": "surf",
+      "moveName": "Surf",
+      "type": "water",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "legacy:swagger",
+      "moveId": "swagger",
+      "moveName": "Swagger",
+      "type": "normal",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "1:tackle",
+      "moveId": "tackle",
+      "moveName": "Tackle",
+      "type": "normal",
+      "sourceType": "level",
+      "sourceValue": 1,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:terablast",
+      "moveId": "terablast",
+      "moveName": "Tera Blast",
+      "type": "normal",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:throatchop",
+      "moveId": "throatchop",
+      "moveName": "Throat Chop",
+      "type": "dark",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tutor:throatchop",
+      "moveId": "throatchop",
+      "moveName": "Throat Chop",
+      "type": "dark",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "legacy:toxic",
+      "moveId": "toxic",
+      "moveName": "Toxic",
+      "type": "poison",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "5:watergun",
+      "moveId": "watergun",
+      "moveName": "Water Gun",
+      "type": "water",
+      "sourceType": "level",
+      "sourceValue": 5,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "egg:waterpulse",
+      "moveId": "waterpulse",
+      "moveName": "Water Pulse",
+      "type": "water",
+      "sourceType": "egg",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:waterpulse",
+      "moveId": "waterpulse",
+      "moveName": "Water Pulse",
+      "type": "water",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tutor:waterpulse",
+      "moveId": "waterpulse",
+      "moveName": "Water Pulse",
+      "type": "water",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:whirlpool",
+      "moveId": "whirlpool",
+      "moveName": "Whirlpool",
+      "type": "water",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    }
+  ],
+  "spawnEntries": [
+    {
+      "id": "corsola-1",
+      "sourceFile": "0222_corsola.json",
+      "pokemon": {
+        "raw": "corsola",
+        "slug": "corsola",
+        "aspectTokens": []
+      },
+      "type": "pokemon",
+      "spawnablePositionType": "seafloor",
+      "bucket": "common",
+      "bucketWeight": 94.3,
+      "levelText": "16-41",
+      "levelMin": 16,
+      "levelMax": 41,
+      "weight": 10,
+      "presets": [
+        "water"
+      ],
+      "biomeHints": [
+        "Is Warm Ocean",
+        "Warm Ocean",
+        "Tidepools"
+      ],
+      "condition": {
+        "fluid": "#minecraft:water",
+        "canSeeSky": true,
+        "biomes": [
+          "#cobblemon:is_warm_ocean"
+        ]
+      },
+      "anticondition": null,
+      "weightMultipliers": [],
+      "raw": {
+        "id": "corsola-1",
+        "pokemon": "corsola",
+        "presets": [
+          "water"
+        ],
+        "type": "pokemon",
+        "spawnablePositionType": "seafloor",
+        "bucket": "common",
+        "level": "16-41",
+        "weight": 10,
+        "condition": {
+          "canSeeSky": true,
+          "biomes": [
+            "#cobblemon:is_warm_ocean"
+          ]
+        }
+      }
+    },
+    {
+      "id": "corsola-2",
+      "sourceFile": "0222_corsola.json",
+      "pokemon": {
+        "raw": "corsola",
+        "slug": "corsola",
+        "aspectTokens": []
+      },
+      "type": "pokemon",
+      "spawnablePositionType": "seafloor",
+      "bucket": "uncommon",
+      "bucketWeight": 5,
+      "levelText": "16-41",
+      "levelMin": 16,
+      "levelMax": 41,
+      "weight": 10,
+      "presets": [
+        "water"
+      ],
+      "biomeHints": [
+        "Is Overworld"
+      ],
+      "condition": {
+        "fluid": "#minecraft:water",
+        "canSeeSky": true,
+        "biomes": [
+          "#cobblemon:is_overworld"
+        ],
+        "neededNearbyBlocks": [
+          "#minecraft:corals",
+          "#minecraft:coral_blocks"
+        ]
+      },
+      "anticondition": {
+        "biomes": [
+          "#cobblemon:is_warm_ocean"
+        ]
+      },
+      "weightMultipliers": [],
+      "raw": {
+        "id": "corsola-2",
+        "pokemon": "corsola",
+        "presets": [
+          "water"
+        ],
+        "type": "pokemon",
+        "spawnablePositionType": "seafloor",
+        "bucket": "uncommon",
+        "level": "16-41",
+        "weight": 10,
+        "condition": {
+          "canSeeSky": true,
+          "biomes": [
+            "#cobblemon:is_overworld"
+          ],
+          "neededNearbyBlocks": [
+            "#minecraft:corals",
+            "#minecraft:coral_blocks"
+          ]
+        },
+        "anticondition": {
+          "biomes": [
+            "#cobblemon:is_warm_ocean"
+          ]
+        }
+      }
+    },
+    {
+      "id": "corsola-3",
+      "sourceFile": "0222_corsola.json",
+      "pokemon": {
+        "raw": "corsola",
+        "slug": "corsola",
+        "aspectTokens": []
+      },
+      "type": "pokemon",
+      "spawnablePositionType": "fishing",
+      "bucket": "common",
+      "bucketWeight": 94.3,
+      "levelText": "16-41",
+      "levelMin": 16,
+      "levelMax": 41,
+      "weight": 10,
+      "presets": [],
+      "biomeHints": [
+        "Is Warm Ocean",
+        "Warm Ocean",
+        "Tidepools"
+      ],
+      "condition": {
+        "canSeeSky": true,
+        "biomes": [
+          "#cobblemon:is_warm_ocean"
+        ]
+      },
+      "anticondition": null,
+      "weightMultipliers": [],
+      "raw": {
+        "id": "corsola-3",
+        "pokemon": "corsola",
+        "type": "pokemon",
+        "spawnablePositionType": "fishing",
+        "bucket": "common",
+        "level": "16-41",
+        "weight": 10,
+        "condition": {
+          "canSeeSky": true,
+          "biomes": [
+            "#cobblemon:is_warm_ocean"
+          ]
+        }
+      }
+    },
+    {
+      "id": "corsola-4",
+      "sourceFile": "0222_corsola.json",
+      "pokemon": {
+        "raw": "corsola",
+        "slug": "corsola",
+        "aspectTokens": []
+      },
+      "type": "pokemon",
+      "spawnablePositionType": "fishing",
+      "bucket": "common",
+      "bucketWeight": 94.3,
+      "levelText": "16-41",
+      "levelMin": 16,
+      "levelMax": 41,
+      "weight": 10,
+      "presets": [],
+      "biomeHints": [
+        "Is Warm Ocean",
+        "Warm Ocean",
+        "Tidepools"
+      ],
+      "condition": {
+        "canSeeSky": false,
+        "minSkyLight": 8,
+        "maxSkyLight": 15,
+        "biomes": [
+          "#cobblemon:is_warm_ocean"
+        ]
+      },
+      "anticondition": null,
+      "weightMultipliers": [],
+      "raw": {
+        "id": "corsola-4",
+        "pokemon": "corsola",
+        "type": "pokemon",
+        "spawnablePositionType": "fishing",
+        "bucket": "common",
+        "level": "16-41",
+        "weight": 10,
+        "condition": {
+          "canSeeSky": false,
+          "minSkyLight": 8,
+          "maxSkyLight": 15,
+          "biomes": [
+            "#cobblemon:is_warm_ocean"
+          ]
+        }
+      }
+    },
+    {
+      "id": "corsola-galarian-10",
+      "sourceFile": "0222_corsola.json",
+      "pokemon": {
+        "raw": "corsola galarian",
+        "slug": "corsola",
+        "aspectTokens": [
+          "galarian"
+        ]
+      },
+      "type": "pokemon",
+      "spawnablePositionType": "fishing",
+      "bucket": "uncommon",
+      "bucketWeight": 5,
+      "levelText": "16-41",
+      "levelMin": 16,
+      "levelMax": 41,
+      "weight": 1.68,
+      "presets": [],
+      "biomeHints": [
+        "Is Beach",
+        "Dune Beach",
+        "Is Warm Ocean",
+        "Warm Ocean",
+        "Tidepools"
+      ],
+      "condition": {
+        "canSeeSky": true,
+        "biomes": [
+          "#cobblemon:is_beach",
+          "#cobblemon:is_warm_ocean"
+        ]
+      },
+      "anticondition": {
+        "minLureLevel": 1
+      },
+      "weightMultipliers": [],
+      "raw": {
+        "id": "corsola-galarian-10",
+        "pokemon": "corsola galarian",
+        "type": "pokemon",
+        "spawnablePositionType": "fishing",
+        "bucket": "uncommon",
+        "level": "16-41",
+        "weight": 1.68,
+        "condition": {
+          "canSeeSky": true,
+          "biomes": [
+            "#cobblemon:is_beach",
+            "#cobblemon:is_warm_ocean"
+          ]
+        },
+        "anticondition": {
+          "minLureLevel": 1
+        }
+      }
+    },
+    {
+      "id": "corsola-galarian-11",
+      "sourceFile": "0222_corsola.json",
+      "pokemon": {
+        "raw": "corsola galarian",
+        "slug": "corsola",
+        "aspectTokens": [
+          "galarian"
+        ]
+      },
+      "type": "pokemon",
+      "spawnablePositionType": "fishing",
+      "bucket": "common",
+      "bucketWeight": 94.3,
+      "levelText": "16-41",
+      "levelMin": 16,
+      "levelMax": 41,
+      "weight": 1.8,
+      "presets": [],
+      "biomeHints": [
+        "Is Beach",
+        "Dune Beach",
+        "Is Warm Ocean",
+        "Warm Ocean",
+        "Tidepools"
+      ],
+      "condition": {
+        "canSeeSky": true,
+        "biomes": [
+          "#cobblemon:is_beach",
+          "#cobblemon:is_warm_ocean"
+        ],
+        "minLureLevel": 1
+      },
+      "anticondition": null,
+      "weightMultipliers": [
+        {
+          "multiplier": 3,
+          "condition": {
+            "minLureLevel": 3
+          }
+        }
+      ],
+      "raw": {
+        "id": "corsola-galarian-11",
+        "pokemon": "corsola galarian",
+        "type": "pokemon",
+        "spawnablePositionType": "fishing",
+        "bucket": "common",
+        "level": "16-41",
+        "weight": 1.8,
+        "weightMultiplier": {
+          "multiplier": 3,
+          "condition": {
+            "minLureLevel": 3
+          }
+        },
+        "condition": {
+          "canSeeSky": true,
+          "biomes": [
+            "#cobblemon:is_beach",
+            "#cobblemon:is_warm_ocean"
+          ],
+          "minLureLevel": 1
+        }
+      }
+    },
+    {
+      "id": "corsola-galarian-12",
+      "sourceFile": "0222_corsola.json",
+      "pokemon": {
+        "raw": "corsola galarian",
+        "slug": "corsola",
+        "aspectTokens": [
+          "galarian"
+        ]
+      },
+      "type": "pokemon",
+      "spawnablePositionType": "fishing",
+      "bucket": "uncommon",
+      "bucketWeight": 5,
+      "levelText": "16-41",
+      "levelMin": 16,
+      "levelMax": 41,
+      "weight": 1.68,
+      "presets": [],
+      "biomeHints": [
+        "Is Beach",
+        "Dune Beach",
+        "Is Warm Ocean",
+        "Warm Ocean",
+        "Tidepools"
+      ],
+      "condition": {
+        "canSeeSky": false,
+        "minSkyLight": 8,
+        "maxSkyLight": 15,
+        "biomes": [
+          "#cobblemon:is_beach",
+          "#cobblemon:is_warm_ocean"
+        ]
+      },
+      "anticondition": {
+        "minLureLevel": 1
+      },
+      "weightMultipliers": [],
+      "raw": {
+        "id": "corsola-galarian-12",
+        "pokemon": "corsola galarian",
+        "type": "pokemon",
+        "spawnablePositionType": "fishing",
+        "bucket": "uncommon",
+        "level": "16-41",
+        "weight": 1.68,
+        "condition": {
+          "canSeeSky": false,
+          "minSkyLight": 8,
+          "maxSkyLight": 15,
+          "biomes": [
+            "#cobblemon:is_beach",
+            "#cobblemon:is_warm_ocean"
+          ]
+        },
+        "anticondition": {
+          "minLureLevel": 1
+        }
+      }
+    },
+    {
+      "id": "corsola-galarian-13",
+      "sourceFile": "0222_corsola.json",
+      "pokemon": {
+        "raw": "corsola galarian",
+        "slug": "corsola",
+        "aspectTokens": [
+          "galarian"
+        ]
+      },
+      "type": "pokemon",
+      "spawnablePositionType": "fishing",
+      "bucket": "common",
+      "bucketWeight": 94.3,
+      "levelText": "16-41",
+      "levelMin": 16,
+      "levelMax": 41,
+      "weight": 1.8,
+      "presets": [],
+      "biomeHints": [
+        "Is Beach",
+        "Dune Beach",
+        "Is Warm Ocean",
+        "Warm Ocean",
+        "Tidepools"
+      ],
+      "condition": {
+        "canSeeSky": false,
+        "minSkyLight": 8,
+        "maxSkyLight": 15,
+        "biomes": [
+          "#cobblemon:is_beach",
+          "#cobblemon:is_warm_ocean"
+        ],
+        "minLureLevel": 1
+      },
+      "anticondition": null,
+      "weightMultipliers": [
+        {
+          "multiplier": 3,
+          "condition": {
+            "minLureLevel": 3
+          }
+        }
+      ],
+      "raw": {
+        "id": "corsola-galarian-13",
+        "pokemon": "corsola galarian",
+        "type": "pokemon",
+        "spawnablePositionType": "fishing",
+        "bucket": "common",
+        "level": "16-41",
+        "weight": 1.8,
+        "weightMultiplier": {
+          "multiplier": 3,
+          "condition": {
+            "minLureLevel": 3
+          }
+        },
+        "condition": {
+          "canSeeSky": false,
+          "minSkyLight": 8,
+          "maxSkyLight": 15,
+          "biomes": [
+            "#cobblemon:is_beach",
+            "#cobblemon:is_warm_ocean"
+          ],
+          "minLureLevel": 1
+        }
+      }
+    },
+    {
+      "id": "corsola-galarian-5",
+      "sourceFile": "0222_corsola.json",
+      "pokemon": {
+        "raw": "corsola galarian",
+        "slug": "corsola",
+        "aspectTokens": [
+          "galarian"
+        ]
+      },
+      "type": "pokemon",
+      "spawnablePositionType": "grounded",
+      "bucket": "uncommon",
+      "bucketWeight": 5,
+      "levelText": "16-41",
+      "levelMin": 16,
+      "levelMax": 41,
+      "weight": 1.68,
+      "presets": [
+        "natural"
+      ],
+      "biomeHints": [
+        "Is Beach",
+        "Dune Beach"
+      ],
+      "condition": {
+        "neededBaseBlocks": [
+          "#cobblemon:natural"
+        ],
+        "biomes": [
+          "#cobblemon:is_beach"
+        ]
+      },
+      "anticondition": {
+        "neededBaseBlocks": [
+          "minecraft:farmland"
+        ]
+      },
+      "weightMultipliers": [],
+      "raw": {
+        "id": "corsola-galarian-5",
+        "pokemon": "corsola galarian",
+        "presets": [
+          "natural"
+        ],
+        "type": "pokemon",
+        "spawnablePositionType": "grounded",
+        "bucket": "uncommon",
+        "level": "16-41",
+        "weight": 1.68,
+        "condition": {
+          "biomes": [
+            "#cobblemon:is_beach"
+          ]
+        }
+      }
+    },
+    {
+      "id": "corsola-galarian-6",
+      "sourceFile": "0222_corsola.json",
+      "pokemon": {
+        "raw": "corsola galarian",
+        "slug": "corsola",
+        "aspectTokens": [
+          "galarian"
+        ]
+      },
+      "type": "pokemon",
+      "spawnablePositionType": "grounded",
+      "bucket": "common",
+      "bucketWeight": 94.3,
+      "levelText": "16-41",
+      "levelMin": 16,
+      "levelMax": 41,
+      "weight": 9,
+      "presets": [
+        "natural"
+      ],
+      "biomeHints": [
+        "Is Overworld"
+      ],
+      "condition": {
+        "neededBaseBlocks": [
+          "#cobblemon:natural"
+        ],
+        "biomes": [
+          "#cobblemon:is_overworld"
+        ],
+        "neededNearbyBlocks": [
+          "#cobblemon:dead_coral"
+        ]
+      },
+      "anticondition": {
+        "neededBaseBlocks": [
+          "minecraft:farmland"
+        ]
+      },
+      "weightMultipliers": [],
+      "raw": {
+        "id": "corsola-galarian-6",
+        "pokemon": "corsola galarian",
+        "presets": [
+          "natural"
+        ],
+        "type": "pokemon",
+        "spawnablePositionType": "grounded",
+        "bucket": "common",
+        "level": "16-41",
+        "weight": 9,
+        "condition": {
+          "biomes": [
+            "#cobblemon:is_overworld"
+          ],
+          "neededNearbyBlocks": [
+            "#cobblemon:dead_coral"
+          ]
+        }
+      }
+    },
+    {
+      "id": "corsola-galarian-7",
+      "sourceFile": "0222_corsola.json",
+      "pokemon": {
+        "raw": "corsola galarian",
+        "slug": "corsola",
+        "aspectTokens": [
+          "galarian"
+        ]
+      },
+      "type": "pokemon",
+      "spawnablePositionType": "seafloor",
+      "bucket": "common",
+      "bucketWeight": 94.3,
+      "levelText": "16-41",
+      "levelMin": 16,
+      "levelMax": 41,
+      "weight": 9,
+      "presets": [
+        "water"
+      ],
+      "biomeHints": [
+        "Is Overworld"
+      ],
+      "condition": {
+        "fluid": "#minecraft:water",
+        "biomes": [
+          "#cobblemon:is_overworld"
+        ],
+        "neededNearbyBlocks": [
+          "#cobblemon:dead_coral"
+        ]
+      },
+      "anticondition": null,
+      "weightMultipliers": [],
+      "raw": {
+        "id": "corsola-galarian-7",
+        "pokemon": "corsola galarian",
+        "presets": [
+          "water"
+        ],
+        "type": "pokemon",
+        "spawnablePositionType": "seafloor",
+        "bucket": "common",
+        "level": "16-41",
+        "weight": 9,
+        "condition": {
+          "biomes": [
+            "#cobblemon:is_overworld"
+          ],
+          "neededNearbyBlocks": [
+            "#cobblemon:dead_coral"
+          ]
+        }
+      }
+    },
+    {
+      "id": "corsola-galarian-8",
+      "sourceFile": "0222_corsola.json",
+      "pokemon": {
+        "raw": "corsola galarian",
+        "slug": "corsola",
+        "aspectTokens": [
+          "galarian"
+        ]
+      },
+      "type": "pokemon",
+      "spawnablePositionType": "grounded",
+      "bucket": "uncommon",
+      "bucketWeight": 5,
+      "levelText": "16-41",
+      "levelMin": 16,
+      "levelMax": 41,
+      "weight": 5.04,
+      "presets": [
+        "natural"
+      ],
+      "biomeHints": [
+        "Nether/is Quartz"
+      ],
+      "condition": {
+        "neededBaseBlocks": [
+          "#cobblemon:natural",
+          "minecraft:quartz_block"
+        ],
+        "biomes": [
+          "#cobblemon:nether/is_quartz"
+        ]
+      },
+      "anticondition": {
+        "neededBaseBlocks": [
+          "minecraft:farmland"
+        ]
+      },
+      "weightMultipliers": [],
+      "raw": {
+        "id": "corsola-galarian-8",
+        "pokemon": "corsola galarian",
+        "presets": [
+          "natural"
+        ],
+        "type": "pokemon",
+        "spawnablePositionType": "grounded",
+        "bucket": "uncommon",
+        "level": "16-41",
+        "weight": 5.04,
+        "condition": {
+          "biomes": [
+            "#cobblemon:nether/is_quartz"
+          ],
+          "neededBaseBlocks": [
+            "minecraft:quartz_block"
+          ]
+        }
+      }
+    },
+    {
+      "id": "corsola-galarian-9",
+      "sourceFile": "0222_corsola.json",
+      "pokemon": {
+        "raw": "corsola galarian",
+        "slug": "corsola",
+        "aspectTokens": [
+          "galarian"
+        ]
+      },
+      "type": "pokemon",
+      "spawnablePositionType": "grounded",
+      "bucket": "common",
+      "bucketWeight": 94.3,
+      "levelText": "16-41",
+      "levelMin": 16,
+      "levelMax": 41,
+      "weight": 9,
+      "presets": [
+        "natural"
+      ],
+      "biomeHints": [
+        "Warped Desert"
+      ],
+      "condition": {
+        "neededBaseBlocks": [
+          "#cobblemon:natural"
+        ],
+        "biomes": [
+          "byg:warped_desert"
+        ]
+      },
+      "anticondition": {
+        "neededBaseBlocks": [
+          "minecraft:farmland"
+        ]
+      },
+      "weightMultipliers": [],
+      "raw": {
+        "id": "corsola-galarian-9",
+        "pokemon": "corsola galarian",
+        "presets": [
+          "natural"
+        ],
+        "type": "pokemon",
+        "spawnablePositionType": "grounded",
+        "bucket": "common",
+        "level": "16-41",
+        "weight": 9,
+        "condition": {
+          "biomes": [
+            "byg:warped_desert"
+          ]
+        }
+      }
+    }
+  ],
+  "forms": [
+    {
+      "name": "Galar",
+      "slug": "corsola-galar",
+      "aspects": [
+        "galarian"
+      ],
+      "labels": [
+        "gen8",
+        "galarian_form"
+      ],
+      "types": [
+        "ghost"
+      ],
+      "maleRatio": 0.25,
+      "height": 6,
+      "weight": 5,
+      "catchRate": null,
+      "baseExperienceYield": null,
+      "baseFriendship": null,
+      "eggCycles": null,
+      "baseStats": {
+        "hp": 60,
+        "attack": 55,
+        "defence": 100,
+        "special_attack": 65,
+        "special_defence": 100,
+        "speed": 30
+      },
+      "evYield": {
+        "hp": 0,
+        "attack": 0,
+        "defence": 0,
+        "special_attack": 0,
+        "special_defence": 1,
+        "speed": 0
+      },
+      "battleOnly": false,
+      "abilities": [
+        {
+          "id": "weakarmor",
+          "hidden": false,
+          "label": "Weakarmor",
+          "slot": "first"
+        },
+        {
+          "id": "cursedbody",
+          "hidden": true,
+          "label": "Cursedbody",
+          "slot": "hidden"
+        }
+      ],
+      "moves": [
+        {
+          "raw": "1:tackle",
+          "moveId": "tackle",
+          "moveName": "Tackle",
+          "type": "normal",
+          "sourceType": "level",
+          "sourceValue": 1,
+          "fromForm": "Galar",
+          "fromFormSlug": "corsola-galar"
+        },
+        {
+          "raw": "1:harden",
+          "moveId": "harden",
+          "moveName": "Harden",
+          "type": "normal",
+          "sourceType": "level",
+          "sourceValue": 1,
+          "fromForm": "Galar",
+          "fromFormSlug": "corsola-galar"
+        },
+        {
+          "raw": "5:astonish",
+          "moveId": "astonish",
+          "moveName": "Astonish",
+          "type": "ghost",
+          "sourceType": "level",
+          "sourceValue": 5,
+          "fromForm": "Galar",
+          "fromFormSlug": "corsola-galar"
+        },
+        {
+          "raw": "10:disable",
+          "moveId": "disable",
+          "moveName": "Disable",
+          "type": "normal",
+          "sourceType": "level",
+          "sourceValue": 10,
+          "fromForm": "Galar",
+          "fromFormSlug": "corsola-galar"
+        },
+        {
+          "raw": "15:spite",
+          "moveId": "spite",
+          "moveName": "Spite",
+          "type": "ghost",
+          "sourceType": "level",
+          "sourceValue": 15,
+          "fromForm": "Galar",
+          "fromFormSlug": "corsola-galar"
+        },
+        {
+          "raw": "20:ancientpower",
+          "moveId": "ancientpower",
+          "moveName": "Ancient Power",
+          "type": "rock",
+          "sourceType": "level",
+          "sourceValue": 20,
+          "fromForm": "Galar",
+          "fromFormSlug": "corsola-galar"
+        },
+        {
+          "raw": "25:hex",
+          "moveId": "hex",
+          "moveName": "Hex",
+          "type": "ghost",
+          "sourceType": "level",
+          "sourceValue": 25,
+          "fromForm": "Galar",
+          "fromFormSlug": "corsola-galar"
+        },
+        {
+          "raw": "30:curse",
+          "moveId": "curse",
+          "moveName": "Curse",
+          "type": "ghost",
+          "sourceType": "level",
+          "sourceValue": 30,
+          "fromForm": "Galar",
+          "fromFormSlug": "corsola-galar"
+        },
+        {
+          "raw": "35:strengthsap",
+          "moveId": "strengthsap",
+          "moveName": "Strength Sap",
+          "type": "grass",
+          "sourceType": "level",
+          "sourceValue": 35,
+          "fromForm": "Galar",
+          "fromFormSlug": "corsola-galar"
+        },
+        {
+          "raw": "40:powergem",
+          "moveId": "powergem",
+          "moveName": "Power Gem",
+          "type": "rock",
+          "sourceType": "level",
+          "sourceValue": 40,
+          "fromForm": "Galar",
+          "fromFormSlug": "corsola-galar"
+        },
+        {
+          "raw": "45:nightshade",
+          "moveId": "nightshade",
+          "moveName": "Night Shade",
+          "type": "ghost",
+          "sourceType": "level",
+          "sourceValue": 45,
+          "fromForm": "Galar",
+          "fromFormSlug": "corsola-galar"
+        },
+        {
+          "raw": "50:grudge",
+          "moveId": "grudge",
+          "moveName": "Grudge",
+          "type": "ghost",
+          "sourceType": "level",
+          "sourceValue": 50,
+          "fromForm": "Galar",
+          "fromFormSlug": "corsola-galar"
+        },
+        {
+          "raw": "55:mirrorcoat",
+          "moveId": "mirrorcoat",
+          "moveName": "Mirror Coat",
+          "type": "psychic",
+          "sourceType": "level",
+          "sourceValue": 55,
+          "fromForm": "Galar",
+          "fromFormSlug": "corsola-galar"
+        },
+        {
+          "raw": "egg:confuseray",
+          "moveId": "confuseray",
+          "moveName": "Confuse Ray",
+          "type": "ghost",
+          "sourceType": "egg",
+          "sourceValue": null,
+          "fromForm": "Galar",
+          "fromFormSlug": "corsola-galar"
+        },
+        {
+          "raw": "egg:destinybond",
+          "moveId": "destinybond",
+          "moveName": "Destiny Bond",
+          "type": "ghost",
+          "sourceType": "egg",
+          "sourceValue": null,
+          "fromForm": "Galar",
+          "fromFormSlug": "corsola-galar"
+        },
+        {
+          "raw": "egg:haze",
+          "moveId": "haze",
+          "moveName": "Haze",
+          "type": "ice",
+          "sourceType": "egg",
+          "sourceValue": null,
+          "fromForm": "Galar",
+          "fromFormSlug": "corsola-galar"
+        },
+        {
+          "raw": "egg:headsmash",
+          "moveId": "headsmash",
+          "moveName": "Head Smash",
+          "type": "rock",
+          "sourceType": "egg",
+          "sourceValue": null,
+          "fromForm": "Galar",
+          "fromFormSlug": "corsola-galar"
+        },
+        {
+          "raw": "egg:naturepower",
+          "moveId": "naturepower",
+          "moveName": "Nature Power",
+          "type": "normal",
+          "sourceType": "egg",
+          "sourceValue": null,
+          "fromForm": "Galar",
+          "fromFormSlug": "corsola-galar"
+        },
+        {
+          "raw": "egg:waterpulse",
+          "moveId": "waterpulse",
+          "moveName": "Water Pulse",
+          "type": "water",
+          "sourceType": "egg",
+          "sourceValue": null,
+          "fromForm": "Galar",
+          "fromFormSlug": "corsola-galar"
+        },
+        {
+          "raw": "tm:amnesia",
+          "moveId": "amnesia",
+          "moveName": "Amnesia",
+          "type": "psychic",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Galar",
+          "fromFormSlug": "corsola-galar"
+        },
+        {
+          "raw": "tm:ancientpower",
+          "moveId": "ancientpower",
+          "moveName": "Ancient Power",
+          "type": "rock",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Galar",
+          "fromFormSlug": "corsola-galar"
+        },
+        {
+          "raw": "tm:blizzard",
+          "moveId": "blizzard",
+          "moveName": "Blizzard",
+          "type": "ice",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Galar",
+          "fromFormSlug": "corsola-galar"
+        },
+        {
+          "raw": "tm:bodyslam",
+          "moveId": "bodyslam",
+          "moveName": "Body Slam",
+          "type": "normal",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Galar",
+          "fromFormSlug": "corsola-galar"
+        },
+        {
+          "raw": "tm:brine",
+          "moveId": "brine",
+          "moveName": "Brine",
+          "type": "water",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Galar",
+          "fromFormSlug": "corsola-galar"
+        },
+        {
+          "raw": "tm:bulldoze",
+          "moveId": "bulldoze",
+          "moveName": "Bulldoze",
+          "type": "ground",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Galar",
+          "fromFormSlug": "corsola-galar"
+        },
+        {
+          "raw": "tm:calmmind",
+          "moveId": "calmmind",
+          "moveName": "Calm Mind",
+          "type": "psychic",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Galar",
+          "fromFormSlug": "corsola-galar"
+        },
+        {
+          "raw": "tm:confuseray",
+          "moveId": "confuseray",
+          "moveName": "Confuse Ray",
+          "type": "ghost",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Galar",
+          "fromFormSlug": "corsola-galar"
+        },
+        {
+          "raw": "tm:curse",
+          "moveId": "curse",
+          "moveName": "Curse",
+          "type": "ghost",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Galar",
+          "fromFormSlug": "corsola-galar"
+        },
+        {
+          "raw": "tm:dig",
+          "moveId": "dig",
+          "moveName": "Dig",
+          "type": "ground",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Galar",
+          "fromFormSlug": "corsola-galar"
+        },
+        {
+          "raw": "tm:earthpower",
+          "moveId": "earthpower",
+          "moveName": "Earth Power",
+          "type": "ground",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Galar",
+          "fromFormSlug": "corsola-galar"
+        },
+        {
+          "raw": "tm:earthquake",
+          "moveId": "earthquake",
+          "moveName": "Earthquake",
+          "type": "ground",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Galar",
+          "fromFormSlug": "corsola-galar"
+        },
+        {
+          "raw": "tm:endure",
+          "moveId": "endure",
+          "moveName": "Endure",
+          "type": "normal",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Galar",
+          "fromFormSlug": "corsola-galar"
+        },
+        {
+          "raw": "tm:facade",
+          "moveId": "facade",
+          "moveName": "Facade",
+          "type": "normal",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Galar",
+          "fromFormSlug": "corsola-galar"
+        },
+        {
+          "raw": "tm:gigadrain",
+          "moveId": "gigadrain",
+          "moveName": "Giga Drain",
+          "type": "grass",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Galar",
+          "fromFormSlug": "corsola-galar"
+        },
+        {
+          "raw": "tm:hail",
+          "moveId": "hail",
+          "moveName": "Hail",
+          "type": "ice",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Galar",
+          "fromFormSlug": "corsola-galar"
+        },
+        {
+          "raw": "tm:haze",
+          "moveId": "haze",
+          "moveName": "Haze",
+          "type": "ice",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Galar",
+          "fromFormSlug": "corsola-galar"
+        },
+        {
+          "raw": "tm:hex",
+          "moveId": "hex",
+          "moveName": "Hex",
+          "type": "ghost",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Galar",
+          "fromFormSlug": "corsola-galar"
+        },
+        {
+          "raw": "tm:hydropump",
+          "moveId": "hydropump",
+          "moveName": "Hydro Pump",
+          "type": "water",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Galar",
+          "fromFormSlug": "corsola-galar"
+        },
+        {
+          "raw": "tm:icebeam",
+          "moveId": "icebeam",
+          "moveName": "Ice Beam",
+          "type": "ice",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Galar",
+          "fromFormSlug": "corsola-galar"
+        },
+        {
+          "raw": "tm:iciclespear",
+          "moveId": "iciclespear",
+          "moveName": "Icicle Spear",
+          "type": "ice",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Galar",
+          "fromFormSlug": "corsola-galar"
+        },
+        {
+          "raw": "tm:icywind",
+          "moveId": "icywind",
+          "moveName": "Icy Wind",
+          "type": "ice",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Galar",
+          "fromFormSlug": "corsola-galar"
+        },
+        {
+          "raw": "tm:irondefense",
+          "moveId": "irondefense",
+          "moveName": "Iron Defense",
+          "type": "steel",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Galar",
+          "fromFormSlug": "corsola-galar"
+        },
+        {
+          "raw": "tm:lightscreen",
+          "moveId": "lightscreen",
+          "moveName": "Light Screen",
+          "type": "psychic",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Galar",
+          "fromFormSlug": "corsola-galar"
+        },
+        {
+          "raw": "tm:liquidation",
+          "moveId": "liquidation",
+          "moveName": "Liquidation",
+          "type": "water",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Galar",
+          "fromFormSlug": "corsola-galar"
+        },
+        {
+          "raw": "tm:meteorbeam",
+          "moveId": "meteorbeam",
+          "moveName": "Meteor Beam",
+          "type": "rock",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Galar",
+          "fromFormSlug": "corsola-galar"
+        },
+        {
+          "raw": "tm:naturepower",
+          "moveId": "naturepower",
+          "moveName": "Nature Power",
+          "type": "normal",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Galar",
+          "fromFormSlug": "corsola-galar"
+        },
+        {
+          "raw": "tm:nightshade",
+          "moveId": "nightshade",
+          "moveName": "Night Shade",
+          "type": "ghost",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Galar",
+          "fromFormSlug": "corsola-galar"
+        },
+        {
+          "raw": "tm:powergem",
+          "moveId": "powergem",
+          "moveName": "Power Gem",
+          "type": "rock",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Galar",
+          "fromFormSlug": "corsola-galar"
+        },
+        {
+          "raw": "tm:protect",
+          "moveId": "protect",
+          "moveName": "Protect",
+          "type": "normal",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Galar",
+          "fromFormSlug": "corsola-galar"
+        },
+        {
+          "raw": "tm:psychic",
+          "moveId": "psychic",
+          "moveName": "Psychic",
+          "type": "psychic",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Galar",
+          "fromFormSlug": "corsola-galar"
+        },
+        {
+          "raw": "tm:raindance",
+          "moveId": "raindance",
+          "moveName": "Rain Dance",
+          "type": "water",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Galar",
+          "fromFormSlug": "corsola-galar"
+        },
+        {
+          "raw": "tm:reflect",
+          "moveId": "reflect",
+          "moveName": "Reflect",
+          "type": "psychic",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Galar",
+          "fromFormSlug": "corsola-galar"
+        },
+        {
+          "raw": "tm:rest",
+          "moveId": "rest",
+          "moveName": "Rest",
+          "type": "psychic",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Galar",
+          "fromFormSlug": "corsola-galar"
+        },
+        {
+          "raw": "tm:rockblast",
+          "moveId": "rockblast",
+          "moveName": "Rock Blast",
+          "type": "rock",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Galar",
+          "fromFormSlug": "corsola-galar"
+        },
+        {
+          "raw": "tm:rockslide",
+          "moveId": "rockslide",
+          "moveName": "Rock Slide",
+          "type": "rock",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Galar",
+          "fromFormSlug": "corsola-galar"
+        },
+        {
+          "raw": "tm:rocktomb",
+          "moveId": "rocktomb",
+          "moveName": "Rock Tomb",
+          "type": "rock",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Galar",
+          "fromFormSlug": "corsola-galar"
+        },
+        {
+          "raw": "tm:safeguard",
+          "moveId": "safeguard",
+          "moveName": "Safeguard",
+          "type": "normal",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Galar",
+          "fromFormSlug": "corsola-galar"
+        },
+        {
+          "raw": "tm:sandstorm",
+          "moveId": "sandstorm",
+          "moveName": "Sandstorm",
+          "type": "rock",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Galar",
+          "fromFormSlug": "corsola-galar"
+        },
+        {
+          "raw": "tm:scald",
+          "moveId": "scald",
+          "moveName": "Scald",
+          "type": "water",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Galar",
+          "fromFormSlug": "corsola-galar"
+        },
+        {
+          "raw": "tm:screech",
+          "moveId": "screech",
+          "moveName": "Screech",
+          "type": "normal",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Galar",
+          "fromFormSlug": "corsola-galar"
+        },
+        {
+          "raw": "tm:selfdestruct",
+          "moveId": "selfdestruct",
+          "moveName": "Self-Destruct",
+          "type": "normal",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Galar",
+          "fromFormSlug": "corsola-galar"
+        },
+        {
+          "raw": "tm:shadowball",
+          "moveId": "shadowball",
+          "moveName": "Shadow Ball",
+          "type": "ghost",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Galar",
+          "fromFormSlug": "corsola-galar"
+        },
+        {
+          "raw": "tm:sleeptalk",
+          "moveId": "sleeptalk",
+          "moveName": "Sleep Talk",
+          "type": "normal",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Galar",
+          "fromFormSlug": "corsola-galar"
+        },
+        {
+          "raw": "tm:spite",
+          "moveId": "spite",
+          "moveName": "Spite",
+          "type": "ghost",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Galar",
+          "fromFormSlug": "corsola-galar"
+        },
+        {
+          "raw": "tm:stealthrock",
+          "moveId": "stealthrock",
+          "moveName": "Stealth Rock",
+          "type": "rock",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Galar",
+          "fromFormSlug": "corsola-galar"
+        },
+        {
+          "raw": "tm:stompingtantrum",
+          "moveId": "stompingtantrum",
+          "moveName": "Stomping Tantrum",
+          "type": "ground",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Galar",
+          "fromFormSlug": "corsola-galar"
+        },
+        {
+          "raw": "tm:stoneedge",
+          "moveId": "stoneedge",
+          "moveName": "Stone Edge",
+          "type": "rock",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Galar",
+          "fromFormSlug": "corsola-galar"
+        },
+        {
+          "raw": "tm:substitute",
+          "moveId": "substitute",
+          "moveName": "Substitute",
+          "type": "normal",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Galar",
+          "fromFormSlug": "corsola-galar"
+        },
+        {
+          "raw": "tm:sunnyday",
+          "moveId": "sunnyday",
+          "moveName": "Sunny Day",
+          "type": "fire",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Galar",
+          "fromFormSlug": "corsola-galar"
+        },
+        {
+          "raw": "tm:surf",
+          "moveId": "surf",
+          "moveName": "Surf",
+          "type": "water",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Galar",
+          "fromFormSlug": "corsola-galar"
+        },
+        {
+          "raw": "tm:terablast",
+          "moveId": "terablast",
+          "moveName": "Tera Blast",
+          "type": "normal",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Galar",
+          "fromFormSlug": "corsola-galar"
+        },
+        {
+          "raw": "tm:throatchop",
+          "moveId": "throatchop",
+          "moveName": "Throat Chop",
+          "type": "dark",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Galar",
+          "fromFormSlug": "corsola-galar"
+        },
+        {
+          "raw": "tm:waterpulse",
+          "moveId": "waterpulse",
+          "moveName": "Water Pulse",
+          "type": "water",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Galar",
+          "fromFormSlug": "corsola-galar"
+        },
+        {
+          "raw": "tm:whirlpool",
+          "moveId": "whirlpool",
+          "moveName": "Whirlpool",
+          "type": "water",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Galar",
+          "fromFormSlug": "corsola-galar"
+        },
+        {
+          "raw": "tm:willowisp",
+          "moveId": "willowisp",
+          "moveName": "Will-O-Wisp",
+          "type": "fire",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Galar",
+          "fromFormSlug": "corsola-galar"
+        },
+        {
+          "raw": "tutor:ancientpower",
+          "moveId": "ancientpower",
+          "moveName": "Ancient Power",
+          "type": "rock",
+          "sourceType": "tutor",
+          "sourceValue": null,
+          "fromForm": "Galar",
+          "fromFormSlug": "corsola-galar"
+        },
+        {
+          "raw": "tutor:bulldoze",
+          "moveId": "bulldoze",
+          "moveName": "Bulldoze",
+          "type": "ground",
+          "sourceType": "tutor",
+          "sourceValue": null,
+          "fromForm": "Galar",
+          "fromFormSlug": "corsola-galar"
+        },
+        {
+          "raw": "tutor:calmmind",
+          "moveId": "calmmind",
+          "moveName": "Calm Mind",
+          "type": "psychic",
+          "sourceType": "tutor",
+          "sourceValue": null,
+          "fromForm": "Galar",
+          "fromFormSlug": "corsola-galar"
+        },
+        {
+          "raw": "tutor:earthpower",
+          "moveId": "earthpower",
+          "moveName": "Earth Power",
+          "type": "ground",
+          "sourceType": "tutor",
+          "sourceValue": null,
+          "fromForm": "Galar",
+          "fromFormSlug": "corsola-galar"
+        },
+        {
+          "raw": "tutor:gigadrain",
+          "moveId": "gigadrain",
+          "moveName": "Giga Drain",
+          "type": "grass",
+          "sourceType": "tutor",
+          "sourceValue": null,
+          "fromForm": "Galar",
+          "fromFormSlug": "corsola-galar"
+        },
+        {
+          "raw": "tutor:icebeam",
+          "moveId": "icebeam",
+          "moveName": "Ice Beam",
+          "type": "ice",
+          "sourceType": "tutor",
+          "sourceValue": null,
+          "fromForm": "Galar",
+          "fromFormSlug": "corsola-galar"
+        },
+        {
+          "raw": "tutor:icywind",
+          "moveId": "icywind",
+          "moveName": "Icy Wind",
+          "type": "ice",
+          "sourceType": "tutor",
+          "sourceValue": null,
+          "fromForm": "Galar",
+          "fromFormSlug": "corsola-galar"
+        },
+        {
+          "raw": "tutor:irondefense",
+          "moveId": "irondefense",
+          "moveName": "Iron Defense",
+          "type": "steel",
+          "sourceType": "tutor",
+          "sourceValue": null,
+          "fromForm": "Galar",
+          "fromFormSlug": "corsola-galar"
+        },
+        {
+          "raw": "tutor:liquidation",
+          "moveId": "liquidation",
+          "moveName": "Liquidation",
+          "type": "water",
+          "sourceType": "tutor",
+          "sourceValue": null,
+          "fromForm": "Galar",
+          "fromFormSlug": "corsola-galar"
+        },
+        {
+          "raw": "tutor:meteorbeam",
+          "moveId": "meteorbeam",
+          "moveName": "Meteor Beam",
+          "type": "rock",
+          "sourceType": "tutor",
+          "sourceValue": null,
+          "fromForm": "Galar",
+          "fromFormSlug": "corsola-galar"
+        },
+        {
+          "raw": "tutor:psychic",
+          "moveId": "psychic",
+          "moveName": "Psychic",
+          "type": "psychic",
+          "sourceType": "tutor",
+          "sourceValue": null,
+          "fromForm": "Galar",
+          "fromFormSlug": "corsola-galar"
+        },
+        {
+          "raw": "tutor:rest",
+          "moveId": "rest",
+          "moveName": "Rest",
+          "type": "psychic",
+          "sourceType": "tutor",
+          "sourceValue": null,
+          "fromForm": "Galar",
+          "fromFormSlug": "corsola-galar"
+        },
+        {
+          "raw": "tutor:rockslide",
+          "moveId": "rockslide",
+          "moveName": "Rock Slide",
+          "type": "rock",
+          "sourceType": "tutor",
+          "sourceValue": null,
+          "fromForm": "Galar",
+          "fromFormSlug": "corsola-galar"
+        },
+        {
+          "raw": "tutor:shadowball",
+          "moveId": "shadowball",
+          "moveName": "Shadow Ball",
+          "type": "ghost",
+          "sourceType": "tutor",
+          "sourceValue": null,
+          "fromForm": "Galar",
+          "fromFormSlug": "corsola-galar"
+        },
+        {
+          "raw": "tutor:sleeptalk",
+          "moveId": "sleeptalk",
+          "moveName": "Sleep Talk",
+          "type": "normal",
+          "sourceType": "tutor",
+          "sourceValue": null,
+          "fromForm": "Galar",
+          "fromFormSlug": "corsola-galar"
+        },
+        {
+          "raw": "tutor:spite",
+          "moveId": "spite",
+          "moveName": "Spite",
+          "type": "ghost",
+          "sourceType": "tutor",
+          "sourceValue": null,
+          "fromForm": "Galar",
+          "fromFormSlug": "corsola-galar"
+        },
+        {
+          "raw": "tutor:stealthrock",
+          "moveId": "stealthrock",
+          "moveName": "Stealth Rock",
+          "type": "rock",
+          "sourceType": "tutor",
+          "sourceValue": null,
+          "fromForm": "Galar",
+          "fromFormSlug": "corsola-galar"
+        },
+        {
+          "raw": "tutor:stompingtantrum",
+          "moveId": "stompingtantrum",
+          "moveName": "Stomping Tantrum",
+          "type": "ground",
+          "sourceType": "tutor",
+          "sourceValue": null,
+          "fromForm": "Galar",
+          "fromFormSlug": "corsola-galar"
+        },
+        {
+          "raw": "tutor:stoneedge",
+          "moveId": "stoneedge",
+          "moveName": "Stone Edge",
+          "type": "rock",
+          "sourceType": "tutor",
+          "sourceValue": null,
+          "fromForm": "Galar",
+          "fromFormSlug": "corsola-galar"
+        },
+        {
+          "raw": "tutor:throatchop",
+          "moveId": "throatchop",
+          "moveName": "Throat Chop",
+          "type": "dark",
+          "sourceType": "tutor",
+          "sourceValue": null,
+          "fromForm": "Galar",
+          "fromFormSlug": "corsola-galar"
+        },
+        {
+          "raw": "tutor:waterpulse",
+          "moveId": "waterpulse",
+          "moveName": "Water Pulse",
+          "type": "water",
+          "sourceType": "tutor",
+          "sourceValue": null,
+          "fromForm": "Galar",
+          "fromFormSlug": "corsola-galar"
+        },
+        {
+          "raw": "legacy:attract",
+          "moveId": "attract",
+          "moveName": "Attract",
+          "type": "normal",
+          "sourceType": "legacy",
+          "sourceValue": null,
+          "fromForm": "Galar",
+          "fromFormSlug": "corsola-galar"
+        },
+        {
+          "raw": "legacy:round",
+          "moveId": "round",
+          "moveName": "Round",
+          "type": "normal",
+          "sourceType": "legacy",
+          "sourceValue": null,
+          "fromForm": "Galar",
+          "fromFormSlug": "corsola-galar"
+        },
+        {
+          "raw": "legacy:snore",
+          "moveId": "snore",
+          "moveName": "Snore",
+          "type": "normal",
+          "sourceType": "legacy",
+          "sourceValue": null,
+          "fromForm": "Galar",
+          "fromFormSlug": "corsola-galar"
+        }
+      ],
+      "evolutions": [
+        {
+          "id": "corsola_cursola",
+          "variant": "level_up",
+          "result": {
+            "raw": "cursola",
+            "slug": "cursola",
+            "aspectTokens": []
+          },
+          "consumeHeldItem": false,
+          "learnableMoves": [],
+          "requirementText": [
+            "Level 38+"
+          ],
+          "requirements": [
+            {
+              "variant": "level",
+              "text": "Level 38+",
+              "raw": {
+                "variant": "level",
+                "minLevel": 38
+              }
+            }
+          ],
+          "requiredContext": null,
+          "fromForm": "Galar",
+          "raw": {
+            "id": "corsola_cursola",
+            "variant": "level_up",
+            "result": "cursola",
+            "consumeHeldItem": false,
+            "learnableMoves": [],
+            "requirements": [
+              {
+                "variant": "level",
+                "minLevel": 38
+              }
+            ]
+          }
+        }
+      ],
+      "raw": {
+        "name": "Galar",
+        "primaryType": "ghost",
+        "maleRatio": 0.25,
+        "height": 6,
+        "weight": 5,
+        "pokedex": [
+          "cobblemon.species.corsola-galar.desc"
+        ],
+        "labels": [
+          "gen8",
+          "galarian_form"
+        ],
+        "aspects": [
+          "galarian"
+        ],
+        "abilities": [
+          "weakarmor",
+          "h:cursedbody"
+        ],
+        "baseStats": {
+          "hp": 60,
+          "attack": 55,
+          "defence": 100,
+          "special_attack": 65,
+          "special_defence": 100,
+          "speed": 30
+        },
+        "evYield": {
+          "hp": 0,
+          "attack": 0,
+          "defence": 0,
+          "special_attack": 0,
+          "special_defence": 1,
+          "speed": 0
+        },
+        "behaviour": {
+          "moving": {
+            "walk": {
+              "walkSpeed": 0.125,
+              "avoidsLand": true
+            },
+            "swim": {
+              "swimSpeed": 0.125,
+              "canSwimInWater": false,
+              "canBreatheUnderwater": true
+            }
+          },
+          "resting": {
+            "canSleep": true,
+            "light": "0-15",
+            "times": [
+              "day"
+            ],
+            "drowsyChance": 0.0033,
+            "rouseChance": 0.0042
+          },
+          "herd": {
+            "maxSize": "9",
+            "toleratedLeaders": [
+              {
+                "pokemon": "corsola galarian",
+                "tier": 1
+              },
+              {
+                "pokemon": "cursola",
+                "tier": 2
+              }
+            ]
+          },
+          "combat": {
+            "willDefendOwner": true
+          }
+        },
+        "drops": {
+          "amount": 1,
+          "entries": [
+            {
+              "item": "cobblemon:kasib_berry",
+              "percentage": 2.5
+            }
+          ]
+        },
+        "moves": [
+          "1:tackle",
+          "1:harden",
+          "5:astonish",
+          "10:disable",
+          "15:spite",
+          "20:ancientpower",
+          "25:hex",
+          "30:curse",
+          "35:strengthsap",
+          "40:powergem",
+          "45:nightshade",
+          "50:grudge",
+          "55:mirrorcoat",
+          "egg:confuseray",
+          "egg:destinybond",
+          "egg:haze",
+          "egg:headsmash",
+          "egg:naturepower",
+          "egg:waterpulse",
+          "tm:amnesia",
+          "tm:ancientpower",
+          "tm:blizzard",
+          "tm:bodyslam",
+          "tm:brine",
+          "tm:bulldoze",
+          "tm:calmmind",
+          "tm:confuseray",
+          "tm:curse",
+          "tm:dig",
+          "tm:earthpower",
+          "tm:earthquake",
+          "tm:endure",
+          "tm:facade",
+          "tm:gigadrain",
+          "tm:hail",
+          "tm:haze",
+          "tm:hex",
+          "tm:hydropump",
+          "tm:icebeam",
+          "tm:iciclespear",
+          "tm:icywind",
+          "tm:irondefense",
+          "tm:lightscreen",
+          "tm:liquidation",
+          "tm:meteorbeam",
+          "tm:naturepower",
+          "tm:nightshade",
+          "tm:powergem",
+          "tm:protect",
+          "tm:psychic",
+          "tm:raindance",
+          "tm:reflect",
+          "tm:rest",
+          "tm:rockblast",
+          "tm:rockslide",
+          "tm:rocktomb",
+          "tm:safeguard",
+          "tm:sandstorm",
+          "tm:scald",
+          "tm:screech",
+          "tm:selfdestruct",
+          "tm:shadowball",
+          "tm:sleeptalk",
+          "tm:spite",
+          "tm:stealthrock",
+          "tm:stompingtantrum",
+          "tm:stoneedge",
+          "tm:substitute",
+          "tm:sunnyday",
+          "tm:surf",
+          "tm:terablast",
+          "tm:throatchop",
+          "tm:waterpulse",
+          "tm:whirlpool",
+          "tm:willowisp",
+          "tutor:ancientpower",
+          "tutor:bulldoze",
+          "tutor:calmmind",
+          "tutor:earthpower",
+          "tutor:gigadrain",
+          "tutor:icebeam",
+          "tutor:icywind",
+          "tutor:irondefense",
+          "tutor:liquidation",
+          "tutor:meteorbeam",
+          "tutor:psychic",
+          "tutor:rest",
+          "tutor:rockslide",
+          "tutor:shadowball",
+          "tutor:sleeptalk",
+          "tutor:spite",
+          "tutor:stealthrock",
+          "tutor:stompingtantrum",
+          "tutor:stoneedge",
+          "tutor:throatchop",
+          "tutor:waterpulse",
+          "legacy:attract",
+          "legacy:round",
+          "legacy:snore"
+        ],
+        "evolutions": [
+          {
+            "id": "corsola_cursola",
+            "variant": "level_up",
+            "result": "cursola",
+            "consumeHeldItem": false,
+            "learnableMoves": [],
+            "requirements": [
+              {
+                "variant": "level",
+                "minLevel": 38
+              }
+            ]
+          }
+        ],
+        "battleOnly": false
+      }
+    }
+  ],
+  "rawSpecies": {
+    "implemented": true,
+    "nationalPokedexNumber": 222,
+    "name": "Corsola",
+    "primaryType": "water",
+    "secondaryType": "rock",
+    "maleRatio": 0.25,
+    "height": 6,
+    "weight": 50,
+    "pokedex": [
+      "cobblemon.species.corsola.desc"
+    ],
+    "labels": [
+      "gen2",
+      "johtonian_form"
+    ],
+    "aspects": [],
+    "abilities": [
+      "hustle",
+      "naturalcure",
+      "h:regenerator"
+    ],
+    "eggGroups": [
+      "water_1",
+      "water_3"
+    ],
+    "baseStats": {
+      "hp": 65,
+      "attack": 55,
+      "defence": 95,
+      "special_attack": 65,
+      "special_defence": 95,
+      "speed": 35
+    },
+    "evYield": {
+      "hp": 0,
+      "attack": 0,
+      "defence": 1,
+      "special_attack": 0,
+      "special_defence": 1,
+      "speed": 0
+    },
+    "baseExperienceYield": 144,
+    "experienceGroup": "fast",
+    "catchRate": 60,
+    "eggCycles": 20,
+    "baseFriendship": 50,
+    "features": [
+      "galarian"
+    ],
+    "standingEyeHeight": 0.6,
+    "swimmingEyeHeight": 0.6,
+    "flyingEyeHeight": 0.6,
+    "baseScale": 0.9,
+    "hitbox": {
+      "width": 0.65,
+      "height": 0.8,
+      "fixed": false
+    },
+    "behaviour": {
+      "resting": {
+        "canSleep": true,
+        "light": "0-4",
+        "drowsyChance": 0.0333,
+        "rouseChance": 0.0042
+      },
+      "moving": {
+        "walk": {
+          "avoidsLand": true,
+          "walkSpeed": 0.14
+        },
+        "swim": {
+          "swimSpeed": 0.2,
+          "canSwimInWater": false,
+          "canBreatheUnderwater": true
+        }
+      },
+      "herd": {
+        "maxSize": "9",
+        "toleratedLeaders": [
+          {
+            "pokemon": "corsola galarian=false",
+            "tier": 1
+          }
+        ]
+      },
+      "combat": {
+        "willDefendOwner": true
+      }
+    },
+    "drops": {
+      "amount": 2,
+      "entries": [
+        {
+          "item": "cobblemon:luminous_moss",
+          "percentage": 5
+        },
+        {
+          "item": "cobblemon:rindo_berry",
+          "percentage": 5
+        }
+      ]
+    },
+    "moves": [
+      "1:tackle",
+      "1:harden",
+      "1:bubble",
+      "1:refresh",
+      "1:luckychant",
+      "1:spikecannon",
+      "5:watergun",
+      "10:aquaring",
+      "15:endure",
+      "20:ancientpower",
+      "25:bubblebeam",
+      "30:flail",
+      "35:lifedew",
+      "40:powergem",
+      "45:earthpower",
+      "50:recover",
+      "55:mirrorcoat",
+      "egg:aquaring",
+      "egg:barrier",
+      "egg:bide",
+      "egg:camouflage",
+      "egg:confuseray",
+      "egg:curse",
+      "egg:headsmash",
+      "egg:ingrain",
+      "egg:mist",
+      "egg:naturepower",
+      "egg:waterpulse",
+      "tm:amnesia",
+      "tm:ancientpower",
+      "tm:blizzard",
+      "tm:bodyslam",
+      "tm:brine",
+      "tm:bulldoze",
+      "tm:calmmind",
+      "tm:confuseray",
+      "tm:curse",
+      "tm:dig",
+      "tm:earthpower",
+      "tm:earthquake",
+      "tm:endeavor",
+      "tm:endure",
+      "tm:explosion",
+      "tm:facade",
+      "tm:hail",
+      "tm:headbutt",
+      "tm:hydropump",
+      "tm:icebeam",
+      "tm:iciclespear",
+      "tm:icywind",
+      "tm:irondefense",
+      "tm:lightscreen",
+      "tm:liquidation",
+      "tm:magiccoat",
+      "tm:meteorbeam",
+      "tm:mudslap",
+      "tm:naturepower",
+      "tm:powergem",
+      "tm:protect",
+      "tm:psychic",
+      "tm:raindance",
+      "tm:reflect",
+      "tm:rest",
+      "tm:rockblast",
+      "tm:rockpolish",
+      "tm:rockslide",
+      "tm:rocksmash",
+      "tm:rocktomb",
+      "tm:rollout",
+      "tm:safeguard",
+      "tm:sandstorm",
+      "tm:scald",
+      "tm:screech",
+      "tm:selfdestruct",
+      "tm:shadowball",
+      "tm:sleeptalk",
+      "tm:stealthrock",
+      "tm:stompingtantrum",
+      "tm:stoneedge",
+      "tm:strength",
+      "tm:substitute",
+      "tm:suckerpunch",
+      "tm:sunnyday",
+      "tm:surf",
+      "tm:terablast",
+      "tm:throatchop",
+      "tm:waterpulse",
+      "tm:whirlpool",
+      "tutor:ancientpower",
+      "tutor:bulldoze",
+      "tutor:calmmind",
+      "tutor:earthpower",
+      "tutor:endeavor",
+      "tutor:icebeam",
+      "tutor:icywind",
+      "tutor:irondefense",
+      "tutor:liquidation",
+      "tutor:magiccoat",
+      "tutor:meteorbeam",
+      "tutor:mudslap",
+      "tutor:psychic",
+      "tutor:rest",
+      "tutor:rockslide",
+      "tutor:rocksmash",
+      "tutor:rollout",
+      "tutor:shadowball",
+      "tutor:sleeptalk",
+      "tutor:stealthrock",
+      "tutor:stompingtantrum",
+      "tutor:stoneedge",
+      "tutor:suckerpunch",
+      "tutor:throatchop",
+      "tutor:waterpulse",
+      "legacy:attract",
+      "legacy:captivate",
+      "legacy:confide",
+      "legacy:defensecurl",
+      "legacy:doubleedge",
+      "legacy:doubleteam",
+      "legacy:frustration",
+      "legacy:hiddenpower",
+      "legacy:mimic",
+      "legacy:naturalgift",
+      "legacy:return",
+      "legacy:round",
+      "legacy:secretpower",
+      "legacy:snore",
+      "legacy:swagger",
+      "legacy:toxic",
+      "special:mudsport"
+    ],
+    "evolutions": [],
+    "forms": [
+      {
+        "name": "Galar",
+        "primaryType": "ghost",
+        "maleRatio": 0.25,
+        "height": 6,
+        "weight": 5,
+        "pokedex": [
+          "cobblemon.species.corsola-galar.desc"
+        ],
+        "labels": [
+          "gen8",
+          "galarian_form"
+        ],
+        "aspects": [
+          "galarian"
+        ],
+        "abilities": [
+          "weakarmor",
+          "h:cursedbody"
+        ],
+        "baseStats": {
+          "hp": 60,
+          "attack": 55,
+          "defence": 100,
+          "special_attack": 65,
+          "special_defence": 100,
+          "speed": 30
+        },
+        "evYield": {
+          "hp": 0,
+          "attack": 0,
+          "defence": 0,
+          "special_attack": 0,
+          "special_defence": 1,
+          "speed": 0
+        },
+        "behaviour": {
+          "moving": {
+            "walk": {
+              "walkSpeed": 0.125,
+              "avoidsLand": true
+            },
+            "swim": {
+              "swimSpeed": 0.125,
+              "canSwimInWater": false,
+              "canBreatheUnderwater": true
+            }
+          },
+          "resting": {
+            "canSleep": true,
+            "light": "0-15",
+            "times": [
+              "day"
+            ],
+            "drowsyChance": 0.0033,
+            "rouseChance": 0.0042
+          },
+          "herd": {
+            "maxSize": "9",
+            "toleratedLeaders": [
+              {
+                "pokemon": "corsola galarian",
+                "tier": 1
+              },
+              {
+                "pokemon": "cursola",
+                "tier": 2
+              }
+            ]
+          },
+          "combat": {
+            "willDefendOwner": true
+          }
+        },
+        "drops": {
+          "amount": 1,
+          "entries": [
+            {
+              "item": "cobblemon:kasib_berry",
+              "percentage": 2.5
+            }
+          ]
+        },
+        "moves": [
+          "1:tackle",
+          "1:harden",
+          "5:astonish",
+          "10:disable",
+          "15:spite",
+          "20:ancientpower",
+          "25:hex",
+          "30:curse",
+          "35:strengthsap",
+          "40:powergem",
+          "45:nightshade",
+          "50:grudge",
+          "55:mirrorcoat",
+          "egg:confuseray",
+          "egg:destinybond",
+          "egg:haze",
+          "egg:headsmash",
+          "egg:naturepower",
+          "egg:waterpulse",
+          "tm:amnesia",
+          "tm:ancientpower",
+          "tm:blizzard",
+          "tm:bodyslam",
+          "tm:brine",
+          "tm:bulldoze",
+          "tm:calmmind",
+          "tm:confuseray",
+          "tm:curse",
+          "tm:dig",
+          "tm:earthpower",
+          "tm:earthquake",
+          "tm:endure",
+          "tm:facade",
+          "tm:gigadrain",
+          "tm:hail",
+          "tm:haze",
+          "tm:hex",
+          "tm:hydropump",
+          "tm:icebeam",
+          "tm:iciclespear",
+          "tm:icywind",
+          "tm:irondefense",
+          "tm:lightscreen",
+          "tm:liquidation",
+          "tm:meteorbeam",
+          "tm:naturepower",
+          "tm:nightshade",
+          "tm:powergem",
+          "tm:protect",
+          "tm:psychic",
+          "tm:raindance",
+          "tm:reflect",
+          "tm:rest",
+          "tm:rockblast",
+          "tm:rockslide",
+          "tm:rocktomb",
+          "tm:safeguard",
+          "tm:sandstorm",
+          "tm:scald",
+          "tm:screech",
+          "tm:selfdestruct",
+          "tm:shadowball",
+          "tm:sleeptalk",
+          "tm:spite",
+          "tm:stealthrock",
+          "tm:stompingtantrum",
+          "tm:stoneedge",
+          "tm:substitute",
+          "tm:sunnyday",
+          "tm:surf",
+          "tm:terablast",
+          "tm:throatchop",
+          "tm:waterpulse",
+          "tm:whirlpool",
+          "tm:willowisp",
+          "tutor:ancientpower",
+          "tutor:bulldoze",
+          "tutor:calmmind",
+          "tutor:earthpower",
+          "tutor:gigadrain",
+          "tutor:icebeam",
+          "tutor:icywind",
+          "tutor:irondefense",
+          "tutor:liquidation",
+          "tutor:meteorbeam",
+          "tutor:psychic",
+          "tutor:rest",
+          "tutor:rockslide",
+          "tutor:shadowball",
+          "tutor:sleeptalk",
+          "tutor:spite",
+          "tutor:stealthrock",
+          "tutor:stompingtantrum",
+          "tutor:stoneedge",
+          "tutor:throatchop",
+          "tutor:waterpulse",
+          "legacy:attract",
+          "legacy:round",
+          "legacy:snore"
+        ],
+        "evolutions": [
+          {
+            "id": "corsola_cursola",
+            "variant": "level_up",
+            "result": "cursola",
+            "consumeHeldItem": false,
+            "learnableMoves": [],
+            "requirements": [
+              {
+                "variant": "level",
+                "minLevel": 38
+              }
+            ]
+          }
+        ],
+        "battleOnly": false
+      }
+    ]
+  }
+}

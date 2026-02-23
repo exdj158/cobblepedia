@@ -1,0 +1,2983 @@
+{
+  "slug": "stunfisk",
+  "name": "Stunfisk",
+  "dexNumber": 618,
+  "implemented": true,
+  "types": [
+    "ground",
+    "electric"
+  ],
+  "abilities": [
+    {
+      "id": "static",
+      "hidden": false,
+      "label": "Static",
+      "slot": "first"
+    },
+    {
+      "id": "limber",
+      "hidden": false,
+      "label": "Limber",
+      "slot": "second"
+    },
+    {
+      "id": "sandveil",
+      "hidden": true,
+      "label": "Sandveil",
+      "slot": "hidden"
+    }
+  ],
+  "eggGroups": [
+    "water_1",
+    "amorphous"
+  ],
+  "labels": [
+    "gen5",
+    "unovan_form"
+  ],
+  "aspects": [],
+  "aliases": [
+    "galar",
+    "stunfisk",
+    "stunfisk galar"
+  ],
+  "maleRatio": 0.5,
+  "height": 7,
+  "weight": 110,
+  "catchRate": 75,
+  "baseExperienceYield": 165,
+  "baseFriendship": 70,
+  "eggCycles": 20,
+  "baseStats": {
+    "hp": 109,
+    "attack": 66,
+    "defence": 84,
+    "special_attack": 81,
+    "special_defence": 99,
+    "speed": 32
+  },
+  "evYield": {
+    "hp": 2,
+    "attack": 0,
+    "defence": 0,
+    "special_attack": 0,
+    "special_defence": 0,
+    "speed": 0
+  },
+  "preEvolution": null,
+  "evolutions": [],
+  "evolutionFamily": {
+    "members": [
+      {
+        "nodeId": "stunfisk",
+        "slug": "stunfisk",
+        "name": "Stunfisk",
+        "dexNumber": 618,
+        "formSlug": null,
+        "formName": null
+      }
+    ],
+    "edges": [],
+    "roots": [
+      "stunfisk"
+    ]
+  },
+  "moves": [
+    {
+      "raw": "tm:aquatail",
+      "moveId": "aquatail",
+      "moveName": "Aqua Tail",
+      "type": "water",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tutor:aquatail",
+      "moveId": "aquatail",
+      "moveName": "Aqua Tail",
+      "type": "water",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "egg:astonish",
+      "moveId": "astonish",
+      "moveName": "Astonish",
+      "type": "ghost",
+      "sourceType": "egg",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "legacy:attract",
+      "moveId": "attract",
+      "moveName": "Attract",
+      "type": "normal",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "1:bide",
+      "moveId": "bide",
+      "moveName": "Bide",
+      "type": "normal",
+      "sourceType": "level",
+      "sourceValue": 1,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "35:bounce",
+      "moveId": "bounce",
+      "moveName": "Bounce",
+      "type": "flying",
+      "sourceType": "level",
+      "sourceValue": 35,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:bounce",
+      "moveId": "bounce",
+      "moveName": "Bounce",
+      "type": "flying",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tutor:bounce",
+      "moveId": "bounce",
+      "moveName": "Bounce",
+      "type": "flying",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:bulldoze",
+      "moveId": "bulldoze",
+      "moveName": "Bulldoze",
+      "type": "ground",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tutor:bulldoze",
+      "moveId": "bulldoze",
+      "moveName": "Bulldoze",
+      "type": "ground",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "1:camouflage",
+      "moveId": "camouflage",
+      "moveName": "Camouflage",
+      "type": "normal",
+      "sourceType": "level",
+      "sourceValue": 1,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "20:charge",
+      "moveId": "charge",
+      "moveName": "Charge",
+      "type": "electric",
+      "sourceType": "level",
+      "sourceValue": 20,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:charge",
+      "moveId": "charge",
+      "moveName": "Charge",
+      "type": "electric",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "legacy:confide",
+      "moveId": "confide",
+      "moveName": "Confide",
+      "type": "normal",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "egg:curse",
+      "moveId": "curse",
+      "moveName": "Curse",
+      "type": "ghost",
+      "sourceType": "egg",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:curse",
+      "moveId": "curse",
+      "moveName": "Curse",
+      "type": "ghost",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:dig",
+      "moveId": "dig",
+      "moveName": "Dig",
+      "type": "ground",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "45:discharge",
+      "moveId": "discharge",
+      "moveName": "Discharge",
+      "type": "electric",
+      "sourceType": "level",
+      "sourceValue": 45,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "legacy:doubleteam",
+      "moveId": "doubleteam",
+      "moveName": "Double Team",
+      "type": "normal",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:earthpower",
+      "moveId": "earthpower",
+      "moveName": "Earth Power",
+      "type": "ground",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tutor:earthpower",
+      "moveId": "earthpower",
+      "moveName": "Earth Power",
+      "type": "ground",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:earthquake",
+      "moveId": "earthquake",
+      "moveName": "Earthquake",
+      "type": "ground",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:eerieimpulse",
+      "moveId": "eerieimpulse",
+      "moveName": "Eerie Impulse",
+      "type": "electric",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "30:electricterrain",
+      "moveId": "electricterrain",
+      "moveName": "Electric Terrain",
+      "type": "electric",
+      "sourceType": "level",
+      "sourceValue": 30,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:electricterrain",
+      "moveId": "electricterrain",
+      "moveName": "Electric Terrain",
+      "type": "electric",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:electroweb",
+      "moveId": "electroweb",
+      "moveName": "Electroweb",
+      "type": "electric",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tutor:electroweb",
+      "moveId": "electroweb",
+      "moveName": "Electroweb",
+      "type": "electric",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:endeavor",
+      "moveId": "endeavor",
+      "moveName": "Endeavor",
+      "type": "normal",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tutor:endeavor",
+      "moveId": "endeavor",
+      "moveName": "Endeavor",
+      "type": "normal",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "5:endure",
+      "moveId": "endure",
+      "moveName": "Endure",
+      "type": "normal",
+      "sourceType": "level",
+      "sourceValue": 5,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:endure",
+      "moveId": "endure",
+      "moveName": "Endure",
+      "type": "normal",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:facade",
+      "moveId": "facade",
+      "moveName": "Facade",
+      "type": "normal",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "55:fissure",
+      "moveId": "fissure",
+      "moveName": "Fissure",
+      "type": "ground",
+      "sourceType": "level",
+      "sourceValue": 55,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "50:flail",
+      "moveId": "flail",
+      "moveName": "Flail",
+      "type": "normal",
+      "sourceType": "level",
+      "sourceValue": 50,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:flash",
+      "moveId": "flash",
+      "moveName": "Flash",
+      "type": "normal",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:foulplay",
+      "moveId": "foulplay",
+      "moveName": "Foul Play",
+      "type": "dark",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tutor:foulplay",
+      "moveId": "foulplay",
+      "moveName": "Foul Play",
+      "type": "dark",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "legacy:frustration",
+      "moveId": "frustration",
+      "moveName": "Frustration",
+      "type": "normal",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "legacy:hiddenpower",
+      "moveId": "hiddenpower",
+      "moveName": "Hidden Power",
+      "type": "normal",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:infestation",
+      "moveId": "infestation",
+      "moveName": "Infestation",
+      "type": "bug",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:lashout",
+      "moveId": "lashout",
+      "moveName": "Lash Out",
+      "type": "dark",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tutor:lashout",
+      "moveId": "lashout",
+      "moveName": "Lash Out",
+      "type": "dark",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:magnetrise",
+      "moveId": "magnetrise",
+      "moveName": "Magnet Rise",
+      "type": "electric",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tutor:magnetrise",
+      "moveId": "magnetrise",
+      "moveName": "Magnet Rise",
+      "type": "electric",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "egg:mefirst",
+      "moveId": "mefirst",
+      "moveName": "Me First",
+      "type": "normal",
+      "sourceType": "egg",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "1:mudbomb",
+      "moveId": "mudbomb",
+      "moveName": "Mud Bomb",
+      "type": "ground",
+      "sourceType": "level",
+      "sourceValue": 1,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "10:mudshot",
+      "moveId": "mudshot",
+      "moveName": "Mud Shot",
+      "type": "ground",
+      "sourceType": "level",
+      "sourceValue": 10,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:mudshot",
+      "moveId": "mudshot",
+      "moveName": "Mud Shot",
+      "type": "ground",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "1:mudsport",
+      "moveId": "mudsport",
+      "moveName": "Mud Sport",
+      "type": "ground",
+      "sourceType": "level",
+      "sourceValue": 1,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "1:mudslap",
+      "moveId": "mudslap",
+      "moveName": "Mud-Slap",
+      "type": "ground",
+      "sourceType": "level",
+      "sourceValue": 1,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:mudslap",
+      "moveId": "mudslap",
+      "moveName": "Mud-Slap",
+      "type": "ground",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tutor:mudslap",
+      "moveId": "mudslap",
+      "moveName": "Mud-Slap",
+      "type": "ground",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "40:muddywater",
+      "moveId": "muddywater",
+      "moveName": "Muddy Water",
+      "type": "water",
+      "sourceType": "level",
+      "sourceValue": 40,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:muddywater",
+      "moveId": "muddywater",
+      "moveName": "Muddy Water",
+      "type": "water",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "egg:painsplit",
+      "moveId": "painsplit",
+      "moveName": "Pain Split",
+      "type": "normal",
+      "sourceType": "egg",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:painsplit",
+      "moveId": "painsplit",
+      "moveName": "Pain Split",
+      "type": "normal",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tutor:painsplit",
+      "moveId": "painsplit",
+      "moveName": "Pain Split",
+      "type": "normal",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:payback",
+      "moveId": "payback",
+      "moveName": "Payback",
+      "type": "dark",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:protect",
+      "moveId": "protect",
+      "moveName": "Protect",
+      "type": "normal",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:raindance",
+      "moveId": "raindance",
+      "moveName": "Rain Dance",
+      "type": "water",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "egg:reflecttype",
+      "moveId": "reflecttype",
+      "moveName": "Reflect Type",
+      "type": "normal",
+      "sourceType": "egg",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:rest",
+      "moveId": "rest",
+      "moveName": "Rest",
+      "type": "psychic",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tutor:rest",
+      "moveId": "rest",
+      "moveName": "Rest",
+      "type": "psychic",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "legacy:return",
+      "moveId": "return",
+      "moveName": "Return",
+      "type": "normal",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "15:revenge",
+      "moveId": "revenge",
+      "moveName": "Revenge",
+      "type": "fighting",
+      "sourceType": "level",
+      "sourceValue": 15,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:revenge",
+      "moveId": "revenge",
+      "moveName": "Revenge",
+      "type": "fighting",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:rockslide",
+      "moveId": "rockslide",
+      "moveName": "Rock Slide",
+      "type": "rock",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tutor:rockslide",
+      "moveId": "rockslide",
+      "moveName": "Rock Slide",
+      "type": "rock",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:rocktomb",
+      "moveId": "rocktomb",
+      "moveName": "Rock Tomb",
+      "type": "rock",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "legacy:round",
+      "moveId": "round",
+      "moveName": "Round",
+      "type": "normal",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:sandstorm",
+      "moveId": "sandstorm",
+      "moveName": "Sandstorm",
+      "type": "rock",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:scald",
+      "moveId": "scald",
+      "moveName": "Scald",
+      "type": "water",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "legacy:secretpower",
+      "moveId": "secretpower",
+      "moveName": "Secret Power",
+      "type": "normal",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:shockwave",
+      "moveId": "shockwave",
+      "moveName": "Shock Wave",
+      "type": "electric",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tutor:shockwave",
+      "moveId": "shockwave",
+      "moveName": "Shock Wave",
+      "type": "electric",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:sleeptalk",
+      "moveId": "sleeptalk",
+      "moveName": "Sleep Talk",
+      "type": "normal",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tutor:sleeptalk",
+      "moveId": "sleeptalk",
+      "moveName": "Sleep Talk",
+      "type": "normal",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:sludgebomb",
+      "moveId": "sludgebomb",
+      "moveName": "Sludge Bomb",
+      "type": "poison",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tutor:sludgebomb",
+      "moveId": "sludgebomb",
+      "moveName": "Sludge Bomb",
+      "type": "poison",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:sludgewave",
+      "moveId": "sludgewave",
+      "moveName": "Sludge Wave",
+      "type": "poison",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "legacy:snore",
+      "moveId": "snore",
+      "moveName": "Snore",
+      "type": "normal",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "egg:spark",
+      "moveId": "spark",
+      "moveName": "Spark",
+      "type": "electric",
+      "sourceType": "egg",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "egg:spite",
+      "moveId": "spite",
+      "moveName": "Spite",
+      "type": "ghost",
+      "sourceType": "egg",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:spite",
+      "moveId": "spite",
+      "moveName": "Spite",
+      "type": "ghost",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tutor:spite",
+      "moveId": "spite",
+      "moveName": "Spite",
+      "type": "ghost",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:stealthrock",
+      "moveId": "stealthrock",
+      "moveName": "Stealth Rock",
+      "type": "rock",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tutor:stealthrock",
+      "moveId": "stealthrock",
+      "moveName": "Stealth Rock",
+      "type": "rock",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:stompingtantrum",
+      "moveId": "stompingtantrum",
+      "moveName": "Stomping Tantrum",
+      "type": "ground",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tutor:stompingtantrum",
+      "moveId": "stompingtantrum",
+      "moveName": "Stomping Tantrum",
+      "type": "ground",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:stoneedge",
+      "moveId": "stoneedge",
+      "moveName": "Stone Edge",
+      "type": "rock",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tutor:stoneedge",
+      "moveId": "stoneedge",
+      "moveName": "Stone Edge",
+      "type": "rock",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:substitute",
+      "moveId": "substitute",
+      "moveName": "Substitute",
+      "type": "normal",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "25:suckerpunch",
+      "moveId": "suckerpunch",
+      "moveName": "Sucker Punch",
+      "type": "dark",
+      "sourceType": "level",
+      "sourceValue": 25,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:suckerpunch",
+      "moveId": "suckerpunch",
+      "moveName": "Sucker Punch",
+      "type": "dark",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tutor:suckerpunch",
+      "moveId": "suckerpunch",
+      "moveName": "Sucker Punch",
+      "type": "dark",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:surf",
+      "moveId": "surf",
+      "moveName": "Surf",
+      "type": "water",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "legacy:swagger",
+      "moveId": "swagger",
+      "moveName": "Swagger",
+      "type": "normal",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "1:tackle",
+      "moveId": "tackle",
+      "moveName": "Tackle",
+      "type": "normal",
+      "sourceType": "level",
+      "sourceValue": 1,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:terablast",
+      "moveId": "terablast",
+      "moveName": "Tera Blast",
+      "type": "normal",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:thunder",
+      "moveId": "thunder",
+      "moveName": "Thunder",
+      "type": "electric",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "1:thundershock",
+      "moveId": "thundershock",
+      "moveName": "Thunder Shock",
+      "type": "electric",
+      "sourceType": "level",
+      "sourceValue": 1,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:thunderwave",
+      "moveId": "thunderwave",
+      "moveName": "Thunder Wave",
+      "type": "electric",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:thunderbolt",
+      "moveId": "thunderbolt",
+      "moveName": "Thunderbolt",
+      "type": "electric",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tutor:thunderbolt",
+      "moveId": "thunderbolt",
+      "moveName": "Thunderbolt",
+      "type": "electric",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "legacy:toxic",
+      "moveId": "toxic",
+      "moveName": "Toxic",
+      "type": "poison",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:uproar",
+      "moveId": "uproar",
+      "moveName": "Uproar",
+      "type": "normal",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tutor:uproar",
+      "moveId": "uproar",
+      "moveName": "Uproar",
+      "type": "normal",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "1:watergun",
+      "moveId": "watergun",
+      "moveName": "Water Gun",
+      "type": "water",
+      "sourceType": "level",
+      "sourceValue": 1,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:waterpulse",
+      "moveId": "waterpulse",
+      "moveName": "Water Pulse",
+      "type": "water",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tutor:waterpulse",
+      "moveId": "waterpulse",
+      "moveName": "Water Pulse",
+      "type": "water",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "egg:yawn",
+      "moveId": "yawn",
+      "moveName": "Yawn",
+      "type": "normal",
+      "sourceType": "egg",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    }
+  ],
+  "spawnEntries": [
+    {
+      "id": "stunfisk-1",
+      "sourceFile": "0618_stunfisk.json",
+      "pokemon": {
+        "raw": "stunfisk",
+        "slug": "stunfisk",
+        "aspectTokens": []
+      },
+      "type": "pokemon",
+      "spawnablePositionType": "seafloor",
+      "bucket": "common",
+      "bucketWeight": 94.3,
+      "levelText": "22-47",
+      "levelMin": 22,
+      "levelMax": 47,
+      "weight": 2,
+      "presets": [
+        "water"
+      ],
+      "biomeHints": [
+        "Is Swamp",
+        "Mangrove Swamp",
+        "Swamp"
+      ],
+      "condition": {
+        "fluid": "#minecraft:water",
+        "canSeeSky": true,
+        "biomes": [
+          "#cobblemon:is_swamp"
+        ]
+      },
+      "anticondition": null,
+      "weightMultipliers": [],
+      "raw": {
+        "id": "stunfisk-1",
+        "pokemon": "stunfisk",
+        "presets": [
+          "water"
+        ],
+        "type": "pokemon",
+        "spawnablePositionType": "seafloor",
+        "bucket": "common",
+        "level": "22-47",
+        "weight": 2,
+        "condition": {
+          "canSeeSky": true,
+          "biomes": [
+            "#cobblemon:is_swamp"
+          ]
+        }
+      }
+    },
+    {
+      "id": "stunfisk-2",
+      "sourceFile": "0618_stunfisk.json",
+      "pokemon": {
+        "raw": "stunfisk",
+        "slug": "stunfisk",
+        "aspectTokens": []
+      },
+      "type": "pokemon",
+      "spawnablePositionType": "fishing",
+      "bucket": "common",
+      "bucketWeight": 94.3,
+      "levelText": "22-47",
+      "levelMin": 22,
+      "levelMax": 47,
+      "weight": 2,
+      "presets": [],
+      "biomeHints": [
+        "Is Arid",
+        "Is Badlands",
+        "Is Desert",
+        "Is Jungle",
+        "Is Swamp",
+        "Mangrove Swamp"
+      ],
+      "condition": {
+        "canSeeSky": true,
+        "biomes": [
+          "#cobblemon:is_arid",
+          "#cobblemon:is_jungle",
+          "#cobblemon:is_swamp"
+        ]
+      },
+      "anticondition": null,
+      "weightMultipliers": [
+        {
+          "multiplier": 3,
+          "condition": {
+            "minLureLevel": 2,
+            "maxLureLevel": 2
+          }
+        },
+        {
+          "multiplier": 5,
+          "condition": {
+            "minLureLevel": 3
+          }
+        }
+      ],
+      "raw": {
+        "id": "stunfisk-2",
+        "pokemon": "stunfisk",
+        "type": "pokemon",
+        "spawnablePositionType": "fishing",
+        "bucket": "common",
+        "level": "22-47",
+        "weight": 2,
+        "weightMultipliers": [
+          {
+            "multiplier": 3,
+            "condition": {
+              "minLureLevel": 2,
+              "maxLureLevel": 2
+            }
+          },
+          {
+            "multiplier": 5,
+            "condition": {
+              "minLureLevel": 3
+            }
+          }
+        ],
+        "condition": {
+          "canSeeSky": true,
+          "biomes": [
+            "#cobblemon:is_arid",
+            "#cobblemon:is_jungle",
+            "#cobblemon:is_swamp"
+          ]
+        }
+      }
+    },
+    {
+      "id": "stunfisk-3",
+      "sourceFile": "0618_stunfisk.json",
+      "pokemon": {
+        "raw": "stunfisk",
+        "slug": "stunfisk",
+        "aspectTokens": []
+      },
+      "type": "pokemon",
+      "spawnablePositionType": "fishing",
+      "bucket": "common",
+      "bucketWeight": 94.3,
+      "levelText": "22-47",
+      "levelMin": 22,
+      "levelMax": 47,
+      "weight": 2,
+      "presets": [],
+      "biomeHints": [
+        "Is Arid",
+        "Is Badlands",
+        "Is Desert",
+        "Is Jungle",
+        "Is Swamp",
+        "Mangrove Swamp"
+      ],
+      "condition": {
+        "canSeeSky": false,
+        "minSkyLight": 8,
+        "maxSkyLight": 15,
+        "biomes": [
+          "#cobblemon:is_arid",
+          "#cobblemon:is_jungle",
+          "#cobblemon:is_swamp"
+        ]
+      },
+      "anticondition": null,
+      "weightMultipliers": [
+        {
+          "multiplier": 3,
+          "condition": {
+            "minLureLevel": 2,
+            "maxLureLevel": 2
+          }
+        },
+        {
+          "multiplier": 5,
+          "condition": {
+            "minLureLevel": 3
+          }
+        }
+      ],
+      "raw": {
+        "id": "stunfisk-3",
+        "pokemon": "stunfisk",
+        "type": "pokemon",
+        "spawnablePositionType": "fishing",
+        "bucket": "common",
+        "level": "22-47",
+        "weight": 2,
+        "weightMultipliers": [
+          {
+            "multiplier": 3,
+            "condition": {
+              "minLureLevel": 2,
+              "maxLureLevel": 2
+            }
+          },
+          {
+            "multiplier": 5,
+            "condition": {
+              "minLureLevel": 3
+            }
+          }
+        ],
+        "condition": {
+          "canSeeSky": false,
+          "minSkyLight": 8,
+          "maxSkyLight": 15,
+          "biomes": [
+            "#cobblemon:is_arid",
+            "#cobblemon:is_jungle",
+            "#cobblemon:is_swamp"
+          ]
+        }
+      }
+    },
+    {
+      "id": "stunfisk-galarian-4",
+      "sourceFile": "0618_stunfisk.json",
+      "pokemon": {
+        "raw": "stunfisk galarian",
+        "slug": "stunfisk",
+        "aspectTokens": [
+          "galarian"
+        ]
+      },
+      "type": "pokemon",
+      "spawnablePositionType": "grounded",
+      "bucket": "common",
+      "bucketWeight": 94.3,
+      "levelText": "22-47",
+      "levelMin": 22,
+      "levelMax": 47,
+      "weight": 2,
+      "presets": [
+        "natural"
+      ],
+      "biomeHints": [
+        "Is Swamp",
+        "Mangrove Swamp",
+        "Swamp"
+      ],
+      "condition": {
+        "neededBaseBlocks": [
+          "#cobblemon:natural"
+        ],
+        "minSkyLight": 8,
+        "maxSkyLight": 15,
+        "biomes": [
+          "#cobblemon:is_swamp"
+        ]
+      },
+      "anticondition": {
+        "neededBaseBlocks": [
+          "minecraft:farmland"
+        ]
+      },
+      "weightMultipliers": [],
+      "raw": {
+        "id": "stunfisk-galarian-4",
+        "pokemon": "stunfisk galarian",
+        "presets": [
+          "natural"
+        ],
+        "type": "pokemon",
+        "spawnablePositionType": "grounded",
+        "bucket": "common",
+        "level": "22-47",
+        "weight": 2,
+        "condition": {
+          "minSkyLight": 8,
+          "maxSkyLight": 15,
+          "biomes": [
+            "#cobblemon:is_swamp"
+          ]
+        }
+      }
+    }
+  ],
+  "forms": [
+    {
+      "name": "Galar",
+      "slug": "stunfisk-galar",
+      "aspects": [
+        "galarian"
+      ],
+      "labels": [
+        "gen8",
+        "galarian_form"
+      ],
+      "types": [
+        "ground",
+        "steel"
+      ],
+      "maleRatio": 0.5,
+      "height": 7,
+      "weight": 205,
+      "catchRate": null,
+      "baseExperienceYield": null,
+      "baseFriendship": 50,
+      "eggCycles": null,
+      "baseStats": {
+        "hp": 109,
+        "attack": 81,
+        "defence": 99,
+        "special_attack": 66,
+        "special_defence": 84,
+        "speed": 32
+      },
+      "evYield": {},
+      "battleOnly": false,
+      "abilities": [
+        {
+          "id": "mimicry",
+          "hidden": false,
+          "label": "Mimicry",
+          "slot": "first"
+        },
+        {
+          "id": "mimicry",
+          "hidden": true,
+          "label": "Mimicry",
+          "slot": "hidden"
+        }
+      ],
+      "moves": [
+        {
+          "raw": "1:mudslap",
+          "moveId": "mudslap",
+          "moveName": "Mud-Slap",
+          "type": "ground",
+          "sourceType": "level",
+          "sourceValue": 1,
+          "fromForm": "Galar",
+          "fromFormSlug": "stunfisk-galar"
+        },
+        {
+          "raw": "1:tackle",
+          "moveId": "tackle",
+          "moveName": "Tackle",
+          "type": "normal",
+          "sourceType": "level",
+          "sourceValue": 1,
+          "fromForm": "Galar",
+          "fromFormSlug": "stunfisk-galar"
+        },
+        {
+          "raw": "1:watergun",
+          "moveId": "watergun",
+          "moveName": "Water Gun",
+          "type": "water",
+          "sourceType": "level",
+          "sourceValue": 1,
+          "fromForm": "Galar",
+          "fromFormSlug": "stunfisk-galar"
+        },
+        {
+          "raw": "1:metalclaw",
+          "moveId": "metalclaw",
+          "moveName": "Metal Claw",
+          "type": "steel",
+          "sourceType": "level",
+          "sourceValue": 1,
+          "fromForm": "Galar",
+          "fromFormSlug": "stunfisk-galar"
+        },
+        {
+          "raw": "5:endure",
+          "moveId": "endure",
+          "moveName": "Endure",
+          "type": "normal",
+          "sourceType": "level",
+          "sourceValue": 5,
+          "fromForm": "Galar",
+          "fromFormSlug": "stunfisk-galar"
+        },
+        {
+          "raw": "10:mudshot",
+          "moveId": "mudshot",
+          "moveName": "Mud Shot",
+          "type": "ground",
+          "sourceType": "level",
+          "sourceValue": 10,
+          "fromForm": "Galar",
+          "fromFormSlug": "stunfisk-galar"
+        },
+        {
+          "raw": "15:revenge",
+          "moveId": "revenge",
+          "moveName": "Revenge",
+          "type": "fighting",
+          "sourceType": "level",
+          "sourceValue": 15,
+          "fromForm": "Galar",
+          "fromFormSlug": "stunfisk-galar"
+        },
+        {
+          "raw": "20:metalsound",
+          "moveId": "metalsound",
+          "moveName": "Metal Sound",
+          "type": "steel",
+          "sourceType": "level",
+          "sourceValue": 20,
+          "fromForm": "Galar",
+          "fromFormSlug": "stunfisk-galar"
+        },
+        {
+          "raw": "25:suckerpunch",
+          "moveId": "suckerpunch",
+          "moveName": "Sucker Punch",
+          "type": "dark",
+          "sourceType": "level",
+          "sourceValue": 25,
+          "fromForm": "Galar",
+          "fromFormSlug": "stunfisk-galar"
+        },
+        {
+          "raw": "30:irondefense",
+          "moveId": "irondefense",
+          "moveName": "Iron Defense",
+          "type": "steel",
+          "sourceType": "level",
+          "sourceValue": 30,
+          "fromForm": "Galar",
+          "fromFormSlug": "stunfisk-galar"
+        },
+        {
+          "raw": "35:bounce",
+          "moveId": "bounce",
+          "moveName": "Bounce",
+          "type": "flying",
+          "sourceType": "level",
+          "sourceValue": 35,
+          "fromForm": "Galar",
+          "fromFormSlug": "stunfisk-galar"
+        },
+        {
+          "raw": "40:muddywater",
+          "moveId": "muddywater",
+          "moveName": "Muddy Water",
+          "type": "water",
+          "sourceType": "level",
+          "sourceValue": 40,
+          "fromForm": "Galar",
+          "fromFormSlug": "stunfisk-galar"
+        },
+        {
+          "raw": "45:snaptrap",
+          "moveId": "snaptrap",
+          "moveName": "Snap Trap",
+          "type": "grass",
+          "sourceType": "level",
+          "sourceValue": 45,
+          "fromForm": "Galar",
+          "fromFormSlug": "stunfisk-galar"
+        },
+        {
+          "raw": "50:flail",
+          "moveId": "flail",
+          "moveName": "Flail",
+          "type": "normal",
+          "sourceType": "level",
+          "sourceValue": 50,
+          "fromForm": "Galar",
+          "fromFormSlug": "stunfisk-galar"
+        },
+        {
+          "raw": "55:fissure",
+          "moveId": "fissure",
+          "moveName": "Fissure",
+          "type": "ground",
+          "sourceType": "level",
+          "sourceValue": 55,
+          "fromForm": "Galar",
+          "fromFormSlug": "stunfisk-galar"
+        },
+        {
+          "raw": "egg:astonish",
+          "moveId": "astonish",
+          "moveName": "Astonish",
+          "type": "ghost",
+          "sourceType": "egg",
+          "sourceValue": null,
+          "fromForm": "Galar",
+          "fromFormSlug": "stunfisk-galar"
+        },
+        {
+          "raw": "egg:bind",
+          "moveId": "bind",
+          "moveName": "Bind",
+          "type": "normal",
+          "sourceType": "egg",
+          "sourceValue": null,
+          "fromForm": "Galar",
+          "fromFormSlug": "stunfisk-galar"
+        },
+        {
+          "raw": "egg:counter",
+          "moveId": "counter",
+          "moveName": "Counter",
+          "type": "fighting",
+          "sourceType": "egg",
+          "sourceValue": null,
+          "fromForm": "Galar",
+          "fromFormSlug": "stunfisk-galar"
+        },
+        {
+          "raw": "egg:curse",
+          "moveId": "curse",
+          "moveName": "Curse",
+          "type": "ghost",
+          "sourceType": "egg",
+          "sourceValue": null,
+          "fromForm": "Galar",
+          "fromFormSlug": "stunfisk-galar"
+        },
+        {
+          "raw": "egg:painsplit",
+          "moveId": "painsplit",
+          "moveName": "Pain Split",
+          "type": "normal",
+          "sourceType": "egg",
+          "sourceValue": null,
+          "fromForm": "Galar",
+          "fromFormSlug": "stunfisk-galar"
+        },
+        {
+          "raw": "egg:reflecttype",
+          "moveId": "reflecttype",
+          "moveName": "Reflect Type",
+          "type": "normal",
+          "sourceType": "egg",
+          "sourceValue": null,
+          "fromForm": "Galar",
+          "fromFormSlug": "stunfisk-galar"
+        },
+        {
+          "raw": "egg:spite",
+          "moveId": "spite",
+          "moveName": "Spite",
+          "type": "ghost",
+          "sourceType": "egg",
+          "sourceValue": null,
+          "fromForm": "Galar",
+          "fromFormSlug": "stunfisk-galar"
+        },
+        {
+          "raw": "egg:yawn",
+          "moveId": "yawn",
+          "moveName": "Yawn",
+          "type": "normal",
+          "sourceType": "egg",
+          "sourceValue": null,
+          "fromForm": "Galar",
+          "fromFormSlug": "stunfisk-galar"
+        },
+        {
+          "raw": "tm:bind",
+          "moveId": "bind",
+          "moveName": "Bind",
+          "type": "normal",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Galar",
+          "fromFormSlug": "stunfisk-galar"
+        },
+        {
+          "raw": "tm:bounce",
+          "moveId": "bounce",
+          "moveName": "Bounce",
+          "type": "flying",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Galar",
+          "fromFormSlug": "stunfisk-galar"
+        },
+        {
+          "raw": "tm:bulldoze",
+          "moveId": "bulldoze",
+          "moveName": "Bulldoze",
+          "type": "ground",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Galar",
+          "fromFormSlug": "stunfisk-galar"
+        },
+        {
+          "raw": "tm:crunch",
+          "moveId": "crunch",
+          "moveName": "Crunch",
+          "type": "dark",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Galar",
+          "fromFormSlug": "stunfisk-galar"
+        },
+        {
+          "raw": "tm:curse",
+          "moveId": "curse",
+          "moveName": "Curse",
+          "type": "ghost",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Galar",
+          "fromFormSlug": "stunfisk-galar"
+        },
+        {
+          "raw": "tm:dig",
+          "moveId": "dig",
+          "moveName": "Dig",
+          "type": "ground",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Galar",
+          "fromFormSlug": "stunfisk-galar"
+        },
+        {
+          "raw": "tm:earthpower",
+          "moveId": "earthpower",
+          "moveName": "Earth Power",
+          "type": "ground",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Galar",
+          "fromFormSlug": "stunfisk-galar"
+        },
+        {
+          "raw": "tm:earthquake",
+          "moveId": "earthquake",
+          "moveName": "Earthquake",
+          "type": "ground",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Galar",
+          "fromFormSlug": "stunfisk-galar"
+        },
+        {
+          "raw": "tm:endure",
+          "moveId": "endure",
+          "moveName": "Endure",
+          "type": "normal",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Galar",
+          "fromFormSlug": "stunfisk-galar"
+        },
+        {
+          "raw": "tm:facade",
+          "moveId": "facade",
+          "moveName": "Facade",
+          "type": "normal",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Galar",
+          "fromFormSlug": "stunfisk-galar"
+        },
+        {
+          "raw": "tm:flashcannon",
+          "moveId": "flashcannon",
+          "moveName": "Flash Cannon",
+          "type": "steel",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Galar",
+          "fromFormSlug": "stunfisk-galar"
+        },
+        {
+          "raw": "tm:foulplay",
+          "moveId": "foulplay",
+          "moveName": "Foul Play",
+          "type": "dark",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Galar",
+          "fromFormSlug": "stunfisk-galar"
+        },
+        {
+          "raw": "tm:icefang",
+          "moveId": "icefang",
+          "moveName": "Ice Fang",
+          "type": "ice",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Galar",
+          "fromFormSlug": "stunfisk-galar"
+        },
+        {
+          "raw": "tm:irondefense",
+          "moveId": "irondefense",
+          "moveName": "Iron Defense",
+          "type": "steel",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Galar",
+          "fromFormSlug": "stunfisk-galar"
+        },
+        {
+          "raw": "tm:lashout",
+          "moveId": "lashout",
+          "moveName": "Lash Out",
+          "type": "dark",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Galar",
+          "fromFormSlug": "stunfisk-galar"
+        },
+        {
+          "raw": "tm:metalclaw",
+          "moveId": "metalclaw",
+          "moveName": "Metal Claw",
+          "type": "steel",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Galar",
+          "fromFormSlug": "stunfisk-galar"
+        },
+        {
+          "raw": "tm:metalsound",
+          "moveId": "metalsound",
+          "moveName": "Metal Sound",
+          "type": "steel",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Galar",
+          "fromFormSlug": "stunfisk-galar"
+        },
+        {
+          "raw": "tm:muddywater",
+          "moveId": "muddywater",
+          "moveName": "Muddy Water",
+          "type": "water",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Galar",
+          "fromFormSlug": "stunfisk-galar"
+        },
+        {
+          "raw": "tm:mudshot",
+          "moveId": "mudshot",
+          "moveName": "Mud Shot",
+          "type": "ground",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Galar",
+          "fromFormSlug": "stunfisk-galar"
+        },
+        {
+          "raw": "tm:mudslap",
+          "moveId": "mudslap",
+          "moveName": "Mud-Slap",
+          "type": "ground",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Galar",
+          "fromFormSlug": "stunfisk-galar"
+        },
+        {
+          "raw": "tm:painsplit",
+          "moveId": "painsplit",
+          "moveName": "Pain Split",
+          "type": "normal",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Galar",
+          "fromFormSlug": "stunfisk-galar"
+        },
+        {
+          "raw": "tm:payback",
+          "moveId": "payback",
+          "moveName": "Payback",
+          "type": "dark",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Galar",
+          "fromFormSlug": "stunfisk-galar"
+        },
+        {
+          "raw": "tm:protect",
+          "moveId": "protect",
+          "moveName": "Protect",
+          "type": "normal",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Galar",
+          "fromFormSlug": "stunfisk-galar"
+        },
+        {
+          "raw": "tm:raindance",
+          "moveId": "raindance",
+          "moveName": "Rain Dance",
+          "type": "water",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Galar",
+          "fromFormSlug": "stunfisk-galar"
+        },
+        {
+          "raw": "tm:rest",
+          "moveId": "rest",
+          "moveName": "Rest",
+          "type": "psychic",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Galar",
+          "fromFormSlug": "stunfisk-galar"
+        },
+        {
+          "raw": "tm:revenge",
+          "moveId": "revenge",
+          "moveName": "Revenge",
+          "type": "fighting",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Galar",
+          "fromFormSlug": "stunfisk-galar"
+        },
+        {
+          "raw": "tm:rockslide",
+          "moveId": "rockslide",
+          "moveName": "Rock Slide",
+          "type": "rock",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Galar",
+          "fromFormSlug": "stunfisk-galar"
+        },
+        {
+          "raw": "tm:rocktomb",
+          "moveId": "rocktomb",
+          "moveName": "Rock Tomb",
+          "type": "rock",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Galar",
+          "fromFormSlug": "stunfisk-galar"
+        },
+        {
+          "raw": "tm:sandstorm",
+          "moveId": "sandstorm",
+          "moveName": "Sandstorm",
+          "type": "rock",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Galar",
+          "fromFormSlug": "stunfisk-galar"
+        },
+        {
+          "raw": "tm:scald",
+          "moveId": "scald",
+          "moveName": "Scald",
+          "type": "water",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Galar",
+          "fromFormSlug": "stunfisk-galar"
+        },
+        {
+          "raw": "tm:screech",
+          "moveId": "screech",
+          "moveName": "Screech",
+          "type": "normal",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Galar",
+          "fromFormSlug": "stunfisk-galar"
+        },
+        {
+          "raw": "tm:sleeptalk",
+          "moveId": "sleeptalk",
+          "moveName": "Sleep Talk",
+          "type": "normal",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Galar",
+          "fromFormSlug": "stunfisk-galar"
+        },
+        {
+          "raw": "tm:sludgebomb",
+          "moveId": "sludgebomb",
+          "moveName": "Sludge Bomb",
+          "type": "poison",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Galar",
+          "fromFormSlug": "stunfisk-galar"
+        },
+        {
+          "raw": "tm:sludgewave",
+          "moveId": "sludgewave",
+          "moveName": "Sludge Wave",
+          "type": "poison",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Galar",
+          "fromFormSlug": "stunfisk-galar"
+        },
+        {
+          "raw": "tm:spite",
+          "moveId": "spite",
+          "moveName": "Spite",
+          "type": "ghost",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Galar",
+          "fromFormSlug": "stunfisk-galar"
+        },
+        {
+          "raw": "tm:stealthrock",
+          "moveId": "stealthrock",
+          "moveName": "Stealth Rock",
+          "type": "rock",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Galar",
+          "fromFormSlug": "stunfisk-galar"
+        },
+        {
+          "raw": "tm:steelbeam",
+          "moveId": "steelbeam",
+          "moveName": "Steel Beam",
+          "type": "steel",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Galar",
+          "fromFormSlug": "stunfisk-galar"
+        },
+        {
+          "raw": "tm:stompingtantrum",
+          "moveId": "stompingtantrum",
+          "moveName": "Stomping Tantrum",
+          "type": "ground",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Galar",
+          "fromFormSlug": "stunfisk-galar"
+        },
+        {
+          "raw": "tm:stoneedge",
+          "moveId": "stoneedge",
+          "moveName": "Stone Edge",
+          "type": "rock",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Galar",
+          "fromFormSlug": "stunfisk-galar"
+        },
+        {
+          "raw": "tm:substitute",
+          "moveId": "substitute",
+          "moveName": "Substitute",
+          "type": "normal",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Galar",
+          "fromFormSlug": "stunfisk-galar"
+        },
+        {
+          "raw": "tm:suckerpunch",
+          "moveId": "suckerpunch",
+          "moveName": "Sucker Punch",
+          "type": "dark",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Galar",
+          "fromFormSlug": "stunfisk-galar"
+        },
+        {
+          "raw": "tm:surf",
+          "moveId": "surf",
+          "moveName": "Surf",
+          "type": "water",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Galar",
+          "fromFormSlug": "stunfisk-galar"
+        },
+        {
+          "raw": "tm:terablast",
+          "moveId": "terablast",
+          "moveName": "Tera Blast",
+          "type": "normal",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Galar",
+          "fromFormSlug": "stunfisk-galar"
+        },
+        {
+          "raw": "tm:terrainpulse",
+          "moveId": "terrainpulse",
+          "moveName": "Terrain Pulse",
+          "type": "normal",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Galar",
+          "fromFormSlug": "stunfisk-galar"
+        },
+        {
+          "raw": "tm:thunderwave",
+          "moveId": "thunderwave",
+          "moveName": "Thunder Wave",
+          "type": "electric",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Galar",
+          "fromFormSlug": "stunfisk-galar"
+        },
+        {
+          "raw": "tm:uproar",
+          "moveId": "uproar",
+          "moveName": "Uproar",
+          "type": "normal",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Galar",
+          "fromFormSlug": "stunfisk-galar"
+        },
+        {
+          "raw": "tutor:bind",
+          "moveId": "bind",
+          "moveName": "Bind",
+          "type": "normal",
+          "sourceType": "tutor",
+          "sourceValue": null,
+          "fromForm": "Galar",
+          "fromFormSlug": "stunfisk-galar"
+        },
+        {
+          "raw": "tutor:bounce",
+          "moveId": "bounce",
+          "moveName": "Bounce",
+          "type": "flying",
+          "sourceType": "tutor",
+          "sourceValue": null,
+          "fromForm": "Galar",
+          "fromFormSlug": "stunfisk-galar"
+        },
+        {
+          "raw": "tutor:bulldoze",
+          "moveId": "bulldoze",
+          "moveName": "Bulldoze",
+          "type": "ground",
+          "sourceType": "tutor",
+          "sourceValue": null,
+          "fromForm": "Galar",
+          "fromFormSlug": "stunfisk-galar"
+        },
+        {
+          "raw": "tutor:earthpower",
+          "moveId": "earthpower",
+          "moveName": "Earth Power",
+          "type": "ground",
+          "sourceType": "tutor",
+          "sourceValue": null,
+          "fromForm": "Galar",
+          "fromFormSlug": "stunfisk-galar"
+        },
+        {
+          "raw": "tutor:flashcannon",
+          "moveId": "flashcannon",
+          "moveName": "Flash Cannon",
+          "type": "steel",
+          "sourceType": "tutor",
+          "sourceValue": null,
+          "fromForm": "Galar",
+          "fromFormSlug": "stunfisk-galar"
+        },
+        {
+          "raw": "tutor:foulplay",
+          "moveId": "foulplay",
+          "moveName": "Foul Play",
+          "type": "dark",
+          "sourceType": "tutor",
+          "sourceValue": null,
+          "fromForm": "Galar",
+          "fromFormSlug": "stunfisk-galar"
+        },
+        {
+          "raw": "tutor:icefang",
+          "moveId": "icefang",
+          "moveName": "Ice Fang",
+          "type": "ice",
+          "sourceType": "tutor",
+          "sourceValue": null,
+          "fromForm": "Galar",
+          "fromFormSlug": "stunfisk-galar"
+        },
+        {
+          "raw": "tutor:irondefense",
+          "moveId": "irondefense",
+          "moveName": "Iron Defense",
+          "type": "steel",
+          "sourceType": "tutor",
+          "sourceValue": null,
+          "fromForm": "Galar",
+          "fromFormSlug": "stunfisk-galar"
+        },
+        {
+          "raw": "tutor:lashout",
+          "moveId": "lashout",
+          "moveName": "Lash Out",
+          "type": "dark",
+          "sourceType": "tutor",
+          "sourceValue": null,
+          "fromForm": "Galar",
+          "fromFormSlug": "stunfisk-galar"
+        },
+        {
+          "raw": "tutor:mudslap",
+          "moveId": "mudslap",
+          "moveName": "Mud-Slap",
+          "type": "ground",
+          "sourceType": "tutor",
+          "sourceValue": null,
+          "fromForm": "Galar",
+          "fromFormSlug": "stunfisk-galar"
+        },
+        {
+          "raw": "tutor:painsplit",
+          "moveId": "painsplit",
+          "moveName": "Pain Split",
+          "type": "normal",
+          "sourceType": "tutor",
+          "sourceValue": null,
+          "fromForm": "Galar",
+          "fromFormSlug": "stunfisk-galar"
+        },
+        {
+          "raw": "tutor:rest",
+          "moveId": "rest",
+          "moveName": "Rest",
+          "type": "psychic",
+          "sourceType": "tutor",
+          "sourceValue": null,
+          "fromForm": "Galar",
+          "fromFormSlug": "stunfisk-galar"
+        },
+        {
+          "raw": "tutor:rockslide",
+          "moveId": "rockslide",
+          "moveName": "Rock Slide",
+          "type": "rock",
+          "sourceType": "tutor",
+          "sourceValue": null,
+          "fromForm": "Galar",
+          "fromFormSlug": "stunfisk-galar"
+        },
+        {
+          "raw": "tutor:sleeptalk",
+          "moveId": "sleeptalk",
+          "moveName": "Sleep Talk",
+          "type": "normal",
+          "sourceType": "tutor",
+          "sourceValue": null,
+          "fromForm": "Galar",
+          "fromFormSlug": "stunfisk-galar"
+        },
+        {
+          "raw": "tutor:sludgebomb",
+          "moveId": "sludgebomb",
+          "moveName": "Sludge Bomb",
+          "type": "poison",
+          "sourceType": "tutor",
+          "sourceValue": null,
+          "fromForm": "Galar",
+          "fromFormSlug": "stunfisk-galar"
+        },
+        {
+          "raw": "tutor:spite",
+          "moveId": "spite",
+          "moveName": "Spite",
+          "type": "ghost",
+          "sourceType": "tutor",
+          "sourceValue": null,
+          "fromForm": "Galar",
+          "fromFormSlug": "stunfisk-galar"
+        },
+        {
+          "raw": "tutor:stealthrock",
+          "moveId": "stealthrock",
+          "moveName": "Stealth Rock",
+          "type": "rock",
+          "sourceType": "tutor",
+          "sourceValue": null,
+          "fromForm": "Galar",
+          "fromFormSlug": "stunfisk-galar"
+        },
+        {
+          "raw": "tutor:steelbeam",
+          "moveId": "steelbeam",
+          "moveName": "Steel Beam",
+          "type": "steel",
+          "sourceType": "tutor",
+          "sourceValue": null,
+          "fromForm": "Galar",
+          "fromFormSlug": "stunfisk-galar"
+        },
+        {
+          "raw": "tutor:stompingtantrum",
+          "moveId": "stompingtantrum",
+          "moveName": "Stomping Tantrum",
+          "type": "ground",
+          "sourceType": "tutor",
+          "sourceValue": null,
+          "fromForm": "Galar",
+          "fromFormSlug": "stunfisk-galar"
+        },
+        {
+          "raw": "tutor:stoneedge",
+          "moveId": "stoneedge",
+          "moveName": "Stone Edge",
+          "type": "rock",
+          "sourceType": "tutor",
+          "sourceValue": null,
+          "fromForm": "Galar",
+          "fromFormSlug": "stunfisk-galar"
+        },
+        {
+          "raw": "tutor:suckerpunch",
+          "moveId": "suckerpunch",
+          "moveName": "Sucker Punch",
+          "type": "dark",
+          "sourceType": "tutor",
+          "sourceValue": null,
+          "fromForm": "Galar",
+          "fromFormSlug": "stunfisk-galar"
+        },
+        {
+          "raw": "tutor:terrainpulse",
+          "moveId": "terrainpulse",
+          "moveName": "Terrain Pulse",
+          "type": "normal",
+          "sourceType": "tutor",
+          "sourceValue": null,
+          "fromForm": "Galar",
+          "fromFormSlug": "stunfisk-galar"
+        },
+        {
+          "raw": "tutor:uproar",
+          "moveId": "uproar",
+          "moveName": "Uproar",
+          "type": "normal",
+          "sourceType": "tutor",
+          "sourceValue": null,
+          "fromForm": "Galar",
+          "fromFormSlug": "stunfisk-galar"
+        },
+        {
+          "raw": "legacy:attract",
+          "moveId": "attract",
+          "moveName": "Attract",
+          "type": "normal",
+          "sourceType": "legacy",
+          "sourceValue": null,
+          "fromForm": "Galar",
+          "fromFormSlug": "stunfisk-galar"
+        },
+        {
+          "raw": "legacy:round",
+          "moveId": "round",
+          "moveName": "Round",
+          "type": "normal",
+          "sourceType": "legacy",
+          "sourceValue": null,
+          "fromForm": "Galar",
+          "fromFormSlug": "stunfisk-galar"
+        },
+        {
+          "raw": "legacy:snore",
+          "moveId": "snore",
+          "moveName": "Snore",
+          "type": "normal",
+          "sourceType": "legacy",
+          "sourceValue": null,
+          "fromForm": "Galar",
+          "fromFormSlug": "stunfisk-galar"
+        }
+      ],
+      "evolutions": [],
+      "raw": {
+        "name": "Galar",
+        "primaryType": "ground",
+        "secondaryType": "steel",
+        "maleRatio": 0.5,
+        "height": 7,
+        "weight": 205,
+        "pokedex": [
+          "cobblemon.species.stunfisk-galar.desc"
+        ],
+        "labels": [
+          "gen8",
+          "galarian_form"
+        ],
+        "aspects": [
+          "galarian"
+        ],
+        "abilities": [
+          "mimicry",
+          "h:mimicry"
+        ],
+        "baseStats": {
+          "hp": 109,
+          "attack": 81,
+          "defence": 99,
+          "special_attack": 66,
+          "special_defence": 84,
+          "speed": 32
+        },
+        "baseFriendship": 50,
+        "moves": [
+          "1:mudslap",
+          "1:tackle",
+          "1:watergun",
+          "1:metalclaw",
+          "5:endure",
+          "10:mudshot",
+          "15:revenge",
+          "20:metalsound",
+          "25:suckerpunch",
+          "30:irondefense",
+          "35:bounce",
+          "40:muddywater",
+          "45:snaptrap",
+          "50:flail",
+          "55:fissure",
+          "egg:astonish",
+          "egg:bind",
+          "egg:counter",
+          "egg:curse",
+          "egg:painsplit",
+          "egg:reflecttype",
+          "egg:spite",
+          "egg:yawn",
+          "tm:bind",
+          "tm:bounce",
+          "tm:bulldoze",
+          "tm:crunch",
+          "tm:curse",
+          "tm:dig",
+          "tm:earthpower",
+          "tm:earthquake",
+          "tm:endure",
+          "tm:facade",
+          "tm:flashcannon",
+          "tm:foulplay",
+          "tm:icefang",
+          "tm:irondefense",
+          "tm:lashout",
+          "tm:metalclaw",
+          "tm:metalsound",
+          "tm:muddywater",
+          "tm:mudshot",
+          "tm:mudslap",
+          "tm:painsplit",
+          "tm:payback",
+          "tm:protect",
+          "tm:raindance",
+          "tm:rest",
+          "tm:revenge",
+          "tm:rockslide",
+          "tm:rocktomb",
+          "tm:sandstorm",
+          "tm:scald",
+          "tm:screech",
+          "tm:sleeptalk",
+          "tm:sludgebomb",
+          "tm:sludgewave",
+          "tm:spite",
+          "tm:stealthrock",
+          "tm:steelbeam",
+          "tm:stompingtantrum",
+          "tm:stoneedge",
+          "tm:substitute",
+          "tm:suckerpunch",
+          "tm:surf",
+          "tm:terablast",
+          "tm:terrainpulse",
+          "tm:thunderwave",
+          "tm:uproar",
+          "tutor:bind",
+          "tutor:bounce",
+          "tutor:bulldoze",
+          "tutor:earthpower",
+          "tutor:flashcannon",
+          "tutor:foulplay",
+          "tutor:icefang",
+          "tutor:irondefense",
+          "tutor:lashout",
+          "tutor:mudslap",
+          "tutor:painsplit",
+          "tutor:rest",
+          "tutor:rockslide",
+          "tutor:sleeptalk",
+          "tutor:sludgebomb",
+          "tutor:spite",
+          "tutor:stealthrock",
+          "tutor:steelbeam",
+          "tutor:stompingtantrum",
+          "tutor:stoneedge",
+          "tutor:suckerpunch",
+          "tutor:terrainpulse",
+          "tutor:uproar",
+          "legacy:attract",
+          "legacy:round",
+          "legacy:snore"
+        ],
+        "evolutions": [],
+        "battleOnly": false,
+        "behaviour": {
+          "resting": {
+            "willSleepOnBed": true,
+            "drowsyChance": 0.0333,
+            "rouseChance": 0.0042
+          },
+          "moving": {
+            "swim": {
+              "avoidsWater": true
+            }
+          },
+          "combat": {
+            "willDefendSelf": true,
+            "willDefendOwner": true,
+            "willFlee": false
+          }
+        }
+      }
+    }
+  ],
+  "rawSpecies": {
+    "implemented": true,
+    "nationalPokedexNumber": 618,
+    "name": "Stunfisk",
+    "primaryType": "ground",
+    "secondaryType": "electric",
+    "maleRatio": 0.5,
+    "height": 7,
+    "weight": 110,
+    "pokedex": [
+      "cobblemon.species.stunfisk.desc"
+    ],
+    "labels": [
+      "gen5",
+      "unovan_form"
+    ],
+    "aspects": [],
+    "abilities": [
+      "static",
+      "limber",
+      "h:sandveil"
+    ],
+    "eggGroups": [
+      "water_1",
+      "amorphous"
+    ],
+    "baseStats": {
+      "hp": 109,
+      "attack": 66,
+      "defence": 84,
+      "special_attack": 81,
+      "special_defence": 99,
+      "speed": 32
+    },
+    "evYield": {
+      "hp": 2,
+      "attack": 0,
+      "defence": 0,
+      "special_attack": 0,
+      "special_defence": 0,
+      "speed": 0
+    },
+    "baseExperienceYield": 165,
+    "experienceGroup": "medium_fast",
+    "catchRate": 75,
+    "eggCycles": 20,
+    "baseFriendship": 70,
+    "features": [
+      "galarian"
+    ],
+    "baseScale": 0.9,
+    "hitbox": {
+      "width": 1,
+      "height": 0.25,
+      "fixed": false
+    },
+    "behaviour": {
+      "moving": {
+        "swim": {
+          "canBreatheUnderwater": true,
+          "swimSpeed": "0.2"
+        },
+        "walk": {
+          "avoidsLand": true
+        }
+      },
+      "resting": {
+        "willSleepOnBed": true,
+        "drowsyChance": 0.0333,
+        "rouseChance": 0.0042
+      },
+      "combat": {
+        "willDefendSelf": true,
+        "willDefendOwner": true,
+        "willFlee": false
+      }
+    },
+    "drops": {
+      "amount": 3,
+      "entries": [
+        {
+          "item": "minecraft:mud",
+          "quantityRange": "0-2"
+        },
+        {
+          "item": "cobblemon:passho_berry",
+          "percentage": 5
+        }
+      ]
+    },
+    "moves": [
+      "1:mudslap",
+      "1:mudsport",
+      "1:bide",
+      "1:thundershock",
+      "1:camouflage",
+      "1:mudbomb",
+      "1:tackle",
+      "1:watergun",
+      "5:endure",
+      "10:mudshot",
+      "15:revenge",
+      "20:charge",
+      "25:suckerpunch",
+      "30:electricterrain",
+      "35:bounce",
+      "40:muddywater",
+      "45:discharge",
+      "50:flail",
+      "55:fissure",
+      "egg:astonish",
+      "egg:curse",
+      "egg:mefirst",
+      "egg:painsplit",
+      "egg:reflecttype",
+      "egg:spark",
+      "egg:spite",
+      "egg:yawn",
+      "tm:aquatail",
+      "tm:bounce",
+      "tm:bulldoze",
+      "tm:charge",
+      "tm:curse",
+      "tm:dig",
+      "tm:earthpower",
+      "tm:earthquake",
+      "tm:eerieimpulse",
+      "tm:electricterrain",
+      "tm:electroweb",
+      "tm:endeavor",
+      "tm:endure",
+      "tm:facade",
+      "tm:flash",
+      "tm:foulplay",
+      "tm:infestation",
+      "tm:lashout",
+      "tm:magnetrise",
+      "tm:muddywater",
+      "tm:mudshot",
+      "tm:mudslap",
+      "tm:painsplit",
+      "tm:payback",
+      "tm:protect",
+      "tm:raindance",
+      "tm:rest",
+      "tm:revenge",
+      "tm:rockslide",
+      "tm:rocktomb",
+      "tm:sandstorm",
+      "tm:scald",
+      "tm:shockwave",
+      "tm:sleeptalk",
+      "tm:sludgebomb",
+      "tm:sludgewave",
+      "tm:spite",
+      "tm:stealthrock",
+      "tm:stompingtantrum",
+      "tm:stoneedge",
+      "tm:substitute",
+      "tm:suckerpunch",
+      "tm:surf",
+      "tm:terablast",
+      "tm:thunder",
+      "tm:thunderbolt",
+      "tm:thunderwave",
+      "tm:uproar",
+      "tm:waterpulse",
+      "tutor:aquatail",
+      "tutor:bounce",
+      "tutor:bulldoze",
+      "tutor:earthpower",
+      "tutor:electroweb",
+      "tutor:endeavor",
+      "tutor:foulplay",
+      "tutor:lashout",
+      "tutor:magnetrise",
+      "tutor:mudslap",
+      "tutor:painsplit",
+      "tutor:rest",
+      "tutor:rockslide",
+      "tutor:shockwave",
+      "tutor:sleeptalk",
+      "tutor:sludgebomb",
+      "tutor:spite",
+      "tutor:stealthrock",
+      "tutor:stompingtantrum",
+      "tutor:stoneedge",
+      "tutor:suckerpunch",
+      "tutor:thunderbolt",
+      "tutor:uproar",
+      "tutor:waterpulse",
+      "legacy:attract",
+      "legacy:confide",
+      "legacy:doubleteam",
+      "legacy:frustration",
+      "legacy:hiddenpower",
+      "legacy:return",
+      "legacy:round",
+      "legacy:secretpower",
+      "legacy:snore",
+      "legacy:swagger",
+      "legacy:toxic"
+    ],
+    "evolutions": [],
+    "forms": [
+      {
+        "name": "Galar",
+        "primaryType": "ground",
+        "secondaryType": "steel",
+        "maleRatio": 0.5,
+        "height": 7,
+        "weight": 205,
+        "pokedex": [
+          "cobblemon.species.stunfisk-galar.desc"
+        ],
+        "labels": [
+          "gen8",
+          "galarian_form"
+        ],
+        "aspects": [
+          "galarian"
+        ],
+        "abilities": [
+          "mimicry",
+          "h:mimicry"
+        ],
+        "baseStats": {
+          "hp": 109,
+          "attack": 81,
+          "defence": 99,
+          "special_attack": 66,
+          "special_defence": 84,
+          "speed": 32
+        },
+        "baseFriendship": 50,
+        "moves": [
+          "1:mudslap",
+          "1:tackle",
+          "1:watergun",
+          "1:metalclaw",
+          "5:endure",
+          "10:mudshot",
+          "15:revenge",
+          "20:metalsound",
+          "25:suckerpunch",
+          "30:irondefense",
+          "35:bounce",
+          "40:muddywater",
+          "45:snaptrap",
+          "50:flail",
+          "55:fissure",
+          "egg:astonish",
+          "egg:bind",
+          "egg:counter",
+          "egg:curse",
+          "egg:painsplit",
+          "egg:reflecttype",
+          "egg:spite",
+          "egg:yawn",
+          "tm:bind",
+          "tm:bounce",
+          "tm:bulldoze",
+          "tm:crunch",
+          "tm:curse",
+          "tm:dig",
+          "tm:earthpower",
+          "tm:earthquake",
+          "tm:endure",
+          "tm:facade",
+          "tm:flashcannon",
+          "tm:foulplay",
+          "tm:icefang",
+          "tm:irondefense",
+          "tm:lashout",
+          "tm:metalclaw",
+          "tm:metalsound",
+          "tm:muddywater",
+          "tm:mudshot",
+          "tm:mudslap",
+          "tm:painsplit",
+          "tm:payback",
+          "tm:protect",
+          "tm:raindance",
+          "tm:rest",
+          "tm:revenge",
+          "tm:rockslide",
+          "tm:rocktomb",
+          "tm:sandstorm",
+          "tm:scald",
+          "tm:screech",
+          "tm:sleeptalk",
+          "tm:sludgebomb",
+          "tm:sludgewave",
+          "tm:spite",
+          "tm:stealthrock",
+          "tm:steelbeam",
+          "tm:stompingtantrum",
+          "tm:stoneedge",
+          "tm:substitute",
+          "tm:suckerpunch",
+          "tm:surf",
+          "tm:terablast",
+          "tm:terrainpulse",
+          "tm:thunderwave",
+          "tm:uproar",
+          "tutor:bind",
+          "tutor:bounce",
+          "tutor:bulldoze",
+          "tutor:earthpower",
+          "tutor:flashcannon",
+          "tutor:foulplay",
+          "tutor:icefang",
+          "tutor:irondefense",
+          "tutor:lashout",
+          "tutor:mudslap",
+          "tutor:painsplit",
+          "tutor:rest",
+          "tutor:rockslide",
+          "tutor:sleeptalk",
+          "tutor:sludgebomb",
+          "tutor:spite",
+          "tutor:stealthrock",
+          "tutor:steelbeam",
+          "tutor:stompingtantrum",
+          "tutor:stoneedge",
+          "tutor:suckerpunch",
+          "tutor:terrainpulse",
+          "tutor:uproar",
+          "legacy:attract",
+          "legacy:round",
+          "legacy:snore"
+        ],
+        "evolutions": [],
+        "battleOnly": false,
+        "behaviour": {
+          "resting": {
+            "willSleepOnBed": true,
+            "drowsyChance": 0.0333,
+            "rouseChance": 0.0042
+          },
+          "moving": {
+            "swim": {
+              "avoidsWater": true
+            }
+          },
+          "combat": {
+            "willDefendSelf": true,
+            "willDefendOwner": true,
+            "willFlee": false
+          }
+        }
+      }
+    ]
+  }
+}

@@ -1,0 +1,4298 @@
+{
+  "slug": "exeggutor",
+  "name": "Exeggutor",
+  "dexNumber": 103,
+  "implemented": true,
+  "types": [
+    "grass",
+    "psychic"
+  ],
+  "abilities": [
+    {
+      "id": "chlorophyll",
+      "hidden": false,
+      "label": "Chlorophyll",
+      "slot": "first"
+    },
+    {
+      "id": "harvest",
+      "hidden": true,
+      "label": "Harvest",
+      "slot": "hidden"
+    }
+  ],
+  "eggGroups": [
+    "grass"
+  ],
+  "labels": [
+    "gen1",
+    "kantonian_form"
+  ],
+  "aspects": [],
+  "aliases": [
+    "alola",
+    "exeggutor",
+    "exeggutor alola"
+  ],
+  "maleRatio": 0.5,
+  "height": 20,
+  "weight": 1200,
+  "catchRate": 45,
+  "baseExperienceYield": 186,
+  "baseFriendship": 50,
+  "eggCycles": 20,
+  "baseStats": {
+    "hp": 95,
+    "attack": 95,
+    "defence": 85,
+    "special_attack": 125,
+    "special_defence": 75,
+    "speed": 55
+  },
+  "evYield": {
+    "hp": 0,
+    "attack": 0,
+    "defence": 0,
+    "special_attack": 2,
+    "special_defence": 0,
+    "speed": 0
+  },
+  "preEvolution": {
+    "raw": "exeggcute",
+    "slug": "exeggcute",
+    "aspectTokens": []
+  },
+  "evolutions": [],
+  "evolutionFamily": {
+    "members": [
+      {
+        "nodeId": "exeggcute",
+        "slug": "exeggcute",
+        "name": "Exeggcute",
+        "dexNumber": 102,
+        "formSlug": null,
+        "formName": null
+      },
+      {
+        "nodeId": "exeggcute-alolabias",
+        "slug": "exeggcute",
+        "name": "Exeggcute",
+        "dexNumber": 102,
+        "formSlug": "exeggcute-alolabias",
+        "formName": "Alola-Bias"
+      },
+      {
+        "nodeId": "exeggutor",
+        "slug": "exeggutor",
+        "name": "Exeggutor",
+        "dexNumber": 103,
+        "formSlug": null,
+        "formName": null
+      },
+      {
+        "nodeId": "exeggutor-alola",
+        "slug": "exeggutor",
+        "name": "Exeggutor",
+        "dexNumber": 103,
+        "formSlug": "exeggutor-alola",
+        "formName": "Alola"
+      }
+    ],
+    "edges": [
+      {
+        "fromNodeId": "exeggcute",
+        "toNodeId": "exeggutor",
+        "fromSlug": "exeggcute",
+        "toSlug": "exeggutor",
+        "method": "item_interact",
+        "requirementText": [
+          "Use Leaf Stone"
+        ]
+      },
+      {
+        "fromNodeId": "exeggcute-alolabias",
+        "toNodeId": "exeggutor-alola",
+        "fromSlug": "exeggcute",
+        "toSlug": "exeggutor",
+        "method": "item_interact",
+        "requirementText": [
+          "Use Leaf Stone"
+        ]
+      }
+    ],
+    "roots": [
+      "exeggcute",
+      "exeggcute-alolabias"
+    ]
+  },
+  "moves": [
+    {
+      "raw": "1:absorb",
+      "moveId": "absorb",
+      "moveName": "Absorb",
+      "type": "grass",
+      "sourceType": "level",
+      "sourceValue": 1,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "egg:ancientpower",
+      "moveId": "ancientpower",
+      "moveName": "Ancient Power",
+      "type": "rock",
+      "sourceType": "egg",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:ancientpower",
+      "moveId": "ancientpower",
+      "moveName": "Ancient Power",
+      "type": "rock",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tutor:ancientpower",
+      "moveId": "ancientpower",
+      "moveName": "Ancient Power",
+      "type": "rock",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "legacy:attract",
+      "moveId": "attract",
+      "moveName": "Attract",
+      "type": "normal",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "1:barrage",
+      "moveId": "barrage",
+      "moveName": "Barrage",
+      "type": "normal",
+      "sourceType": "level",
+      "sourceValue": 1,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "1:bestow",
+      "moveId": "bestow",
+      "moveName": "Bestow",
+      "type": "normal",
+      "sourceType": "level",
+      "sourceValue": 1,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "legacy:bide",
+      "moveId": "bide",
+      "moveName": "Bide",
+      "type": "normal",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "egg:block",
+      "moveId": "block",
+      "moveName": "Block",
+      "type": "normal",
+      "sourceType": "egg",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:block",
+      "moveId": "block",
+      "moveName": "Block",
+      "type": "normal",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tutor:block",
+      "moveId": "block",
+      "moveName": "Block",
+      "type": "normal",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:bodyslam",
+      "moveId": "bodyslam",
+      "moveName": "Body Slam",
+      "type": "normal",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:bulldoze",
+      "moveId": "bulldoze",
+      "moveName": "Bulldoze",
+      "type": "ground",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tutor:bulldoze",
+      "moveId": "bulldoze",
+      "moveName": "Bulldoze",
+      "type": "ground",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "1:bulletseed",
+      "moveId": "bulletseed",
+      "moveName": "Bullet Seed",
+      "type": "grass",
+      "sourceType": "level",
+      "sourceValue": 1,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:bulletseed",
+      "moveId": "bulletseed",
+      "moveName": "Bullet Seed",
+      "type": "grass",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:calmmind",
+      "moveId": "calmmind",
+      "moveName": "Calm Mind",
+      "type": "psychic",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tutor:calmmind",
+      "moveId": "calmmind",
+      "moveName": "Calm Mind",
+      "type": "psychic",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "legacy:captivate",
+      "moveId": "captivate",
+      "moveName": "Captivate",
+      "type": "normal",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "legacy:confide",
+      "moveId": "confide",
+      "moveName": "Confide",
+      "type": "normal",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "1:confusion",
+      "moveId": "confusion",
+      "moveName": "Confusion",
+      "type": "psychic",
+      "sourceType": "level",
+      "sourceValue": 1,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "egg:curse",
+      "moveId": "curse",
+      "moveName": "Curse",
+      "type": "ghost",
+      "sourceType": "egg",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:curse",
+      "moveId": "curse",
+      "moveName": "Curse",
+      "type": "ghost",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "legacy:doubleteam",
+      "moveId": "doubleteam",
+      "moveName": "Double Team",
+      "type": "normal",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:doubleedge",
+      "moveId": "doubleedge",
+      "moveName": "Double-Edge",
+      "type": "normal",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:dreameater",
+      "moveId": "dreameater",
+      "moveName": "Dream Eater",
+      "type": "psychic",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:earthquake",
+      "moveId": "earthquake",
+      "moveName": "Earthquake",
+      "type": "ground",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "legacy:eggbomb",
+      "moveId": "eggbomb",
+      "moveName": "Egg Bomb",
+      "type": "normal",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "1:eggbomb",
+      "moveId": "eggbomb",
+      "moveName": "Egg Bomb",
+      "type": "normal",
+      "sourceType": "level",
+      "sourceValue": 1,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:endure",
+      "moveId": "endure",
+      "moveName": "Endure",
+      "type": "normal",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:energyball",
+      "moveId": "energyball",
+      "moveName": "Energy Ball",
+      "type": "grass",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tutor:energyball",
+      "moveId": "energyball",
+      "moveName": "Energy Ball",
+      "type": "grass",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:expandingforce",
+      "moveId": "expandingforce",
+      "moveName": "Expanding Force",
+      "type": "psychic",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tutor:expandingforce",
+      "moveId": "expandingforce",
+      "moveName": "Expanding Force",
+      "type": "psychic",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:explosion",
+      "moveId": "explosion",
+      "moveName": "Explosion",
+      "type": "normal",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "1:extrasensory",
+      "moveId": "extrasensory",
+      "moveName": "Extrasensory",
+      "type": "psychic",
+      "sourceType": "level",
+      "sourceValue": 1,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:facade",
+      "moveId": "facade",
+      "moveName": "Facade",
+      "type": "normal",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:flash",
+      "moveId": "flash",
+      "moveName": "Flash",
+      "type": "normal",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "legacy:frustration",
+      "moveId": "frustration",
+      "moveName": "Frustration",
+      "type": "normal",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:futuresight",
+      "moveId": "futuresight",
+      "moveName": "Future Sight",
+      "type": "psychic",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "1:gigadrain",
+      "moveId": "gigadrain",
+      "moveName": "Giga Drain",
+      "type": "grass",
+      "sourceType": "level",
+      "sourceValue": 1,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:gigadrain",
+      "moveId": "gigadrain",
+      "moveName": "Giga Drain",
+      "type": "grass",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tutor:gigadrain",
+      "moveId": "gigadrain",
+      "moveName": "Giga Drain",
+      "type": "grass",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:gigaimpact",
+      "moveId": "gigaimpact",
+      "moveName": "Giga Impact",
+      "type": "normal",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tutor:gigaimpact",
+      "moveId": "gigaimpact",
+      "moveName": "Giga Impact",
+      "type": "normal",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:grassknot",
+      "moveId": "grassknot",
+      "moveName": "Grass Knot",
+      "type": "grass",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:grassyglide",
+      "moveId": "grassyglide",
+      "moveName": "Grassy Glide",
+      "type": "grass",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tutor:grassyglide",
+      "moveId": "grassyglide",
+      "moveName": "Grassy Glide",
+      "type": "grass",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:grassyterrain",
+      "moveId": "grassyterrain",
+      "moveName": "Grassy Terrain",
+      "type": "grass",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:gravity",
+      "moveId": "gravity",
+      "moveName": "Gravity",
+      "type": "psychic",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "1:growth",
+      "moveId": "growth",
+      "moveName": "Growth",
+      "type": "normal",
+      "sourceType": "level",
+      "sourceValue": 1,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:headbutt",
+      "moveId": "headbutt",
+      "moveName": "Headbutt",
+      "type": "normal",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:helpinghand",
+      "moveId": "helpinghand",
+      "moveName": "Helping Hand",
+      "type": "normal",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tutor:helpinghand",
+      "moveId": "helpinghand",
+      "moveName": "Helping Hand",
+      "type": "normal",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "legacy:hiddenpower",
+      "moveId": "hiddenpower",
+      "moveName": "Hidden Power",
+      "type": "normal",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:hyperbeam",
+      "moveId": "hyperbeam",
+      "moveName": "Hyper Beam",
+      "type": "normal",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tutor:hyperbeam",
+      "moveId": "hyperbeam",
+      "moveName": "Hyper Beam",
+      "type": "normal",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "1:hypnosis",
+      "moveId": "hypnosis",
+      "moveName": "Hypnosis",
+      "type": "psychic",
+      "sourceType": "level",
+      "sourceValue": 1,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:imprison",
+      "moveId": "imprison",
+      "moveName": "Imprison",
+      "type": "psychic",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:infestation",
+      "moveId": "infestation",
+      "moveName": "Infestation",
+      "type": "bug",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "egg:ingrain",
+      "moveId": "ingrain",
+      "moveName": "Ingrain",
+      "type": "grass",
+      "sourceType": "egg",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "1:leafstorm",
+      "moveId": "leafstorm",
+      "moveName": "Leaf Storm",
+      "type": "grass",
+      "sourceType": "level",
+      "sourceValue": 1,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:leafstorm",
+      "moveId": "leafstorm",
+      "moveName": "Leaf Storm",
+      "type": "grass",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "1:leechseed",
+      "moveId": "leechseed",
+      "moveName": "Leech Seed",
+      "type": "grass",
+      "sourceType": "level",
+      "sourceValue": 1,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:lightscreen",
+      "moveId": "lightscreen",
+      "moveName": "Light Screen",
+      "type": "psychic",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:lowkick",
+      "moveId": "lowkick",
+      "moveName": "Low Kick",
+      "type": "fighting",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tutor:lowkick",
+      "moveId": "lowkick",
+      "moveName": "Low Kick",
+      "type": "fighting",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "egg:luckychant",
+      "moveId": "luckychant",
+      "moveName": "Lucky Chant",
+      "type": "normal",
+      "sourceType": "egg",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:magicalleaf",
+      "moveId": "magicalleaf",
+      "moveName": "Magical Leaf",
+      "type": "grass",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tutor:magicalleaf",
+      "moveId": "magicalleaf",
+      "moveName": "Magical Leaf",
+      "type": "grass",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "1:megadrain",
+      "moveId": "megadrain",
+      "moveName": "Mega Drain",
+      "type": "grass",
+      "sourceType": "level",
+      "sourceValue": 1,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "legacy:mimic",
+      "moveId": "mimic",
+      "moveName": "Mimic",
+      "type": "normal",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "egg:moonlight",
+      "moveId": "moonlight",
+      "moveName": "Moonlight",
+      "type": "fairy",
+      "sourceType": "egg",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "egg:naturalgift",
+      "moveId": "naturalgift",
+      "moveName": "Natural Gift",
+      "type": "normal",
+      "sourceType": "egg",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:naturalgift",
+      "moveId": "naturalgift",
+      "moveName": "Natural Gift",
+      "type": "normal",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:naturepower",
+      "moveId": "naturepower",
+      "moveName": "Nature Power",
+      "type": "normal",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "legacy:nightmare",
+      "moveId": "nightmare",
+      "moveName": "Nightmare",
+      "type": "ghost",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "egg:poisonpowder",
+      "moveId": "poisonpowder",
+      "moveName": "Poison Powder",
+      "type": "poison",
+      "sourceType": "egg",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:powerswap",
+      "moveId": "powerswap",
+      "moveName": "Power Swap",
+      "type": "psychic",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "legacy:powerwhip",
+      "moveId": "powerwhip",
+      "moveName": "Power Whip",
+      "type": "grass",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:protect",
+      "moveId": "protect",
+      "moveName": "Protect",
+      "type": "normal",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:psybeam",
+      "moveId": "psybeam",
+      "moveName": "Psybeam",
+      "type": "psychic",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:psychup",
+      "moveId": "psychup",
+      "moveName": "Psych Up",
+      "type": "normal",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:psychic",
+      "moveId": "psychic",
+      "moveName": "Psychic",
+      "type": "psychic",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tutor:psychic",
+      "moveId": "psychic",
+      "moveName": "Psychic",
+      "type": "psychic",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:psychicnoise",
+      "moveId": "psychicnoise",
+      "moveName": "Psychic Noise",
+      "type": "psychic",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:psychicterrain",
+      "moveId": "psychicterrain",
+      "moveName": "Psychic Terrain",
+      "type": "psychic",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:psychocut",
+      "moveId": "psychocut",
+      "moveName": "Psycho Cut",
+      "type": "psychic",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tutor:psychocut",
+      "moveId": "psychocut",
+      "moveName": "Psycho Cut",
+      "type": "psychic",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "1:psyshock",
+      "moveId": "psyshock",
+      "moveName": "Psyshock",
+      "type": "psychic",
+      "sourceType": "level",
+      "sourceValue": 1,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:psyshock",
+      "moveId": "psyshock",
+      "moveName": "Psyshock",
+      "type": "psychic",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "legacy:psywave",
+      "moveId": "psywave",
+      "moveName": "Psywave",
+      "type": "psychic",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "legacy:rage",
+      "moveId": "rage",
+      "moveName": "Rage",
+      "type": "normal",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "1:reflect",
+      "moveId": "reflect",
+      "moveName": "Reflect",
+      "type": "psychic",
+      "sourceType": "level",
+      "sourceValue": 1,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:reflect",
+      "moveId": "reflect",
+      "moveName": "Reflect",
+      "type": "psychic",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "special:refresh",
+      "moveId": "refresh",
+      "moveName": "Refresh",
+      "type": "normal",
+      "sourceType": "special",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:rest",
+      "moveId": "rest",
+      "moveName": "Rest",
+      "type": "psychic",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tutor:rest",
+      "moveId": "rest",
+      "moveName": "Rest",
+      "type": "psychic",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "legacy:return",
+      "moveId": "return",
+      "moveName": "Return",
+      "type": "normal",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:rollout",
+      "moveId": "rollout",
+      "moveName": "Rollout",
+      "type": "rock",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tutor:rollout",
+      "moveId": "rollout",
+      "moveName": "Rollout",
+      "type": "rock",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "legacy:round",
+      "moveId": "round",
+      "moveName": "Round",
+      "type": "normal",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "legacy:secretpower",
+      "moveId": "secretpower",
+      "moveName": "Secret Power",
+      "type": "normal",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "1:seedbomb",
+      "moveId": "seedbomb",
+      "moveName": "Seed Bomb",
+      "type": "grass",
+      "sourceType": "level",
+      "sourceValue": 1,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:seedbomb",
+      "moveId": "seedbomb",
+      "moveName": "Seed Bomb",
+      "type": "grass",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tutor:seedbomb",
+      "moveId": "seedbomb",
+      "moveName": "Seed Bomb",
+      "type": "grass",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:selfdestruct",
+      "moveId": "selfdestruct",
+      "moveName": "Self-Destruct",
+      "type": "normal",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:skillswap",
+      "moveId": "skillswap",
+      "moveName": "Skill Swap",
+      "type": "psychic",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tutor:skillswap",
+      "moveId": "skillswap",
+      "moveName": "Skill Swap",
+      "type": "psychic",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "egg:sleeppowder",
+      "moveId": "sleeppowder",
+      "moveName": "Sleep Powder",
+      "type": "grass",
+      "sourceType": "egg",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:sleeptalk",
+      "moveId": "sleeptalk",
+      "moveName": "Sleep Talk",
+      "type": "normal",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tutor:sleeptalk",
+      "moveId": "sleeptalk",
+      "moveName": "Sleep Talk",
+      "type": "normal",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:sludgebomb",
+      "moveId": "sludgebomb",
+      "moveName": "Sludge Bomb",
+      "type": "poison",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tutor:sludgebomb",
+      "moveId": "sludgebomb",
+      "moveName": "Sludge Bomb",
+      "type": "poison",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "legacy:snore",
+      "moveId": "snore",
+      "moveName": "Snore",
+      "type": "normal",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "1:solarbeam",
+      "moveId": "solarbeam",
+      "moveName": "Solar Beam",
+      "type": "grass",
+      "sourceType": "level",
+      "sourceValue": 1,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:solarbeam",
+      "moveId": "solarbeam",
+      "moveName": "Solar Beam",
+      "type": "grass",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "1:stomp",
+      "moveId": "stomp",
+      "moveName": "Stomp",
+      "type": "normal",
+      "sourceType": "level",
+      "sourceValue": 1,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:stompingtantrum",
+      "moveId": "stompingtantrum",
+      "moveName": "Stomping Tantrum",
+      "type": "ground",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tutor:stompingtantrum",
+      "moveId": "stompingtantrum",
+      "moveName": "Stomping Tantrum",
+      "type": "ground",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:storedpower",
+      "moveId": "storedpower",
+      "moveName": "Stored Power",
+      "type": "psychic",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:strength",
+      "moveId": "strength",
+      "moveName": "Strength",
+      "type": "normal",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "egg:stunspore",
+      "moveId": "stunspore",
+      "moveName": "Stun Spore",
+      "type": "grass",
+      "sourceType": "egg",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:substitute",
+      "moveId": "substitute",
+      "moveName": "Substitute",
+      "type": "normal",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:sunnyday",
+      "moveId": "sunnyday",
+      "moveName": "Sunny Day",
+      "type": "fire",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "legacy:swagger",
+      "moveId": "swagger",
+      "moveName": "Swagger",
+      "type": "normal",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "special:sweetscent",
+      "moveId": "sweetscent",
+      "moveName": "Sweet Scent",
+      "type": "normal",
+      "sourceType": "special",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:swordsdance",
+      "moveId": "swordsdance",
+      "moveName": "Swords Dance",
+      "type": "normal",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "1:synthesis",
+      "moveId": "synthesis",
+      "moveName": "Synthesis",
+      "type": "grass",
+      "sourceType": "level",
+      "sourceValue": 1,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:synthesis",
+      "moveId": "synthesis",
+      "moveName": "Synthesis",
+      "type": "grass",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tutor:synthesis",
+      "moveId": "synthesis",
+      "moveName": "Synthesis",
+      "type": "grass",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:takedown",
+      "moveId": "takedown",
+      "moveName": "Take Down",
+      "type": "normal",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:telekinesis",
+      "moveId": "telekinesis",
+      "moveName": "Telekinesis",
+      "type": "psychic",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tutor:telekinesis",
+      "moveId": "telekinesis",
+      "moveName": "Telekinesis",
+      "type": "psychic",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "legacy:teleport",
+      "moveId": "teleport",
+      "moveName": "Teleport",
+      "type": "psychic",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:terablast",
+      "moveId": "terablast",
+      "moveName": "Tera Blast",
+      "type": "normal",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:terrainpulse",
+      "moveId": "terrainpulse",
+      "moveName": "Terrain Pulse",
+      "type": "normal",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tutor:terrainpulse",
+      "moveId": "terrainpulse",
+      "moveName": "Terrain Pulse",
+      "type": "normal",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:thief",
+      "moveId": "thief",
+      "moveName": "Thief",
+      "type": "dark",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "legacy:toxic",
+      "moveId": "toxic",
+      "moveName": "Toxic",
+      "type": "poison",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:trick",
+      "moveId": "trick",
+      "moveName": "Trick",
+      "type": "psychic",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tutor:trick",
+      "moveId": "trick",
+      "moveName": "Trick",
+      "type": "psychic",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:trickroom",
+      "moveId": "trickroom",
+      "moveName": "Trick Room",
+      "type": "psychic",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "1:uproar",
+      "moveId": "uproar",
+      "moveName": "Uproar",
+      "type": "normal",
+      "sourceType": "level",
+      "sourceValue": 1,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:uproar",
+      "moveId": "uproar",
+      "moveName": "Uproar",
+      "type": "normal",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tutor:uproar",
+      "moveId": "uproar",
+      "moveName": "Uproar",
+      "type": "normal",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "special:wish",
+      "moveId": "wish",
+      "moveName": "Wish",
+      "type": "normal",
+      "sourceType": "special",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "1:woodhammer",
+      "moveId": "woodhammer",
+      "moveName": "Wood Hammer",
+      "type": "grass",
+      "sourceType": "level",
+      "sourceValue": 1,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "1:worryseed",
+      "moveId": "worryseed",
+      "moveName": "Worry Seed",
+      "type": "grass",
+      "sourceType": "level",
+      "sourceValue": 1,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:worryseed",
+      "moveId": "worryseed",
+      "moveName": "Worry Seed",
+      "type": "grass",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tutor:worryseed",
+      "moveId": "worryseed",
+      "moveName": "Worry Seed",
+      "type": "grass",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:zenheadbutt",
+      "moveId": "zenheadbutt",
+      "moveName": "Zen Headbutt",
+      "type": "psychic",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tutor:zenheadbutt",
+      "moveId": "zenheadbutt",
+      "moveName": "Zen Headbutt",
+      "type": "psychic",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    }
+  ],
+  "spawnEntries": [
+    {
+      "id": "exeggutor-1",
+      "sourceFile": "0103_exeggutor.json",
+      "pokemon": {
+        "raw": "exeggutor",
+        "slug": "exeggutor",
+        "aspectTokens": []
+      },
+      "type": "pokemon",
+      "spawnablePositionType": "grounded",
+      "bucket": "common",
+      "bucketWeight": 94.3,
+      "levelText": "28-53",
+      "levelMin": 28,
+      "levelMax": 53,
+      "weight": 0.1,
+      "presets": [
+        "natural"
+      ],
+      "biomeHints": [
+        "Is Jungle",
+        "Is Savanna"
+      ],
+      "condition": {
+        "neededBaseBlocks": [
+          "#cobblemon:natural"
+        ],
+        "minSkyLight": 8,
+        "maxSkyLight": 15,
+        "biomes": [
+          "#cobblemon:is_jungle",
+          "#cobblemon:is_savanna"
+        ]
+      },
+      "anticondition": {
+        "neededBaseBlocks": [
+          "minecraft:farmland"
+        ]
+      },
+      "weightMultipliers": [],
+      "raw": {
+        "id": "exeggutor-1",
+        "pokemon": "exeggutor",
+        "presets": [
+          "natural"
+        ],
+        "type": "pokemon",
+        "spawnablePositionType": "grounded",
+        "bucket": "common",
+        "level": "28-53",
+        "weight": 0.1,
+        "condition": {
+          "minSkyLight": 8,
+          "maxSkyLight": 15,
+          "biomes": [
+            "#cobblemon:is_jungle",
+            "#cobblemon:is_savanna"
+          ]
+        }
+      }
+    },
+    {
+      "id": "exeggutor-alolan-2",
+      "sourceFile": "0103_exeggutor.json",
+      "pokemon": {
+        "raw": "exeggutor alolan",
+        "slug": "exeggutor",
+        "aspectTokens": [
+          "alolan"
+        ]
+      },
+      "type": "pokemon",
+      "spawnablePositionType": "grounded",
+      "bucket": "uncommon",
+      "bucketWeight": 5,
+      "levelText": "28-53",
+      "levelMin": 28,
+      "levelMax": 53,
+      "weight": 0.8,
+      "presets": [
+        "natural"
+      ],
+      "biomeHints": [
+        "Is Beach",
+        "Dune Beach",
+        "Is Tropical Island",
+        "Tropics",
+        "Tropical Beach"
+      ],
+      "condition": {
+        "neededBaseBlocks": [
+          "#cobblemon:natural"
+        ],
+        "minSkyLight": 8,
+        "maxSkyLight": 15,
+        "biomes": [
+          "#cobblemon:is_beach",
+          "#cobblemon:is_tropical_island"
+        ]
+      },
+      "anticondition": {
+        "neededBaseBlocks": [
+          "minecraft:farmland"
+        ],
+        "biomes": [
+          "#cobblemon:is_freezing"
+        ]
+      },
+      "weightMultipliers": [],
+      "raw": {
+        "id": "exeggutor-alolan-2",
+        "pokemon": "exeggutor alolan",
+        "presets": [
+          "natural"
+        ],
+        "type": "pokemon",
+        "spawnablePositionType": "grounded",
+        "bucket": "uncommon",
+        "level": "28-53",
+        "weight": 0.8,
+        "condition": {
+          "minSkyLight": 8,
+          "maxSkyLight": 15,
+          "biomes": [
+            "#cobblemon:is_beach",
+            "#cobblemon:is_tropical_island"
+          ]
+        },
+        "anticondition": {
+          "biomes": [
+            "#cobblemon:is_freezing"
+          ]
+        }
+      }
+    }
+  ],
+  "forms": [
+    {
+      "name": "Alola",
+      "slug": "exeggutor-alola",
+      "aspects": [
+        "alolan"
+      ],
+      "labels": [
+        "gen7",
+        "alolan_form"
+      ],
+      "types": [
+        "grass",
+        "dragon"
+      ],
+      "maleRatio": 0.5,
+      "height": 109,
+      "weight": 4156,
+      "catchRate": null,
+      "baseExperienceYield": null,
+      "baseFriendship": null,
+      "eggCycles": null,
+      "baseStats": {
+        "hp": 95,
+        "attack": 105,
+        "defence": 85,
+        "special_attack": 125,
+        "special_defence": 75,
+        "speed": 45
+      },
+      "evYield": {},
+      "battleOnly": false,
+      "abilities": [
+        {
+          "id": "frisk",
+          "hidden": false,
+          "label": "Frisk",
+          "slot": "first"
+        },
+        {
+          "id": "harvest",
+          "hidden": true,
+          "label": "Harvest",
+          "slot": "hidden"
+        }
+      ],
+      "moves": [
+        {
+          "raw": "1:dragonhammer",
+          "moveId": "dragonhammer",
+          "moveName": "Dragon Hammer",
+          "type": "dragon",
+          "sourceType": "level",
+          "sourceValue": 1,
+          "fromForm": "Alola",
+          "fromFormSlug": "exeggutor-alola"
+        },
+        {
+          "raw": "1:seedbomb",
+          "moveId": "seedbomb",
+          "moveName": "Seed Bomb",
+          "type": "grass",
+          "sourceType": "level",
+          "sourceValue": 1,
+          "fromForm": "Alola",
+          "fromFormSlug": "exeggutor-alola"
+        },
+        {
+          "raw": "1:barrage",
+          "moveId": "barrage",
+          "moveName": "Barrage",
+          "type": "normal",
+          "sourceType": "level",
+          "sourceValue": 1,
+          "fromForm": "Alola",
+          "fromFormSlug": "exeggutor-alola"
+        },
+        {
+          "raw": "1:hypnosis",
+          "moveId": "hypnosis",
+          "moveName": "Hypnosis",
+          "type": "psychic",
+          "sourceType": "level",
+          "sourceValue": 1,
+          "fromForm": "Alola",
+          "fromFormSlug": "exeggutor-alola"
+        },
+        {
+          "raw": "1:confusion",
+          "moveId": "confusion",
+          "moveName": "Confusion",
+          "type": "psychic",
+          "sourceType": "level",
+          "sourceValue": 1,
+          "fromForm": "Alola",
+          "fromFormSlug": "exeggutor-alola"
+        },
+        {
+          "raw": "1:psyshock",
+          "moveId": "psyshock",
+          "moveName": "Psyshock",
+          "type": "psychic",
+          "sourceType": "level",
+          "sourceValue": 1,
+          "fromForm": "Alola",
+          "fromFormSlug": "exeggutor-alola"
+        },
+        {
+          "raw": "1:eggbomb",
+          "moveId": "eggbomb",
+          "moveName": "Egg Bomb",
+          "type": "normal",
+          "sourceType": "level",
+          "sourceValue": 1,
+          "fromForm": "Alola",
+          "fromFormSlug": "exeggutor-alola"
+        },
+        {
+          "raw": "1:woodhammer",
+          "moveId": "woodhammer",
+          "moveName": "Wood Hammer",
+          "type": "grass",
+          "sourceType": "level",
+          "sourceValue": 1,
+          "fromForm": "Alola",
+          "fromFormSlug": "exeggutor-alola"
+        },
+        {
+          "raw": "1:leafstorm",
+          "moveId": "leafstorm",
+          "moveName": "Leaf Storm",
+          "type": "grass",
+          "sourceType": "level",
+          "sourceValue": 1,
+          "fromForm": "Alola",
+          "fromFormSlug": "exeggutor-alola"
+        },
+        {
+          "raw": "1:solarbeam",
+          "moveId": "solarbeam",
+          "moveName": "Solar Beam",
+          "type": "grass",
+          "sourceType": "level",
+          "sourceValue": 1,
+          "fromForm": "Alola",
+          "fromFormSlug": "exeggutor-alola"
+        },
+        {
+          "raw": "1:reflect",
+          "moveId": "reflect",
+          "moveName": "Reflect",
+          "type": "psychic",
+          "sourceType": "level",
+          "sourceValue": 1,
+          "fromForm": "Alola",
+          "fromFormSlug": "exeggutor-alola"
+        },
+        {
+          "raw": "1:gigadrain",
+          "moveId": "gigadrain",
+          "moveName": "Giga Drain",
+          "type": "grass",
+          "sourceType": "level",
+          "sourceValue": 1,
+          "fromForm": "Alola",
+          "fromFormSlug": "exeggutor-alola"
+        },
+        {
+          "raw": "1:synthesis",
+          "moveId": "synthesis",
+          "moveName": "Synthesis",
+          "type": "grass",
+          "sourceType": "level",
+          "sourceValue": 1,
+          "fromForm": "Alola",
+          "fromFormSlug": "exeggutor-alola"
+        },
+        {
+          "raw": "1:worryseed",
+          "moveId": "worryseed",
+          "moveName": "Worry Seed",
+          "type": "grass",
+          "sourceType": "level",
+          "sourceValue": 1,
+          "fromForm": "Alola",
+          "fromFormSlug": "exeggutor-alola"
+        },
+        {
+          "raw": "1:megadrain",
+          "moveId": "megadrain",
+          "moveName": "Mega Drain",
+          "type": "grass",
+          "sourceType": "level",
+          "sourceValue": 1,
+          "fromForm": "Alola",
+          "fromFormSlug": "exeggutor-alola"
+        },
+        {
+          "raw": "1:bulletseed",
+          "moveId": "bulletseed",
+          "moveName": "Bullet Seed",
+          "type": "grass",
+          "sourceType": "level",
+          "sourceValue": 1,
+          "fromForm": "Alola",
+          "fromFormSlug": "exeggutor-alola"
+        },
+        {
+          "raw": "1:extrasensory",
+          "moveId": "extrasensory",
+          "moveName": "Extrasensory",
+          "type": "psychic",
+          "sourceType": "level",
+          "sourceValue": 1,
+          "fromForm": "Alola",
+          "fromFormSlug": "exeggutor-alola"
+        },
+        {
+          "raw": "1:uproar",
+          "moveId": "uproar",
+          "moveName": "Uproar",
+          "type": "normal",
+          "sourceType": "level",
+          "sourceValue": 1,
+          "fromForm": "Alola",
+          "fromFormSlug": "exeggutor-alola"
+        },
+        {
+          "raw": "1:absorb",
+          "moveId": "absorb",
+          "moveName": "Absorb",
+          "type": "grass",
+          "sourceType": "level",
+          "sourceValue": 1,
+          "fromForm": "Alola",
+          "fromFormSlug": "exeggutor-alola"
+        },
+        {
+          "raw": "1:leechseed",
+          "moveId": "leechseed",
+          "moveName": "Leech Seed",
+          "type": "grass",
+          "sourceType": "level",
+          "sourceValue": 1,
+          "fromForm": "Alola",
+          "fromFormSlug": "exeggutor-alola"
+        },
+        {
+          "raw": "1:growth",
+          "moveId": "growth",
+          "moveName": "Growth",
+          "type": "normal",
+          "sourceType": "level",
+          "sourceValue": 1,
+          "fromForm": "Alola",
+          "fromFormSlug": "exeggutor-alola"
+        },
+        {
+          "raw": "1:bestow",
+          "moveId": "bestow",
+          "moveName": "Bestow",
+          "type": "normal",
+          "sourceType": "level",
+          "sourceValue": 1,
+          "fromForm": "Alola",
+          "fromFormSlug": "exeggutor-alola"
+        },
+        {
+          "raw": "egg:ancientpower",
+          "moveId": "ancientpower",
+          "moveName": "Ancient Power",
+          "type": "rock",
+          "sourceType": "egg",
+          "sourceValue": null,
+          "fromForm": "Alola",
+          "fromFormSlug": "exeggutor-alola"
+        },
+        {
+          "raw": "egg:block",
+          "moveId": "block",
+          "moveName": "Block",
+          "type": "normal",
+          "sourceType": "egg",
+          "sourceValue": null,
+          "fromForm": "Alola",
+          "fromFormSlug": "exeggutor-alola"
+        },
+        {
+          "raw": "egg:curse",
+          "moveId": "curse",
+          "moveName": "Curse",
+          "type": "ghost",
+          "sourceType": "egg",
+          "sourceValue": null,
+          "fromForm": "Alola",
+          "fromFormSlug": "exeggutor-alola"
+        },
+        {
+          "raw": "egg:ingrain",
+          "moveId": "ingrain",
+          "moveName": "Ingrain",
+          "type": "grass",
+          "sourceType": "egg",
+          "sourceValue": null,
+          "fromForm": "Alola",
+          "fromFormSlug": "exeggutor-alola"
+        },
+        {
+          "raw": "egg:luckychant",
+          "moveId": "luckychant",
+          "moveName": "Lucky Chant",
+          "type": "normal",
+          "sourceType": "egg",
+          "sourceValue": null,
+          "fromForm": "Alola",
+          "fromFormSlug": "exeggutor-alola"
+        },
+        {
+          "raw": "egg:moonlight",
+          "moveId": "moonlight",
+          "moveName": "Moonlight",
+          "type": "fairy",
+          "sourceType": "egg",
+          "sourceValue": null,
+          "fromForm": "Alola",
+          "fromFormSlug": "exeggutor-alola"
+        },
+        {
+          "raw": "egg:naturalgift",
+          "moveId": "naturalgift",
+          "moveName": "Natural Gift",
+          "type": "normal",
+          "sourceType": "egg",
+          "sourceValue": null,
+          "fromForm": "Alola",
+          "fromFormSlug": "exeggutor-alola"
+        },
+        {
+          "raw": "egg:poisonpowder",
+          "moveId": "poisonpowder",
+          "moveName": "Poison Powder",
+          "type": "poison",
+          "sourceType": "egg",
+          "sourceValue": null,
+          "fromForm": "Alola",
+          "fromFormSlug": "exeggutor-alola"
+        },
+        {
+          "raw": "egg:sleeppowder",
+          "moveId": "sleeppowder",
+          "moveName": "Sleep Powder",
+          "type": "grass",
+          "sourceType": "egg",
+          "sourceValue": null,
+          "fromForm": "Alola",
+          "fromFormSlug": "exeggutor-alola"
+        },
+        {
+          "raw": "egg:stunspore",
+          "moveId": "stunspore",
+          "moveName": "Stun Spore",
+          "type": "grass",
+          "sourceType": "egg",
+          "sourceValue": null,
+          "fromForm": "Alola",
+          "fromFormSlug": "exeggutor-alola"
+        },
+        {
+          "raw": "tm:ancientpower",
+          "moveId": "ancientpower",
+          "moveName": "Ancient Power",
+          "type": "rock",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Alola",
+          "fromFormSlug": "exeggutor-alola"
+        },
+        {
+          "raw": "tm:block",
+          "moveId": "block",
+          "moveName": "Block",
+          "type": "normal",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Alola",
+          "fromFormSlug": "exeggutor-alola"
+        },
+        {
+          "raw": "tm:bodyslam",
+          "moveId": "bodyslam",
+          "moveName": "Body Slam",
+          "type": "normal",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Alola",
+          "fromFormSlug": "exeggutor-alola"
+        },
+        {
+          "raw": "tm:breakingswipe",
+          "moveId": "breakingswipe",
+          "moveName": "Breaking Swipe",
+          "type": "dragon",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Alola",
+          "fromFormSlug": "exeggutor-alola"
+        },
+        {
+          "raw": "tm:brickbreak",
+          "moveId": "brickbreak",
+          "moveName": "Brick Break",
+          "type": "fighting",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Alola",
+          "fromFormSlug": "exeggutor-alola"
+        },
+        {
+          "raw": "tm:brutalswing",
+          "moveId": "brutalswing",
+          "moveName": "Brutal Swing",
+          "type": "dark",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Alola",
+          "fromFormSlug": "exeggutor-alola"
+        },
+        {
+          "raw": "tm:bulldoze",
+          "moveId": "bulldoze",
+          "moveName": "Bulldoze",
+          "type": "ground",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Alola",
+          "fromFormSlug": "exeggutor-alola"
+        },
+        {
+          "raw": "tm:bulletseed",
+          "moveId": "bulletseed",
+          "moveName": "Bullet Seed",
+          "type": "grass",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Alola",
+          "fromFormSlug": "exeggutor-alola"
+        },
+        {
+          "raw": "tm:calmmind",
+          "moveId": "calmmind",
+          "moveName": "Calm Mind",
+          "type": "psychic",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Alola",
+          "fromFormSlug": "exeggutor-alola"
+        },
+        {
+          "raw": "tm:curse",
+          "moveId": "curse",
+          "moveName": "Curse",
+          "type": "ghost",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Alola",
+          "fromFormSlug": "exeggutor-alola"
+        },
+        {
+          "raw": "tm:doubleedge",
+          "moveId": "doubleedge",
+          "moveName": "Double-Edge",
+          "type": "normal",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Alola",
+          "fromFormSlug": "exeggutor-alola"
+        },
+        {
+          "raw": "tm:dracometeor",
+          "moveId": "dracometeor",
+          "moveName": "Draco Meteor",
+          "type": "dragon",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Alola",
+          "fromFormSlug": "exeggutor-alola"
+        },
+        {
+          "raw": "tm:dragoncheer",
+          "moveId": "dragoncheer",
+          "moveName": "Dragon Cheer",
+          "type": "dragon",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Alola",
+          "fromFormSlug": "exeggutor-alola"
+        },
+        {
+          "raw": "tm:dragonpulse",
+          "moveId": "dragonpulse",
+          "moveName": "Dragon Pulse",
+          "type": "dragon",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Alola",
+          "fromFormSlug": "exeggutor-alola"
+        },
+        {
+          "raw": "tm:dragontail",
+          "moveId": "dragontail",
+          "moveName": "Dragon Tail",
+          "type": "dragon",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Alola",
+          "fromFormSlug": "exeggutor-alola"
+        },
+        {
+          "raw": "tm:dreameater",
+          "moveId": "dreameater",
+          "moveName": "Dream Eater",
+          "type": "psychic",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Alola",
+          "fromFormSlug": "exeggutor-alola"
+        },
+        {
+          "raw": "tm:earthquake",
+          "moveId": "earthquake",
+          "moveName": "Earthquake",
+          "type": "ground",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Alola",
+          "fromFormSlug": "exeggutor-alola"
+        },
+        {
+          "raw": "tm:endure",
+          "moveId": "endure",
+          "moveName": "Endure",
+          "type": "normal",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Alola",
+          "fromFormSlug": "exeggutor-alola"
+        },
+        {
+          "raw": "tm:energyball",
+          "moveId": "energyball",
+          "moveName": "Energy Ball",
+          "type": "grass",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Alola",
+          "fromFormSlug": "exeggutor-alola"
+        },
+        {
+          "raw": "tm:explosion",
+          "moveId": "explosion",
+          "moveName": "Explosion",
+          "type": "normal",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Alola",
+          "fromFormSlug": "exeggutor-alola"
+        },
+        {
+          "raw": "tm:facade",
+          "moveId": "facade",
+          "moveName": "Facade",
+          "type": "normal",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Alola",
+          "fromFormSlug": "exeggutor-alola"
+        },
+        {
+          "raw": "tm:flamethrower",
+          "moveId": "flamethrower",
+          "moveName": "Flamethrower",
+          "type": "fire",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Alola",
+          "fromFormSlug": "exeggutor-alola"
+        },
+        {
+          "raw": "tm:gigadrain",
+          "moveId": "gigadrain",
+          "moveName": "Giga Drain",
+          "type": "grass",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Alola",
+          "fromFormSlug": "exeggutor-alola"
+        },
+        {
+          "raw": "tm:gigaimpact",
+          "moveId": "gigaimpact",
+          "moveName": "Giga Impact",
+          "type": "normal",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Alola",
+          "fromFormSlug": "exeggutor-alola"
+        },
+        {
+          "raw": "tm:grassknot",
+          "moveId": "grassknot",
+          "moveName": "Grass Knot",
+          "type": "grass",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Alola",
+          "fromFormSlug": "exeggutor-alola"
+        },
+        {
+          "raw": "tm:grassyglide",
+          "moveId": "grassyglide",
+          "moveName": "Grassy Glide",
+          "type": "grass",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Alola",
+          "fromFormSlug": "exeggutor-alola"
+        },
+        {
+          "raw": "tm:grassyterrain",
+          "moveId": "grassyterrain",
+          "moveName": "Grassy Terrain",
+          "type": "grass",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Alola",
+          "fromFormSlug": "exeggutor-alola"
+        },
+        {
+          "raw": "tm:gravity",
+          "moveId": "gravity",
+          "moveName": "Gravity",
+          "type": "psychic",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Alola",
+          "fromFormSlug": "exeggutor-alola"
+        },
+        {
+          "raw": "tm:helpinghand",
+          "moveId": "helpinghand",
+          "moveName": "Helping Hand",
+          "type": "normal",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Alola",
+          "fromFormSlug": "exeggutor-alola"
+        },
+        {
+          "raw": "tm:hyperbeam",
+          "moveId": "hyperbeam",
+          "moveName": "Hyper Beam",
+          "type": "normal",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Alola",
+          "fromFormSlug": "exeggutor-alola"
+        },
+        {
+          "raw": "tm:imprison",
+          "moveId": "imprison",
+          "moveName": "Imprison",
+          "type": "psychic",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Alola",
+          "fromFormSlug": "exeggutor-alola"
+        },
+        {
+          "raw": "tm:infestation",
+          "moveId": "infestation",
+          "moveName": "Infestation",
+          "type": "bug",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Alola",
+          "fromFormSlug": "exeggutor-alola"
+        },
+        {
+          "raw": "tm:ironhead",
+          "moveId": "ironhead",
+          "moveName": "Iron Head",
+          "type": "steel",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Alola",
+          "fromFormSlug": "exeggutor-alola"
+        },
+        {
+          "raw": "tm:irontail",
+          "moveId": "irontail",
+          "moveName": "Iron Tail",
+          "type": "steel",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Alola",
+          "fromFormSlug": "exeggutor-alola"
+        },
+        {
+          "raw": "tm:knockoff",
+          "moveId": "knockoff",
+          "moveName": "Knock Off",
+          "type": "dark",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Alola",
+          "fromFormSlug": "exeggutor-alola"
+        },
+        {
+          "raw": "tm:leafstorm",
+          "moveId": "leafstorm",
+          "moveName": "Leaf Storm",
+          "type": "grass",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Alola",
+          "fromFormSlug": "exeggutor-alola"
+        },
+        {
+          "raw": "tm:lightscreen",
+          "moveId": "lightscreen",
+          "moveName": "Light Screen",
+          "type": "psychic",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Alola",
+          "fromFormSlug": "exeggutor-alola"
+        },
+        {
+          "raw": "tm:lowkick",
+          "moveId": "lowkick",
+          "moveName": "Low Kick",
+          "type": "fighting",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Alola",
+          "fromFormSlug": "exeggutor-alola"
+        },
+        {
+          "raw": "tm:magicalleaf",
+          "moveId": "magicalleaf",
+          "moveName": "Magical Leaf",
+          "type": "grass",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Alola",
+          "fromFormSlug": "exeggutor-alola"
+        },
+        {
+          "raw": "tm:naturalgift",
+          "moveId": "naturalgift",
+          "moveName": "Natural Gift",
+          "type": "normal",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Alola",
+          "fromFormSlug": "exeggutor-alola"
+        },
+        {
+          "raw": "tm:naturepower",
+          "moveId": "naturepower",
+          "moveName": "Nature Power",
+          "type": "normal",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Alola",
+          "fromFormSlug": "exeggutor-alola"
+        },
+        {
+          "raw": "tm:outrage",
+          "moveId": "outrage",
+          "moveName": "Outrage",
+          "type": "dragon",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Alola",
+          "fromFormSlug": "exeggutor-alola"
+        },
+        {
+          "raw": "tm:powerswap",
+          "moveId": "powerswap",
+          "moveName": "Power Swap",
+          "type": "psychic",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Alola",
+          "fromFormSlug": "exeggutor-alola"
+        },
+        {
+          "raw": "tm:powerwhip",
+          "moveId": "powerwhip",
+          "moveName": "Power Whip",
+          "type": "grass",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Alola",
+          "fromFormSlug": "exeggutor-alola"
+        },
+        {
+          "raw": "tm:protect",
+          "moveId": "protect",
+          "moveName": "Protect",
+          "type": "normal",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Alola",
+          "fromFormSlug": "exeggutor-alola"
+        },
+        {
+          "raw": "tm:psybeam",
+          "moveId": "psybeam",
+          "moveName": "Psybeam",
+          "type": "psychic",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Alola",
+          "fromFormSlug": "exeggutor-alola"
+        },
+        {
+          "raw": "tm:psychic",
+          "moveId": "psychic",
+          "moveName": "Psychic",
+          "type": "psychic",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Alola",
+          "fromFormSlug": "exeggutor-alola"
+        },
+        {
+          "raw": "tm:psychicnoise",
+          "moveId": "psychicnoise",
+          "moveName": "Psychic Noise",
+          "type": "psychic",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Alola",
+          "fromFormSlug": "exeggutor-alola"
+        },
+        {
+          "raw": "tm:psychicterrain",
+          "moveId": "psychicterrain",
+          "moveName": "Psychic Terrain",
+          "type": "psychic",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Alola",
+          "fromFormSlug": "exeggutor-alola"
+        },
+        {
+          "raw": "tm:psychup",
+          "moveId": "psychup",
+          "moveName": "Psych Up",
+          "type": "normal",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Alola",
+          "fromFormSlug": "exeggutor-alola"
+        },
+        {
+          "raw": "tm:psyshock",
+          "moveId": "psyshock",
+          "moveName": "Psyshock",
+          "type": "psychic",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Alola",
+          "fromFormSlug": "exeggutor-alola"
+        },
+        {
+          "raw": "tm:reflect",
+          "moveId": "reflect",
+          "moveName": "Reflect",
+          "type": "psychic",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Alola",
+          "fromFormSlug": "exeggutor-alola"
+        },
+        {
+          "raw": "tm:rest",
+          "moveId": "rest",
+          "moveName": "Rest",
+          "type": "psychic",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Alola",
+          "fromFormSlug": "exeggutor-alola"
+        },
+        {
+          "raw": "tm:seedbomb",
+          "moveId": "seedbomb",
+          "moveName": "Seed Bomb",
+          "type": "grass",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Alola",
+          "fromFormSlug": "exeggutor-alola"
+        },
+        {
+          "raw": "tm:selfdestruct",
+          "moveId": "selfdestruct",
+          "moveName": "Self-Destruct",
+          "type": "normal",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Alola",
+          "fromFormSlug": "exeggutor-alola"
+        },
+        {
+          "raw": "tm:skillswap",
+          "moveId": "skillswap",
+          "moveName": "Skill Swap",
+          "type": "psychic",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Alola",
+          "fromFormSlug": "exeggutor-alola"
+        },
+        {
+          "raw": "tm:sleeptalk",
+          "moveId": "sleeptalk",
+          "moveName": "Sleep Talk",
+          "type": "normal",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Alola",
+          "fromFormSlug": "exeggutor-alola"
+        },
+        {
+          "raw": "tm:sludgebomb",
+          "moveId": "sludgebomb",
+          "moveName": "Sludge Bomb",
+          "type": "poison",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Alola",
+          "fromFormSlug": "exeggutor-alola"
+        },
+        {
+          "raw": "tm:solarbeam",
+          "moveId": "solarbeam",
+          "moveName": "Solar Beam",
+          "type": "grass",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Alola",
+          "fromFormSlug": "exeggutor-alola"
+        },
+        {
+          "raw": "tm:stompingtantrum",
+          "moveId": "stompingtantrum",
+          "moveName": "Stomping Tantrum",
+          "type": "ground",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Alola",
+          "fromFormSlug": "exeggutor-alola"
+        },
+        {
+          "raw": "tm:storedpower",
+          "moveId": "storedpower",
+          "moveName": "Stored Power",
+          "type": "psychic",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Alola",
+          "fromFormSlug": "exeggutor-alola"
+        },
+        {
+          "raw": "tm:substitute",
+          "moveId": "substitute",
+          "moveName": "Substitute",
+          "type": "normal",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Alola",
+          "fromFormSlug": "exeggutor-alola"
+        },
+        {
+          "raw": "tm:sunnyday",
+          "moveId": "sunnyday",
+          "moveName": "Sunny Day",
+          "type": "fire",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Alola",
+          "fromFormSlug": "exeggutor-alola"
+        },
+        {
+          "raw": "tm:superpower",
+          "moveId": "superpower",
+          "moveName": "Superpower",
+          "type": "fighting",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Alola",
+          "fromFormSlug": "exeggutor-alola"
+        },
+        {
+          "raw": "tm:swordsdance",
+          "moveId": "swordsdance",
+          "moveName": "Swords Dance",
+          "type": "normal",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Alola",
+          "fromFormSlug": "exeggutor-alola"
+        },
+        {
+          "raw": "tm:synthesis",
+          "moveId": "synthesis",
+          "moveName": "Synthesis",
+          "type": "grass",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Alola",
+          "fromFormSlug": "exeggutor-alola"
+        },
+        {
+          "raw": "tm:takedown",
+          "moveId": "takedown",
+          "moveName": "Take Down",
+          "type": "normal",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Alola",
+          "fromFormSlug": "exeggutor-alola"
+        },
+        {
+          "raw": "tm:telekinesis",
+          "moveId": "telekinesis",
+          "moveName": "Telekinesis",
+          "type": "psychic",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Alola",
+          "fromFormSlug": "exeggutor-alola"
+        },
+        {
+          "raw": "tm:terablast",
+          "moveId": "terablast",
+          "moveName": "Tera Blast",
+          "type": "normal",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Alola",
+          "fromFormSlug": "exeggutor-alola"
+        },
+        {
+          "raw": "tm:terrainpulse",
+          "moveId": "terrainpulse",
+          "moveName": "Terrain Pulse",
+          "type": "normal",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Alola",
+          "fromFormSlug": "exeggutor-alola"
+        },
+        {
+          "raw": "tm:thief",
+          "moveId": "thief",
+          "moveName": "Thief",
+          "type": "dark",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Alola",
+          "fromFormSlug": "exeggutor-alola"
+        },
+        {
+          "raw": "tm:trailblaze",
+          "moveId": "trailblaze",
+          "moveName": "Trailblaze",
+          "type": "grass",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Alola",
+          "fromFormSlug": "exeggutor-alola"
+        },
+        {
+          "raw": "tm:trick",
+          "moveId": "trick",
+          "moveName": "Trick",
+          "type": "psychic",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Alola",
+          "fromFormSlug": "exeggutor-alola"
+        },
+        {
+          "raw": "tm:trickroom",
+          "moveId": "trickroom",
+          "moveName": "Trick Room",
+          "type": "psychic",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Alola",
+          "fromFormSlug": "exeggutor-alola"
+        },
+        {
+          "raw": "tm:uproar",
+          "moveId": "uproar",
+          "moveName": "Uproar",
+          "type": "normal",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Alola",
+          "fromFormSlug": "exeggutor-alola"
+        },
+        {
+          "raw": "tm:worryseed",
+          "moveId": "worryseed",
+          "moveName": "Worry Seed",
+          "type": "grass",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Alola",
+          "fromFormSlug": "exeggutor-alola"
+        },
+        {
+          "raw": "tm:zenheadbutt",
+          "moveId": "zenheadbutt",
+          "moveName": "Zen Headbutt",
+          "type": "psychic",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Alola",
+          "fromFormSlug": "exeggutor-alola"
+        },
+        {
+          "raw": "tutor:ancientpower",
+          "moveId": "ancientpower",
+          "moveName": "Ancient Power",
+          "type": "rock",
+          "sourceType": "tutor",
+          "sourceValue": null,
+          "fromForm": "Alola",
+          "fromFormSlug": "exeggutor-alola"
+        },
+        {
+          "raw": "tutor:block",
+          "moveId": "block",
+          "moveName": "Block",
+          "type": "normal",
+          "sourceType": "tutor",
+          "sourceValue": null,
+          "fromForm": "Alola",
+          "fromFormSlug": "exeggutor-alola"
+        },
+        {
+          "raw": "tutor:bulldoze",
+          "moveId": "bulldoze",
+          "moveName": "Bulldoze",
+          "type": "ground",
+          "sourceType": "tutor",
+          "sourceValue": null,
+          "fromForm": "Alola",
+          "fromFormSlug": "exeggutor-alola"
+        },
+        {
+          "raw": "tutor:calmmind",
+          "moveId": "calmmind",
+          "moveName": "Calm Mind",
+          "type": "psychic",
+          "sourceType": "tutor",
+          "sourceValue": null,
+          "fromForm": "Alola",
+          "fromFormSlug": "exeggutor-alola"
+        },
+        {
+          "raw": "tutor:dracometeor",
+          "moveId": "dracometeor",
+          "moveName": "Draco Meteor",
+          "type": "dragon",
+          "sourceType": "tutor",
+          "sourceValue": null,
+          "fromForm": "Alola",
+          "fromFormSlug": "exeggutor-alola"
+        },
+        {
+          "raw": "tutor:dragonpulse",
+          "moveId": "dragonpulse",
+          "moveName": "Dragon Pulse",
+          "type": "dragon",
+          "sourceType": "tutor",
+          "sourceValue": null,
+          "fromForm": "Alola",
+          "fromFormSlug": "exeggutor-alola"
+        },
+        {
+          "raw": "tutor:energyball",
+          "moveId": "energyball",
+          "moveName": "Energy Ball",
+          "type": "grass",
+          "sourceType": "tutor",
+          "sourceValue": null,
+          "fromForm": "Alola",
+          "fromFormSlug": "exeggutor-alola"
+        },
+        {
+          "raw": "tutor:flamethrower",
+          "moveId": "flamethrower",
+          "moveName": "Flamethrower",
+          "type": "fire",
+          "sourceType": "tutor",
+          "sourceValue": null,
+          "fromForm": "Alola",
+          "fromFormSlug": "exeggutor-alola"
+        },
+        {
+          "raw": "tutor:gigadrain",
+          "moveId": "gigadrain",
+          "moveName": "Giga Drain",
+          "type": "grass",
+          "sourceType": "tutor",
+          "sourceValue": null,
+          "fromForm": "Alola",
+          "fromFormSlug": "exeggutor-alola"
+        },
+        {
+          "raw": "tutor:gigaimpact",
+          "moveId": "gigaimpact",
+          "moveName": "Giga Impact",
+          "type": "normal",
+          "sourceType": "tutor",
+          "sourceValue": null,
+          "fromForm": "Alola",
+          "fromFormSlug": "exeggutor-alola"
+        },
+        {
+          "raw": "tutor:grassyglide",
+          "moveId": "grassyglide",
+          "moveName": "Grassy Glide",
+          "type": "grass",
+          "sourceType": "tutor",
+          "sourceValue": null,
+          "fromForm": "Alola",
+          "fromFormSlug": "exeggutor-alola"
+        },
+        {
+          "raw": "tutor:helpinghand",
+          "moveId": "helpinghand",
+          "moveName": "Helping Hand",
+          "type": "normal",
+          "sourceType": "tutor",
+          "sourceValue": null,
+          "fromForm": "Alola",
+          "fromFormSlug": "exeggutor-alola"
+        },
+        {
+          "raw": "tutor:hyperbeam",
+          "moveId": "hyperbeam",
+          "moveName": "Hyper Beam",
+          "type": "normal",
+          "sourceType": "tutor",
+          "sourceValue": null,
+          "fromForm": "Alola",
+          "fromFormSlug": "exeggutor-alola"
+        },
+        {
+          "raw": "tutor:ironhead",
+          "moveId": "ironhead",
+          "moveName": "Iron Head",
+          "type": "steel",
+          "sourceType": "tutor",
+          "sourceValue": null,
+          "fromForm": "Alola",
+          "fromFormSlug": "exeggutor-alola"
+        },
+        {
+          "raw": "tutor:irontail",
+          "moveId": "irontail",
+          "moveName": "Iron Tail",
+          "type": "steel",
+          "sourceType": "tutor",
+          "sourceValue": null,
+          "fromForm": "Alola",
+          "fromFormSlug": "exeggutor-alola"
+        },
+        {
+          "raw": "tutor:knockoff",
+          "moveId": "knockoff",
+          "moveName": "Knock Off",
+          "type": "dark",
+          "sourceType": "tutor",
+          "sourceValue": null,
+          "fromForm": "Alola",
+          "fromFormSlug": "exeggutor-alola"
+        },
+        {
+          "raw": "tutor:lowkick",
+          "moveId": "lowkick",
+          "moveName": "Low Kick",
+          "type": "fighting",
+          "sourceType": "tutor",
+          "sourceValue": null,
+          "fromForm": "Alola",
+          "fromFormSlug": "exeggutor-alola"
+        },
+        {
+          "raw": "tutor:magicalleaf",
+          "moveId": "magicalleaf",
+          "moveName": "Magical Leaf",
+          "type": "grass",
+          "sourceType": "tutor",
+          "sourceValue": null,
+          "fromForm": "Alola",
+          "fromFormSlug": "exeggutor-alola"
+        },
+        {
+          "raw": "tutor:outrage",
+          "moveId": "outrage",
+          "moveName": "Outrage",
+          "type": "dragon",
+          "sourceType": "tutor",
+          "sourceValue": null,
+          "fromForm": "Alola",
+          "fromFormSlug": "exeggutor-alola"
+        },
+        {
+          "raw": "tutor:psychic",
+          "moveId": "psychic",
+          "moveName": "Psychic",
+          "type": "psychic",
+          "sourceType": "tutor",
+          "sourceValue": null,
+          "fromForm": "Alola",
+          "fromFormSlug": "exeggutor-alola"
+        },
+        {
+          "raw": "tutor:rest",
+          "moveId": "rest",
+          "moveName": "Rest",
+          "type": "psychic",
+          "sourceType": "tutor",
+          "sourceValue": null,
+          "fromForm": "Alola",
+          "fromFormSlug": "exeggutor-alola"
+        },
+        {
+          "raw": "tutor:seedbomb",
+          "moveId": "seedbomb",
+          "moveName": "Seed Bomb",
+          "type": "grass",
+          "sourceType": "tutor",
+          "sourceValue": null,
+          "fromForm": "Alola",
+          "fromFormSlug": "exeggutor-alola"
+        },
+        {
+          "raw": "tutor:skillswap",
+          "moveId": "skillswap",
+          "moveName": "Skill Swap",
+          "type": "psychic",
+          "sourceType": "tutor",
+          "sourceValue": null,
+          "fromForm": "Alola",
+          "fromFormSlug": "exeggutor-alola"
+        },
+        {
+          "raw": "tutor:sleeptalk",
+          "moveId": "sleeptalk",
+          "moveName": "Sleep Talk",
+          "type": "normal",
+          "sourceType": "tutor",
+          "sourceValue": null,
+          "fromForm": "Alola",
+          "fromFormSlug": "exeggutor-alola"
+        },
+        {
+          "raw": "tutor:sludgebomb",
+          "moveId": "sludgebomb",
+          "moveName": "Sludge Bomb",
+          "type": "poison",
+          "sourceType": "tutor",
+          "sourceValue": null,
+          "fromForm": "Alola",
+          "fromFormSlug": "exeggutor-alola"
+        },
+        {
+          "raw": "tutor:stompingtantrum",
+          "moveId": "stompingtantrum",
+          "moveName": "Stomping Tantrum",
+          "type": "ground",
+          "sourceType": "tutor",
+          "sourceValue": null,
+          "fromForm": "Alola",
+          "fromFormSlug": "exeggutor-alola"
+        },
+        {
+          "raw": "tutor:superpower",
+          "moveId": "superpower",
+          "moveName": "Superpower",
+          "type": "fighting",
+          "sourceType": "tutor",
+          "sourceValue": null,
+          "fromForm": "Alola",
+          "fromFormSlug": "exeggutor-alola"
+        },
+        {
+          "raw": "tutor:synthesis",
+          "moveId": "synthesis",
+          "moveName": "Synthesis",
+          "type": "grass",
+          "sourceType": "tutor",
+          "sourceValue": null,
+          "fromForm": "Alola",
+          "fromFormSlug": "exeggutor-alola"
+        },
+        {
+          "raw": "tutor:telekinesis",
+          "moveId": "telekinesis",
+          "moveName": "Telekinesis",
+          "type": "psychic",
+          "sourceType": "tutor",
+          "sourceValue": null,
+          "fromForm": "Alola",
+          "fromFormSlug": "exeggutor-alola"
+        },
+        {
+          "raw": "tutor:terrainpulse",
+          "moveId": "terrainpulse",
+          "moveName": "Terrain Pulse",
+          "type": "normal",
+          "sourceType": "tutor",
+          "sourceValue": null,
+          "fromForm": "Alola",
+          "fromFormSlug": "exeggutor-alola"
+        },
+        {
+          "raw": "tutor:trick",
+          "moveId": "trick",
+          "moveName": "Trick",
+          "type": "psychic",
+          "sourceType": "tutor",
+          "sourceValue": null,
+          "fromForm": "Alola",
+          "fromFormSlug": "exeggutor-alola"
+        },
+        {
+          "raw": "tutor:uproar",
+          "moveId": "uproar",
+          "moveName": "Uproar",
+          "type": "normal",
+          "sourceType": "tutor",
+          "sourceValue": null,
+          "fromForm": "Alola",
+          "fromFormSlug": "exeggutor-alola"
+        },
+        {
+          "raw": "tutor:worryseed",
+          "moveId": "worryseed",
+          "moveName": "Worry Seed",
+          "type": "grass",
+          "sourceType": "tutor",
+          "sourceValue": null,
+          "fromForm": "Alola",
+          "fromFormSlug": "exeggutor-alola"
+        },
+        {
+          "raw": "tutor:zenheadbutt",
+          "moveId": "zenheadbutt",
+          "moveName": "Zen Headbutt",
+          "type": "psychic",
+          "sourceType": "tutor",
+          "sourceValue": null,
+          "fromForm": "Alola",
+          "fromFormSlug": "exeggutor-alola"
+        },
+        {
+          "raw": "legacy:attract",
+          "moveId": "attract",
+          "moveName": "Attract",
+          "type": "normal",
+          "sourceType": "legacy",
+          "sourceValue": null,
+          "fromForm": "Alola",
+          "fromFormSlug": "exeggutor-alola"
+        },
+        {
+          "raw": "legacy:bide",
+          "moveId": "bide",
+          "moveName": "Bide",
+          "type": "normal",
+          "sourceType": "legacy",
+          "sourceValue": null,
+          "fromForm": "Alola",
+          "fromFormSlug": "exeggutor-alola"
+        },
+        {
+          "raw": "legacy:captivate",
+          "moveId": "captivate",
+          "moveName": "Captivate",
+          "type": "normal",
+          "sourceType": "legacy",
+          "sourceValue": null,
+          "fromForm": "Alola",
+          "fromFormSlug": "exeggutor-alola"
+        },
+        {
+          "raw": "legacy:confide",
+          "moveId": "confide",
+          "moveName": "Confide",
+          "type": "normal",
+          "sourceType": "legacy",
+          "sourceValue": null,
+          "fromForm": "Alola",
+          "fromFormSlug": "exeggutor-alola"
+        },
+        {
+          "raw": "legacy:doubleteam",
+          "moveId": "doubleteam",
+          "moveName": "Double Team",
+          "type": "normal",
+          "sourceType": "legacy",
+          "sourceValue": null,
+          "fromForm": "Alola",
+          "fromFormSlug": "exeggutor-alola"
+        },
+        {
+          "raw": "legacy:eggbomb",
+          "moveId": "eggbomb",
+          "moveName": "Egg Bomb",
+          "type": "normal",
+          "sourceType": "legacy",
+          "sourceValue": null,
+          "fromForm": "Alola",
+          "fromFormSlug": "exeggutor-alola"
+        },
+        {
+          "raw": "legacy:frustration",
+          "moveId": "frustration",
+          "moveName": "Frustration",
+          "type": "normal",
+          "sourceType": "legacy",
+          "sourceValue": null,
+          "fromForm": "Alola",
+          "fromFormSlug": "exeggutor-alola"
+        },
+        {
+          "raw": "legacy:headbutt",
+          "moveId": "headbutt",
+          "moveName": "Headbutt",
+          "type": "normal",
+          "sourceType": "legacy",
+          "sourceValue": null,
+          "fromForm": "Alola",
+          "fromFormSlug": "exeggutor-alola"
+        },
+        {
+          "raw": "legacy:hiddenpower",
+          "moveId": "hiddenpower",
+          "moveName": "Hidden Power",
+          "type": "normal",
+          "sourceType": "legacy",
+          "sourceValue": null,
+          "fromForm": "Alola",
+          "fromFormSlug": "exeggutor-alola"
+        },
+        {
+          "raw": "legacy:mimic",
+          "moveId": "mimic",
+          "moveName": "Mimic",
+          "type": "normal",
+          "sourceType": "legacy",
+          "sourceValue": null,
+          "fromForm": "Alola",
+          "fromFormSlug": "exeggutor-alola"
+        },
+        {
+          "raw": "legacy:nightmare",
+          "moveId": "nightmare",
+          "moveName": "Nightmare",
+          "type": "ghost",
+          "sourceType": "legacy",
+          "sourceValue": null,
+          "fromForm": "Alola",
+          "fromFormSlug": "exeggutor-alola"
+        },
+        {
+          "raw": "legacy:psywave",
+          "moveId": "psywave",
+          "moveName": "Psywave",
+          "type": "psychic",
+          "sourceType": "legacy",
+          "sourceValue": null,
+          "fromForm": "Alola",
+          "fromFormSlug": "exeggutor-alola"
+        },
+        {
+          "raw": "legacy:rage",
+          "moveId": "rage",
+          "moveName": "Rage",
+          "type": "normal",
+          "sourceType": "legacy",
+          "sourceValue": null,
+          "fromForm": "Alola",
+          "fromFormSlug": "exeggutor-alola"
+        },
+        {
+          "raw": "legacy:return",
+          "moveId": "return",
+          "moveName": "Return",
+          "type": "normal",
+          "sourceType": "legacy",
+          "sourceValue": null,
+          "fromForm": "Alola",
+          "fromFormSlug": "exeggutor-alola"
+        },
+        {
+          "raw": "legacy:round",
+          "moveId": "round",
+          "moveName": "Round",
+          "type": "normal",
+          "sourceType": "legacy",
+          "sourceValue": null,
+          "fromForm": "Alola",
+          "fromFormSlug": "exeggutor-alola"
+        },
+        {
+          "raw": "legacy:secretpower",
+          "moveId": "secretpower",
+          "moveName": "Secret Power",
+          "type": "normal",
+          "sourceType": "legacy",
+          "sourceValue": null,
+          "fromForm": "Alola",
+          "fromFormSlug": "exeggutor-alola"
+        },
+        {
+          "raw": "legacy:snore",
+          "moveId": "snore",
+          "moveName": "Snore",
+          "type": "normal",
+          "sourceType": "legacy",
+          "sourceValue": null,
+          "fromForm": "Alola",
+          "fromFormSlug": "exeggutor-alola"
+        },
+        {
+          "raw": "legacy:swagger",
+          "moveId": "swagger",
+          "moveName": "Swagger",
+          "type": "normal",
+          "sourceType": "legacy",
+          "sourceValue": null,
+          "fromForm": "Alola",
+          "fromFormSlug": "exeggutor-alola"
+        },
+        {
+          "raw": "legacy:teleport",
+          "moveId": "teleport",
+          "moveName": "Teleport",
+          "type": "psychic",
+          "sourceType": "legacy",
+          "sourceValue": null,
+          "fromForm": "Alola",
+          "fromFormSlug": "exeggutor-alola"
+        },
+        {
+          "raw": "legacy:toxic",
+          "moveId": "toxic",
+          "moveName": "Toxic",
+          "type": "poison",
+          "sourceType": "legacy",
+          "sourceValue": null,
+          "fromForm": "Alola",
+          "fromFormSlug": "exeggutor-alola"
+        },
+        {
+          "raw": "special:celebrate",
+          "moveId": "celebrate",
+          "moveName": "Celebrate",
+          "type": "normal",
+          "sourceType": "special",
+          "sourceValue": null,
+          "fromForm": "Alola",
+          "fromFormSlug": "exeggutor-alola"
+        },
+        {
+          "raw": "special:sweetscent",
+          "moveId": "sweetscent",
+          "moveName": "Sweet Scent",
+          "type": "normal",
+          "sourceType": "special",
+          "sourceValue": null,
+          "fromForm": "Alola",
+          "fromFormSlug": "exeggutor-alola"
+        },
+        {
+          "raw": "special:wish",
+          "moveId": "wish",
+          "moveName": "Wish",
+          "type": "normal",
+          "sourceType": "special",
+          "sourceValue": null,
+          "fromForm": "Alola",
+          "fromFormSlug": "exeggutor-alola"
+        }
+      ],
+      "evolutions": [],
+      "raw": {
+        "name": "Alola",
+        "primaryType": "grass",
+        "secondaryType": "dragon",
+        "maleRatio": 0.5,
+        "height": 109,
+        "weight": 4156,
+        "pokedex": [
+          "cobblemon.species.exeggutor-alola.desc"
+        ],
+        "labels": [
+          "gen7",
+          "alolan_form"
+        ],
+        "aspects": [
+          "alolan"
+        ],
+        "abilities": [
+          "frisk",
+          "h:harvest"
+        ],
+        "baseStats": {
+          "hp": 95,
+          "attack": 105,
+          "defence": 85,
+          "special_attack": 125,
+          "special_defence": 75,
+          "speed": 45
+        },
+        "hitbox": {
+          "width": 1.6,
+          "height": 11,
+          "fixed": false
+        },
+        "standingEyeHeight": 0.96,
+        "moves": [
+          "1:dragonhammer",
+          "1:seedbomb",
+          "1:barrage",
+          "1:hypnosis",
+          "1:confusion",
+          "1:psyshock",
+          "1:eggbomb",
+          "1:woodhammer",
+          "1:leafstorm",
+          "1:solarbeam",
+          "1:reflect",
+          "1:gigadrain",
+          "1:synthesis",
+          "1:worryseed",
+          "1:megadrain",
+          "1:bulletseed",
+          "1:extrasensory",
+          "1:uproar",
+          "1:absorb",
+          "1:leechseed",
+          "1:growth",
+          "1:bestow",
+          "egg:ancientpower",
+          "egg:block",
+          "egg:curse",
+          "egg:ingrain",
+          "egg:luckychant",
+          "egg:moonlight",
+          "egg:naturalgift",
+          "egg:poisonpowder",
+          "egg:sleeppowder",
+          "egg:stunspore",
+          "tm:ancientpower",
+          "tm:block",
+          "tm:bodyslam",
+          "tm:breakingswipe",
+          "tm:brickbreak",
+          "tm:brutalswing",
+          "tm:bulldoze",
+          "tm:bulletseed",
+          "tm:calmmind",
+          "tm:curse",
+          "tm:doubleedge",
+          "tm:dracometeor",
+          "tm:dragoncheer",
+          "tm:dragonpulse",
+          "tm:dragontail",
+          "tm:dreameater",
+          "tm:earthquake",
+          "tm:endure",
+          "tm:energyball",
+          "tm:explosion",
+          "tm:facade",
+          "tm:flamethrower",
+          "tm:gigadrain",
+          "tm:gigaimpact",
+          "tm:grassknot",
+          "tm:grassyglide",
+          "tm:grassyterrain",
+          "tm:gravity",
+          "tm:helpinghand",
+          "tm:hyperbeam",
+          "tm:imprison",
+          "tm:infestation",
+          "tm:ironhead",
+          "tm:irontail",
+          "tm:knockoff",
+          "tm:leafstorm",
+          "tm:lightscreen",
+          "tm:lowkick",
+          "tm:magicalleaf",
+          "tm:naturalgift",
+          "tm:naturepower",
+          "tm:outrage",
+          "tm:powerswap",
+          "tm:powerwhip",
+          "tm:protect",
+          "tm:psybeam",
+          "tm:psychic",
+          "tm:psychicnoise",
+          "tm:psychicterrain",
+          "tm:psychup",
+          "tm:psyshock",
+          "tm:reflect",
+          "tm:rest",
+          "tm:seedbomb",
+          "tm:selfdestruct",
+          "tm:skillswap",
+          "tm:sleeptalk",
+          "tm:sludgebomb",
+          "tm:solarbeam",
+          "tm:stompingtantrum",
+          "tm:storedpower",
+          "tm:substitute",
+          "tm:sunnyday",
+          "tm:superpower",
+          "tm:swordsdance",
+          "tm:synthesis",
+          "tm:takedown",
+          "tm:telekinesis",
+          "tm:terablast",
+          "tm:terrainpulse",
+          "tm:thief",
+          "tm:trailblaze",
+          "tm:trick",
+          "tm:trickroom",
+          "tm:uproar",
+          "tm:worryseed",
+          "tm:zenheadbutt",
+          "tutor:ancientpower",
+          "tutor:block",
+          "tutor:bulldoze",
+          "tutor:calmmind",
+          "tutor:dracometeor",
+          "tutor:dragonpulse",
+          "tutor:energyball",
+          "tutor:flamethrower",
+          "tutor:gigadrain",
+          "tutor:gigaimpact",
+          "tutor:grassyglide",
+          "tutor:helpinghand",
+          "tutor:hyperbeam",
+          "tutor:ironhead",
+          "tutor:irontail",
+          "tutor:knockoff",
+          "tutor:lowkick",
+          "tutor:magicalleaf",
+          "tutor:outrage",
+          "tutor:psychic",
+          "tutor:rest",
+          "tutor:seedbomb",
+          "tutor:skillswap",
+          "tutor:sleeptalk",
+          "tutor:sludgebomb",
+          "tutor:stompingtantrum",
+          "tutor:superpower",
+          "tutor:synthesis",
+          "tutor:telekinesis",
+          "tutor:terrainpulse",
+          "tutor:trick",
+          "tutor:uproar",
+          "tutor:worryseed",
+          "tutor:zenheadbutt",
+          "legacy:attract",
+          "legacy:bide",
+          "legacy:captivate",
+          "legacy:confide",
+          "legacy:doubleteam",
+          "legacy:eggbomb",
+          "legacy:frustration",
+          "legacy:headbutt",
+          "legacy:hiddenpower",
+          "legacy:mimic",
+          "legacy:nightmare",
+          "legacy:psywave",
+          "legacy:rage",
+          "legacy:return",
+          "legacy:round",
+          "legacy:secretpower",
+          "legacy:snore",
+          "legacy:swagger",
+          "legacy:teleport",
+          "legacy:toxic",
+          "special:celebrate",
+          "special:sweetscent",
+          "special:wish"
+        ],
+        "preEvolution": "exeggcute",
+        "evolutions": [],
+        "battleOnly": false,
+        "behaviour": {
+          "herd": {
+            "maxSize": "6",
+            "toleratedLeaders": [
+              {
+                "pokemon": "exeggutor alolan",
+                "tier": 1
+              }
+            ]
+          },
+          "moving": {
+            "swim": {
+              "avoidsWater": true
+            }
+          },
+          "combat": {
+            "willDefendSelf": true,
+            "willDefendOwner": true,
+            "willFlee": false
+          },
+          "resting": {
+            "drowsyChance": 0.0333,
+            "rouseChance": 0.0042
+          }
+        },
+        "drops": {
+          "amount": 5,
+          "entries": [
+            {
+              "item": "minecraft:egg",
+              "quantityRange": "0-3"
+            },
+            {
+              "item": "cobblemon:oval_stone",
+              "percentage": 5
+            },
+            {
+              "item": "cobblemon:tanga_berry",
+              "percentage": 5
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "rawSpecies": {
+    "implemented": true,
+    "nationalPokedexNumber": 103,
+    "name": "Exeggutor",
+    "primaryType": "grass",
+    "secondaryType": "psychic",
+    "maleRatio": 0.5,
+    "height": 20,
+    "weight": 1200,
+    "pokedex": [
+      "cobblemon.species.exeggutor.desc"
+    ],
+    "labels": [
+      "gen1",
+      "kantonian_form"
+    ],
+    "aspects": [],
+    "abilities": [
+      "chlorophyll",
+      "h:harvest"
+    ],
+    "eggGroups": [
+      "grass"
+    ],
+    "baseStats": {
+      "hp": 95,
+      "attack": 95,
+      "defence": 85,
+      "special_attack": 125,
+      "special_defence": 75,
+      "speed": 55
+    },
+    "evYield": {
+      "hp": 0,
+      "attack": 0,
+      "defence": 0,
+      "special_attack": 2,
+      "special_defence": 0,
+      "speed": 0
+    },
+    "baseExperienceYield": 186,
+    "experienceGroup": "slow",
+    "catchRate": 45,
+    "eggCycles": 20,
+    "baseFriendship": 50,
+    "features": [
+      "alolan"
+    ],
+    "baseScale": 0.85,
+    "hitbox": {
+      "width": 1.8,
+      "height": 3,
+      "fixed": false
+    },
+    "behaviour": {
+      "moving": {
+        "walk": {
+          "walkSpeed": 0.25
+        },
+        "swim": {
+          "avoidsWater": true
+        }
+      },
+      "resting": {
+        "canSleep": true,
+        "light": "0-4",
+        "drowsyChance": 0.0333,
+        "rouseChance": 0.0042
+      },
+      "herd": {
+        "maxSize": "6",
+        "toleratedLeaders": [
+          {
+            "pokemon": "exeggutor alolan=false",
+            "tier": 1
+          },
+          {
+            "pokemon": "exeggutor alolan",
+            "tier": 2
+          }
+        ]
+      },
+      "combat": {
+        "willDefendSelf": true,
+        "willDefendOwner": true,
+        "willFlee": false
+      }
+    },
+    "drops": {
+      "amount": 6,
+      "entries": [
+        {
+          "item": "minecraft:egg",
+          "quantityRange": "0-3"
+        },
+        {
+          "item": "cobblemon:oval_stone",
+          "percentage": 5
+        },
+        {
+          "item": "cobblemon:psychic_seed",
+          "percentage": 5
+        },
+        {
+          "item": "cobblemon:tanga_berry",
+          "percentage": 5
+        }
+      ]
+    },
+    "moves": [
+      "1:seedbomb",
+      "1:barrage",
+      "1:hypnosis",
+      "1:confusion",
+      "1:stomp",
+      "1:eggbomb",
+      "1:woodhammer",
+      "1:leafstorm",
+      "1:solarbeam",
+      "1:reflect",
+      "1:gigadrain",
+      "1:synthesis",
+      "1:bulletseed",
+      "1:worryseed",
+      "1:psyshock",
+      "1:megadrain",
+      "1:extrasensory",
+      "1:uproar",
+      "1:absorb",
+      "1:leechseed",
+      "1:growth",
+      "1:bestow",
+      "egg:ancientpower",
+      "egg:block",
+      "egg:curse",
+      "egg:ingrain",
+      "egg:luckychant",
+      "egg:moonlight",
+      "egg:naturalgift",
+      "egg:poisonpowder",
+      "egg:sleeppowder",
+      "egg:stunspore",
+      "tm:ancientpower",
+      "tm:block",
+      "tm:bodyslam",
+      "tm:bulldoze",
+      "tm:bulletseed",
+      "tm:calmmind",
+      "tm:curse",
+      "tm:doubleedge",
+      "tm:dreameater",
+      "tm:earthquake",
+      "tm:endure",
+      "tm:energyball",
+      "tm:expandingforce",
+      "tm:explosion",
+      "tm:facade",
+      "tm:flash",
+      "tm:futuresight",
+      "tm:gigadrain",
+      "tm:gigaimpact",
+      "tm:grassknot",
+      "tm:grassyglide",
+      "tm:grassyterrain",
+      "tm:gravity",
+      "tm:headbutt",
+      "tm:helpinghand",
+      "tm:hyperbeam",
+      "tm:imprison",
+      "tm:infestation",
+      "tm:leafstorm",
+      "tm:lightscreen",
+      "tm:lowkick",
+      "tm:magicalleaf",
+      "tm:naturalgift",
+      "tm:naturepower",
+      "tm:powerswap",
+      "tm:protect",
+      "tm:psybeam",
+      "tm:psychic",
+      "tm:psychicnoise",
+      "tm:psychicterrain",
+      "tm:psychocut",
+      "tm:psychup",
+      "tm:psyshock",
+      "tm:reflect",
+      "tm:rest",
+      "tm:rollout",
+      "tm:seedbomb",
+      "tm:selfdestruct",
+      "tm:skillswap",
+      "tm:sleeptalk",
+      "tm:sludgebomb",
+      "tm:solarbeam",
+      "tm:stompingtantrum",
+      "tm:storedpower",
+      "tm:strength",
+      "tm:substitute",
+      "tm:sunnyday",
+      "tm:swordsdance",
+      "tm:synthesis",
+      "tm:takedown",
+      "tm:telekinesis",
+      "tm:terablast",
+      "tm:terrainpulse",
+      "tm:thief",
+      "tm:trick",
+      "tm:trickroom",
+      "tm:uproar",
+      "tm:worryseed",
+      "tm:zenheadbutt",
+      "tutor:ancientpower",
+      "tutor:block",
+      "tutor:bulldoze",
+      "tutor:calmmind",
+      "tutor:energyball",
+      "tutor:expandingforce",
+      "tutor:gigadrain",
+      "tutor:gigaimpact",
+      "tutor:grassyglide",
+      "tutor:helpinghand",
+      "tutor:hyperbeam",
+      "tutor:lowkick",
+      "tutor:magicalleaf",
+      "tutor:psychic",
+      "tutor:psychocut",
+      "tutor:rest",
+      "tutor:rollout",
+      "tutor:seedbomb",
+      "tutor:skillswap",
+      "tutor:sleeptalk",
+      "tutor:sludgebomb",
+      "tutor:stompingtantrum",
+      "tutor:synthesis",
+      "tutor:telekinesis",
+      "tutor:terrainpulse",
+      "tutor:trick",
+      "tutor:uproar",
+      "tutor:worryseed",
+      "tutor:zenheadbutt",
+      "legacy:attract",
+      "legacy:bide",
+      "legacy:captivate",
+      "legacy:confide",
+      "legacy:doubleteam",
+      "legacy:eggbomb",
+      "legacy:frustration",
+      "legacy:hiddenpower",
+      "legacy:mimic",
+      "legacy:nightmare",
+      "legacy:powerwhip",
+      "legacy:psywave",
+      "legacy:rage",
+      "legacy:return",
+      "legacy:round",
+      "legacy:secretpower",
+      "legacy:snore",
+      "legacy:swagger",
+      "legacy:teleport",
+      "legacy:toxic",
+      "special:refresh",
+      "special:sweetscent",
+      "special:wish"
+    ],
+    "preEvolution": "exeggcute",
+    "evolutions": [],
+    "forms": [
+      {
+        "name": "Alola",
+        "primaryType": "grass",
+        "secondaryType": "dragon",
+        "maleRatio": 0.5,
+        "height": 109,
+        "weight": 4156,
+        "pokedex": [
+          "cobblemon.species.exeggutor-alola.desc"
+        ],
+        "labels": [
+          "gen7",
+          "alolan_form"
+        ],
+        "aspects": [
+          "alolan"
+        ],
+        "abilities": [
+          "frisk",
+          "h:harvest"
+        ],
+        "baseStats": {
+          "hp": 95,
+          "attack": 105,
+          "defence": 85,
+          "special_attack": 125,
+          "special_defence": 75,
+          "speed": 45
+        },
+        "hitbox": {
+          "width": 1.6,
+          "height": 11,
+          "fixed": false
+        },
+        "standingEyeHeight": 0.96,
+        "moves": [
+          "1:dragonhammer",
+          "1:seedbomb",
+          "1:barrage",
+          "1:hypnosis",
+          "1:confusion",
+          "1:psyshock",
+          "1:eggbomb",
+          "1:woodhammer",
+          "1:leafstorm",
+          "1:solarbeam",
+          "1:reflect",
+          "1:gigadrain",
+          "1:synthesis",
+          "1:worryseed",
+          "1:megadrain",
+          "1:bulletseed",
+          "1:extrasensory",
+          "1:uproar",
+          "1:absorb",
+          "1:leechseed",
+          "1:growth",
+          "1:bestow",
+          "egg:ancientpower",
+          "egg:block",
+          "egg:curse",
+          "egg:ingrain",
+          "egg:luckychant",
+          "egg:moonlight",
+          "egg:naturalgift",
+          "egg:poisonpowder",
+          "egg:sleeppowder",
+          "egg:stunspore",
+          "tm:ancientpower",
+          "tm:block",
+          "tm:bodyslam",
+          "tm:breakingswipe",
+          "tm:brickbreak",
+          "tm:brutalswing",
+          "tm:bulldoze",
+          "tm:bulletseed",
+          "tm:calmmind",
+          "tm:curse",
+          "tm:doubleedge",
+          "tm:dracometeor",
+          "tm:dragoncheer",
+          "tm:dragonpulse",
+          "tm:dragontail",
+          "tm:dreameater",
+          "tm:earthquake",
+          "tm:endure",
+          "tm:energyball",
+          "tm:explosion",
+          "tm:facade",
+          "tm:flamethrower",
+          "tm:gigadrain",
+          "tm:gigaimpact",
+          "tm:grassknot",
+          "tm:grassyglide",
+          "tm:grassyterrain",
+          "tm:gravity",
+          "tm:helpinghand",
+          "tm:hyperbeam",
+          "tm:imprison",
+          "tm:infestation",
+          "tm:ironhead",
+          "tm:irontail",
+          "tm:knockoff",
+          "tm:leafstorm",
+          "tm:lightscreen",
+          "tm:lowkick",
+          "tm:magicalleaf",
+          "tm:naturalgift",
+          "tm:naturepower",
+          "tm:outrage",
+          "tm:powerswap",
+          "tm:powerwhip",
+          "tm:protect",
+          "tm:psybeam",
+          "tm:psychic",
+          "tm:psychicnoise",
+          "tm:psychicterrain",
+          "tm:psychup",
+          "tm:psyshock",
+          "tm:reflect",
+          "tm:rest",
+          "tm:seedbomb",
+          "tm:selfdestruct",
+          "tm:skillswap",
+          "tm:sleeptalk",
+          "tm:sludgebomb",
+          "tm:solarbeam",
+          "tm:stompingtantrum",
+          "tm:storedpower",
+          "tm:substitute",
+          "tm:sunnyday",
+          "tm:superpower",
+          "tm:swordsdance",
+          "tm:synthesis",
+          "tm:takedown",
+          "tm:telekinesis",
+          "tm:terablast",
+          "tm:terrainpulse",
+          "tm:thief",
+          "tm:trailblaze",
+          "tm:trick",
+          "tm:trickroom",
+          "tm:uproar",
+          "tm:worryseed",
+          "tm:zenheadbutt",
+          "tutor:ancientpower",
+          "tutor:block",
+          "tutor:bulldoze",
+          "tutor:calmmind",
+          "tutor:dracometeor",
+          "tutor:dragonpulse",
+          "tutor:energyball",
+          "tutor:flamethrower",
+          "tutor:gigadrain",
+          "tutor:gigaimpact",
+          "tutor:grassyglide",
+          "tutor:helpinghand",
+          "tutor:hyperbeam",
+          "tutor:ironhead",
+          "tutor:irontail",
+          "tutor:knockoff",
+          "tutor:lowkick",
+          "tutor:magicalleaf",
+          "tutor:outrage",
+          "tutor:psychic",
+          "tutor:rest",
+          "tutor:seedbomb",
+          "tutor:skillswap",
+          "tutor:sleeptalk",
+          "tutor:sludgebomb",
+          "tutor:stompingtantrum",
+          "tutor:superpower",
+          "tutor:synthesis",
+          "tutor:telekinesis",
+          "tutor:terrainpulse",
+          "tutor:trick",
+          "tutor:uproar",
+          "tutor:worryseed",
+          "tutor:zenheadbutt",
+          "legacy:attract",
+          "legacy:bide",
+          "legacy:captivate",
+          "legacy:confide",
+          "legacy:doubleteam",
+          "legacy:eggbomb",
+          "legacy:frustration",
+          "legacy:headbutt",
+          "legacy:hiddenpower",
+          "legacy:mimic",
+          "legacy:nightmare",
+          "legacy:psywave",
+          "legacy:rage",
+          "legacy:return",
+          "legacy:round",
+          "legacy:secretpower",
+          "legacy:snore",
+          "legacy:swagger",
+          "legacy:teleport",
+          "legacy:toxic",
+          "special:celebrate",
+          "special:sweetscent",
+          "special:wish"
+        ],
+        "preEvolution": "exeggcute",
+        "evolutions": [],
+        "battleOnly": false,
+        "behaviour": {
+          "herd": {
+            "maxSize": "6",
+            "toleratedLeaders": [
+              {
+                "pokemon": "exeggutor alolan",
+                "tier": 1
+              }
+            ]
+          },
+          "moving": {
+            "swim": {
+              "avoidsWater": true
+            }
+          },
+          "combat": {
+            "willDefendSelf": true,
+            "willDefendOwner": true,
+            "willFlee": false
+          },
+          "resting": {
+            "drowsyChance": 0.0333,
+            "rouseChance": 0.0042
+          }
+        },
+        "drops": {
+          "amount": 5,
+          "entries": [
+            {
+              "item": "minecraft:egg",
+              "quantityRange": "0-3"
+            },
+            {
+              "item": "cobblemon:oval_stone",
+              "percentage": 5
+            },
+            {
+              "item": "cobblemon:tanga_berry",
+              "percentage": 5
+            }
+          ]
+        }
+      }
+    ],
+    "riding": {
+      "stats": {
+        "SPEED": {
+          "ranges": "10-15"
+        },
+        "ACCELERATION": {
+          "ranges": "5-100"
+        },
+        "SKILL": {
+          "ranges": "30-65"
+        },
+        "JUMP": {
+          "ranges": "5-10"
+        },
+        "STAMINA": {
+          "ranges": "30-55"
+        }
+      },
+      "seats": [],
+      "behaviour": {
+        "key": "cobblemon:land/horse"
+      }
+    }
+  }
+}

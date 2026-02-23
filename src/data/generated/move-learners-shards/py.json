@@ -1,0 +1,32 @@
+{
+  "pyroball": {
+    "moveId": "pyroball",
+    "moveName": "Pyro Ball",
+    "type": "fire",
+    "category": "physical",
+    "basePower": 120,
+    "accuracy": 90,
+    "alwaysHits": false,
+    "shortDescription": "10% chance to burn the target. Thaws user.",
+    "description": "Has a 10% chance to burn the target.",
+    "learners": [
+      {
+        "slug": "cinderace",
+        "name": "Cinderace",
+        "dexNumber": 815,
+        "methods": [
+          "level"
+        ],
+        "eggGroups": [
+          "field",
+          "human_like"
+        ],
+        "levelUpLevels": [
+          1
+        ],
+        "baseAvailable": true,
+        "forms": []
+      }
+    ]
+  }
+}

@@ -1,0 +1,147 @@
+{
+  "eruption": {
+    "moveId": "eruption",
+    "moveName": "Eruption",
+    "type": "fire",
+    "category": "special",
+    "basePower": 150,
+    "accuracy": 100,
+    "alwaysHits": false,
+    "shortDescription": "Less power as user's HP decreases. Hits foe(s).",
+    "description": "Power is equal to (user's current HP * 150 / user's maximum HP), rounded down, but not less than 1.",
+    "learners": [
+      {
+        "slug": "cyndaquil",
+        "name": "Cyndaquil",
+        "dexNumber": 155,
+        "methods": [
+          "level"
+        ],
+        "eggGroups": [
+          "field"
+        ],
+        "levelUpLevels": [
+          64
+        ],
+        "baseAvailable": true,
+        "forms": []
+      },
+      {
+        "slug": "quilava",
+        "name": "Quilava",
+        "dexNumber": 156,
+        "methods": [
+          "level"
+        ],
+        "eggGroups": [
+          "field"
+        ],
+        "levelUpLevels": [
+          75
+        ],
+        "baseAvailable": true,
+        "forms": []
+      },
+      {
+        "slug": "typhlosion",
+        "name": "Typhlosion",
+        "dexNumber": 157,
+        "methods": [
+          "level"
+        ],
+        "eggGroups": [
+          "field"
+        ],
+        "levelUpLevels": [
+          1
+        ],
+        "baseAvailable": true,
+        "forms": [
+          {
+            "name": "Hisui",
+            "slug": "typhlosion-hisui"
+          }
+        ]
+      },
+      {
+        "slug": "entei",
+        "name": "Entei",
+        "dexNumber": 244,
+        "methods": [
+          "level"
+        ],
+        "eggGroups": [
+          "undiscovered"
+        ],
+        "levelUpLevels": [
+          78
+        ],
+        "baseAvailable": true,
+        "forms": []
+      },
+      {
+        "slug": "camerupt",
+        "name": "Camerupt",
+        "dexNumber": 323,
+        "methods": [
+          "level"
+        ],
+        "eggGroups": [
+          "field"
+        ],
+        "levelUpLevels": [
+          1
+        ],
+        "baseAvailable": true,
+        "forms": []
+      },
+      {
+        "slug": "torkoal",
+        "name": "Torkoal",
+        "dexNumber": 324,
+        "methods": [
+          "egg",
+          "level"
+        ],
+        "eggGroups": [
+          "field"
+        ],
+        "levelUpLevels": [
+          64
+        ],
+        "baseAvailable": true,
+        "forms": []
+      },
+      {
+        "slug": "groudon",
+        "name": "Groudon",
+        "dexNumber": 383,
+        "methods": [
+          "level"
+        ],
+        "eggGroups": [
+          "undiscovered"
+        ],
+        "levelUpLevels": [
+          90
+        ],
+        "baseAvailable": true,
+        "forms": []
+      },
+      {
+        "slug": "heatran",
+        "name": "Heatran",
+        "dexNumber": 485,
+        "methods": [
+          "special"
+        ],
+        "eggGroups": [
+          "undiscovered"
+        ],
+        "levelUpLevels": [],
+        "baseAvailable": true,
+        "forms": []
+      }
+    ]
+  }
+}

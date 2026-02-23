@@ -4,8 +4,8 @@
   "description": "",
   "type": "module",
   "scripts": {
-    "dev": "bunx vike dev",
-    "build": "bunx vike build",
+    "dev": "vike dev",
+    "build": "vike build",
     "preview": "NODE_ENV=production bun run dist/server/index.mjs",
     "preview-static": "vite preview",
     "generate:data": "bun scripts/generate-cobblemon-data.ts",

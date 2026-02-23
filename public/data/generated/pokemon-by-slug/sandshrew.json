@@ -1,0 +1,3784 @@
+{
+  "slug": "sandshrew",
+  "name": "Sandshrew",
+  "dexNumber": 27,
+  "implemented": true,
+  "types": [
+    "ground"
+  ],
+  "abilities": [
+    {
+      "id": "sandveil",
+      "hidden": false,
+      "label": "Sandveil",
+      "slot": "first"
+    },
+    {
+      "id": "sandrush",
+      "hidden": true,
+      "label": "Sandrush",
+      "slot": "hidden"
+    }
+  ],
+  "eggGroups": [
+    "field"
+  ],
+  "labels": [
+    "gen1",
+    "kantonian_form"
+  ],
+  "aspects": [],
+  "aliases": [
+    "alola",
+    "sandshrew",
+    "sandshrew alola"
+  ],
+  "maleRatio": 0.5,
+  "height": 6,
+  "weight": 120,
+  "catchRate": 255,
+  "baseExperienceYield": 60,
+  "baseFriendship": 50,
+  "eggCycles": 20,
+  "baseStats": {
+    "hp": 50,
+    "attack": 75,
+    "defence": 85,
+    "special_attack": 20,
+    "special_defence": 30,
+    "speed": 40
+  },
+  "evYield": {
+    "hp": 0,
+    "attack": 0,
+    "defence": 1,
+    "special_attack": 0,
+    "special_defence": 0,
+    "speed": 0
+  },
+  "preEvolution": null,
+  "evolutions": [
+    {
+      "id": "sandshrew_sandslash",
+      "variant": "level_up",
+      "result": {
+        "raw": "sandslash",
+        "slug": "sandslash",
+        "aspectTokens": []
+      },
+      "consumeHeldItem": false,
+      "learnableMoves": [
+        "crushclaw"
+      ],
+      "requirementText": [
+        "Level 22+"
+      ],
+      "requirements": [
+        {
+          "variant": "level",
+          "text": "Level 22+",
+          "raw": {
+            "variant": "level",
+            "minLevel": 22
+          }
+        }
+      ],
+      "requiredContext": null,
+      "fromForm": null,
+      "raw": {
+        "id": "sandshrew_sandslash",
+        "variant": "level_up",
+        "result": "sandslash",
+        "consumeHeldItem": false,
+        "learnableMoves": [
+          "crushclaw"
+        ],
+        "requirements": [
+          {
+            "variant": "level",
+            "minLevel": 22
+          }
+        ]
+      }
+    }
+  ],
+  "evolutionFamily": {
+    "members": [
+      {
+        "nodeId": "sandshrew",
+        "slug": "sandshrew",
+        "name": "Sandshrew",
+        "dexNumber": 27,
+        "formSlug": null,
+        "formName": null
+      },
+      {
+        "nodeId": "sandshrew-alola",
+        "slug": "sandshrew",
+        "name": "Sandshrew",
+        "dexNumber": 27,
+        "formSlug": "sandshrew-alola",
+        "formName": "Alola"
+      },
+      {
+        "nodeId": "sandslash",
+        "slug": "sandslash",
+        "name": "Sandslash",
+        "dexNumber": 28,
+        "formSlug": null,
+        "formName": null
+      },
+      {
+        "nodeId": "sandslash-alola",
+        "slug": "sandslash",
+        "name": "Sandslash",
+        "dexNumber": 28,
+        "formSlug": "sandslash-alola",
+        "formName": "Alola"
+      }
+    ],
+    "edges": [
+      {
+        "fromNodeId": "sandshrew",
+        "toNodeId": "sandslash",
+        "fromSlug": "sandshrew",
+        "toSlug": "sandslash",
+        "method": "level_up",
+        "requirementText": [
+          "Level 22+"
+        ]
+      },
+      {
+        "fromNodeId": "sandshrew-alola",
+        "toNodeId": "sandslash-alola",
+        "fromSlug": "sandshrew",
+        "toSlug": "sandslash",
+        "method": "item_interact",
+        "requirementText": [
+          "Use Ice Stone"
+        ]
+      }
+    ],
+    "roots": [
+      "sandshrew",
+      "sandshrew-alola"
+    ]
+  },
+  "moves": [
+    {
+      "raw": "tm:aerialace",
+      "moveId": "aerialace",
+      "moveName": "Aerial Ace",
+      "type": "flying",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tutor:aerialace",
+      "moveId": "aerialace",
+      "moveName": "Aerial Ace",
+      "type": "flying",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "27:agility",
+      "moveId": "agility",
+      "moveName": "Agility",
+      "type": "psychic",
+      "sourceType": "level",
+      "sourceValue": 27,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:agility",
+      "moveId": "agility",
+      "moveName": "Agility",
+      "type": "psychic",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:amnesia",
+      "moveId": "amnesia",
+      "moveName": "Amnesia",
+      "type": "psychic",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "legacy:attract",
+      "moveId": "attract",
+      "moveName": "Attract",
+      "type": "normal",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "legacy:bide",
+      "moveId": "bide",
+      "moveName": "Bide",
+      "type": "normal",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:bodyslam",
+      "moveId": "bodyslam",
+      "moveName": "Body Slam",
+      "type": "normal",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:brickbreak",
+      "moveId": "brickbreak",
+      "moveName": "Brick Break",
+      "type": "fighting",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "18:bulldoze",
+      "moveId": "bulldoze",
+      "moveName": "Bulldoze",
+      "type": "ground",
+      "sourceType": "level",
+      "sourceValue": 18,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:bulldoze",
+      "moveId": "bulldoze",
+      "moveName": "Bulldoze",
+      "type": "ground",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tutor:bulldoze",
+      "moveId": "bulldoze",
+      "moveName": "Bulldoze",
+      "type": "ground",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "legacy:captivate",
+      "moveId": "captivate",
+      "moveName": "Captivate",
+      "type": "normal",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "egg:chipaway",
+      "moveId": "chipaway",
+      "moveName": "Chip Away",
+      "type": "normal",
+      "sourceType": "egg",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "legacy:confide",
+      "moveId": "confide",
+      "moveName": "Confide",
+      "type": "normal",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "egg:counter",
+      "moveId": "counter",
+      "moveName": "Counter",
+      "type": "fighting",
+      "sourceType": "egg",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:covet",
+      "moveId": "covet",
+      "moveName": "Covet",
+      "type": "normal",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tutor:covet",
+      "moveId": "covet",
+      "moveName": "Covet",
+      "type": "normal",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:crushclaw",
+      "moveId": "crushclaw",
+      "moveName": "Crush Claw",
+      "type": "normal",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:curse",
+      "moveId": "curse",
+      "moveName": "Curse",
+      "type": "ghost",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:cut",
+      "moveId": "cut",
+      "moveName": "Cut",
+      "type": "normal",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "1:defensecurl",
+      "moveId": "defensecurl",
+      "moveName": "Defense Curl",
+      "type": "normal",
+      "sourceType": "level",
+      "sourceValue": 1,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "legacy:detect",
+      "moveId": "detect",
+      "moveName": "Detect",
+      "type": "fighting",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "33:dig",
+      "moveId": "dig",
+      "moveName": "Dig",
+      "type": "ground",
+      "sourceType": "level",
+      "sourceValue": 33,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:dig",
+      "moveId": "dig",
+      "moveName": "Dig",
+      "type": "ground",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "legacy:doubleteam",
+      "moveId": "doubleteam",
+      "moveName": "Double Team",
+      "type": "normal",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:doubleedge",
+      "moveId": "doubleedge",
+      "moveName": "Double-Edge",
+      "type": "normal",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "legacy:dynamicpunch",
+      "moveId": "dynamicpunch",
+      "moveName": "Dynamic Punch",
+      "type": "fighting",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:earthpower",
+      "moveId": "earthpower",
+      "moveName": "Earth Power",
+      "type": "ground",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tutor:earthpower",
+      "moveId": "earthpower",
+      "moveName": "Earth Power",
+      "type": "ground",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "45:earthquake",
+      "moveId": "earthquake",
+      "moveName": "Earthquake",
+      "type": "ground",
+      "sourceType": "level",
+      "sourceValue": 45,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:earthquake",
+      "moveId": "earthquake",
+      "moveName": "Earthquake",
+      "type": "ground",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:endeavor",
+      "moveId": "endeavor",
+      "moveName": "Endeavor",
+      "type": "normal",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tutor:endeavor",
+      "moveId": "endeavor",
+      "moveName": "Endeavor",
+      "type": "normal",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:endure",
+      "moveId": "endure",
+      "moveName": "Endure",
+      "type": "normal",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:facade",
+      "moveId": "facade",
+      "moveName": "Facade",
+      "type": "normal",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:falseswipe",
+      "moveId": "falseswipe",
+      "moveName": "False Swipe",
+      "type": "normal",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tutor:falseswipe",
+      "moveId": "falseswipe",
+      "moveName": "False Swipe",
+      "type": "normal",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "legacy:fissure",
+      "moveId": "fissure",
+      "moveName": "Fissure",
+      "type": "ground",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "egg:flail",
+      "moveId": "flail",
+      "moveName": "Flail",
+      "type": "normal",
+      "sourceType": "egg",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:fling",
+      "moveId": "fling",
+      "moveName": "Fling",
+      "type": "dark",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:focuspunch",
+      "moveId": "focuspunch",
+      "moveName": "Focus Punch",
+      "type": "fighting",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tutor:focuspunch",
+      "moveId": "focuspunch",
+      "moveName": "Focus Punch",
+      "type": "fighting",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "legacy:frustration",
+      "moveId": "frustration",
+      "moveName": "Frustration",
+      "type": "normal",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "12:furycutter",
+      "moveId": "furycutter",
+      "moveName": "Fury Cutter",
+      "type": "bug",
+      "sourceType": "level",
+      "sourceValue": 12,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:furycutter",
+      "moveId": "furycutter",
+      "moveName": "Fury Cutter",
+      "type": "bug",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tutor:furycutter",
+      "moveId": "furycutter",
+      "moveName": "Fury Cutter",
+      "type": "bug",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "24:furyswipes",
+      "moveId": "furyswipes",
+      "moveName": "Fury Swipes",
+      "type": "normal",
+      "sourceType": "level",
+      "sourceValue": 24,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "36:gyroball",
+      "moveId": "gyroball",
+      "moveName": "Gyro Ball",
+      "type": "steel",
+      "sourceType": "level",
+      "sourceValue": 36,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:gyroball",
+      "moveId": "gyroball",
+      "moveName": "Gyro Ball",
+      "type": "steel",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:headbutt",
+      "moveId": "headbutt",
+      "moveName": "Headbutt",
+      "type": "normal",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "legacy:hiddenpower",
+      "moveId": "hiddenpower",
+      "moveName": "Hidden Power",
+      "type": "normal",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:highhorsepower",
+      "moveId": "highhorsepower",
+      "moveName": "High Horsepower",
+      "type": "ground",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tutor:highhorsepower",
+      "moveId": "highhorsepower",
+      "moveName": "High Horsepower",
+      "type": "ground",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "egg:honeclaws",
+      "moveId": "honeclaws",
+      "moveName": "Hone Claws",
+      "type": "dark",
+      "sourceType": "egg",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:honeclaws",
+      "moveId": "honeclaws",
+      "moveName": "Hone Claws",
+      "type": "dark",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:irontail",
+      "moveId": "irontail",
+      "moveName": "Iron Tail",
+      "type": "steel",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tutor:irontail",
+      "moveId": "irontail",
+      "moveName": "Iron Tail",
+      "type": "steel",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:knockoff",
+      "moveId": "knockoff",
+      "moveName": "Knock Off",
+      "type": "dark",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tutor:knockoff",
+      "moveId": "knockoff",
+      "moveName": "Knock Off",
+      "type": "dark",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:leechlife",
+      "moveId": "leechlife",
+      "moveName": "Leech Life",
+      "type": "bug",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tutor:leechlife",
+      "moveId": "leechlife",
+      "moveName": "Leech Life",
+      "type": "bug",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:lowkick",
+      "moveId": "lowkick",
+      "moveName": "Low Kick",
+      "type": "fighting",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tutor:lowkick",
+      "moveId": "lowkick",
+      "moveName": "Low Kick",
+      "type": "fighting",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "1:magnitude",
+      "moveId": "magnitude",
+      "moveName": "Magnitude",
+      "type": "ground",
+      "sourceType": "level",
+      "sourceValue": 1,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "egg:metalclaw",
+      "moveId": "metalclaw",
+      "moveName": "Metal Claw",
+      "type": "steel",
+      "sourceType": "egg",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:metalclaw",
+      "moveId": "metalclaw",
+      "moveName": "Metal Claw",
+      "type": "steel",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "legacy:mimic",
+      "moveId": "mimic",
+      "moveName": "Mimic",
+      "type": "normal",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:mudshot",
+      "moveId": "mudshot",
+      "moveName": "Mud Shot",
+      "type": "ground",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "egg:mudslap",
+      "moveId": "mudslap",
+      "moveName": "Mud-Slap",
+      "type": "ground",
+      "sourceType": "egg",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:mudslap",
+      "moveId": "mudslap",
+      "moveName": "Mud-Slap",
+      "type": "ground",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tutor:mudslap",
+      "moveId": "mudslap",
+      "moveName": "Mud-Slap",
+      "type": "ground",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "legacy:naturalgift",
+      "moveId": "naturalgift",
+      "moveName": "Natural Gift",
+      "type": "normal",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "egg:nightslash",
+      "moveId": "nightslash",
+      "moveName": "Night Slash",
+      "type": "dark",
+      "sourceType": "egg",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:poisonjab",
+      "moveId": "poisonjab",
+      "moveName": "Poison Jab",
+      "type": "poison",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tutor:poisonjab",
+      "moveId": "poisonjab",
+      "moveName": "Poison Jab",
+      "type": "poison",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "3:poisonsting",
+      "moveId": "poisonsting",
+      "moveName": "Poison Sting",
+      "type": "poison",
+      "sourceType": "level",
+      "sourceValue": 3,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:protect",
+      "moveId": "protect",
+      "moveName": "Protect",
+      "type": "normal",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "legacy:rage",
+      "moveId": "rage",
+      "moveName": "Rage",
+      "type": "normal",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "15:rapidspin",
+      "moveId": "rapidspin",
+      "moveName": "Rapid Spin",
+      "type": "normal",
+      "sourceType": "level",
+      "sourceValue": 15,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:rest",
+      "moveId": "rest",
+      "moveName": "Rest",
+      "type": "psychic",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tutor:rest",
+      "moveId": "rest",
+      "moveName": "Rest",
+      "type": "psychic",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "legacy:return",
+      "moveId": "return",
+      "moveName": "Return",
+      "type": "normal",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:rockclimb",
+      "moveId": "rockclimb",
+      "moveName": "Rock Climb",
+      "type": "normal",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:rockslide",
+      "moveId": "rockslide",
+      "moveName": "Rock Slide",
+      "type": "rock",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tutor:rockslide",
+      "moveId": "rockslide",
+      "moveName": "Rock Slide",
+      "type": "rock",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:rocksmash",
+      "moveId": "rocksmash",
+      "moveName": "Rock Smash",
+      "type": "fighting",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tutor:rocksmash",
+      "moveId": "rocksmash",
+      "moveName": "Rock Smash",
+      "type": "fighting",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:rocktomb",
+      "moveId": "rocktomb",
+      "moveName": "Rock Tomb",
+      "type": "rock",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "9:rollout",
+      "moveId": "rollout",
+      "moveName": "Rollout",
+      "type": "rock",
+      "sourceType": "level",
+      "sourceValue": 9,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:rollout",
+      "moveId": "rollout",
+      "moveName": "Rollout",
+      "type": "rock",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tutor:rollout",
+      "moveId": "rollout",
+      "moveName": "Rollout",
+      "type": "rock",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "egg:rototiller",
+      "moveId": "rototiller",
+      "moveName": "Rototiller",
+      "type": "ground",
+      "sourceType": "egg",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "legacy:round",
+      "moveId": "round",
+      "moveName": "Round",
+      "type": "normal",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:safeguard",
+      "moveId": "safeguard",
+      "moveName": "Safeguard",
+      "type": "normal",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "6:sandattack",
+      "moveId": "sandattack",
+      "moveName": "Sand Attack",
+      "type": "ground",
+      "sourceType": "level",
+      "sourceValue": 6,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:sandtomb",
+      "moveId": "sandtomb",
+      "moveName": "Sand Tomb",
+      "type": "ground",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "42:sandstorm",
+      "moveId": "sandstorm",
+      "moveName": "Sandstorm",
+      "type": "rock",
+      "sourceType": "level",
+      "sourceValue": 42,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:sandstorm",
+      "moveId": "sandstorm",
+      "moveName": "Sandstorm",
+      "type": "rock",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:scorchingsands",
+      "moveId": "scorchingsands",
+      "moveName": "Scorching Sands",
+      "type": "ground",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tutor:scorchingsands",
+      "moveId": "scorchingsands",
+      "moveName": "Scorching Sands",
+      "type": "ground",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "1:scratch",
+      "moveId": "scratch",
+      "moveName": "Scratch",
+      "type": "normal",
+      "sourceType": "level",
+      "sourceValue": 1,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "legacy:secretpower",
+      "moveId": "secretpower",
+      "moveName": "Secret Power",
+      "type": "normal",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "legacy:seismictoss",
+      "moveId": "seismictoss",
+      "moveName": "Seismic Toss",
+      "type": "fighting",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:shadowclaw",
+      "moveId": "shadowclaw",
+      "moveName": "Shadow Claw",
+      "type": "ghost",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tutor:shadowclaw",
+      "moveId": "shadowclaw",
+      "moveName": "Shadow Claw",
+      "type": "ghost",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "legacy:skullbash",
+      "moveId": "skullbash",
+      "moveName": "Skull Bash",
+      "type": "normal",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "30:slash",
+      "moveId": "slash",
+      "moveName": "Slash",
+      "type": "normal",
+      "sourceType": "level",
+      "sourceValue": 30,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:sleeptalk",
+      "moveId": "sleeptalk",
+      "moveName": "Sleep Talk",
+      "type": "normal",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tutor:sleeptalk",
+      "moveId": "sleeptalk",
+      "moveName": "Sleep Talk",
+      "type": "normal",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:smackdown",
+      "moveId": "smackdown",
+      "moveName": "Smack Down",
+      "type": "rock",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "legacy:snore",
+      "moveId": "snore",
+      "moveName": "Snore",
+      "type": "normal",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:spikes",
+      "moveId": "spikes",
+      "moveName": "Spikes",
+      "type": "ground",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tutor:spikes",
+      "moveId": "spikes",
+      "moveName": "Spikes",
+      "type": "ground",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:stealthrock",
+      "moveId": "stealthrock",
+      "moveName": "Stealth Rock",
+      "type": "rock",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tutor:stealthrock",
+      "moveId": "stealthrock",
+      "moveName": "Stealth Rock",
+      "type": "rock",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:steelroller",
+      "moveId": "steelroller",
+      "moveName": "Steel Roller",
+      "type": "steel",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tutor:steelroller",
+      "moveId": "steelroller",
+      "moveName": "Steel Roller",
+      "type": "steel",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:stompingtantrum",
+      "moveId": "stompingtantrum",
+      "moveName": "Stomping Tantrum",
+      "type": "ground",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tutor:stompingtantrum",
+      "moveId": "stompingtantrum",
+      "moveName": "Stomping Tantrum",
+      "type": "ground",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:stoneedge",
+      "moveId": "stoneedge",
+      "moveName": "Stone Edge",
+      "type": "rock",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tutor:stoneedge",
+      "moveId": "stoneedge",
+      "moveName": "Stone Edge",
+      "type": "rock",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:strength",
+      "moveId": "strength",
+      "moveName": "Strength",
+      "type": "normal",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "legacy:submission",
+      "moveId": "submission",
+      "moveName": "Submission",
+      "type": "fighting",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:substitute",
+      "moveId": "substitute",
+      "moveName": "Substitute",
+      "type": "normal",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:sunnyday",
+      "moveId": "sunnyday",
+      "moveName": "Sunny Day",
+      "type": "fire",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:superfang",
+      "moveId": "superfang",
+      "moveName": "Super Fang",
+      "type": "normal",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tutor:superfang",
+      "moveId": "superfang",
+      "moveName": "Super Fang",
+      "type": "normal",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "legacy:swagger",
+      "moveId": "swagger",
+      "moveName": "Swagger",
+      "type": "normal",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "21:swift",
+      "moveId": "swift",
+      "moveName": "Swift",
+      "type": "normal",
+      "sourceType": "level",
+      "sourceValue": 21,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:swift",
+      "moveId": "swift",
+      "moveName": "Swift",
+      "type": "normal",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tutor:swift",
+      "moveId": "swift",
+      "moveName": "Swift",
+      "type": "normal",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "39:swordsdance",
+      "moveId": "swordsdance",
+      "moveName": "Swords Dance",
+      "type": "normal",
+      "sourceType": "level",
+      "sourceValue": 39,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:swordsdance",
+      "moveId": "swordsdance",
+      "moveName": "Swords Dance",
+      "type": "normal",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:takedown",
+      "moveId": "takedown",
+      "moveName": "Take Down",
+      "type": "normal",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:terablast",
+      "moveId": "terablast",
+      "moveName": "Tera Blast",
+      "type": "normal",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:thief",
+      "moveId": "thief",
+      "moveName": "Thief",
+      "type": "dark",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:throatchop",
+      "moveId": "throatchop",
+      "moveName": "Throat Chop",
+      "type": "dark",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tutor:throatchop",
+      "moveId": "throatchop",
+      "moveName": "Throat Chop",
+      "type": "dark",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "legacy:toxic",
+      "moveId": "toxic",
+      "moveName": "Toxic",
+      "type": "poison",
+      "sourceType": "legacy",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:workup",
+      "moveId": "workup",
+      "moveName": "Work Up",
+      "type": "normal",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tm:xscissor",
+      "moveId": "xscissor",
+      "moveName": "X-Scissor",
+      "type": "bug",
+      "sourceType": "tm",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    },
+    {
+      "raw": "tutor:xscissor",
+      "moveId": "xscissor",
+      "moveName": "X-Scissor",
+      "type": "bug",
+      "sourceType": "tutor",
+      "sourceValue": null,
+      "fromForm": null,
+      "fromFormSlug": null
+    }
+  ],
+  "spawnEntries": [
+    {
+      "id": "sandshrew-1",
+      "sourceFile": "0027_sandshrew.json",
+      "pokemon": {
+        "raw": "sandshrew",
+        "slug": "sandshrew",
+        "aspectTokens": []
+      },
+      "type": "pokemon",
+      "spawnablePositionType": "grounded",
+      "bucket": "common",
+      "bucketWeight": 94.3,
+      "levelText": "5-30",
+      "levelMin": 5,
+      "levelMax": 30,
+      "weight": 9,
+      "presets": [
+        "natural"
+      ],
+      "biomeHints": [
+        "Is Arid",
+        "Is Badlands",
+        "Is Desert"
+      ],
+      "condition": {
+        "neededBaseBlocks": [
+          "#cobblemon:natural"
+        ],
+        "biomes": [
+          "#cobblemon:is_arid"
+        ]
+      },
+      "anticondition": {
+        "neededBaseBlocks": [
+          "minecraft:farmland"
+        ]
+      },
+      "weightMultipliers": [],
+      "raw": {
+        "id": "sandshrew-1",
+        "pokemon": "sandshrew",
+        "presets": [
+          "natural"
+        ],
+        "type": "pokemon",
+        "spawnablePositionType": "grounded",
+        "bucket": "common",
+        "level": "5-30",
+        "weight": 9,
+        "condition": {
+          "biomes": [
+            "#cobblemon:is_arid"
+          ]
+        }
+      }
+    }
+  ],
+  "forms": [
+    {
+      "name": "Alola",
+      "slug": "sandshrew-alola",
+      "aspects": [
+        "alolan"
+      ],
+      "labels": [
+        "gen7",
+        "alolan_form"
+      ],
+      "types": [
+        "ice",
+        "steel"
+      ],
+      "maleRatio": 0.5,
+      "height": 7,
+      "weight": 400,
+      "catchRate": null,
+      "baseExperienceYield": null,
+      "baseFriendship": null,
+      "eggCycles": null,
+      "baseStats": {
+        "hp": 50,
+        "attack": 75,
+        "defence": 90,
+        "special_attack": 10,
+        "special_defence": 35,
+        "speed": 40
+      },
+      "evYield": {},
+      "battleOnly": false,
+      "abilities": [
+        {
+          "id": "snowcloak",
+          "hidden": false,
+          "label": "Snowcloak",
+          "slot": "first"
+        },
+        {
+          "id": "slushrush",
+          "hidden": true,
+          "label": "Slushrush",
+          "slot": "hidden"
+        }
+      ],
+      "moves": [
+        {
+          "raw": "1:scratch",
+          "moveId": "scratch",
+          "moveName": "Scratch",
+          "type": "normal",
+          "sourceType": "level",
+          "sourceValue": 1,
+          "fromForm": "Alola",
+          "fromFormSlug": "sandshrew-alola"
+        },
+        {
+          "raw": "1:defensecurl",
+          "moveId": "defensecurl",
+          "moveName": "Defense Curl",
+          "type": "normal",
+          "sourceType": "level",
+          "sourceValue": 1,
+          "fromForm": "Alola",
+          "fromFormSlug": "sandshrew-alola"
+        },
+        {
+          "raw": "1:bide",
+          "moveId": "bide",
+          "moveName": "Bide",
+          "type": "normal",
+          "sourceType": "level",
+          "sourceValue": 1,
+          "fromForm": "Alola",
+          "fromFormSlug": "sandshrew-alola"
+        },
+        {
+          "raw": "3:mist",
+          "moveId": "mist",
+          "moveName": "Mist",
+          "type": "ice",
+          "sourceType": "level",
+          "sourceValue": 3,
+          "fromForm": "Alola",
+          "fromFormSlug": "sandshrew-alola"
+        },
+        {
+          "raw": "6:powdersnow",
+          "moveId": "powdersnow",
+          "moveName": "Powder Snow",
+          "type": "ice",
+          "sourceType": "level",
+          "sourceValue": 6,
+          "fromForm": "Alola",
+          "fromFormSlug": "sandshrew-alola"
+        },
+        {
+          "raw": "9:rollout",
+          "moveId": "rollout",
+          "moveName": "Rollout",
+          "type": "rock",
+          "sourceType": "level",
+          "sourceValue": 9,
+          "fromForm": "Alola",
+          "fromFormSlug": "sandshrew-alola"
+        },
+        {
+          "raw": "12:furycutter",
+          "moveId": "furycutter",
+          "moveName": "Fury Cutter",
+          "type": "bug",
+          "sourceType": "level",
+          "sourceValue": 12,
+          "fromForm": "Alola",
+          "fromFormSlug": "sandshrew-alola"
+        },
+        {
+          "raw": "15:rapidspin",
+          "moveId": "rapidspin",
+          "moveName": "Rapid Spin",
+          "type": "normal",
+          "sourceType": "level",
+          "sourceValue": 15,
+          "fromForm": "Alola",
+          "fromFormSlug": "sandshrew-alola"
+        },
+        {
+          "raw": "18:metalclaw",
+          "moveId": "metalclaw",
+          "moveName": "Metal Claw",
+          "type": "steel",
+          "sourceType": "level",
+          "sourceValue": 18,
+          "fromForm": "Alola",
+          "fromFormSlug": "sandshrew-alola"
+        },
+        {
+          "raw": "21:swift",
+          "moveId": "swift",
+          "moveName": "Swift",
+          "type": "normal",
+          "sourceType": "level",
+          "sourceValue": 21,
+          "fromForm": "Alola",
+          "fromFormSlug": "sandshrew-alola"
+        },
+        {
+          "raw": "24:furyswipes",
+          "moveId": "furyswipes",
+          "moveName": "Fury Swipes",
+          "type": "normal",
+          "sourceType": "level",
+          "sourceValue": 24,
+          "fromForm": "Alola",
+          "fromFormSlug": "sandshrew-alola"
+        },
+        {
+          "raw": "27:irondefense",
+          "moveId": "irondefense",
+          "moveName": "Iron Defense",
+          "type": "steel",
+          "sourceType": "level",
+          "sourceValue": 27,
+          "fromForm": "Alola",
+          "fromFormSlug": "sandshrew-alola"
+        },
+        {
+          "raw": "30:slash",
+          "moveId": "slash",
+          "moveName": "Slash",
+          "type": "normal",
+          "sourceType": "level",
+          "sourceValue": 30,
+          "fromForm": "Alola",
+          "fromFormSlug": "sandshrew-alola"
+        },
+        {
+          "raw": "33:ironhead",
+          "moveId": "ironhead",
+          "moveName": "Iron Head",
+          "type": "steel",
+          "sourceType": "level",
+          "sourceValue": 33,
+          "fromForm": "Alola",
+          "fromFormSlug": "sandshrew-alola"
+        },
+        {
+          "raw": "36:gyroball",
+          "moveId": "gyroball",
+          "moveName": "Gyro Ball",
+          "type": "steel",
+          "sourceType": "level",
+          "sourceValue": 36,
+          "fromForm": "Alola",
+          "fromFormSlug": "sandshrew-alola"
+        },
+        {
+          "raw": "39:swordsdance",
+          "moveId": "swordsdance",
+          "moveName": "Swords Dance",
+          "type": "normal",
+          "sourceType": "level",
+          "sourceValue": 39,
+          "fromForm": "Alola",
+          "fromFormSlug": "sandshrew-alola"
+        },
+        {
+          "raw": "42:snowscape",
+          "moveId": "snowscape",
+          "moveName": "Snowscape",
+          "type": "ice",
+          "sourceType": "level",
+          "sourceValue": 42,
+          "fromForm": "Alola",
+          "fromFormSlug": "sandshrew-alola"
+        },
+        {
+          "raw": "45:blizzard",
+          "moveId": "blizzard",
+          "moveName": "Blizzard",
+          "type": "ice",
+          "sourceType": "level",
+          "sourceValue": 45,
+          "fromForm": "Alola",
+          "fromFormSlug": "sandshrew-alola"
+        },
+        {
+          "raw": "egg:chipaway",
+          "moveId": "chipaway",
+          "moveName": "Chip Away",
+          "type": "normal",
+          "sourceType": "egg",
+          "sourceValue": null,
+          "fromForm": "Alola",
+          "fromFormSlug": "sandshrew-alola"
+        },
+        {
+          "raw": "egg:counter",
+          "moveId": "counter",
+          "moveName": "Counter",
+          "type": "fighting",
+          "sourceType": "egg",
+          "sourceValue": null,
+          "fromForm": "Alola",
+          "fromFormSlug": "sandshrew-alola"
+        },
+        {
+          "raw": "egg:crushclaw",
+          "moveId": "crushclaw",
+          "moveName": "Crush Claw",
+          "type": "normal",
+          "sourceType": "egg",
+          "sourceValue": null,
+          "fromForm": "Alola",
+          "fromFormSlug": "sandshrew-alola"
+        },
+        {
+          "raw": "egg:curse",
+          "moveId": "curse",
+          "moveName": "Curse",
+          "type": "ghost",
+          "sourceType": "egg",
+          "sourceValue": null,
+          "fromForm": "Alola",
+          "fromFormSlug": "sandshrew-alola"
+        },
+        {
+          "raw": "egg:flail",
+          "moveId": "flail",
+          "moveName": "Flail",
+          "type": "normal",
+          "sourceType": "egg",
+          "sourceValue": null,
+          "fromForm": "Alola",
+          "fromFormSlug": "sandshrew-alola"
+        },
+        {
+          "raw": "egg:honeclaws",
+          "moveId": "honeclaws",
+          "moveName": "Hone Claws",
+          "type": "dark",
+          "sourceType": "egg",
+          "sourceValue": null,
+          "fromForm": "Alola",
+          "fromFormSlug": "sandshrew-alola"
+        },
+        {
+          "raw": "egg:iceshard",
+          "moveId": "iceshard",
+          "moveName": "Ice Shard",
+          "type": "ice",
+          "sourceType": "egg",
+          "sourceValue": null,
+          "fromForm": "Alola",
+          "fromFormSlug": "sandshrew-alola"
+        },
+        {
+          "raw": "egg:mirrorcoat",
+          "moveId": "mirrorcoat",
+          "moveName": "Mirror Coat",
+          "type": "psychic",
+          "sourceType": "egg",
+          "sourceValue": null,
+          "fromForm": "Alola",
+          "fromFormSlug": "sandshrew-alola"
+        },
+        {
+          "raw": "egg:nightslash",
+          "moveId": "nightslash",
+          "moveName": "Night Slash",
+          "type": "dark",
+          "sourceType": "egg",
+          "sourceValue": null,
+          "fromForm": "Alola",
+          "fromFormSlug": "sandshrew-alola"
+        },
+        {
+          "raw": "tm:aerialace",
+          "moveId": "aerialace",
+          "moveName": "Aerial Ace",
+          "type": "flying",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Alola",
+          "fromFormSlug": "sandshrew-alola"
+        },
+        {
+          "raw": "tm:amnesia",
+          "moveId": "amnesia",
+          "moveName": "Amnesia",
+          "type": "psychic",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Alola",
+          "fromFormSlug": "sandshrew-alola"
+        },
+        {
+          "raw": "tm:aquatail",
+          "moveId": "aquatail",
+          "moveName": "Aqua Tail",
+          "type": "water",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Alola",
+          "fromFormSlug": "sandshrew-alola"
+        },
+        {
+          "raw": "tm:auroraveil",
+          "moveId": "auroraveil",
+          "moveName": "Aurora Veil",
+          "type": "ice",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Alola",
+          "fromFormSlug": "sandshrew-alola"
+        },
+        {
+          "raw": "tm:avalanche",
+          "moveId": "avalanche",
+          "moveName": "Avalanche",
+          "type": "ice",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Alola",
+          "fromFormSlug": "sandshrew-alola"
+        },
+        {
+          "raw": "tm:blizzard",
+          "moveId": "blizzard",
+          "moveName": "Blizzard",
+          "type": "ice",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Alola",
+          "fromFormSlug": "sandshrew-alola"
+        },
+        {
+          "raw": "tm:bodyslam",
+          "moveId": "bodyslam",
+          "moveName": "Body Slam",
+          "type": "normal",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Alola",
+          "fromFormSlug": "sandshrew-alola"
+        },
+        {
+          "raw": "tm:brickbreak",
+          "moveId": "brickbreak",
+          "moveName": "Brick Break",
+          "type": "fighting",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Alola",
+          "fromFormSlug": "sandshrew-alola"
+        },
+        {
+          "raw": "tm:bulldoze",
+          "moveId": "bulldoze",
+          "moveName": "Bulldoze",
+          "type": "ground",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Alola",
+          "fromFormSlug": "sandshrew-alola"
+        },
+        {
+          "raw": "tm:covet",
+          "moveId": "covet",
+          "moveName": "Covet",
+          "type": "normal",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Alola",
+          "fromFormSlug": "sandshrew-alola"
+        },
+        {
+          "raw": "tm:curse",
+          "moveId": "curse",
+          "moveName": "Curse",
+          "type": "ghost",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Alola",
+          "fromFormSlug": "sandshrew-alola"
+        },
+        {
+          "raw": "tm:dig",
+          "moveId": "dig",
+          "moveName": "Dig",
+          "type": "ground",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Alola",
+          "fromFormSlug": "sandshrew-alola"
+        },
+        {
+          "raw": "tm:doubleedge",
+          "moveId": "doubleedge",
+          "moveName": "Double-Edge",
+          "type": "normal",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Alola",
+          "fromFormSlug": "sandshrew-alola"
+        },
+        {
+          "raw": "tm:earthquake",
+          "moveId": "earthquake",
+          "moveName": "Earthquake",
+          "type": "ground",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Alola",
+          "fromFormSlug": "sandshrew-alola"
+        },
+        {
+          "raw": "tm:endeavor",
+          "moveId": "endeavor",
+          "moveName": "Endeavor",
+          "type": "normal",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Alola",
+          "fromFormSlug": "sandshrew-alola"
+        },
+        {
+          "raw": "tm:endure",
+          "moveId": "endure",
+          "moveName": "Endure",
+          "type": "normal",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Alola",
+          "fromFormSlug": "sandshrew-alola"
+        },
+        {
+          "raw": "tm:facade",
+          "moveId": "facade",
+          "moveName": "Facade",
+          "type": "normal",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Alola",
+          "fromFormSlug": "sandshrew-alola"
+        },
+        {
+          "raw": "tm:flashcannon",
+          "moveId": "flashcannon",
+          "moveName": "Flash Cannon",
+          "type": "steel",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Alola",
+          "fromFormSlug": "sandshrew-alola"
+        },
+        {
+          "raw": "tm:fling",
+          "moveId": "fling",
+          "moveName": "Fling",
+          "type": "dark",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Alola",
+          "fromFormSlug": "sandshrew-alola"
+        },
+        {
+          "raw": "tm:focuspunch",
+          "moveId": "focuspunch",
+          "moveName": "Focus Punch",
+          "type": "fighting",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Alola",
+          "fromFormSlug": "sandshrew-alola"
+        },
+        {
+          "raw": "tm:frostbreath",
+          "moveId": "frostbreath",
+          "moveName": "Frost Breath",
+          "type": "ice",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Alola",
+          "fromFormSlug": "sandshrew-alola"
+        },
+        {
+          "raw": "tm:furycutter",
+          "moveId": "furycutter",
+          "moveName": "Fury Cutter",
+          "type": "bug",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Alola",
+          "fromFormSlug": "sandshrew-alola"
+        },
+        {
+          "raw": "tm:gyroball",
+          "moveId": "gyroball",
+          "moveName": "Gyro Ball",
+          "type": "steel",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Alola",
+          "fromFormSlug": "sandshrew-alola"
+        },
+        {
+          "raw": "tm:hail",
+          "moveId": "hail",
+          "moveName": "Hail",
+          "type": "ice",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Alola",
+          "fromFormSlug": "sandshrew-alola"
+        },
+        {
+          "raw": "tm:honeclaws",
+          "moveId": "honeclaws",
+          "moveName": "Hone Claws",
+          "type": "dark",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Alola",
+          "fromFormSlug": "sandshrew-alola"
+        },
+        {
+          "raw": "tm:iceball",
+          "moveId": "iceball",
+          "moveName": "Ice Ball",
+          "type": "ice",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Alola",
+          "fromFormSlug": "sandshrew-alola"
+        },
+        {
+          "raw": "tm:icebeam",
+          "moveId": "icebeam",
+          "moveName": "Ice Beam",
+          "type": "ice",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Alola",
+          "fromFormSlug": "sandshrew-alola"
+        },
+        {
+          "raw": "tm:icepunch",
+          "moveId": "icepunch",
+          "moveName": "Ice Punch",
+          "type": "ice",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Alola",
+          "fromFormSlug": "sandshrew-alola"
+        },
+        {
+          "raw": "tm:icespinner",
+          "moveId": "icespinner",
+          "moveName": "Ice Spinner",
+          "type": "ice",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Alola",
+          "fromFormSlug": "sandshrew-alola"
+        },
+        {
+          "raw": "tm:iciclecrash",
+          "moveId": "iciclecrash",
+          "moveName": "Icicle Crash",
+          "type": "ice",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Alola",
+          "fromFormSlug": "sandshrew-alola"
+        },
+        {
+          "raw": "tm:iciclespear",
+          "moveId": "iciclespear",
+          "moveName": "Icicle Spear",
+          "type": "ice",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Alola",
+          "fromFormSlug": "sandshrew-alola"
+        },
+        {
+          "raw": "tm:icywind",
+          "moveId": "icywind",
+          "moveName": "Icy Wind",
+          "type": "ice",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Alola",
+          "fromFormSlug": "sandshrew-alola"
+        },
+        {
+          "raw": "tm:irondefense",
+          "moveId": "irondefense",
+          "moveName": "Iron Defense",
+          "type": "steel",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Alola",
+          "fromFormSlug": "sandshrew-alola"
+        },
+        {
+          "raw": "tm:ironhead",
+          "moveId": "ironhead",
+          "moveName": "Iron Head",
+          "type": "steel",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Alola",
+          "fromFormSlug": "sandshrew-alola"
+        },
+        {
+          "raw": "tm:irontail",
+          "moveId": "irontail",
+          "moveName": "Iron Tail",
+          "type": "steel",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Alola",
+          "fromFormSlug": "sandshrew-alola"
+        },
+        {
+          "raw": "tm:knockoff",
+          "moveId": "knockoff",
+          "moveName": "Knock Off",
+          "type": "dark",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Alola",
+          "fromFormSlug": "sandshrew-alola"
+        },
+        {
+          "raw": "tm:leechlife",
+          "moveId": "leechlife",
+          "moveName": "Leech Life",
+          "type": "bug",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Alola",
+          "fromFormSlug": "sandshrew-alola"
+        },
+        {
+          "raw": "tm:lowkick",
+          "moveId": "lowkick",
+          "moveName": "Low Kick",
+          "type": "fighting",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Alola",
+          "fromFormSlug": "sandshrew-alola"
+        },
+        {
+          "raw": "tm:metalclaw",
+          "moveId": "metalclaw",
+          "moveName": "Metal Claw",
+          "type": "steel",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Alola",
+          "fromFormSlug": "sandshrew-alola"
+        },
+        {
+          "raw": "tm:poisonjab",
+          "moveId": "poisonjab",
+          "moveName": "Poison Jab",
+          "type": "poison",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Alola",
+          "fromFormSlug": "sandshrew-alola"
+        },
+        {
+          "raw": "tm:protect",
+          "moveId": "protect",
+          "moveName": "Protect",
+          "type": "normal",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Alola",
+          "fromFormSlug": "sandshrew-alola"
+        },
+        {
+          "raw": "tm:rest",
+          "moveId": "rest",
+          "moveName": "Rest",
+          "type": "psychic",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Alola",
+          "fromFormSlug": "sandshrew-alola"
+        },
+        {
+          "raw": "tm:rockslide",
+          "moveId": "rockslide",
+          "moveName": "Rock Slide",
+          "type": "rock",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Alola",
+          "fromFormSlug": "sandshrew-alola"
+        },
+        {
+          "raw": "tm:rocktomb",
+          "moveId": "rocktomb",
+          "moveName": "Rock Tomb",
+          "type": "rock",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Alola",
+          "fromFormSlug": "sandshrew-alola"
+        },
+        {
+          "raw": "tm:rollout",
+          "moveId": "rollout",
+          "moveName": "Rollout",
+          "type": "rock",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Alola",
+          "fromFormSlug": "sandshrew-alola"
+        },
+        {
+          "raw": "tm:safeguard",
+          "moveId": "safeguard",
+          "moveName": "Safeguard",
+          "type": "normal",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Alola",
+          "fromFormSlug": "sandshrew-alola"
+        },
+        {
+          "raw": "tm:shadowclaw",
+          "moveId": "shadowclaw",
+          "moveName": "Shadow Claw",
+          "type": "ghost",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Alola",
+          "fromFormSlug": "sandshrew-alola"
+        },
+        {
+          "raw": "tm:sleeptalk",
+          "moveId": "sleeptalk",
+          "moveName": "Sleep Talk",
+          "type": "normal",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Alola",
+          "fromFormSlug": "sandshrew-alola"
+        },
+        {
+          "raw": "tm:snowscape",
+          "moveId": "snowscape",
+          "moveName": "Snowscape",
+          "type": "ice",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Alola",
+          "fromFormSlug": "sandshrew-alola"
+        },
+        {
+          "raw": "tm:stealthrock",
+          "moveId": "stealthrock",
+          "moveName": "Stealth Rock",
+          "type": "rock",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Alola",
+          "fromFormSlug": "sandshrew-alola"
+        },
+        {
+          "raw": "tm:steelbeam",
+          "moveId": "steelbeam",
+          "moveName": "Steel Beam",
+          "type": "steel",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Alola",
+          "fromFormSlug": "sandshrew-alola"
+        },
+        {
+          "raw": "tm:steelroller",
+          "moveId": "steelroller",
+          "moveName": "Steel Roller",
+          "type": "steel",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Alola",
+          "fromFormSlug": "sandshrew-alola"
+        },
+        {
+          "raw": "tm:substitute",
+          "moveId": "substitute",
+          "moveName": "Substitute",
+          "type": "normal",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Alola",
+          "fromFormSlug": "sandshrew-alola"
+        },
+        {
+          "raw": "tm:superfang",
+          "moveId": "superfang",
+          "moveName": "Super Fang",
+          "type": "normal",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Alola",
+          "fromFormSlug": "sandshrew-alola"
+        },
+        {
+          "raw": "tm:swift",
+          "moveId": "swift",
+          "moveName": "Swift",
+          "type": "normal",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Alola",
+          "fromFormSlug": "sandshrew-alola"
+        },
+        {
+          "raw": "tm:swordsdance",
+          "moveId": "swordsdance",
+          "moveName": "Swords Dance",
+          "type": "normal",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Alola",
+          "fromFormSlug": "sandshrew-alola"
+        },
+        {
+          "raw": "tm:takedown",
+          "moveId": "takedown",
+          "moveName": "Take Down",
+          "type": "normal",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Alola",
+          "fromFormSlug": "sandshrew-alola"
+        },
+        {
+          "raw": "tm:terablast",
+          "moveId": "terablast",
+          "moveName": "Tera Blast",
+          "type": "normal",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Alola",
+          "fromFormSlug": "sandshrew-alola"
+        },
+        {
+          "raw": "tm:thief",
+          "moveId": "thief",
+          "moveName": "Thief",
+          "type": "dark",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Alola",
+          "fromFormSlug": "sandshrew-alola"
+        },
+        {
+          "raw": "tm:throatchop",
+          "moveId": "throatchop",
+          "moveName": "Throat Chop",
+          "type": "dark",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Alola",
+          "fromFormSlug": "sandshrew-alola"
+        },
+        {
+          "raw": "tm:tripleaxel",
+          "moveId": "tripleaxel",
+          "moveName": "Triple Axel",
+          "type": "ice",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Alola",
+          "fromFormSlug": "sandshrew-alola"
+        },
+        {
+          "raw": "tm:workup",
+          "moveId": "workup",
+          "moveName": "Work Up",
+          "type": "normal",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Alola",
+          "fromFormSlug": "sandshrew-alola"
+        },
+        {
+          "raw": "tm:xscissor",
+          "moveId": "xscissor",
+          "moveName": "X-Scissor",
+          "type": "bug",
+          "sourceType": "tm",
+          "sourceValue": null,
+          "fromForm": "Alola",
+          "fromFormSlug": "sandshrew-alola"
+        },
+        {
+          "raw": "tutor:aerialace",
+          "moveId": "aerialace",
+          "moveName": "Aerial Ace",
+          "type": "flying",
+          "sourceType": "tutor",
+          "sourceValue": null,
+          "fromForm": "Alola",
+          "fromFormSlug": "sandshrew-alola"
+        },
+        {
+          "raw": "tutor:aquatail",
+          "moveId": "aquatail",
+          "moveName": "Aqua Tail",
+          "type": "water",
+          "sourceType": "tutor",
+          "sourceValue": null,
+          "fromForm": "Alola",
+          "fromFormSlug": "sandshrew-alola"
+        },
+        {
+          "raw": "tutor:bulldoze",
+          "moveId": "bulldoze",
+          "moveName": "Bulldoze",
+          "type": "ground",
+          "sourceType": "tutor",
+          "sourceValue": null,
+          "fromForm": "Alola",
+          "fromFormSlug": "sandshrew-alola"
+        },
+        {
+          "raw": "tutor:covet",
+          "moveId": "covet",
+          "moveName": "Covet",
+          "type": "normal",
+          "sourceType": "tutor",
+          "sourceValue": null,
+          "fromForm": "Alola",
+          "fromFormSlug": "sandshrew-alola"
+        },
+        {
+          "raw": "tutor:endeavor",
+          "moveId": "endeavor",
+          "moveName": "Endeavor",
+          "type": "normal",
+          "sourceType": "tutor",
+          "sourceValue": null,
+          "fromForm": "Alola",
+          "fromFormSlug": "sandshrew-alola"
+        },
+        {
+          "raw": "tutor:flashcannon",
+          "moveId": "flashcannon",
+          "moveName": "Flash Cannon",
+          "type": "steel",
+          "sourceType": "tutor",
+          "sourceValue": null,
+          "fromForm": "Alola",
+          "fromFormSlug": "sandshrew-alola"
+        },
+        {
+          "raw": "tutor:focuspunch",
+          "moveId": "focuspunch",
+          "moveName": "Focus Punch",
+          "type": "fighting",
+          "sourceType": "tutor",
+          "sourceValue": null,
+          "fromForm": "Alola",
+          "fromFormSlug": "sandshrew-alola"
+        },
+        {
+          "raw": "tutor:furycutter",
+          "moveId": "furycutter",
+          "moveName": "Fury Cutter",
+          "type": "bug",
+          "sourceType": "tutor",
+          "sourceValue": null,
+          "fromForm": "Alola",
+          "fromFormSlug": "sandshrew-alola"
+        },
+        {
+          "raw": "tutor:iceball",
+          "moveId": "iceball",
+          "moveName": "Ice Ball",
+          "type": "ice",
+          "sourceType": "tutor",
+          "sourceValue": null,
+          "fromForm": "Alola",
+          "fromFormSlug": "sandshrew-alola"
+        },
+        {
+          "raw": "tutor:icebeam",
+          "moveId": "icebeam",
+          "moveName": "Ice Beam",
+          "type": "ice",
+          "sourceType": "tutor",
+          "sourceValue": null,
+          "fromForm": "Alola",
+          "fromFormSlug": "sandshrew-alola"
+        },
+        {
+          "raw": "tutor:icepunch",
+          "moveId": "icepunch",
+          "moveName": "Ice Punch",
+          "type": "ice",
+          "sourceType": "tutor",
+          "sourceValue": null,
+          "fromForm": "Alola",
+          "fromFormSlug": "sandshrew-alola"
+        },
+        {
+          "raw": "tutor:icywind",
+          "moveId": "icywind",
+          "moveName": "Icy Wind",
+          "type": "ice",
+          "sourceType": "tutor",
+          "sourceValue": null,
+          "fromForm": "Alola",
+          "fromFormSlug": "sandshrew-alola"
+        },
+        {
+          "raw": "tutor:irondefense",
+          "moveId": "irondefense",
+          "moveName": "Iron Defense",
+          "type": "steel",
+          "sourceType": "tutor",
+          "sourceValue": null,
+          "fromForm": "Alola",
+          "fromFormSlug": "sandshrew-alola"
+        },
+        {
+          "raw": "tutor:ironhead",
+          "moveId": "ironhead",
+          "moveName": "Iron Head",
+          "type": "steel",
+          "sourceType": "tutor",
+          "sourceValue": null,
+          "fromForm": "Alola",
+          "fromFormSlug": "sandshrew-alola"
+        },
+        {
+          "raw": "tutor:irontail",
+          "moveId": "irontail",
+          "moveName": "Iron Tail",
+          "type": "steel",
+          "sourceType": "tutor",
+          "sourceValue": null,
+          "fromForm": "Alola",
+          "fromFormSlug": "sandshrew-alola"
+        },
+        {
+          "raw": "tutor:knockoff",
+          "moveId": "knockoff",
+          "moveName": "Knock Off",
+          "type": "dark",
+          "sourceType": "tutor",
+          "sourceValue": null,
+          "fromForm": "Alola",
+          "fromFormSlug": "sandshrew-alola"
+        },
+        {
+          "raw": "tutor:leechlife",
+          "moveId": "leechlife",
+          "moveName": "Leech Life",
+          "type": "bug",
+          "sourceType": "tutor",
+          "sourceValue": null,
+          "fromForm": "Alola",
+          "fromFormSlug": "sandshrew-alola"
+        },
+        {
+          "raw": "tutor:lowkick",
+          "moveId": "lowkick",
+          "moveName": "Low Kick",
+          "type": "fighting",
+          "sourceType": "tutor",
+          "sourceValue": null,
+          "fromForm": "Alola",
+          "fromFormSlug": "sandshrew-alola"
+        },
+        {
+          "raw": "tutor:poisonjab",
+          "moveId": "poisonjab",
+          "moveName": "Poison Jab",
+          "type": "poison",
+          "sourceType": "tutor",
+          "sourceValue": null,
+          "fromForm": "Alola",
+          "fromFormSlug": "sandshrew-alola"
+        },
+        {
+          "raw": "tutor:rest",
+          "moveId": "rest",
+          "moveName": "Rest",
+          "type": "psychic",
+          "sourceType": "tutor",
+          "sourceValue": null,
+          "fromForm": "Alola",
+          "fromFormSlug": "sandshrew-alola"
+        },
+        {
+          "raw": "tutor:rockslide",
+          "moveId": "rockslide",
+          "moveName": "Rock Slide",
+          "type": "rock",
+          "sourceType": "tutor",
+          "sourceValue": null,
+          "fromForm": "Alola",
+          "fromFormSlug": "sandshrew-alola"
+        },
+        {
+          "raw": "tutor:rollout",
+          "moveId": "rollout",
+          "moveName": "Rollout",
+          "type": "rock",
+          "sourceType": "tutor",
+          "sourceValue": null,
+          "fromForm": "Alola",
+          "fromFormSlug": "sandshrew-alola"
+        },
+        {
+          "raw": "tutor:shadowclaw",
+          "moveId": "shadowclaw",
+          "moveName": "Shadow Claw",
+          "type": "ghost",
+          "sourceType": "tutor",
+          "sourceValue": null,
+          "fromForm": "Alola",
+          "fromFormSlug": "sandshrew-alola"
+        },
+        {
+          "raw": "tutor:sleeptalk",
+          "moveId": "sleeptalk",
+          "moveName": "Sleep Talk",
+          "type": "normal",
+          "sourceType": "tutor",
+          "sourceValue": null,
+          "fromForm": "Alola",
+          "fromFormSlug": "sandshrew-alola"
+        },
+        {
+          "raw": "tutor:stealthrock",
+          "moveId": "stealthrock",
+          "moveName": "Stealth Rock",
+          "type": "rock",
+          "sourceType": "tutor",
+          "sourceValue": null,
+          "fromForm": "Alola",
+          "fromFormSlug": "sandshrew-alola"
+        },
+        {
+          "raw": "tutor:steelbeam",
+          "moveId": "steelbeam",
+          "moveName": "Steel Beam",
+          "type": "steel",
+          "sourceType": "tutor",
+          "sourceValue": null,
+          "fromForm": "Alola",
+          "fromFormSlug": "sandshrew-alola"
+        },
+        {
+          "raw": "tutor:steelroller",
+          "moveId": "steelroller",
+          "moveName": "Steel Roller",
+          "type": "steel",
+          "sourceType": "tutor",
+          "sourceValue": null,
+          "fromForm": "Alola",
+          "fromFormSlug": "sandshrew-alola"
+        },
+        {
+          "raw": "tutor:superfang",
+          "moveId": "superfang",
+          "moveName": "Super Fang",
+          "type": "normal",
+          "sourceType": "tutor",
+          "sourceValue": null,
+          "fromForm": "Alola",
+          "fromFormSlug": "sandshrew-alola"
+        },
+        {
+          "raw": "tutor:swift",
+          "moveId": "swift",
+          "moveName": "Swift",
+          "type": "normal",
+          "sourceType": "tutor",
+          "sourceValue": null,
+          "fromForm": "Alola",
+          "fromFormSlug": "sandshrew-alola"
+        },
+        {
+          "raw": "tutor:throatchop",
+          "moveId": "throatchop",
+          "moveName": "Throat Chop",
+          "type": "dark",
+          "sourceType": "tutor",
+          "sourceValue": null,
+          "fromForm": "Alola",
+          "fromFormSlug": "sandshrew-alola"
+        },
+        {
+          "raw": "tutor:tripleaxel",
+          "moveId": "tripleaxel",
+          "moveName": "Triple Axel",
+          "type": "ice",
+          "sourceType": "tutor",
+          "sourceValue": null,
+          "fromForm": "Alola",
+          "fromFormSlug": "sandshrew-alola"
+        },
+        {
+          "raw": "tutor:xscissor",
+          "moveId": "xscissor",
+          "moveName": "X-Scissor",
+          "type": "bug",
+          "sourceType": "tutor",
+          "sourceValue": null,
+          "fromForm": "Alola",
+          "fromFormSlug": "sandshrew-alola"
+        },
+        {
+          "raw": "legacy:attract",
+          "moveId": "attract",
+          "moveName": "Attract",
+          "type": "normal",
+          "sourceType": "legacy",
+          "sourceValue": null,
+          "fromForm": "Alola",
+          "fromFormSlug": "sandshrew-alola"
+        },
+        {
+          "raw": "legacy:confide",
+          "moveId": "confide",
+          "moveName": "Confide",
+          "type": "normal",
+          "sourceType": "legacy",
+          "sourceValue": null,
+          "fromForm": "Alola",
+          "fromFormSlug": "sandshrew-alola"
+        },
+        {
+          "raw": "legacy:doubleteam",
+          "moveId": "doubleteam",
+          "moveName": "Double Team",
+          "type": "normal",
+          "sourceType": "legacy",
+          "sourceValue": null,
+          "fromForm": "Alola",
+          "fromFormSlug": "sandshrew-alola"
+        },
+        {
+          "raw": "legacy:frustration",
+          "moveId": "frustration",
+          "moveName": "Frustration",
+          "type": "normal",
+          "sourceType": "legacy",
+          "sourceValue": null,
+          "fromForm": "Alola",
+          "fromFormSlug": "sandshrew-alola"
+        },
+        {
+          "raw": "legacy:headbutt",
+          "moveId": "headbutt",
+          "moveName": "Headbutt",
+          "type": "normal",
+          "sourceType": "legacy",
+          "sourceValue": null,
+          "fromForm": "Alola",
+          "fromFormSlug": "sandshrew-alola"
+        },
+        {
+          "raw": "legacy:hiddenpower",
+          "moveId": "hiddenpower",
+          "moveName": "Hidden Power",
+          "type": "normal",
+          "sourceType": "legacy",
+          "sourceValue": null,
+          "fromForm": "Alola",
+          "fromFormSlug": "sandshrew-alola"
+        },
+        {
+          "raw": "legacy:return",
+          "moveId": "return",
+          "moveName": "Return",
+          "type": "normal",
+          "sourceType": "legacy",
+          "sourceValue": null,
+          "fromForm": "Alola",
+          "fromFormSlug": "sandshrew-alola"
+        },
+        {
+          "raw": "legacy:round",
+          "moveId": "round",
+          "moveName": "Round",
+          "type": "normal",
+          "sourceType": "legacy",
+          "sourceValue": null,
+          "fromForm": "Alola",
+          "fromFormSlug": "sandshrew-alola"
+        },
+        {
+          "raw": "legacy:seismictoss",
+          "moveId": "seismictoss",
+          "moveName": "Seismic Toss",
+          "type": "fighting",
+          "sourceType": "legacy",
+          "sourceValue": null,
+          "fromForm": "Alola",
+          "fromFormSlug": "sandshrew-alola"
+        },
+        {
+          "raw": "legacy:snore",
+          "moveId": "snore",
+          "moveName": "Snore",
+          "type": "normal",
+          "sourceType": "legacy",
+          "sourceValue": null,
+          "fromForm": "Alola",
+          "fromFormSlug": "sandshrew-alola"
+        },
+        {
+          "raw": "legacy:sunnyday",
+          "moveId": "sunnyday",
+          "moveName": "Sunny Day",
+          "type": "fire",
+          "sourceType": "legacy",
+          "sourceValue": null,
+          "fromForm": "Alola",
+          "fromFormSlug": "sandshrew-alola"
+        },
+        {
+          "raw": "legacy:swagger",
+          "moveId": "swagger",
+          "moveName": "Swagger",
+          "type": "normal",
+          "sourceType": "legacy",
+          "sourceValue": null,
+          "fromForm": "Alola",
+          "fromFormSlug": "sandshrew-alola"
+        },
+        {
+          "raw": "legacy:toxic",
+          "moveId": "toxic",
+          "moveName": "Toxic",
+          "type": "poison",
+          "sourceType": "legacy",
+          "sourceValue": null,
+          "fromForm": "Alola",
+          "fromFormSlug": "sandshrew-alola"
+        }
+      ],
+      "evolutions": [
+        {
+          "id": "sandshrew_sandslashalola",
+          "variant": "item_interact",
+          "result": {
+            "raw": "sandslash alolan",
+            "slug": "sandslash",
+            "aspectTokens": [
+              "alolan"
+            ]
+          },
+          "consumeHeldItem": false,
+          "learnableMoves": [
+            "iciclespear"
+          ],
+          "requirementText": [
+            "Use Ice Stone"
+          ],
+          "requirements": [],
+          "requiredContext": "cobblemon:ice_stone",
+          "fromForm": "Alola",
+          "raw": {
+            "id": "sandshrew_sandslashalola",
+            "variant": "item_interact",
+            "result": "sandslash alolan",
+            "consumeHeldItem": false,
+            "learnableMoves": [
+              "iciclespear"
+            ],
+            "requirements": [],
+            "requiredContext": "cobblemon:ice_stone"
+          }
+        }
+      ],
+      "raw": {
+        "name": "Alola",
+        "primaryType": "ice",
+        "secondaryType": "steel",
+        "maleRatio": 0.5,
+        "height": 7,
+        "weight": 400,
+        "pokedex": [
+          "cobblemon.species.sandshrew-alola.desc"
+        ],
+        "labels": [
+          "gen7",
+          "alolan_form"
+        ],
+        "aspects": [
+          "alolan"
+        ],
+        "abilities": [
+          "snowcloak",
+          "h:slushrush"
+        ],
+        "baseStats": {
+          "hp": 50,
+          "attack": 75,
+          "defence": 90,
+          "special_attack": 10,
+          "special_defence": 35,
+          "speed": 40
+        },
+        "moves": [
+          "1:scratch",
+          "1:defensecurl",
+          "1:bide",
+          "3:mist",
+          "6:powdersnow",
+          "9:rollout",
+          "12:furycutter",
+          "15:rapidspin",
+          "18:metalclaw",
+          "21:swift",
+          "24:furyswipes",
+          "27:irondefense",
+          "30:slash",
+          "33:ironhead",
+          "36:gyroball",
+          "39:swordsdance",
+          "42:snowscape",
+          "45:blizzard",
+          "egg:chipaway",
+          "egg:counter",
+          "egg:crushclaw",
+          "egg:curse",
+          "egg:flail",
+          "egg:honeclaws",
+          "egg:iceshard",
+          "egg:mirrorcoat",
+          "egg:nightslash",
+          "tm:aerialace",
+          "tm:amnesia",
+          "tm:aquatail",
+          "tm:auroraveil",
+          "tm:avalanche",
+          "tm:blizzard",
+          "tm:bodyslam",
+          "tm:brickbreak",
+          "tm:bulldoze",
+          "tm:covet",
+          "tm:curse",
+          "tm:dig",
+          "tm:doubleedge",
+          "tm:earthquake",
+          "tm:endeavor",
+          "tm:endure",
+          "tm:facade",
+          "tm:flashcannon",
+          "tm:fling",
+          "tm:focuspunch",
+          "tm:frostbreath",
+          "tm:furycutter",
+          "tm:gyroball",
+          "tm:hail",
+          "tm:honeclaws",
+          "tm:iceball",
+          "tm:icebeam",
+          "tm:icepunch",
+          "tm:icespinner",
+          "tm:iciclecrash",
+          "tm:iciclespear",
+          "tm:icywind",
+          "tm:irondefense",
+          "tm:ironhead",
+          "tm:irontail",
+          "tm:knockoff",
+          "tm:leechlife",
+          "tm:lowkick",
+          "tm:metalclaw",
+          "tm:poisonjab",
+          "tm:protect",
+          "tm:rest",
+          "tm:rockslide",
+          "tm:rocktomb",
+          "tm:rollout",
+          "tm:safeguard",
+          "tm:shadowclaw",
+          "tm:sleeptalk",
+          "tm:snowscape",
+          "tm:stealthrock",
+          "tm:steelbeam",
+          "tm:steelroller",
+          "tm:substitute",
+          "tm:superfang",
+          "tm:swift",
+          "tm:swordsdance",
+          "tm:takedown",
+          "tm:terablast",
+          "tm:thief",
+          "tm:throatchop",
+          "tm:tripleaxel",
+          "tm:workup",
+          "tm:xscissor",
+          "tutor:aerialace",
+          "tutor:aquatail",
+          "tutor:bulldoze",
+          "tutor:covet",
+          "tutor:endeavor",
+          "tutor:flashcannon",
+          "tutor:focuspunch",
+          "tutor:furycutter",
+          "tutor:iceball",
+          "tutor:icebeam",
+          "tutor:icepunch",
+          "tutor:icywind",
+          "tutor:irondefense",
+          "tutor:ironhead",
+          "tutor:irontail",
+          "tutor:knockoff",
+          "tutor:leechlife",
+          "tutor:lowkick",
+          "tutor:poisonjab",
+          "tutor:rest",
+          "tutor:rockslide",
+          "tutor:rollout",
+          "tutor:shadowclaw",
+          "tutor:sleeptalk",
+          "tutor:stealthrock",
+          "tutor:steelbeam",
+          "tutor:steelroller",
+          "tutor:superfang",
+          "tutor:swift",
+          "tutor:throatchop",
+          "tutor:tripleaxel",
+          "tutor:xscissor",
+          "legacy:attract",
+          "legacy:confide",
+          "legacy:doubleteam",
+          "legacy:frustration",
+          "legacy:headbutt",
+          "legacy:hiddenpower",
+          "legacy:return",
+          "legacy:round",
+          "legacy:seismictoss",
+          "legacy:snore",
+          "legacy:sunnyday",
+          "legacy:swagger",
+          "legacy:toxic"
+        ],
+        "evolutions": [
+          {
+            "id": "sandshrew_sandslashalola",
+            "variant": "item_interact",
+            "result": "sandslash alolan",
+            "consumeHeldItem": false,
+            "learnableMoves": [
+              "iciclespear"
+            ],
+            "requirements": [],
+            "requiredContext": "cobblemon:ice_stone"
+          }
+        ],
+        "battleOnly": false,
+        "behaviour": {
+          "resting": {
+            "willSleepOnBed": true,
+            "drowsyChance": 0.0333,
+            "rouseChance": 0.0042
+          },
+          "moving": {
+            "swim": {
+              "avoidsWater": true
+            }
+          },
+          "combat": {
+            "willDefendOwner": true
+          }
+        },
+        "drops": {
+          "amount": 4,
+          "entries": [
+            {
+              "item": "minecraft:armadillo_scute",
+              "quantityRange": "0-1"
+            },
+            {
+              "item": "cobblemon:grip_claw",
+              "percentage": 2.5
+            },
+            {
+              "item": "cobblemon:quick_claw",
+              "percentage": 2.5
+            },
+            {
+              "item": "cobblemon:chople_berry",
+              "percentage": 2.5
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "rawSpecies": {
+    "implemented": true,
+    "nationalPokedexNumber": 27,
+    "name": "Sandshrew",
+    "primaryType": "ground",
+    "maleRatio": 0.5,
+    "height": 6,
+    "weight": 120,
+    "pokedex": [
+      "cobblemon.species.sandshrew.desc"
+    ],
+    "labels": [
+      "gen1",
+      "kantonian_form"
+    ],
+    "aspects": [],
+    "abilities": [
+      "sandveil",
+      "h:sandrush"
+    ],
+    "eggGroups": [
+      "field"
+    ],
+    "baseStats": {
+      "hp": 50,
+      "attack": 75,
+      "defence": 85,
+      "special_attack": 20,
+      "special_defence": 30,
+      "speed": 40
+    },
+    "evYield": {
+      "hp": 0,
+      "attack": 0,
+      "defence": 1,
+      "special_attack": 0,
+      "special_defence": 0,
+      "speed": 0
+    },
+    "baseExperienceYield": 60,
+    "experienceGroup": "medium_fast",
+    "catchRate": 255,
+    "eggCycles": 20,
+    "baseFriendship": 50,
+    "features": [
+      "alolan"
+    ],
+    "baseScale": 0.7,
+    "hitbox": {
+      "width": 0.8,
+      "height": 1,
+      "fixed": false
+    },
+    "behaviour": {
+      "moving": {
+        "walk": {
+          "walkSpeed": 0.29
+        },
+        "swim": {
+          "avoidsWater": true
+        }
+      },
+      "resting": {
+        "canSleep": true,
+        "light": "0-4",
+        "willSleepOnBed": true,
+        "drowsyChance": 0.0333,
+        "rouseChance": 0.0042
+      },
+      "combat": {
+        "willDefendOwner": true
+      }
+    },
+    "drops": {
+      "amount": 4,
+      "entries": [
+        {
+          "item": "minecraft:armadillo_scute",
+          "quantityRange": "0-1"
+        },
+        {
+          "item": "cobblemon:grip_claw",
+          "percentage": 2.5
+        },
+        {
+          "item": "cobblemon:quick_claw",
+          "percentage": 2.5
+        },
+        {
+          "item": "cobblemon:soft_sand",
+          "percentage": 2.5
+        }
+      ]
+    },
+    "moves": [
+      "1:scratch",
+      "1:defensecurl",
+      "1:magnitude",
+      "3:poisonsting",
+      "6:sandattack",
+      "9:rollout",
+      "12:furycutter",
+      "15:rapidspin",
+      "18:bulldoze",
+      "21:swift",
+      "24:furyswipes",
+      "27:agility",
+      "30:slash",
+      "33:dig",
+      "36:gyroball",
+      "39:swordsdance",
+      "42:sandstorm",
+      "45:earthquake",
+      "egg:chipaway",
+      "egg:counter",
+      "egg:flail",
+      "egg:honeclaws",
+      "egg:metalclaw",
+      "egg:mudslap",
+      "egg:nightslash",
+      "egg:rototiller",
+      "tm:aerialace",
+      "tm:agility",
+      "tm:amnesia",
+      "tm:bodyslam",
+      "tm:brickbreak",
+      "tm:bulldoze",
+      "tm:covet",
+      "tm:crushclaw",
+      "tm:curse",
+      "tm:cut",
+      "tm:dig",
+      "tm:doubleedge",
+      "tm:earthpower",
+      "tm:earthquake",
+      "tm:endeavor",
+      "tm:endure",
+      "tm:facade",
+      "tm:falseswipe",
+      "tm:fling",
+      "tm:focuspunch",
+      "tm:furycutter",
+      "tm:gyroball",
+      "tm:headbutt",
+      "tm:highhorsepower",
+      "tm:honeclaws",
+      "tm:irontail",
+      "tm:knockoff",
+      "tm:leechlife",
+      "tm:lowkick",
+      "tm:metalclaw",
+      "tm:mudshot",
+      "tm:mudslap",
+      "tm:poisonjab",
+      "tm:protect",
+      "tm:rest",
+      "tm:rockclimb",
+      "tm:rockslide",
+      "tm:rocksmash",
+      "tm:rocktomb",
+      "tm:rollout",
+      "tm:safeguard",
+      "tm:sandstorm",
+      "tm:sandtomb",
+      "tm:scorchingsands",
+      "tm:shadowclaw",
+      "tm:sleeptalk",
+      "tm:smackdown",
+      "tm:spikes",
+      "tm:stealthrock",
+      "tm:steelroller",
+      "tm:stompingtantrum",
+      "tm:stoneedge",
+      "tm:strength",
+      "tm:substitute",
+      "tm:sunnyday",
+      "tm:superfang",
+      "tm:swift",
+      "tm:swordsdance",
+      "tm:takedown",
+      "tm:terablast",
+      "tm:thief",
+      "tm:throatchop",
+      "tm:workup",
+      "tm:xscissor",
+      "tutor:aerialace",
+      "tutor:bulldoze",
+      "tutor:covet",
+      "tutor:earthpower",
+      "tutor:endeavor",
+      "tutor:falseswipe",
+      "tutor:focuspunch",
+      "tutor:furycutter",
+      "tutor:highhorsepower",
+      "tutor:irontail",
+      "tutor:knockoff",
+      "tutor:leechlife",
+      "tutor:lowkick",
+      "tutor:mudslap",
+      "tutor:poisonjab",
+      "tutor:rest",
+      "tutor:rockslide",
+      "tutor:rocksmash",
+      "tutor:rollout",
+      "tutor:scorchingsands",
+      "tutor:shadowclaw",
+      "tutor:sleeptalk",
+      "tutor:spikes",
+      "tutor:stealthrock",
+      "tutor:steelroller",
+      "tutor:stompingtantrum",
+      "tutor:stoneedge",
+      "tutor:superfang",
+      "tutor:swift",
+      "tutor:throatchop",
+      "tutor:xscissor",
+      "legacy:attract",
+      "legacy:bide",
+      "legacy:captivate",
+      "legacy:confide",
+      "legacy:detect",
+      "legacy:doubleteam",
+      "legacy:dynamicpunch",
+      "legacy:fissure",
+      "legacy:frustration",
+      "legacy:hiddenpower",
+      "legacy:mimic",
+      "legacy:naturalgift",
+      "legacy:rage",
+      "legacy:return",
+      "legacy:round",
+      "legacy:secretpower",
+      "legacy:seismictoss",
+      "legacy:skullbash",
+      "legacy:snore",
+      "legacy:submission",
+      "legacy:swagger",
+      "legacy:toxic"
+    ],
+    "evolutions": [
+      {
+        "id": "sandshrew_sandslash",
+        "variant": "level_up",
+        "result": "sandslash",
+        "consumeHeldItem": false,
+        "learnableMoves": [
+          "crushclaw"
+        ],
+        "requirements": [
+          {
+            "variant": "level",
+            "minLevel": 22
+          }
+        ]
+      }
+    ],
+    "forms": [
+      {
+        "name": "Alola",
+        "primaryType": "ice",
+        "secondaryType": "steel",
+        "maleRatio": 0.5,
+        "height": 7,
+        "weight": 400,
+        "pokedex": [
+          "cobblemon.species.sandshrew-alola.desc"
+        ],
+        "labels": [
+          "gen7",
+          "alolan_form"
+        ],
+        "aspects": [
+          "alolan"
+        ],
+        "abilities": [
+          "snowcloak",
+          "h:slushrush"
+        ],
+        "baseStats": {
+          "hp": 50,
+          "attack": 75,
+          "defence": 90,
+          "special_attack": 10,
+          "special_defence": 35,
+          "speed": 40
+        },
+        "moves": [
+          "1:scratch",
+          "1:defensecurl",
+          "1:bide",
+          "3:mist",
+          "6:powdersnow",
+          "9:rollout",
+          "12:furycutter",
+          "15:rapidspin",
+          "18:metalclaw",
+          "21:swift",
+          "24:furyswipes",
+          "27:irondefense",
+          "30:slash",
+          "33:ironhead",
+          "36:gyroball",
+          "39:swordsdance",
+          "42:snowscape",
+          "45:blizzard",
+          "egg:chipaway",
+          "egg:counter",
+          "egg:crushclaw",
+          "egg:curse",
+          "egg:flail",
+          "egg:honeclaws",
+          "egg:iceshard",
+          "egg:mirrorcoat",
+          "egg:nightslash",
+          "tm:aerialace",
+          "tm:amnesia",
+          "tm:aquatail",
+          "tm:auroraveil",
+          "tm:avalanche",
+          "tm:blizzard",
+          "tm:bodyslam",
+          "tm:brickbreak",
+          "tm:bulldoze",
+          "tm:covet",
+          "tm:curse",
+          "tm:dig",
+          "tm:doubleedge",
+          "tm:earthquake",
+          "tm:endeavor",
+          "tm:endure",
+          "tm:facade",
+          "tm:flashcannon",
+          "tm:fling",
+          "tm:focuspunch",
+          "tm:frostbreath",
+          "tm:furycutter",
+          "tm:gyroball",
+          "tm:hail",
+          "tm:honeclaws",
+          "tm:iceball",
+          "tm:icebeam",
+          "tm:icepunch",
+          "tm:icespinner",
+          "tm:iciclecrash",
+          "tm:iciclespear",
+          "tm:icywind",
+          "tm:irondefense",
+          "tm:ironhead",
+          "tm:irontail",
+          "tm:knockoff",
+          "tm:leechlife",
+          "tm:lowkick",
+          "tm:metalclaw",
+          "tm:poisonjab",
+          "tm:protect",
+          "tm:rest",
+          "tm:rockslide",
+          "tm:rocktomb",
+          "tm:rollout",
+          "tm:safeguard",
+          "tm:shadowclaw",
+          "tm:sleeptalk",
+          "tm:snowscape",
+          "tm:stealthrock",
+          "tm:steelbeam",
+          "tm:steelroller",
+          "tm:substitute",
+          "tm:superfang",
+          "tm:swift",
+          "tm:swordsdance",
+          "tm:takedown",
+          "tm:terablast",
+          "tm:thief",
+          "tm:throatchop",
+          "tm:tripleaxel",
+          "tm:workup",
+          "tm:xscissor",
+          "tutor:aerialace",
+          "tutor:aquatail",
+          "tutor:bulldoze",
+          "tutor:covet",
+          "tutor:endeavor",
+          "tutor:flashcannon",
+          "tutor:focuspunch",
+          "tutor:furycutter",
+          "tutor:iceball",
+          "tutor:icebeam",
+          "tutor:icepunch",
+          "tutor:icywind",
+          "tutor:irondefense",
+          "tutor:ironhead",
+          "tutor:irontail",
+          "tutor:knockoff",
+          "tutor:leechlife",
+          "tutor:lowkick",
+          "tutor:poisonjab",
+          "tutor:rest",
+          "tutor:rockslide",
+          "tutor:rollout",
+          "tutor:shadowclaw",
+          "tutor:sleeptalk",
+          "tutor:stealthrock",
+          "tutor:steelbeam",
+          "tutor:steelroller",
+          "tutor:superfang",
+          "tutor:swift",
+          "tutor:throatchop",
+          "tutor:tripleaxel",
+          "tutor:xscissor",
+          "legacy:attract",
+          "legacy:confide",
+          "legacy:doubleteam",
+          "legacy:frustration",
+          "legacy:headbutt",
+          "legacy:hiddenpower",
+          "legacy:return",
+          "legacy:round",
+          "legacy:seismictoss",
+          "legacy:snore",
+          "legacy:sunnyday",
+          "legacy:swagger",
+          "legacy:toxic"
+        ],
+        "evolutions": [
+          {
+            "id": "sandshrew_sandslashalola",
+            "variant": "item_interact",
+            "result": "sandslash alolan",
+            "consumeHeldItem": false,
+            "learnableMoves": [
+              "iciclespear"
+            ],
+            "requirements": [],
+            "requiredContext": "cobblemon:ice_stone"
+          }
+        ],
+        "battleOnly": false,
+        "behaviour": {
+          "resting": {
+            "willSleepOnBed": true,
+            "drowsyChance": 0.0333,
+            "rouseChance": 0.0042
+          },
+          "moving": {
+            "swim": {
+              "avoidsWater": true
+            }
+          },
+          "combat": {
+            "willDefendOwner": true
+          }
+        },
+        "drops": {
+          "amount": 4,
+          "entries": [
+            {
+              "item": "minecraft:armadillo_scute",
+              "quantityRange": "0-1"
+            },
+            {
+              "item": "cobblemon:grip_claw",
+              "percentage": 2.5
+            },
+            {
+              "item": "cobblemon:quick_claw",
+              "percentage": 2.5
+            },
+            {
+              "item": "cobblemon:chople_berry",
+              "percentage": 2.5
+            }
+          ]
+        }
+      }
+    ]
+  }
+}

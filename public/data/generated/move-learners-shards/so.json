@@ -1,0 +1,6591 @@
+{
+  "soak": {
+    "moveId": "soak",
+    "moveName": "Soak",
+    "type": "water",
+    "category": "status",
+    "basePower": 0,
+    "accuracy": 100,
+    "alwaysHits": false,
+    "shortDescription": "Changes the target's type to Water.",
+    "description": "Causes the target to become a Water type. Fails if the target is an Arceus or a Silvally, if the target is already purely Water type, or if the target is Terastallized.",
+    "learners": [
+      {
+        "slug": "psyduck",
+        "name": "Psyduck",
+        "dexNumber": 54,
+        "methods": [
+          "level"
+        ],
+        "eggGroups": [
+          "field",
+          "water_1"
+        ],
+        "levelUpLevels": [
+          27
+        ],
+        "baseAvailable": true,
+        "forms": []
+      },
+      {
+        "slug": "golduck",
+        "name": "Golduck",
+        "dexNumber": 55,
+        "methods": [
+          "level"
+        ],
+        "eggGroups": [
+          "field",
+          "water_1"
+        ],
+        "levelUpLevels": [
+          27
+        ],
+        "baseAvailable": true,
+        "forms": []
+      },
+      {
+        "slug": "goldeen",
+        "name": "Goldeen",
+        "dexNumber": 118,
+        "methods": [
+          "level"
+        ],
+        "eggGroups": [
+          "water_2"
+        ],
+        "levelUpLevels": [
+          40
+        ],
+        "baseAvailable": true,
+        "forms": []
+      },
+      {
+        "slug": "seaking",
+        "name": "Seaking",
+        "dexNumber": 119,
+        "methods": [
+          "level"
+        ],
+        "eggGroups": [
+          "water_2"
+        ],
+        "levelUpLevels": [
+          44
+        ],
+        "baseAvailable": true,
+        "forms": []
+      },
+      {
+        "slug": "chinchou",
+        "name": "Chinchou",
+        "dexNumber": 170,
+        "methods": [
+          "egg"
+        ],
+        "eggGroups": [
+          "water_2"
+        ],
+        "levelUpLevels": [],
+        "baseAvailable": true,
+        "forms": []
+      },
+      {
+        "slug": "lanturn",
+        "name": "Lanturn",
+        "dexNumber": 171,
+        "methods": [
+          "egg"
+        ],
+        "eggGroups": [
+          "water_2"
+        ],
+        "levelUpLevels": [],
+        "baseAvailable": true,
+        "forms": []
+      },
+      {
+        "slug": "marill",
+        "name": "Marill",
+        "dexNumber": 183,
+        "methods": [
+          "egg"
+        ],
+        "eggGroups": [
+          "fairy",
+          "water_1"
+        ],
+        "levelUpLevels": [],
+        "baseAvailable": true,
+        "forms": []
+      },
+      {
+        "slug": "azumarill",
+        "name": "Azumarill",
+        "dexNumber": 184,
+        "methods": [
+          "egg"
+        ],
+        "eggGroups": [
+          "fairy",
+          "water_1"
+        ],
+        "levelUpLevels": [],
+        "baseAvailable": true,
+        "forms": []
+      },
+      {
+        "slug": "remoraid",
+        "name": "Remoraid",
+        "dexNumber": 223,
+        "methods": [
+          "level"
+        ],
+        "eggGroups": [
+          "water_1",
+          "water_2"
+        ],
+        "levelUpLevels": [
+          40
+        ],
+        "baseAvailable": true,
+        "forms": []
+      },
+      {
+        "slug": "octillery",
+        "name": "Octillery",
+        "dexNumber": 224,
+        "methods": [
+          "level"
+        ],
+        "eggGroups": [
+          "water_1",
+          "water_2"
+        ],
+        "levelUpLevels": [
+          48
+        ],
+        "baseAvailable": true,
+        "forms": []
+      },
+      {
+        "slug": "wingull",
+        "name": "Wingull",
+        "dexNumber": 278,
+        "methods": [
+          "egg"
+        ],
+        "eggGroups": [
+          "flying",
+          "water_1"
+        ],
+        "levelUpLevels": [],
+        "baseAvailable": true,
+        "forms": []
+      },
+      {
+        "slug": "pelipper",
+        "name": "Pelipper",
+        "dexNumber": 279,
+        "methods": [
+          "egg",
+          "level"
+        ],
+        "eggGroups": [
+          "flying",
+          "water_1"
+        ],
+        "levelUpLevels": [
+          1
+        ],
+        "baseAvailable": true,
+        "forms": []
+      },
+      {
+        "slug": "surskit",
+        "name": "Surskit",
+        "dexNumber": 283,
+        "methods": [
+          "level"
+        ],
+        "eggGroups": [
+          "bug",
+          "water_1"
+        ],
+        "levelUpLevels": [
+          14
+        ],
+        "baseAvailable": true,
+        "forms": []
+      },
+      {
+        "slug": "masquerain",
+        "name": "Masquerain",
+        "dexNumber": 284,
+        "methods": [
+          "level"
+        ],
+        "eggGroups": [
+          "bug",
+          "water_1"
+        ],
+        "levelUpLevels": [
+          1
+        ],
+        "baseAvailable": true,
+        "forms": []
+      },
+      {
+        "slug": "azurill",
+        "name": "Azurill",
+        "dexNumber": 298,
+        "methods": [
+          "egg"
+        ],
+        "eggGroups": [
+          "undiscovered"
+        ],
+        "levelUpLevels": [],
+        "baseAvailable": true,
+        "forms": []
+      },
+      {
+        "slug": "wailmer",
+        "name": "Wailmer",
+        "dexNumber": 320,
+        "methods": [
+          "egg"
+        ],
+        "eggGroups": [
+          "field",
+          "water_2"
+        ],
+        "levelUpLevels": [],
+        "baseAvailable": true,
+        "forms": []
+      },
+      {
+        "slug": "wailord",
+        "name": "Wailord",
+        "dexNumber": 321,
+        "methods": [
+          "egg",
+          "level"
+        ],
+        "eggGroups": [
+          "field",
+          "water_2"
+        ],
+        "levelUpLevels": [
+          1
+        ],
+        "baseAvailable": true,
+        "forms": []
+      },
+      {
+        "slug": "luvdisc",
+        "name": "Luvdisc",
+        "dexNumber": 370,
+        "methods": [
+          "level"
+        ],
+        "eggGroups": [
+          "water_2"
+        ],
+        "levelUpLevels": [
+          42
+        ],
+        "baseAvailable": true,
+        "forms": []
+      },
+      {
+        "slug": "buizel",
+        "name": "Buizel",
+        "dexNumber": 418,
+        "methods": [
+          "level"
+        ],
+        "eggGroups": [
+          "field",
+          "water_1"
+        ],
+        "levelUpLevels": [
+          7
+        ],
+        "baseAvailable": true,
+        "forms": []
+      },
+      {
+        "slug": "floatzel",
+        "name": "Floatzel",
+        "dexNumber": 419,
+        "methods": [
+          "level"
+        ],
+        "eggGroups": [
+          "field",
+          "water_1"
+        ],
+        "levelUpLevels": [
+          1
+        ],
+        "baseAvailable": true,
+        "forms": []
+      },
+      {
+        "slug": "finneon",
+        "name": "Finneon",
+        "dexNumber": 456,
+        "methods": [
+          "level"
+        ],
+        "eggGroups": [
+          "water_2"
+        ],
+        "levelUpLevels": [
+          54
+        ],
+        "baseAvailable": true,
+        "forms": []
+      },
+      {
+        "slug": "lumineon",
+        "name": "Lumineon",
+        "dexNumber": 457,
+        "methods": [
+          "level"
+        ],
+        "eggGroups": [
+          "water_2"
+        ],
+        "levelUpLevels": [
+          1
+        ],
+        "baseAvailable": true,
+        "forms": []
+      },
+      {
+        "slug": "oshawott",
+        "name": "Oshawott",
+        "dexNumber": 501,
+        "methods": [
+          "level"
+        ],
+        "eggGroups": [
+          "field"
+        ],
+        "levelUpLevels": [
+          11
+        ],
+        "baseAvailable": true,
+        "forms": []
+      },
+      {
+        "slug": "dewott",
+        "name": "Dewott",
+        "dexNumber": 502,
+        "methods": [
+          "level"
+        ],
+        "eggGroups": [
+          "field"
+        ],
+        "levelUpLevels": [
+          1
+        ],
+        "baseAvailable": true,
+        "forms": []
+      },
+      {
+        "slug": "samurott",
+        "name": "Samurott",
+        "dexNumber": 503,
+        "methods": [
+          "level"
+        ],
+        "eggGroups": [
+          "field"
+        ],
+        "levelUpLevels": [
+          1
+        ],
+        "baseAvailable": true,
+        "forms": [
+          {
+            "name": "Hisui",
+            "slug": "samurott-hisui"
+          }
+        ]
+      },
+      {
+        "slug": "basculin",
+        "name": "Basculin",
+        "dexNumber": 550,
+        "methods": [
+          "level"
+        ],
+        "eggGroups": [
+          "water_2"
+        ],
+        "levelUpLevels": [
+          28
+        ],
+        "baseAvailable": true,
+        "forms": [
+          {
+            "name": "White-Striped",
+            "slug": "basculin-whitestriped"
+          }
+        ]
+      },
+      {
+        "slug": "alomomola",
+        "name": "Alomomola",
+        "dexNumber": 594,
+        "methods": [
+          "level"
+        ],
+        "eggGroups": [
+          "water_1",
+          "water_2"
+        ],
+        "levelUpLevels": [
+          33
+        ],
+        "baseAvailable": true,
+        "forms": []
+      },
+      {
+        "slug": "wishiwashi",
+        "name": "Wishiwashi",
+        "dexNumber": 746,
+        "methods": [
+          "level"
+        ],
+        "eggGroups": [
+          "water_2"
+        ],
+        "levelUpLevels": [
+          24
+        ],
+        "baseAvailable": true,
+        "forms": []
+      },
+      {
+        "slug": "dewpider",
+        "name": "Dewpider",
+        "dexNumber": 751,
+        "methods": [
+          "level"
+        ],
+        "eggGroups": [
+          "bug",
+          "water_1"
+        ],
+        "levelUpLevels": [
+          28
+        ],
+        "baseAvailable": true,
+        "forms": []
+      },
+      {
+        "slug": "araquanid",
+        "name": "Araquanid",
+        "dexNumber": 752,
+        "methods": [
+          "level"
+        ],
+        "eggGroups": [
+          "bug",
+          "water_1"
+        ],
+        "levelUpLevels": [
+          32
+        ],
+        "baseAvailable": true,
+        "forms": []
+      },
+      {
+        "slug": "pyukumuku",
+        "name": "Pyukumuku",
+        "dexNumber": 771,
+        "methods": [
+          "level"
+        ],
+        "eggGroups": [
+          "water_1"
+        ],
+        "levelUpLevels": [
+          50
+        ],
+        "baseAvailable": true,
+        "forms": []
+      },
+      {
+        "slug": "tapufini",
+        "name": "Tapu Fini",
+        "dexNumber": 788,
+        "methods": [
+          "level"
+        ],
+        "eggGroups": [
+          "undiscovered"
+        ],
+        "levelUpLevels": [
+          70
+        ],
+        "baseAvailable": true,
+        "forms": []
+      },
+      {
+        "slug": "sobble",
+        "name": "Sobble",
+        "dexNumber": 816,
+        "methods": [
+          "level"
+        ],
+        "eggGroups": [
+          "field",
+          "water_1"
+        ],
+        "levelUpLevels": [
+          32
+        ],
+        "baseAvailable": true,
+        "forms": []
+      },
+      {
+        "slug": "drizzile",
+        "name": "Drizzile",
+        "dexNumber": 817,
+        "methods": [
+          "level"
+        ],
+        "eggGroups": [
+          "field",
+          "water_1"
+        ],
+        "levelUpLevels": [
+          42
+        ],
+        "baseAvailable": true,
+        "forms": []
+      },
+      {
+        "slug": "inteleon",
+        "name": "Inteleon",
+        "dexNumber": 818,
+        "methods": [
+          "level"
+        ],
+        "eggGroups": [
+          "field",
+          "water_1"
+        ],
+        "levelUpLevels": [
+          46
+        ],
+        "baseAvailable": true,
+        "forms": []
+      },
+      {
+        "slug": "clobbopus",
+        "name": "Clobbopus",
+        "dexNumber": 852,
+        "methods": [
+          "egg"
+        ],
+        "eggGroups": [
+          "human_like",
+          "water_1"
+        ],
+        "levelUpLevels": [],
+        "baseAvailable": true,
+        "forms": []
+      },
+      {
+        "slug": "grapploct",
+        "name": "Grapploct",
+        "dexNumber": 853,
+        "methods": [
+          "egg"
+        ],
+        "eggGroups": [
+          "human_like",
+          "water_1"
+        ],
+        "levelUpLevels": [],
+        "baseAvailable": true,
+        "forms": []
+      },
+      {
+        "slug": "eiscue",
+        "name": "Eiscue",
+        "dexNumber": 875,
+        "methods": [
+          "egg"
+        ],
+        "eggGroups": [
+          "field",
+          "water_1"
+        ],
+        "levelUpLevels": [],
+        "baseAvailable": true,
+        "forms": []
+      },
+      {
+        "slug": "basculegion",
+        "name": "Basculegion",
+        "dexNumber": 902,
+        "methods": [
+          "level"
+        ],
+        "eggGroups": [
+          "water_2"
+        ],
+        "levelUpLevels": [
+          28
+        ],
+        "baseAvailable": true,
+        "forms": []
+      },
+      {
+        "slug": "tadbulb",
+        "name": "Tadbulb",
+        "dexNumber": 938,
+        "methods": [
+          "egg"
+        ],
+        "eggGroups": [
+          "water_1"
+        ],
+        "levelUpLevels": [],
+        "baseAvailable": true,
+        "forms": []
+      },
+      {
+        "slug": "bellibolt",
+        "name": "Bellibolt",
+        "dexNumber": 939,
+        "methods": [
+          "egg"
+        ],
+        "eggGroups": [
+          "water_1"
+        ],
+        "levelUpLevels": [],
+        "baseAvailable": true,
+        "forms": []
+      },
+      {
+        "slug": "dondozo",
+        "name": "Dondozo",
+        "dexNumber": 977,
+        "methods": [
+          "level"
+        ],
+        "eggGroups": [
+          "water_2"
+        ],
+        "levelUpLevels": [
+          30
+        ],
+        "baseAvailable": true,
+        "forms": []
+      },
+      {
+        "slug": "tatsugiri",
+        "name": "Tatsugiri",
+        "dexNumber": 978,
+        "methods": [
+          "level"
+        ],
+        "eggGroups": [
+          "water_2"
+        ],
+        "levelUpLevels": [
+          23
+        ],
+        "baseAvailable": true,
+        "forms": []
+      }
+    ]
+  },
+  "softboiled": {
+    "moveId": "softboiled",
+    "moveName": "Soft-Boiled",
+    "type": "normal",
+    "category": "status",
+    "basePower": 0,
+    "accuracy": null,
+    "alwaysHits": true,
+    "shortDescription": "Heals the user by 50% of its max HP.",
+    "description": "The user restores 1/2 of its maximum HP, rounded half up.",
+    "learners": [
+      {
+        "slug": "clefairy",
+        "name": "Clefairy",
+        "dexNumber": 35,
+        "methods": [
+          "legacy"
+        ],
+        "eggGroups": [
+          "fairy"
+        ],
+        "levelUpLevels": [],
+        "baseAvailable": true,
+        "forms": []
+      },
+      {
+        "slug": "clefable",
+        "name": "Clefable",
+        "dexNumber": 36,
+        "methods": [
+          "legacy"
+        ],
+        "eggGroups": [
+          "fairy"
+        ],
+        "levelUpLevels": [],
+        "baseAvailable": true,
+        "forms": []
+      },
+      {
+        "slug": "chansey",
+        "name": "Chansey",
+        "dexNumber": 113,
+        "methods": [
+          "level"
+        ],
+        "eggGroups": [
+          "fairy"
+        ],
+        "levelUpLevels": [
+          44
+        ],
+        "baseAvailable": true,
+        "forms": []
+      },
+      {
+        "slug": "mew",
+        "name": "Mew",
+        "dexNumber": 151,
+        "methods": [
+          "legacy"
+        ],
+        "eggGroups": [
+          "undiscovered"
+        ],
+        "levelUpLevels": [],
+        "baseAvailable": true,
+        "forms": []
+      },
+      {
+        "slug": "cleffa",
+        "name": "Cleffa",
+        "dexNumber": 173,
+        "methods": [
+          "legacy"
+        ],
+        "eggGroups": [
+          "undiscovered"
+        ],
+        "levelUpLevels": [],
+        "baseAvailable": true,
+        "forms": []
+      },
+      {
+        "slug": "togepi",
+        "name": "Togepi",
+        "dexNumber": 175,
+        "methods": [
+          "legacy"
+        ],
+        "eggGroups": [
+          "undiscovered"
+        ],
+        "levelUpLevels": [],
+        "baseAvailable": true,
+        "forms": []
+      },
+      {
+        "slug": "togetic",
+        "name": "Togetic",
+        "dexNumber": 176,
+        "methods": [
+          "legacy"
+        ],
+        "eggGroups": [
+          "fairy",
+          "flying"
+        ],
+        "levelUpLevels": [],
+        "baseAvailable": true,
+        "forms": []
+      },
+      {
+        "slug": "blissey",
+        "name": "Blissey",
+        "dexNumber": 242,
+        "methods": [
+          "level"
+        ],
+        "eggGroups": [
+          "fairy"
+        ],
+        "levelUpLevels": [
+          44
+        ],
+        "baseAvailable": true,
+        "forms": []
+      },
+      {
+        "slug": "togekiss",
+        "name": "Togekiss",
+        "dexNumber": 468,
+        "methods": [
+          "legacy"
+        ],
+        "eggGroups": [
+          "fairy",
+          "flying"
+        ],
+        "levelUpLevels": [],
+        "baseAvailable": true,
+        "forms": []
+      }
+    ]
+  },
+  "solarbeam": {
+    "moveId": "solarbeam",
+    "moveName": "Solar Beam",
+    "type": "grass",
+    "category": "special",
+    "basePower": 120,
+    "accuracy": 100,
+    "alwaysHits": false,
+    "shortDescription": "Charges turn 1. Hits turn 2. No charge in sunlight.",
+    "description": "This attack charges on the first turn and executes on the second. Power is halved if the weather is Primordial Sea, Rain Dance, Sandstorm, or Snow and the user is not holding Utility Umbrella. If the user is holding a Power Herb or the weather is Desolate Land or Sunny Day, the move completes in one turn. If the user is holding Utility Umbrella and the weather is Desolate Land or Sunny Day, the move still requires a turn to charge.",
+    "learners": [
+      {
+        "slug": "bulbasaur",
+        "name": "Bulbasaur",
+        "dexNumber": 1,
+        "methods": [
+          "level",
+          "tm"
+        ],
+        "eggGroups": [
+          "grass",
+          "monster"
+        ],
+        "levelUpLevels": [
+          36
+        ],
+        "baseAvailable": true,
+        "forms": []
+      },
+      {
+        "slug": "ivysaur",
+        "name": "Ivysaur",
+        "dexNumber": 2,
+        "methods": [
+          "level",
+          "tm"
+        ],
+        "eggGroups": [
+          "grass",
+          "monster"
+        ],
+        "levelUpLevels": [
+          50
+        ],
+        "baseAvailable": true,
+        "forms": []
+      },
+      {
+        "slug": "venusaur",
+        "name": "Venusaur",
+        "dexNumber": 3,
+        "methods": [
+          "level",
+          "tm"
+        ],
+        "eggGroups": [
+          "grass",
+          "monster"
+        ],
+        "levelUpLevels": [
+          58
+        ],
+        "baseAvailable": true,
+        "forms": []
+      },
+      {
+        "slug": "charizard",
+        "name": "Charizard",
+        "dexNumber": 6,
+        "methods": [
+          "tm"
+        ],
+        "eggGroups": [
+          "dragon",
+          "monster"
+        ],
+        "levelUpLevels": [],
+        "baseAvailable": true,
+        "forms": []
+      },
+      {
+        "slug": "butterfree",
+        "name": "Butterfree",
+        "dexNumber": 12,
+        "methods": [
+          "tm"
+        ],
+        "eggGroups": [
+          "bug"
+        ],
+        "levelUpLevels": [],
+        "baseAvailable": true,
+        "forms": []
+      },
+      {
+        "slug": "beedrill",
+        "name": "Beedrill",
+        "dexNumber": 15,
+        "methods": [
+          "tm"
+        ],
+        "eggGroups": [
+          "bug"
+        ],
+        "levelUpLevels": [],
+        "baseAvailable": true,
+        "forms": []
+      },
+      {
+        "slug": "clefairy",
+        "name": "Clefairy",
+        "dexNumber": 35,
+        "methods": [
+          "tm"
+        ],
+        "eggGroups": [
+          "fairy"
+        ],
+        "levelUpLevels": [],
+        "baseAvailable": true,
+        "forms": []
+      },
+      {
+        "slug": "clefable",
+        "name": "Clefable",
+        "dexNumber": 36,
+        "methods": [
+          "tm"
+        ],
+        "eggGroups": [
+          "fairy"
+        ],
+        "levelUpLevels": [],
+        "baseAvailable": true,
+        "forms": []
+      },
+      {
+        "slug": "ninetales",
+        "name": "Ninetales",
+        "dexNumber": 38,
+        "methods": [
+          "legacy",
+          "tm"
+        ],
+        "eggGroups": [
+          "field"
+        ],
+        "levelUpLevels": [],
+        "baseAvailable": true,
+        "forms": [
+          {
+            "name": "Alola",
+            "slug": "ninetales-alola"
+          }
+        ]
+      },
+      {
+        "slug": "jigglypuff",
+        "name": "Jigglypuff",
+        "dexNumber": 39,
+        "methods": [
+          "tm"
+        ],
+        "eggGroups": [
+          "fairy"
+        ],
+        "levelUpLevels": [],
+        "baseAvailable": true,
+        "forms": []
+      },
+      {
+        "slug": "wigglytuff",
+        "name": "Wigglytuff",
+        "dexNumber": 40,
+        "methods": [
+          "tm"
+        ],
+        "eggGroups": [
+          "fairy"
+        ],
+        "levelUpLevels": [],
+        "baseAvailable": true,
+        "forms": []
+      },
+      {
+        "slug": "oddish",
+        "name": "Oddish",
+        "dexNumber": 43,
+        "methods": [
+          "tm"
+        ],
+        "eggGroups": [
+          "grass"
+        ],
+        "levelUpLevels": [],
+        "baseAvailable": true,
+        "forms": []
+      },
+      {
+        "slug": "gloom",
+        "name": "Gloom",
+        "dexNumber": 44,
+        "methods": [
+          "tm"
+        ],
+        "eggGroups": [
+          "grass"
+        ],
+        "levelUpLevels": [],
+        "baseAvailable": true,
+        "forms": []
+      },
+      {
+        "slug": "vileplume",
+        "name": "Vileplume",
+        "dexNumber": 45,
+        "methods": [
+          "tm"
+        ],
+        "eggGroups": [
+          "grass"
+        ],
+        "levelUpLevels": [],
+        "baseAvailable": true,
+        "forms": []
+      },
+      {
+        "slug": "paras",
+        "name": "Paras",
+        "dexNumber": 46,
+        "methods": [
+          "tm"
+        ],
+        "eggGroups": [
+          "bug",
+          "grass"
+        ],
+        "levelUpLevels": [],
+        "baseAvailable": true,
+        "forms": []
+      },
+      {
+        "slug": "parasect",
+        "name": "Parasect",
+        "dexNumber": 47,
+        "methods": [
+          "tm"
+        ],
+        "eggGroups": [
+          "bug",
+          "grass"
+        ],
+        "levelUpLevels": [],
+        "baseAvailable": true,
+        "forms": []
+      },
+      {
+        "slug": "venonat",
+        "name": "Venonat",
+        "dexNumber": 48,
+        "methods": [
+          "tm"
+        ],
+        "eggGroups": [
+          "bug"
+        ],
+        "levelUpLevels": [],
+        "baseAvailable": true,
+        "forms": []
+      },
+      {
+        "slug": "venomoth",
+        "name": "Venomoth",
+        "dexNumber": 49,
+        "methods": [
+          "tm"
+        ],
+        "eggGroups": [
+          "bug"
+        ],
+        "levelUpLevels": [],
+        "baseAvailable": true,
+        "forms": []
+      },
+      {
+        "slug": "arcanine",
+        "name": "Arcanine",
+        "dexNumber": 59,
+        "methods": [
+          "tm"
+        ],
+        "eggGroups": [
+          "field"
+        ],
+        "levelUpLevels": [],
+        "baseAvailable": true,
+        "forms": [
+          {
+            "name": "Hisui",
+            "slug": "arcanine-hisui"
+          }
+        ]
+      },
+      {
+        "slug": "bellsprout",
+        "name": "Bellsprout",
+        "dexNumber": 69,
+        "methods": [
+          "tm"
+        ],
+        "eggGroups": [
+          "grass"
+        ],
+        "levelUpLevels": [],
+        "baseAvailable": true,
+        "forms": []
+      },
+      {
+        "slug": "weepinbell",
+        "name": "Weepinbell",
+        "dexNumber": 70,
+        "methods": [
+          "tm"
+        ],
+        "eggGroups": [
+          "grass"
+        ],
+        "levelUpLevels": [],
+        "baseAvailable": true,
+        "forms": []
+      },
+      {
+        "slug": "victreebel",
+        "name": "Victreebel",
+        "dexNumber": 71,
+        "methods": [
+          "tm"
+        ],
+        "eggGroups": [
+          "grass"
+        ],
+        "levelUpLevels": [],
+        "baseAvailable": true,
+        "forms": []
+      },
+      {
+        "slug": "ponyta",
+        "name": "Ponyta",
+        "dexNumber": 77,
+        "methods": [
+          "tm"
+        ],
+        "eggGroups": [
+          "field"
+        ],
+        "levelUpLevels": [],
+        "baseAvailable": true,
+        "forms": []
+      },
+      {
+        "slug": "rapidash",
+        "name": "Rapidash",
+        "dexNumber": 78,
+        "methods": [
+          "tm"
+        ],
+        "eggGroups": [
+          "field"
+        ],
+        "levelUpLevels": [],
+        "baseAvailable": true,
+        "forms": []
+      },
+      {
+        "slug": "voltorb",
+        "name": "Voltorb",
+        "dexNumber": 100,
+        "methods": [
+          "tm"
+        ],
+        "eggGroups": [
+          "mineral"
+        ],
+        "levelUpLevels": [],
+        "baseAvailable": false,
+        "forms": [
+          {
+            "name": "Hisui",
+            "slug": "voltorb-hisui"
+          }
+        ]
+      },
+      {
+        "slug": "electrode",
+        "name": "Electrode",
+        "dexNumber": 101,
+        "methods": [
+          "tm"
+        ],
+        "eggGroups": [
+          "mineral"
+        ],
+        "levelUpLevels": [],
+        "baseAvailable": false,
+        "forms": [
+          {
+            "name": "Hisui",
+            "slug": "electrode-hisui"
+          }
+        ]
+      },
+      {
+        "slug": "exeggcute",
+        "name": "Exeggcute",
+        "dexNumber": 102,
+        "methods": [
+          "level",
+          "tm"
+        ],
+        "eggGroups": [
+          "grass"
+        ],
+        "levelUpLevels": [
+          55
+        ],
+        "baseAvailable": true,
+        "forms": []
+      },
+      {
+        "slug": "exeggutor",
+        "name": "Exeggutor",
+        "dexNumber": 103,
+        "methods": [
+          "level",
+          "tm"
+        ],
+        "eggGroups": [
+          "grass"
+        ],
+        "levelUpLevels": [
+          1
+        ],
+        "baseAvailable": true,
+        "forms": [
+          {
+            "name": "Alola",
+            "slug": "exeggutor-alola"
+          }
+        ]
+      },
+      {
+        "slug": "lickitung",
+        "name": "Lickitung",
+        "dexNumber": 108,
+        "methods": [
+          "tm"
+        ],
+        "eggGroups": [
+          "monster"
+        ],
+        "levelUpLevels": [],
+        "baseAvailable": true,
+        "forms": []
+      },
+      {
+        "slug": "chansey",
+        "name": "Chansey",
+        "dexNumber": 113,
+        "methods": [
+          "tm"
+        ],
+        "eggGroups": [
+          "fairy"
+        ],
+        "levelUpLevels": [],
+        "baseAvailable": true,
+        "forms": []
+      },
+      {
+        "slug": "tangela",
+        "name": "Tangela",
+        "dexNumber": 114,
+        "methods": [
+          "tm"
+        ],
+        "eggGroups": [
+          "grass"
+        ],
+        "levelUpLevels": [],
+        "baseAvailable": true,
+        "forms": []
+      },
+      {
+        "slug": "kangaskhan",
+        "name": "Kangaskhan",
+        "dexNumber": 115,
+        "methods": [
+          "tm"
+        ],
+        "eggGroups": [
+          "monster"
+        ],
+        "levelUpLevels": [],
+        "baseAvailable": true,
+        "forms": []
+      },
+      {
+        "slug": "mrmime",
+        "name": "Mr. Mime",
+        "dexNumber": 122,
+        "methods": [
+          "tm"
+        ],
+        "eggGroups": [
+          "human_like"
+        ],
+        "levelUpLevels": [],
+        "baseAvailable": true,
+        "forms": [
+          {
+            "name": "Galar",
+            "slug": "mrmime-galar"
+          }
+        ]
+      },
+      {
+        "slug": "tauros",
+        "name": "Tauros",
+        "dexNumber": 128,
+        "methods": [
+          "tm"
+        ],
+        "eggGroups": [
+          "field"
+        ],
+        "levelUpLevels": [],
+        "baseAvailable": true,
+        "forms": []
+      },
+      {
+        "slug": "lapras",
+        "name": "Lapras",
+        "dexNumber": 131,
+        "methods": [
+          "legacy"
+        ],
+        "eggGroups": [
+          "monster",
+          "water_1"
+        ],
+        "levelUpLevels": [],
+        "baseAvailable": true,
+        "forms": []
+      },
+      {
+        "slug": "porygon",
+        "name": "Porygon",
+        "dexNumber": 137,
+        "methods": [
+          "tm"
+        ],
+        "eggGroups": [
+          "mineral"
+        ],
+        "levelUpLevels": [],
+        "baseAvailable": true,
+        "forms": []
+      },
+      {
+        "slug": "snorlax",
+        "name": "Snorlax",
+        "dexNumber": 143,
+        "methods": [
+          "tm"
+        ],
+        "eggGroups": [
+          "monster"
+        ],
+        "levelUpLevels": [],
+        "baseAvailable": true,
+        "forms": []
+      },
+      {
+        "slug": "moltres",
+        "name": "Moltres",
+        "dexNumber": 146,
+        "methods": [
+          "tm"
+        ],
+        "eggGroups": [
+          "undiscovered"
+        ],
+        "levelUpLevels": [],
+        "baseAvailable": true,
+        "forms": []
+      },
+      {
+        "slug": "mewtwo",
+        "name": "Mewtwo",
+        "dexNumber": 150,
+        "methods": [
+          "tm"
+        ],
+        "eggGroups": [
+          "undiscovered"
+        ],
+        "levelUpLevels": [],
+        "baseAvailable": true,
+        "forms": []
+      },
+      {
+        "slug": "mew",
+        "name": "Mew",
+        "dexNumber": 151,
+        "methods": [
+          "tm"
+        ],
+        "eggGroups": [
+          "undiscovered"
+        ],
+        "levelUpLevels": [],
+        "baseAvailable": true,
+        "forms": []
+      },
+      {
+        "slug": "chikorita",
+        "name": "Chikorita",
+        "dexNumber": 152,
+        "methods": [
+          "level",
+          "tm"
+        ],
+        "eggGroups": [
+          "grass",
+          "monster"
+        ],
+        "levelUpLevels": [
+          45
+        ],
+        "baseAvailable": true,
+        "forms": []
+      },
+      {
+        "slug": "bayleef",
+        "name": "Bayleef",
+        "dexNumber": 153,
+        "methods": [
+          "level",
+          "tm"
+        ],
+        "eggGroups": [
+          "grass",
+          "monster"
+        ],
+        "levelUpLevels": [
+          54
+        ],
+        "baseAvailable": true,
+        "forms": []
+      },
+      {
+        "slug": "meganium",
+        "name": "Meganium",
+        "dexNumber": 154,
+        "methods": [
+          "level",
+          "tm"
+        ],
+        "eggGroups": [
+          "grass",
+          "monster"
+        ],
+        "levelUpLevels": [
+          65
+        ],
+        "baseAvailable": true,
+        "forms": []
+      },
+      {
+        "slug": "typhlosion",
+        "name": "Typhlosion",
+        "dexNumber": 157,
+        "methods": [
+          "tm"
+        ],
+        "eggGroups": [
+          "field"
+        ],
+        "levelUpLevels": [],
+        "baseAvailable": true,
+        "forms": [
+          {
+            "name": "Hisui",
+            "slug": "typhlosion-hisui"
+          }
+        ]
+      },
+      {
+        "slug": "sentret",
+        "name": "Sentret",
+        "dexNumber": 161,
+        "methods": [
+          "tm"
+        ],
+        "eggGroups": [
+          "field"
+        ],
+        "levelUpLevels": [],
+        "baseAvailable": true,
+        "forms": []
+      },
+      {
+        "slug": "furret",
+        "name": "Furret",
+        "dexNumber": 162,
+        "methods": [
+          "tm"
+        ],
+        "eggGroups": [
+          "field"
+        ],
+        "levelUpLevels": [],
+        "baseAvailable": true,
+        "forms": []
+      },
+      {
+        "slug": "ledyba",
+        "name": "Ledyba",
+        "dexNumber": 165,
+        "methods": [
+          "tm"
+        ],
+        "eggGroups": [
+          "bug"
+        ],
+        "levelUpLevels": [],
+        "baseAvailable": true,
+        "forms": []
+      },
+      {
+        "slug": "ledian",
+        "name": "Ledian",
+        "dexNumber": 166,
+        "methods": [
+          "tm"
+        ],
+        "eggGroups": [
+          "bug"
+        ],
+        "levelUpLevels": [],
+        "baseAvailable": true,
+        "forms": []
+      },
+      {
+        "slug": "spinarak",
+        "name": "Spinarak",
+        "dexNumber": 167,
+        "methods": [
+          "tm"
+        ],
+        "eggGroups": [
+          "bug"
+        ],
+        "levelUpLevels": [],
+        "baseAvailable": true,
+        "forms": []
+      },
+      {
+        "slug": "ariados",
+        "name": "Ariados",
+        "dexNumber": 168,
+        "methods": [
+          "tm"
+        ],
+        "eggGroups": [
+          "bug"
+        ],
+        "levelUpLevels": [],
+        "baseAvailable": true,
+        "forms": []
+      },
+      {
+        "slug": "cleffa",
+        "name": "Cleffa",
+        "dexNumber": 173,
+        "methods": [
+          "tm"
+        ],
+        "eggGroups": [
+          "undiscovered"
+        ],
+        "levelUpLevels": [],
+        "baseAvailable": true,
+        "forms": []
+      },
+      {
+        "slug": "igglybuff",
+        "name": "Igglybuff",
+        "dexNumber": 174,
+        "methods": [
+          "tm"
+        ],
+        "eggGroups": [
+          "undiscovered"
+        ],
+        "levelUpLevels": [],
+        "baseAvailable": true,
+        "forms": []
+      },
+      {
+        "slug": "togepi",
+        "name": "Togepi",
+        "dexNumber": 175,
+        "methods": [
+          "tm"
+        ],
+        "eggGroups": [
+          "undiscovered"
+        ],
+        "levelUpLevels": [],
+        "baseAvailable": true,
+        "forms": []
+      },
+      {
+        "slug": "togetic",
+        "name": "Togetic",
+        "dexNumber": 176,
+        "methods": [
+          "tm"
+        ],
+        "eggGroups": [
+          "fairy",
+          "flying"
+        ],
+        "levelUpLevels": [],
+        "baseAvailable": true,
+        "forms": []
+      },
+      {
+        "slug": "natu",
+        "name": "Natu",
+        "dexNumber": 177,
+        "methods": [
+          "tm"
+        ],
+        "eggGroups": [
+          "flying"
+        ],
+        "levelUpLevels": [],
+        "baseAvailable": true,
+        "forms": []
+      },
+      {
+        "slug": "xatu",
+        "name": "Xatu",
+        "dexNumber": 178,
+        "methods": [
+          "tm"
+        ],
+        "eggGroups": [
+          "flying"
+        ],
+        "levelUpLevels": [],
+        "baseAvailable": true,
+        "forms": []
+      },
+      {
+        "slug": "bellossom",
+        "name": "Bellossom",
+        "dexNumber": 182,
+        "methods": [
+          "tm"
+        ],
+        "eggGroups": [
+          "grass"
+        ],
+        "levelUpLevels": [],
+        "baseAvailable": true,
+        "forms": []
+      },
+      {
+        "slug": "hoppip",
+        "name": "Hoppip",
+        "dexNumber": 187,
+        "methods": [
+          "tm"
+        ],
+        "eggGroups": [
+          "fairy",
+          "grass"
+        ],
+        "levelUpLevels": [],
+        "baseAvailable": true,
+        "forms": []
+      },
+      {
+        "slug": "skiploom",
+        "name": "Skiploom",
+        "dexNumber": 188,
+        "methods": [
+          "tm"
+        ],
+        "eggGroups": [
+          "fairy",
+          "grass"
+        ],
+        "levelUpLevels": [],
+        "baseAvailable": true,
+        "forms": []
+      },
+      {
+        "slug": "jumpluff",
+        "name": "Jumpluff",
+        "dexNumber": 189,
+        "methods": [
+          "tm"
+        ],
+        "eggGroups": [
+          "fairy",
+          "grass"
+        ],
+        "levelUpLevels": [],
+        "baseAvailable": true,
+        "forms": []
+      },
+      {
+        "slug": "aipom",
+        "name": "Aipom",
+        "dexNumber": 190,
+        "methods": [
+          "tm"
+        ],
+        "eggGroups": [
+          "field"
+        ],
+        "levelUpLevels": [],
+        "baseAvailable": true,
+        "forms": []
+      },
+      {
+        "slug": "sunkern",
+        "name": "Sunkern",
+        "dexNumber": 191,
+        "methods": [
+          "tm"
+        ],
+        "eggGroups": [
+          "grass"
+        ],
+        "levelUpLevels": [],
+        "baseAvailable": true,
+        "forms": []
+      },
+      {
+        "slug": "sunflora",
+        "name": "Sunflora",
+        "dexNumber": 192,
+        "methods": [
+          "level",
+          "tm"
+        ],
+        "eggGroups": [
+          "grass"
+        ],
+        "levelUpLevels": [
+          31
+        ],
+        "baseAvailable": true,
+        "forms": []
+      },
+      {
+        "slug": "yanma",
+        "name": "Yanma",
+        "dexNumber": 193,
+        "methods": [
+          "tm"
+        ],
+        "eggGroups": [
+          "bug"
+        ],
+        "levelUpLevels": [],
+        "baseAvailable": true,
+        "forms": []
+      },
+      {
+        "slug": "pineco",
+        "name": "Pineco",
+        "dexNumber": 204,
+        "methods": [
+          "tm"
+        ],
+        "eggGroups": [
+          "bug"
+        ],
+        "levelUpLevels": [],
+        "baseAvailable": true,
+        "forms": []
+      },
+      {
+        "slug": "forretress",
+        "name": "Forretress",
+        "dexNumber": 205,
+        "methods": [
+          "tm"
+        ],
+        "eggGroups": [
+          "bug"
+        ],
+        "levelUpLevels": [],
+        "baseAvailable": true,
+        "forms": []
+      },
+      {
+        "slug": "dunsparce",
+        "name": "Dunsparce",
+        "dexNumber": 206,
+        "methods": [
+          "tm"
+        ],
+        "eggGroups": [
+          "field"
+        ],
+        "levelUpLevels": [],
+        "baseAvailable": true,
+        "forms": []
+      },
+      {
+        "slug": "snubbull",
+        "name": "Snubbull",
+        "dexNumber": 209,
+        "methods": [
+          "tm"
+        ],
+        "eggGroups": [
+          "fairy",
+          "field"
+        ],
+        "levelUpLevels": [],
+        "baseAvailable": true,
+        "forms": []
+      },
+      {
+        "slug": "granbull",
+        "name": "Granbull",
+        "dexNumber": 210,
+        "methods": [
+          "tm"
+        ],
+        "eggGroups": [
+          "fairy",
+          "field"
+        ],
+        "levelUpLevels": [],
+        "baseAvailable": true,
+        "forms": []
+      },
+      {
+        "slug": "magcargo",
+        "name": "Magcargo",
+        "dexNumber": 219,
+        "methods": [
+          "tm"
+        ],
+        "eggGroups": [
+          "amorphous"
+        ],
+        "levelUpLevels": [],
+        "baseAvailable": true,
+        "forms": []
+      },
+      {
+        "slug": "houndour",
+        "name": "Houndour",
+        "dexNumber": 228,
+        "methods": [
+          "tm"
+        ],
+        "eggGroups": [
+          "field"
+        ],
+        "levelUpLevels": [],
+        "baseAvailable": true,
+        "forms": []
+      },
+      {
+        "slug": "houndoom",
+        "name": "Houndoom",
+        "dexNumber": 229,
+        "methods": [
+          "tm"
+        ],
+        "eggGroups": [
+          "field"
+        ],
+        "levelUpLevels": [],
+        "baseAvailable": true,
+        "forms": []
+      },
+      {
+        "slug": "porygon2",
+        "name": "Porygon2",
+        "dexNumber": 233,
+        "methods": [
+          "tm"
+        ],
+        "eggGroups": [
+          "mineral"
+        ],
+        "levelUpLevels": [],
+        "baseAvailable": true,
+        "forms": []
+      },
+      {
+        "slug": "stantler",
+        "name": "Stantler",
+        "dexNumber": 234,
+        "methods": [
+          "tm"
+        ],
+        "eggGroups": [
+          "field"
+        ],
+        "levelUpLevels": [],
+        "baseAvailable": true,
+        "forms": []
+      },
+      {
+        "slug": "miltank",
+        "name": "Miltank",
+        "dexNumber": 241,
+        "methods": [
+          "tm"
+        ],
+        "eggGroups": [
+          "field"
+        ],
+        "levelUpLevels": [],
+        "baseAvailable": true,
+        "forms": []
+      },
+      {
+        "slug": "blissey",
+        "name": "Blissey",
+        "dexNumber": 242,
+        "methods": [
+          "tm"
+        ],
+        "eggGroups": [
+          "fairy"
+        ],
+        "levelUpLevels": [],
+        "baseAvailable": true,
+        "forms": []
+      },
+      {
+        "slug": "entei",
+        "name": "Entei",
+        "dexNumber": 244,
+        "methods": [
+          "tm"
+        ],
+        "eggGroups": [
+          "undiscovered"
+        ],
+        "levelUpLevels": [],
+        "baseAvailable": true,
+        "forms": []
+      },
+      {
+        "slug": "hooh",
+        "name": "Ho-Oh",
+        "dexNumber": 250,
+        "methods": [
+          "tm"
+        ],
+        "eggGroups": [
+          "undiscovered"
+        ],
+        "levelUpLevels": [],
+        "baseAvailable": true,
+        "forms": []
+      },
+      {
+        "slug": "celebi",
+        "name": "Celebi",
+        "dexNumber": 251,
+        "methods": [
+          "tm"
+        ],
+        "eggGroups": [
+          "undiscovered"
+        ],
+        "levelUpLevels": [],
+        "baseAvailable": true,
+        "forms": []
+      },
+      {
+        "slug": "treecko",
+        "name": "Treecko",
+        "dexNumber": 252,
+        "methods": [
+          "tm"
+        ],
+        "eggGroups": [
+          "dragon",
+          "monster"
+        ],
+        "levelUpLevels": [],
+        "baseAvailable": true,
+        "forms": []
+      },
+      {
+        "slug": "grovyle",
+        "name": "Grovyle",
+        "dexNumber": 253,
+        "methods": [
+          "tm"
+        ],
+        "eggGroups": [
+          "dragon",
+          "monster"
+        ],
+        "levelUpLevels": [],
+        "baseAvailable": true,
+        "forms": []
+      },
+      {
+        "slug": "sceptile",
+        "name": "Sceptile",
+        "dexNumber": 254,
+        "methods": [
+          "tm"
+        ],
+        "eggGroups": [
+          "dragon",
+          "monster"
+        ],
+        "levelUpLevels": [],
+        "baseAvailable": true,
+        "forms": []
+      },
+      {
+        "slug": "blaziken",
+        "name": "Blaziken",
+        "dexNumber": 257,
+        "methods": [
+          "tm"
+        ],
+        "eggGroups": [
+          "field"
+        ],
+        "levelUpLevels": [],
+        "baseAvailable": true,
+        "forms": []
+      },
+      {
+        "slug": "beautifly",
+        "name": "Beautifly",
+        "dexNumber": 267,
+        "methods": [
+          "tm"
+        ],
+        "eggGroups": [
+          "bug"
+        ],
+        "levelUpLevels": [],
+        "baseAvailable": true,
+        "forms": []
+      },
+      {
+        "slug": "dustox",
+        "name": "Dustox",
+        "dexNumber": 269,
+        "methods": [
+          "tm"
+        ],
+        "eggGroups": [
+          "bug"
+        ],
+        "levelUpLevels": [],
+        "baseAvailable": true,
+        "forms": []
+      },
+      {
+        "slug": "lotad",
+        "name": "Lotad",
+        "dexNumber": 270,
+        "methods": [
+          "tm"
+        ],
+        "eggGroups": [
+          "grass",
+          "water_1"
+        ],
+        "levelUpLevels": [],
+        "baseAvailable": true,
+        "forms": []
+      },
+      {
+        "slug": "lombre",
+        "name": "Lombre",
+        "dexNumber": 271,
+        "methods": [
+          "tm"
+        ],
+        "eggGroups": [
+          "grass",
+          "water_1"
+        ],
+        "levelUpLevels": [],
+        "baseAvailable": true,
+        "forms": []
+      },
+      {
+        "slug": "ludicolo",
+        "name": "Ludicolo",
+        "dexNumber": 272,
+        "methods": [
+          "tm"
+        ],
+        "eggGroups": [
+          "grass",
+          "water_1"
+        ],
+        "levelUpLevels": [],
+        "baseAvailable": true,
+        "forms": []
+      },
+      {
+        "slug": "seedot",
+        "name": "Seedot",
+        "dexNumber": 273,
+        "methods": [
+          "tm"
+        ],
+        "eggGroups": [
+          "field",
+          "grass"
+        ],
+        "levelUpLevels": [],
+        "baseAvailable": true,
+        "forms": []
+      },
+      {
+        "slug": "nuzleaf",
+        "name": "Nuzleaf",
+        "dexNumber": 274,
+        "methods": [
+          "tm"
+        ],
+        "eggGroups": [
+          "field",
+          "grass"
+        ],
+        "levelUpLevels": [],
+        "baseAvailable": true,
+        "forms": []
+      },
+      {
+        "slug": "shiftry",
+        "name": "Shiftry",
+        "dexNumber": 275,
+        "methods": [
+          "tm"
+        ],
+        "eggGroups": [
+          "field",
+          "grass"
+        ],
+        "levelUpLevels": [],
+        "baseAvailable": true,
+        "forms": []
+      },
+      {
+        "slug": "surskit",
+        "name": "Surskit",
+        "dexNumber": 283,
+        "methods": [
+          "tm"
+        ],
+        "eggGroups": [
+          "bug",
+          "water_1"
+        ],
+        "levelUpLevels": [],
+        "baseAvailable": true,
+        "forms": []
+      },
+      {
+        "slug": "masquerain",
+        "name": "Masquerain",
+        "dexNumber": 284,
+        "methods": [
+          "tm"
+        ],
+        "eggGroups": [
+          "bug",
+          "water_1"
+        ],
+        "levelUpLevels": [],
+        "baseAvailable": true,
+        "forms": []
+      },
+      {
+        "slug": "shroomish",
+        "name": "Shroomish",
+        "dexNumber": 285,
+        "methods": [
+          "tm"
+        ],
+        "eggGroups": [
+          "fairy",
+          "grass"
+        ],
+        "levelUpLevels": [],
+        "baseAvailable": true,
+        "forms": []
+      },
+      {
+        "slug": "breloom",
+        "name": "Breloom",
+        "dexNumber": 286,
+        "methods": [
+          "tm"
+        ],
+        "eggGroups": [
+          "fairy",
+          "grass"
+        ],
+        "levelUpLevels": [],
+        "baseAvailable": true,
+        "forms": []
+      },
+      {
+        "slug": "slakoth",
+        "name": "Slakoth",
+        "dexNumber": 287,
+        "methods": [
+          "tm"
+        ],
+        "eggGroups": [
+          "field"
+        ],
+        "levelUpLevels": [],
+        "baseAvailable": true,
+        "forms": []
+      },
+      {
+        "slug": "vigoroth",
+        "name": "Vigoroth",
+        "dexNumber": 288,
+        "methods": [
+          "tm"
+        ],
+        "eggGroups": [
+          "field"
+        ],
+        "levelUpLevels": [],
+        "baseAvailable": true,
+        "forms": []
+      },
+      {
+        "slug": "slaking",
+        "name": "Slaking",
+        "dexNumber": 289,
+        "methods": [
+          "tm"
+        ],
+        "eggGroups": [
+          "field"
+        ],
+        "levelUpLevels": [],
+        "baseAvailable": true,
+        "forms": []
+      },
+      {
+        "slug": "nincada",
+        "name": "Nincada",
+        "dexNumber": 290,
+        "methods": [
+          "tm"
+        ],
+        "eggGroups": [
+          "bug"
+        ],
+        "levelUpLevels": [],
+        "baseAvailable": true,
+        "forms": []
+      },
+      {
+        "slug": "ninjask",
+        "name": "Ninjask",
+        "dexNumber": 291,
+        "methods": [
+          "tm"
+        ],
+        "eggGroups": [
+          "bug"
+        ],
+        "levelUpLevels": [],
+        "baseAvailable": true,
+        "forms": []
+      },
+      {
+        "slug": "shedinja",
+        "name": "Shedinja",
+        "dexNumber": 292,
+        "methods": [
+          "tm"
+        ],
+        "eggGroups": [
+          "mineral"
+        ],
+        "levelUpLevels": [],
+        "baseAvailable": true,
+        "forms": []
+      },
+      {
+        "slug": "whismur",
+        "name": "Whismur",
+        "dexNumber": 293,
+        "methods": [
+          "tm"
+        ],
+        "eggGroups": [
+          "field",
+          "monster"
+        ],
+        "levelUpLevels": [],
+        "baseAvailable": true,
+        "forms": []
+      },
+      {
+        "slug": "loudred",
+        "name": "Loudred",
+        "dexNumber": 294,
+        "methods": [
+          "tm"
+        ],
+        "eggGroups": [
+          "field",
+          "monster"
+        ],
+        "levelUpLevels": [],
+        "baseAvailable": true,
+        "forms": []
+      },
+      {
+        "slug": "exploud",
+        "name": "Exploud",
+        "dexNumber": 295,
+        "methods": [
+          "tm"
+        ],
+        "eggGroups": [
+          "field",
+          "monster"
+        ],
+        "levelUpLevels": [],
+        "baseAvailable": true,
+        "forms": []
+      },
+      {
+        "slug": "skitty",
+        "name": "Skitty",
+        "dexNumber": 300,
+        "methods": [
+          "tm"
+        ],
+        "eggGroups": [
+          "fairy",
+          "field"
+        ],
+        "levelUpLevels": [],
+        "baseAvailable": true,
+        "forms": []
+      },
+      {
+        "slug": "delcatty",
+        "name": "Delcatty",
+        "dexNumber": 301,
+        "methods": [
+          "tm"
+        ],
+        "eggGroups": [
+          "fairy",
+          "field"
+        ],
+        "levelUpLevels": [],
+        "baseAvailable": true,
+        "forms": []
+      },
+      {
+        "slug": "mawile",
+        "name": "Mawile",
+        "dexNumber": 303,
+        "methods": [
+          "tm"
+        ],
+        "eggGroups": [
+          "fairy",
+          "field"
+        ],
+        "levelUpLevels": [],
+        "baseAvailable": true,
+        "forms": []
+      },
+      {
+        "slug": "aggron",
+        "name": "Aggron",
+        "dexNumber": 306,
+        "methods": [
+          "tm"
+        ],
+        "eggGroups": [
+          "monster"
+        ],
+        "levelUpLevels": [],
+        "baseAvailable": true,
+        "forms": []
+      },
+      {
+        "slug": "volbeat",
+        "name": "Volbeat",
+        "dexNumber": 313,
+        "methods": [
+          "tm"
+        ],
+        "eggGroups": [
+          "bug",
+          "human_like"
+        ],
+        "levelUpLevels": [],
+        "baseAvailable": true,
+        "forms": []
+      },
+      {
+        "slug": "illumise",
+        "name": "Illumise",
+        "dexNumber": 314,
+        "methods": [
+          "tm"
+        ],
+        "eggGroups": [
+          "bug",
+          "human_like"
+        ],
+        "levelUpLevels": [],
+        "baseAvailable": true,
+        "forms": []
+      },
+      {
+        "slug": "roselia",
+        "name": "Roselia",
+        "dexNumber": 315,
+        "methods": [
+          "tm"
+        ],
+        "eggGroups": [
+          "fairy",
+          "grass"
+        ],
+        "levelUpLevels": [],
+        "baseAvailable": true,
+        "forms": []
+      },
+      {
+        "slug": "gulpin",
+        "name": "Gulpin",
+        "dexNumber": 316,
+        "methods": [
+          "tm"
+        ],
+        "eggGroups": [
+          "amorphous"
+        ],
+        "levelUpLevels": [],
+        "baseAvailable": true,
+        "forms": []
+      },
+      {
+        "slug": "swalot",
+        "name": "Swalot",
+        "dexNumber": 317,
+        "methods": [
+          "tm"
+        ],
+        "eggGroups": [
+          "amorphous"
+        ],
+        "levelUpLevels": [],
+        "baseAvailable": true,
+        "forms": []
+      },
+      {
+        "slug": "camerupt",
+        "name": "Camerupt",
+        "dexNumber": 323,
+        "methods": [
+          "tm"
+        ],
+        "eggGroups": [
+          "field"
+        ],
+        "levelUpLevels": [],
+        "baseAvailable": true,
+        "forms": []
+      },
+      {
+        "slug": "torkoal",
+        "name": "Torkoal",
+        "dexNumber": 324,
+        "methods": [
+          "tm"
+        ],
+        "eggGroups": [
+          "field"
+        ],
+        "levelUpLevels": [],
+        "baseAvailable": true,
+        "forms": []
+      },
+      {
+        "slug": "trapinch",
+        "name": "Trapinch",
+        "dexNumber": 328,
+        "methods": [
+          "legacy"
+        ],
+        "eggGroups": [
+          "bug",
+          "dragon"
+        ],
+        "levelUpLevels": [],
+        "baseAvailable": true,
+        "forms": []
+      },
+      {
+        "slug": "vibrava",
+        "name": "Vibrava",
+        "dexNumber": 329,
+        "methods": [
+          "tm"
+        ],
+        "eggGroups": [
+          "bug",
+          "dragon"
+        ],
+        "levelUpLevels": [],
+        "baseAvailable": true,
+        "forms": []
+      },
+      {
+        "slug": "flygon",
+        "name": "Flygon",
+        "dexNumber": 330,
+        "methods": [
+          "tm"
+        ],
+        "eggGroups": [
+          "bug",
+          "dragon"
+        ],
+        "levelUpLevels": [],
+        "baseAvailable": true,
+        "forms": []
+      },
+      {
+        "slug": "cacnea",
+        "name": "Cacnea",
+        "dexNumber": 331,
+        "methods": [
+          "tm"
+        ],
+        "eggGroups": [
+          "grass",
+          "human_like"
+        ],
+        "levelUpLevels": [],
+        "baseAvailable": true,
+        "forms": []
+      },
+      {
+        "slug": "cacturne",
+        "name": "Cacturne",
+        "dexNumber": 332,
+        "methods": [
+          "tm"
+        ],
+        "eggGroups": [
+          "grass",
+          "human_like"
+        ],
+        "levelUpLevels": [],
+        "baseAvailable": true,
+        "forms": []
+      },
+      {
+        "slug": "swablu",
+        "name": "Swablu",
+        "dexNumber": 333,
+        "methods": [
+          "tm"
+        ],
+        "eggGroups": [
+          "dragon",
+          "flying"
+        ],
+        "levelUpLevels": [],
+        "baseAvailable": true,
+        "forms": []
+      },
+      {
+        "slug": "altaria",
+        "name": "Altaria",
+        "dexNumber": 334,
+        "methods": [
+          "tm"
+        ],
+        "eggGroups": [
+          "dragon",
+          "flying"
+        ],
+        "levelUpLevels": [],
+        "baseAvailable": true,
+        "forms": []
+      },
+      {
+        "slug": "zangoose",
+        "name": "Zangoose",
+        "dexNumber": 335,
+        "methods": [
+          "tm"
+        ],
+        "eggGroups": [
+          "field"
+        ],
+        "levelUpLevels": [],
+        "baseAvailable": true,
+        "forms": []
+      },
+      {
+        "slug": "solrock",
+        "name": "Solrock",
+        "dexNumber": 338,
+        "methods": [
+          "level",
+          "tm"
+        ],
+        "eggGroups": [
+          "mineral"
+        ],
+        "levelUpLevels": [
+          40
+        ],
+        "baseAvailable": true,
+        "forms": []
+      },
+      {
+        "slug": "baltoy",
+        "name": "Baltoy",
+        "dexNumber": 343,
+        "methods": [
+          "tm"
+        ],
+        "eggGroups": [
+          "mineral"
+        ],
+        "levelUpLevels": [],
+        "baseAvailable": true,
+        "forms": []
+      },
+      {
+        "slug": "claydol",
+        "name": "Claydol",
+        "dexNumber": 344,
+        "methods": [
+          "tm"
+        ],
+        "eggGroups": [
+          "mineral"
+        ],
+        "levelUpLevels": [],
+        "baseAvailable": true,
+        "forms": []
+      },
+      {
+        "slug": "lileep",
+        "name": "Lileep",
+        "dexNumber": 345,
+        "methods": [
+          "tm"
+        ],
+        "eggGroups": [
+          "water_3"
+        ],
+        "levelUpLevels": [],
+        "baseAvailable": true,
+        "forms": []
+      },
+      {
+        "slug": "cradily",
+        "name": "Cradily",
+        "dexNumber": 346,
+        "methods": [
+          "tm"
+        ],
+        "eggGroups": [
+          "water_3"
+        ],
+        "levelUpLevels": [],
+        "baseAvailable": true,
+        "forms": []
+      },
+      {
+        "slug": "castform",
+        "name": "Castform",
+        "dexNumber": 351,
+        "methods": [
+          "tm"
+        ],
+        "eggGroups": [
+          "amorphous",
+          "fairy"
+        ],
+        "levelUpLevels": [],
+        "baseAvailable": true,
+        "forms": []
+      },
+      {
+        "slug": "kecleon",
+        "name": "Kecleon",
+        "dexNumber": 352,
+        "methods": [
+          "tm"
+        ],
+        "eggGroups": [
+          "field"
+        ],
+        "levelUpLevels": [],
+        "baseAvailable": true,
+        "forms": []
+      },
+      {
+        "slug": "tropius",
+        "name": "Tropius",
+        "dexNumber": 357,
+        "methods": [
+          "level",
+          "tm"
+        ],
+        "eggGroups": [
+          "grass",
+          "monster"
+        ],
+        "levelUpLevels": [
+          56
+        ],
+        "baseAvailable": true,
+        "forms": []
+      },
+      {
+        "slug": "latias",
+        "name": "Latias",
+        "dexNumber": 380,
+        "methods": [
+          "tm"
+        ],
+        "eggGroups": [
+          "undiscovered"
+        ],
+        "levelUpLevels": [],
+        "baseAvailable": true,
+        "forms": []
+      },
+      {
+        "slug": "latios",
+        "name": "Latios",
+        "dexNumber": 381,
+        "methods": [
+          "tm"
+        ],
+        "eggGroups": [
+          "undiscovered"
+        ],
+        "levelUpLevels": [],
+        "baseAvailable": true,
+        "forms": []
+      },
+      {
+        "slug": "groudon",
+        "name": "Groudon",
+        "dexNumber": 383,
+        "methods": [
+          "level",
+          "tm"
+        ],
+        "eggGroups": [
+          "undiscovered"
+        ],
+        "levelUpLevels": [
+          81
+        ],
+        "baseAvailable": true,
+        "forms": []
+      },
+      {
+        "slug": "rayquaza",
+        "name": "Rayquaza",
+        "dexNumber": 384,
+        "methods": [
+          "tm"
+        ],
+        "eggGroups": [
+          "undiscovered"
+        ],
+        "levelUpLevels": [],
+        "baseAvailable": true,
+        "forms": []
+      },
+      {
+        "slug": "deoxys",
+        "name": "Deoxys",
+        "dexNumber": 386,
+        "methods": [
+          "tm"
+        ],
+        "eggGroups": [
+          "undiscovered"
+        ],
+        "levelUpLevels": [],
+        "baseAvailable": true,
+        "forms": [
+          {
+            "name": "Attack",
+            "slug": "deoxys-attack"
+          },
+          {
+            "name": "Defense",
+            "slug": "deoxys-defense"
+          },
+          {
+            "name": "Speed",
+            "slug": "deoxys-speed"
+          }
+        ]
+      },
+      {
+        "slug": "turtwig",
+        "name": "Turtwig",
+        "dexNumber": 387,
+        "methods": [
+          "tm"
+        ],
+        "eggGroups": [
+          "grass",
+          "monster"
+        ],
+        "levelUpLevels": [],
+        "baseAvailable": true,
+        "forms": []
+      },
+      {
+        "slug": "grotle",
+        "name": "Grotle",
+        "dexNumber": 388,
+        "methods": [
+          "tm"
+        ],
+        "eggGroups": [
+          "grass",
+          "monster"
+        ],
+        "levelUpLevels": [],
+        "baseAvailable": true,
+        "forms": []
+      },
+      {
+        "slug": "torterra",
+        "name": "Torterra",
+        "dexNumber": 389,
+        "methods": [
+          "tm"
+        ],
+        "eggGroups": [
+          "grass",
+          "monster"
+        ],
+        "levelUpLevels": [],
+        "baseAvailable": true,
+        "forms": []
+      },
+      {
+        "slug": "infernape",
+        "name": "Infernape",
+        "dexNumber": 392,
+        "methods": [
+          "tm"
+        ],
+        "eggGroups": [
+          "field",
+          "human_like"
+        ],
+        "levelUpLevels": [],
+        "baseAvailable": true,
+        "forms": []
+      },
+      {
+        "slug": "budew",
+        "name": "Budew",
+        "dexNumber": 406,
+        "methods": [
+          "tm"
+        ],
+        "eggGroups": [
+          "undiscovered"
+        ],
+        "levelUpLevels": [],
+        "baseAvailable": true,
+        "forms": []
+      },
+      {
+        "slug": "roserade",
+        "name": "Roserade",
+        "dexNumber": 407,
+        "methods": [
+          "tm"
+        ],
+        "eggGroups": [
+          "fairy",
+          "grass"
+        ],
+        "levelUpLevels": [],
+        "baseAvailable": true,
+        "forms": []
+      },
+      {
+        "slug": "wormadam",
+        "name": "Wormadam",
+        "dexNumber": 413,
+        "methods": [
+          "tm"
+        ],
+        "eggGroups": [
+          "bug"
+        ],
+        "levelUpLevels": [],
+        "baseAvailable": true,
+        "forms": [
+          {
+            "name": "Sandy",
+            "slug": "wormadam-sandy"
+          },
+          {
+            "name": "Trash",
+            "slug": "wormadam-trash"
+          }
+        ]
+      },
+      {
+        "slug": "mothim",
+        "name": "Mothim",
+        "dexNumber": 414,
+        "methods": [
+          "tm"
+        ],
+        "eggGroups": [
+          "bug"
+        ],
+        "levelUpLevels": [],
+        "baseAvailable": true,
+        "forms": []
+      },
+      {
+        "slug": "cherubi",
+        "name": "Cherubi",
+        "dexNumber": 420,
+        "methods": [
+          "level",
+          "tm"
+        ],
+        "eggGroups": [
+          "fairy",
+          "grass"
+        ],
+        "levelUpLevels": [
+          45
+        ],
+        "baseAvailable": true,
+        "forms": []
+      },
+      {
+        "slug": "cherrim",
+        "name": "Cherrim",
+        "dexNumber": 421,
+        "methods": [
+          "level",
+          "tm"
+        ],
+        "eggGroups": [
+          "fairy",
+          "grass"
+        ],
+        "levelUpLevels": [
+          55
+        ],
+        "baseAvailable": true,
+        "forms": [
+          {
+            "name": "Sunshine",
+            "slug": "cherrim-sunshine"
+          }
+        ]
+      },
+      {
+        "slug": "ambipom",
+        "name": "Ambipom",
+        "dexNumber": 424,
+        "methods": [
+          "tm"
+        ],
+        "eggGroups": [
+          "field"
+        ],
+        "levelUpLevels": [],
+        "baseAvailable": true,
+        "forms": []
+      },
+      {
+        "slug": "buneary",
+        "name": "Buneary",
+        "dexNumber": 427,
+        "methods": [
+          "tm"
+        ],
+        "eggGroups": [
+          "field",
+          "human_like"
+        ],
+        "levelUpLevels": [],
+        "baseAvailable": true,
+        "forms": []
+      },
+      {
+        "slug": "lopunny",
+        "name": "Lopunny",
+        "dexNumber": 428,
+        "methods": [
+          "tm"
+        ],
+        "eggGroups": [
+          "field",
+          "human_like"
+        ],
+        "levelUpLevels": [],
+        "baseAvailable": true,
+        "forms": []
+      },
+      {
+        "slug": "bronzor",
+        "name": "Bronzor",
+        "dexNumber": 436,
+        "methods": [
+          "tm"
+        ],
+        "eggGroups": [
+          "mineral"
+        ],
+        "levelUpLevels": [],
+        "baseAvailable": true,
+        "forms": []
+      },
+      {
+        "slug": "bronzong",
+        "name": "Bronzong",
+        "dexNumber": 437,
+        "methods": [
+          "tm"
+        ],
+        "eggGroups": [
+          "mineral"
+        ],
+        "levelUpLevels": [],
+        "baseAvailable": true,
+        "forms": []
+      },
+      {
+        "slug": "mimejr",
+        "name": "Mime Jr.",
+        "dexNumber": 439,
+        "methods": [
+          "tm"
+        ],
+        "eggGroups": [
+          "undiscovered"
+        ],
+        "levelUpLevels": [],
+        "baseAvailable": true,
+        "forms": []
+      },
+      {
+        "slug": "happiny",
+        "name": "Happiny",
+        "dexNumber": 440,
+        "methods": [
+          "tm"
+        ],
+        "eggGroups": [
+          "undiscovered"
+        ],
+        "levelUpLevels": [],
+        "baseAvailable": true,
+        "forms": []
+      },
+      {
+        "slug": "munchlax",
+        "name": "Munchlax",
+        "dexNumber": 446,
+        "methods": [
+          "tm"
+        ],
+        "eggGroups": [
+          "undiscovered"
+        ],
+        "levelUpLevels": [],
+        "baseAvailable": true,
+        "forms": []
+      },
+      {
+        "slug": "carnivine",
+        "name": "Carnivine",
+        "dexNumber": 455,
+        "methods": [
+          "tm"
+        ],
+        "eggGroups": [
+          "grass"
+        ],
+        "levelUpLevels": [],
+        "baseAvailable": true,
+        "forms": []
+      },
+      {
+        "slug": "snover",
+        "name": "Snover",
+        "dexNumber": 459,
+        "methods": [
+          "tm"
+        ],
+        "eggGroups": [
+          "grass",
+          "monster"
+        ],
+        "levelUpLevels": [],
+        "baseAvailable": true,
+        "forms": []
+      },
+      {
+        "slug": "abomasnow",
+        "name": "Abomasnow",
+        "dexNumber": 460,
+        "methods": [
+          "tm"
+        ],
+        "eggGroups": [
+          "grass",
+          "monster"
+        ],
+        "levelUpLevels": [],
+        "baseAvailable": true,
+        "forms": []
+      },
+      {
+        "slug": "lickilicky",
+        "name": "Lickilicky",
+        "dexNumber": 463,
+        "methods": [
+          "tm"
+        ],
+        "eggGroups": [
+          "monster"
+        ],
+        "levelUpLevels": [],
+        "baseAvailable": true,
+        "forms": []
+      },
+      {
+        "slug": "tangrowth",
+        "name": "Tangrowth",
+        "dexNumber": 465,
+        "methods": [
+          "tm"
+        ],
+        "eggGroups": [
+          "grass"
+        ],
+        "levelUpLevels": [],
+        "baseAvailable": true,
+        "forms": []
+      },
+      {
+        "slug": "magmortar",
+        "name": "Magmortar",
+        "dexNumber": 467,
+        "methods": [
+          "tm"
+        ],
+        "eggGroups": [
+          "human_like"
+        ],
+        "levelUpLevels": [],
+        "baseAvailable": true,
+        "forms": []
+      },
+      {
+        "slug": "togekiss",
+        "name": "Togekiss",
+        "dexNumber": 468,
+        "methods": [
+          "tm"
+        ],
+        "eggGroups": [
+          "fairy",
+          "flying"
+        ],
+        "levelUpLevels": [],
+        "baseAvailable": true,
+        "forms": []
+      },
+      {
+        "slug": "yanmega",
+        "name": "Yanmega",
+        "dexNumber": 469,
+        "methods": [
+          "tm"
+        ],
+        "eggGroups": [
+          "bug"
+        ],
+        "levelUpLevels": [],
+        "baseAvailable": true,
+        "forms": []
+      },
+      {
+        "slug": "leafeon",
+        "name": "Leafeon",
+        "dexNumber": 470,
+        "methods": [
+          "tm"
+        ],
+        "eggGroups": [
+          "field"
+        ],
+        "levelUpLevels": [],
+        "baseAvailable": true,
+        "forms": []
+      },
+      {
+        "slug": "porygonz",
+        "name": "Porygon-Z",
+        "dexNumber": 474,
+        "methods": [
+          "tm"
+        ],
+        "eggGroups": [
+          "mineral"
+        ],
+        "levelUpLevels": [],
+        "baseAvailable": true,
+        "forms": []
+      },
+      {
+        "slug": "uxie",
+        "name": "Uxie",
+        "dexNumber": 480,
+        "methods": [
+          "tm"
+        ],
+        "eggGroups": [
+          "undiscovered"
+        ],
+        "levelUpLevels": [],
+        "baseAvailable": true,
+        "forms": []
+      },
+      {
+        "slug": "heatran",
+        "name": "Heatran",
+        "dexNumber": 485,
+        "methods": [
+          "tm"
+        ],
+        "eggGroups": [
+          "undiscovered"
+        ],
+        "levelUpLevels": [],
+        "baseAvailable": true,
+        "forms": []
+      },
+      {
+        "slug": "cresselia",
+        "name": "Cresselia",
+        "dexNumber": 488,
+        "methods": [
+          "tm"
+        ],
+        "eggGroups": [
+          "undiscovered"
+        ],
+        "levelUpLevels": [],
+        "baseAvailable": true,
+        "forms": []
+      },
+      {
+        "slug": "shaymin",
+        "name": "Shaymin",
+        "dexNumber": 492,
+        "methods": [
+          "tm"
+        ],
+        "eggGroups": [
+          "undiscovered"
+        ],
+        "levelUpLevels": [],
+        "baseAvailable": true,
+        "forms": [
+          {
+            "name": "Sky",
+            "slug": "shaymin-sky"
+          }
+        ]
+      },
+      {
+        "slug": "arceus",
+        "name": "Arceus",
+        "dexNumber": 493,
+        "methods": [
+          "tm"
+        ],
+        "eggGroups": [
+          "undiscovered"
+        ],
+        "levelUpLevels": [],
+        "baseAvailable": true,
+        "forms": [
+          {
+            "name": "Fire",
+            "slug": "arceus-fire"
+          },
+          {
+            "name": "Poison",
+            "slug": "arceus-poison"
+          }
+        ]
+      },
+      {
+        "slug": "victini",
+        "name": "Victini",
+        "dexNumber": 494,
+        "methods": [
+          "tm"
+        ],
+        "eggGroups": [
+          "undiscovered"
+        ],
+        "levelUpLevels": [],
+        "baseAvailable": true,
+        "forms": []
+      },
+      {
+        "slug": "snivy",
+        "name": "Snivy",
+        "dexNumber": 495,
+        "methods": [
+          "tm"
+        ],
+        "eggGroups": [
+          "field",
+          "grass"
+        ],
+        "levelUpLevels": [],
+        "baseAvailable": true,
+        "forms": []
+      },
+      {
+        "slug": "servine",
+        "name": "Servine",
+        "dexNumber": 496,
+        "methods": [
+          "tm"
+        ],
+        "eggGroups": [
+          "field",
+          "grass"
+        ],
+        "levelUpLevels": [],
+        "baseAvailable": true,
+        "forms": []
+      },
+      {
+        "slug": "serperior",
+        "name": "Serperior",
+        "dexNumber": 497,
+        "methods": [
+          "tm"
+        ],
+        "eggGroups": [
+          "field",
+          "grass"
+        ],
+        "levelUpLevels": [],
+        "baseAvailable": true,
+        "forms": []
+      },
+      {
+        "slug": "tepig",
+        "name": "Tepig",
+        "dexNumber": 498,
+        "methods": [
+          "tm"
+        ],
+        "eggGroups": [
+          "field"
+        ],
+        "levelUpLevels": [],
+        "baseAvailable": true,
+        "forms": []
+      },
+      {
+        "slug": "pignite",
+        "name": "Pignite",
+        "dexNumber": 499,
+        "methods": [
+          "tm"
+        ],
+        "eggGroups": [
+          "field"
+        ],
+        "levelUpLevels": [],
+        "baseAvailable": true,
+        "forms": []
+      },
+      {
+        "slug": "emboar",
+        "name": "Emboar",
+        "dexNumber": 500,
+        "methods": [
+          "tm"
+        ],
+        "eggGroups": [
+          "field"
+        ],
+        "levelUpLevels": [],
+        "baseAvailable": true,
+        "forms": []
+      },
+      {
+        "slug": "pansage",
+        "name": "Pansage",
+        "dexNumber": 511,
+        "methods": [
+          "tm"
+        ],
+        "eggGroups": [
+          "field"
+        ],
+        "levelUpLevels": [],
+        "baseAvailable": true,
+        "forms": []
+      },
+      {
+        "slug": "simisage",
+        "name": "Simisage",
+        "dexNumber": 512,
+        "methods": [
+          "tm"
+        ],
+        "eggGroups": [
+          "field"
+        ],
+        "levelUpLevels": [],
+        "baseAvailable": true,
+        "forms": []
+      },
+      {
+        "slug": "pansear",
+        "name": "Pansear",
+        "dexNumber": 513,
+        "methods": [
+          "tm"
+        ],
+        "eggGroups": [
+          "field"
+        ],
+        "levelUpLevels": [],
+        "baseAvailable": true,
+        "forms": []
+      },
+      {
+        "slug": "simisear",
+        "name": "Simisear",
+        "dexNumber": 514,
+        "methods": [
+          "tm"
+        ],
+        "eggGroups": [
+          "field"
+        ],
+        "levelUpLevels": [],
+        "baseAvailable": true,
+        "forms": []
+      },
+      {
+        "slug": "gigalith",
+        "name": "Gigalith",
+        "dexNumber": 526,
+        "methods": [
+          "tm"
+        ],
+        "eggGroups": [
+          "mineral"
+        ],
+        "levelUpLevels": [],
+        "baseAvailable": true,
+        "forms": []
+      },
+      {
+        "slug": "audino",
+        "name": "Audino",
+        "dexNumber": 531,
+        "methods": [
+          "tm"
+        ],
+        "eggGroups": [
+          "fairy"
+        ],
+        "levelUpLevels": [],
+        "baseAvailable": true,
+        "forms": []
+      },
+      {
+        "slug": "sewaddle",
+        "name": "Sewaddle",
+        "dexNumber": 540,
+        "methods": [
+          "tm"
+        ],
+        "eggGroups": [
+          "bug"
+        ],
+        "levelUpLevels": [],
+        "baseAvailable": true,
+        "forms": []
+      },
+      {
+        "slug": "swadloon",
+        "name": "Swadloon",
+        "dexNumber": 541,
+        "methods": [
+          "tm"
+        ],
+        "eggGroups": [
+          "bug"
+        ],
+        "levelUpLevels": [],
+        "baseAvailable": true,
+        "forms": []
+      },
+      {
+        "slug": "leavanny",
+        "name": "Leavanny",
+        "dexNumber": 542,
+        "methods": [
+          "tm"
+        ],
+        "eggGroups": [
+          "bug"
+        ],
+        "levelUpLevels": [],
+        "baseAvailable": true,
+        "forms": []
+      },
+      {
+        "slug": "venipede",
+        "name": "Venipede",
+        "dexNumber": 543,
+        "methods": [
+          "tm"
+        ],
+        "eggGroups": [
+          "bug"
+        ],
+        "levelUpLevels": [],
+        "baseAvailable": true,
+        "forms": []
+      },
+      {
+        "slug": "whirlipede",
+        "name": "Whirlipede",
+        "dexNumber": 544,
+        "methods": [
+          "tm"
+        ],
+        "eggGroups": [
+          "bug"
+        ],
+        "levelUpLevels": [],
+        "baseAvailable": true,
+        "forms": []
+      },
+      {
+        "slug": "scolipede",
+        "name": "Scolipede",
+        "dexNumber": 545,
+        "methods": [
+          "tm"
+        ],
+        "eggGroups": [
+          "bug"
+        ],
+        "levelUpLevels": [],
+        "baseAvailable": true,
+        "forms": []
+      },
+      {
+        "slug": "cottonee",
+        "name": "Cottonee",
+        "dexNumber": 546,
+        "methods": [
+          "level",
+          "tm"
+        ],
+        "eggGroups": [
+          "fairy",
+          "grass"
+        ],
+        "levelUpLevels": [
+          48
+        ],
+        "baseAvailable": true,
+        "forms": []
+      },
+      {
+        "slug": "whimsicott",
+        "name": "Whimsicott",
+        "dexNumber": 547,
+        "methods": [
+          "level",
+          "tm"
+        ],
+        "eggGroups": [
+          "fairy",
+          "grass"
+        ],
+        "levelUpLevels": [
+          1
+        ],
+        "baseAvailable": true,
+        "forms": []
+      },
+      {
+        "slug": "petilil",
+        "name": "Petilil",
+        "dexNumber": 548,
+        "methods": [
+          "tm"
+        ],
+        "eggGroups": [
+          "grass"
+        ],
+        "levelUpLevels": [],
+        "baseAvailable": true,
+        "forms": []
+      },
+      {
+        "slug": "lilligant",
+        "name": "Lilligant",
+        "dexNumber": 549,
+        "methods": [
+          "tm"
+        ],
+        "eggGroups": [
+          "grass"
+        ],
+        "levelUpLevels": [],
+        "baseAvailable": true,
+        "forms": [
+          {
+            "name": "Hisui",
+            "slug": "lilligant-hisui"
+          }
+        ]
+      },
+      {
+        "slug": "darumaka",
+        "name": "Darumaka",
+        "dexNumber": 554,
+        "methods": [
+          "tm"
+        ],
+        "eggGroups": [
+          "field"
+        ],
+        "levelUpLevels": [],
+        "baseAvailable": true,
+        "forms": [
+          {
+            "name": "Galar",
+            "slug": "darumaka-galar"
+          }
+        ]
+      },
+      {
+        "slug": "darmanitan",
+        "name": "Darmanitan",
+        "dexNumber": 555,
+        "methods": [
+          "tm"
+        ],
+        "eggGroups": [
+          "field"
+        ],
+        "levelUpLevels": [],
+        "baseAvailable": true,
+        "forms": [
+          {
+            "name": "Galar",
+            "slug": "darmanitan-galar"
+          },
+          {
+            "name": "Galar-Zen",
+            "slug": "darmanitan-galarzen"
+          },
+          {
+            "name": "Zen",
+            "slug": "darmanitan-zen"
+          }
+        ]
+      },
+      {
+        "slug": "maractus",
+        "name": "Maractus",
+        "dexNumber": 556,
+        "methods": [
+          "level",
+          "tm"
+        ],
+        "eggGroups": [
+          "grass"
+        ],
+        "levelUpLevels": [
+          48
+        ],
+        "baseAvailable": true,
+        "forms": []
+      },
+      {
+        "slug": "dwebble",
+        "name": "Dwebble",
+        "dexNumber": 557,
+        "methods": [
+          "tm"
+        ],
+        "eggGroups": [
+          "bug",
+          "mineral"
+        ],
+        "levelUpLevels": [],
+        "baseAvailable": true,
+        "forms": []
+      },
+      {
+        "slug": "crustle",
+        "name": "Crustle",
+        "dexNumber": 558,
+        "methods": [
+          "tm"
+        ],
+        "eggGroups": [
+          "bug",
+          "mineral"
+        ],
+        "levelUpLevels": [],
+        "baseAvailable": true,
+        "forms": []
+      },
+      {
+        "slug": "sigilyph",
+        "name": "Sigilyph",
+        "dexNumber": 561,
+        "methods": [
+          "tm"
+        ],
+        "eggGroups": [
+          "flying"
+        ],
+        "levelUpLevels": [],
+        "baseAvailable": true,
+        "forms": []
+      },
+      {
+        "slug": "garbodor",
+        "name": "Garbodor",
+        "dexNumber": 569,
+        "methods": [
+          "tm"
+        ],
+        "eggGroups": [
+          "mineral"
+        ],
+        "levelUpLevels": [],
+        "baseAvailable": true,
+        "forms": []
+      },
+      {
+        "slug": "deerling",
+        "name": "Deerling",
+        "dexNumber": 585,
+        "methods": [
+          "level",
+          "tm"
+        ],
+        "eggGroups": [
+          "field"
+        ],
+        "levelUpLevels": [
+          42
+        ],
+        "baseAvailable": true,
+        "forms": []
+      },
+      {
+        "slug": "sawsbuck",
+        "name": "Sawsbuck",
+        "dexNumber": 586,
+        "methods": [
+          "level",
+          "tm"
+        ],
+        "eggGroups": [
+          "field"
+        ],
+        "levelUpLevels": [
+          52
+        ],
+        "baseAvailable": true,
+        "forms": []
+      },
+      {
+        "slug": "emolga",
+        "name": "Emolga",
+        "dexNumber": 587,
+        "methods": [
+          "tm"
+        ],
+        "eggGroups": [
+          "field"
+        ],
+        "levelUpLevels": [],
+        "baseAvailable": true,
+        "forms": []
+      },
+      {
+        "slug": "foongus",
+        "name": "Foongus",
+        "dexNumber": 590,
+        "methods": [
+          "level",
+          "tm"
+        ],
+        "eggGroups": [
+          "grass"
+        ],
+        "levelUpLevels": [
+          44
+        ],
+        "baseAvailable": true,
+        "forms": []
+      },
+      {
+        "slug": "amoonguss",
+        "name": "Amoonguss",
+        "dexNumber": 591,
+        "methods": [
+          "level",
+          "tm"
+        ],
+        "eggGroups": [
+          "grass"
+        ],
+        "levelUpLevels": [
+          48
+        ],
+        "baseAvailable": true,
+        "forms": []
+      },
+      {
+        "slug": "ferroseed",
+        "name": "Ferroseed",
+        "dexNumber": 597,
+        "methods": [
+          "tm"
+        ],
+        "eggGroups": [
+          "grass",
+          "mineral"
+        ],
+        "levelUpLevels": [],
+        "baseAvailable": true,
+        "forms": []
+      },
+      {
+        "slug": "ferrothorn",
+        "name": "Ferrothorn",
+        "dexNumber": 598,
+        "methods": [
+          "tm"
+        ],
+        "eggGroups": [
+          "grass",
+          "mineral"
+        ],
+        "levelUpLevels": [],
+        "baseAvailable": true,
+        "forms": []
+      },
+      {
+        "slug": "litwick",
+        "name": "Litwick",
+        "dexNumber": 607,
+        "methods": [
+          "tm"
+        ],
+        "eggGroups": [
+          "amorphous"
+        ],
+        "levelUpLevels": [],
+        "baseAvailable": true,
+        "forms": []
+      },
+      {
+        "slug": "lampent",
+        "name": "Lampent",
+        "dexNumber": 608,
+        "methods": [
+          "tm"
+        ],
+        "eggGroups": [
+          "amorphous"
+        ],
+        "levelUpLevels": [],
+        "baseAvailable": true,
+        "forms": []
+      },
+      {
+        "slug": "chandelure",
+        "name": "Chandelure",
+        "dexNumber": 609,
+        "methods": [
+          "tm"
+        ],
+        "eggGroups": [
+          "amorphous"
+        ],
+        "levelUpLevels": [],
+        "baseAvailable": true,
+        "forms": []
+      },
+      {
+        "slug": "cryogonal",
+        "name": "Cryogonal",
+        "dexNumber": 615,
+        "methods": [
+          "level",
+          "tm"
+        ],
+        "eggGroups": [
+          "mineral"
+        ],
+        "levelUpLevels": [
+          56
+        ],
+        "baseAvailable": true,
+        "forms": []
+      },
+      {
+        "slug": "golurk",
+        "name": "Golurk",
+        "dexNumber": 623,
+        "methods": [
+          "tm"
+        ],
+        "eggGroups": [
+          "mineral"
+        ],
+        "levelUpLevels": [],
+        "baseAvailable": true,
+        "forms": []
+      },
+      {
+        "slug": "heatmor",
+        "name": "Heatmor",
+        "dexNumber": 631,
+        "methods": [
+          "tm"
+        ],
+        "eggGroups": [
+          "field"
+        ],
+        "levelUpLevels": [],
+        "baseAvailable": true,
+        "forms": []
+      },
+      {
+        "slug": "larvesta",
+        "name": "Larvesta",
+        "dexNumber": 636,
+        "methods": [
+          "tm"
+        ],
+        "eggGroups": [
+          "bug"
+        ],
+        "levelUpLevels": [],
+        "baseAvailable": true,
+        "forms": []
+      },
+      {
+        "slug": "volcarona",
+        "name": "Volcarona",
+        "dexNumber": 637,
+        "methods": [
+          "tm"
+        ],
+        "eggGroups": [
+          "bug"
+        ],
+        "levelUpLevels": [],
+        "baseAvailable": true,
+        "forms": []
+      },
+      {
+        "slug": "virizion",
+        "name": "Virizion",
+        "dexNumber": 640,
+        "methods": [
+          "tm"
+        ],
+        "eggGroups": [
+          "undiscovered"
+        ],
+        "levelUpLevels": [],
+        "baseAvailable": true,
+        "forms": []
+      },
+      {
+        "slug": "reshiram",
+        "name": "Reshiram",
+        "dexNumber": 643,
+        "methods": [
+          "tm"
+        ],
+        "eggGroups": [
+          "undiscovered"
+        ],
+        "levelUpLevels": [],
+        "baseAvailable": true,
+        "forms": []
+      },
+      {
+        "slug": "genesect",
+        "name": "Genesect",
+        "dexNumber": 649,
+        "methods": [
+          "tm"
+        ],
+        "eggGroups": [
+          "undiscovered"
+        ],
+        "levelUpLevels": [],
+        "baseAvailable": true,
+        "forms": []
+      },
+      {
+        "slug": "chespin",
+        "name": "Chespin",
+        "dexNumber": 650,
+        "methods": [
+          "tm"
+        ],
+        "eggGroups": [
+          "field"
+        ],
+        "levelUpLevels": [],
+        "baseAvailable": true,
+        "forms": []
+      },
+      {
+        "slug": "quilladin",
+        "name": "Quilladin",
+        "dexNumber": 651,
+        "methods": [
+          "tm"
+        ],
+        "eggGroups": [
+          "field"
+        ],
+        "levelUpLevels": [],
+        "baseAvailable": true,
+        "forms": []
+      },
+      {
+        "slug": "chesnaught",
+        "name": "Chesnaught",
+        "dexNumber": 652,
+        "methods": [
+          "tm"
+        ],
+        "eggGroups": [
+          "field"
+        ],
+        "levelUpLevels": [],
+        "baseAvailable": true,
+        "forms": []
+      },
+      {
+        "slug": "fennekin",
+        "name": "Fennekin",
+        "dexNumber": 653,
+        "methods": [
+          "tm"
+        ],
+        "eggGroups": [
+          "field"
+        ],
+        "levelUpLevels": [],
+        "baseAvailable": true,
+        "forms": []
+      },
+      {
+        "slug": "braixen",
+        "name": "Braixen",
+        "dexNumber": 654,
+        "methods": [
+          "tm"
+        ],
+        "eggGroups": [
+          "field"
+        ],
+        "levelUpLevels": [],
+        "baseAvailable": true,
+        "forms": []
+      },
+      {
+        "slug": "delphox",
+        "name": "Delphox",
+        "dexNumber": 655,
+        "methods": [
+          "tm"
+        ],
+        "eggGroups": [
+          "field"
+        ],
+        "levelUpLevels": [],
+        "baseAvailable": true,
+        "forms": []
+      },
+      {
+        "slug": "talonflame",
+        "name": "Talonflame",
+        "dexNumber": 663,
+        "methods": [
+          "tm"
+        ],
+        "eggGroups": [
+          "flying"
+        ],
+        "levelUpLevels": [],
+        "baseAvailable": true,
+        "forms": []
+      },
+      {
+        "slug": "vivillon",
+        "name": "Vivillon",
+        "dexNumber": 666,
+        "methods": [
+          "tm"
+        ],
+        "eggGroups": [
+          "bug"
+        ],
+        "levelUpLevels": [],
+        "baseAvailable": true,
+        "forms": []
+      },
+      {
+        "slug": "litleo",
+        "name": "Litleo",
+        "dexNumber": 667,
+        "methods": [
+          "tm"
+        ],
+        "eggGroups": [
+          "field"
+        ],
+        "levelUpLevels": [],
+        "baseAvailable": true,
+        "forms": []
+      },
+      {
+        "slug": "pyroar",
+        "name": "Pyroar",
+        "dexNumber": 668,
+        "methods": [
+          "tm"
+        ],
+        "eggGroups": [
+          "field"
+        ],
+        "levelUpLevels": [],
+        "baseAvailable": true,
+        "forms": []
+      },
+      {
+        "slug": "flabebe",
+        "name": "Flabebe",
+        "dexNumber": 669,
+        "methods": [
+          "level",
+          "tm"
+        ],
+        "eggGroups": [
+          "fairy"
+        ],
+        "levelUpLevels": [
+          48
+        ],
+        "baseAvailable": true,
+        "forms": []
+      },
+      {
+        "slug": "floette",
+        "name": "Floette",
+        "dexNumber": 670,
+        "methods": [
+          "level",
+          "tm"
+        ],
+        "eggGroups": [
+          "fairy"
+        ],
+        "levelUpLevels": [
+          58
+        ],
+        "baseAvailable": true,
+        "forms": [
+          {
+            "name": "Eternal",
+            "slug": "floette-eternal"
+          }
+        ]
+      },
+      {
+        "slug": "florges",
+        "name": "Florges",
+        "dexNumber": 671,
+        "methods": [
+          "level",
+          "tm"
+        ],
+        "eggGroups": [
+          "fairy"
+        ],
+        "levelUpLevels": [
+          1
+        ],
+        "baseAvailable": true,
+        "forms": []
+      },
+      {
+        "slug": "skiddo",
+        "name": "Skiddo",
+        "dexNumber": 672,
+        "methods": [
+          "tm"
+        ],
+        "eggGroups": [
+          "field"
+        ],
+        "levelUpLevels": [],
+        "baseAvailable": true,
+        "forms": []
+      },
+      {
+        "slug": "gogoat",
+        "name": "Gogoat",
+        "dexNumber": 673,
+        "methods": [
+          "tm"
+        ],
+        "eggGroups": [
+          "field"
+        ],
+        "levelUpLevels": [],
+        "baseAvailable": true,
+        "forms": []
+      },
+      {
+        "slug": "heliolisk",
+        "name": "Heliolisk",
+        "dexNumber": 695,
+        "methods": [
+          "tm"
+        ],
+        "eggGroups": [
+          "dragon",
+          "monster"
+        ],
+        "levelUpLevels": [],
+        "baseAvailable": true,
+        "forms": []
+      },
+      {
+        "slug": "phantump",
+        "name": "Phantump",
+        "dexNumber": 708,
+        "methods": [
+          "tm"
+        ],
+        "eggGroups": [
+          "amorphous",
+          "grass"
+        ],
+        "levelUpLevels": [],
+        "baseAvailable": true,
+        "forms": []
+      },
+      {
+        "slug": "trevenant",
+        "name": "Trevenant",
+        "dexNumber": 709,
+        "methods": [
+          "tm"
+        ],
+        "eggGroups": [
+          "amorphous",
+          "grass"
+        ],
+        "levelUpLevels": [],
+        "baseAvailable": true,
+        "forms": []
+      },
+      {
+        "slug": "pumpkaboo",
+        "name": "Pumpkaboo",
+        "dexNumber": 710,
+        "methods": [
+          "tm"
+        ],
+        "eggGroups": [
+          "amorphous"
+        ],
+        "levelUpLevels": [],
+        "baseAvailable": true,
+        "forms": []
+      },
+      {
+        "slug": "gourgeist",
+        "name": "Gourgeist",
+        "dexNumber": 711,
+        "methods": [
+          "tm"
+        ],
+        "eggGroups": [
+          "amorphous"
+        ],
+        "levelUpLevels": [],
+        "baseAvailable": true,
+        "forms": []
+      },
+      {
+        "slug": "noibat",
+        "name": "Noibat",
+        "dexNumber": 714,
+        "methods": [
+          "tm"
+        ],
+        "eggGroups": [
+          "dragon",
+          "flying"
+        ],
+        "levelUpLevels": [],
+        "baseAvailable": true,
+        "forms": []
+      },
+      {
+        "slug": "noivern",
+        "name": "Noivern",
+        "dexNumber": 715,
+        "methods": [
+          "tm"
+        ],
+        "eggGroups": [
+          "dragon",
+          "flying"
+        ],
+        "levelUpLevels": [],
+        "baseAvailable": true,
+        "forms": []
+      },
+      {
+        "slug": "volcanion",
+        "name": "Volcanion",
+        "dexNumber": 721,
+        "methods": [
+          "tm"
+        ],
+        "eggGroups": [
+          "undiscovered"
+        ],
+        "levelUpLevels": [],
+        "baseAvailable": true,
+        "forms": []
+      },
+      {
+        "slug": "rowlet",
+        "name": "Rowlet",
+        "dexNumber": 722,
+        "methods": [
+          "tm"
+        ],
+        "eggGroups": [
+          "flying"
+        ],
+        "levelUpLevels": [],
+        "baseAvailable": true,
+        "forms": []
+      },
+      {
+        "slug": "dartrix",
+        "name": "Dartrix",
+        "dexNumber": 723,
+        "methods": [
+          "tm"
+        ],
+        "eggGroups": [
+          "flying"
+        ],
+        "levelUpLevels": [],
+        "baseAvailable": true,
+        "forms": []
+      },
+      {
+        "slug": "decidueye",
+        "name": "Decidueye",
+        "dexNumber": 724,
+        "methods": [
+          "tm"
+        ],
+        "eggGroups": [
+          "flying"
+        ],
+        "levelUpLevels": [],
+        "baseAvailable": true,
+        "forms": [
+          {
+            "name": "Hisui",
+            "slug": "decidueye-hisui"
+          }
+        ]
+      },
+      {
+        "slug": "vikavolt",
+        "name": "Vikavolt",
+        "dexNumber": 738,
+        "methods": [
+          "tm"
+        ],
+        "eggGroups": [
+          "bug"
+        ],
+        "levelUpLevels": [],
+        "baseAvailable": true,
+        "forms": []
+      },
+      {
+        "slug": "ribombee",
+        "name": "Ribombee",
+        "dexNumber": 743,
+        "methods": [
+          "tm"
+        ],
+        "eggGroups": [
+          "bug",
+          "fairy"
+        ],
+        "levelUpLevels": [],
+        "baseAvailable": true,
+        "forms": []
+      },
+      {
+        "slug": "fomantis",
+        "name": "Fomantis",
+        "dexNumber": 753,
+        "methods": [
+          "level",
+          "tm"
+        ],
+        "eggGroups": [
+          "grass"
+        ],
+        "levelUpLevels": [
+          50
+        ],
+        "baseAvailable": true,
+        "forms": []
+      },
+      {
+        "slug": "lurantis",
+        "name": "Lurantis",
+        "dexNumber": 754,
+        "methods": [
+          "level",
+          "tm"
+        ],
+        "eggGroups": [
+          "grass"
+        ],
+        "levelUpLevels": [
+          1
+        ],
+        "baseAvailable": true,
+        "forms": []
+      },
+      {
+        "slug": "morelull",
+        "name": "Morelull",
+        "dexNumber": 755,
+        "methods": [
+          "tm"
+        ],
+        "eggGroups": [
+          "grass"
+        ],
+        "levelUpLevels": [],
+        "baseAvailable": true,
+        "forms": []
+      },
+      {
+        "slug": "shiinotic",
+        "name": "Shiinotic",
+        "dexNumber": 756,
+        "methods": [
+          "tm"
+        ],
+        "eggGroups": [
+          "grass"
+        ],
+        "levelUpLevels": [],
+        "baseAvailable": true,
+        "forms": []
+      },
+      {
+        "slug": "bounsweet",
+        "name": "Bounsweet",
+        "dexNumber": 761,
+        "methods": [
+          "tm"
+        ],
+        "eggGroups": [
+          "grass"
+        ],
+        "levelUpLevels": [],
+        "baseAvailable": true,
+        "forms": []
+      },
+      {
+        "slug": "steenee",
+        "name": "Steenee",
+        "dexNumber": 762,
+        "methods": [
+          "tm"
+        ],
+        "eggGroups": [
+          "grass"
+        ],
+        "levelUpLevels": [],
+        "baseAvailable": true,
+        "forms": []
+      },
+      {
+        "slug": "tsareena",
+        "name": "Tsareena",
+        "dexNumber": 763,
+        "methods": [
+          "tm"
+        ],
+        "eggGroups": [
+          "grass"
+        ],
+        "levelUpLevels": [],
+        "baseAvailable": true,
+        "forms": []
+      },
+      {
+        "slug": "comfey",
+        "name": "Comfey",
+        "dexNumber": 764,
+        "methods": [
+          "tm"
+        ],
+        "eggGroups": [
+          "grass"
+        ],
+        "levelUpLevels": [],
+        "baseAvailable": true,
+        "forms": []
+      },
+      {
+        "slug": "minior",
+        "name": "Minior",
+        "dexNumber": 774,
+        "methods": [
+          "tm"
+        ],
+        "eggGroups": [
+          "mineral"
+        ],
+        "levelUpLevels": [],
+        "baseAvailable": true,
+        "forms": []
+      },
+      {
+        "slug": "turtonator",
+        "name": "Turtonator",
+        "dexNumber": 776,
+        "methods": [
+          "tm"
+        ],
+        "eggGroups": [
+          "dragon",
+          "monster"
+        ],
+        "levelUpLevels": [],
+        "baseAvailable": true,
+        "forms": []
+      },
+      {
+        "slug": "drampa",
+        "name": "Drampa",
+        "dexNumber": 780,
+        "methods": [
+          "tm"
+        ],
+        "eggGroups": [
+          "dragon",
+          "monster"
+        ],
+        "levelUpLevels": [],
+        "baseAvailable": true,
+        "forms": []
+      },
+      {
+        "slug": "dhelmise",
+        "name": "Dhelmise",
+        "dexNumber": 781,
+        "methods": [
+          "tm"
+        ],
+        "eggGroups": [
+          "mineral"
+        ],
+        "levelUpLevels": [],
+        "baseAvailable": true,
+        "forms": []
+      },
+      {
+        "slug": "tapubulu",
+        "name": "Tapu Bulu",
+        "dexNumber": 787,
+        "methods": [
+          "tm"
+        ],
+        "eggGroups": [
+          "undiscovered"
+        ],
+        "levelUpLevels": [],
+        "baseAvailable": true,
+        "forms": []
+      },
+      {
+        "slug": "solgaleo",
+        "name": "Solgaleo",
+        "dexNumber": 791,
+        "methods": [
+          "level",
+          "tm"
+        ],
+        "eggGroups": [
+          "undiscovered"
+        ],
+        "levelUpLevels": [
+          63
+        ],
+        "baseAvailable": true,
+        "forms": []
+      },
+      {
+        "slug": "lunala",
+        "name": "Lunala",
+        "dexNumber": 792,
+        "methods": [
+          "tm"
+        ],
+        "eggGroups": [
+          "undiscovered"
+        ],
+        "levelUpLevels": [],
+        "baseAvailable": true,
+        "forms": []
+      },
+      {
+        "slug": "xurkitree",
+        "name": "Xurkitree",
+        "dexNumber": 796,
+        "methods": [
+          "tm"
+        ],
+        "eggGroups": [
+          "undiscovered"
+        ],
+        "levelUpLevels": [],
+        "baseAvailable": true,
+        "forms": []
+      },
+      {
+        "slug": "celesteela",
+        "name": "Celesteela",
+        "dexNumber": 797,
+        "methods": [
+          "tm"
+        ],
+        "eggGroups": [
+          "undiscovered"
+        ],
+        "levelUpLevels": [],
+        "baseAvailable": true,
+        "forms": []
+      },
+      {
+        "slug": "necrozma",
+        "name": "Necrozma",
+        "dexNumber": 800,
+        "methods": [
+          "tm"
+        ],
+        "eggGroups": [
+          "undiscovered"
+        ],
+        "levelUpLevels": [],
+        "baseAvailable": true,
+        "forms": [
+          {
+            "name": "Dawn-Wings",
+            "slug": "necrozma-dawnwings"
+          },
+          {
+            "name": "Dusk-Mane",
+            "slug": "necrozma-duskmane"
+          }
+        ]
+      },
+      {
+        "slug": "magearna",
+        "name": "Magearna",
+        "dexNumber": 801,
+        "methods": [
+          "tm"
+        ],
+        "eggGroups": [
+          "undiscovered"
+        ],
+        "levelUpLevels": [],
+        "baseAvailable": true,
+        "forms": []
+      },
+      {
+        "slug": "blacephalon",
+        "name": "Blacephalon",
+        "dexNumber": 806,
+        "methods": [
+          "tm"
+        ],
+        "eggGroups": [
+          "undiscovered"
+        ],
+        "levelUpLevels": [],
+        "baseAvailable": true,
+        "forms": []
+      },
+      {
+        "slug": "melmetal",
+        "name": "Melmetal",
+        "dexNumber": 809,
+        "methods": [
+          "tm"
+        ],
+        "eggGroups": [
+          "undiscovered"
+        ],
+        "levelUpLevels": [],
+        "baseAvailable": true,
+        "forms": []
+      },
+      {
+        "slug": "grookey",
+        "name": "Grookey",
+        "dexNumber": 810,
+        "methods": [
+          "tm"
+        ],
+        "eggGroups": [
+          "field",
+          "grass"
+        ],
+        "levelUpLevels": [],
+        "baseAvailable": true,
+        "forms": []
+      },
+      {
+        "slug": "thwackey",
+        "name": "Thwackey",
+        "dexNumber": 811,
+        "methods": [
+          "tm"
+        ],
+        "eggGroups": [
+          "field",
+          "grass"
+        ],
+        "levelUpLevels": [],
+        "baseAvailable": true,
+        "forms": []
+      },
+      {
+        "slug": "rillaboom",
+        "name": "Rillaboom",
+        "dexNumber": 812,
+        "methods": [
+          "tm"
+        ],
+        "eggGroups": [
+          "field",
+          "grass"
+        ],
+        "levelUpLevels": [],
+        "baseAvailable": true,
+        "forms": []
+      },
+      {
+        "slug": "dottler",
+        "name": "Dottler",
+        "dexNumber": 825,
+        "methods": [
+          "tm"
+        ],
+        "eggGroups": [
+          "bug"
+        ],
+        "levelUpLevels": [],
+        "baseAvailable": true,
+        "forms": []
+      },
+      {
+        "slug": "orbeetle",
+        "name": "Orbeetle",
+        "dexNumber": 826,
+        "methods": [
+          "tm"
+        ],
+        "eggGroups": [
+          "bug"
+        ],
+        "levelUpLevels": [],
+        "baseAvailable": true,
+        "forms": []
+      },
+      {
+        "slug": "gossifleur",
+        "name": "Gossifleur",
+        "dexNumber": 829,
+        "methods": [
+          "tm"
+        ],
+        "eggGroups": [
+          "grass"
+        ],
+        "levelUpLevels": [],
+        "baseAvailable": true,
+        "forms": []
+      },
+      {
+        "slug": "eldegoss",
+        "name": "Eldegoss",
+        "dexNumber": 830,
+        "methods": [
+          "tm"
+        ],
+        "eggGroups": [
+          "grass"
+        ],
+        "levelUpLevels": [],
+        "baseAvailable": true,
+        "forms": []
+      },
+      {
+        "slug": "coalossal",
+        "name": "Coalossal",
+        "dexNumber": 839,
+        "methods": [
+          "tm"
+        ],
+        "eggGroups": [
+          "mineral"
+        ],
+        "levelUpLevels": [],
+        "baseAvailable": true,
+        "forms": []
+      },
+      {
+        "slug": "flapple",
+        "name": "Flapple",
+        "dexNumber": 841,
+        "methods": [
+          "tm"
+        ],
+        "eggGroups": [
+          "dragon",
+          "grass"
+        ],
+        "levelUpLevels": [],
+        "baseAvailable": true,
+        "forms": []
+      },
+      {
+        "slug": "appletun",
+        "name": "Appletun",
+        "dexNumber": 842,
+        "methods": [
+          "tm"
+        ],
+        "eggGroups": [
+          "dragon",
+          "grass"
+        ],
+        "levelUpLevels": [],
+        "baseAvailable": true,
+        "forms": []
+      },
+      {
+        "slug": "centiskorch",
+        "name": "Centiskorch",
+        "dexNumber": 851,
+        "methods": [
+          "tm"
+        ],
+        "eggGroups": [
+          "bug"
+        ],
+        "levelUpLevels": [],
+        "baseAvailable": true,
+        "forms": []
+      },
+      {
+        "slug": "mrrime",
+        "name": "Mr. Rime",
+        "dexNumber": 866,
+        "methods": [
+          "tm"
+        ],
+        "eggGroups": [
+          "human_like"
+        ],
+        "levelUpLevels": [],
+        "baseAvailable": true,
+        "forms": []
+      },
+      {
+        "slug": "alcremie",
+        "name": "Alcremie",
+        "dexNumber": 869,
+        "methods": [
+          "tm"
+        ],
+        "eggGroups": [
+          "amorphous",
+          "fairy"
+        ],
+        "levelUpLevels": [],
+        "baseAvailable": true,
+        "forms": []
+      },
+      {
+        "slug": "duraludon",
+        "name": "Duraludon",
+        "dexNumber": 884,
+        "methods": [
+          "tm"
+        ],
+        "eggGroups": [
+          "dragon",
+          "mineral"
+        ],
+        "levelUpLevels": [],
+        "baseAvailable": true,
+        "forms": []
+      },
+      {
+        "slug": "dragapult",
+        "name": "Dragapult",
+        "dexNumber": 887,
+        "methods": [
+          "tm"
+        ],
+        "eggGroups": [
+          "amorphous",
+          "dragon"
+        ],
+        "levelUpLevels": [],
+        "baseAvailable": true,
+        "forms": []
+      },
+      {
+        "slug": "zamazenta",
+        "name": "Zamazenta",
+        "dexNumber": 889,
+        "methods": [
+          "tm"
+        ],
+        "eggGroups": [
+          "undiscovered"
+        ],
+        "levelUpLevels": [],
+        "baseAvailable": true,
+        "forms": []
+      },
+      {
+        "slug": "eternatus",
+        "name": "Eternatus",
+        "dexNumber": 890,
+        "methods": [
+          "tm"
+        ],
+        "eggGroups": [
+          "undiscovered"
+        ],
+        "levelUpLevels": [],
+        "baseAvailable": true,
+        "forms": []
+      },
+      {
+        "slug": "zarude",
+        "name": "Zarude",
+        "dexNumber": 893,
+        "methods": [
+          "tm"
+        ],
+        "eggGroups": [
+          "undiscovered"
+        ],
+        "levelUpLevels": [],
+        "baseAvailable": true,
+        "forms": []
+      },
+      {
+        "slug": "calyrex",
+        "name": "Calyrex",
+        "dexNumber": 898,
+        "methods": [
+          "level",
+          "tm"
+        ],
+        "eggGroups": [
+          "undiscovered"
+        ],
+        "levelUpLevels": [
+          80
+        ],
+        "baseAvailable": true,
+        "forms": [
+          {
+            "name": "Ice",
+            "slug": "calyrex-ice"
+          },
+          {
+            "name": "Shadow",
+            "slug": "calyrex-shadow"
+          }
+        ]
+      },
+      {
+        "slug": "wyrdeer",
+        "name": "Wyrdeer",
+        "dexNumber": 899,
+        "methods": [
+          "tm"
+        ],
+        "eggGroups": [
+          "field"
+        ],
+        "levelUpLevels": [],
+        "baseAvailable": true,
+        "forms": []
+      },
+      {
+        "slug": "sprigatito",
+        "name": "Sprigatito",
+        "dexNumber": 906,
+        "methods": [
+          "tm"
+        ],
+        "eggGroups": [
+          "field",
+          "grass"
+        ],
+        "levelUpLevels": [],
+        "baseAvailable": true,
+        "forms": []
+      },
+      {
+        "slug": "floragato",
+        "name": "Floragato",
+        "dexNumber": 907,
+        "methods": [
+          "tm"
+        ],
+        "eggGroups": [
+          "field",
+          "grass"
+        ],
+        "levelUpLevels": [],
+        "baseAvailable": true,
+        "forms": []
+      },
+      {
+        "slug": "meowscarada",
+        "name": "Meowscarada",
+        "dexNumber": 908,
+        "methods": [
+          "tm"
+        ],
+        "eggGroups": [
+          "field",
+          "grass"
+        ],
+        "levelUpLevels": [],
+        "baseAvailable": true,
+        "forms": []
+      },
+      {
+        "slug": "skeledirge",
+        "name": "Skeledirge",
+        "dexNumber": 911,
+        "methods": [
+          "tm"
+        ],
+        "eggGroups": [
+          "field"
+        ],
+        "levelUpLevels": [],
+        "baseAvailable": true,
+        "forms": []
+      },
+      {
+        "slug": "smoliv",
+        "name": "Smoliv",
+        "dexNumber": 928,
+        "methods": [
+          "tm"
+        ],
+        "eggGroups": [
+          "grass"
+        ],
+        "levelUpLevels": [],
+        "baseAvailable": true,
+        "forms": []
+      },
+      {
+        "slug": "dolliv",
+        "name": "Dolliv",
+        "dexNumber": 929,
+        "methods": [
+          "tm"
+        ],
+        "eggGroups": [
+          "grass"
+        ],
+        "levelUpLevels": [],
+        "baseAvailable": true,
+        "forms": []
+      },
+      {
+        "slug": "arboliva",
+        "name": "Arboliva",
+        "dexNumber": 930,
+        "methods": [
+          "tm"
+        ],
+        "eggGroups": [
+          "grass"
+        ],
+        "levelUpLevels": [],
+        "baseAvailable": true,
+        "forms": []
+      },
+      {
+        "slug": "armarouge",
+        "name": "Armarouge",
+        "dexNumber": 936,
+        "methods": [
+          "tm"
+        ],
+        "eggGroups": [
+          "human_like"
+        ],
+        "levelUpLevels": [],
+        "baseAvailable": true,
+        "forms": []
+      },
+      {
+        "slug": "bramblin",
+        "name": "Bramblin",
+        "dexNumber": 946,
+        "methods": [
+          "tm"
+        ],
+        "eggGroups": [
+          "grass"
+        ],
+        "levelUpLevels": [],
+        "baseAvailable": true,
+        "forms": []
+      },
+      {
+        "slug": "brambleghast",
+        "name": "Brambleghast",
+        "dexNumber": 947,
+        "methods": [
+          "tm"
+        ],
+        "eggGroups": [
+          "grass"
+        ],
+        "levelUpLevels": [],
+        "baseAvailable": true,
+        "forms": []
+      },
+      {
+        "slug": "toedscool",
+        "name": "Toedscool",
+        "dexNumber": 948,
+        "methods": [
+          "tm"
+        ],
+        "eggGroups": [
+          "grass"
+        ],
+        "levelUpLevels": [],
+        "baseAvailable": true,
+        "forms": []
+      },
+      {
+        "slug": "toedscruel",
+        "name": "Toedscruel",
+        "dexNumber": 949,
+        "methods": [
+          "tm"
+        ],
+        "eggGroups": [
+          "grass"
+        ],
+        "levelUpLevels": [],
+        "baseAvailable": true,
+        "forms": []
+      },
+      {
+        "slug": "capsakid",
+        "name": "Capsakid",
+        "dexNumber": 951,
+        "methods": [
+          "level",
+          "tm"
+        ],
+        "eggGroups": [
+          "grass"
+        ],
+        "levelUpLevels": [
+          48
+        ],
+        "baseAvailable": true,
+        "forms": []
+      },
+      {
+        "slug": "scovillain",
+        "name": "Scovillain",
+        "dexNumber": 952,
+        "methods": [
+          "level",
+          "tm"
+        ],
+        "eggGroups": [
+          "grass"
+        ],
+        "levelUpLevels": [
+          48
+        ],
+        "baseAvailable": true,
+        "forms": []
+      },
+      {
+        "slug": "glimmora",
+        "name": "Glimmora",
+        "dexNumber": 970,
+        "methods": [
+          "tm"
+        ],
+        "eggGroups": [
+          "mineral"
+        ],
+        "levelUpLevels": [],
+        "baseAvailable": true,
+        "forms": []
+      },
+      {
+        "slug": "dudunsparce",
+        "name": "Dudunsparce",
+        "dexNumber": 982,
+        "methods": [
+          "tm"
+        ],
+        "eggGroups": [
+          "field"
+        ],
+        "levelUpLevels": [],
+        "baseAvailable": true,
+        "forms": []
+      },
+      {
+        "slug": "brutebonnet",
+        "name": "Brute Bonnet",
+        "dexNumber": 986,
+        "methods": [
+          "level",
+          "tm"
+        ],
+        "eggGroups": [
+          "undiscovered"
+        ],
+        "levelUpLevels": [
+          91
+        ],
+        "baseAvailable": true,
+        "forms": []
+      },
+      {
+        "slug": "ironmoth",
+        "name": "Iron Moth",
+        "dexNumber": 994,
+        "methods": [
+          "tm"
+        ],
+        "eggGroups": [
+          "undiscovered"
+        ],
+        "levelUpLevels": [],
+        "baseAvailable": true,
+        "forms": []
+      },
+      {
+        "slug": "wochien",
+        "name": "Wo-Chien",
+        "dexNumber": 1001,
+        "methods": [
+          "tm"
+        ],
+        "eggGroups": [
+          "undiscovered"
+        ],
+        "levelUpLevels": [],
+        "baseAvailable": true,
+        "forms": []
+      },
+      {
+        "slug": "koraidon",
+        "name": "Koraidon",
+        "dexNumber": 1007,
+        "methods": [
+          "tm"
+        ],
+        "eggGroups": [
+          "undiscovered"
+        ],
+        "levelUpLevels": [],
+        "baseAvailable": true,
+        "forms": []
+      },
+      {
+        "slug": "miraidon",
+        "name": "Miraidon",
+        "dexNumber": 1008,
+        "methods": [
+          "tm"
+        ],
+        "eggGroups": [
+          "undiscovered"
+        ],
+        "levelUpLevels": [],
+        "baseAvailable": true,
+        "forms": []
+      },
+      {
+        "slug": "ironleaves",
+        "name": "Iron Leaves",
+        "dexNumber": 1010,
+        "methods": [
+          "tm"
+        ],
+        "eggGroups": [
+          "undiscovered"
+        ],
+        "levelUpLevels": [],
+        "baseAvailable": true,
+        "forms": []
+      },
+      {
+        "slug": "dipplin",
+        "name": "Dipplin",
+        "dexNumber": 1011,
+        "methods": [
+          "tm"
+        ],
+        "eggGroups": [
+          "dragon",
+          "grass"
+        ],
+        "levelUpLevels": [],
+        "baseAvailable": true,
+        "forms": []
+      },
+      {
+        "slug": "poltchageist",
+        "name": "Poltchageist",
+        "dexNumber": 1012,
+        "methods": [
+          "tm"
+        ],
+        "eggGroups": [
+          "amorphous",
+          "mineral"
+        ],
+        "levelUpLevels": [],
+        "baseAvailable": true,
+        "forms": []
+      },
+      {
+        "slug": "sinistcha",
+        "name": "Sinistcha",
+        "dexNumber": 1013,
+        "methods": [
+          "tm"
+        ],
+        "eggGroups": [
+          "amorphous",
+          "mineral"
+        ],
+        "levelUpLevels": [],
+        "baseAvailable": true,
+        "forms": []
+      },
+      {
+        "slug": "ogerpon",
+        "name": "Ogerpon",
+        "dexNumber": 1017,
+        "methods": [
+          "tm"
+        ],
+        "eggGroups": [
+          "undiscovered"
+        ],
+        "levelUpLevels": [],
+        "baseAvailable": true,
+        "forms": []
+      },
+      {
+        "slug": "archaludon",
+        "name": "Archaludon",
+        "dexNumber": 1018,
+        "methods": [
+          "tm"
+        ],
+        "eggGroups": [
+          "dragon",
+          "mineral"
+        ],
+        "levelUpLevels": [],
+        "baseAvailable": true,
+        "forms": []
+      },
+      {
+        "slug": "hydrapple",
+        "name": "Hydrapple",
+        "dexNumber": 1019,
+        "methods": [
+          "tm"
+        ],
+        "eggGroups": [
+          "dragon",
+          "grass"
+        ],
+        "levelUpLevels": [],
+        "baseAvailable": true,
+        "forms": []
+      },
+      {
+        "slug": "ragingbolt",
+        "name": "Raging Bolt",
+        "dexNumber": 1021,
+        "methods": [
+          "tm"
+        ],
+        "eggGroups": [
+          "undiscovered"
+        ],
+        "levelUpLevels": [],
+        "baseAvailable": true,
+        "forms": []
+      },
+      {
+        "slug": "terapagos",
+        "name": "Terapagos",
+        "dexNumber": 1024,
+        "methods": [
+          "tm"
+        ],
+        "eggGroups": [
+          "undiscovered"
+        ],
+        "levelUpLevels": [],
+        "baseAvailable": true,
+        "forms": []
+      }
+    ]
+  },
+  "solarblade": {
+    "moveId": "solarblade",
+    "moveName": "Solar Blade",
+    "type": "grass",
+    "category": "physical",
+    "basePower": 125,
+    "accuracy": 100,
+    "alwaysHits": false,
+    "shortDescription": "Charges turn 1. Hits turn 2. No charge in sunlight.",
+    "description": "This attack charges on the first turn and executes on the second. Power is halved if the weather is Hail, Primordial Sea, Rain Dance, or Sandstorm and the user is not holding Utility Umbrella. If the user is holding a Power Herb or the weather is Desolate Land or Sunny Day, the move completes in one turn. If the user is holding Utility Umbrella and the weather is Desolate Land or Sunny Day, the move still requires a turn to charge.",
+    "learners": [
+      {
+        "slug": "vileplume",
+        "name": "Vileplume",
+        "dexNumber": 45,
+        "methods": [
+          "tm"
+        ],
+        "eggGroups": [
+          "grass"
+        ],
+        "levelUpLevels": [],
+        "baseAvailable": true,
+        "forms": []
+      },
+      {
+        "slug": "ponyta",
+        "name": "Ponyta",
+        "dexNumber": 77,
+        "methods": [
+          "tm"
+        ],
+        "eggGroups": [
+          "field"
+        ],
+        "levelUpLevels": [],
+        "baseAvailable": true,
+        "forms": []
+      },
+      {
+        "slug": "rapidash",
+        "name": "Rapidash",
+        "dexNumber": 78,
+        "methods": [
+          "tm"
+        ],
+        "eggGroups": [
+          "field"
+        ],
+        "levelUpLevels": [],
+        "baseAvailable": true,
+        "forms": []
+      },
+      {
+        "slug": "farfetchd",
+        "name": "Farfetch’d",
+        "dexNumber": 83,
+        "methods": [
+          "tm"
+        ],
+        "eggGroups": [
+          "field",
+          "flying"
+        ],
+        "levelUpLevels": [],
+        "baseAvailable": true,
+        "forms": [
+          {
+            "name": "Galar",
+            "slug": "farfetchd-galar"
+          }
+        ]
+      },
+      {
+        "slug": "mew",
+        "name": "Mew",
+        "dexNumber": 151,
+        "methods": [
+          "tm"
+        ],
+        "eggGroups": [
+          "undiscovered"
+        ],
+        "levelUpLevels": [],
+        "baseAvailable": true,
+        "forms": []
+      },
+      {
+        "slug": "chikorita",
+        "name": "Chikorita",
+        "dexNumber": 152,
+        "methods": [
+          "tm"
+        ],
+        "eggGroups": [
+          "grass",
+          "monster"
+        ],
+        "levelUpLevels": [],
+        "baseAvailable": true,
+        "forms": []
+      },
+      {
+        "slug": "bayleef",
+        "name": "Bayleef",
+        "dexNumber": 153,
+        "methods": [
+          "tm"
+        ],
+        "eggGroups": [
+          "grass",
+          "monster"
+        ],
+        "levelUpLevels": [],
+        "baseAvailable": true,
+        "forms": []
+      },
+      {
+        "slug": "meganium",
+        "name": "Meganium",
+        "dexNumber": 154,
+        "methods": [
+          "tm"
+        ],
+        "eggGroups": [
+          "grass",
+          "monster"
+        ],
+        "levelUpLevels": [],
+        "baseAvailable": true,
+        "forms": []
+      },
+      {
+        "slug": "bellossom",
+        "name": "Bellossom",
+        "dexNumber": 182,
+        "methods": [
+          "tm"
+        ],
+        "eggGroups": [
+          "grass"
+        ],
+        "levelUpLevels": [],
+        "baseAvailable": true,
+        "forms": []
+      },
+      {
+        "slug": "celebi",
+        "name": "Celebi",
+        "dexNumber": 251,
+        "methods": [
+          "tm"
+        ],
+        "eggGroups": [
+          "undiscovered"
+        ],
+        "levelUpLevels": [],
+        "baseAvailable": true,
+        "forms": []
+      },
+      {
+        "slug": "grovyle",
+        "name": "Grovyle",
+        "dexNumber": 253,
+        "methods": [
+          "legacy"
+        ],
+        "eggGroups": [
+          "dragon",
+          "monster"
+        ],
+        "levelUpLevels": [],
+        "baseAvailable": true,
+        "forms": []
+      },
+      {
+        "slug": "sceptile",
+        "name": "Sceptile",
+        "dexNumber": 254,
+        "methods": [
+          "tm"
+        ],
+        "eggGroups": [
+          "dragon",
+          "monster"
+        ],
+        "levelUpLevels": [],
+        "baseAvailable": true,
+        "forms": []
+      },
+      {
+        "slug": "nuzleaf",
+        "name": "Nuzleaf",
+        "dexNumber": 274,
+        "methods": [
+          "tm"
+        ],
+        "eggGroups": [
+          "field",
+          "grass"
+        ],
+        "levelUpLevels": [],
+        "baseAvailable": true,
+        "forms": []
+      },
+      {
+        "slug": "shiftry",
+        "name": "Shiftry",
+        "dexNumber": 275,
+        "methods": [
+          "tm"
+        ],
+        "eggGroups": [
+          "field",
+          "grass"
+        ],
+        "levelUpLevels": [],
+        "baseAvailable": true,
+        "forms": []
+      },
+      {
+        "slug": "tropius",
+        "name": "Tropius",
+        "dexNumber": 357,
+        "methods": [
+          "tm"
+        ],
+        "eggGroups": [
+          "grass",
+          "monster"
+        ],
+        "levelUpLevels": [],
+        "baseAvailable": true,
+        "forms": []
+      },
+      {
+        "slug": "cherrim",
+        "name": "Cherrim",
+        "dexNumber": 421,
+        "methods": [
+          "tm"
+        ],
+        "eggGroups": [
+          "fairy",
+          "grass"
+        ],
+        "levelUpLevels": [],
+        "baseAvailable": true,
+        "forms": [
+          {
+            "name": "Sunshine",
+            "slug": "cherrim-sunshine"
+          }
+        ]
+      },
+      {
+        "slug": "tangrowth",
+        "name": "Tangrowth",
+        "dexNumber": 465,
+        "methods": [
+          "tm"
+        ],
+        "eggGroups": [
+          "grass"
+        ],
+        "levelUpLevels": [],
+        "baseAvailable": true,
+        "forms": []
+      },
+      {
+        "slug": "leafeon",
+        "name": "Leafeon",
+        "dexNumber": 470,
+        "methods": [
+          "tm"
+        ],
+        "eggGroups": [
+          "field"
+        ],
+        "levelUpLevels": [],
+        "baseAvailable": true,
+        "forms": []
+      },
+      {
+        "slug": "gallade",
+        "name": "Gallade",
+        "dexNumber": 475,
+        "methods": [
+          "tm"
+        ],
+        "eggGroups": [
+          "amorphous",
+          "human_like"
+        ],
+        "levelUpLevels": [],
+        "baseAvailable": true,
+        "forms": []
+      },
+      {
+        "slug": "lilligant",
+        "name": "Lilligant",
+        "dexNumber": 549,
+        "methods": [
+          "level",
+          "tm"
+        ],
+        "eggGroups": [
+          "grass"
+        ],
+        "levelUpLevels": [
+          1
+        ],
+        "baseAvailable": true,
+        "forms": [
+          {
+            "name": "Hisui",
+            "slug": "lilligant-hisui"
+          }
+        ]
+      },
+      {
+        "slug": "crustle",
+        "name": "Crustle",
+        "dexNumber": 558,
+        "methods": [
+          "tm"
+        ],
+        "eggGroups": [
+          "bug",
+          "mineral"
+        ],
+        "levelUpLevels": [],
+        "baseAvailable": true,
+        "forms": []
+      },
+      {
+        "slug": "virizion",
+        "name": "Virizion",
+        "dexNumber": 640,
+        "methods": [
+          "tm"
+        ],
+        "eggGroups": [
+          "undiscovered"
+        ],
+        "levelUpLevels": [],
+        "baseAvailable": true,
+        "forms": []
+      },
+      {
+        "slug": "honedge",
+        "name": "Honedge",
+        "dexNumber": 679,
+        "methods": [
+          "tm"
+        ],
+        "eggGroups": [
+          "mineral"
+        ],
+        "levelUpLevels": [],
+        "baseAvailable": true,
+        "forms": []
+      },
+      {
+        "slug": "doublade",
+        "name": "Doublade",
+        "dexNumber": 680,
+        "methods": [
+          "tm"
+        ],
+        "eggGroups": [
+          "mineral"
+        ],
+        "levelUpLevels": [],
+        "baseAvailable": true,
+        "forms": []
+      },
+      {
+        "slug": "aegislash",
+        "name": "Aegislash",
+        "dexNumber": 681,
+        "methods": [
+          "tm"
+        ],
+        "eggGroups": [
+          "mineral"
+        ],
+        "levelUpLevels": [],
+        "baseAvailable": true,
+        "forms": [
+          {
+            "name": "Blade",
+            "slug": "aegislash-blade"
+          }
+        ]
+      },
+      {
+        "slug": "decidueye",
+        "name": "Decidueye",
+        "dexNumber": 724,
+        "methods": [
+          "tm"
+        ],
+        "eggGroups": [
+          "flying"
+        ],
+        "levelUpLevels": [],
+        "baseAvailable": true,
+        "forms": []
+      },
+      {
+        "slug": "lurantis",
+        "name": "Lurantis",
+        "dexNumber": 754,
+        "methods": [
+          "level",
+          "tm"
+        ],
+        "eggGroups": [
+          "grass"
+        ],
+        "levelUpLevels": [
+          63
+        ],
+        "baseAvailable": true,
+        "forms": []
+      },
+      {
+        "slug": "tsareena",
+        "name": "Tsareena",
+        "dexNumber": 763,
+        "methods": [
+          "tm"
+        ],
+        "eggGroups": [
+          "grass"
+        ],
+        "levelUpLevels": [],
+        "baseAvailable": true,
+        "forms": []
+      },
+      {
+        "slug": "dhelmise",
+        "name": "Dhelmise",
+        "dexNumber": 781,
+        "methods": [
+          "tm"
+        ],
+        "eggGroups": [
+          "mineral"
+        ],
+        "levelUpLevels": [],
+        "baseAvailable": true,
+        "forms": []
+      },
+      {
+        "slug": "kartana",
+        "name": "Kartana",
+        "dexNumber": 798,
+        "methods": [
+          "tm"
+        ],
+        "eggGroups": [
+          "undiscovered"
+        ],
+        "levelUpLevels": [],
+        "baseAvailable": true,
+        "forms": []
+      },
+      {
+        "slug": "grookey",
+        "name": "Grookey",
+        "dexNumber": 810,
+        "methods": [
+          "tm"
+        ],
+        "eggGroups": [
+          "field",
+          "grass"
+        ],
+        "levelUpLevels": [],
+        "baseAvailable": true,
+        "forms": []
+      },
+      {
+        "slug": "thwackey",
+        "name": "Thwackey",
+        "dexNumber": 811,
+        "methods": [
+          "tm"
+        ],
+        "eggGroups": [
+          "field",
+          "grass"
+        ],
+        "levelUpLevels": [],
+        "baseAvailable": true,
+        "forms": []
+      },
+      {
+        "slug": "rillaboom",
+        "name": "Rillaboom",
+        "dexNumber": 812,
+        "methods": [
+          "tm"
+        ],
+        "eggGroups": [
+          "field",
+          "grass"
+        ],
+        "levelUpLevels": [],
+        "baseAvailable": true,
+        "forms": []
+      },
+      {
+        "slug": "sirfetchd",
+        "name": "Sirfetch’d",
+        "dexNumber": 865,
+        "methods": [
+          "tm"
+        ],
+        "eggGroups": [
+          "field",
+          "flying"
+        ],
+        "levelUpLevels": [],
+        "baseAvailable": true,
+        "forms": []
+      },
+      {
+        "slug": "zacian",
+        "name": "Zacian",
+        "dexNumber": 888,
+        "methods": [
+          "tm"
+        ],
+        "eggGroups": [
+          "undiscovered"
+        ],
+        "levelUpLevels": [],
+        "baseAvailable": true,
+        "forms": []
+      },
+      {
+        "slug": "zarude",
+        "name": "Zarude",
+        "dexNumber": 893,
+        "methods": [
+          "tm"
+        ],
+        "eggGroups": [
+          "undiscovered"
+        ],
+        "levelUpLevels": [],
+        "baseAvailable": true,
+        "forms": []
+      },
+      {
+        "slug": "calyrex",
+        "name": "Calyrex",
+        "dexNumber": 898,
+        "methods": [
+          "tm"
+        ],
+        "eggGroups": [
+          "undiscovered"
+        ],
+        "levelUpLevels": [],
+        "baseAvailable": true,
+        "forms": [
+          {
+            "name": "Ice",
+            "slug": "calyrex-ice"
+          },
+          {
+            "name": "Shadow",
+            "slug": "calyrex-shadow"
+          }
+        ]
+      },
+      {
+        "slug": "smoliv",
+        "name": "Smoliv",
+        "dexNumber": 928,
+        "methods": [
+          "tm"
+        ],
+        "eggGroups": [
+          "grass"
+        ],
+        "levelUpLevels": [],
+        "baseAvailable": true,
+        "forms": []
+      },
+      {
+        "slug": "dolliv",
+        "name": "Dolliv",
+        "dexNumber": 929,
+        "methods": [
+          "tm"
+        ],
+        "eggGroups": [
+          "grass"
+        ],
+        "levelUpLevels": [],
+        "baseAvailable": true,
+        "forms": []
+      },
+      {
+        "slug": "arboliva",
+        "name": "Arboliva",
+        "dexNumber": 930,
+        "methods": [
+          "tm"
+        ],
+        "eggGroups": [
+          "grass"
+        ],
+        "levelUpLevels": [],
+        "baseAvailable": true,
+        "forms": []
+      },
+      {
+        "slug": "ceruledge",
+        "name": "Ceruledge",
+        "dexNumber": 937,
+        "methods": [
+          "level",
+          "tm"
+        ],
+        "eggGroups": [
+          "human_like"
+        ],
+        "levelUpLevels": [
+          1
+        ],
+        "baseAvailable": true,
+        "forms": []
+      },
+      {
+        "slug": "wochien",
+        "name": "Wo-Chien",
+        "dexNumber": 1001,
+        "methods": [
+          "tm"
+        ],
+        "eggGroups": [
+          "undiscovered"
+        ],
+        "levelUpLevels": [],
+        "baseAvailable": true,
+        "forms": []
+      },
+      {
+        "slug": "ironleaves",
+        "name": "Iron Leaves",
+        "dexNumber": 1010,
+        "methods": [
+          "level",
+          "tm"
+        ],
+        "eggGroups": [
+          "undiscovered"
+        ],
+        "levelUpLevels": [
+          91
+        ],
+        "baseAvailable": true,
+        "forms": []
+      },
+      {
+        "slug": "ogerpon",
+        "name": "Ogerpon",
+        "dexNumber": 1017,
+        "methods": [
+          "tm"
+        ],
+        "eggGroups": [
+          "undiscovered"
+        ],
+        "levelUpLevels": [],
+        "baseAvailable": true,
+        "forms": []
+      },
+      {
+        "slug": "ironboulder",
+        "name": "Iron Boulder",
+        "dexNumber": 1022,
+        "methods": [
+          "tm"
+        ],
+        "eggGroups": [
+          "undiscovered"
+        ],
+        "levelUpLevels": [],
+        "baseAvailable": true,
+        "forms": []
+      },
+      {
+        "slug": "ironcrown",
+        "name": "Iron Crown",
+        "dexNumber": 1023,
+        "methods": [
+          "tm"
+        ],
+        "eggGroups": [
+          "undiscovered"
+        ],
+        "levelUpLevels": [],
+        "baseAvailable": true,
+        "forms": []
+      }
+    ]
+  },
+  "sonicboom": {
+    "moveId": "sonicboom",
+    "moveName": "Sonic Boom",
+    "type": "normal",
+    "category": "special",
+    "basePower": 0,
+    "accuracy": 90,
+    "alwaysHits": false,
+    "shortDescription": "Always does 20 HP of damage.",
+    "description": "Deals 20 HP of damage to the target.",
+    "learners": [
+      {
+        "slug": "magnemite",
+        "name": "Magnemite",
+        "dexNumber": 81,
+        "methods": [
+          "egg"
+        ],
+        "eggGroups": [
+          "mineral"
+        ],
+        "levelUpLevels": [],
+        "baseAvailable": true,
+        "forms": []
+      },
+      {
+        "slug": "magneton",
+        "name": "Magneton",
+        "dexNumber": 82,
+        "methods": [
+          "egg",
+          "level"
+        ],
+        "eggGroups": [
+          "mineral"
+        ],
+        "levelUpLevels": [
+          1
+        ],
+        "baseAvailable": true,
+        "forms": []
+      },
+      {
+        "slug": "voltorb",
+        "name": "Voltorb",
+        "dexNumber": 100,
+        "methods": [
+          "level"
+        ],
+        "eggGroups": [
+          "mineral"
+        ],
+        "levelUpLevels": [
+          1
+        ],
+        "baseAvailable": true,
+        "forms": []
+      },
+      {
+        "slug": "electrode",
+        "name": "Electrode",
+        "dexNumber": 101,
+        "methods": [
+          "level"
+        ],
+        "eggGroups": [
+          "mineral"
+        ],
+        "levelUpLevels": [
+          1
+        ],
+        "baseAvailable": true,
+        "forms": []
+      },
+      {
+        "slug": "spinarak",
+        "name": "Spinarak",
+        "dexNumber": 167,
+        "methods": [
+          "egg"
+        ],
+        "eggGroups": [
+          "bug"
+        ],
+        "levelUpLevels": [],
+        "baseAvailable": true,
+        "forms": []
+      },
+      {
+        "slug": "ariados",
+        "name": "Ariados",
+        "dexNumber": 168,
+        "methods": [
+          "egg"
+        ],
+        "eggGroups": [
+          "bug"
+        ],
+        "levelUpLevels": [],
+        "baseAvailable": true,
+        "forms": []
+      },
+      {
+        "slug": "yanma",
+        "name": "Yanma",
+        "dexNumber": 193,
+        "methods": [
+          "level"
+        ],
+        "eggGroups": [
+          "bug"
+        ],
+        "levelUpLevels": [
+          1
+        ],
+        "baseAvailable": true,
+        "forms": []
+      },
+      {
+        "slug": "vibrava",
+        "name": "Vibrava",
+        "dexNumber": 329,
+        "methods": [
+          "level"
+        ],
+        "eggGroups": [
+          "bug",
+          "dragon"
+        ],
+        "levelUpLevels": [
+          1
+        ],
+        "baseAvailable": true,
+        "forms": []
+      },
+      {
+        "slug": "flygon",
+        "name": "Flygon",
+        "dexNumber": 330,
+        "methods": [
+          "level"
+        ],
+        "eggGroups": [
+          "bug",
+          "dragon"
+        ],
+        "levelUpLevels": [
+          1
+        ],
+        "baseAvailable": true,
+        "forms": []
+      },
+      {
+        "slug": "buizel",
+        "name": "Buizel",
+        "dexNumber": 418,
+        "methods": [
+          "level"
+        ],
+        "eggGroups": [
+          "field",
+          "water_1"
+        ],
+        "levelUpLevels": [
+          1
+        ],
+        "baseAvailable": true,
+        "forms": []
+      },
+      {
+        "slug": "floatzel",
+        "name": "Floatzel",
+        "dexNumber": 419,
+        "methods": [
+          "level"
+        ],
+        "eggGroups": [
+          "field",
+          "water_1"
+        ],
+        "levelUpLevels": [
+          1
+        ],
+        "baseAvailable": true,
+        "forms": []
+      },
+      {
+        "slug": "magnezone",
+        "name": "Magnezone",
+        "dexNumber": 462,
+        "methods": [
+          "egg",
+          "level"
+        ],
+        "eggGroups": [
+          "mineral"
+        ],
+        "levelUpLevels": [
+          1
+        ],
+        "baseAvailable": true,
+        "forms": []
+      },
+      {
+        "slug": "yanmega",
+        "name": "Yanmega",
+        "dexNumber": 469,
+        "methods": [
+          "level"
+        ],
+        "eggGroups": [
+          "bug"
+        ],
+        "levelUpLevels": [
+          1
+        ],
+        "baseAvailable": true,
+        "forms": []
+      },
+      {
+        "slug": "munna",
+        "name": "Munna",
+        "dexNumber": 517,
+        "methods": [
+          "egg"
+        ],
+        "eggGroups": [
+          "field"
+        ],
+        "levelUpLevels": [],
+        "baseAvailable": true,
+        "forms": []
+      },
+      {
+        "slug": "musharna",
+        "name": "Musharna",
+        "dexNumber": 518,
+        "methods": [
+          "egg"
+        ],
+        "eggGroups": [
+          "field"
+        ],
+        "levelUpLevels": [],
+        "baseAvailable": true,
+        "forms": []
+      },
+      {
+        "slug": "magearna",
+        "name": "Magearna",
+        "dexNumber": 801,
+        "methods": [
+          "level"
+        ],
+        "eggGroups": [
+          "undiscovered"
+        ],
+        "levelUpLevels": [
+          1
+        ],
+        "baseAvailable": true,
+        "forms": []
+      }
+    ]
+  }
+}
