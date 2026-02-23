@@ -5,6 +5,7 @@ import type {
   MoveLearnerEntryRecord,
   PokemonDetailRecord,
   PokemonDexNavItem,
+  PokemonDexNeighbors,
   PokemonFormSpriteIndex,
   PokemonListItem,
   PokemonTypeEntryRecord,
@@ -13,6 +14,7 @@ import type {
 } from "@/data/cobblemon-types"
 import { canonicalId } from "@/data/formatters"
 import { getMoveLearnerShardId } from "@/data/move-learner-sharding"
+import { honoClient } from "@/lib/hono-client"
 
 let searchIndexPromise: Promise<SearchDocument[]> | null = null
 let pokemonListPromise: Promise<PokemonListItem[]> | null = null
@@ -28,6 +30,7 @@ let publicGeneratedVersionPromise: Promise<string | null> | null = null
 const moveLearnerEntryPromises = new Map<string, Promise<MoveLearnerEntryRecord | null>>()
 const moveLearnerShardPromises = new Map<string, Promise<Record<string, MoveLearnerEntryRecord>>>()
 const pokemonDetailPromises = new Map<string, Promise<PokemonDetailRecord | null>>()
+const pokemonDexNeighborsPromises = new Map<string, Promise<PokemonDexNeighbors>>()
 const serverGeneratedJsonPromises = new Map<string, Promise<unknown>>()
 
 type GeneratedJsonLoadOptions = {
@@ -61,18 +64,47 @@ export function loadPokemonDexNav(): Promise<PokemonDexNavItem[]> {
     pokemonDexNavPromise = loadGeneratedJson<PokemonDexNavItem[]>("pokemon-dex-nav.json").catch(
       async () => {
         const pokemonList = await loadPokemonList()
-        return pokemonList
-          .filter((pokemon) => pokemon.implemented)
-          .map((pokemon) => ({
-            slug: pokemon.slug,
-            name: pokemon.name,
-            dexNumber: pokemon.dexNumber,
-          }))
+        return pokemonList.map((pokemon) => ({
+          slug: pokemon.slug,
+          name: pokemon.name,
+          dexNumber: pokemon.dexNumber,
+        }))
       }
     )
   }
 
   return pokemonDexNavPromise
+}
+
+export function loadPokemonDexNeighbors(
+  currentSlug: string,
+  dexNumber: number
+): Promise<PokemonDexNeighbors> {
+  const normalizedSlug = currentSlug.trim().toLowerCase()
+  const normalizedDexNumber = Number.isFinite(dexNumber) ? Math.trunc(dexNumber) : Number.NaN
+
+  if (!normalizedSlug || !Number.isFinite(normalizedDexNumber) || normalizedDexNumber <= 0) {
+    return Promise.resolve({
+      previous: null,
+      next: null,
+    })
+  }
+
+  const cacheKey = `${normalizedSlug}:${normalizedDexNumber}`
+  const existingPromise = pokemonDexNeighborsPromises.get(cacheKey)
+  if (existingPromise) {
+    return existingPromise
+  }
+
+  const promise = resolvePokemonDexNeighbors(normalizedSlug, normalizedDexNumber).catch(
+    async () => {
+      const pokemonDexNav = await loadPokemonDexNav().catch(() => [])
+      return resolveDexNeighbors(pokemonDexNav, normalizedSlug, normalizedDexNumber)
+    }
+  )
+
+  pokemonDexNeighborsPromises.set(cacheKey, promise)
+  return promise
 }
 
 export function loadPokemonTypeEntries(): Promise<PokemonTypeEntryRecord[]> {
@@ -177,6 +209,80 @@ function loadMoveLearnerShard(shardId: string): Promise<Record<string, MoveLearn
 
   moveLearnerShardPromises.set(shardId, promise)
   return promise
+}
+
+async function resolvePokemonDexNeighbors(
+  currentSlug: string,
+  dexNumber: number
+): Promise<PokemonDexNeighbors> {
+  if (import.meta.env.SSR) {
+    const pokemonDexNav = await loadPokemonDexNav().catch(() => [])
+    return resolveDexNeighbors(pokemonDexNav, currentSlug, dexNumber)
+  }
+
+  const response = await honoClient.pokemon["dex-neighbors"].$get({
+    query: {
+      slug: currentSlug,
+      dexNumber: String(dexNumber),
+    },
+  })
+
+  if (!response.ok) {
+    throw new Error(`Failed to load pokemon dex neighbors: ${response.status}`)
+  }
+
+  const payload = (await response.json()) as {
+    previous?: unknown
+    next?: unknown
+  }
+
+  return {
+    previous: isPokemonDexNavItem(payload.previous) ? payload.previous : null,
+    next: isPokemonDexNavItem(payload.next) ? payload.next : null,
+  }
+}
+
+function resolveDexNeighbors(
+  pokemonDexNav: PokemonDexNavItem[],
+  currentSlug: string,
+  dexNumber: number
+): PokemonDexNeighbors {
+  if (!currentSlug || pokemonDexNav.length === 0) {
+    return {
+      previous: null,
+      next: null,
+    }
+  }
+
+  const slugIndex = pokemonDexNav.findIndex((pokemon) => pokemon.slug === currentSlug)
+  const fallbackDexIndex =
+    slugIndex < 0 ? pokemonDexNav.findIndex((pokemon) => pokemon.dexNumber === dexNumber) : -1
+  const index = slugIndex >= 0 ? slugIndex : fallbackDexIndex
+
+  if (index < 0) {
+    return {
+      previous: null,
+      next: null,
+    }
+  }
+
+  return {
+    previous: pokemonDexNav[index - 1] ?? null,
+    next: pokemonDexNav[index + 1] ?? null,
+  }
+}
+
+function isPokemonDexNavItem(value: unknown): value is PokemonDexNavItem {
+  if (!value || typeof value !== "object") {
+    return false
+  }
+
+  const candidate = value as Partial<PokemonDexNavItem>
+  return (
+    typeof candidate.slug === "string" &&
+    typeof candidate.name === "string" &&
+    typeof candidate.dexNumber === "number"
+  )
 }
 
 function loadGeneratedJson<T>(

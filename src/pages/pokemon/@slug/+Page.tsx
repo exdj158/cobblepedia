@@ -1,4 +1,6 @@
-import { createEffect, createMemo, createResource, createSignal, For, Show } from "solid-js"
+import { useQuery } from "@tanstack/solid-query"
+import { createEffect, createMemo, createSignal, For, Show } from "solid-js"
+import { navigate } from "vike/client/router"
 import { useMetadata } from "vike-metadata-solid"
 import { usePageContext } from "vike-solid/usePageContext"
 import {
@@ -18,9 +20,10 @@ import type {
   MoveSourceType,
   PokemonDetailRecord,
   PokemonDexNavItem,
+  PokemonDexNeighbors,
   RideableSummaryRecord,
 } from "@/data/cobblemon-types"
-import { loadItemIndex, loadPokemonDetail, loadPokemonDexNav } from "@/data/data-loader"
+import { loadItemIndex, loadPokemonDetail, loadPokemonDexNeighbors } from "@/data/data-loader"
 import {
   formatConditionChips,
   formatEggGroup,
@@ -86,6 +89,11 @@ function getEggGroupColor(group: string): string {
   return EGG_GROUP_COLORS[group.toLowerCase()] || "#9ca3af"
 }
 
+const EMPTY_DEX_NEIGHBORS: PokemonDexNeighbors = {
+  previous: null,
+  next: null,
+}
+
 export default function Page() {
   const routeParams = useParams({ from: "/pokemon/@slug" })
   const slug = createMemo(() =>
@@ -94,16 +102,54 @@ export default function Page() {
       .toLowerCase()
   )
 
-  const [detail] = createResource(slug, async (nextSlug) => {
-    if (!nextSlug) {
+  const detailQuery = useQuery(() => ({
+    queryKey: ["pokemon-detail", slug()],
+    enabled: slug().length > 0,
+    queryFn: async () => {
+      const currentSlug = slug()
+      if (!currentSlug) {
+        return null
+      }
+
+      return loadPokemonDetail(currentSlug)
+    },
+  }))
+
+  const detail = createMemo(() => detailQuery.data ?? null)
+
+  const dexNeighborParams = createMemo(() => {
+    const pokemon = detail()
+    if (!pokemon) {
       return null
     }
-    return loadPokemonDetail(nextSlug)
-  })
-  const [pokemonDexNav] = createResource(loadPokemonDexNav)
-  const [itemIndex] = createResource(loadItemIndex)
 
-  const dexNeighbors = createMemo(() => findDexNeighborsByOffset(slug(), pokemonDexNav() ?? []))
+    return {
+      slug: pokemon.slug,
+      dexNumber: pokemon.dexNumber,
+    }
+  })
+
+  const dexNeighborsQuery = useQuery(() => ({
+    queryKey: [
+      "pokemon-dex-neighbors",
+      dexNeighborParams()?.slug ?? "",
+      dexNeighborParams()?.dexNumber ?? 0,
+    ],
+    enabled: dexNeighborParams() !== null,
+    queryFn: async () => {
+      const params = dexNeighborParams()
+      if (!params) {
+        return EMPTY_DEX_NEIGHBORS
+      }
+
+      return loadPokemonDexNeighbors(params.slug, params.dexNumber)
+    },
+  }))
+
+  const itemIndexQuery = useQuery(() => ({
+    queryKey: ["item-index"],
+    queryFn: loadItemIndex,
+  }))
 
   useMetadata({
     title: getTitle("Pokemon"),
@@ -111,14 +157,14 @@ export default function Page() {
 
   return (
     <div class="min-h-screen bg-background">
-      <Show when={!detail.loading} fallback={<LoadingState />}>
+      <Show when={!detailQuery.isPending} fallback={<LoadingState />}>
         <Show when={detail()} fallback={<NotFoundState />}>
           {(detailSignal) => (
             <PokemonDetailView
               detail={detailSignal()}
-              previous={dexNeighbors().previous}
-              next={dexNeighbors().next}
-              itemIndex={itemIndex() ?? null}
+              previous={dexNeighborsQuery.data?.previous ?? null}
+              next={dexNeighborsQuery.data?.next ?? null}
+              itemIndex={itemIndexQuery.data ?? null}
             />
           )}
         </Show>
@@ -279,16 +325,26 @@ function PokemonDetailView(props: {
   const typeColor = () => getTypeColor(primaryType())
   const rideableSummary = createMemo(() => parseRideableSummaryFromSpecies(detail().rawSpecies))
 
-  const [artworkResolution] = createResource(
-    () => ({
-      dexNumber: detail().dexNumber,
-      baseSlug: detail().slug,
-      formSlug: selectedFormSlug(),
-      formName: selectedForm()?.name ?? null,
-      shiny: activeView() === "shiny",
-    }),
-    resolvePokemonArtworkUrls
-  )
+  const artworkResolutionQuery = useQuery(() => ({
+    queryKey: [
+      "pokemon-artwork-resolution",
+      detail().slug,
+      detail().dexNumber,
+      selectedFormSlug() ?? "",
+      selectedForm()?.name ?? "",
+      activeView() === "shiny",
+    ],
+    queryFn: () =>
+      resolvePokemonArtworkUrls({
+        dexNumber: detail().dexNumber,
+        baseSlug: detail().slug,
+        formSlug: selectedFormSlug(),
+        formName: selectedForm()?.name ?? null,
+        shiny: activeView() === "shiny",
+      }),
+  }))
+
+  const artworkResolution = createMemo(() => artworkResolutionQuery.data ?? null)
 
   const artworkUrl = createMemo(() => {
     const resolution = artworkResolution()
@@ -347,7 +403,7 @@ function PokemonDetailView(props: {
   }
 
   const artworkFallbackLabel = createMemo(() => {
-    if (artworkResolution.loading) {
+    if (artworkResolutionQuery.isPending) {
       return null
     }
 
@@ -590,7 +646,7 @@ function PokemonDetailView(props: {
             {/* Artwork Display - Compact */}
             <div class="relative h-40 w-40 overflow-hidden border border-border bg-secondary/30 sm:h-44 sm:w-44">
               <Show
-                when={!artworkResolution.loading}
+                when={!artworkResolutionQuery.isPending}
                 fallback={
                   <div class="flex h-full w-full items-center justify-center">
                     <div class="h-5 w-5 animate-spin border-2 border-border border-t-foreground" />
@@ -912,61 +968,65 @@ function ViewToggleButton(props: { active: boolean; onClick: () => void; label: 
 function DexNavCard(props: { pokemon: PokemonDexNavItem | null; direction: "previous" | "next" }) {
   const isPrevious = props.direction === "previous"
 
-  if (!props.pokemon) {
-    return (
-      <div
-        class={cn(
-          "flex items-center gap-2 border border-border bg-secondary/30 px-3 py-2 opacity-40",
-          isPrevious ? "flex-row" : "flex-row-reverse"
-        )}
-      >
-        <div class="flex h-8 w-8 items-center justify-center bg-secondary">
-          <span class="text-muted-foreground text-xs">—</span>
-        </div>
-        <div class={cn("flex flex-col", isPrevious ? "items-start" : "items-end")}>
-          <span class="text-[10px] text-muted-foreground">{isPrevious ? "First" : "Last"}</span>
-          <span class="font-medium text-xs">—</span>
-        </div>
-      </div>
-    )
-  }
-
-  const name = props.pokemon.name
-  const dexNumber = props.pokemon.dexNumber
-
   return (
-    <a
-      href={`/pokemon/${props.pokemon.slug}`}
-      class={cn(
-        "group flex items-center gap-2 border border-border bg-card px-3 py-2 transition-all hover:border-muted-foreground hover:bg-secondary/30",
-        isPrevious ? "flex-row" : "flex-row-reverse"
-      )}
+    <Show
+      when={props.pokemon}
+      fallback={
+        <div
+          class={cn(
+            "flex items-center gap-2 border border-border bg-secondary/30 px-3 py-2 opacity-40",
+            isPrevious ? "flex-row" : "flex-row-reverse"
+          )}
+        >
+          <div class="flex h-8 w-8 items-center justify-center bg-secondary">
+            <span class="text-muted-foreground text-xs">—</span>
+          </div>
+          <div class={cn("flex flex-col", isPrevious ? "items-start" : "items-end")}>
+            <span class="text-[10px] text-muted-foreground">{isPrevious ? "First" : "Last"}</span>
+            <span class="font-medium text-xs">—</span>
+          </div>
+        </div>
+      }
     >
-      <span
-        class={cn(
-          "text-muted-foreground text-sm transition-colors group-hover:text-foreground",
-          isPrevious ? "order-first" : "order-last"
-        )}
-      >
-        {isPrevious ? "←" : "→"}
-      </span>
-      <div class="flex h-8 w-8 items-center justify-center overflow-hidden bg-secondary">
-        <img
-          src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${dexNumber}.png`}
-          alt={name}
-          class="h-6 w-6 object-contain transition-transform group-hover:scale-110"
-          loading="lazy"
-        />
-      </div>
-      <div class={cn("flex flex-col", isPrevious ? "items-start" : "items-end")}>
-        <span class="font-mono text-[10px] text-muted-foreground">
-          #{String(dexNumber).padStart(3, "0")}
-        </span>
-        <span class="font-medium text-xs transition-colors group-hover:text-foreground">
-          {name}
-        </span>
-      </div>
-    </a>
+      {(pokemon) => {
+        const dexNumber = () => pokemon().dexNumber
+
+        return (
+          <a
+            href={`/pokemon/${pokemon().slug}`}
+            class={cn(
+              "group flex items-center gap-2 border border-border bg-card px-3 py-2 transition-all hover:border-muted-foreground hover:bg-secondary/30",
+              isPrevious ? "flex-row" : "flex-row-reverse"
+            )}
+          >
+            <span
+              class={cn(
+                "text-muted-foreground text-sm transition-colors group-hover:text-foreground",
+                isPrevious ? "order-first" : "order-last"
+              )}
+            >
+              {isPrevious ? "←" : "→"}
+            </span>
+            <div class="flex h-8 w-8 items-center justify-center overflow-hidden bg-secondary">
+              <img
+                src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${dexNumber()}.png`}
+                alt={pokemon().name}
+                class="h-6 w-6 object-contain transition-transform group-hover:scale-110"
+                loading="lazy"
+              />
+            </div>
+            <div class={cn("flex flex-col", isPrevious ? "items-start" : "items-end")}>
+              <span class="font-mono text-[10px] text-muted-foreground">
+                #{String(dexNumber()).padStart(3, "0")}
+              </span>
+              <span class="font-medium text-xs transition-colors group-hover:text-foreground">
+                {pokemon().name}
+              </span>
+            </div>
+          </a>
+        )
+      }}
+    </Show>
   )
 }
 
@@ -1179,30 +1239,8 @@ function MoveTypeBadge(props: { type: string | null }) {
   )
 }
 
-function findDexNeighborsByOffset(currentSlug: string, pokemonDexNav: PokemonDexNavItem[]) {
-  if (!currentSlug || pokemonDexNav.length === 0) {
-    return {
-      previous: null,
-      next: null,
-    }
-  }
-
-  const index = pokemonDexNav.findIndex((pokemon) => pokemon.slug === currentSlug)
-  if (index < 0) {
-    return {
-      previous: null,
-      next: null,
-    }
-  }
-
-  return {
-    previous: pokemonDexNav[index - 1] ?? null,
-    next: pokemonDexNav[index + 1] ?? null,
-  }
-}
-
 function navigateToPokemon(slug: string) {
-  window.location.assign(`/pokemon/${slug}`)
+  void navigate(`/pokemon/${slug}`)
 }
 
 function formatStatName(stat: string): string {

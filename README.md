@@ -1,5 +1,4 @@
 ![Cobblepedia Homepage](_docs/homepage-hero.webp)
-
 **The fastest way to look up Cobblemon.**
 
 Press `Cmd+K` (or `Ctrl+K`), type what you need, hit Enter. No menus. No clicking.
@@ -9,7 +8,7 @@ Press `Cmd+K` (or `Ctrl+K`), type what you need, hit Enter. No menus. No clickin
 ## Try these searches
 
 - `lucario moves` — Full moveset breakdown
-- `lucario spawn` — Where to find them  
+- `lucario spawn` — Where to find them
 - `lucario evolution` — Evolution chain and methods
 - `lucario egg group` — Breeding info
 - `moves trickroom` — Every Pokemon that learns it
@@ -20,7 +19,7 @@ Results appear instantly as you type.
 
 ## Why Cobblepedia?
 
-Other wikis make you browse. Cobblepedia lets you *ask*.
+Other wikis make you browse. Cobblepedia lets you _ask_.
 
 - **Command palette** — Global search from anywhere
 - **Smart facets** — Add `moves`, `spawn`, or `evolution` to any query
@@ -47,12 +46,12 @@ Other wikis make you browse. Cobblepedia lets you *ask*.
 
 ## Credits
 
-- **Data:** [Cobblemon](https://gitlab.com/cable-mc/cobblemon)  
+- **Data:** [Cobblemon](https://gitlab.com/cable-mc/cobblemon)
 - **Models:** [Cobblemon Assets](https://gitlab.com/cable-mc/cobblemon-assets)
 - **Sprites:** [PokeAPI](https://pokeapi.co)
 - **Inspired by:** [Cobbledex](https://cobbledex.info)
 
-*Unofficial fan project. Not affiliated with Cobblemon, Mojang, Nintendo, Game Freak, or The Pokémon Company.*
+_Unofficial fan project. Not affiliated with Cobblemon, Mojang, Nintendo, Game Freak, or The Pokémon Company._
 
 ---
 

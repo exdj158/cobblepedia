@@ -1,6 +1,6 @@
 - [x] Dont use the PokeAPI Graphql for the artwork, just use the https://github.com/PokeAPI/sprites since all the art is literally there. We build it at build time.
-- [ ] Speed up the 'nav' (next or prev) getter for specific pokemon. It's too slow and sometimes unreliable. Sometimes I get just empty (disabled First and Last buttons), and idk why sometimes I do get it.
-- [ ] Less complex landing page?
+- [x] Speed up the 'nav' (next or prev) getter for specific pokemon. It's too slow and sometimes unreliable. Sometimes I get just empty (disabled First and Last buttons), and idk why sometimes I do get it.
+- [ ] Less complex landing page??
 - [ ] Pokemon as a 'Primary page'
 - [ ] Abilities page, you can differentiate the different forms I think? Two forms can be considered two pokemon.
 - [ ] Moves, you can different two different forms as well.

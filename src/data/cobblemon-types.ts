@@ -195,6 +195,11 @@ export type PokemonDexNavItem = {
   dexNumber: number
 }
 
+export type PokemonDexNeighbors = {
+  previous: PokemonDexNavItem | null
+  next: PokemonDexNavItem | null
+}
+
 export type MoveLearnerRecord = {
   slug: string
   name: string
