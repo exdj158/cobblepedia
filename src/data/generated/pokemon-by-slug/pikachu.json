@@ -184,6 +184,14 @@
         "formName": null
       },
       {
+        "nodeId": "pikachu-alolabias",
+        "slug": "pikachu",
+        "name": "Pikachu",
+        "dexNumber": 25,
+        "formSlug": "pikachu-alolabias",
+        "formName": "Alola-Bias"
+      },
+      {
         "nodeId": "raichu",
         "slug": "raichu",
         "name": "Raichu",
@@ -206,12 +214,30 @@
         "dexNumber": 172,
         "formSlug": null,
         "formName": null
+      },
+      {
+        "nodeId": "pichu-alolabias",
+        "slug": "pichu",
+        "name": "Pichu",
+        "dexNumber": 172,
+        "formSlug": "pichu-alolabias",
+        "formName": "Alola-Bias"
       }
     ],
     "edges": [
       {
         "fromNodeId": "pichu",
         "toNodeId": "pikachu",
+        "fromSlug": "pichu",
+        "toSlug": "pikachu",
+        "method": "level_up",
+        "requirementText": [
+          "Friendship 160+"
+        ]
+      },
+      {
+        "fromNodeId": "pichu-alolabias",
+        "toNodeId": "pikachu-alolabias",
         "fromSlug": "pichu",
         "toSlug": "pikachu",
         "method": "level_up",
@@ -231,20 +257,20 @@
         ]
       },
       {
-        "fromNodeId": "pikachu",
+        "fromNodeId": "pikachu-alolabias",
         "toNodeId": "raichu-alola",
         "fromSlug": "pikachu",
         "toSlug": "raichu",
         "method": "item_interact",
         "requirementText": [
           "Use Thunder Stone",
-          "Biome Evolution Regional Pikachu Alolabiome",
           "Not in biome Evolution Regional Pikachu Kantobiome"
         ]
       }
     ],
     "roots": [
-      "pichu"
+      "pichu",
+      "pichu-alolabias"
     ]
   },
   "moves": [

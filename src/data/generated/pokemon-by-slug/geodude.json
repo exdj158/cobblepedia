@@ -116,6 +116,14 @@
         "formName": null
       },
       {
+        "nodeId": "geodude-alola",
+        "slug": "geodude",
+        "name": "Geodude",
+        "dexNumber": 74,
+        "formSlug": "geodude-alola",
+        "formName": "Alola"
+      },
+      {
         "nodeId": "graveler",
         "slug": "graveler",
         "name": "Graveler",
@@ -160,7 +168,7 @@
         ]
       },
       {
-        "fromNodeId": "geodude",
+        "fromNodeId": "geodude-alola",
         "toNodeId": "graveler-alola",
         "fromSlug": "geodude",
         "toSlug": "graveler",
@@ -178,7 +186,7 @@
         "requirementText": []
       },
       {
-        "fromNodeId": "graveler",
+        "fromNodeId": "graveler-alola",
         "toNodeId": "golem-alola",
         "fromSlug": "graveler",
         "toSlug": "golem",
@@ -187,7 +195,8 @@
       }
     ],
     "roots": [
-      "geodude"
+      "geodude",
+      "geodude-alola"
     ]
   },
   "moves": [

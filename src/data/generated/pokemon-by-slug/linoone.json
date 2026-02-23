@@ -79,6 +79,14 @@
         "formName": null
       },
       {
+        "nodeId": "zigzagoon-galar",
+        "slug": "zigzagoon",
+        "name": "Zigzagoon",
+        "dexNumber": 263,
+        "formSlug": "zigzagoon-galar",
+        "formName": "Galar"
+      },
+      {
         "nodeId": "linoone",
         "slug": "linoone",
         "name": "Linoone",
@@ -105,7 +113,7 @@
     ],
     "edges": [
       {
-        "fromNodeId": "linoone",
+        "fromNodeId": "linoone-galar",
         "toNodeId": "obstagoon",
         "fromSlug": "linoone",
         "toSlug": "obstagoon",
@@ -126,7 +134,7 @@
         ]
       },
       {
-        "fromNodeId": "zigzagoon",
+        "fromNodeId": "zigzagoon-galar",
         "toNodeId": "linoone-galar",
         "fromSlug": "zigzagoon",
         "toSlug": "linoone",
@@ -137,7 +145,8 @@
       }
     ],
     "roots": [
-      "zigzagoon"
+      "zigzagoon",
+      "zigzagoon-galar"
     ]
   },
   "moves": [

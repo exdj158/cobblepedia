@@ -105,6 +105,14 @@
         "formName": null
       },
       {
+        "nodeId": "poltchageist-artisan",
+        "slug": "poltchageist",
+        "name": "Poltchageist",
+        "dexNumber": 1012,
+        "formSlug": "poltchageist-artisan",
+        "formName": "Artisan"
+      },
+      {
         "nodeId": "sinistcha",
         "slug": "sinistcha",
         "name": "Sinistcha",
@@ -133,7 +141,7 @@
         ]
       },
       {
-        "fromNodeId": "poltchageist",
+        "fromNodeId": "poltchageist-artisan",
         "toNodeId": "sinistcha-masterpiece",
         "fromSlug": "poltchageist",
         "toSlug": "sinistcha",
@@ -144,7 +152,8 @@
       }
     ],
     "roots": [
-      "poltchageist"
+      "poltchageist",
+      "poltchageist-artisan"
     ]
   },
   "moves": [

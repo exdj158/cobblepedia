@@ -147,6 +147,14 @@
         "formName": null
       },
       {
+        "nodeId": "exeggcute-alolabias",
+        "slug": "exeggcute",
+        "name": "Exeggcute",
+        "dexNumber": 102,
+        "formSlug": "exeggcute-alolabias",
+        "formName": "Alola-Bias"
+      },
+      {
         "nodeId": "exeggutor",
         "slug": "exeggutor",
         "name": "Exeggutor",
@@ -175,19 +183,19 @@
         ]
       },
       {
-        "fromNodeId": "exeggcute",
+        "fromNodeId": "exeggcute-alolabias",
         "toNodeId": "exeggutor-alola",
         "fromSlug": "exeggcute",
         "toSlug": "exeggutor",
         "method": "item_interact",
         "requirementText": [
-          "Use Leaf Stone",
-          "Biome Evolution Regional Exeggcute Alolabiome"
+          "Use Leaf Stone"
         ]
       }
     ],
     "roots": [
-      "exeggcute"
+      "exeggcute",
+      "exeggcute-alolabias"
     ]
   },
   "moves": [

@@ -80,6 +80,22 @@
         "formName": null
       },
       {
+        "nodeId": "meowth-alola",
+        "slug": "meowth",
+        "name": "Meowth",
+        "dexNumber": 52,
+        "formSlug": "meowth-alola",
+        "formName": "Alola"
+      },
+      {
+        "nodeId": "meowth-galar",
+        "slug": "meowth",
+        "name": "Meowth",
+        "dexNumber": 52,
+        "formSlug": "meowth-galar",
+        "formName": "Galar"
+      },
+      {
         "nodeId": "persian",
         "slug": "persian",
         "name": "Persian",
@@ -107,16 +123,6 @@
     "edges": [
       {
         "fromNodeId": "meowth",
-        "toNodeId": "perrserker",
-        "fromSlug": "meowth",
-        "toSlug": "perrserker",
-        "method": "level_up",
-        "requirementText": [
-          "Level 28+"
-        ]
-      },
-      {
-        "fromNodeId": "meowth",
         "toNodeId": "persian",
         "fromSlug": "meowth",
         "toSlug": "persian",
@@ -126,7 +132,7 @@
         ]
       },
       {
-        "fromNodeId": "meowth",
+        "fromNodeId": "meowth-alola",
         "toNodeId": "persian-alola",
         "fromSlug": "meowth",
         "toSlug": "persian",
@@ -134,10 +140,22 @@
         "requirementText": [
           "Friendship 160+"
         ]
+      },
+      {
+        "fromNodeId": "meowth-galar",
+        "toNodeId": "perrserker",
+        "fromSlug": "meowth",
+        "toSlug": "perrserker",
+        "method": "level_up",
+        "requirementText": [
+          "Level 28+"
+        ]
       }
     ],
     "roots": [
-      "meowth"
+      "meowth",
+      "meowth-alola",
+      "meowth-galar"
     ]
   },
   "moves": [

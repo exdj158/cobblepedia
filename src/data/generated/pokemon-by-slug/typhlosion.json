@@ -73,12 +73,28 @@
         "formName": null
       },
       {
+        "nodeId": "cyndaquil-hisuibias",
+        "slug": "cyndaquil",
+        "name": "Cyndaquil",
+        "dexNumber": 155,
+        "formSlug": "cyndaquil-hisuibias",
+        "formName": "Hisui-Bias"
+      },
+      {
         "nodeId": "quilava",
         "slug": "quilava",
         "name": "Quilava",
         "dexNumber": 156,
         "formSlug": null,
         "formName": null
+      },
+      {
+        "nodeId": "quilava-hisuibias",
+        "slug": "quilava",
+        "name": "Quilava",
+        "dexNumber": 156,
+        "formSlug": "quilava-hisuibias",
+        "formName": "Hisui-Bias"
       },
       {
         "nodeId": "typhlosion",
@@ -109,6 +125,16 @@
         ]
       },
       {
+        "fromNodeId": "cyndaquil-hisuibias",
+        "toNodeId": "quilava-hisuibias",
+        "fromSlug": "cyndaquil",
+        "toSlug": "quilava",
+        "method": "level_up",
+        "requirementText": [
+          "Level 14+"
+        ]
+      },
+      {
         "fromNodeId": "quilava",
         "toNodeId": "typhlosion",
         "fromSlug": "quilava",
@@ -119,19 +145,19 @@
         ]
       },
       {
-        "fromNodeId": "quilava",
+        "fromNodeId": "quilava-hisuibias",
         "toNodeId": "typhlosion-hisui",
         "fromSlug": "quilava",
         "toSlug": "typhlosion",
         "method": "level_up",
         "requirementText": [
-          "Level 36+",
-          "Biome Evolution Regional Quilava Hisuibiome"
+          "Level 36+"
         ]
       }
     ],
     "roots": [
-      "cyndaquil"
+      "cyndaquil",
+      "cyndaquil-hisuibias"
     ]
   },
   "moves": [

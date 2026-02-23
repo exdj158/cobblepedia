@@ -119,6 +119,14 @@
         "formName": null
       },
       {
+        "nodeId": "diglett-alola",
+        "slug": "diglett",
+        "name": "Diglett",
+        "dexNumber": 50,
+        "formSlug": "diglett-alola",
+        "formName": "Alola"
+      },
+      {
         "nodeId": "dugtrio",
         "slug": "dugtrio",
         "name": "Dugtrio",
@@ -147,7 +155,7 @@
         ]
       },
       {
-        "fromNodeId": "diglett",
+        "fromNodeId": "diglett-alola",
         "toNodeId": "dugtrio-alola",
         "fromSlug": "diglett",
         "toSlug": "dugtrio",
@@ -158,7 +166,8 @@
       }
     ],
     "roots": [
-      "diglett"
+      "diglett",
+      "diglett-alola"
     ]
   },
   "moves": [

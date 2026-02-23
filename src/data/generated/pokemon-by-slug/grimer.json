@@ -119,6 +119,14 @@
         "formName": null
       },
       {
+        "nodeId": "grimer-alola",
+        "slug": "grimer",
+        "name": "Grimer",
+        "dexNumber": 88,
+        "formSlug": "grimer-alola",
+        "formName": "Alola"
+      },
+      {
         "nodeId": "muk",
         "slug": "muk",
         "name": "Muk",
@@ -147,7 +155,7 @@
         ]
       },
       {
-        "fromNodeId": "grimer",
+        "fromNodeId": "grimer-alola",
         "toNodeId": "muk-alola",
         "fromSlug": "grimer",
         "toSlug": "muk",
@@ -158,7 +166,8 @@
       }
     ],
     "roots": [
-      "grimer"
+      "grimer",
+      "grimer-alola"
     ]
   },
   "moves": [

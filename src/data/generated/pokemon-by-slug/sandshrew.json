@@ -113,6 +113,14 @@
         "formName": null
       },
       {
+        "nodeId": "sandshrew-alola",
+        "slug": "sandshrew",
+        "name": "Sandshrew",
+        "dexNumber": 27,
+        "formSlug": "sandshrew-alola",
+        "formName": "Alola"
+      },
+      {
         "nodeId": "sandslash",
         "slug": "sandslash",
         "name": "Sandslash",
@@ -141,7 +149,7 @@
         ]
       },
       {
-        "fromNodeId": "sandshrew",
+        "fromNodeId": "sandshrew-alola",
         "toNodeId": "sandslash-alola",
         "fromSlug": "sandshrew",
         "toSlug": "sandslash",
@@ -152,7 +160,8 @@
       }
     ],
     "roots": [
-      "sandshrew"
+      "sandshrew",
+      "sandshrew-alola"
     ]
   },
   "moves": [

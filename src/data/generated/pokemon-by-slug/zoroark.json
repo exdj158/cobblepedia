@@ -73,6 +73,14 @@
         "formName": null
       },
       {
+        "nodeId": "zorua-hisui",
+        "slug": "zorua",
+        "name": "Zorua",
+        "dexNumber": 570,
+        "formSlug": "zorua-hisui",
+        "formName": "Hisui"
+      },
+      {
         "nodeId": "zoroark",
         "slug": "zoroark",
         "name": "Zoroark",
@@ -101,7 +109,7 @@
         ]
       },
       {
-        "fromNodeId": "zorua",
+        "fromNodeId": "zorua-hisui",
         "toNodeId": "zoroark-hisui",
         "fromSlug": "zorua",
         "toSlug": "zoroark",
@@ -112,7 +120,8 @@
       }
     ],
     "roots": [
-      "zorua"
+      "zorua",
+      "zorua-hisui"
     ]
   },
   "moves": [

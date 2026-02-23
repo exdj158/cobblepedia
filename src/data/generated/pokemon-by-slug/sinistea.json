@@ -104,6 +104,14 @@
         "formName": null
       },
       {
+        "nodeId": "sinistea-antique",
+        "slug": "sinistea",
+        "name": "Sinistea",
+        "dexNumber": 854,
+        "formSlug": "sinistea-antique",
+        "formName": "Antique"
+      },
+      {
         "nodeId": "polteageist",
         "slug": "polteageist",
         "name": "Polteageist",
@@ -132,7 +140,7 @@
         ]
       },
       {
-        "fromNodeId": "sinistea",
+        "fromNodeId": "sinistea-antique",
         "toNodeId": "polteageist-antique",
         "fromSlug": "sinistea",
         "toSlug": "polteageist",
@@ -143,7 +151,8 @@
       }
     ],
     "roots": [
-      "sinistea"
+      "sinistea",
+      "sinistea-antique"
     ]
   },
   "moves": [

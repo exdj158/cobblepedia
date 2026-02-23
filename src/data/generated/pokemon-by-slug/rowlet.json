@@ -111,12 +111,28 @@
         "formName": null
       },
       {
+        "nodeId": "rowlet-hisuibias",
+        "slug": "rowlet",
+        "name": "Rowlet",
+        "dexNumber": 722,
+        "formSlug": "rowlet-hisuibias",
+        "formName": "Hisui-Bias"
+      },
+      {
         "nodeId": "dartrix",
         "slug": "dartrix",
         "name": "Dartrix",
         "dexNumber": 723,
         "formSlug": null,
         "formName": null
+      },
+      {
+        "nodeId": "dartrix-hisuibias",
+        "slug": "dartrix",
+        "name": "Dartrix",
+        "dexNumber": 723,
+        "formSlug": "dartrix-hisuibias",
+        "formName": "Hisui-Bias"
       },
       {
         "nodeId": "decidueye",
@@ -147,14 +163,13 @@
         ]
       },
       {
-        "fromNodeId": "dartrix",
+        "fromNodeId": "dartrix-hisuibias",
         "toNodeId": "decidueye-hisui",
         "fromSlug": "dartrix",
         "toSlug": "decidueye",
         "method": "level_up",
         "requirementText": [
-          "Level 36+",
-          "Biome Evolution Regional Dartrix Hisuibiome"
+          "Level 36+"
         ]
       },
       {
@@ -166,10 +181,21 @@
         "requirementText": [
           "Level 17+"
         ]
+      },
+      {
+        "fromNodeId": "rowlet-hisuibias",
+        "toNodeId": "dartrix-hisuibias",
+        "fromSlug": "rowlet",
+        "toSlug": "dartrix",
+        "method": "level_up",
+        "requirementText": [
+          "Level 17+"
+        ]
       }
     ],
     "roots": [
-      "rowlet"
+      "rowlet",
+      "rowlet-hisuibias"
     ]
   },
   "moves": [

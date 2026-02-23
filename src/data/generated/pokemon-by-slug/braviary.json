@@ -80,6 +80,14 @@
         "formName": null
       },
       {
+        "nodeId": "rufflet-hisuibias",
+        "slug": "rufflet",
+        "name": "Rufflet",
+        "dexNumber": 627,
+        "formSlug": "rufflet-hisuibias",
+        "formName": "Hisui-Bias"
+      },
+      {
         "nodeId": "braviary",
         "slug": "braviary",
         "name": "Braviary",
@@ -108,19 +116,19 @@
         ]
       },
       {
-        "fromNodeId": "rufflet",
+        "fromNodeId": "rufflet-hisuibias",
         "toNodeId": "braviary-hisui",
         "fromSlug": "rufflet",
         "toSlug": "braviary",
         "method": "level_up",
         "requirementText": [
-          "Level 54+",
-          "Biome Evolution Regional Rufflet Hisuibiome"
+          "Level 54+"
         ]
       }
     ],
     "roots": [
-      "rufflet"
+      "rufflet",
+      "rufflet-hisuibias"
     ]
   },
   "moves": [

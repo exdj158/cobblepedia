@@ -73,6 +73,14 @@
         "formName": null
       },
       {
+        "nodeId": "vulpix-alola",
+        "slug": "vulpix",
+        "name": "Vulpix",
+        "dexNumber": 37,
+        "formSlug": "vulpix-alola",
+        "formName": "Alola"
+      },
+      {
         "nodeId": "ninetales",
         "slug": "ninetales",
         "name": "Ninetales",
@@ -101,7 +109,7 @@
         ]
       },
       {
-        "fromNodeId": "vulpix",
+        "fromNodeId": "vulpix-alola",
         "toNodeId": "ninetales-alola",
         "fromSlug": "vulpix",
         "toSlug": "ninetales",
@@ -112,7 +120,8 @@
       }
     ],
     "roots": [
-      "vulpix"
+      "vulpix",
+      "vulpix-alola"
     ]
   },
   "moves": [

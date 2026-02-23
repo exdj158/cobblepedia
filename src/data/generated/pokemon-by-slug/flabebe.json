@@ -116,6 +116,38 @@
         "formName": null
       },
       {
+        "nodeId": "flabebe-blue",
+        "slug": "flabebe",
+        "name": "Flabebe",
+        "dexNumber": 669,
+        "formSlug": "flabebe-blue",
+        "formName": "Blue"
+      },
+      {
+        "nodeId": "flabebe-orange",
+        "slug": "flabebe",
+        "name": "Flabebe",
+        "dexNumber": 669,
+        "formSlug": "flabebe-orange",
+        "formName": "Orange"
+      },
+      {
+        "nodeId": "flabebe-white",
+        "slug": "flabebe",
+        "name": "Flabebe",
+        "dexNumber": 669,
+        "formSlug": "flabebe-white",
+        "formName": "White"
+      },
+      {
+        "nodeId": "flabebe-yellow",
+        "slug": "flabebe",
+        "name": "Flabebe",
+        "dexNumber": 669,
+        "formSlug": "flabebe-yellow",
+        "formName": "Yellow"
+      },
+      {
         "nodeId": "floette",
         "slug": "floette",
         "name": "Floette",
@@ -124,18 +156,122 @@
         "formName": null
       },
       {
+        "nodeId": "floette-blue",
+        "slug": "floette",
+        "name": "Floette",
+        "dexNumber": 670,
+        "formSlug": "floette-blue",
+        "formName": "Blue"
+      },
+      {
+        "nodeId": "floette-orange",
+        "slug": "floette",
+        "name": "Floette",
+        "dexNumber": 670,
+        "formSlug": "floette-orange",
+        "formName": "Orange"
+      },
+      {
+        "nodeId": "floette-white",
+        "slug": "floette",
+        "name": "Floette",
+        "dexNumber": 670,
+        "formSlug": "floette-white",
+        "formName": "White"
+      },
+      {
+        "nodeId": "floette-yellow",
+        "slug": "floette",
+        "name": "Floette",
+        "dexNumber": 670,
+        "formSlug": "floette-yellow",
+        "formName": "Yellow"
+      },
+      {
         "nodeId": "florges",
         "slug": "florges",
         "name": "Florges",
         "dexNumber": 671,
         "formSlug": null,
         "formName": null
+      },
+      {
+        "nodeId": "florges-blue",
+        "slug": "florges",
+        "name": "Florges",
+        "dexNumber": 671,
+        "formSlug": "florges-blue",
+        "formName": "Blue"
+      },
+      {
+        "nodeId": "florges-orange",
+        "slug": "florges",
+        "name": "Florges",
+        "dexNumber": 671,
+        "formSlug": "florges-orange",
+        "formName": "Orange"
+      },
+      {
+        "nodeId": "florges-white",
+        "slug": "florges",
+        "name": "Florges",
+        "dexNumber": 671,
+        "formSlug": "florges-white",
+        "formName": "White"
+      },
+      {
+        "nodeId": "florges-yellow",
+        "slug": "florges",
+        "name": "Florges",
+        "dexNumber": 671,
+        "formSlug": "florges-yellow",
+        "formName": "Yellow"
       }
     ],
     "edges": [
       {
         "fromNodeId": "flabebe",
         "toNodeId": "floette",
+        "fromSlug": "flabebe",
+        "toSlug": "floette",
+        "method": "level_up",
+        "requirementText": [
+          "Level 19+"
+        ]
+      },
+      {
+        "fromNodeId": "flabebe-blue",
+        "toNodeId": "floette-blue",
+        "fromSlug": "flabebe",
+        "toSlug": "floette",
+        "method": "level_up",
+        "requirementText": [
+          "Level 19+"
+        ]
+      },
+      {
+        "fromNodeId": "flabebe-orange",
+        "toNodeId": "floette-orange",
+        "fromSlug": "flabebe",
+        "toSlug": "floette",
+        "method": "level_up",
+        "requirementText": [
+          "Level 19+"
+        ]
+      },
+      {
+        "fromNodeId": "flabebe-white",
+        "toNodeId": "floette-white",
+        "fromSlug": "flabebe",
+        "toSlug": "floette",
+        "method": "level_up",
+        "requirementText": [
+          "Level 19+"
+        ]
+      },
+      {
+        "fromNodeId": "flabebe-yellow",
+        "toNodeId": "floette-yellow",
         "fromSlug": "flabebe",
         "toSlug": "floette",
         "method": "level_up",
@@ -152,10 +288,54 @@
         "requirementText": [
           "Use Shiny Stone"
         ]
+      },
+      {
+        "fromNodeId": "floette-blue",
+        "toNodeId": "florges-blue",
+        "fromSlug": "floette",
+        "toSlug": "florges",
+        "method": "item_interact",
+        "requirementText": [
+          "Use Shiny Stone"
+        ]
+      },
+      {
+        "fromNodeId": "floette-orange",
+        "toNodeId": "florges-orange",
+        "fromSlug": "floette",
+        "toSlug": "florges",
+        "method": "item_interact",
+        "requirementText": [
+          "Use Shiny Stone"
+        ]
+      },
+      {
+        "fromNodeId": "floette-white",
+        "toNodeId": "florges-white",
+        "fromSlug": "floette",
+        "toSlug": "florges",
+        "method": "item_interact",
+        "requirementText": [
+          "Use Shiny Stone"
+        ]
+      },
+      {
+        "fromNodeId": "floette-yellow",
+        "toNodeId": "florges-yellow",
+        "fromSlug": "floette",
+        "toSlug": "florges",
+        "method": "item_interact",
+        "requirementText": [
+          "Use Shiny Stone"
+        ]
       }
     ],
     "roots": [
-      "flabebe"
+      "flabebe",
+      "flabebe-blue",
+      "flabebe-orange",
+      "flabebe-white",
+      "flabebe-yellow"
     ]
   },
   "moves": [

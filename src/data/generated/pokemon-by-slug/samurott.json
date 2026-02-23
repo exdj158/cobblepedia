@@ -73,12 +73,28 @@
         "formName": null
       },
       {
+        "nodeId": "oshawott-hisuibias",
+        "slug": "oshawott",
+        "name": "Oshawott",
+        "dexNumber": 501,
+        "formSlug": "oshawott-hisuibias",
+        "formName": "Hisui-Bias"
+      },
+      {
         "nodeId": "dewott",
         "slug": "dewott",
         "name": "Dewott",
         "dexNumber": 502,
         "formSlug": null,
         "formName": null
+      },
+      {
+        "nodeId": "dewott-hisuibias",
+        "slug": "dewott",
+        "name": "Dewott",
+        "dexNumber": 502,
+        "formSlug": "dewott-hisuibias",
+        "formName": "Hisui-Bias"
       },
       {
         "nodeId": "samurott",
@@ -109,14 +125,13 @@
         ]
       },
       {
-        "fromNodeId": "dewott",
+        "fromNodeId": "dewott-hisuibias",
         "toNodeId": "samurott-hisui",
         "fromSlug": "dewott",
         "toSlug": "samurott",
         "method": "level_up",
         "requirementText": [
-          "Level 36+",
-          "Biome Evolution Regional Dewott Hisuibiome"
+          "Level 36+"
         ]
       },
       {
@@ -128,10 +143,21 @@
         "requirementText": [
           "Level 17+"
         ]
+      },
+      {
+        "fromNodeId": "oshawott-hisuibias",
+        "toNodeId": "dewott-hisuibias",
+        "fromSlug": "oshawott",
+        "toSlug": "dewott",
+        "method": "level_up",
+        "requirementText": [
+          "Level 17+"
+        ]
       }
     ],
     "roots": [
-      "oshawott"
+      "oshawott",
+      "oshawott-hisuibias"
     ]
   },
   "moves": [

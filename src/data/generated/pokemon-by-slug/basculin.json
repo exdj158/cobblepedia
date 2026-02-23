@@ -79,6 +79,14 @@
         "formName": null
       },
       {
+        "nodeId": "basculin-whitestriped",
+        "slug": "basculin",
+        "name": "Basculin",
+        "dexNumber": 550,
+        "formSlug": "basculin-whitestriped",
+        "formName": "White-Striped"
+      },
+      {
         "nodeId": "basculegion",
         "slug": "basculegion",
         "name": "Basculegion",
@@ -89,7 +97,7 @@
     ],
     "edges": [
       {
-        "fromNodeId": "basculin",
+        "fromNodeId": "basculin-whitestriped",
         "toNodeId": "basculegion",
         "fromSlug": "basculin",
         "toSlug": "basculegion",
@@ -100,7 +108,8 @@
       }
     ],
     "roots": [
-      "basculin"
+      "basculin",
+      "basculin-whitestriped"
     ]
   },
   "moves": [

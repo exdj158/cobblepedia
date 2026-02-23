@@ -43,6 +43,26 @@ const COBBLEMON_ASSETS_PROJECT_ID = "cable-mc%2Fcobblemon-assets"
 const COBBLEMON_ASSETS_REF = "master"
 const COBBLEMON_ASSETS_ITEMS_ROOT = "items"
 const KNOWN_MOVE_PREFIXES = new Set(["egg", "tm", "tutor", "legacy", "special", "form_change"])
+const EVOLUTION_FORM_REGION_ALIASES: Record<string, string> = {
+  alola: "alola",
+  alolan: "alola",
+  galar: "galar",
+  galarian: "galar",
+  hisui: "hisui",
+  hisuian: "hisui",
+  paldea: "paldea",
+  paldean: "paldea",
+  kanto: "kanto",
+  kantonian: "kanto",
+  johto: "johto",
+  johtonian: "johto",
+  hoenn: "hoenn",
+  hoennian: "hoenn",
+  sinnoh: "sinnoh",
+  sinnohan: "sinnoh",
+  unova: "unova",
+  unovan: "unova",
+}
 
 const SPECIES_ROOT = path.join(UPSTREAM_ROOT, "common/src/main/resources/data/cobblemon/species")
 const SPAWN_POOL_ROOT = path.join(
@@ -82,6 +102,7 @@ type RawSpeciesFile = {
 type DirectedEvolutionEdge = {
   fromSlug: string
   fromFormSlug: string | null
+  fromFormName: string | null
   toSlug: string
   toAspectTokens: string[]
   method: string
@@ -1214,6 +1235,7 @@ function buildEvolutionFamilies(
       directedEdges.push({
         fromSlug: detail.slug,
         fromFormSlug: null,
+        fromFormName: null,
         toSlug: evolution.result.slug,
         toAspectTokens: evolution.result.aspectTokens,
         method: evolution.variant,
@@ -1227,6 +1249,7 @@ function buildEvolutionFamilies(
         directedEdges.push({
           fromSlug: detail.slug,
           fromFormSlug: form.slug,
+          fromFormName: form.name,
           toSlug: evolution.result.slug,
           toAspectTokens: evolution.result.aspectTokens,
           method: evolution.variant,
@@ -1271,7 +1294,7 @@ function buildEvolutionFamilies(
       const fromMember = resolveEvolutionFamilyMemberNode({
         detail: detailsBySlug.get(edge.fromSlug) ?? null,
         fallbackSlug: edge.fromSlug,
-        preferredFormSlug: null,
+        preferredFormSlug: edge.fromFormSlug,
         preferredFormName: null,
         aspectTokens: [],
       })
@@ -1279,7 +1302,7 @@ function buildEvolutionFamilies(
         detail: detailsBySlug.get(edge.toSlug) ?? null,
         fallbackSlug: edge.toSlug,
         preferredFormSlug: null,
-        preferredFormName: null,
+        preferredFormName: edge.toAspectTokens.length === 0 ? (edge.fromFormName ?? null) : null,
         aspectTokens: edge.toAspectTokens,
       })
 
@@ -1297,7 +1320,8 @@ function buildEvolutionFamilies(
       })
     }
 
-    const edges = dedupeEvolutionEdges(simplifyEvolutionEdges(resolvedEdges))
+    const preferredFormEdges = pruneCrossFormEvolutionRoutes(resolvedEdges, memberByNodeId)
+    const edges = dedupeEvolutionEdges(simplifyEvolutionEdges(preferredFormEdges))
 
     const members = Array.from(memberByNodeId.values()).sort((left, right) => {
       if (left.dexNumber !== right.dexNumber) {
@@ -1642,6 +1666,126 @@ function toEvolutionFamilyMember(
   }
 }
 
+function pruneCrossFormEvolutionRoutes(
+  edges: ResolvedEvolutionFamilyEdge[],
+  memberByNodeId: Map<string, PokemonDetailRecord["evolutionFamily"]["members"][number]>
+): ResolvedEvolutionFamilyEdge[] {
+  if (edges.length <= 1) {
+    return edges
+  }
+
+  const grouped = new Map<string, ResolvedEvolutionFamilyEdge[]>()
+  for (const edge of edges) {
+    const key = `${edge.fromNodeId}::${edge.toSlug}::${edge.method}`
+    const existing = grouped.get(key)
+    if (existing) {
+      existing.push(edge)
+      continue
+    }
+    grouped.set(key, [edge])
+  }
+
+  const preferred: ResolvedEvolutionFamilyEdge[] = []
+
+  for (const group of grouped.values()) {
+    const uniqueTargets = new Set(group.map((edge) => edge.toNodeId))
+    if (group.length <= 1 || uniqueTargets.size <= 1) {
+      preferred.push(...group)
+      continue
+    }
+
+    const scored = group.map((edge) => ({
+      edge,
+      score: scoreEvolutionTargetFormCompatibility(
+        memberByNodeId.get(edge.fromNodeId),
+        memberByNodeId.get(edge.toNodeId)
+      ),
+    }))
+
+    const bestScore = Math.max(...scored.map((entry) => entry.score))
+    const best = scored.filter((entry) => entry.score === bestScore)
+
+    if (best.length === scored.length) {
+      preferred.push(...group)
+      continue
+    }
+
+    preferred.push(...best.map((entry) => entry.edge))
+  }
+
+  return preferred
+}
+
+function scoreEvolutionTargetFormCompatibility(
+  sourceMember: PokemonDetailRecord["evolutionFamily"]["members"][number] | undefined,
+  targetMember: PokemonDetailRecord["evolutionFamily"]["members"][number] | undefined
+): number {
+  if (!sourceMember || !targetMember) {
+    return 0
+  }
+
+  const sourceRegions = collectEvolutionMemberRegionTokens(sourceMember)
+  const targetRegions = collectEvolutionMemberRegionTokens(targetMember)
+
+  if (sourceRegions.size === 0) {
+    return targetRegions.size === 0 ? 3 : 1
+  }
+
+  let overlap = 0
+  for (const region of sourceRegions) {
+    if (targetRegions.has(region)) {
+      overlap += 1
+    }
+  }
+
+  if (overlap > 0) {
+    return 6 + overlap
+  }
+
+  return targetRegions.size === 0 ? 2 : 0
+}
+
+function collectEvolutionMemberRegionTokens(
+  member: PokemonDetailRecord["evolutionFamily"]["members"][number]
+): Set<string> {
+  if (!member.formSlug && !member.formName) {
+    return new Set<string>()
+  }
+
+  const tokens = new Set<string>()
+  const values = [member.formSlug ?? "", member.formName ?? ""]
+
+  for (const rawValue of values) {
+    const trimmed = rawValue.trim().toLowerCase()
+    if (!trimmed) {
+      continue
+    }
+
+    const canonical = canonicalId(trimmed)
+    if (canonical) {
+      for (const [alias, region] of Object.entries(EVOLUTION_FORM_REGION_ALIASES)) {
+        if (canonical.includes(alias)) {
+          tokens.add(region)
+        }
+      }
+    }
+
+    const parts = trimmed
+      .split(/[^a-z0-9]+/g)
+      .map((part) => canonicalId(part))
+      .filter(Boolean)
+
+    for (const part of parts) {
+      const region = EVOLUTION_FORM_REGION_ALIASES[part]
+      if (region) {
+        tokens.add(region)
+      }
+    }
+  }
+
+  return tokens
+}
+
 function simplifyEvolutionEdges(
   edges: ResolvedEvolutionFamilyEdge[]
 ): PokemonDetailRecord["evolutionFamily"]["edges"] {
@@ -1764,15 +1908,13 @@ function buildPokemonList(detailsBySlug: Map<string, PokemonDetailRecord>): Poke
 }
 
 function buildPokemonDexNav(pokemonList: PokemonListItem[]): PokemonDexNavItem[] {
-  return pokemonList
-    .filter((pokemon) => pokemon.implemented)
-    .map((pokemon) => {
-      return {
-        slug: pokemon.slug,
-        name: pokemon.name,
-        dexNumber: pokemon.dexNumber,
-      }
-    })
+  return pokemonList.map((pokemon) => {
+    return {
+      slug: pokemon.slug,
+      name: pokemon.name,
+      dexNumber: pokemon.dexNumber,
+    }
+  })
 }
 
 function buildPokemonTypeEntries(

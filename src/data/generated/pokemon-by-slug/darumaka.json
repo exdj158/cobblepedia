@@ -115,6 +115,14 @@
         "formName": null
       },
       {
+        "nodeId": "darumaka-galar",
+        "slug": "darumaka",
+        "name": "Darumaka",
+        "dexNumber": 554,
+        "formSlug": "darumaka-galar",
+        "formName": "Galar"
+      },
+      {
         "nodeId": "darmanitan",
         "slug": "darmanitan",
         "name": "Darmanitan",
@@ -137,24 +145,25 @@
         "toNodeId": "darmanitan-galar",
         "fromSlug": "darumaka",
         "toSlug": "darmanitan",
-        "method": "item_interact",
-        "requirementText": [
-          "Use Ice Stone"
-        ]
-      },
-      {
-        "fromNodeId": "darumaka",
-        "toNodeId": "darmanitan-galar",
-        "fromSlug": "darumaka",
-        "toSlug": "darmanitan",
         "method": "level_up",
         "requirementText": [
           "Level 35+"
+        ]
+      },
+      {
+        "fromNodeId": "darumaka-galar",
+        "toNodeId": "darmanitan-galar",
+        "fromSlug": "darumaka",
+        "toSlug": "darmanitan",
+        "method": "item_interact",
+        "requirementText": [
+          "Use Ice Stone"
         ]
       }
     ],
     "roots": [
       "darumaka",
+      "darumaka-galar",
       "darmanitan"
     ]
   },

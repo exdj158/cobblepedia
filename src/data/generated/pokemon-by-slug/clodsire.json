@@ -82,6 +82,14 @@
         "formName": null
       },
       {
+        "nodeId": "wooper-paldea",
+        "slug": "wooper",
+        "name": "Wooper",
+        "dexNumber": 194,
+        "formSlug": "wooper-paldea",
+        "formName": "Paldea"
+      },
+      {
         "nodeId": "quagsire",
         "slug": "quagsire",
         "name": "Quagsire",
@@ -101,16 +109,6 @@
     "edges": [
       {
         "fromNodeId": "wooper",
-        "toNodeId": "clodsire",
-        "fromSlug": "wooper",
-        "toSlug": "clodsire",
-        "method": "level_up",
-        "requirementText": [
-          "Level 20+"
-        ]
-      },
-      {
-        "fromNodeId": "wooper",
         "toNodeId": "quagsire",
         "fromSlug": "wooper",
         "toSlug": "quagsire",
@@ -118,10 +116,21 @@
         "requirementText": [
           "Level 20+"
         ]
+      },
+      {
+        "fromNodeId": "wooper-paldea",
+        "toNodeId": "clodsire",
+        "fromSlug": "wooper",
+        "toSlug": "clodsire",
+        "method": "level_up",
+        "requirementText": [
+          "Level 20+"
+        ]
       }
     ],
     "roots": [
-      "wooper"
+      "wooper",
+      "wooper-paldea"
     ]
   },
   "moves": [

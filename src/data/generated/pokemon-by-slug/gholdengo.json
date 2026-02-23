@@ -71,6 +71,14 @@
         "formName": null
       },
       {
+        "nodeId": "gimmighoul-roaming",
+        "slug": "gimmighoul",
+        "name": "Gimmighoul",
+        "dexNumber": 999,
+        "formSlug": "gimmighoul-roaming",
+        "formName": "Roaming"
+      },
+      {
         "nodeId": "gholdengo",
         "slug": "gholdengo",
         "name": "Gholdengo",
@@ -89,10 +97,21 @@
         "requirementText": [
           "Property gimmighoul gimmighoul_coins=999"
         ]
+      },
+      {
+        "fromNodeId": "gimmighoul-roaming",
+        "toNodeId": "gholdengo",
+        "fromSlug": "gimmighoul",
+        "toSlug": "gholdengo",
+        "method": "level_up",
+        "requirementText": [
+          "Property gimmighoul gimmighoul_coins=999"
+        ]
       }
     ],
     "roots": [
-      "gimmighoul"
+      "gimmighoul",
+      "gimmighoul-roaming"
     ]
   },
   "moves": [

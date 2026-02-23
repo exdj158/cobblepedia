@@ -79,6 +79,14 @@
         "formName": null
       },
       {
+        "nodeId": "rattata-alola",
+        "slug": "rattata",
+        "name": "Rattata",
+        "dexNumber": 19,
+        "formSlug": "rattata-alola",
+        "formName": "Alola"
+      },
+      {
         "nodeId": "raticate",
         "slug": "raticate",
         "name": "Raticate",
@@ -107,7 +115,7 @@
         ]
       },
       {
-        "fromNodeId": "rattata",
+        "fromNodeId": "rattata-alola",
         "toNodeId": "raticate-alola",
         "fromSlug": "rattata",
         "toSlug": "raticate",
@@ -119,7 +127,8 @@
       }
     ],
     "roots": [
-      "rattata"
+      "rattata",
+      "rattata-alola"
     ]
   },
   "moves": [

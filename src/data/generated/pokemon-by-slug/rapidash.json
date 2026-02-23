@@ -79,6 +79,14 @@
         "formName": null
       },
       {
+        "nodeId": "ponyta-galar",
+        "slug": "ponyta",
+        "name": "Ponyta",
+        "dexNumber": 77,
+        "formSlug": "ponyta-galar",
+        "formName": "Galar"
+      },
+      {
         "nodeId": "rapidash",
         "slug": "rapidash",
         "name": "Rapidash",
@@ -107,7 +115,7 @@
         ]
       },
       {
-        "fromNodeId": "ponyta",
+        "fromNodeId": "ponyta-galar",
         "toNodeId": "rapidash-galar",
         "fromSlug": "ponyta",
         "toSlug": "rapidash",
@@ -118,7 +126,8 @@
       }
     ],
     "roots": [
-      "ponyta"
+      "ponyta",
+      "ponyta-galar"
     ]
   },
   "moves": [

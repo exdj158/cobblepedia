@@ -82,6 +82,14 @@
         "formName": null
       },
       {
+        "nodeId": "rockruff-dusk",
+        "slug": "rockruff",
+        "name": "Rockruff",
+        "dexNumber": 744,
+        "formSlug": "rockruff-dusk",
+        "formName": "Dusk"
+      },
+      {
         "nodeId": "lycanroc",
         "slug": "lycanroc",
         "name": "Lycanroc",
@@ -120,17 +128,6 @@
       },
       {
         "fromNodeId": "rockruff",
-        "toNodeId": "lycanroc-dusk",
-        "fromSlug": "rockruff",
-        "toSlug": "lycanroc",
-        "method": "level_up",
-        "requirementText": [
-          "Level 25+",
-          "Time: Dusk"
-        ]
-      },
-      {
-        "fromNodeId": "rockruff",
         "toNodeId": "lycanroc-midnight",
         "fromSlug": "rockruff",
         "toSlug": "lycanroc",
@@ -139,10 +136,22 @@
           "Level 25+",
           "Time: Night"
         ]
+      },
+      {
+        "fromNodeId": "rockruff-dusk",
+        "toNodeId": "lycanroc-dusk",
+        "fromSlug": "rockruff",
+        "toSlug": "lycanroc",
+        "method": "level_up",
+        "requirementText": [
+          "Level 25+",
+          "Time: Dusk"
+        ]
       }
     ],
     "roots": [
-      "rockruff"
+      "rockruff",
+      "rockruff-dusk"
     ]
   },
   "moves": [

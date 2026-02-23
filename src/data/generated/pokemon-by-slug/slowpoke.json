@@ -160,6 +160,14 @@
         "formName": null
       },
       {
+        "nodeId": "slowpoke-galar",
+        "slug": "slowpoke",
+        "name": "Slowpoke",
+        "dexNumber": 79,
+        "formSlug": "slowpoke-galar",
+        "formName": "Galar"
+      },
+      {
         "nodeId": "slowbro",
         "slug": "slowbro",
         "name": "Slowbro",
@@ -205,16 +213,6 @@
       },
       {
         "fromNodeId": "slowpoke",
-        "toNodeId": "slowbro-galar",
-        "fromSlug": "slowpoke",
-        "toSlug": "slowbro",
-        "method": "item_interact",
-        "requirementText": [
-          "Use Galarica Cuff"
-        ]
-      },
-      {
-        "fromNodeId": "slowpoke",
         "toNodeId": "slowking",
         "fromSlug": "slowpoke",
         "toSlug": "slowking",
@@ -224,7 +222,17 @@
         ]
       },
       {
-        "fromNodeId": "slowpoke",
+        "fromNodeId": "slowpoke-galar",
+        "toNodeId": "slowbro-galar",
+        "fromSlug": "slowpoke",
+        "toSlug": "slowbro",
+        "method": "item_interact",
+        "requirementText": [
+          "Use Galarica Cuff"
+        ]
+      },
+      {
+        "fromNodeId": "slowpoke-galar",
         "toNodeId": "slowking-galar",
         "fromSlug": "slowpoke",
         "toSlug": "slowking",
@@ -235,7 +243,8 @@
       }
     ],
     "roots": [
-      "slowpoke"
+      "slowpoke",
+      "slowpoke-galar"
     ]
   },
   "moves": [

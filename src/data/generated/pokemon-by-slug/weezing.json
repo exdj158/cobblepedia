@@ -79,6 +79,14 @@
         "formName": null
       },
       {
+        "nodeId": "koffing-galarbias",
+        "slug": "koffing",
+        "name": "Koffing",
+        "dexNumber": 109,
+        "formSlug": "koffing-galarbias",
+        "formName": "Galar-Bias"
+      },
+      {
         "nodeId": "weezing",
         "slug": "weezing",
         "name": "Weezing",
@@ -107,19 +115,19 @@
         ]
       },
       {
-        "fromNodeId": "koffing",
+        "fromNodeId": "koffing-galarbias",
         "toNodeId": "weezing-galar",
         "fromSlug": "koffing",
         "toSlug": "weezing",
         "method": "level_up",
         "requirementText": [
-          "Level 35+",
-          "Biome Evolution Regional Koffing Galarbiome"
+          "Level 35+"
         ]
       }
     ],
     "roots": [
-      "koffing"
+      "koffing",
+      "koffing-galarbias"
     ]
   },
   "moves": [

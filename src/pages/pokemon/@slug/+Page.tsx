@@ -32,6 +32,7 @@ import pokemonDexNavData from "@/data/generated/pokemon-dex-nav.json"
 import { formatRideableCategory, parseRideableSummaryFromSpecies } from "@/data/rideable"
 import { resolvePokemonArtworkUrls } from "@/lib/pokeapi-artwork"
 import { useLeaderNavigationHotkeys } from "@/lib/use-leader-navigation-hotkeys"
+import { useParams } from "@/route-tree.gen"
 import { cn } from "@/utils/cn"
 import getTitle from "@/utils/get-title"
 
@@ -93,9 +94,9 @@ function getEggGroupColor(group: string): string {
 }
 
 export default function Page() {
-  const pageContext = usePageContext()
+  const routeParams = useParams({ from: "/pokemon/@slug" })
   const slug = createMemo(() =>
-    String(pageContext.routeParams.slug ?? "")
+    String(routeParams().slug ?? "")
       .trim()
       .toLowerCase()
   )
@@ -169,13 +170,17 @@ function PokemonDetailView(props: {
   const [artworkUrlIndex, setArtworkUrlIndex] = createSignal(0)
 
   const requestedFormSlug = createMemo(() => {
+    const fromUrl = extractFormSlugFromUrl(pageContext.urlOriginal)
+    if (fromUrl) {
+      return fromUrl
+    }
+
     const queryValue = pageContext.urlParsed.search.form
     if (typeof queryValue !== "string") {
       return null
     }
 
-    const normalized = queryValue.trim().toLowerCase()
-    return normalized.length > 0 ? normalized : null
+    return normalizeFormSlug(queryValue)
   })
 
   const availableForms = createMemo(() => detail().forms)
@@ -395,6 +400,21 @@ function PokemonDetailView(props: {
       : undefined,
   })
 
+  const activeEvolutionFormSlug = createMemo(() => {
+    const selectedSlug = selectedForm()?.slug ?? null
+    if (selectedSlug) {
+      return selectedSlug
+    }
+
+    const requestedSlug = requestedFormSlug()
+    if (!requestedSlug) {
+      return null
+    }
+
+    const hasRequestedForm = detail().forms.some((form) => form.slug === requestedSlug)
+    return hasRequestedForm ? requestedSlug : null
+  })
+
   return (
     <div class="mx-auto max-w-6xl px-4 py-4 sm:px-6 lg:px-8">
       {/* Dex Navigation Bar - Pokemon cards instead of arrows */}
@@ -418,6 +438,28 @@ function PokemonDetailView(props: {
 
         <DexNavCard pokemon={props.next} direction="next" />
       </nav>
+
+      <Show when={!detail().implemented}>
+        <section class="mb-4 border border-warning/30 bg-warning/10 px-4 py-3">
+          <p class="font-semibold text-warning text-xs uppercase tracking-wider">Not in the game</p>
+          <p class="mt-1 text-muted-foreground text-sm">
+            This Pokemon is in the National Dex, but the current Cobblemon snapshot marks it as
+            unimplemented.
+          </p>
+          <p class="mt-2 text-muted-foreground text-xs">
+            It's definitely on{" "}
+            <a
+              href="https://modrinth.com/modpack/cobbleverse"
+              target="_blank"
+              rel="noreferrer"
+              class="font-medium text-warning underline underline-offset-2 transition-opacity hover:opacity-80"
+            >
+              Cobbleverse
+            </a>
+            .
+          </p>
+        </section>
+      </Show>
 
       {/* Hero Section - Compact with view toggle */}
       <header class="relative mb-6 border border-border bg-card">
@@ -807,7 +849,7 @@ function PokemonDetailView(props: {
           <EvolutionFamilyFlow
             family={detail().evolutionFamily}
             activeSlug={detail().slug}
-            activeFormSlug={selectedFormSlug() ?? requestedFormSlug()}
+            activeFormSlug={activeEvolutionFormSlug()}
             itemIndex={props.itemIndex}
           />
         </Show>
@@ -1211,4 +1253,26 @@ function syncSelectedFormSlug(formSlug: string | null) {
 
   const nextUrl = `${url.pathname}${url.search}${url.hash}`
   window.history.replaceState(null, "", nextUrl)
+}
+
+function extractFormSlugFromUrl(urlLike: string | undefined): string | null {
+  if (!urlLike) {
+    return null
+  }
+
+  try {
+    const url = new URL(urlLike, "https://cobblepedia.local")
+    return normalizeFormSlug(url.searchParams.get("form"))
+  } catch {
+    return null
+  }
+}
+
+function normalizeFormSlug(rawValue: string | null): string | null {
+  if (!rawValue) {
+    return null
+  }
+
+  const normalized = rawValue.trim().toLowerCase()
+  return normalized.length > 0 ? normalized : null
 }

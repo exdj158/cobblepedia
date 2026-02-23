@@ -85,12 +85,60 @@
         "formName": null
       },
       {
+        "nodeId": "deerling-autumn",
+        "slug": "deerling",
+        "name": "Deerling",
+        "dexNumber": 585,
+        "formSlug": "deerling-autumn",
+        "formName": "Autumn"
+      },
+      {
+        "nodeId": "deerling-summer",
+        "slug": "deerling",
+        "name": "Deerling",
+        "dexNumber": 585,
+        "formSlug": "deerling-summer",
+        "formName": "Summer"
+      },
+      {
+        "nodeId": "deerling-winter",
+        "slug": "deerling",
+        "name": "Deerling",
+        "dexNumber": 585,
+        "formSlug": "deerling-winter",
+        "formName": "Winter"
+      },
+      {
         "nodeId": "sawsbuck",
         "slug": "sawsbuck",
         "name": "Sawsbuck",
         "dexNumber": 586,
         "formSlug": null,
         "formName": null
+      },
+      {
+        "nodeId": "sawsbuck-autumn",
+        "slug": "sawsbuck",
+        "name": "Sawsbuck",
+        "dexNumber": 586,
+        "formSlug": "sawsbuck-autumn",
+        "formName": "Autumn"
+      },
+      {
+        "nodeId": "sawsbuck-summer",
+        "slug": "sawsbuck",
+        "name": "Sawsbuck",
+        "dexNumber": 586,
+        "formSlug": "sawsbuck-summer",
+        "formName": "Summer"
+      },
+      {
+        "nodeId": "sawsbuck-winter",
+        "slug": "sawsbuck",
+        "name": "Sawsbuck",
+        "dexNumber": 586,
+        "formSlug": "sawsbuck-winter",
+        "formName": "Winter"
       }
     ],
     "edges": [
@@ -103,10 +151,43 @@
         "requirementText": [
           "Level 34+"
         ]
+      },
+      {
+        "fromNodeId": "deerling-autumn",
+        "toNodeId": "sawsbuck-autumn",
+        "fromSlug": "deerling",
+        "toSlug": "sawsbuck",
+        "method": "level_up",
+        "requirementText": [
+          "Level 34+"
+        ]
+      },
+      {
+        "fromNodeId": "deerling-summer",
+        "toNodeId": "sawsbuck-summer",
+        "fromSlug": "deerling",
+        "toSlug": "sawsbuck",
+        "method": "level_up",
+        "requirementText": [
+          "Level 34+"
+        ]
+      },
+      {
+        "fromNodeId": "deerling-winter",
+        "toNodeId": "sawsbuck-winter",
+        "fromSlug": "deerling",
+        "toSlug": "sawsbuck",
+        "method": "level_up",
+        "requirementText": [
+          "Level 34+"
+        ]
       }
     ],
     "roots": [
-      "deerling"
+      "deerling",
+      "deerling-autumn",
+      "deerling-summer",
+      "deerling-winter"
     ]
   },
   "moves": [

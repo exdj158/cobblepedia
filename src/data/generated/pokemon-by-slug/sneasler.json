@@ -81,6 +81,14 @@
         "formName": null
       },
       {
+        "nodeId": "sneasel-hisui",
+        "slug": "sneasel",
+        "name": "Sneasel",
+        "dexNumber": 215,
+        "formSlug": "sneasel-hisui",
+        "formName": "Hisui"
+      },
+      {
         "nodeId": "weavile",
         "slug": "weavile",
         "name": "Weavile",
@@ -100,17 +108,6 @@
     "edges": [
       {
         "fromNodeId": "sneasel",
-        "toNodeId": "sneasler",
-        "fromSlug": "sneasel",
-        "toSlug": "sneasler",
-        "method": "level_up",
-        "requirementText": [
-          "Hold Razor Claw",
-          "Time: Day"
-        ]
-      },
-      {
-        "fromNodeId": "sneasel",
         "toNodeId": "weavile",
         "fromSlug": "sneasel",
         "toSlug": "weavile",
@@ -119,10 +116,22 @@
           "Hold Razor Claw",
           "Time: Night"
         ]
+      },
+      {
+        "fromNodeId": "sneasel-hisui",
+        "toNodeId": "sneasler",
+        "fromSlug": "sneasel",
+        "toSlug": "sneasler",
+        "method": "level_up",
+        "requirementText": [
+          "Hold Razor Claw",
+          "Time: Day"
+        ]
       }
     ],
     "roots": [
-      "sneasel"
+      "sneasel",
+      "sneasel-hisui"
     ]
   },
   "moves": [

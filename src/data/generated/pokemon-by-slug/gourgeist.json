@@ -85,12 +85,60 @@
         "formName": null
       },
       {
+        "nodeId": "pumpkaboo-large",
+        "slug": "pumpkaboo",
+        "name": "Pumpkaboo",
+        "dexNumber": 710,
+        "formSlug": "pumpkaboo-large",
+        "formName": "Large"
+      },
+      {
+        "nodeId": "pumpkaboo-small",
+        "slug": "pumpkaboo",
+        "name": "Pumpkaboo",
+        "dexNumber": 710,
+        "formSlug": "pumpkaboo-small",
+        "formName": "Small"
+      },
+      {
+        "nodeId": "pumpkaboo-super",
+        "slug": "pumpkaboo",
+        "name": "Pumpkaboo",
+        "dexNumber": 710,
+        "formSlug": "pumpkaboo-super",
+        "formName": "Super"
+      },
+      {
         "nodeId": "gourgeist",
         "slug": "gourgeist",
         "name": "Gourgeist",
         "dexNumber": 711,
         "formSlug": null,
         "formName": null
+      },
+      {
+        "nodeId": "gourgeist-large",
+        "slug": "gourgeist",
+        "name": "Gourgeist",
+        "dexNumber": 711,
+        "formSlug": "gourgeist-large",
+        "formName": "Large"
+      },
+      {
+        "nodeId": "gourgeist-small",
+        "slug": "gourgeist",
+        "name": "Gourgeist",
+        "dexNumber": 711,
+        "formSlug": "gourgeist-small",
+        "formName": "Small"
+      },
+      {
+        "nodeId": "gourgeist-super",
+        "slug": "gourgeist",
+        "name": "Gourgeist",
+        "dexNumber": 711,
+        "formSlug": "gourgeist-super",
+        "formName": "Super"
       }
     ],
     "edges": [
@@ -101,10 +149,37 @@
         "toSlug": "gourgeist",
         "method": "trade",
         "requirementText": []
+      },
+      {
+        "fromNodeId": "pumpkaboo-large",
+        "toNodeId": "gourgeist-large",
+        "fromSlug": "pumpkaboo",
+        "toSlug": "gourgeist",
+        "method": "trade",
+        "requirementText": []
+      },
+      {
+        "fromNodeId": "pumpkaboo-small",
+        "toNodeId": "gourgeist-small",
+        "fromSlug": "pumpkaboo",
+        "toSlug": "gourgeist",
+        "method": "trade",
+        "requirementText": []
+      },
+      {
+        "fromNodeId": "pumpkaboo-super",
+        "toNodeId": "gourgeist-super",
+        "fromSlug": "pumpkaboo",
+        "toSlug": "gourgeist",
+        "method": "trade",
+        "requirementText": []
       }
     ],
     "roots": [
-      "pumpkaboo"
+      "pumpkaboo",
+      "pumpkaboo-large",
+      "pumpkaboo-small",
+      "pumpkaboo-super"
     ]
   },
   "moves": [

@@ -76,6 +76,14 @@
         "formName": null
       },
       {
+        "nodeId": "qwilfish-hisui",
+        "slug": "qwilfish",
+        "name": "Qwilfish",
+        "dexNumber": 211,
+        "formSlug": "qwilfish-hisui",
+        "formName": "Hisui"
+      },
+      {
         "nodeId": "overqwil",
         "slug": "overqwil",
         "name": "Overqwil",
@@ -86,7 +94,7 @@
     ],
     "edges": [
       {
-        "fromNodeId": "qwilfish",
+        "fromNodeId": "qwilfish-hisui",
         "toNodeId": "overqwil",
         "fromSlug": "qwilfish",
         "toSlug": "overqwil",
@@ -97,7 +105,8 @@
       }
     ],
     "roots": [
-      "qwilfish"
+      "qwilfish",
+      "qwilfish-hisui"
     ]
   },
   "moves": [

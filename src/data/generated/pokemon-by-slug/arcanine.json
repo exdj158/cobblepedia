@@ -79,6 +79,14 @@
         "formName": null
       },
       {
+        "nodeId": "growlithe-hisui",
+        "slug": "growlithe",
+        "name": "Growlithe",
+        "dexNumber": 58,
+        "formSlug": "growlithe-hisui",
+        "formName": "Hisui"
+      },
+      {
         "nodeId": "arcanine",
         "slug": "arcanine",
         "name": "Arcanine",
@@ -107,7 +115,7 @@
         ]
       },
       {
-        "fromNodeId": "growlithe",
+        "fromNodeId": "growlithe-hisui",
         "toNodeId": "arcanine-hisui",
         "fromSlug": "growlithe",
         "toSlug": "arcanine",
@@ -118,7 +126,8 @@
       }
     ],
     "roots": [
-      "growlithe"
+      "growlithe",
+      "growlithe-hisui"
     ]
   },
   "moves": [

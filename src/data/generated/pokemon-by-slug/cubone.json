@@ -305,6 +305,14 @@
         "formName": null
       },
       {
+        "nodeId": "cubone-alolabias",
+        "slug": "cubone",
+        "name": "Cubone",
+        "dexNumber": 104,
+        "formSlug": "cubone-alolabias",
+        "formName": "Alola-Bias"
+      },
+      {
         "nodeId": "marowak",
         "slug": "marowak",
         "name": "Marowak",
@@ -335,7 +343,7 @@
         ]
       },
       {
-        "fromNodeId": "cubone",
+        "fromNodeId": "cubone-alolabias",
         "toNodeId": "marowak-alola",
         "fromSlug": "cubone",
         "toSlug": "marowak",
@@ -343,13 +351,12 @@
         "requirementText": [
           "Level 28+",
           "Time: Night",
-          "Biome Evolution Regional Cubone Alolabiome",
           "Not in biome Evolution Regional Cubone Kantobiome",
           "Not in biome Is Nether"
         ]
       },
       {
-        "fromNodeId": "cubone",
+        "fromNodeId": "cubone-alolabias",
         "toNodeId": "marowak-alola",
         "fromSlug": "cubone",
         "toSlug": "marowak",
@@ -362,7 +369,8 @@
       }
     ],
     "roots": [
-      "cubone"
+      "cubone",
+      "cubone-alolabias"
     ]
   },
   "moves": [

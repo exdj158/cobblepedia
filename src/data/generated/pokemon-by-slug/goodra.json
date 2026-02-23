@@ -80,6 +80,14 @@
         "formName": null
       },
       {
+        "nodeId": "goomy-hisuibias",
+        "slug": "goomy",
+        "name": "Goomy",
+        "dexNumber": 704,
+        "formSlug": "goomy-hisuibias",
+        "formName": "Hisui-Bias"
+      },
+      {
         "nodeId": "sliggoo",
         "slug": "sliggoo",
         "name": "Sliggoo",
@@ -124,14 +132,13 @@
         ]
       },
       {
-        "fromNodeId": "goomy",
+        "fromNodeId": "goomy-hisuibias",
         "toNodeId": "sliggoo-hisui",
         "fromSlug": "goomy",
         "toSlug": "sliggoo",
         "method": "level_up",
         "requirementText": [
-          "Level 40+",
-          "Biome Evolution Regional Goomy Hisuibiome"
+          "Level 40+"
         ]
       },
       {
@@ -146,7 +153,7 @@
         ]
       },
       {
-        "fromNodeId": "sliggoo",
+        "fromNodeId": "sliggoo-hisui",
         "toNodeId": "goodra-hisui",
         "fromSlug": "sliggoo",
         "toSlug": "goodra",
@@ -158,7 +165,8 @@
       }
     ],
     "roots": [
-      "goomy"
+      "goomy",
+      "goomy-hisuibias"
     ]
   },
   "moves": [

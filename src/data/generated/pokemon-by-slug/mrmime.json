@@ -97,6 +97,14 @@
         "formName": null
       },
       {
+        "nodeId": "mimejr-galarbias",
+        "slug": "mimejr",
+        "name": "Mime Jr.",
+        "dexNumber": 439,
+        "formSlug": "mimejr-galarbias",
+        "formName": "Galar-Bias"
+      },
+      {
         "nodeId": "mrrime",
         "slug": "mrrime",
         "name": "Mr. Rime",
@@ -117,18 +125,17 @@
         ]
       },
       {
-        "fromNodeId": "mimejr",
+        "fromNodeId": "mimejr-galarbias",
         "toNodeId": "mrmime-galar",
         "fromSlug": "mimejr",
         "toSlug": "mrmime",
         "method": "level_up",
         "requirementText": [
-          "Knows Mimic",
-          "Biome Evolution Regional Mimejr Galarbiome"
+          "Knows Mimic"
         ]
       },
       {
-        "fromNodeId": "mrmime",
+        "fromNodeId": "mrmime-galar",
         "toNodeId": "mrrime",
         "fromSlug": "mrmime",
         "toSlug": "mrrime",
@@ -139,7 +146,8 @@
       }
     ],
     "roots": [
-      "mimejr"
+      "mimejr",
+      "mimejr-galarbias"
     ]
   },
   "moves": [

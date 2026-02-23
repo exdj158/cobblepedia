@@ -76,6 +76,14 @@
         "formName": null
       },
       {
+        "nodeId": "yamask-galar",
+        "slug": "yamask",
+        "name": "Yamask",
+        "dexNumber": 562,
+        "formSlug": "yamask-galar",
+        "formName": "Galar"
+      },
+      {
         "nodeId": "cofagrigus",
         "slug": "cofagrigus",
         "name": "Cofagrigus",
@@ -104,7 +112,7 @@
         ]
       },
       {
-        "fromNodeId": "yamask",
+        "fromNodeId": "yamask-galar",
         "toNodeId": "runerigus",
         "fromSlug": "yamask",
         "toSlug": "runerigus",
@@ -117,7 +125,8 @@
       }
     ],
     "roots": [
-      "yamask"
+      "yamask",
+      "yamask-galar"
     ]
   },
   "moves": [

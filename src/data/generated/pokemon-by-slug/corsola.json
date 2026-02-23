@@ -77,6 +77,14 @@
         "formName": null
       },
       {
+        "nodeId": "corsola-galar",
+        "slug": "corsola",
+        "name": "Corsola",
+        "dexNumber": 222,
+        "formSlug": "corsola-galar",
+        "formName": "Galar"
+      },
+      {
         "nodeId": "cursola",
         "slug": "cursola",
         "name": "Cursola",
@@ -87,7 +95,7 @@
     ],
     "edges": [
       {
-        "fromNodeId": "corsola",
+        "fromNodeId": "corsola-galar",
         "toNodeId": "cursola",
         "fromSlug": "corsola",
         "toSlug": "cursola",
@@ -98,7 +106,8 @@
       }
     ],
     "roots": [
-      "corsola"
+      "corsola",
+      "corsola-galar"
     ]
   },
   "moves": [

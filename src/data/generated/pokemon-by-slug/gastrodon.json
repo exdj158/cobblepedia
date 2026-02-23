@@ -82,12 +82,28 @@
         "formName": null
       },
       {
+        "nodeId": "shellos-east",
+        "slug": "shellos",
+        "name": "Shellos",
+        "dexNumber": 422,
+        "formSlug": "shellos-east",
+        "formName": "East"
+      },
+      {
         "nodeId": "gastrodon",
         "slug": "gastrodon",
         "name": "Gastrodon",
         "dexNumber": 423,
         "formSlug": null,
         "formName": null
+      },
+      {
+        "nodeId": "gastrodon-east",
+        "slug": "gastrodon",
+        "name": "Gastrodon",
+        "dexNumber": 423,
+        "formSlug": "gastrodon-east",
+        "formName": "East"
       }
     ],
     "edges": [
@@ -100,10 +116,21 @@
         "requirementText": [
           "Level 30+"
         ]
+      },
+      {
+        "fromNodeId": "shellos-east",
+        "toNodeId": "gastrodon-east",
+        "fromSlug": "shellos",
+        "toSlug": "gastrodon",
+        "method": "level_up",
+        "requirementText": [
+          "Level 30+"
+        ]
       }
     ],
     "roots": [
-      "shellos"
+      "shellos",
+      "shellos-east"
     ]
   },
   "moves": [

@@ -79,6 +79,14 @@
         "formName": null
       },
       {
+        "nodeId": "voltorb-hisui",
+        "slug": "voltorb",
+        "name": "Voltorb",
+        "dexNumber": 100,
+        "formSlug": "voltorb-hisui",
+        "formName": "Hisui"
+      },
+      {
         "nodeId": "electrode",
         "slug": "electrode",
         "name": "Electrode",
@@ -107,7 +115,7 @@
         ]
       },
       {
-        "fromNodeId": "voltorb",
+        "fromNodeId": "voltorb-hisui",
         "toNodeId": "electrode-hisui",
         "fromSlug": "voltorb",
         "toSlug": "electrode",
@@ -118,7 +126,8 @@
       }
     ],
     "roots": [
-      "voltorb"
+      "voltorb",
+      "voltorb-hisui"
     ]
   },
   "moves": [

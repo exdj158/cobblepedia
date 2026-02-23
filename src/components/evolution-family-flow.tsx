@@ -136,7 +136,9 @@ export function EvolutionFamilyFlow(props: EvolutionFamilyFlowProps) {
         >
           <For each={layout().edges}>
             {(edge) => {
-              const isActiveEdge = edge.from === activeNodeId() || edge.to === activeNodeId()
+              const isActiveEdge = createMemo(
+                () => edge.from === activeNodeId() || edge.to === activeNodeId()
+              )
 
               return (
                 <g>
@@ -144,7 +146,7 @@ export function EvolutionFamilyFlow(props: EvolutionFamilyFlowProps) {
                     d={edge.path}
                     class={cn(
                       "fill-none stroke-border/70",
-                      isActiveEdge ? "stroke-foreground/70" : "stroke-border/70"
+                      isActiveEdge() ? "stroke-foreground/70" : "stroke-border/70"
                     )}
                     stroke-width={2.5}
                     stroke-linecap="round"
@@ -155,7 +157,7 @@ export function EvolutionFamilyFlow(props: EvolutionFamilyFlowProps) {
                     r={1.8}
                     class={cn(
                       "fill-border/75",
-                      isActiveEdge ? "fill-foreground/70" : "fill-border/75"
+                      isActiveEdge() ? "fill-foreground/70" : "fill-border/75"
                     )}
                   />
                   <circle
@@ -164,7 +166,7 @@ export function EvolutionFamilyFlow(props: EvolutionFamilyFlowProps) {
                     r={2.1}
                     class={cn(
                       "fill-border/75",
-                      isActiveEdge ? "fill-foreground/75" : "fill-border/75"
+                      isActiveEdge() ? "fill-foreground/75" : "fill-border/75"
                     )}
                   />
                 </g>
@@ -175,7 +177,9 @@ export function EvolutionFamilyFlow(props: EvolutionFamilyFlowProps) {
 
         <For each={layout().edges}>
           {(edge) => {
-            const isActiveEdge = edge.from === activeNodeId() || edge.to === activeNodeId()
+            const isActiveEdge = createMemo(
+              () => edge.from === activeNodeId() || edge.to === activeNodeId()
+            )
             const requirementSummary = formatRequirementSummary(edge.data)
             const requirementTokens = formatRequirementTokens(edge.data)
 
@@ -190,7 +194,7 @@ export function EvolutionFamilyFlow(props: EvolutionFamilyFlowProps) {
                 <div
                   class={cn(
                     "flex items-center gap-2 rounded-full border px-3 py-1.5",
-                    isActiveEdge
+                    isActiveEdge()
                       ? "border-foreground/30 bg-background"
                       : "border-border/60 bg-background/90"
                   )}
@@ -243,14 +247,14 @@ export function EvolutionFamilyFlow(props: EvolutionFamilyFlowProps) {
 
         <For each={layout().nodes}>
           {(node) => {
-            const isActiveNode = node.id === activeNodeId()
+            const isActiveNode = createMemo(() => node.id === activeNodeId())
 
             return (
               <a
                 href={toEvolutionMemberHref(node.data)}
                 class={cn(
                   "group absolute z-20 flex items-center gap-3 border px-3 py-2 transition-all",
-                  isActiveNode
+                  isActiveNode()
                     ? "border-foreground bg-foreground text-background"
                     : "border-border bg-card hover:border-muted-foreground hover:bg-secondary/25"
                 )}
@@ -260,7 +264,7 @@ export function EvolutionFamilyFlow(props: EvolutionFamilyFlowProps) {
                   width: `${node.width}px`,
                   height: `${node.height}px`,
                 }}
-                aria-current={isActiveNode ? "page" : undefined}
+                aria-current={isActiveNode() ? "page" : undefined}
               >
                 <PokemonSprite
                   dexNumber={node.data.dexNumber}
@@ -274,7 +278,7 @@ export function EvolutionFamilyFlow(props: EvolutionFamilyFlowProps) {
                   }
                   class={cn(
                     "h-10 w-10",
-                    isActiveNode
+                    isActiveNode()
                       ? "border-background/40 bg-background/20"
                       : "border-border bg-secondary/40"
                   )}
@@ -286,13 +290,16 @@ export function EvolutionFamilyFlow(props: EvolutionFamilyFlowProps) {
                   <p
                     class={cn(
                       "mt-1 truncate font-mono text-[10px] uppercase tracking-wider",
-                      isActiveNode ? "text-background/80" : "text-muted-foreground"
+                      isActiveNode() ? "text-background/80" : "text-muted-foreground"
                     )}
                   >
                     #{String(node.data.dexNumber).padStart(4, "0")}
                     <Show when={node.data.formName}>
                       <span
-                        class={cn("ml-1", isActiveNode ? "text-background/80" : "text-foreground")}
+                        class={cn(
+                          "ml-1",
+                          isActiveNode() ? "text-background/80" : "text-foreground"
+                        )}
                       >
                         {node.data.formName}
                       </span>

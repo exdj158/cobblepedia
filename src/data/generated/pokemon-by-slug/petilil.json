@@ -152,6 +152,14 @@
         "formName": null
       },
       {
+        "nodeId": "petilil-hisuibias",
+        "slug": "petilil",
+        "name": "Petilil",
+        "dexNumber": 548,
+        "formSlug": "petilil-hisuibias",
+        "formName": "Hisui-Bias"
+      },
+      {
         "nodeId": "lilligant",
         "slug": "lilligant",
         "name": "Lilligant",
@@ -180,19 +188,19 @@
         ]
       },
       {
-        "fromNodeId": "petilil",
+        "fromNodeId": "petilil-hisuibias",
         "toNodeId": "lilligant-hisui",
         "fromSlug": "petilil",
         "toSlug": "lilligant",
         "method": "item_interact",
         "requirementText": [
-          "Use Sun Stone",
-          "Biome Evolution Regional Petilil Hisuibiome"
+          "Use Sun Stone"
         ]
       }
     ],
     "roots": [
-      "petilil"
+      "petilil",
+      "petilil-hisuibias"
     ]
   },
   "moves": [

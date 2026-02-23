@@ -185,12 +185,44 @@
         "formName": null
       },
       {
+        "nodeId": "burmy-sandy",
+        "slug": "burmy",
+        "name": "Burmy",
+        "dexNumber": 412,
+        "formSlug": "burmy-sandy",
+        "formName": "Sandy"
+      },
+      {
+        "nodeId": "burmy-trash",
+        "slug": "burmy",
+        "name": "Burmy",
+        "dexNumber": 412,
+        "formSlug": "burmy-trash",
+        "formName": "Trash"
+      },
+      {
         "nodeId": "wormadam",
         "slug": "wormadam",
         "name": "Wormadam",
         "dexNumber": 413,
         "formSlug": null,
         "formName": null
+      },
+      {
+        "nodeId": "wormadam-sandy",
+        "slug": "wormadam",
+        "name": "Wormadam",
+        "dexNumber": 413,
+        "formSlug": "wormadam-sandy",
+        "formName": "Sandy"
+      },
+      {
+        "nodeId": "wormadam-trash",
+        "slug": "wormadam",
+        "name": "Wormadam",
+        "dexNumber": 413,
+        "formSlug": "wormadam-trash",
+        "formName": "Trash"
       },
       {
         "nodeId": "mothim",
@@ -223,10 +255,56 @@
           "Level 20+",
           "Female only"
         ]
+      },
+      {
+        "fromNodeId": "burmy-sandy",
+        "toNodeId": "mothim",
+        "fromSlug": "burmy",
+        "toSlug": "mothim",
+        "method": "level_up",
+        "requirementText": [
+          "Level 20+",
+          "Male only"
+        ]
+      },
+      {
+        "fromNodeId": "burmy-sandy",
+        "toNodeId": "wormadam-sandy",
+        "fromSlug": "burmy",
+        "toSlug": "wormadam",
+        "method": "level_up",
+        "requirementText": [
+          "Level 20+",
+          "Female only"
+        ]
+      },
+      {
+        "fromNodeId": "burmy-trash",
+        "toNodeId": "mothim",
+        "fromSlug": "burmy",
+        "toSlug": "mothim",
+        "method": "level_up",
+        "requirementText": [
+          "Level 20+",
+          "Male only"
+        ]
+      },
+      {
+        "fromNodeId": "burmy-trash",
+        "toNodeId": "wormadam-trash",
+        "fromSlug": "burmy",
+        "toSlug": "wormadam",
+        "method": "level_up",
+        "requirementText": [
+          "Level 20+",
+          "Female only"
+        ]
       }
     ],
     "roots": [
-      "burmy"
+      "burmy",
+      "burmy-sandy",
+      "burmy-trash"
     ]
   },
   "moves": [

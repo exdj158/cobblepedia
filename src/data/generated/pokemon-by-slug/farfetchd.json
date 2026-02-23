@@ -78,6 +78,14 @@
         "formName": null
       },
       {
+        "nodeId": "farfetchd-galar",
+        "slug": "farfetchd",
+        "name": "Farfetch’d",
+        "dexNumber": 83,
+        "formSlug": "farfetchd-galar",
+        "formName": "Galar"
+      },
+      {
         "nodeId": "sirfetchd",
         "slug": "sirfetchd",
         "name": "Sirfetch’d",
@@ -88,7 +96,7 @@
     ],
     "edges": [
       {
-        "fromNodeId": "farfetchd",
+        "fromNodeId": "farfetchd-galar",
         "toNodeId": "sirfetchd",
         "fromSlug": "farfetchd",
         "toSlug": "sirfetchd",
@@ -99,7 +107,8 @@
       }
     ],
     "roots": [
-      "farfetchd"
+      "farfetchd",
+      "farfetchd-galar"
     ]
   },
   "moves": [
