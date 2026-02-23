@@ -31,9 +31,17 @@ Other wikis make you browse. Cobblepedia lets you *ask*.
 
 ## Screenshots
 
-| Quickview | Detail Page | Evolution |
-|:---:|:---:|:---:|
-| ![Quickview](_docs/command-palette-quickview.webp) | ![Detail](_docs/pokemon-detail-moves.webp) | ![Evolution](_docs/evolution-family-flow.webp) |
+**Command Palette**
+
+![Command palette quickview for Lucario](_docs/command-palette-quickview.webp)
+
+**Pokemon Detail Page**
+
+![Pokemon detail page showing moves and stats](_docs/pokemon-detail-moves.webp)
+
+**Evolution Family View**
+
+![Evolution chain for Rockruff and Lycanroc forms](_docs/evolution-family-flow.webp)
 
 ---
 
