@@ -3,28 +3,28 @@ import { createEffect, createMemo, createSignal, For, onCleanup, Show } from "so
 import { navigate } from "vike/client/router"
 import { useMetadata } from "vike-metadata-solid"
 import { usePageContext } from "vike-solid/usePageContext"
-import { IconBox, IconEgg } from "@/assets/icons"
+import { IconEgg } from "@/assets/icons"
 import { DualEggGroupSelector } from "@/components/dual-egg-group-selector"
 import { PokemonSprite } from "@/components/pokemon-sprite"
 import type { PokemonListItem } from "@/data/cobblemon-types"
 import { loadPokemonDetail, loadPokemonList } from "@/data/data-loader"
-import { canonicalId, formatEggGroup, titleCaseFromId } from "@/data/formatters"
+import { canonicalId, formatEggGroup } from "@/data/formatters"
 import { cn } from "@/utils/cn"
 import getTitle from "@/utils/get-title"
 
 const EGG_GROUP_ORDER = [
   "monster",
-  "water1",
+  "water_1",
+  "water_2",
+  "water_3",
   "bug",
   "flying",
   "field",
   "fairy",
   "grass",
   "human_like",
-  "water3",
   "mineral",
   "amorphous",
-  "water2",
   "ditto",
   "dragon",
   "undiscovered",
@@ -32,41 +32,20 @@ const EGG_GROUP_ORDER = [
 
 const EGG_GROUP_COLORS: Record<string, string> = {
   monster: "#8b5cf6",
-  water1: "#38bdf8",
+  water_1: "#00d4ff",
   bug: "#84cc16",
   flying: "#818cf8",
   field: "#d97706",
   fairy: "#f472b6",
   grass: "#22c55e",
   human_like: "#f97316",
-  water3: "#0ea5e9",
+  water_3: "#00b8d4",
   mineral: "#94a3b8",
   amorphous: "#a78bfa",
-  water2: "#0284c7",
+  water_2: "#00e5ff",
   ditto: "#e879f9",
   dragon: "#6366f1",
   undiscovered: "#64748b",
-}
-
-const TYPE_COLORS: Record<string, string> = {
-  normal: "#A8A878",
-  fire: "#F08030",
-  water: "#6890F0",
-  electric: "#F8D030",
-  grass: "#78C850",
-  ice: "#98D8D8",
-  fighting: "#C03028",
-  poison: "#A040A0",
-  ground: "#E0C068",
-  flying: "#A890F0",
-  psychic: "#F85888",
-  bug: "#A8B820",
-  rock: "#B8A038",
-  ghost: "#705898",
-  dragon: "#7038F8",
-  dark: "#705848",
-  steel: "#B8B8D0",
-  fairy: "#EE99AC",
 }
 
 const COMPATIBILITY_DETAIL_TIMEOUT_MS = 8000
@@ -907,7 +886,7 @@ export function EggGroupsPageView(props: {
                           <a
                             href={buildExplorerHref(pokemon.slug)}
                             class={cn(
-                              "group border border-border bg-card p-3 transition-colors hover:border-muted-foreground",
+                              "group flex items-center gap-3 border border-border bg-card p-2 transition-colors hover:border-muted-foreground",
                               isSelected() && "border-foreground bg-secondary/30"
                             )}
                             aria-current={isSelected() ? "true" : undefined}
@@ -916,61 +895,38 @@ export function EggGroupsPageView(props: {
                               handlePokemonSelection(pokemon.slug)
                             }}
                           >
-                            <div class="mb-2 flex items-center justify-between gap-2">
-                              <div class="flex min-w-0 items-center gap-2">
-                                <PokemonSprite
-                                  dexNumber={pokemon.dexNumber}
-                                  name={pokemon.name}
-                                  class="h-8 w-8"
-                                  imageClass="h-6 w-6"
-                                />
+                            <PokemonSprite
+                              dexNumber={pokemon.dexNumber}
+                              name={pokemon.name}
+                              class="h-8 w-8 shrink-0"
+                              imageClass="h-6 w-6"
+                            />
+
+                            <div class="min-w-0 flex-1">
+                              <div class="flex items-center justify-between gap-2">
                                 <p class="truncate font-medium text-sm group-hover:text-foreground">
                                   {pokemon.name}
                                 </p>
+                                <span class="font-mono text-muted-foreground text-xs">
+                                  #{String(pokemon.dexNumber).padStart(3, "0")}
+                                </span>
                               </div>
-                              <span class="font-mono text-muted-foreground text-xs">
-                                #{String(pokemon.dexNumber).padStart(3, "0")}
-                              </span>
-                            </div>
 
-                            <div class="mb-2 flex flex-wrap items-center gap-1">
-                              <For each={pokemon.types}>
-                                {(type) => (
-                                  <span
-                                    class="inline-flex items-center gap-1 border px-2 py-0.5 font-mono text-[10px] uppercase tracking-wider"
-                                    style={{
-                                      "border-color": TYPE_COLORS[type] ?? "#888888",
-                                      color: TYPE_COLORS[type] ?? "#888888",
-                                    }}
-                                  >
-                                    <IconBox class="h-3 w-3" />
-                                    {titleCaseFromId(type)}
-                                  </span>
-                                )}
-                              </For>
-                            </div>
-
-                            <div class="flex flex-wrap items-center gap-1">
-                              <For each={pokemon.eggGroups}>
-                                {(group) => (
-                                  <span
-                                    class={cn(
-                                      "inline-flex items-center gap-1 border px-2 py-0.5 font-mono text-[10px] uppercase tracking-wider",
-                                      (group === primaryEggGroup() ||
-                                        group === secondaryEggGroup()) &&
-                                        "ring-1 ring-offset-1 ring-offset-background"
-                                    )}
-                                    style={{
-                                      "border-color": EGG_GROUP_COLORS[group] ?? "#9ca3af",
-                                      color: EGG_GROUP_COLORS[group] ?? "#9ca3af",
-                                      "--tw-ring-color": EGG_GROUP_COLORS[group] ?? "#9ca3af",
-                                    }}
-                                  >
-                                    <IconEgg class="h-3 w-3" />
-                                    {formatEggGroup(group)}
-                                  </span>
-                                )}
-                              </For>
+                              <div class="mt-0.5 flex flex-wrap items-center gap-1">
+                                <For each={pokemon.eggGroups}>
+                                  {(group) => (
+                                    <span
+                                      class="border border-dashed px-1 py-0 font-mono text-[10px] uppercase tracking-wide"
+                                      style={{
+                                        "border-color": EGG_GROUP_COLORS[group] ?? "#9ca3af",
+                                        color: EGG_GROUP_COLORS[group] ?? "#9ca3af",
+                                      }}
+                                    >
+                                      {formatEggGroup(group)}
+                                    </span>
+                                  )}
+                                </For>
+                              </div>
                             </div>
                           </a>
                         )

@@ -75,6 +75,7 @@ const PRIMARY_PAGES: Array<{
     subtitle: "List Pokemon directly in the command palette",
     url: "/",
     icon: "PK",
+    image: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/25.png",
   },
   {
     id: "page:rideable",
@@ -90,6 +91,7 @@ const PRIMARY_PAGES: Array<{
     subtitle: "Explore type matchups and effectiveness",
     url: "/types",
     icon: "TY",
+    image: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/fire-stone.png",
   },
   {
     id: "page:egg-groups",
