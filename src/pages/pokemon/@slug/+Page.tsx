@@ -653,16 +653,32 @@ function PokemonDetailView(props: {
             <div class="mt-2 flex flex-wrap gap-4 text-sm">
               <div class="flex items-center gap-1.5">
                 <span class="text-muted-foreground">Height:</span>
-                <span class="font-mono">{activeHeight() ?? "—"}</span>
+                <span class="font-mono">{activeHeight() ?? "—"} m</span>
               </div>
               <div class="flex items-center gap-1.5">
                 <span class="text-muted-foreground">Weight:</span>
-                <span class="font-mono">{activeWeight() ?? "—"}</span>
+                <span class="font-mono">{activeWeight() ?? "—"} kg</span>
               </div>
-              <div class="flex items-center gap-1.5">
-                <span class="text-muted-foreground">Catch:</span>
-                <span class="font-mono">{activeCatchRate() ?? "—"}</span>
-              </div>
+              <Tippy
+                content={
+                  <div class="max-w-[16rem] p-1">
+                    <p class="text-xs leading-relaxed">
+                      Chance of catching this Pokemon. Higher values (0-255) mean easier to catch.
+                    </p>
+                  </div>
+                }
+                props={{
+                  trigger: "mouseenter focus",
+                  placement: "top",
+                  arrow: false,
+                  delay: [100, 60],
+                }}
+              >
+                <div class="flex cursor-help items-center gap-1.5">
+                  <span class="text-muted-foreground">Catch Rate:</span>
+                  <span class="font-mono">{activeCatchRate() ?? "—"}</span>
+                </div>
+              </Tippy>
             </div>
           </div>
 
@@ -808,14 +824,7 @@ function PokemonDetailView(props: {
           <section class="border border-border bg-card">
             <div class="flex items-center gap-2 border-border border-b bg-secondary px-4 py-3">
               <IconEgg class="h-4 w-4 text-muted-foreground" />
-              <h2 class="font-semibold">
-                <a
-                  href={breedingExplorerHref()}
-                  class="transition-colors hover:text-foreground hover:underline hover:underline-offset-2 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-muted-foreground/50"
-                >
-                  Breeding
-                </a>
-              </h2>
+              <h2 class="font-semibold">Breeding</h2>
             </div>
             <div class="grid grid-cols-2 gap-px bg-border">
               <div class="bg-card p-4">
@@ -860,6 +869,13 @@ function PokemonDetailView(props: {
                 <span class="font-mono text-lg">{activeCatchRate() ?? "—"}</span>
               </div>
             </div>
+            <a
+              href={breedingExplorerHref()}
+              class="flex items-center justify-center gap-2 border-border border-t bg-secondary/30 px-4 py-3 font-medium text-sm transition-colors hover:bg-secondary/50"
+            >
+              <span>See Compatible Pokemon</span>
+              <IconArrowRight class="h-4 w-4" />
+            </a>
           </section>
 
           {/* Drops */}

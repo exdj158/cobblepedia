@@ -5,7 +5,7 @@
 - [ ] Abilities page, you can differentiate the different forms I think? Two forms can be considered two pokemon.
 - [ ] Moves, you can different two different forms as well.
 - [x] Say that this thing is open-source. If you want to contribute or fork feel free. Made by Carlo
-- [ ] What units is height and weight? What unit is catch (200 what? 200%?)
+- [x] What units is height and weight? What unit is catch (200 what? 200%?)
 - [ ] Fix: Two ways to evolve pokemon i.e. Shelmet (link cable or trade with Karrablast) - this is a diaglow fix. to be considerate of that and shift down or up the lines so it looks nicer to look at.
 - [ ] Improvement: Karrablast is clickable in the above fix as well. Right now it's just a text.
 - [ ] Improvement: Add the pokedex entry in the pokemon-specific page. Has to be small so it doesnt impact the viewing experience.
