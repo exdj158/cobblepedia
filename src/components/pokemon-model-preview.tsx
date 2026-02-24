@@ -145,6 +145,7 @@ type CompiledBoneAnimation = {
 
 type CompiledAnimationPlayer = {
   update: (deltaSeconds: number) => void
+  playAttack: () => void
 }
 
 type OrbitController = {
@@ -208,7 +209,9 @@ export function PokemonModelPreview(props: { slug: string; dexNumber: number; na
 
     containerRef.append(renderer.domElement)
 
-    const orbitController = createOrbitController(camera, renderer.domElement)
+    const orbitController = createOrbitController(camera, renderer.domElement, () => {
+      runtime?.animationPlayer?.playAttack()
+    })
 
     const resize = () => {
       if (!containerRef) {
@@ -544,6 +547,11 @@ type CompiledAnimation = {
   bones: CompiledBoneAnimation[]
 }
 
+type NamedBedrockAnimation = {
+  name: string
+  animation: BedrockAnimation
+}
+
 type CompiledKeyframe = {
   time: number
   pre: VectorEvaluator
@@ -555,16 +563,25 @@ function createIdleAnimationPlayer(
   model: BuiltModel,
   animationFile: BedrockAnimationFile | null
 ): CompiledAnimationPlayer | null {
-  const selectedAnimation = pickIdleAnimation(animationFile)
-  if (!selectedAnimation) {
+  const animationEntries = getAnimationEntries(animationFile)
+  const idleSelection = pickIdleAnimation(animationEntries)
+  if (!idleSelection) {
     return null
   }
 
-  const compiledAnimation = compileAnimation(selectedAnimation, model.animatedBones)
-  if (!compiledAnimation || compiledAnimation.bones.length === 0) {
+  const idleAnimation = compileAnimation(idleSelection.animation, model.animatedBones)
+  if (!idleAnimation || idleAnimation.bones.length === 0) {
     return null
   }
 
+  const attackSelection = pickAttackAnimation(animationEntries, idleSelection.name)
+  const compiledAttack = attackSelection
+    ? compileAnimation(attackSelection.animation, model.animatedBones)
+    : null
+  const attackAnimation = compiledAttack && compiledAttack.bones.length > 0 ? compiledAttack : null
+
+  let activeAnimation = idleAnimation
+  let activeMode: "idle" | "attack" = "idle"
   let elapsedSeconds = 0
   let lifeTimeSeconds = 0
 
@@ -574,85 +591,137 @@ function createIdleAnimationPlayer(
       elapsedSeconds += safeDelta
       lifeTimeSeconds += safeDelta
 
-      const sampleTime =
-        compiledAnimation.loop && compiledAnimation.duration > 0
-          ? wrapTime(elapsedSeconds, compiledAnimation.duration)
-          : elapsedSeconds
+      const isLooping =
+        activeMode === "idle" && activeAnimation.loop && activeAnimation.duration > 0
+
+      const sampleTime = isLooping
+        ? wrapTime(elapsedSeconds, activeAnimation.duration)
+        : elapsedSeconds
 
       const evalContext: AnimationEvalContext = {
-        animTime: lifeTimeSeconds,
+        animTime: sampleTime,
         lifeTime: lifeTimeSeconds,
         deltaTime: safeDelta,
       }
 
-      for (const boneAnimation of compiledAnimation.bones) {
-        const { target } = boneAnimation
+      applyCompiledAnimationPose(activeAnimation, sampleTime, evalContext)
 
-        if (boneAnimation.position) {
-          const [offsetX, offsetY, offsetZ] = boneAnimation.position.sample(sampleTime, evalContext)
-          target.node.position.set(
-            target.basePosition.x - offsetX,
-            target.basePosition.y + offsetY,
-            target.basePosition.z + offsetZ
-          )
-        } else {
-          target.node.position.copy(target.basePosition)
-        }
-
-        if (boneAnimation.rotation) {
-          const [rotationX, rotationY, rotationZ] = boneAnimation.rotation.sample(
-            sampleTime,
-            evalContext
-          )
-          setBedrockEulerDegrees(
-            target.node,
-            target.baseRotation[0] + rotationX,
-            target.baseRotation[1] + rotationY,
-            target.baseRotation[2] + rotationZ
-          )
-        } else {
-          setBedrockEulerDegrees(
-            target.node,
-            target.baseRotation[0],
-            target.baseRotation[1],
-            target.baseRotation[2]
-          )
-        }
-
-        if (boneAnimation.scale) {
-          const [scaleX, scaleY, scaleZ] = boneAnimation.scale.sample(sampleTime, evalContext)
-          target.node.scale.set(
-            target.baseScale.x * keepNonZero(scaleX, 1),
-            target.baseScale.y * keepNonZero(scaleY, 1),
-            target.baseScale.z * keepNonZero(scaleZ, 1)
-          )
-        } else {
-          target.node.scale.copy(target.baseScale)
+      if (activeMode === "attack") {
+        const attackDuration = Math.max(activeAnimation.duration, 0.45)
+        if (elapsedSeconds >= attackDuration) {
+          activeMode = "idle"
+          activeAnimation = idleAnimation
+          elapsedSeconds = 0
         }
       }
+    },
+    playAttack: () => {
+      if (!attackAnimation) {
+        return
+      }
+
+      activeMode = "attack"
+      activeAnimation = attackAnimation
+      elapsedSeconds = 0
     },
   }
 }
 
-function pickIdleAnimation(animationFile: BedrockAnimationFile | null): BedrockAnimation | null {
-  const animations = animationFile?.animations
-  if (!animations) {
-    return null
+function applyCompiledAnimationPose(
+  compiledAnimation: CompiledAnimation,
+  sampleTime: number,
+  context: AnimationEvalContext
+) {
+  for (const boneAnimation of compiledAnimation.bones) {
+    const { target } = boneAnimation
+
+    if (boneAnimation.position) {
+      const [offsetX, offsetY, offsetZ] = boneAnimation.position.sample(sampleTime, context)
+      target.node.position.set(
+        target.basePosition.x - offsetX,
+        target.basePosition.y + offsetY,
+        target.basePosition.z + offsetZ
+      )
+    } else {
+      target.node.position.copy(target.basePosition)
+    }
+
+    if (boneAnimation.rotation) {
+      const [rotationX, rotationY, rotationZ] = boneAnimation.rotation.sample(sampleTime, context)
+      setBedrockEulerDegrees(
+        target.node,
+        target.baseRotation[0] + rotationX,
+        target.baseRotation[1] + rotationY,
+        target.baseRotation[2] + rotationZ
+      )
+    } else {
+      setBedrockEulerDegrees(
+        target.node,
+        target.baseRotation[0],
+        target.baseRotation[1],
+        target.baseRotation[2]
+      )
+    }
+
+    if (boneAnimation.scale) {
+      const [scaleX, scaleY, scaleZ] = boneAnimation.scale.sample(sampleTime, context)
+      target.node.scale.set(
+        target.baseScale.x * keepNonZero(scaleX, 1),
+        target.baseScale.y * keepNonZero(scaleY, 1),
+        target.baseScale.z * keepNonZero(scaleZ, 1)
+      )
+    } else {
+      target.node.scale.copy(target.baseScale)
+    }
   }
-
-  const entries = Object.entries(animations).filter(([, animation]) => !!animation)
-  if (entries.length === 0) {
-    return null
-  }
-
-  const scored = entries
-    .map(([name, animation]) => ({ name, animation, score: scoreAnimationName(name, animation) }))
-    .sort((a, b) => b.score - a.score || a.name.localeCompare(b.name))
-
-  return scored[0]?.animation ?? null
 }
 
-function scoreAnimationName(name: string, animation: BedrockAnimation): number {
+function getAnimationEntries(animationFile: BedrockAnimationFile | null): NamedBedrockAnimation[] {
+  const animations = animationFile?.animations
+  if (!animations) {
+    return []
+  }
+
+  return Object.entries(animations)
+    .filter(([, animation]) => !!animation)
+    .map(([name, animation]) => ({ name, animation }))
+}
+
+function pickIdleAnimation(animations: NamedBedrockAnimation[]): NamedBedrockAnimation | null {
+  if (animations.length === 0) {
+    return null
+  }
+
+  const scored = animations
+    .map((entry) => ({
+      entry,
+      score: scoreIdleAnimationName(entry.name, entry.animation),
+    }))
+    .sort(
+      (left, right) => right.score - left.score || left.entry.name.localeCompare(right.entry.name)
+    )
+
+  return scored[0]?.entry ?? null
+}
+
+function pickAttackAnimation(
+  animations: NamedBedrockAnimation[],
+  idleAnimationName: string
+): NamedBedrockAnimation | null {
+  const scored = animations
+    .map((entry) => ({
+      entry,
+      score: scoreAttackAnimationName(entry.name, entry.animation, idleAnimationName),
+    }))
+    .filter((entry) => entry.score > 0)
+    .sort(
+      (left, right) => right.score - left.score || left.entry.name.localeCompare(right.entry.name)
+    )
+
+  return scored[0]?.entry ?? null
+}
+
+function scoreIdleAnimationName(name: string, animation: BedrockAnimation): number {
   const normalizedName = name.toLowerCase()
   let score = 0
 
@@ -668,11 +737,67 @@ function scoreAnimationName(name: string, animation: BedrockAnimation): number {
   if (/\.idle(?:$|\.)/u.test(normalizedName)) {
     score += 70
   }
-  if (/(walk|run|attack|hit|cry|faint|death|sleep)/u.test(normalizedName)) {
+  if (/(walk|run|attack|hit|cry|faint|death|sleep|physical|special|status)/u.test(normalizedName)) {
     score -= 180
   }
   if (animation.loop === true || animation.loop === "loop") {
     score += 40
+  }
+
+  return score
+}
+
+function scoreAttackAnimationName(
+  name: string,
+  animation: BedrockAnimation,
+  idleAnimationName: string
+): number {
+  const normalizedName = name.toLowerCase()
+  const normalizedIdleName = idleAnimationName.toLowerCase()
+
+  if (normalizedName === normalizedIdleName) {
+    return -9999
+  }
+
+  let score = 0
+
+  const attackTokens = [
+    "attack",
+    "physical",
+    "special",
+    "status",
+    "recoil",
+    "strike",
+    "hit",
+    "slam",
+    "bite",
+    "claw",
+    "punch",
+    "kick",
+  ]
+
+  if (attackTokens.some((token) => normalizedName.includes(token))) {
+    score += 260
+  }
+  if (normalizedName.includes("battle_cry") || normalizedName.endsWith(".cry")) {
+    score += 110
+  }
+  if (
+    normalizedName.includes("ground") ||
+    normalizedName.includes("battle") ||
+    normalizedName.includes("air")
+  ) {
+    score += 30
+  }
+
+  if (/(idle|walk|run|sleep|blink|render|ride)/u.test(normalizedName)) {
+    score -= 220
+  }
+  if (/(hurt|sad|happy|shock|angry|unamused)/u.test(normalizedName)) {
+    score -= 120
+  }
+  if (animation.loop === true || animation.loop === "loop") {
+    score -= 60
   }
 
   return score
@@ -1425,10 +1550,12 @@ const ORBIT_DRAG_SENSITIVITY = 0.008
 const ORBIT_ZOOM_SENSITIVITY = 0.0015
 const ORBIT_AUTO_ROTATE_SPEED = 0.2
 const ORBIT_RESUME_DELAY_MS = 1200
+const ORBIT_CLICK_DRAG_THRESHOLD_PX = 6
 
 function createOrbitController(
   camera: PerspectiveCamera,
-  element: HTMLCanvasElement
+  element: HTMLCanvasElement,
+  onTap?: () => void
 ): OrbitController {
   const previousTouchAction = element.style.touchAction
   const previousCursor = element.style.cursor
@@ -1442,6 +1569,9 @@ function createOrbitController(
     polar: Math.PI * 0.33,
     isDragging: false,
     activePointerId: null as number | null,
+    pointerDownX: 0,
+    pointerDownY: 0,
+    dragDistanceSquared: 0,
     lastPointerX: 0,
     lastPointerY: 0,
     lastInteractionAt: 0,
@@ -1480,6 +1610,9 @@ function createOrbitController(
 
     state.isDragging = true
     state.activePointerId = event.pointerId
+    state.pointerDownX = event.clientX
+    state.pointerDownY = event.clientY
+    state.dragDistanceSquared = 0
     state.lastPointerX = event.clientX
     state.lastPointerY = event.clientY
     markInteraction()
@@ -1495,6 +1628,13 @@ function createOrbitController(
 
     const deltaX = event.clientX - state.lastPointerX
     const deltaY = event.clientY - state.lastPointerY
+    const totalDeltaX = event.clientX - state.pointerDownX
+    const totalDeltaY = event.clientY - state.pointerDownY
+    state.dragDistanceSquared = Math.max(
+      state.dragDistanceSquared,
+      totalDeltaX * totalDeltaX + totalDeltaY * totalDeltaY
+    )
+
     state.lastPointerX = event.clientX
     state.lastPointerY = event.clientY
 
@@ -1514,10 +1654,18 @@ function createOrbitController(
       return
     }
 
+    const isTap =
+      event.type === "pointerup" &&
+      state.dragDistanceSquared <= ORBIT_CLICK_DRAG_THRESHOLD_PX * ORBIT_CLICK_DRAG_THRESHOLD_PX
+
     state.isDragging = false
     state.activePointerId = null
     markInteraction()
     element.style.cursor = "grab"
+
+    if (isTap) {
+      onTap?.()
+    }
   }
 
   const handleWheel = (event: WheelEvent) => {
@@ -1658,7 +1806,7 @@ function fitModelInPreview(model: BuiltModel, camera: PerspectiveCamera): FitMod
   const newY = lookTarget.y + finalSize.y * 0.18
   const newZ = lookTarget.z - distance * 0.82
 
-  lookTarget.y += 0.2 // Look up a bit, since there's too much empty space.
+  lookTarget.y += 0.2
 
   camera.position.set(newX, newY, newZ)
   camera.lookAt(lookTarget)
