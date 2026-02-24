@@ -2,6 +2,7 @@ import { QueryClient, QueryClientProvider } from "@tanstack/solid-query"
 import type { FlowProps } from "solid-js"
 import { useMetadata } from "vike-metadata-solid"
 import CommandPalette from "@/components/command-palette"
+import { useVimScroll } from "@/lib/use-vim-scroll"
 import getTitle from "@/utils/get-title"
 import "@/styles/app.css"
 
@@ -33,6 +34,15 @@ export default function RootLayout(props: FlowProps) {
     twitter: {
       card: "summary_large_image",
       images: ["/cobblepedia-banner.png"],
+    },
+  })
+
+  useVimScroll({
+    onScrollToTop: () => {
+      window.scrollTo({ top: 0, behavior: "instant" })
+    },
+    onScrollToBottom: () => {
+      window.scrollTo({ top: document.body.scrollHeight, behavior: "instant" })
     },
   })
 
