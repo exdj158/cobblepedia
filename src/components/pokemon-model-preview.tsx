@@ -2,10 +2,9 @@ import { createEffect, createSignal, onCleanup, onMount, Show } from "solid-js"
 import {
   Box3,
   BoxGeometry,
-  BufferGeometry,
+  type BufferGeometry,
   Color,
   DirectionalLight,
-  Float32BufferAttribute,
   Group,
   HemisphereLight,
   MathUtils,
@@ -320,11 +319,8 @@ function buildModelFromBedrock(geoFile: BedrockGeoFile, texture: Texture): Built
   })
 
   const skeletonRoot = new Group()
-  const renderRoot = new Group()
-  renderRoot.scale.set(-1, 1, 1)
-  renderRoot.add(skeletonRoot)
   const root = new Group()
-  root.add(renderRoot)
+  root.add(skeletonRoot)
   const meshMeta: MeshVolumeMeta[] = []
   const boneObjects = new Map<string, Group>()
   const bonePivots = new Map<string, Vector3>()
@@ -333,7 +329,7 @@ function buildModelFromBedrock(geoFile: BedrockGeoFile, texture: Texture): Built
     const boneGroup = new Group()
     boneGroup.name = bone.name
     boneObjects.set(bone.name, boneGroup)
-    bonePivots.set(bone.name, toVector3(bone.pivot))
+    bonePivots.set(bone.name, toBedrockPivotVector(bone.pivot))
   }
 
   for (const bone of bones) {
@@ -347,7 +343,7 @@ function buildModelFromBedrock(geoFile: BedrockGeoFile, texture: Texture): Built
     const parentObject = bone.parent ? (boneObjects.get(bone.parent) ?? skeletonRoot) : skeletonRoot
 
     boneObject.position.copy(bonePivot.clone().sub(parentPivot))
-    applyEulerDegrees(boneObject, bone.rotation)
+    applyBedrockEulerDegrees(boneObject, bone.rotation)
     parentObject.add(boneObject)
 
     for (const cube of bone.cubes ?? []) {
@@ -366,7 +362,7 @@ function buildModelFromBedrock(geoFile: BedrockGeoFile, texture: Texture): Built
   }
 
   const visibleBoundsOffset = geometryRoot.description.visible_bounds_offset
-    ? toVector3(geometryRoot.description.visible_bounds_offset)
+    ? toBedrockPivotVector(geometryRoot.description.visible_bounds_offset)
     : undefined
 
   return {
@@ -386,255 +382,122 @@ function createCubeObject(
   meshMeta: MeshVolumeMeta[],
   mirror: boolean
 ): Group | Mesh {
-  const baseSize = cube.size.map((value) => Math.abs(value)) as [number, number, number]
-  const inflate = cube.inflate ?? 0
-  const inflatedSize = baseSize.map((value) => {
-    const inflatedValue = value + inflate * 2
-    if (value === 0) {
-      return Math.max(inflatedValue, 0)
-    }
+  const signedSize = cube.size.map((value) => Number(value)) as [number, number, number]
+  const boxUvSize = signedSize.map((value) => Math.floor(Math.abs(value) + 0.0000001)) as [
+    number,
+    number,
+    number,
+  ]
 
-    return Math.max(inflatedValue, 0.01)
+  const inflate = cube.inflate ?? 0
+  const inflatedSize = signedSize.map((value) => {
+    const inflatedValue = Math.abs(value) + inflate * 2
+    return Math.max(inflatedValue, 0.001)
   }) as [number, number, number]
 
-  const geometry: BufferGeometry = Array.isArray(cube.uv)
-    ? createModelPartCubeGeometry(
-        baseSize,
-        inflatedSize,
-        cube.uv as [number, number],
-        textureWidth,
-        textureHeight,
-        mirror
-      )
-    : new BoxGeometry(inflatedSize[0], inflatedSize[1], inflatedSize[2])
+  const geometry = new BoxGeometry(inflatedSize[0], inflatedSize[1], inflatedSize[2])
+
+  if (Array.isArray(cube.uv)) {
+    applyBoxUvMap(
+      geometry,
+      cube.uv as [number, number],
+      boxUvSize,
+      textureWidth,
+      textureHeight,
+      mirror
+    )
+  }
 
   if (isFaceUvMap(cube.uv)) {
-    applyFaceUvMap(geometry, cube.uv, baseSize, textureWidth, textureHeight, mirror)
+    applyFaceUvMap(geometry, cube.uv, boxUvSize, textureWidth, textureHeight)
   }
 
   const mesh = new Mesh(geometry, material)
   mesh.frustumCulled = false
 
-  const volume = Math.max(baseSize[0] * baseSize[1] * baseSize[2], 0.001)
+  const volume = Math.max(Math.abs(signedSize[0] * signedSize[1] * signedSize[2]), 0.001)
   meshMeta.push({
     mesh,
     volume,
   })
 
-  const origin = toVector3(cube.origin)
-  const center = new Vector3(
-    origin.x + baseSize[0] / 2,
-    origin.y + baseSize[1] / 2,
-    origin.z + baseSize[2] / 2
-  )
+  const from = toBedrockCubeFrom(cube.origin, signedSize)
+  const to = from.clone().add(new Vector3(signedSize[0], signedSize[1], signedSize[2]))
+  const center = from.clone().add(to).multiplyScalar(0.5)
 
   if (!cube.pivot && !cube.rotation) {
     mesh.position.copy(center.sub(bonePivot))
     return mesh
   }
 
-  const pivot = toVector3(cube.pivot)
+  const pivot = toBedrockPivotVector(cube.pivot)
   const wrapper = new Group()
   wrapper.position.copy(pivot.sub(bonePivot))
-  applyEulerDegrees(wrapper, cube.rotation)
-  mesh.position.copy(center.sub(toVector3(cube.pivot)))
+  applyBedrockEulerDegrees(wrapper, cube.rotation)
+  mesh.position.copy(center.sub(toBedrockPivotVector(cube.pivot)))
   wrapper.add(mesh)
   return wrapper
 }
 
-function createModelPartCubeGeometry(
+function applyBoxUvMap(
+  geometry: BufferGeometry,
+  uvOffset: [number, number],
   size: [number, number, number],
-  inflatedSize: [number, number, number],
-  uv: [number, number],
   textureWidth: number,
   textureHeight: number,
   mirror: boolean
-): BufferGeometry {
+) {
   const [width, height, depth] = size
-  const [inflatedWidth, inflatedHeight, inflatedDepth] = inflatedSize
 
-  let minX = -inflatedWidth / 2
-  const minY = -inflatedHeight / 2
-  const minZ = -inflatedDepth / 2
-  let maxX = inflatedWidth / 2
-  const maxY = inflatedHeight / 2
-  const maxZ = inflatedDepth / 2
-
-  if (mirror) {
-    ;[minX, maxX] = [maxX, minX]
+  const faceLayout: Record<CubeFaceName, { from: [number, number]; size: [number, number] }> = {
+    east: {
+      from: [0, depth],
+      size: [depth, height],
+    },
+    west: {
+      from: [depth + width, depth],
+      size: [depth, height],
+    },
+    up: {
+      from: [depth + width, depth],
+      size: [-width, -depth],
+    },
+    down: {
+      from: [depth + width * 2, 0],
+      size: [-width, depth],
+    },
+    south: {
+      from: [depth * 2 + width, depth],
+      size: [width, height],
+    },
+    north: {
+      from: [depth, depth],
+      size: [width, height],
+    },
   }
 
-  const vertex000 = new Vector3(minX, minY, minZ)
-  const vertex100 = new Vector3(maxX, minY, minZ)
-  const vertex110 = new Vector3(maxX, maxY, minZ)
-  const vertex010 = new Vector3(minX, maxY, minZ)
-  const vertex001 = new Vector3(minX, minY, maxZ)
-  const vertex101 = new Vector3(maxX, minY, maxZ)
-  const vertex111 = new Vector3(maxX, maxY, maxZ)
-  const vertex011 = new Vector3(minX, maxY, maxZ)
+  if (mirror) {
+    for (const faceName of CUBE_FACE_ORDER) {
+      const layout = faceLayout[faceName]
+      layout.from[0] += layout.size[0]
+      layout.size[0] *= -1
+    }
 
-  const [u, v] = uv
-  const w = u
-  const x = u + depth
-  const y = u + depth + width
-  const z = u + depth + width + width
-  const aa = u + depth + width + depth
-  const ab = u + depth + width + depth + width
-  const ac = v
-  const ad = v + depth
-  const ae = v + depth + height
+    const eastLayout = faceLayout.east
+    faceLayout.east = faceLayout.west
+    faceLayout.west = eastLayout
+  }
 
-  const positions: number[] = []
-  const normals: number[] = []
-  const uvs: number[] = []
+  const faceRects: Partial<Record<CubeFaceName, FaceRect>> = {}
 
-  pushModelPartFace(
-    positions,
-    normals,
-    uvs,
-    [vertex101, vertex001, vertex000, vertex100],
-    [z, ac, y, ad],
-    textureWidth,
-    textureHeight,
-    mirror,
-    [0, -1, 0]
-  )
-  pushModelPartFace(
-    positions,
-    normals,
-    uvs,
-    [vertex110, vertex010, vertex011, vertex111],
-    [y, ad, x, ac],
-    textureWidth,
-    textureHeight,
-    mirror,
-    [0, 1, 0]
-  )
-  pushModelPartFace(
-    positions,
-    normals,
-    uvs,
-    [vertex000, vertex001, vertex011, vertex010],
-    [w, ad, x, ae],
-    textureWidth,
-    textureHeight,
-    mirror,
-    [-1, 0, 0],
-    true
-  )
-  pushModelPartFace(
-    positions,
-    normals,
-    uvs,
-    [vertex100, vertex000, vertex010, vertex110],
-    [x, ad, y, ae],
-    textureWidth,
-    textureHeight,
-    mirror,
-    [0, 0, -1],
-    true
-  )
-  pushModelPartFace(
-    positions,
-    normals,
-    uvs,
-    [vertex101, vertex100, vertex110, vertex111],
-    [y, ad, aa, ae],
-    textureWidth,
-    textureHeight,
-    mirror,
-    [1, 0, 0],
-    true
-  )
-  pushModelPartFace(
-    positions,
-    normals,
-    uvs,
-    [vertex001, vertex101, vertex111, vertex011],
-    [aa, ad, ab, ae],
-    textureWidth,
-    textureHeight,
-    mirror,
-    [0, 0, 1],
-    true
-  )
+  for (const faceName of CUBE_FACE_ORDER) {
+    const layout = faceLayout[faceName]
+    const fromU = uvOffset[0] + layout.from[0]
+    const fromV = uvOffset[1] + layout.from[1]
+    faceRects[faceName] = [fromU, fromV, fromU + layout.size[0], fromV + layout.size[1]]
+  }
 
-  const geometry = new BufferGeometry()
-  geometry.setAttribute("position", new Float32BufferAttribute(positions, 3))
-  geometry.setAttribute("normal", new Float32BufferAttribute(normals, 3))
-  geometry.setAttribute("uv", new Float32BufferAttribute(uvs, 2))
-  return geometry
-}
-
-function pushModelPartFace(
-  positions: number[],
-  normals: number[],
-  uvs: number[],
-  vertices: [Vector3, Vector3, Vector3, Vector3],
-  rect: FaceRect,
-  textureWidth: number,
-  textureHeight: number,
-  mirror: boolean,
-  normal: [number, number, number],
-  flipV = false
-) {
-  const [u0, v0, u1, v1] = rect
-
-  const topV = flipV ? v1 : v0
-  const bottomV = flipV ? v0 : v1
-
-  const mapped = [
-    {
-      position: vertices[0],
-      uv: [u1 / textureWidth, 1 - topV / textureHeight] as [number, number],
-    },
-    {
-      position: vertices[1],
-      uv: [u0 / textureWidth, 1 - topV / textureHeight] as [number, number],
-    },
-    {
-      position: vertices[2],
-      uv: [u0 / textureWidth, 1 - bottomV / textureHeight] as [number, number],
-    },
-    {
-      position: vertices[3],
-      uv: [u1 / textureWidth, 1 - bottomV / textureHeight] as [number, number],
-    },
-  ]
-
-  const ordered = mirror ? [...mapped].reverse() : mapped
-  const [nx, ny, nz] = mirror ? ([-normal[0], normal[1], normal[2]] as const) : normal
-
-  pushTriangle(positions, normals, uvs, ordered[0], ordered[1], ordered[2], nx, ny, nz)
-  pushTriangle(positions, normals, uvs, ordered[0], ordered[2], ordered[3], nx, ny, nz)
-}
-
-function pushTriangle(
-  positions: number[],
-  normals: number[],
-  uvs: number[],
-  a: { position: Vector3; uv: [number, number] },
-  b: { position: Vector3; uv: [number, number] },
-  c: { position: Vector3; uv: [number, number] },
-  nx: number,
-  ny: number,
-  nz: number
-) {
-  positions.push(
-    a.position.x,
-    a.position.y,
-    a.position.z,
-    b.position.x,
-    b.position.y,
-    b.position.z,
-    c.position.x,
-    c.position.y,
-    c.position.z
-  )
-
-  normals.push(nx, ny, nz, nx, ny, nz, nx, ny, nz)
-
-  uvs.push(a.uv[0], a.uv[1], b.uv[0], b.uv[1], c.uv[0], c.uv[1])
+  applyFaceRectMap(geometry, faceRects, textureWidth, textureHeight)
 }
 
 function applyFaceUvMap(
@@ -642,8 +505,7 @@ function applyFaceUvMap(
   faceUvMap: Record<string, unknown>,
   size: [number, number, number],
   textureWidth: number,
-  textureHeight: number,
-  mirror: boolean
+  textureHeight: number
 ) {
   const faceSizeByName: Record<CubeFaceName, [number, number]> = {
     east: [size[2], size[1]],
@@ -708,39 +570,19 @@ function applyFaceUvMap(
     faceRects[faceName] = faceRect
   }
 
-  applyFaceRectMap(geometry, faceRects, textureWidth, textureHeight, mirror)
+  applyFaceRectMap(geometry, faceRects, textureWidth, textureHeight)
 }
 
 function applyFaceRectMap(
   geometry: BufferGeometry,
   faceRects: Partial<Record<CubeFaceName, FaceRect>>,
   textureWidth: number,
-  textureHeight: number,
-  mirror: boolean
+  textureHeight: number
 ) {
-  const resolvedRects: Partial<Record<CubeFaceName, FaceRect>> = {
-    ...faceRects,
-  }
-
-  if (mirror) {
-    const east = resolvedRects.east
-    const west = resolvedRects.west
-    resolvedRects.east = west
-    resolvedRects.west = east
-
-    for (const faceName of CUBE_FACE_ORDER) {
-      const rect = resolvedRects[faceName]
-      if (!rect) {
-        continue
-      }
-      resolvedRects[faceName] = [rect[2], rect[1], rect[0], rect[3]]
-    }
-  }
-
   const uvAttribute = geometry.getAttribute("uv")
 
   for (const faceName of CUBE_FACE_ORDER) {
-    const rect = resolvedRects[faceName]
+    const rect = faceRects[faceName]
     if (!rect) {
       continue
     }
@@ -850,23 +692,34 @@ const CUBE_FACE_INDEX: Record<CubeFaceName, number> = {
   north: 5,
 }
 
-function applyEulerDegrees(target: Group, degrees?: [number, number, number]) {
+function applyBedrockEulerDegrees(target: Group, degrees?: [number, number, number]) {
+  target.rotation.order = "ZYX"
+
   if (!degrees) {
+    target.rotation.set(0, 0, 0)
     return
   }
 
   target.rotation.set(
-    MathUtils.degToRad(degrees[0]),
-    MathUtils.degToRad(degrees[1]),
+    MathUtils.degToRad(-degrees[0]),
+    MathUtils.degToRad(-degrees[1]),
     MathUtils.degToRad(degrees[2])
   )
 }
 
-function toVector3(value?: [number, number, number]): Vector3 {
+function toBedrockPivotVector(value?: [number, number, number]): Vector3 {
   if (!value) {
     return new Vector3()
   }
-  return new Vector3(value[0], value[1], value[2])
+
+  return new Vector3(-value[0], value[1], value[2])
+}
+
+function toBedrockCubeFrom(
+  origin: [number, number, number],
+  size: [number, number, number]
+): Vector3 {
+  return new Vector3(-(origin[0] + size[0]), origin[1], origin[2])
 }
 
 function clearGroup(group: Group) {
