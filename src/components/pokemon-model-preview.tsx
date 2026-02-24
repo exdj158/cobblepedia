@@ -3,6 +3,7 @@ import {
   Box3,
   BoxGeometry,
   type BufferGeometry,
+  CanvasTexture,
   Color,
   DirectionalLight,
   Group,
@@ -11,7 +12,6 @@ import {
   Mesh,
   MeshStandardMaterial,
   NearestFilter,
-  NearestMipmapNearestFilter,
   type Object3D,
   PerspectiveCamera,
   Scene,
@@ -25,6 +25,7 @@ import {
 type ModelPreviewManifest = {
   geoUrl: string
   textureUrl: string
+  transparencyTextureUrl?: string
 }
 
 type BedrockCube = {
@@ -260,7 +261,7 @@ async function loadModel(
 
   const [geoResponse, texture] = await Promise.all([
     fetch(manifest.geoUrl),
-    loadTexture(manifest.textureUrl),
+    loadTexture(manifest.textureUrl, manifest.transparencyTextureUrl),
   ])
 
   if (!geoResponse.ok) {
@@ -287,15 +288,78 @@ async function loadModel(
   return true
 }
 
-async function loadTexture(url: string): Promise<Texture> {
+async function loadTexture(url: string, transparencyUrl?: string): Promise<Texture> {
   const textureLoader = new TextureLoader()
+
+  if (transparencyUrl) {
+    const [baseTexture, transparencyTexture] = await Promise.all([
+      textureLoader.loadAsync(url),
+      textureLoader.loadAsync(transparencyUrl),
+    ])
+
+    const mergedTexture = mergeLayeredTextures(baseTexture, transparencyTexture)
+    baseTexture.dispose()
+    transparencyTexture.dispose()
+    return mergedTexture
+  }
+
   const texture = await textureLoader.loadAsync(url)
   texture.colorSpace = SRGBColorSpace
   texture.flipY = true
   texture.magFilter = NearestFilter
-  texture.minFilter = NearestMipmapNearestFilter
+  texture.minFilter = NearestFilter
+  texture.generateMipmaps = false
   texture.needsUpdate = true
   return texture
+}
+
+function mergeLayeredTextures(baseTexture: Texture, transparencyTexture: Texture): Texture {
+  const baseImage = baseTexture.image as CanvasImageSource | undefined
+  const transparencyImage = transparencyTexture.image as CanvasImageSource | undefined
+
+  if (
+    !(baseImage instanceof HTMLImageElement) ||
+    !(transparencyImage instanceof HTMLImageElement)
+  ) {
+    const fallbackTexture = baseTexture.clone()
+    fallbackTexture.colorSpace = SRGBColorSpace
+    fallbackTexture.flipY = true
+    fallbackTexture.magFilter = NearestFilter
+    fallbackTexture.minFilter = NearestFilter
+    fallbackTexture.generateMipmaps = false
+    fallbackTexture.needsUpdate = true
+    return fallbackTexture
+  }
+
+  const canvas = document.createElement("canvas")
+  canvas.width = baseImage.naturalWidth || baseImage.width
+  canvas.height = baseImage.naturalHeight || baseImage.height
+
+  const context = canvas.getContext("2d")
+  if (!context) {
+    const fallbackTexture = baseTexture.clone()
+    fallbackTexture.colorSpace = SRGBColorSpace
+    fallbackTexture.flipY = true
+    fallbackTexture.magFilter = NearestFilter
+    fallbackTexture.minFilter = NearestFilter
+    fallbackTexture.generateMipmaps = false
+    fallbackTexture.needsUpdate = true
+    return fallbackTexture
+  }
+
+  context.imageSmoothingEnabled = false
+  context.clearRect(0, 0, canvas.width, canvas.height)
+  context.drawImage(baseImage, 0, 0, canvas.width, canvas.height)
+  context.drawImage(transparencyImage, 0, 0, canvas.width, canvas.height)
+
+  const mergedTexture = new CanvasTexture(canvas)
+  mergedTexture.colorSpace = SRGBColorSpace
+  mergedTexture.flipY = true
+  mergedTexture.magFilter = NearestFilter
+  mergedTexture.minFilter = NearestFilter
+  mergedTexture.generateMipmaps = false
+  mergedTexture.needsUpdate = true
+  return mergedTexture
 }
 
 function buildModelFromBedrock(geoFile: BedrockGeoFile, texture: Texture): BuiltModel | null {

@@ -13,8 +13,10 @@ type ModelPreviewManifest = {
   directoryPath: string
   geoFile: string
   textureFile: string
+  transparencyTextureFile?: string
   geoUrl: string
   textureUrl: string
+  transparencyTextureUrl?: string
 }
 
 const COBBLEMON_ASSETS_PROJECT_ID = "cable-mc%2Fcobblemon-assets"
@@ -124,8 +126,13 @@ async function resolveModelPreview(
       continue
     }
 
+    const transparencyTextureFile = pickTransparencyTextureFile(entries, geoFile)
+
     const geoAssetPath = `${directoryPath}/${geoFile}`
     const textureAssetPath = `${directoryPath}/${textureFile}`
+    const transparencyTextureAssetPath = transparencyTextureFile
+      ? `${directoryPath}/${transparencyTextureFile}`
+      : null
 
     return {
       slug,
@@ -134,8 +141,12 @@ async function resolveModelPreview(
       directoryPath,
       geoFile,
       textureFile,
+      transparencyTextureFile: transparencyTextureFile ?? undefined,
       geoUrl: `/api/media/cobblemon-asset?path=${encodeURIComponent(geoAssetPath)}`,
       textureUrl: `/api/media/cobblemon-asset?path=${encodeURIComponent(textureAssetPath)}`,
+      transparencyTextureUrl: transparencyTextureAssetPath
+        ? `/api/media/cobblemon-asset?path=${encodeURIComponent(transparencyTextureAssetPath)}`
+        : undefined,
     }
   }
 
@@ -190,6 +201,24 @@ function pickTextureFile(entries: GitLabTreeEntry[], geoFile: string): string | 
   const baseName = geoFile.replace(/\.geo\.json$/u, "")
   if (files.includes(`${baseName}.png`)) {
     return `${baseName}.png`
+  }
+
+  return files.sort((a, b) => a.length - b.length || a.localeCompare(b))[0] ?? null
+}
+
+function pickTransparencyTextureFile(entries: GitLabTreeEntry[], geoFile: string): string | null {
+  const files = entries
+    .filter((entry) => entry.type === "blob" && entry.name.endsWith(".png"))
+    .map((entry) => entry.name)
+    .filter((file) => file.includes("transparency") && !file.includes("_shiny"))
+
+  if (files.length === 0) {
+    return null
+  }
+
+  const baseName = geoFile.replace(/\.geo\.json$/u, "")
+  if (files.includes(`${baseName}_transparency.png`)) {
+    return `${baseName}_transparency.png`
   }
 
   return files.sort((a, b) => a.length - b.length || a.localeCompare(b))[0] ?? null
