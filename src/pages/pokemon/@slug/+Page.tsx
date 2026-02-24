@@ -9,6 +9,7 @@ import {
   IconBox,
   IconEgg,
   IconForms,
+  IconGift,
   IconIconArrowUpRight,
   IconIconGhost,
   IconMapPin,
@@ -17,6 +18,7 @@ import {
   IconZap,
 } from "@/assets/icons"
 import { EvolutionFamilyFlow } from "@/components/evolution-family-flow"
+import { ItemSprite, parseItemId } from "@/components/item-sprite"
 import { RideableCategoryIcon, RideableClassIcon } from "@/components/rideable-icons"
 import type {
   BiomeTagIndex,
@@ -25,6 +27,7 @@ import type {
   PokemonDetailRecord,
   PokemonDexNavItem,
   PokemonDexNeighbors,
+  PokemonDropData,
   RideableSummaryRecord,
   SmogonMovesetRecord,
 } from "@/data/cobblemon-types"
@@ -858,6 +861,9 @@ function PokemonDetailView(props: {
               </div>
             </div>
           </section>
+
+          {/* Drops */}
+          <DropsCard drops={detail().drops} itemIndex={props.itemIndex} />
         </div>
 
         {/* Right Column - Moves, Spawns */}
@@ -2210,4 +2216,126 @@ function normalizeFormSlug(rawValue: string | null): string | null {
 
   const normalized = rawValue.trim().toLowerCase()
   return normalized.length > 0 ? normalized : null
+}
+
+function DropsCard(props: { drops: PokemonDropData | null; itemIndex: ItemIndex | null }) {
+  const drops = () => props.drops
+
+  const getItemPathId = (itemId: string): string => {
+    return parseItemId(itemId).path
+  }
+
+  const getItemNamespace = (itemId: string): string | null => {
+    return parseItemId(itemId).namespace
+  }
+
+  const resolveItemEntry = (itemId: string) => {
+    if (!props.itemIndex) {
+      return null
+    }
+
+    const pathId = getItemPathId(itemId)
+    return props.itemIndex[itemId] ?? props.itemIndex[pathId] ?? null
+  }
+
+  const resolveDropHref = (itemId: string): string => {
+    const namespace = getItemNamespace(itemId)
+    const pathId = getItemPathId(itemId)
+
+    if (namespace === "minecraft") {
+      return `https://minecraft.wiki/w/${encodeURIComponent(pathId)}`
+    }
+
+    return `/items/${encodeURIComponent(pathId)}`
+  }
+
+  const formatItemName = (itemId: string): string => {
+    const itemEntry = resolveItemEntry(itemId)
+    if (itemEntry) {
+      return itemEntry.name
+    }
+
+    return titleCaseFromId(getItemPathId(itemId))
+  }
+
+  const getAssetPath = (itemId: string): string | null => {
+    return resolveItemEntry(itemId)?.assetPath ?? null
+  }
+
+  const formatDropDetails = (entry: PokemonDropData["entries"][number]): string => {
+    const parts: string[] = []
+
+    if (entry.quantityRange) {
+      parts.push(entry.quantityRange)
+    }
+
+    if (entry.percentage !== undefined && entry.percentage !== null) {
+      parts.push(`${entry.percentage}%`)
+    }
+
+    return parts.join(" · ")
+  }
+
+  return (
+    <section class="border border-border bg-card">
+      <div class="flex items-center gap-2 border-border border-b bg-secondary px-4 py-3">
+        <IconGift class="h-4 w-4 text-muted-foreground" />
+        <h2 class="font-semibold">Drops</h2>
+      </div>
+      <Show
+        when={drops()}
+        fallback={
+          <p class="p-4 text-muted-foreground text-sm">No drop data available for this species.</p>
+        }
+      >
+        {(dropsData) => (
+          <Show
+            when={dropsData().entries.length > 0}
+            fallback={
+              <p class="p-4 text-muted-foreground text-sm">
+                No drop data available for this species.
+              </p>
+            }
+          >
+            <div class="p-4">
+              <div class="space-y-2">
+                <For each={dropsData().entries}>
+                  {(entry) => {
+                    const details = formatDropDetails(entry)
+                    const isMinecraftItem = () => getItemNamespace(entry.item) === "minecraft"
+
+                    return (
+                      <a
+                        href={resolveDropHref(entry.item)}
+                        target={isMinecraftItem() ? "_blank" : undefined}
+                        rel={isMinecraftItem() ? "noreferrer noopener" : undefined}
+                        class="group flex items-center gap-3 border border-border bg-secondary/20 px-3 py-2.5 transition-colors hover:border-muted-foreground hover:bg-secondary/40"
+                      >
+                        <ItemSprite
+                          itemId={entry.item}
+                          name={formatItemName(entry.item)}
+                          assetPath={getAssetPath(entry.item)}
+                          class="h-6 w-6"
+                        />
+                        <div class="flex min-w-0 flex-1 flex-col">
+                          <span class="truncate font-medium text-sm">
+                            {formatItemName(entry.item)}
+                          </span>
+                          <Show when={details}>
+                            <span class="font-mono text-[11px] text-muted-foreground">
+                              {details}
+                            </span>
+                          </Show>
+                        </div>
+                      </a>
+                    )
+                  }}
+                </For>
+              </div>
+            </div>
+          </Show>
+        )}
+      </Show>
+    </section>
+  )
 }

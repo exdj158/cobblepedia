@@ -1,4 +1,4 @@
-import { createMemo, createResource, For, Show } from "solid-js"
+import { createEffect, createMemo, createResource, For, Show } from "solid-js"
 import { useMetadata } from "vike-metadata-solid"
 import { usePageContext } from "vike-solid/usePageContext"
 import { ItemSprite, normalizeItemId } from "@/components/item-sprite"
@@ -22,6 +22,26 @@ export default function Page() {
 
     const itemIndex = await loadItemIndex()
     return resolveItemEntry(itemIndex, nextItemId)
+  })
+
+  createEffect(() => {
+    if (typeof window === "undefined") {
+      return
+    }
+
+    const resolvedEntry = entry()
+    const requestedItemId = routeItemId()
+
+    if (!resolvedEntry || !requestedItemId) {
+      return
+    }
+
+    if (
+      requestedItemId !== resolvedEntry.itemId &&
+      normalizeItemId(requestedItemId) === resolvedEntry.itemId
+    ) {
+      window.history.replaceState(null, "", `/items/${encodeURIComponent(resolvedEntry.itemId)}`)
+    }
   })
 
   useMetadata({

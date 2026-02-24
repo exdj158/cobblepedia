@@ -1066,7 +1066,9 @@
       "weight": 0.9,
       "presets": [],
       "biomeHints": [
-        "Nether/is Quartz"
+        "Nether/is Quartz",
+        "Quartz Desert",
+        "Quartz Cavern"
       ],
       "condition": {
         "biomes": [
@@ -1092,6 +1094,19 @@
     }
   ],
   "forms": [],
+  "drops": {
+    "amount": 3,
+    "entries": [
+      {
+        "item": "minecraft:calcite",
+        "quantityRange": "0-2"
+      },
+      {
+        "item": "cobblemon:passho_berry",
+        "percentage": 5
+      }
+    ]
+  },
   "rawSpecies": {
     "implemented": true,
     "nationalPokedexNumber": 933,

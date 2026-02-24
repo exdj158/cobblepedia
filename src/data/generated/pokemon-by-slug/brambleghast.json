@@ -860,8 +860,7 @@
       "biomeHints": [
         "Is Badlands",
         "Is Desert",
-        "Soul Sand Valley",
-        "Gravel Desert"
+        "Desert"
       ],
       "condition": {
         "neededBaseBlocks": [
@@ -934,7 +933,9 @@
         "natural"
       ],
       "biomeHints": [
-        "Nether/is Desert"
+        "Nether/is Desert",
+        "Soul Sand Valley",
+        "Gravel Desert"
       ],
       "condition": {
         "neededBaseBlocks": [
@@ -970,6 +971,23 @@
     }
   ],
   "forms": [],
+  "drops": {
+    "amount": 5,
+    "entries": [
+      {
+        "item": "minecraft:dead_bush",
+        "quantityRange": "0-2"
+      },
+      {
+        "item": "minecraft:stick",
+        "quantityRange": "0-2"
+      },
+      {
+        "item": "cobblemon:kasib_berry",
+        "percentage": 5
+      }
+    ]
+  },
   "rawSpecies": {
     "implemented": true,
     "nationalPokedexNumber": 947,

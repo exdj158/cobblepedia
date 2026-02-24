@@ -24,12 +24,12 @@ Big feats:
 - [ ] Unimplemented mons base. Make the 'Not in the Game' clickable when I see a 'not in the game' thingy.
 - [x] Rideable mon stats (just like cobbledex i.e. speed etc. Show it there.)
 - [ ] Evo item who is it related to wiki info i.e. Fire Stone. Alcremie's items.
-- [ ] Drop item data when I kill them
-- [ ] Drop item data when I put them in pasture blocks. (Cobbleverse-specific)
+- [x] Drop item data when I kill them
+- [x] Drop item data when I put them in pasture blocks. (Cobbleverse-specific)
 - [x] Spawn Location hover (just like cobbledex.info, it displays the actual Biome names in minecraft)
 
 - [ ] SEO friendliness! SSR stuff! please!
-  - [ ] Icon Metadata (art!)
+  - [ ] Icon Metadata ()
   - [ ] Banner metadata (art!)
   - [ ] Title and description stuff!
 - [ ] Cooking recipies! Pokesnack seasoning guide!

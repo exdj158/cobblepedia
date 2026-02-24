@@ -1568,8 +1568,7 @@
       ],
       "biomeHints": [
         "Is Forest",
-        "Nether Jungle",
-        "Nether Swampland",
+        "Cherry Grove",
         "Is Taiga",
         "Is Snowy Taiga"
       ],
@@ -1652,7 +1651,9 @@
         "natural"
       ],
       "biomeHints": [
-        "Nether/is Forest"
+        "Nether/is Forest",
+        "Nether Jungle",
+        "Nether Swampland"
       ],
       "condition": {
         "neededBaseBlocks": [
@@ -1796,7 +1797,8 @@
         "natural"
       ],
       "biomeHints": [
-        "Nether/is Frozen"
+        "Nether/is Frozen",
+        "Subzero Hypogeal"
       ],
       "condition": {
         "neededBaseBlocks": [
@@ -3494,6 +3496,23 @@
       }
     }
   ],
+  "drops": {
+    "amount": 6,
+    "entries": [
+      {
+        "item": "minecraft:sweet_berries",
+        "quantityRange": "2-4"
+      },
+      {
+        "item": "minecraft:charcoal",
+        "percentage": 5
+      },
+      {
+        "item": "cobblemon:rawst_berry",
+        "percentage": 5
+      }
+    ]
+  },
   "rawSpecies": {
     "implemented": true,
     "nationalPokedexNumber": 38,

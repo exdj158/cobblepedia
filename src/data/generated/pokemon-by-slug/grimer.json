@@ -2382,7 +2382,9 @@
         "natural"
       ],
       "biomeHints": [
-        "Nether/is Toxic"
+        "Nether/is Toxic",
+        "Erupting Inferno",
+        "Brimstone Caverns"
       ],
       "condition": {
         "neededBaseBlocks": [
@@ -4064,6 +4066,23 @@
       }
     }
   ],
+  "drops": {
+    "amount": 3,
+    "entries": [
+      {
+        "item": "minecraft:slime_ball",
+        "quantityRange": "0-1"
+      },
+      {
+        "item": "cobblemon:black_sludge",
+        "percentage": 2.5
+      },
+      {
+        "item": "cobblemon:toxic_orb",
+        "percentage": 2.5
+      }
+    ]
+  },
   "rawSpecies": {
     "implemented": true,
     "nationalPokedexNumber": 88,

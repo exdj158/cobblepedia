@@ -1,6 +1,11 @@
 import { createMemo } from "solid-js"
 import { cn } from "@/utils/cn"
 
+const COBBLEMON_ITEM_SPRITE_BASE_URL =
+  "https://gitlab.com/cable-mc/cobblemon-assets/-/raw/master/items/evolution_items"
+const MINECRAFT_ITEM_SPRITE_BASE_URL =
+  "https://raw.githubusercontent.com/PixiGeko/Minecraft-default-assets/latest/assets/minecraft/textures/item"
+
 type ItemSpriteProps = {
   itemId: string
   name: string
@@ -8,9 +13,26 @@ type ItemSpriteProps = {
   class?: string
 }
 
+export function parseItemId(itemId: string): { namespace: string | null; path: string } {
+  const trimmed = itemId.trim().toLowerCase()
+  const separatorIndex = trimmed.indexOf(":")
+
+  if (separatorIndex < 0) {
+    return {
+      namespace: null,
+      path: trimmed,
+    }
+  }
+
+  return {
+    namespace: trimmed.slice(0, separatorIndex) || null,
+    path: trimmed.slice(separatorIndex + 1),
+  }
+}
+
 export function normalizeItemId(itemId: string): string {
-  return itemId
-    .trim()
+  return parseItemId(itemId)
+    .path.trim()
     .toLowerCase()
     .replace(/[^a-z0-9_]/g, "_")
     .replace(/_+/g, "_")
@@ -18,9 +40,14 @@ export function normalizeItemId(itemId: string): string {
 }
 
 export function getItemSpriteUrl(itemId: string): string {
-  return `https://gitlab.com/cable-mc/cobblemon-assets/-/raw/master/items/evolution_items/${encodeURIComponent(
-    normalizeItemId(itemId)
-  )}.png`
+  const parsed = parseItemId(itemId)
+  const normalizedItemId = normalizeItemId(parsed.path)
+
+  if (parsed.namespace === "minecraft") {
+    return `${MINECRAFT_ITEM_SPRITE_BASE_URL}/${encodeURIComponent(normalizedItemId)}.png`
+  }
+
+  return `${COBBLEMON_ITEM_SPRITE_BASE_URL}/${encodeURIComponent(normalizedItemId)}.png`
 }
 
 export function getItemSpriteUrlFromPath(assetPath: string): string {
@@ -28,14 +55,13 @@ export function getItemSpriteUrlFromPath(assetPath: string): string {
 }
 
 export function ItemSprite(props: ItemSpriteProps) {
-  const normalizedItemId = createMemo(() => normalizeItemId(props.itemId))
   const spriteUrl = createMemo(() => {
     const path = props.assetPath?.trim().toLowerCase()
     if (path) {
       return getItemSpriteUrlFromPath(path)
     }
 
-    return getItemSpriteUrl(normalizedItemId())
+    return getItemSpriteUrl(props.itemId)
   })
 
   return (

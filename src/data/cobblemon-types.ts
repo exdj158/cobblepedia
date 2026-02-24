@@ -152,6 +152,17 @@ export type PokemonFormRecord = {
   raw: Record<string, unknown>
 }
 
+export type PokemonDropEntry = {
+  item: string
+  quantityRange?: string
+  percentage?: number
+}
+
+export type PokemonDropData = {
+  amount: number
+  entries: PokemonDropEntry[]
+}
+
 export type PokemonDetailRecord = {
   slug: string
   name: string
@@ -178,6 +189,7 @@ export type PokemonDetailRecord = {
   moves: ParsedMove[]
   spawnEntries: SpawnEntryRecord[]
   forms: PokemonFormRecord[]
+  drops: PokemonDropData | null
   rawSpecies: Record<string, unknown>
 }
 

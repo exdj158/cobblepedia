@@ -960,11 +960,11 @@
       ],
       "biomeHints": [
         "Is Forest",
-        "Nether Jungle",
-        "Nether Swampland",
+        "Cherry Grove",
         "Is Sky",
         "Skylands Autumn",
-        "Skylands Spring"
+        "Skylands Spring",
+        "Is Taiga"
       ],
       "condition": {
         "neededBaseBlocks": [
@@ -1032,7 +1032,11 @@
       ],
       "biomeHints": [
         "Nether/is Forest",
-        "Nether/is Fungus"
+        "Nether Jungle",
+        "Nether Swampland",
+        "Nether/is Fungus",
+        "Crimson Forest",
+        "Warped Forest"
       ],
       "condition": {
         "neededBaseBlocks": [
@@ -1144,6 +1148,22 @@
     }
   ],
   "forms": [],
+  "drops": {
+    "amount": 3,
+    "entries": [
+      {
+        "item": "minecraft:feather",
+        "quantityRange": "0-1"
+      },
+      {
+        "item": "minecraft:chicken"
+      },
+      {
+        "item": "cobblemon:rawst_berry",
+        "percentage": 2.5
+      }
+    ]
+  },
   "rawSpecies": {
     "implemented": true,
     "nationalPokedexNumber": 661,

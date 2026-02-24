@@ -15,6 +15,7 @@ import type {
   ParsedMove,
   PokemonDetailRecord,
   PokemonDexNavItem,
+  PokemonDropData,
   PokemonFormRecord,
   PokemonFormSpriteIndex,
   PokemonListItem,
@@ -1075,10 +1076,39 @@ function buildPokemonDetailRecord(params: {
     moves: [...baseMoves].sort(sortMoves),
     spawnEntries: [...params.spawnEntries],
     forms,
+    drops: parseDrops(raw.drops),
     rawSpecies: raw,
   }
 
   return detail
+}
+
+function parseDrops(rawDrops: unknown): PokemonDropData | null {
+  if (!isRecord(rawDrops)) {
+    return null
+  }
+
+  const amount = typeof rawDrops.amount === "number" ? rawDrops.amount : 0
+  const entries = Array.isArray(rawDrops.entries) ? rawDrops.entries : []
+
+  const parsedEntries: PokemonDropData["entries"] = []
+  for (const entry of entries) {
+    if (!isRecord(entry) || typeof entry.item !== "string") {
+      continue
+    }
+
+    parsedEntries.push({
+      item: entry.item,
+      quantityRange: typeof entry.quantityRange === "string" ? entry.quantityRange : undefined,
+      percentage: typeof entry.percentage === "number" ? entry.percentage : undefined,
+    })
+  }
+
+  if (parsedEntries.length === 0) {
+    return null
+  }
+
+  return { amount, entries: parsedEntries }
 }
 
 function parseAbilityList(rawAbilities: unknown): PokemonDetailRecord["abilities"] {

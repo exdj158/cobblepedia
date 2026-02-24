@@ -1779,8 +1779,7 @@
       "biomeHints": [
         "Is Badlands",
         "Is Desert",
-        "Soul Sand Valley",
-        "Gravel Desert"
+        "Desert"
       ],
       "condition": {
         "neededBaseBlocks": [
@@ -1920,7 +1919,9 @@
         "wild"
       ],
       "biomeHints": [
-        "Nether/is Desert"
+        "Nether/is Desert",
+        "Soul Sand Valley",
+        "Gravel Desert"
       ],
       "condition": {
         "neededBaseBlocks": [
@@ -2316,6 +2317,19 @@
       }
     }
   ],
+  "drops": {
+    "amount": 2,
+    "entries": [
+      {
+        "item": "minecraft:bone",
+        "quantityRange": "0-1"
+      },
+      {
+        "item": "cobblemon:nanab_berry",
+        "percentage": 2.5
+      }
+    ]
+  },
   "rawSpecies": {
     "implemented": true,
     "nationalPokedexNumber": 104,

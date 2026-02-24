@@ -836,8 +836,7 @@
       "biomeHints": [
         "Is Badlands",
         "Is Desert",
-        "Soul Sand Valley",
-        "Gravel Desert"
+        "Desert"
       ],
       "condition": {
         "neededBaseBlocks": [
@@ -899,8 +898,7 @@
       "biomeHints": [
         "Is Badlands",
         "Is Desert",
-        "Soul Sand Valley",
-        "Gravel Desert"
+        "Desert"
       ],
       "condition": {
         "neededBaseBlocks": [
@@ -1114,7 +1112,9 @@
         "natural"
       ],
       "biomeHints": [
-        "Nether/is Desert"
+        "Nether/is Desert",
+        "Soul Sand Valley",
+        "Gravel Desert"
       ],
       "condition": {
         "neededBaseBlocks": [
@@ -1150,6 +1150,19 @@
     }
   ],
   "forms": [],
+  "drops": {
+    "amount": 3,
+    "entries": [
+      {
+        "item": "minecraft:iron_nugget",
+        "quantityRange": "0-2"
+      },
+      {
+        "item": "cobblemon:shuca_berry",
+        "percentage": 5
+      }
+    ]
+  },
   "rawSpecies": {
     "implemented": true,
     "nationalPokedexNumber": 968,
