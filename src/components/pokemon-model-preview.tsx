@@ -320,8 +320,11 @@ function buildModelFromBedrock(geoFile: BedrockGeoFile, texture: Texture): Built
   })
 
   const skeletonRoot = new Group()
+  const renderRoot = new Group()
+  renderRoot.scale.set(-1, 1, 1)
+  renderRoot.add(skeletonRoot)
   const root = new Group()
-  root.add(skeletonRoot)
+  root.add(renderRoot)
   const meshMeta: MeshVolumeMeta[] = []
   const boneObjects = new Map<string, Group>()
   const bonePivots = new Map<string, Vector3>()
@@ -348,7 +351,7 @@ function buildModelFromBedrock(geoFile: BedrockGeoFile, texture: Texture): Built
     parentObject.add(boneObject)
 
     for (const cube of bone.cubes ?? []) {
-      const mirror = cube.mirror ?? false
+      const mirror = cube.mirror ?? bone.mirror ?? false
       const cubeObject = createCubeObject(
         cube,
         bonePivot,
@@ -385,11 +388,14 @@ function createCubeObject(
 ): Group | Mesh {
   const baseSize = cube.size.map((value) => Math.abs(value)) as [number, number, number]
   const inflate = cube.inflate ?? 0
-  const inflatedSize = baseSize.map((value) => Math.max(value + inflate * 2, 0.01)) as [
-    number,
-    number,
-    number,
-  ]
+  const inflatedSize = baseSize.map((value) => {
+    const inflatedValue = value + inflate * 2
+    if (value === 0) {
+      return Math.max(inflatedValue, 0)
+    }
+
+    return Math.max(inflatedValue, 0.01)
+  }) as [number, number, number]
 
   const geometry: BufferGeometry = Array.isArray(cube.uv)
     ? createModelPartCubeGeometry(
@@ -487,7 +493,7 @@ function createModelPartCubeGeometry(
     normals,
     uvs,
     [vertex101, vertex001, vertex000, vertex100],
-    [x, ac, y, ad],
+    [z, ac, y, ad],
     textureWidth,
     textureHeight,
     mirror,
@@ -498,7 +504,7 @@ function createModelPartCubeGeometry(
     normals,
     uvs,
     [vertex110, vertex010, vertex011, vertex111],
-    [y, ad, z, ac],
+    [y, ad, x, ac],
     textureWidth,
     textureHeight,
     mirror,
@@ -513,7 +519,8 @@ function createModelPartCubeGeometry(
     textureWidth,
     textureHeight,
     mirror,
-    [-1, 0, 0]
+    [-1, 0, 0],
+    true
   )
   pushModelPartFace(
     positions,
@@ -524,7 +531,8 @@ function createModelPartCubeGeometry(
     textureWidth,
     textureHeight,
     mirror,
-    [0, 0, -1]
+    [0, 0, -1],
+    true
   )
   pushModelPartFace(
     positions,
@@ -535,7 +543,8 @@ function createModelPartCubeGeometry(
     textureWidth,
     textureHeight,
     mirror,
-    [1, 0, 0]
+    [1, 0, 0],
+    true
   )
   pushModelPartFace(
     positions,
@@ -546,7 +555,8 @@ function createModelPartCubeGeometry(
     textureWidth,
     textureHeight,
     mirror,
-    [0, 0, 1]
+    [0, 0, 1],
+    true
   )
 
   const geometry = new BufferGeometry()
@@ -565,26 +575,30 @@ function pushModelPartFace(
   textureWidth: number,
   textureHeight: number,
   mirror: boolean,
-  normal: [number, number, number]
+  normal: [number, number, number],
+  flipV = false
 ) {
   const [u0, v0, u1, v1] = rect
+
+  const topV = flipV ? v1 : v0
+  const bottomV = flipV ? v0 : v1
 
   const mapped = [
     {
       position: vertices[0],
-      uv: [u1 / textureWidth, 1 - v0 / textureHeight] as [number, number],
+      uv: [u1 / textureWidth, 1 - topV / textureHeight] as [number, number],
     },
     {
       position: vertices[1],
-      uv: [u0 / textureWidth, 1 - v0 / textureHeight] as [number, number],
+      uv: [u0 / textureWidth, 1 - topV / textureHeight] as [number, number],
     },
     {
       position: vertices[2],
-      uv: [u0 / textureWidth, 1 - v1 / textureHeight] as [number, number],
+      uv: [u0 / textureWidth, 1 - bottomV / textureHeight] as [number, number],
     },
     {
       position: vertices[3],
-      uv: [u1 / textureWidth, 1 - v1 / textureHeight] as [number, number],
+      uv: [u1 / textureWidth, 1 - bottomV / textureHeight] as [number, number],
     },
   ]
 
