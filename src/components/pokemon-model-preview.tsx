@@ -26,6 +26,7 @@ type ModelPreviewManifest = {
   geoUrl: string
   textureUrl: string
   transparencyTextureUrl?: string
+  animationUrl?: string
 }
 
 type BedrockCube = {
@@ -47,9 +48,17 @@ type MeshVolumeMeta = {
   volume: number
 }
 
+type AnimatedBoneBinding = {
+  node: Group
+  basePosition: Vector3
+  baseScale: Vector3
+  baseRotation: [number, number, number]
+}
+
 type BuiltModel = {
   group: Group
   meshMeta: MeshVolumeMeta[]
+  animatedBones: Map<string, AnimatedBoneBinding>
   visibleBoundsOffset?: Vector3
   visibleBoundsHeight?: number
 }
@@ -78,13 +87,72 @@ type BedrockGeoFile = {
   "minecraft:geometry"?: BedrockGeometry[]
 }
 
+type BedrockAnimationFile = {
+  animations?: Record<string, BedrockAnimation>
+}
+
+type BedrockAnimation = {
+  loop?: boolean | "hold_on_last_frame" | "loop"
+  animation_length?: number
+  bones?: Record<string, BedrockAnimationBone>
+}
+
+type BedrockAnimationBone = {
+  rotation?: BedrockAnimationChannelValue
+  position?: BedrockAnimationChannelValue
+  scale?: BedrockAnimationChannelValue
+}
+
+type BedrockAnimationKeyframe = {
+  pre?: BedrockAnimationVectorValue
+  post?: BedrockAnimationVectorValue
+  lerp_mode?: string
+}
+
+type BedrockAnimationVectorValue =
+  | number
+  | string
+  | [number | string, number | string, number | string]
+
+type BedrockAnimationChannelValue =
+  | BedrockAnimationVectorValue
+  | BedrockAnimationKeyframe
+  | Record<string, BedrockAnimationVectorValue | BedrockAnimationKeyframe>
+
 type PreviewState = "idle" | "loading" | "ready" | "error"
+
+type AnimationEvalContext = {
+  animTime: number
+  lifeTime: number
+  deltaTime: number
+}
+
+type ScalarEvaluator = (context: AnimationEvalContext) => number
+
+type VectorEvaluator = (context: AnimationEvalContext) => [number, number, number]
+
+type CompiledAnimationChannel = {
+  sample: (time: number, context: AnimationEvalContext) => [number, number, number]
+  maxTime: number
+}
+
+type CompiledBoneAnimation = {
+  target: AnimatedBoneBinding
+  rotation?: CompiledAnimationChannel
+  position?: CompiledAnimationChannel
+  scale?: CompiledAnimationChannel
+}
+
+type CompiledAnimationPlayer = {
+  update: (deltaSeconds: number) => void
+}
 
 type SceneRuntime = {
   scene: Scene
   renderer: WebGLRenderer
   camera: PerspectiveCamera
   modelRoot: Group
+  animationPlayer: CompiledAnimationPlayer | null
   resizeObserver: ResizeObserver
   frame: number
 }
@@ -152,14 +220,26 @@ export function PokemonModelPreview(props: { slug: string; dexNumber: number; na
       renderer,
       camera,
       modelRoot,
+      animationPlayer: null,
       resizeObserver,
       frame: 0,
     }
 
+    let lastFrameTime = performance.now()
+
     const animate = () => {
+      const now = performance.now()
+      const deltaSeconds = Math.min(Math.max((now - lastFrameTime) / 1000, 0), 0.2)
+      lastFrameTime = now
+
       runtimeState.frame = window.requestAnimationFrame(animate)
 
-      modelRoot.rotation.y += 0.0032
+      if (runtimeState.animationPlayer) {
+        runtimeState.animationPlayer.update(deltaSeconds)
+      } else {
+        modelRoot.rotation.y += 0.0032
+      }
+
       renderer.render(scene, camera)
     }
     animate()
@@ -178,6 +258,7 @@ export function PokemonModelPreview(props: { slug: string; dexNumber: number; na
 
     if (!slug || !Number.isFinite(dexNumber) || dexNumber <= 0) {
       setPreviewState("error")
+      runtime.animationPlayer = null
       clearGroup(runtime.modelRoot)
       return
     }
@@ -209,6 +290,7 @@ export function PokemonModelPreview(props: { slug: string; dexNumber: number; na
 
     window.cancelAnimationFrame(runtime.frame)
     runtime.resizeObserver.disconnect()
+    runtime.animationPlayer = null
     clearGroup(runtime.modelRoot)
     runtime.renderer.dispose()
     runtime.renderer.domElement.remove()
@@ -244,6 +326,7 @@ async function loadModel(
   dexNumber: number,
   isCurrentVersion: () => boolean
 ): Promise<boolean> {
+  runtime.animationPlayer = null
   clearGroup(runtime.modelRoot)
 
   const manifestResponse = await fetch(
@@ -259,9 +342,10 @@ async function loadModel(
     return false
   }
 
-  const [geoResponse, texture] = await Promise.all([
+  const [geoResponse, texture, animationFile] = await Promise.all([
     fetch(manifest.geoUrl),
     loadTexture(manifest.textureUrl, manifest.transparencyTextureUrl),
+    loadAnimationFile(manifest.animationUrl),
   ])
 
   if (!geoResponse.ok) {
@@ -284,8 +368,22 @@ async function loadModel(
   runtime.modelRoot.rotation.set(0, 0, 0)
   runtime.modelRoot.add(model.group)
   fitModelInPreview(model, runtime.camera)
+  runtime.animationPlayer = createIdleAnimationPlayer(model, animationFile)
 
   return true
+}
+
+async function loadAnimationFile(url?: string): Promise<BedrockAnimationFile | null> {
+  if (!url) {
+    return null
+  }
+
+  const response = await fetch(url)
+  if (!response.ok) {
+    return null
+  }
+
+  return (await response.json()) as BedrockAnimationFile
 }
 
 async function loadTexture(url: string, transparencyUrl?: string): Promise<Texture> {
@@ -362,6 +460,632 @@ function mergeLayeredTextures(baseTexture: Texture, transparencyTexture: Texture
   return mergedTexture
 }
 
+const MOLANG_ALLOWED_IDENTIFIERS = new Set([
+  "true",
+  "false",
+  "__anim_time",
+  "__life_time",
+  "__delta_time",
+  "__math",
+  "__math.sin",
+  "__math.cos",
+  "__math.tan",
+  "__math.asin",
+  "__math.acos",
+  "__math.atan",
+  "__math.atan2",
+  "__math.abs",
+  "__math.floor",
+  "__math.ceil",
+  "__math.round",
+  "__math.min",
+  "__math.max",
+  "__math.sqrt",
+  "__math.pow",
+  "__math.exp",
+  "__math.log",
+  "__math.clamp",
+  "__math.lerp",
+  "__math.mod",
+  "__math.pi",
+])
+
+const MOLANG_MATH = {
+  sin: (degrees: number) => Math.sin(MathUtils.degToRad(degrees)),
+  cos: (degrees: number) => Math.cos(MathUtils.degToRad(degrees)),
+  tan: (degrees: number) => Math.tan(MathUtils.degToRad(degrees)),
+  asin: (value: number) => MathUtils.radToDeg(Math.asin(value)),
+  acos: (value: number) => MathUtils.radToDeg(Math.acos(value)),
+  atan: (value: number) => MathUtils.radToDeg(Math.atan(value)),
+  atan2: (y: number, x: number) => MathUtils.radToDeg(Math.atan2(y, x)),
+  abs: (value: number) => Math.abs(value),
+  floor: (value: number) => Math.floor(value),
+  ceil: (value: number) => Math.ceil(value),
+  round: (value: number) => Math.round(value),
+  min: (...values: number[]) => Math.min(...values),
+  max: (...values: number[]) => Math.max(...values),
+  sqrt: (value: number) => Math.sqrt(value),
+  pow: (base: number, exponent: number) => base ** exponent,
+  exp: (value: number) => Math.exp(value),
+  log: (value: number) => Math.log(value),
+  clamp: (value: number, min: number, max: number) => MathUtils.clamp(value, min, max),
+  lerp: (start: number, end: number, alpha: number) => MathUtils.lerp(start, end, alpha),
+  mod: (value: number, divisor: number) => {
+    if (divisor === 0) {
+      return 0
+    }
+    return ((value % divisor) + divisor) % divisor
+  },
+  pi: Math.PI,
+}
+
+type CompiledAnimation = {
+  loop: boolean
+  duration: number
+  bones: CompiledBoneAnimation[]
+}
+
+type CompiledKeyframe = {
+  time: number
+  pre: VectorEvaluator
+  post: VectorEvaluator
+  interpolation: string
+}
+
+function createIdleAnimationPlayer(
+  model: BuiltModel,
+  animationFile: BedrockAnimationFile | null
+): CompiledAnimationPlayer | null {
+  const selectedAnimation = pickIdleAnimation(animationFile)
+  if (!selectedAnimation) {
+    return null
+  }
+
+  const compiledAnimation = compileAnimation(selectedAnimation, model.animatedBones)
+  if (!compiledAnimation || compiledAnimation.bones.length === 0) {
+    return null
+  }
+
+  let elapsedSeconds = 0
+  let lifeTimeSeconds = 0
+
+  return {
+    update: (deltaSeconds: number) => {
+      const safeDelta = Math.max(Number.isFinite(deltaSeconds) ? deltaSeconds : 0, 0)
+      elapsedSeconds += safeDelta
+      lifeTimeSeconds += safeDelta
+
+      const sampleTime =
+        compiledAnimation.loop && compiledAnimation.duration > 0
+          ? wrapTime(elapsedSeconds, compiledAnimation.duration)
+          : elapsedSeconds
+
+      const evalContext: AnimationEvalContext = {
+        animTime: lifeTimeSeconds,
+        lifeTime: lifeTimeSeconds,
+        deltaTime: safeDelta,
+      }
+
+      for (const boneAnimation of compiledAnimation.bones) {
+        const { target } = boneAnimation
+
+        if (boneAnimation.position) {
+          const [offsetX, offsetY, offsetZ] = boneAnimation.position.sample(sampleTime, evalContext)
+          target.node.position.set(
+            target.basePosition.x - offsetX,
+            target.basePosition.y + offsetY,
+            target.basePosition.z + offsetZ
+          )
+        } else {
+          target.node.position.copy(target.basePosition)
+        }
+
+        if (boneAnimation.rotation) {
+          const [rotationX, rotationY, rotationZ] = boneAnimation.rotation.sample(
+            sampleTime,
+            evalContext
+          )
+          setBedrockEulerDegrees(
+            target.node,
+            target.baseRotation[0] + rotationX,
+            target.baseRotation[1] + rotationY,
+            target.baseRotation[2] + rotationZ
+          )
+        } else {
+          setBedrockEulerDegrees(
+            target.node,
+            target.baseRotation[0],
+            target.baseRotation[1],
+            target.baseRotation[2]
+          )
+        }
+
+        if (boneAnimation.scale) {
+          const [scaleX, scaleY, scaleZ] = boneAnimation.scale.sample(sampleTime, evalContext)
+          target.node.scale.set(
+            target.baseScale.x * keepNonZero(scaleX, 1),
+            target.baseScale.y * keepNonZero(scaleY, 1),
+            target.baseScale.z * keepNonZero(scaleZ, 1)
+          )
+        } else {
+          target.node.scale.copy(target.baseScale)
+        }
+      }
+    },
+  }
+}
+
+function pickIdleAnimation(animationFile: BedrockAnimationFile | null): BedrockAnimation | null {
+  const animations = animationFile?.animations
+  if (!animations) {
+    return null
+  }
+
+  const entries = Object.entries(animations).filter(([, animation]) => !!animation)
+  if (entries.length === 0) {
+    return null
+  }
+
+  const scored = entries
+    .map(([name, animation]) => ({ name, animation, score: scoreAnimationName(name, animation) }))
+    .sort((a, b) => b.score - a.score || a.name.localeCompare(b.name))
+
+  return scored[0]?.animation ?? null
+}
+
+function scoreAnimationName(name: string, animation: BedrockAnimation): number {
+  const normalizedName = name.toLowerCase()
+  let score = 0
+
+  if (normalizedName.includes("idle")) {
+    score += 220
+  }
+  if (normalizedName.includes("ground_idle")) {
+    score += 120
+  }
+  if (normalizedName.includes("idle_ground")) {
+    score += 110
+  }
+  if (/\.idle(?:$|\.)/u.test(normalizedName)) {
+    score += 70
+  }
+  if (/(walk|run|attack|hit|cry|faint|death|sleep)/u.test(normalizedName)) {
+    score -= 180
+  }
+  if (animation.loop === true || animation.loop === "loop") {
+    score += 40
+  }
+
+  return score
+}
+
+function compileAnimation(
+  animation: BedrockAnimation,
+  animatedBones: Map<string, AnimatedBoneBinding>
+): CompiledAnimation | null {
+  const bones = animation.bones
+  if (!bones) {
+    return null
+  }
+
+  const loop = animation.loop === true || animation.loop === "loop"
+  const compiledBones: CompiledBoneAnimation[] = []
+  const lowerCaseTargets = new Map<string, AnimatedBoneBinding>()
+  for (const [boneName, target] of animatedBones) {
+    lowerCaseTargets.set(boneName.toLowerCase(), target)
+  }
+
+  let keyframeTimeUpperBound = 0
+
+  for (const [boneName, boneAnimation] of Object.entries(bones)) {
+    if (!boneAnimation || typeof boneAnimation !== "object") {
+      continue
+    }
+
+    const target = animatedBones.get(boneName) ?? lowerCaseTargets.get(boneName.toLowerCase())
+    if (!target) {
+      continue
+    }
+
+    const position = compileAnimationChannel(boneAnimation.position, [0, 0, 0], loop)
+    const rotation = compileAnimationChannel(boneAnimation.rotation, [0, 0, 0], loop)
+    const scale = compileAnimationChannel(boneAnimation.scale, [1, 1, 1], loop)
+
+    if (!position && !rotation && !scale) {
+      continue
+    }
+
+    keyframeTimeUpperBound = Math.max(
+      keyframeTimeUpperBound,
+      position?.maxTime ?? 0,
+      rotation?.maxTime ?? 0,
+      scale?.maxTime ?? 0
+    )
+
+    compiledBones.push({
+      target,
+      position,
+      rotation,
+      scale,
+    })
+  }
+
+  const animationLength = parseFiniteNumber(animation.animation_length, 0)
+
+  return {
+    loop,
+    duration: Math.max(animationLength, keyframeTimeUpperBound, 0),
+    bones: compiledBones,
+  }
+}
+
+function compileAnimationChannel(
+  source: BedrockAnimationChannelValue | undefined,
+  fallback: [number, number, number],
+  loop: boolean
+): CompiledAnimationChannel | undefined {
+  if (source === undefined) {
+    return undefined
+  }
+
+  const keyframes = compileAnimationKeyframes(source, fallback)
+  if (keyframes.length === 0) {
+    const evaluator = compileVectorEvaluator(source, fallback)
+    return {
+      sample: (_time, context) => evaluator(context),
+      maxTime: 0,
+    }
+  }
+
+  const maxTime = keyframes[keyframes.length - 1]?.time ?? 0
+
+  return {
+    sample: (time, context) => sampleAnimationKeyframes(keyframes, time, context, loop, maxTime),
+    maxTime,
+  }
+}
+
+function compileAnimationKeyframes(
+  source: BedrockAnimationChannelValue,
+  fallback: [number, number, number]
+): CompiledKeyframe[] {
+  if (isAnimationKeyframe(source)) {
+    return [
+      {
+        time: 0,
+        pre: compileVectorEvaluator(source.pre ?? source.post ?? fallback, fallback),
+        post: compileVectorEvaluator(source.post ?? source.pre ?? fallback, fallback),
+        interpolation: normalizeInterpolation(source.lerp_mode),
+      },
+    ]
+  }
+
+  if (
+    typeof source !== "object" ||
+    source === null ||
+    Array.isArray(source) ||
+    typeof source === "string" ||
+    typeof source === "number"
+  ) {
+    return []
+  }
+
+  const compiled: CompiledKeyframe[] = []
+
+  for (const [timestamp, value] of Object.entries(source)) {
+    const time = Number.parseFloat(timestamp)
+    if (!Number.isFinite(time)) {
+      continue
+    }
+
+    if (isAnimationKeyframe(value)) {
+      compiled.push({
+        time,
+        pre: compileVectorEvaluator(value.pre ?? value.post ?? fallback, fallback),
+        post: compileVectorEvaluator(value.post ?? value.pre ?? fallback, fallback),
+        interpolation: normalizeInterpolation(value.lerp_mode),
+      })
+      continue
+    }
+
+    const evaluator = compileVectorEvaluator(value, fallback)
+    compiled.push({
+      time,
+      pre: evaluator,
+      post: evaluator,
+      interpolation: "linear",
+    })
+  }
+
+  compiled.sort((left, right) => left.time - right.time)
+  return compiled
+}
+
+function sampleAnimationKeyframes(
+  keyframes: CompiledKeyframe[],
+  time: number,
+  context: AnimationEvalContext,
+  loop: boolean,
+  duration: number
+): [number, number, number] {
+  if (keyframes.length === 0) {
+    return [0, 0, 0]
+  }
+
+  if (keyframes.length === 1) {
+    return keyframes[0].post(context)
+  }
+
+  const sampledTime = loop && duration > 0 ? wrapTime(time, duration) : Math.max(time, 0)
+
+  const first = keyframes[0]
+  const last = keyframes[keyframes.length - 1]
+
+  if (sampledTime < first.time) {
+    if (loop && duration > 0) {
+      const previousTime = last.time - duration
+      return interpolateKeyframes(
+        keyframes,
+        keyframes.length - 1,
+        previousTime,
+        0,
+        first.time,
+        sampledTime,
+        context,
+        true
+      )
+    }
+    return first.pre(context)
+  }
+
+  if (sampledTime >= last.time) {
+    if (loop && duration > 0) {
+      return interpolateKeyframes(
+        keyframes,
+        keyframes.length - 1,
+        last.time,
+        0,
+        first.time + duration,
+        sampledTime,
+        context,
+        true
+      )
+    }
+    return last.post(context)
+  }
+
+  for (let index = 0; index < keyframes.length - 1; index += 1) {
+    const current = keyframes[index]
+    const next = keyframes[index + 1]
+
+    if (sampledTime < current.time || sampledTime > next.time) {
+      continue
+    }
+
+    return interpolateKeyframes(
+      keyframes,
+      index,
+      current.time,
+      index + 1,
+      next.time,
+      sampledTime,
+      context,
+      loop
+    )
+  }
+
+  return last.post(context)
+}
+
+function interpolateKeyframes(
+  keyframes: CompiledKeyframe[],
+  beforeIndex: number,
+  beforeTime: number,
+  afterIndex: number,
+  afterTime: number,
+  sampledTime: number,
+  context: AnimationEvalContext,
+  loop: boolean
+): [number, number, number] {
+  const before = keyframes[beforeIndex]
+  const after = keyframes[afterIndex]
+
+  const beforeValue = before.post(context)
+  const afterValue = after.pre(context)
+
+  if (sampledTime <= beforeTime) {
+    return beforeValue
+  }
+
+  const timeSpan = afterTime - beforeTime
+  if (timeSpan <= 0.000001 || before.interpolation === "step") {
+    return beforeValue
+  }
+
+  const alpha = MathUtils.clamp((sampledTime - beforeTime) / timeSpan, 0, 1)
+
+  if (before.interpolation === "catmullrom" || after.interpolation === "catmullrom") {
+    const previousIndex =
+      beforeIndex > 0 ? beforeIndex - 1 : loop ? keyframes.length - 1 : beforeIndex
+    const nextIndex = afterIndex < keyframes.length - 1 ? afterIndex + 1 : loop ? 0 : afterIndex
+
+    const previousValue = keyframes[previousIndex].post(context)
+    const nextValue = keyframes[nextIndex].pre(context)
+
+    return [
+      interpolateCatmullRom(alpha, previousValue[0], beforeValue[0], afterValue[0], nextValue[0]),
+      interpolateCatmullRom(alpha, previousValue[1], beforeValue[1], afterValue[1], nextValue[1]),
+      interpolateCatmullRom(alpha, previousValue[2], beforeValue[2], afterValue[2], nextValue[2]),
+    ]
+  }
+
+  return [
+    MathUtils.lerp(beforeValue[0], afterValue[0], alpha),
+    MathUtils.lerp(beforeValue[1], afterValue[1], alpha),
+    MathUtils.lerp(beforeValue[2], afterValue[2], alpha),
+  ]
+}
+
+function compileVectorEvaluator(
+  source: BedrockAnimationVectorValue | BedrockAnimationKeyframe,
+  fallback: [number, number, number]
+): VectorEvaluator {
+  if (Array.isArray(source)) {
+    const x = compileScalarEvaluator(source[0], fallback[0])
+    const y = compileScalarEvaluator(source[1], fallback[1])
+    const z = compileScalarEvaluator(source[2], fallback[2])
+
+    return (context) => [x(context), y(context), z(context)]
+  }
+
+  if (typeof source === "number" || typeof source === "string") {
+    const uniform = compileScalarEvaluator(source, fallback[0])
+    return (context) => {
+      const value = uniform(context)
+      return [value, value, value]
+    }
+  }
+
+  if (isAnimationKeyframe(source)) {
+    return compileVectorEvaluator(source.post ?? source.pre ?? fallback, fallback)
+  }
+
+  return () => [...fallback] as [number, number, number]
+}
+
+function compileScalarEvaluator(source: unknown, fallback: number): ScalarEvaluator {
+  if (typeof source === "number" && Number.isFinite(source)) {
+    return () => source
+  }
+
+  if (typeof source === "string") {
+    const expressionEvaluator = compileMolangExpression(source)
+    if (expressionEvaluator) {
+      return (context) => {
+        const value = expressionEvaluator(context)
+        return Number.isFinite(value) ? value : fallback
+      }
+    }
+  }
+
+  return () => fallback
+}
+
+function compileMolangExpression(
+  expression: string
+): ((context: AnimationEvalContext) => number) | null {
+  const normalized = expression
+    .trim()
+    .toLowerCase()
+    .replace(/\bq\./gu, "query.")
+    .replace(/\bv\./gu, "variable.")
+    .replace(/\bt\./gu, "temp.")
+    .replace(/\bc\./gu, "context.")
+
+  if (!normalized) {
+    return null
+  }
+
+  const jsExpression = normalized
+    .replace(/\bquery\.anim_time\b/gu, "__anim_time")
+    .replace(/\bquery\.life_time\b/gu, "__life_time")
+    .replace(/\bquery\.delta_time\b/gu, "__delta_time")
+    .replace(/\bquery\.[a-z_][a-z0-9_]*\b/gu, "0")
+    .replace(/\b(?:variable|context|temp)\.[a-z_][a-z0-9_]*\b/gu, "0")
+    .replace(/\bmath\./gu, "__math.")
+
+  if (/[^0-9a-z_+\-*/%().,\s<>=!?:&|]/u.test(jsExpression)) {
+    return null
+  }
+
+  const identifiers = jsExpression.match(/[a-z_][a-z0-9_.]*/gu) ?? []
+  for (const identifier of identifiers) {
+    if (!MOLANG_ALLOWED_IDENTIFIERS.has(identifier)) {
+      return null
+    }
+  }
+
+  try {
+    const evaluator = new Function(
+      "__anim_time",
+      "__life_time",
+      "__delta_time",
+      "__math",
+      `return Number(${jsExpression});`
+    ) as (animTime: number, lifeTime: number, deltaTime: number, math: typeof MOLANG_MATH) => number
+
+    return (context) =>
+      evaluator(context.animTime, context.lifeTime, context.deltaTime, MOLANG_MATH)
+  } catch {
+    return null
+  }
+}
+
+function isAnimationKeyframe(value: unknown): value is BedrockAnimationKeyframe {
+  if (!value || typeof value !== "object" || Array.isArray(value)) {
+    return false
+  }
+
+  const keyframe = value as BedrockAnimationKeyframe
+  return keyframe.pre !== undefined || keyframe.post !== undefined
+}
+
+function normalizeInterpolation(value: unknown): string {
+  return typeof value === "string" ? value.toLowerCase() : "linear"
+}
+
+function keepNonZero(value: number, fallback: number): number {
+  if (!Number.isFinite(value)) {
+    return fallback
+  }
+
+  if (value === 0) {
+    return 0.00001
+  }
+
+  return value
+}
+
+function wrapTime(value: number, length: number): number {
+  if (!Number.isFinite(value) || !Number.isFinite(length) || length <= 0) {
+    return 0
+  }
+
+  return ((value % length) + length) % length
+}
+
+function interpolateCatmullRom(t: number, p0: number, p1: number, p2: number, p3: number): number {
+  const tSquared = t * t
+  const tCubed = tSquared * t
+  return (
+    0.5 *
+    (2 * p1 +
+      (-p0 + p2) * t +
+      (2 * p0 - 5 * p1 + 4 * p2 - p3) * tSquared +
+      (-p0 + 3 * p1 - 3 * p2 + p3) * tCubed)
+  )
+}
+
+function parseFiniteNumber(value: unknown, fallback: number): number {
+  if (typeof value === "number" && Number.isFinite(value)) {
+    return value
+  }
+
+  return fallback
+}
+
+function toRotationTuple(value?: [number, number, number]): [number, number, number] {
+  if (!value) {
+    return [0, 0, 0]
+  }
+
+  return [
+    parseFiniteNumber(value[0], 0),
+    parseFiniteNumber(value[1], 0),
+    parseFiniteNumber(value[2], 0),
+  ]
+}
+
 function buildModelFromBedrock(geoFile: BedrockGeoFile, texture: Texture): BuiltModel | null {
   const geometryRoot = geoFile["minecraft:geometry"]?.[0]
   const bones = geometryRoot?.bones
@@ -386,6 +1110,7 @@ function buildModelFromBedrock(geoFile: BedrockGeoFile, texture: Texture): Built
   const root = new Group()
   root.add(skeletonRoot)
   const meshMeta: MeshVolumeMeta[] = []
+  const animatedBones = new Map<string, AnimatedBoneBinding>()
   const boneObjects = new Map<string, Group>()
   const bonePivots = new Map<string, Vector3>()
 
@@ -410,6 +1135,13 @@ function buildModelFromBedrock(geoFile: BedrockGeoFile, texture: Texture): Built
     applyBedrockEulerDegrees(boneObject, bone.rotation)
     parentObject.add(boneObject)
 
+    animatedBones.set(bone.name, {
+      node: boneObject,
+      basePosition: boneObject.position.clone(),
+      baseScale: boneObject.scale.clone(),
+      baseRotation: toRotationTuple(bone.rotation),
+    })
+
     for (const cube of bone.cubes ?? []) {
       const mirror = cube.mirror ?? bone.mirror ?? false
       const cubeObject = createCubeObject(
@@ -432,6 +1164,7 @@ function buildModelFromBedrock(geoFile: BedrockGeoFile, texture: Texture): Built
   return {
     group: root,
     meshMeta,
+    animatedBones,
     visibleBoundsOffset,
     visibleBoundsHeight: geometryRoot.description.visible_bounds_height,
   }
@@ -756,19 +1489,27 @@ const CUBE_FACE_INDEX: Record<CubeFaceName, number> = {
   north: 5,
 }
 
-function applyBedrockEulerDegrees(target: Group, degrees?: [number, number, number]) {
+function setBedrockEulerDegrees(
+  target: Group,
+  xDegrees: number,
+  yDegrees: number,
+  zDegrees: number
+) {
   target.rotation.order = "ZYX"
+  target.rotation.set(
+    MathUtils.degToRad(-xDegrees),
+    MathUtils.degToRad(-yDegrees),
+    MathUtils.degToRad(zDegrees)
+  )
+}
 
+function applyBedrockEulerDegrees(target: Group, degrees?: [number, number, number]) {
   if (!degrees) {
-    target.rotation.set(0, 0, 0)
+    setBedrockEulerDegrees(target, 0, 0, 0)
     return
   }
 
-  target.rotation.set(
-    MathUtils.degToRad(-degrees[0]),
-    MathUtils.degToRad(-degrees[1]),
-    MathUtils.degToRad(degrees[2])
-  )
+  setBedrockEulerDegrees(target, degrees[0], degrees[1], degrees[2])
 }
 
 function toBedrockPivotVector(value?: [number, number, number]): Vector3 {
