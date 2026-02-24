@@ -50,6 +50,7 @@ type MeshVolumeMeta = {
 type BuiltModel = {
   group: Group
   meshMeta: MeshVolumeMeta[]
+  visibleBoundsOffset?: Vector3
 }
 
 type BedrockBone = {
@@ -65,6 +66,9 @@ type BedrockGeometry = {
   description: {
     texture_width?: number
     texture_height?: number
+    visible_bounds_offset?: [number, number, number]
+    visible_bounds_width?: number
+    visible_bounds_height?: number
   }
   bones?: BedrockBone[]
 }
@@ -153,6 +157,7 @@ export function PokemonModelPreview(props: { slug: string; dexNumber: number; na
 
     const animate = () => {
       runtimeState.frame = window.requestAnimationFrame(animate)
+
       modelRoot.rotation.y += 0.0032
       renderer.render(scene, camera)
     }
@@ -278,6 +283,7 @@ async function loadModel(
   runtime.modelRoot.rotation.set(0, 0, 0)
   runtime.modelRoot.add(model.group)
   fitModelInPreview(model, runtime.camera)
+
   return true
 }
 
@@ -285,7 +291,7 @@ async function loadTexture(url: string): Promise<Texture> {
   const textureLoader = new TextureLoader()
   const texture = await textureLoader.loadAsync(url)
   texture.colorSpace = SRGBColorSpace
-  texture.flipY = false
+  texture.flipY = true
   texture.magFilter = NearestFilter
   texture.minFilter = NearestMipmapNearestFilter
   texture.needsUpdate = true
@@ -313,18 +319,16 @@ function buildModelFromBedrock(geoFile: BedrockGeoFile, texture: Texture): Built
   })
 
   const skeletonRoot = new Group()
-  const renderRoot = new Group()
-  renderRoot.scale.set(-1, 1, 1)
-  renderRoot.add(skeletonRoot)
-
   const root = new Group()
-  root.add(renderRoot)
+  root.add(skeletonRoot)
   const meshMeta: MeshVolumeMeta[] = []
   const boneObjects = new Map<string, Group>()
   const bonePivots = new Map<string, Vector3>()
 
   for (const bone of bones) {
-    boneObjects.set(bone.name, new Group())
+    const boneGroup = new Group()
+    boneGroup.name = bone.name
+    boneObjects.set(bone.name, boneGroup)
     bonePivots.set(bone.name, toVector3(bone.pivot))
   }
 
@@ -357,9 +361,14 @@ function buildModelFromBedrock(geoFile: BedrockGeoFile, texture: Texture): Built
     }
   }
 
+  const visibleBoundsOffset = geometryRoot.description.visible_bounds_offset
+    ? toVector3(geometryRoot.description.visible_bounds_offset)
+    : undefined
+
   return {
     group: root,
     meshMeta,
+    visibleBoundsOffset,
   }
 }
 
@@ -751,29 +760,26 @@ function fitModelInPreview(model: BuiltModel, camera: PerspectiveCamera) {
   const rawCenter = new Vector3()
   rawBox.getCenter(rawCenter)
 
-  const weightedCenter = getWeightedCenter(model.meshMeta) ?? rawCenter
-  group.position.x -= weightedCenter.x
-  group.position.z -= weightedCenter.z
+  group.position.x -= rawCenter.x
+  group.position.y -= rawCenter.y
+  group.position.z -= rawCenter.z
 
+  group.updateMatrixWorld(true)
+
+  const centeredBox = new Box3().setFromObject(group)
+  if (centeredBox.isEmpty()) {
+    return
+  }
+
+  group.position.y -= centeredBox.min.y
   group.updateMatrixWorld(true)
 
   const groundedBox = new Box3().setFromObject(group)
-  if (groundedBox.isEmpty()) {
-    return
-  }
 
-  group.position.y -= groundedBox.min.y
-  group.updateMatrixWorld(true)
+  const size = new Vector3()
+  groundedBox.getSize(size)
 
-  const normalizedBox = new Box3().setFromObject(group)
-  if (normalizedBox.isEmpty()) {
-    return
-  }
-
-  const normalizedSize = new Vector3()
-  normalizedBox.getSize(normalizedSize)
-
-  const dominantDimension = Math.max(normalizedSize.x, normalizedSize.y, normalizedSize.z, 0.0001)
+  const dominantDimension = Math.max(size.x, size.y, size.z, 0.0001)
   group.scale.setScalar(1.58 / dominantDimension)
 
   group.updateMatrixWorld(true)
@@ -786,7 +792,20 @@ function fitModelInPreview(model: BuiltModel, camera: PerspectiveCamera) {
   const finalSize = new Vector3()
   finalBox.getSize(finalSize)
 
-  const lookY = Math.max(finalBox.min.y + finalSize.y * 0.56, 0.2)
+  let lookY: number
+  let lookTarget: Vector3
+
+  if (model.visibleBoundsOffset) {
+    const offset = model.visibleBoundsOffset.clone()
+    const visibleBoundsHeight = 4.5
+    const fractionFromBottom = offset.y / visibleBoundsHeight
+    lookY = finalBox.min.y + finalSize.y * fractionFromBottom
+    lookTarget = new Vector3(0, lookY, 0)
+  } else {
+    lookY = Math.max(finalBox.min.y + finalSize.y * 0.5, 0.2)
+    lookTarget = new Vector3(0, lookY, 0)
+  }
+
   const halfHeight = finalSize.y * 0.5
   const halfWidth = Math.max(finalSize.x, finalSize.z) * 0.5
 
@@ -796,38 +815,14 @@ function fitModelInPreview(model: BuiltModel, camera: PerspectiveCamera) {
   const distanceForWidth = halfWidth / Math.tan(horizontalFov * 0.5)
   const distance = Math.max(distanceForHeight, distanceForWidth, 1.35) * 1.2
 
-  camera.position.set(distance * 0.82, lookY + finalSize.y * 0.12, distance * 0.82)
-  camera.lookAt(0, lookY, 0)
+  const newX = lookTarget.x + distance * 0.82
+  const newY = lookTarget.y + finalSize.y * 0.12
+  const newZ = lookTarget.z + distance * 0.82
+  camera.position.set(newX, newY, newZ)
+  camera.lookAt(lookTarget)
   camera.updateProjectionMatrix()
-}
 
-function getWeightedCenter(meshMeta: MeshVolumeMeta[]): Vector3 | null {
-  if (meshMeta.length === 0) {
-    return null
-  }
-
-  const weightedCenter = new Vector3()
-  const center = new Vector3()
-  let totalWeight = 0
-
-  for (const entry of meshMeta) {
-    entry.mesh.updateWorldMatrix(true, false)
-    const meshBox = new Box3().setFromObject(entry.mesh)
-    if (meshBox.isEmpty()) {
-      continue
-    }
-
-    meshBox.getCenter(center)
-    const weight = Math.max(Math.cbrt(entry.volume), 0.001)
-    weightedCenter.addScaledVector(center, weight)
-    totalWeight += weight
-  }
-
-  if (totalWeight <= 0) {
-    return null
-  }
-
-  return weightedCenter.divideScalar(totalWeight)
+  // Log model's final world bounds
 }
 
 const CUBE_FACE_ORDER: CubeFaceName[] = ["east", "west", "up", "down", "south", "north"]
