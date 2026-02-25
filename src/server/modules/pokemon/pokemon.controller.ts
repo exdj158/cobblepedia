@@ -16,6 +16,11 @@ type PokemonDexNavIndex = {
   byDexNumber: Map<number, number>
 }
 
+const generatedJsonLoaders: Record<string, () => Promise<{ default?: unknown }>> = {
+  "pokemon-dex-nav.json": () => import("@/data/generated/pokemon-dex-nav.json"),
+  "pokemon-list.json": () => import("@/data/generated/pokemon-list.json"),
+}
+
 async function loadPokemonDexNavIndex(): Promise<PokemonDexNavIndex> {
   if (pokemonDexNavIndex) {
     return pokemonDexNavIndex
@@ -40,8 +45,13 @@ async function loadPokemonDexNavIndex(): Promise<PokemonDexNavIndex> {
 }
 
 async function loadGeneratedJson(relativePath: string): Promise<unknown> {
+  const loadModule = generatedJsonLoaders[relativePath]
+  if (!loadModule) {
+    return null
+  }
+
   try {
-    const dataModule = await import(`@/data/generated/${relativePath}`)
+    const dataModule = await loadModule()
     return dataModule.default ?? dataModule
   } catch {
     return null

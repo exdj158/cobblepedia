@@ -150,6 +150,14 @@ const POKEMON_INTERACTIONS_ROOT = path.join(
   UPSTREAM_ROOT,
   "common/src/main/resources/data/cobblemon/pokemon_interactions"
 )
+const SPECIES_FEATURE_ASSIGNMENTS_ROOT = path.join(
+  UPSTREAM_ROOT,
+  "common/src/main/resources/data/cobblemon/species_feature_assignments"
+)
+const SLOWPOKE_TAILS_MECHANIC_PATH = path.join(
+  UPSTREAM_ROOT,
+  "common/src/main/resources/data/cobblemon/mechanics/slowpoke_tails.json"
+)
 const SHOWDOWN_ZIP_PATH = path.join(
   UPSTREAM_ROOT,
   "common/src/main/resources/data/cobblemon/showdown.zip"
@@ -1201,6 +1209,17 @@ async function loadPokemonInteractionIndex(
     }
   }
 
+  const speciesFeatureAssignments = await loadSpeciesFeatureAssignmentsBySlug()
+  const slowpokeTailsMechanic = await loadSlowpokeTailsMechanicConfig()
+  interactions.push(
+    ...buildSyntheticShearingInteractions({
+      detailsBySlug,
+      existingInteractions: interactions,
+      speciesFeatureAssignments,
+      slowpokeTailsMechanic,
+    })
+  )
+
   interactions.sort((left, right) => {
     if (left.dexNumber !== right.dexNumber) {
       return left.dexNumber - right.dexNumber
@@ -1247,6 +1266,227 @@ async function loadPokemonInteractionIndex(
     byRequiredItem,
     byGrantedItem,
   }
+}
+
+type SlowpokeTailsMechanicConfig = {
+  canShearSlowpoke: boolean
+  regrowthSeconds: number | null
+}
+
+async function loadSpeciesFeatureAssignmentsBySlug(): Promise<Map<string, Set<string>>> {
+  const assignmentsBySlug = new Map<string, Set<string>>()
+  if (!(await pathExists(SPECIES_FEATURE_ASSIGNMENTS_ROOT))) {
+    return assignmentsBySlug
+  }
+
+  const assignmentFiles = await collectJsonFiles(SPECIES_FEATURE_ASSIGNMENTS_ROOT)
+  for (const filePath of assignmentFiles) {
+    const rawData = await readJson(filePath)
+    const rawFeatures = Array.isArray(rawData.features) ? rawData.features : []
+    const features = rawFeatures
+      .filter((feature): feature is string => typeof feature === "string")
+      .map((feature) => feature.trim().toLowerCase())
+      .filter(Boolean)
+
+    if (features.length === 0) {
+      continue
+    }
+
+    const rawPokemon = Array.isArray(rawData.pokemon) ? rawData.pokemon : []
+    for (const pokemonRef of rawPokemon) {
+      if (typeof pokemonRef !== "string") {
+        continue
+      }
+
+      const slug = normalizeSpeciesAssignmentSlug(pokemonRef)
+      if (!slug) {
+        continue
+      }
+
+      const existing = assignmentsBySlug.get(slug)
+      if (existing) {
+        for (const feature of features) {
+          existing.add(feature)
+        }
+        continue
+      }
+
+      assignmentsBySlug.set(slug, new Set(features))
+    }
+  }
+
+  return assignmentsBySlug
+}
+
+function normalizeSpeciesAssignmentSlug(pokemonRef: string): string | null {
+  const normalized = pokemonRef.trim().toLowerCase()
+  if (!normalized) {
+    return null
+  }
+
+  const firstToken = normalized.split(/\s+/)[0] ?? ""
+  const slug = firstToken.trim().toLowerCase()
+  return slug.length > 0 ? slug : null
+}
+
+async function loadSlowpokeTailsMechanicConfig(): Promise<SlowpokeTailsMechanicConfig> {
+  if (!(await pathExists(SLOWPOKE_TAILS_MECHANIC_PATH))) {
+    return {
+      canShearSlowpoke: true,
+      regrowthSeconds: null,
+    }
+  }
+
+  const rawData = await readJson(SLOWPOKE_TAILS_MECHANIC_PATH)
+  return {
+    canShearSlowpoke: rawData.canShearSlowpoke !== false,
+    regrowthSeconds: parseIntegerValue(rawData.regrowthSeconds),
+  }
+}
+
+function buildSyntheticShearingInteractions(params: {
+  detailsBySlug: Map<string, PokemonDetailRecord>
+  existingInteractions: PokemonInteractionRecord[]
+  speciesFeatureAssignments: Map<string, Set<string>>
+  slowpokeTailsMechanic: SlowpokeTailsMechanicConfig
+}): PokemonInteractionRecord[] {
+  const synthetic: PokemonInteractionRecord[] = []
+  const sortedDetails = Array.from(params.detailsBySlug.values()).sort((left, right) => {
+    if (left.dexNumber !== right.dexNumber) {
+      return left.dexNumber - right.dexNumber
+    }
+
+    return left.slug.localeCompare(right.slug)
+  })
+
+  for (const detail of sortedDetails) {
+    const featureSet = new Set<string>()
+
+    const rawFeatures = Array.isArray(detail.rawSpecies.features) ? detail.rawSpecies.features : []
+    for (const feature of rawFeatures) {
+      if (typeof feature === "string") {
+        const normalized = feature.trim().toLowerCase()
+        if (normalized) {
+          featureSet.add(normalized)
+        }
+      }
+    }
+
+    for (const feature of params.speciesFeatureAssignments.get(detail.slug) ?? []) {
+      featureSet.add(feature)
+    }
+
+    if (featureSet.has("sheared")) {
+      const woolDropItem = resolveShearingWoolDrop(detail)
+      const hasExisting = hasEquivalentInteraction({
+        existingInteractions: [...params.existingInteractions, ...synthetic],
+        pokemonSlug: detail.slug,
+        requiredItem: "minecraft:shears",
+        dropItem: woolDropItem,
+      })
+
+      if (!hasExisting) {
+        const contextTokens = featureSet.has("color") ? ["color=varies"] : []
+        synthetic.push({
+          id: `${detail.slug}:auto-shears-wool`,
+          pokemonSlug: detail.slug,
+          pokemonName: detail.name,
+          dexNumber: detail.dexNumber,
+          grouping: "cobblemon:shears",
+          requiredItem: "minecraft:shears",
+          requiredItemCondition: "#c:tools/shear",
+          cooldownTicks: null,
+          cooldownSeconds: null,
+          contextTokens,
+          contextLabel: formatInteractionContextLabel(contextTokens),
+          drops: [
+            {
+              item: woolDropItem,
+              effectVariant: "drop_item",
+              amount: "2-4",
+            },
+          ],
+          raw: {
+            source: "species.features[sheared]",
+            mechanic: "PokemonEntity.shear",
+          },
+        })
+      }
+    }
+
+    if (featureSet.has("slowpoke_tail_regrowth") && params.slowpokeTailsMechanic.canShearSlowpoke) {
+      const hasExisting = hasEquivalentInteraction({
+        existingInteractions: [...params.existingInteractions, ...synthetic],
+        pokemonSlug: detail.slug,
+        requiredItem: "minecraft:shears",
+        dropItem: "cobblemon:tasty_tail",
+      })
+
+      if (!hasExisting) {
+        const cooldownSeconds = params.slowpokeTailsMechanic.regrowthSeconds
+        synthetic.push({
+          id: `${detail.slug}:auto-shears-tail`,
+          pokemonSlug: detail.slug,
+          pokemonName: detail.name,
+          dexNumber: detail.dexNumber,
+          grouping: "cobblemon:shears",
+          requiredItem: "minecraft:shears",
+          requiredItemCondition: "#c:tools/shear",
+          cooldownTicks: cooldownSeconds === null ? null : cooldownSeconds * 20,
+          cooldownSeconds,
+          contextTokens: [],
+          contextLabel: null,
+          drops: [
+            {
+              item: "cobblemon:tasty_tail",
+              effectVariant: "drop_item",
+              amount: "1",
+            },
+          ],
+          raw: {
+            source: "species_feature_assignments/slowpoke_tail_regrowth.json",
+            mechanic: "SlowpokeTailRegrowthSpeciesFeature.onShear",
+          },
+        })
+      }
+    }
+  }
+
+  return synthetic
+}
+
+function resolveShearingWoolDrop(detail: PokemonDetailRecord): string {
+  for (const drop of detail.drops?.entries ?? []) {
+    const normalizedItem = drop.item.trim().toLowerCase()
+    const dropPath = splitItemReference(normalizedItem).path
+    if (dropPath === "wool" || dropPath.endsWith("_wool")) {
+      return normalizedItem
+    }
+  }
+
+  return "minecraft:white_wool"
+}
+
+function hasEquivalentInteraction(params: {
+  existingInteractions: PokemonInteractionRecord[]
+  pokemonSlug: string
+  requiredItem: string
+  dropItem: string
+}): boolean {
+  const requiredItemKey = toItemKey(params.requiredItem)
+  const dropItemKey = toItemKey(params.dropItem)
+
+  return params.existingInteractions.some((interaction) => {
+    if (interaction.pokemonSlug !== params.pokemonSlug) {
+      return false
+    }
+
+    if (!interaction.requiredItem || toItemKey(interaction.requiredItem) !== requiredItemKey) {
+      return false
+    }
+
+    return interaction.drops.some((drop) => toItemKey(drop.item) === dropItemKey)
+  })
 }
 
 function sortInteractionIndexBuckets(index: Record<string, PokemonInteractionRecord[]>) {

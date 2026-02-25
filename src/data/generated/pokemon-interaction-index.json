@@ -326,6 +326,32 @@
         }
       }
     ],
+    "slowpoke": [
+      {
+        "id": "slowpoke:auto-shears-tail",
+        "pokemonSlug": "slowpoke",
+        "pokemonName": "Slowpoke",
+        "dexNumber": 79,
+        "grouping": "cobblemon:shears",
+        "requiredItem": "minecraft:shears",
+        "requiredItemCondition": "#c:tools/shear",
+        "cooldownTicks": 24000,
+        "cooldownSeconds": 1200,
+        "contextTokens": [],
+        "contextLabel": null,
+        "drops": [
+          {
+            "item": "cobblemon:tasty_tail",
+            "effectVariant": "drop_item",
+            "amount": "1"
+          }
+        ],
+        "raw": {
+          "source": "species_feature_assignments/slowpoke_tail_regrowth.json",
+          "mechanic": "SlowpokeTailRegrowthSpeciesFeature.onShear"
+        }
+      }
+    ],
     "farfetchd": [
       {
         "id": "farfetchd:1",
@@ -926,6 +952,32 @@
               "sound": "minecraft:item.brush.brushing.generic"
             }
           ]
+        }
+      }
+    ],
+    "mareep": [
+      {
+        "id": "mareep:auto-shears-wool",
+        "pokemonSlug": "mareep",
+        "pokemonName": "Mareep",
+        "dexNumber": 179,
+        "grouping": "cobblemon:shears",
+        "requiredItem": "minecraft:shears",
+        "requiredItemCondition": "#c:tools/shear",
+        "cooldownTicks": null,
+        "cooldownSeconds": null,
+        "contextTokens": [],
+        "contextLabel": null,
+        "drops": [
+          {
+            "item": "minecraft:white_wool",
+            "effectVariant": "drop_item",
+            "amount": "2-4"
+          }
+        ],
+        "raw": {
+          "source": "species.features[sheared]",
+          "mechanic": "PokemonEntity.shear"
         }
       }
     ],
@@ -5427,6 +5479,62 @@
               "sound": "minecraft:item.brush.brushing.generic"
             }
           ]
+        }
+      }
+    ],
+    "wooloo": [
+      {
+        "id": "wooloo:auto-shears-wool",
+        "pokemonSlug": "wooloo",
+        "pokemonName": "Wooloo",
+        "dexNumber": 831,
+        "grouping": "cobblemon:shears",
+        "requiredItem": "minecraft:shears",
+        "requiredItemCondition": "#c:tools/shear",
+        "cooldownTicks": null,
+        "cooldownSeconds": null,
+        "contextTokens": [
+          "color=varies"
+        ],
+        "contextLabel": "Color: Varies",
+        "drops": [
+          {
+            "item": "minecraft:white_wool",
+            "effectVariant": "drop_item",
+            "amount": "2-4"
+          }
+        ],
+        "raw": {
+          "source": "species.features[sheared]",
+          "mechanic": "PokemonEntity.shear"
+        }
+      }
+    ],
+    "dubwool": [
+      {
+        "id": "dubwool:auto-shears-wool",
+        "pokemonSlug": "dubwool",
+        "pokemonName": "Dubwool",
+        "dexNumber": 832,
+        "grouping": "cobblemon:shears",
+        "requiredItem": "minecraft:shears",
+        "requiredItemCondition": "#c:tools/shear",
+        "cooldownTicks": null,
+        "cooldownSeconds": null,
+        "contextTokens": [
+          "color=varies"
+        ],
+        "contextLabel": "Color: Varies",
+        "drops": [
+          {
+            "item": "minecraft:white_wool",
+            "effectVariant": "drop_item",
+            "amount": "2-4"
+          }
+        ],
+        "raw": {
+          "source": "species.features[sheared]",
+          "mechanic": "PokemonEntity.shear"
         }
       }
     ],
@@ -11152,6 +11260,108 @@
         }
       }
     ],
+    "shears": [
+      {
+        "id": "slowpoke:auto-shears-tail",
+        "pokemonSlug": "slowpoke",
+        "pokemonName": "Slowpoke",
+        "dexNumber": 79,
+        "grouping": "cobblemon:shears",
+        "requiredItem": "minecraft:shears",
+        "requiredItemCondition": "#c:tools/shear",
+        "cooldownTicks": 24000,
+        "cooldownSeconds": 1200,
+        "contextTokens": [],
+        "contextLabel": null,
+        "drops": [
+          {
+            "item": "cobblemon:tasty_tail",
+            "effectVariant": "drop_item",
+            "amount": "1"
+          }
+        ],
+        "raw": {
+          "source": "species_feature_assignments/slowpoke_tail_regrowth.json",
+          "mechanic": "SlowpokeTailRegrowthSpeciesFeature.onShear"
+        }
+      },
+      {
+        "id": "mareep:auto-shears-wool",
+        "pokemonSlug": "mareep",
+        "pokemonName": "Mareep",
+        "dexNumber": 179,
+        "grouping": "cobblemon:shears",
+        "requiredItem": "minecraft:shears",
+        "requiredItemCondition": "#c:tools/shear",
+        "cooldownTicks": null,
+        "cooldownSeconds": null,
+        "contextTokens": [],
+        "contextLabel": null,
+        "drops": [
+          {
+            "item": "minecraft:white_wool",
+            "effectVariant": "drop_item",
+            "amount": "2-4"
+          }
+        ],
+        "raw": {
+          "source": "species.features[sheared]",
+          "mechanic": "PokemonEntity.shear"
+        }
+      },
+      {
+        "id": "wooloo:auto-shears-wool",
+        "pokemonSlug": "wooloo",
+        "pokemonName": "Wooloo",
+        "dexNumber": 831,
+        "grouping": "cobblemon:shears",
+        "requiredItem": "minecraft:shears",
+        "requiredItemCondition": "#c:tools/shear",
+        "cooldownTicks": null,
+        "cooldownSeconds": null,
+        "contextTokens": [
+          "color=varies"
+        ],
+        "contextLabel": "Color: Varies",
+        "drops": [
+          {
+            "item": "minecraft:white_wool",
+            "effectVariant": "drop_item",
+            "amount": "2-4"
+          }
+        ],
+        "raw": {
+          "source": "species.features[sheared]",
+          "mechanic": "PokemonEntity.shear"
+        }
+      },
+      {
+        "id": "dubwool:auto-shears-wool",
+        "pokemonSlug": "dubwool",
+        "pokemonName": "Dubwool",
+        "dexNumber": 832,
+        "grouping": "cobblemon:shears",
+        "requiredItem": "minecraft:shears",
+        "requiredItemCondition": "#c:tools/shear",
+        "cooldownTicks": null,
+        "cooldownSeconds": null,
+        "contextTokens": [
+          "color=varies"
+        ],
+        "contextLabel": "Color: Varies",
+        "drops": [
+          {
+            "item": "minecraft:white_wool",
+            "effectVariant": "drop_item",
+            "amount": "2-4"
+          }
+        ],
+        "raw": {
+          "source": "species.features[sheared]",
+          "mechanic": "PokemonEntity.shear"
+        }
+      }
+    ],
     "bone_meal": [
       {
         "id": "exeggutor:1",
@@ -16186,6 +16396,32 @@
         }
       }
     ],
+    "tasty_tail": [
+      {
+        "id": "slowpoke:auto-shears-tail",
+        "pokemonSlug": "slowpoke",
+        "pokemonName": "Slowpoke",
+        "dexNumber": 79,
+        "grouping": "cobblemon:shears",
+        "requiredItem": "minecraft:shears",
+        "requiredItemCondition": "#c:tools/shear",
+        "cooldownTicks": 24000,
+        "cooldownSeconds": 1200,
+        "contextTokens": [],
+        "contextLabel": null,
+        "drops": [
+          {
+            "item": "cobblemon:tasty_tail",
+            "effectVariant": "drop_item",
+            "amount": "1"
+          }
+        ],
+        "raw": {
+          "source": "species_feature_assignments/slowpoke_tail_regrowth.json",
+          "mechanic": "SlowpokeTailRegrowthSpeciesFeature.onShear"
+        }
+      }
+    ],
     "jungle_sapling": [
       {
         "id": "exeggutor:1",
@@ -16317,6 +16553,84 @@
               "sound": "minecraft:item.bone_meal.use"
             }
           ]
+        }
+      }
+    ],
+    "white_wool": [
+      {
+        "id": "mareep:auto-shears-wool",
+        "pokemonSlug": "mareep",
+        "pokemonName": "Mareep",
+        "dexNumber": 179,
+        "grouping": "cobblemon:shears",
+        "requiredItem": "minecraft:shears",
+        "requiredItemCondition": "#c:tools/shear",
+        "cooldownTicks": null,
+        "cooldownSeconds": null,
+        "contextTokens": [],
+        "contextLabel": null,
+        "drops": [
+          {
+            "item": "minecraft:white_wool",
+            "effectVariant": "drop_item",
+            "amount": "2-4"
+          }
+        ],
+        "raw": {
+          "source": "species.features[sheared]",
+          "mechanic": "PokemonEntity.shear"
+        }
+      },
+      {
+        "id": "wooloo:auto-shears-wool",
+        "pokemonSlug": "wooloo",
+        "pokemonName": "Wooloo",
+        "dexNumber": 831,
+        "grouping": "cobblemon:shears",
+        "requiredItem": "minecraft:shears",
+        "requiredItemCondition": "#c:tools/shear",
+        "cooldownTicks": null,
+        "cooldownSeconds": null,
+        "contextTokens": [
+          "color=varies"
+        ],
+        "contextLabel": "Color: Varies",
+        "drops": [
+          {
+            "item": "minecraft:white_wool",
+            "effectVariant": "drop_item",
+            "amount": "2-4"
+          }
+        ],
+        "raw": {
+          "source": "species.features[sheared]",
+          "mechanic": "PokemonEntity.shear"
+        }
+      },
+      {
+        "id": "dubwool:auto-shears-wool",
+        "pokemonSlug": "dubwool",
+        "pokemonName": "Dubwool",
+        "dexNumber": 832,
+        "grouping": "cobblemon:shears",
+        "requiredItem": "minecraft:shears",
+        "requiredItemCondition": "#c:tools/shear",
+        "cooldownTicks": null,
+        "cooldownSeconds": null,
+        "contextTokens": [
+          "color=varies"
+        ],
+        "contextLabel": "Color: Varies",
+        "drops": [
+          {
+            "item": "minecraft:white_wool",
+            "effectVariant": "drop_item",
+            "amount": "2-4"
+          }
+        ],
+        "raw": {
+          "source": "species.features[sheared]",
+          "mechanic": "PokemonEntity.shear"
         }
       }
     ],

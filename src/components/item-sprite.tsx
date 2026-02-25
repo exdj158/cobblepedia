@@ -5,6 +5,8 @@ const COBBLEMON_ITEM_SPRITE_BASE_URL =
   "https://gitlab.com/cable-mc/cobblemon-assets/-/raw/master/items/evolution_items"
 const MINECRAFT_ITEM_SPRITE_BASE_URL =
   "https://raw.githubusercontent.com/PixiGeko/Minecraft-default-assets/latest/assets/minecraft/textures/item"
+const MINECRAFT_BLOCK_SPRITE_BASE_URL =
+  "https://raw.githubusercontent.com/PixiGeko/Minecraft-default-assets/latest/assets/minecraft/textures/block"
 
 type ItemSpriteProps = {
   itemId: string
@@ -50,6 +52,12 @@ export function getItemSpriteUrl(itemId: string): string {
   return `${COBBLEMON_ITEM_SPRITE_BASE_URL}/${encodeURIComponent(normalizedItemId)}.png`
 }
 
+function getMinecraftBlockSpriteUrl(itemId: string): string {
+  const parsed = parseItemId(itemId)
+  const normalizedItemId = normalizeItemId(parsed.path)
+  return `${MINECRAFT_BLOCK_SPRITE_BASE_URL}/${encodeURIComponent(normalizedItemId)}.png`
+}
+
 export function getItemSpriteUrlFromPath(assetPath: string): string {
   return `https://gitlab.com/cable-mc/cobblemon-assets/-/raw/master/${assetPath}`
 }
@@ -71,7 +79,17 @@ export function ItemSprite(props: ItemSpriteProps) {
       class={cn("pixelart h-5 w-5 shrink-0 object-contain", props.class)}
       loading="lazy"
       onError={(event) => {
-        event.currentTarget.style.display = "none"
+        const target = event.currentTarget
+
+        if (parseItemId(props.itemId).namespace === "minecraft") {
+          const currentSrc = target.currentSrc || target.src
+          if (currentSrc.includes("/textures/item/")) {
+            target.src = getMinecraftBlockSpriteUrl(props.itemId)
+            return
+          }
+        }
+
+        target.style.display = "none"
       }}
     />
   )
