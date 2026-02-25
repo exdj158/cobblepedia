@@ -1,5 +1,5 @@
 import { useQuery } from "@tanstack/solid-query"
-import { createEffect, createMemo, createSignal, For, Show } from "solid-js"
+import { createEffect, createMemo, createSignal, For, lazy, Show, Suspense } from "solid-js"
 import { navigate } from "vike/client/router"
 import { useMetadata } from "vike-metadata-solid"
 import { usePageContext } from "vike-solid/usePageContext"
@@ -19,7 +19,6 @@ import {
 } from "@/assets/icons"
 import { EvolutionFamilyFlow } from "@/components/evolution-family-flow"
 import { ItemSprite, parseItemId } from "@/components/item-sprite"
-import { PokemonModelPreview } from "@/components/pokemon-model-preview"
 import { RideableCategoryIcon, RideableClassIcon } from "@/components/rideable-icons"
 import type {
   BiomeTagIndex,
@@ -72,6 +71,12 @@ type ArtworkView = "official" | "shiny" | "model3d"
 
 const SMOGON_LOGO_URL = "https://archives.bulbagarden.net/media/upload/3/38/Smogon_logo.png"
 const PIKALYTICS_LOGO_URL = "https://cdn.pikalytics.com/images/favicon/apple-icon.png"
+
+const PokemonModelPreview = lazy(() =>
+  import("@/components/pokemon-model-preview").then((module) => ({
+    default: module.PokemonModelPreview,
+  }))
+)
 
 const TYPE_COLORS: Record<string, string> = {
   normal: "#A8A878",
@@ -734,11 +739,19 @@ function PokemonDetailView(props: {
             <div class="relative h-40 w-40 overflow-hidden border border-border bg-secondary/30 sm:h-44 sm:w-44">
               <Show when={activeView() === "model3d"}>
                 <div class="h-full w-full">
-                  <PokemonModelPreview
-                    slug={detail().slug}
-                    dexNumber={detail().dexNumber}
-                    name={detail().name}
-                  />
+                  <Suspense
+                    fallback={
+                      <div class="flex h-full w-full items-center justify-center">
+                        <div class="h-5 w-5 animate-spin border-2 border-border border-t-foreground" />
+                      </div>
+                    }
+                  >
+                    <PokemonModelPreview
+                      slug={detail().slug}
+                      dexNumber={detail().dexNumber}
+                      name={detail().name}
+                    />
+                  </Suspense>
                 </div>
               </Show>
               <Show when={activeView() !== "model3d"}>

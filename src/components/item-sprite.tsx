@@ -59,7 +59,12 @@ function getMinecraftBlockSpriteUrl(itemId: string): string {
 }
 
 export function getItemSpriteUrlFromPath(assetPath: string): string {
-  return `https://gitlab.com/cable-mc/cobblemon-assets/-/raw/master/${assetPath}`
+  const normalizedPath = assetPath.trim()
+  if (/^https?:\/\//.test(normalizedPath)) {
+    return normalizedPath
+  }
+
+  return `https://gitlab.com/cable-mc/cobblemon-assets/-/raw/master/${normalizedPath}`
 }
 
 export function ItemSprite(props: ItemSpriteProps) {

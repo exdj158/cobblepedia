@@ -51,6 +51,10 @@ const UPSTREAM_URL = "https://gitlab.com/cable-mc/cobblemon"
 const COBBLEMON_ASSETS_PROJECT_ID = "cable-mc%2Fcobblemon-assets"
 const COBBLEMON_ASSETS_REF = "master"
 const COBBLEMON_ASSETS_ITEMS_ROOT = "items"
+const ITEM_ASSET_PATH_OVERRIDES: Record<string, string> = {
+  saccharine_sapling:
+    "https://gitlab.com/cable-mc/cobblemon/-/raw/main/common/src/main/resources/assets/cobblemon/textures/block/wood/saccharine_sapling.png",
+}
 const POKEAPI_POKEMON_CSV_URL =
   "https://raw.githubusercontent.com/PokeAPI/pokeapi/master/data/v2/csv/pokemon.csv"
 const POKEAPI_POKEMON_FORMS_CSV_URL =
@@ -380,11 +384,15 @@ async function main() {
     console.warn(`[warn] Spawn biome tag references optional namespace: ${namespace}`)
   }
 
+  const upstreamBranch = gitValue(["rev-parse", "--abbrev-ref", "HEAD"])
+  const upstreamCommitSha = gitValue(["rev-parse", "HEAD"])
+  const upstreamCommitDate = gitValue(["show", "-s", "--format=%cI", "HEAD"])
+
   const meta: MetaRecord = {
     upstreamUrl: UPSTREAM_URL,
-    branch: gitValue(["rev-parse", "--abbrev-ref", "HEAD"]),
-    commitSha: gitValue(["rev-parse", "HEAD"]),
-    generatedAt: new Date().toISOString(),
+    branch: upstreamBranch,
+    commitSha: upstreamCommitSha,
+    generatedAt: upstreamCommitDate !== "unknown" ? upstreamCommitDate : "1970-01-01T00:00:00.000Z",
     speciesCount: pokemonList.length,
     implementedSpeciesCount: pokemonList.filter((pokemon) => pokemon.implemented).length,
     spawnEntryCount: Array.from(detailsBySlug.values()).reduce((sum, detail) => {
@@ -699,7 +707,7 @@ async function loadItemIndex(): Promise<ItemIndex> {
       name,
       description: descriptionLines.length > 0 ? descriptionLines.join(" ") : null,
       descriptionLines,
-      assetPath: itemAssetPathById.get(itemId) ?? null,
+      assetPath: itemAssetPathById.get(itemId) ?? ITEM_ASSET_PATH_OVERRIDES[itemId] ?? null,
     }
   }
 
@@ -3622,7 +3630,6 @@ async function buildSmogonMovesetsBySlug(
   const smogonLookup = payload
     ? buildSmogonSetsLookup(payload)
     : new Map<string, SmogonMovesetEntry>()
-  const generatedAt = new Date().toISOString()
 
   const shards = new Map<string, SmogonMovesetsByPokemonRecord>()
   const sortedDetails = Array.from(detailsBySlug.values()).sort((left, right) => {
@@ -3668,7 +3675,6 @@ async function buildSmogonMovesetsBySlug(
       formatId: SMOGON_SETS_FORMAT_ID,
       formatLabel: SMOGON_SETS_FORMAT_LABEL,
       sourceUrl: SMOGON_SETS_GEN9_URL,
-      generatedAt,
       defaultEntryName: defaultEntry?.entryName ?? null,
       defaultSets: defaultEntry?.sets ?? [],
       formEntries,

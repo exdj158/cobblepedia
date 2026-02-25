@@ -40,6 +40,14 @@ Local reference repositories for development and data inspection:
     `common/src/main/kotlin/com/cobblemon/mod/common/entity/pokemon/PokemonEntity.kt`.
   - Slowpoke shearing uses species feature assignment (`slowpoke_tail_regrowth`) plus the mechanics config above.
 
+## Cobblemon item assets
+
+- Primary repository (item icon pack): `https://gitlab.com/cable-mc/cobblemon-assets/-/tree/master/items`
+- Primary raw base:
+  - `https://gitlab.com/cable-mc/cobblemon-assets/-/raw/master/items/{subpath}.png`
+- Fallback source for item models that point at Cobblemon block textures:
+  - `https://gitlab.com/cable-mc/cobblemon/-/raw/main/common/src/main/resources/assets/cobblemon/textures/{subpath}.png`
+
 ## Model previews and assets
 
 - Model previews are runtime-fetched and must not be committed to this repo.

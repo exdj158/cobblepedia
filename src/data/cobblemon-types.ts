@@ -379,7 +379,6 @@ export type SmogonMovesetsByPokemonRecord = {
   formatId: string
   formatLabel: string
   sourceUrl: string
-  generatedAt: string
   defaultEntryName: string | null
   defaultSets: SmogonMovesetRecord[]
   formEntries: Record<string, SmogonMovesetFormEntry>
