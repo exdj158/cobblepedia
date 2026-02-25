@@ -51,6 +51,7 @@ import {
   formatConditionChips,
   formatEggGroup,
   formatMoveSource,
+  normalizeSearchText,
   sortMovesForTab,
   titleCaseFromId,
 } from "@/data/formatters"
@@ -131,20 +132,34 @@ export default function CommandPalette() {
   })
 
   const primaryPageResults = createMemo((): PaletteResult[] => {
-    const currentQuery = query().trim().toLowerCase()
+    const searchTerm = normalizeSearchText(query().trim().replace(/^[>/]/, ""))
 
-    // Show primary pages when query is empty or starts with > or /
-    if (!currentQuery || currentQuery.startsWith(">") || currentQuery.startsWith("/")) {
-      const searchTerm = currentQuery.replace(/^[>/]/, "").trim()
+    return PRIMARY_PAGES.filter((page) => {
+      if (!searchTerm) {
+        return true
+      }
 
-      return PRIMARY_PAGES.filter((page) => {
-        if (!searchTerm) return true
-        return (
-          page.title.toLowerCase().includes(searchTerm) ||
-          page.subtitle.toLowerCase().includes(searchTerm) ||
-          page.id.toLowerCase().includes(searchTerm)
-        )
-      }).map((page) => ({
+      return (
+        normalizeSearchText(page.title).includes(searchTerm) ||
+        normalizeSearchText(page.subtitle).includes(searchTerm) ||
+        normalizeSearchText(page.id.replace("page:", "")).includes(searchTerm) ||
+        normalizeSearchText(page.url).includes(searchTerm)
+      )
+    }).map((page) => {
+      const normalizedTitle = normalizeSearchText(page.title)
+      let score = 1000
+
+      if (searchTerm) {
+        if (normalizedTitle === searchTerm) {
+          score += 250
+        } else if (normalizedTitle.startsWith(searchTerm)) {
+          score += 180
+        } else if (normalizedTitle.includes(searchTerm)) {
+          score += 120
+        }
+      }
+
+      return {
         id: page.id,
         type: "primary-page" as const,
         title: page.title,
@@ -152,12 +167,10 @@ export default function CommandPalette() {
         slug: null,
         moveId: null,
         facet: null,
-        score: 1000,
+        score,
         url: page.url,
-      }))
-    }
-
-    return []
+      }
+    })
   })
 
   const isShowingPrimaryPagesOnly = createMemo(() => {
@@ -247,6 +260,7 @@ export default function CommandPalette() {
 
   const resolution = createMemo<QueryResolution>(() => {
     const currentQuery = query().trim()
+    const normalizedQuery = normalizeSearchText(currentQuery.replace(/^[>/]/, ""))
     const primaryPages = primaryPageResults()
 
     if (activePrimaryPageId() === "page:pokemon" && !isShowingPrimaryPagesOnly()) {
@@ -261,7 +275,7 @@ export default function CommandPalette() {
     if (isShowingPrimaryPagesOnly()) {
       return {
         intent: "primary-pages" as const,
-        normalizedQuery: currentQuery.replace(/^[>/]/, "").trim(),
+        normalizedQuery,
         results: primaryPages,
       }
     }
@@ -288,7 +302,10 @@ export default function CommandPalette() {
           ? parserResolution.results
           : []
 
-    const mergedResults = mergeResultsById([...parserResults, ...entityResults], 90)
+    const mergedResults = mergeResultsById(
+      [...(normalizedQuery ? primaryPages : []), ...parserResults, ...entityResults],
+      90
+    )
 
     if (mergedResults.length > 0) {
       return {
@@ -697,7 +714,9 @@ export default function CommandPalette() {
         </div>
 
         <div class="flex items-center justify-between border-border border-t bg-secondary px-5 py-3">
-          <span class="text-muted-foreground text-xs">Enter to open · / or &gt; for pages</span>
+          <span class="text-muted-foreground text-xs">
+            Enter to open · / or &gt; for pages only
+          </span>
           <span class="text-muted-foreground text-xs">Esc to close</span>
         </div>
       </div>
@@ -1582,13 +1601,13 @@ function PrimaryPageQuickview(props: { result: PaletteResult }) {
             <ul class="mt-2 space-y-1 text-muted-foreground text-sm">
               <li>
                 • Type <code class="rounded bg-secondary px-1">/</code> or{" "}
-                <code class="rounded bg-secondary px-1">&gt;</code> to filter pages
+                <code class="rounded bg-secondary px-1">&gt;</code> for page-only filtering
               </li>
               <li>
                 •{" "}
                 {opensPaletteList()
                   ? "Type to filter the Pokemon list after opening it"
-                  : "Search normally to find Pokemon and data entries"}
+                  : "Search normally to find pages, Pokemon, and data entries"}
               </li>
               <li>• Use arrow keys to navigate results</li>
             </ul>
