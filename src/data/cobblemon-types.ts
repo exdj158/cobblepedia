@@ -28,6 +28,8 @@ export type MetaRecord = {
 
 export type ItemEntryRecord = {
   itemId: string
+  namespace?: string | null
+  resourceId?: string
   name: string
   description: string | null
   descriptionLines: string[]
@@ -161,6 +163,34 @@ export type PokemonDropEntry = {
 export type PokemonDropData = {
   amount: number
   entries: PokemonDropEntry[]
+}
+
+export type PokemonInteractionDropRecord = {
+  item: string
+  effectVariant: "drop_item" | "give_item"
+  amount: string | null
+}
+
+export type PokemonInteractionRecord = {
+  id: string
+  pokemonSlug: string
+  pokemonName: string
+  dexNumber: number
+  grouping: string
+  requiredItem: string | null
+  requiredItemCondition: string | null
+  cooldownTicks: number | null
+  cooldownSeconds: number | null
+  contextTokens: string[]
+  contextLabel: string | null
+  drops: PokemonInteractionDropRecord[]
+  raw: Record<string, unknown>
+}
+
+export type PokemonInteractionIndex = {
+  byPokemon: Record<string, PokemonInteractionRecord[]>
+  byRequiredItem: Record<string, PokemonInteractionRecord[]>
+  byGrantedItem: Record<string, PokemonInteractionRecord[]>
 }
 
 export type PokemonDetailRecord = {

@@ -313,13 +313,15 @@ export default function CommandPalette() {
     return map
   })
 
-  const itemAssetPathById = createMemo(() => {
-    const map = new Map<string, string>()
+  const itemSpriteById = createMemo(() => {
+    const map = new Map<string, { resourceId: string; assetPath: string | null }>()
 
     for (const item of Object.values(itemIndex() ?? {})) {
-      if (item.assetPath) {
-        map.set(item.itemId, item.assetPath)
-      }
+      const resourceId = getItemResourceId(item)
+      const assetPath = item.assetPath ?? null
+
+      map.set(item.itemId, { resourceId, assetPath })
+      map.set(resourceId, { resourceId, assetPath })
     }
 
     return map
@@ -646,16 +648,20 @@ export default function CommandPalette() {
                                     </Show>
                                   }
                                 >
-                                  {(itemId) => (
-                                    <div class="flex h-10 w-10 shrink-0 items-center justify-center border border-border bg-secondary/40">
-                                      <ItemSprite
-                                        itemId={itemId()}
-                                        name={result.title}
-                                        assetPath={itemAssetPathById().get(itemId()) ?? null}
-                                        class="h-7 w-7"
-                                      />
-                                    </div>
-                                  )}
+                                  {(itemId) => {
+                                    const sprite = itemSpriteById().get(itemId())
+
+                                    return (
+                                      <div class="flex h-10 w-10 shrink-0 items-center justify-center border border-border bg-secondary/40">
+                                        <ItemSprite
+                                          itemId={sprite?.resourceId ?? itemId()}
+                                          name={result.title}
+                                          assetPath={sprite?.assetPath ?? null}
+                                          class="h-7 w-7"
+                                        />
+                                      </div>
+                                    )
+                                  }}
                                 </Show>
 
                                 <div class="min-w-0">
@@ -1373,7 +1379,7 @@ function ItemEntryQuickview(props: { entry: ItemEntryRecord | null }) {
             <div class="border-border border-b pb-4">
               <div class="mb-3 flex items-center gap-3">
                 <ItemSprite
-                  itemId={entry.itemId}
+                  itemId={getItemResourceId(entry)}
                   name={entry.name}
                   assetPath={entry.assetPath}
                   class="h-10 w-10"
@@ -1383,7 +1389,9 @@ function ItemEntryQuickview(props: { entry: ItemEntryRecord | null }) {
               <p class="text-muted-foreground text-sm">
                 {entry.description || "No item description available."}
               </p>
-              <p class="mt-2 font-mono text-muted-foreground text-xs">Item ID: {entry.itemId}</p>
+              <p class="mt-2 font-mono text-muted-foreground text-xs">
+                Item ID: {getItemResourceId(entry)}
+              </p>
             </div>
 
             <Show when={entry.descriptionLines.length > 1}>
@@ -1403,6 +1411,18 @@ function ItemEntryQuickview(props: { entry: ItemEntryRecord | null }) {
       }}
     </Show>
   )
+}
+
+function getItemResourceId(entry: ItemEntryRecord): string {
+  if (entry.resourceId) {
+    return entry.resourceId
+  }
+
+  if (entry.namespace) {
+    return `${entry.namespace}:${entry.itemId}`
+  }
+
+  return entry.itemId
 }
 
 function TypeEntryQuickview(props: {

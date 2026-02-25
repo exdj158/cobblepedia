@@ -29,6 +29,7 @@ import type {
   PokemonDexNavItem,
   PokemonDexNeighbors,
   PokemonDropData,
+  PokemonInteractionRecord,
   RideableSummaryRecord,
   SmogonMovesetRecord,
 } from "@/data/cobblemon-types"
@@ -38,6 +39,7 @@ import {
   loadMoveLearnerEntry,
   loadPokemonDetail,
   loadPokemonDexNeighbors,
+  loadPokemonInteractionIndex,
   loadSmogonMovesetsBySlug,
 } from "@/data/data-loader"
 import {
@@ -185,6 +187,20 @@ export default function Page() {
     queryFn: loadBiomeTagIndex,
   }))
 
+  const pokemonInteractionIndexQuery = useQuery(() => ({
+    queryKey: ["pokemon-interaction-index"],
+    queryFn: loadPokemonInteractionIndex,
+  }))
+
+  const pokemonInteractions = createMemo(() => {
+    const pokemonSlug = detail()?.slug
+    if (!pokemonSlug) {
+      return [] as PokemonInteractionRecord[]
+    }
+
+    return pokemonInteractionIndexQuery.data?.byPokemon[pokemonSlug] ?? []
+  })
+
   useMetadata({
     title: getTitle("Pokemon"),
   })
@@ -199,6 +215,7 @@ export default function Page() {
               previous={dexNeighborsQuery.data?.previous ?? null}
               next={dexNeighborsQuery.data?.next ?? null}
               itemIndex={itemIndexQuery.data ?? null}
+              pokemonInteractions={pokemonInteractions()}
               biomeTagIndex={biomeTagIndexQuery.data ?? {}}
             />
           )}
@@ -236,6 +253,7 @@ function PokemonDetailView(props: {
   previous: PokemonDexNavItem | null
   next: PokemonDexNavItem | null
   itemIndex: ItemIndex | null
+  pokemonInteractions: PokemonInteractionRecord[]
   biomeTagIndex: BiomeTagIndex
 }) {
   const pageContext = usePageContext()
@@ -896,7 +914,11 @@ function PokemonDetailView(props: {
           </section>
 
           {/* Drops */}
-          <DropsCard drops={detail().drops} itemIndex={props.itemIndex} />
+          <DropsCard
+            drops={detail().drops}
+            interactions={props.pokemonInteractions}
+            itemIndex={props.itemIndex}
+          />
         </div>
 
         {/* Right Column - Moves, Spawns */}
@@ -2251,15 +2273,16 @@ function normalizeFormSlug(rawValue: string | null): string | null {
   return normalized.length > 0 ? normalized : null
 }
 
-function DropsCard(props: { drops: PokemonDropData | null; itemIndex: ItemIndex | null }) {
-  const drops = () => props.drops
+function DropsCard(props: {
+  drops: PokemonDropData | null
+  interactions: PokemonInteractionRecord[]
+  itemIndex: ItemIndex | null
+}) {
+  const dropEntries = () => props.drops?.entries ?? []
+  const interactionEntries = () => props.interactions.filter((entry) => entry.drops.length > 0)
 
   const getItemPathId = (itemId: string): string => {
     return parseItemId(itemId).path
-  }
-
-  const getItemNamespace = (itemId: string): string | null => {
-    return parseItemId(itemId).namespace
   }
 
   const resolveItemEntry = (itemId: string) => {
@@ -2272,14 +2295,7 @@ function DropsCard(props: { drops: PokemonDropData | null; itemIndex: ItemIndex 
   }
 
   const resolveDropHref = (itemId: string): string => {
-    const namespace = getItemNamespace(itemId)
-    const pathId = getItemPathId(itemId)
-
-    if (namespace === "minecraft") {
-      return `https://minecraft.wiki/w/${encodeURIComponent(pathId)}`
-    }
-
-    return `/items/${encodeURIComponent(pathId)}`
+    return `/items/${encodeURIComponent(getItemPathId(itemId))}`
   }
 
   const formatItemName = (itemId: string): string => {
@@ -2309,6 +2325,31 @@ function DropsCard(props: { drops: PokemonDropData | null; itemIndex: ItemIndex 
     return parts.join(" · ")
   }
 
+  const formatInteractionDropDetails = (
+    drop: PokemonInteractionRecord["drops"][number]
+  ): string | null => {
+    const parts: string[] = []
+
+    if (drop.amount) {
+      parts.push(drop.amount)
+    }
+
+    parts.push(drop.effectVariant === "give_item" ? "given" : "dropped")
+    return parts.join(" · ")
+  }
+
+  const formatCooldown = (interaction: PokemonInteractionRecord): string | null => {
+    if (!interaction.cooldownSeconds || interaction.cooldownSeconds <= 0) {
+      return null
+    }
+
+    if (interaction.cooldownSeconds % 60 === 0) {
+      return `Cooldown ${interaction.cooldownSeconds / 60}m`
+    }
+
+    return `Cooldown ${interaction.cooldownSeconds}s`
+  }
+
   return (
     <section class="border border-border bg-card">
       <div class="flex items-center gap-2 border-border border-b bg-secondary px-4 py-3">
@@ -2316,58 +2357,137 @@ function DropsCard(props: { drops: PokemonDropData | null; itemIndex: ItemIndex 
         <h2 class="font-semibold">Drops</h2>
       </div>
       <Show
-        when={drops()}
+        when={dropEntries().length > 0 || interactionEntries().length > 0}
         fallback={
           <p class="p-4 text-muted-foreground text-sm">No drop data available for this species.</p>
         }
       >
-        {(dropsData) => (
-          <Show
-            when={dropsData().entries.length > 0}
-            fallback={
-              <p class="p-4 text-muted-foreground text-sm">
-                No drop data available for this species.
+        <div class="space-y-4 p-4">
+          <Show when={dropEntries().length > 0}>
+            <div class="space-y-2">
+              <p class="font-mono text-[11px] text-muted-foreground uppercase tracking-wide">
+                Wild Drops
               </p>
-            }
-          >
-            <div class="p-4">
-              <div class="space-y-2">
-                <For each={dropsData().entries}>
-                  {(entry) => {
-                    const details = formatDropDetails(entry)
-                    const isMinecraftItem = () => getItemNamespace(entry.item) === "minecraft"
+              <For each={dropEntries()}>
+                {(entry) => {
+                  const details = formatDropDetails(entry)
 
-                    return (
-                      <a
-                        href={resolveDropHref(entry.item)}
-                        target={isMinecraftItem() ? "_blank" : undefined}
-                        rel={isMinecraftItem() ? "noreferrer noopener" : undefined}
-                        class="group flex items-center gap-3 border border-border bg-secondary/20 px-3 py-2.5 transition-colors hover:border-muted-foreground hover:bg-secondary/40"
-                      >
-                        <ItemSprite
-                          itemId={entry.item}
-                          name={formatItemName(entry.item)}
-                          assetPath={getAssetPath(entry.item)}
-                          class="h-6 w-6"
-                        />
-                        <div class="flex min-w-0 flex-1 flex-col">
-                          <span class="truncate font-medium text-sm">
-                            {formatItemName(entry.item)}
-                          </span>
-                          <Show when={details}>
-                            <span class="font-mono text-[11px] text-muted-foreground">
-                              {details}
-                            </span>
-                          </Show>
-                        </div>
-                      </a>
-                    )
-                  }}
-                </For>
-              </div>
+                  return (
+                    <a
+                      href={resolveDropHref(entry.item)}
+                      class="group flex items-center gap-3 border border-border bg-secondary/20 px-3 py-2.5 transition-colors hover:border-muted-foreground hover:bg-secondary/40"
+                    >
+                      <ItemSprite
+                        itemId={entry.item}
+                        name={formatItemName(entry.item)}
+                        assetPath={getAssetPath(entry.item)}
+                        class="h-6 w-6"
+                      />
+                      <div class="flex min-w-0 flex-1 flex-col">
+                        <span class="truncate font-medium text-sm">
+                          {formatItemName(entry.item)}
+                        </span>
+                        <Show when={details}>
+                          <span class="font-mono text-[11px] text-muted-foreground">{details}</span>
+                        </Show>
+                      </div>
+                    </a>
+                  )
+                }}
+              </For>
             </div>
           </Show>
-        )}
+
+          <Show when={interactionEntries().length > 0}>
+            <div class="space-y-2">
+              <p class="font-mono text-[11px] text-muted-foreground uppercase tracking-wide">
+                Item Interactions
+              </p>
+              <For each={interactionEntries()}>
+                {(interaction) => {
+                  const cooldown = formatCooldown(interaction)
+
+                  return (
+                    <div class="border border-border bg-secondary/20 px-3 py-2.5">
+                      <div class="mb-2 flex flex-wrap items-center gap-1.5 text-xs">
+                        <span class="font-mono text-muted-foreground uppercase">Use</span>
+                        <Show
+                          when={interaction.requiredItem}
+                          fallback={
+                            <span class="border border-border bg-secondary px-2 py-0.5 font-medium text-foreground">
+                              {titleCaseFromId(parseItemId(interaction.grouping).path)}
+                            </span>
+                          }
+                        >
+                          {(requiredItem) => (
+                            <a
+                              href={resolveDropHref(requiredItem())}
+                              class="inline-flex items-center gap-1.5 border border-border bg-secondary px-2 py-0.5 font-medium text-foreground transition-colors hover:bg-secondary/70"
+                            >
+                              <ItemSprite
+                                itemId={requiredItem()}
+                                name={formatItemName(requiredItem())}
+                                assetPath={getAssetPath(requiredItem())}
+                                class="h-4 w-4"
+                              />
+                              <span>{formatItemName(requiredItem())}</span>
+                            </a>
+                          )}
+                        </Show>
+                        <Show when={interaction.contextLabel}>
+                          {(contextLabel) => (
+                            <span class="border border-border bg-secondary px-2 py-0.5 text-muted-foreground">
+                              {contextLabel()}
+                            </span>
+                          )}
+                        </Show>
+                        <Show when={cooldown}>
+                          {(cooldownLabel) => (
+                            <span class="border border-border bg-secondary px-2 py-0.5 text-muted-foreground">
+                              {cooldownLabel()}
+                            </span>
+                          )}
+                        </Show>
+                      </div>
+
+                      <div class="space-y-1.5">
+                        <For each={interaction.drops}>
+                          {(drop) => {
+                            const details = formatInteractionDropDetails(drop)
+
+                            return (
+                              <a
+                                href={resolveDropHref(drop.item)}
+                                class="group flex items-center gap-3 border border-border bg-secondary/30 px-2.5 py-2 transition-colors hover:border-muted-foreground hover:bg-secondary/50"
+                              >
+                                <ItemSprite
+                                  itemId={drop.item}
+                                  name={formatItemName(drop.item)}
+                                  assetPath={getAssetPath(drop.item)}
+                                  class="h-5 w-5"
+                                />
+                                <div class="flex min-w-0 flex-1 flex-col">
+                                  <span class="truncate font-medium text-sm">
+                                    {formatItemName(drop.item)}
+                                  </span>
+                                  <Show when={details}>
+                                    <span class="font-mono text-[11px] text-muted-foreground">
+                                      {details}
+                                    </span>
+                                  </Show>
+                                </div>
+                              </a>
+                            )
+                          }}
+                        </For>
+                      </div>
+                    </div>
+                  )
+                }}
+              </For>
+            </div>
+          </Show>
+        </div>
       </Show>
     </section>
   )

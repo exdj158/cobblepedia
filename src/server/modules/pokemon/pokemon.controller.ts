@@ -1,7 +1,8 @@
 import { Hono } from "hono"
 import type { PokemonDexNavItem, PokemonListItem } from "@/data/cobblemon-types"
-import pokemonDexNavArtifact from "@/data/generated/pokemon-dex-nav.json"
-import pokemonListArtifact from "@/data/generated/pokemon-list.json"
+
+let pokemonDexNavIndex: PokemonDexNavIndex | null = null
+let indexPromise: Promise<PokemonDexNavIndex> | null = null
 
 type PokemonDexNeighborsResponse = {
   current: PokemonDexNavItem | null
@@ -15,11 +16,39 @@ type PokemonDexNavIndex = {
   byDexNumber: Map<number, number>
 }
 
-const pokemonDexNavIndex = buildPokemonDexNavIndex(
-  resolvePokemonDexNavItems(pokemonDexNavArtifact, pokemonListArtifact)
-)
+async function loadPokemonDexNavIndex(): Promise<PokemonDexNavIndex> {
+  if (pokemonDexNavIndex) {
+    return pokemonDexNavIndex
+  }
 
-export const pokemonController = new Hono().get("/dex-neighbors", (c) => {
+  if (indexPromise) {
+    return indexPromise
+  }
+
+  indexPromise = (async () => {
+    const pokemonDexNavArtifact = await loadGeneratedJson("pokemon-dex-nav.json")
+    const pokemonListArtifact = await loadGeneratedJson("pokemon-list.json")
+
+    const index = buildPokemonDexNavIndex(
+      resolvePokemonDexNavItems(pokemonDexNavArtifact, pokemonListArtifact)
+    )
+    pokemonDexNavIndex = index
+    return index
+  })()
+
+  return indexPromise
+}
+
+async function loadGeneratedJson(relativePath: string): Promise<unknown> {
+  try {
+    const dataModule = await import(`@/data/generated/${relativePath}`)
+    return dataModule.default ?? dataModule
+  } catch {
+    return null
+  }
+}
+
+export const pokemonController = new Hono().get("/dex-neighbors", async (c) => {
   const dexNumberRaw = c.req.query("dexNumber")
   const dexNumber = Number.parseInt(String(dexNumberRaw ?? ""), 10)
   const slug = String(c.req.query("slug") ?? "")
@@ -30,13 +59,15 @@ export const pokemonController = new Hono().get("/dex-neighbors", (c) => {
     return c.json({ error: "Expected a numeric dexNumber query parameter." }, 400)
   }
 
-  if (pokemonDexNavIndex.items.length === 0) {
+  const navIndex = await loadPokemonDexNavIndex()
+
+  if (navIndex.items.length === 0) {
     return c.json({ error: "Pokemon dex navigation data is unavailable." }, 503)
   }
 
-  const index = resolvePokemonDexIndex(pokemonDexNavIndex, slug, dexNumber)
+  const index = resolvePokemonDexIndex(navIndex, slug, dexNumber)
   c.header("cache-control", "public, max-age=3600, stale-while-revalidate=86400")
-  return c.json(toNeighborsResponse(pokemonDexNavIndex.items, index))
+  return c.json(toNeighborsResponse(navIndex.items, index))
 })
 
 function buildPokemonDexNavIndex(items: PokemonDexNavItem[]): PokemonDexNavIndex {

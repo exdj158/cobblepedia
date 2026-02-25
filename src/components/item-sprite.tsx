@@ -68,7 +68,7 @@ export function ItemSprite(props: ItemSpriteProps) {
     <img
       src={spriteUrl()}
       alt={props.name}
-      class={cn("h-5 w-5 shrink-0 object-contain", props.class)}
+      class={cn("pixelart h-5 w-5 shrink-0 object-contain", props.class)}
       loading="lazy"
       onError={(event) => {
         event.currentTarget.style.display = "none"

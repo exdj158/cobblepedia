@@ -8,6 +8,7 @@ import type {
   PokemonDexNavItem,
   PokemonDexNeighbors,
   PokemonFormSpriteIndex,
+  PokemonInteractionIndex,
   PokemonListItem,
   PokemonTypeEntryRecord,
   RideableMonRecord,
@@ -25,6 +26,7 @@ let pokemonTypeEntriesPromise: Promise<PokemonTypeEntryRecord[]> | null = null
 let abilityIndexPromise: Promise<AbilityIndex> | null = null
 let biomeTagIndexPromise: Promise<BiomeTagIndex> | null = null
 let itemIndexPromise: Promise<ItemIndex> | null = null
+let pokemonInteractionIndexPromise: Promise<PokemonInteractionIndex> | null = null
 let pokemonFormSpriteIndexPromise: Promise<PokemonFormSpriteIndex> | null = null
 let rideableMonsPromise: Promise<RideableMonRecord[]> | null = null
 let metaPromise: Promise<MetaRecord> | null = null
@@ -147,6 +149,20 @@ export function loadItemIndex(): Promise<ItemIndex> {
   }
 
   return itemIndexPromise
+}
+
+export function loadPokemonInteractionIndex(): Promise<PokemonInteractionIndex> {
+  if (!pokemonInteractionIndexPromise) {
+    pokemonInteractionIndexPromise = loadGeneratedJson<PokemonInteractionIndex>(
+      "pokemon-interaction-index.json"
+    ).catch(() => ({
+      byPokemon: {},
+      byRequiredItem: {},
+      byGrantedItem: {},
+    }))
+  }
+
+  return pokemonInteractionIndexPromise
 }
 
 export function loadPokemonFormSpriteIndex(): Promise<PokemonFormSpriteIndex> {
@@ -347,18 +363,16 @@ function loadServerGeneratedJson<T>(relativePath: string): Promise<T> {
 async function readServerGeneratedJson<T>(relativePath: string): Promise<T> {
   const fsPromisesSpecifier = "node:fs/promises"
   const pathSpecifier = "node:path"
+  const urlSpecifier = "node:url"
 
-  const [{ readFile }, pathModule] = await Promise.all([
+  const [{ readFile }, pathModule, urlModule] = await Promise.all([
     import(/* @vite-ignore */ fsPromisesSpecifier) as Promise<typeof import("node:fs/promises")>,
     import(/* @vite-ignore */ pathSpecifier) as Promise<typeof import("node:path")>,
+    import(/* @vite-ignore */ urlSpecifier) as Promise<typeof import("node:url")>,
   ])
 
-  const candidateBasePaths = [
-    pathModule.join(process.cwd(), "public", "data", "generated"),
-    pathModule.join(process.cwd(), "dist", "client", "data", "generated"),
-    pathModule.join(process.cwd(), "dist", "server", "data", "generated"),
-    pathModule.join(process.cwd(), "src", "data", "generated"),
-  ]
+  const roots = discoverServerDataRoots(pathModule, urlModule)
+  const candidateBasePaths = buildGeneratedDataBasePaths(pathModule, roots)
 
   for (const basePath of candidateBasePaths) {
     const filePath = pathModule.join(basePath, relativePath)
@@ -369,6 +383,69 @@ async function readServerGeneratedJson<T>(relativePath: string): Promise<T> {
   }
 
   throw new Error(`Generated data file not found: ${relativePath}`)
+}
+
+function discoverServerDataRoots(
+  pathModule: typeof import("node:path"),
+  urlModule: typeof import("node:url")
+): string[] {
+  const roots = new Set<string>()
+
+  const pushRoot = (value: string | undefined | null) => {
+    if (!value) {
+      return
+    }
+
+    const trimmed = value.trim()
+    if (!trimmed) {
+      return
+    }
+
+    roots.add(trimmed)
+  }
+
+  pushRoot(process.cwd())
+  pushRoot(process.env.PWD)
+  pushRoot(process.env.INIT_CWD)
+  pushRoot(typeof process.argv[1] === "string" ? pathModule.dirname(process.argv[1]) : null)
+
+  try {
+    pushRoot(pathModule.dirname(urlModule.fileURLToPath(import.meta.url)))
+  } catch {}
+
+  return Array.from(roots)
+}
+
+function buildGeneratedDataBasePaths(
+  pathModule: typeof import("node:path"),
+  roots: string[]
+): string[] {
+  const candidateBasePaths = new Set<string>()
+
+  const addAncestorPaths = (root: string) => {
+    let current = pathModule.resolve(root)
+
+    for (let depth = 0; depth < 8; depth += 1) {
+      candidateBasePaths.add(pathModule.join(current, "public", "data", "generated"))
+      candidateBasePaths.add(pathModule.join(current, "dist", "client", "data", "generated"))
+      candidateBasePaths.add(pathModule.join(current, "dist", "server", "data", "generated"))
+      candidateBasePaths.add(pathModule.join(current, "src", "data", "generated"))
+      candidateBasePaths.add(pathModule.join(current, "data", "generated"))
+
+      const parent = pathModule.dirname(current)
+      if (parent === current) {
+        break
+      }
+
+      current = parent
+    }
+  }
+
+  for (const root of roots) {
+    addAncestorPaths(root)
+  }
+
+  return Array.from(candidateBasePaths)
 }
 
 async function fetchPublicGeneratedJson<T>(

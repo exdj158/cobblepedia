@@ -18,6 +18,8 @@ import type {
   PokemonDropData,
   PokemonFormRecord,
   PokemonFormSpriteIndex,
+  PokemonInteractionIndex,
+  PokemonInteractionRecord,
   PokemonListItem,
   PokemonTypeEntryRecord,
   RideableMonRecord,
@@ -57,6 +59,19 @@ const SMOGON_SETS_GEN9_URL = "https://pkmn.github.io/smogon/data/sets/gen9.json"
 const SMOGON_SETS_FORMAT_ID = "gen9"
 const SMOGON_SETS_FORMAT_LABEL = "Smogon Gen 9"
 const KNOWN_MOVE_PREFIXES = new Set(["egg", "tm", "tutor", "legacy", "special", "form_change"])
+const INTERACTION_ITEM_CONDITION_ALIASES: Record<string, string> = {
+  "#c:tools/brushes": "minecraft:brush",
+  "#c:tools/shear": "minecraft:shears",
+  "#c:fertilizers": "minecraft:bone_meal",
+}
+const INTERACTION_GROUPING_ITEM_ALIASES: Record<string, string> = {
+  brush: "minecraft:brush",
+  shears: "minecraft:shears",
+  bone_meal: "minecraft:bone_meal",
+  bucket: "minecraft:bucket",
+  glass_bottle: "minecraft:glass_bottle",
+  milking: "minecraft:bucket",
+}
 const EVOLUTION_FORM_REGION_ALIASES: Record<string, string> = {
   alola: "alola",
   alolan: "alola",
@@ -130,6 +145,10 @@ const SPAWN_PRESET_ROOT = path.join(
 const BIOME_TAG_ROOT = path.join(
   UPSTREAM_ROOT,
   "common/src/main/resources/data/cobblemon/tags/worldgen/biome"
+)
+const POKEMON_INTERACTIONS_ROOT = path.join(
+  UPSTREAM_ROOT,
+  "common/src/main/resources/data/cobblemon/pokemon_interactions"
 )
 const SHOWDOWN_ZIP_PATH = path.join(
   UPSTREAM_ROOT,
@@ -337,7 +356,9 @@ async function main() {
   const moveLearners = buildMoveLearnersIndex(detailsBySlug, moveLearnersBuild, showdownData.moves)
   const moveLearnerShards = buildMoveLearnerShards(moveLearners)
   const abilityIndex = buildAbilityIndex(detailsBySlug, showdownData.abilities)
-  const itemIndex = await loadItemIndex()
+  const pokemonInteractionIndex = await loadPokemonInteractionIndex(detailsBySlug)
+  const baseItemIndex = await loadItemIndex()
+  const itemIndex = augmentItemIndex(baseItemIndex, detailsBySlug, pokemonInteractionIndex)
   const rideableMons = buildRideableMons(detailsBySlug)
   const pokemonFormSpriteIndex = await buildPokemonFormSpriteIndex(detailsBySlug)
   const smogonMovesetsBySlug = await buildSmogonMovesetsBySlug(detailsBySlug)
@@ -374,6 +395,7 @@ async function main() {
     abilityIndex,
     biomeTagIndex,
     itemIndex,
+    pokemonInteractionIndex,
     rideableMons,
     pokemonFormSpriteIndex,
     smogonMovesetsBySlug,
@@ -398,6 +420,7 @@ async function validateInputPaths() {
     SPAWN_POOL_ROOT,
     SPAWN_PRESET_ROOT,
     BIOME_TAG_ROOT,
+    POKEMON_INTERACTIONS_ROOT,
     SHOWDOWN_ZIP_PATH,
     SPAWNER_CONFIG_PATH,
     EN_US_LANG_PATH,
@@ -1109,6 +1132,448 @@ function parseDrops(rawDrops: unknown): PokemonDropData | null {
   }
 
   return { amount, entries: parsedEntries }
+}
+
+async function loadPokemonInteractionIndex(
+  detailsBySlug: Map<string, PokemonDetailRecord>
+): Promise<PokemonInteractionIndex> {
+  const interactionFiles = await collectJsonFiles(POKEMON_INTERACTIONS_ROOT)
+  const interactions: PokemonInteractionRecord[] = []
+
+  for (const filePath of interactionFiles) {
+    const rawData = await readJson(filePath)
+    if (!isRecord(rawData)) {
+      continue
+    }
+
+    const pokemonSlug = path.basename(filePath, ".json").toLowerCase()
+    const pokemonDetail = detailsBySlug.get(pokemonSlug)
+    if (!pokemonDetail) {
+      continue
+    }
+
+    const baseRequirements = Array.isArray(rawData.requirements) ? rawData.requirements : []
+    const rawInteractions = Array.isArray(rawData.interactions) ? rawData.interactions : []
+
+    for (let index = 0; index < rawInteractions.length; index += 1) {
+      const rawInteraction = rawInteractions[index]
+      if (!isRecord(rawInteraction)) {
+        continue
+      }
+
+      const interactionRequirements = Array.isArray(rawInteraction.requirements)
+        ? rawInteraction.requirements
+        : []
+      const { requiredItem, requiredItemCondition } = resolveInteractionRequiredItem({
+        baseRequirements,
+        interactionRequirements,
+        grouping: typeof rawInteraction.grouping === "string" ? rawInteraction.grouping : null,
+      })
+
+      const drops = parseInteractionDrops(rawInteraction.effects)
+      if (drops.length === 0) {
+        continue
+      }
+
+      const contextTokens = resolveInteractionContextTokens(
+        pokemonSlug,
+        baseRequirements,
+        interactionRequirements
+      )
+
+      const cooldownTicks = parseIntegerValue(rawInteraction.cooldown)
+
+      interactions.push({
+        id: `${pokemonSlug}:${index + 1}`,
+        pokemonSlug,
+        pokemonName: pokemonDetail.name,
+        dexNumber: pokemonDetail.dexNumber,
+        grouping: typeof rawInteraction.grouping === "string" ? rawInteraction.grouping : "unknown",
+        requiredItem,
+        requiredItemCondition,
+        cooldownTicks,
+        cooldownSeconds: cooldownTicks === null ? null : cooldownTicks / 20,
+        contextTokens,
+        contextLabel: formatInteractionContextLabel(contextTokens),
+        drops,
+        raw: rawInteraction,
+      })
+    }
+  }
+
+  interactions.sort((left, right) => {
+    if (left.dexNumber !== right.dexNumber) {
+      return left.dexNumber - right.dexNumber
+    }
+
+    return left.id.localeCompare(right.id)
+  })
+
+  const byPokemon: PokemonInteractionIndex["byPokemon"] = {}
+  const byRequiredItem: PokemonInteractionIndex["byRequiredItem"] = {}
+  const byGrantedItem: PokemonInteractionIndex["byGrantedItem"] = {}
+
+  for (const interaction of interactions) {
+    if (!byPokemon[interaction.pokemonSlug]) {
+      byPokemon[interaction.pokemonSlug] = []
+    }
+    byPokemon[interaction.pokemonSlug]?.push(interaction)
+
+    if (interaction.requiredItem) {
+      const requiredItemKey = toItemKey(interaction.requiredItem)
+      if (!byRequiredItem[requiredItemKey]) {
+        byRequiredItem[requiredItemKey] = []
+      }
+
+      byRequiredItem[requiredItemKey]?.push(interaction)
+    }
+
+    for (const drop of interaction.drops) {
+      const grantedItemKey = toItemKey(drop.item)
+      if (!byGrantedItem[grantedItemKey]) {
+        byGrantedItem[grantedItemKey] = []
+      }
+
+      byGrantedItem[grantedItemKey]?.push(interaction)
+    }
+  }
+
+  sortInteractionIndexBuckets(byPokemon)
+  sortInteractionIndexBuckets(byRequiredItem)
+  sortInteractionIndexBuckets(byGrantedItem)
+
+  return {
+    byPokemon,
+    byRequiredItem,
+    byGrantedItem,
+  }
+}
+
+function sortInteractionIndexBuckets(index: Record<string, PokemonInteractionRecord[]>) {
+  for (const interactions of Object.values(index)) {
+    interactions.sort((left, right) => {
+      if (left.dexNumber !== right.dexNumber) {
+        return left.dexNumber - right.dexNumber
+      }
+
+      return left.id.localeCompare(right.id)
+    })
+  }
+}
+
+function resolveInteractionRequiredItem(params: {
+  baseRequirements: unknown[]
+  interactionRequirements: unknown[]
+  grouping: string | null
+}): {
+  requiredItem: string | null
+  requiredItemCondition: string | null
+} {
+  const interactionItemCondition = extractOwnerHeldItemCondition(params.interactionRequirements)
+  const baseItemCondition = extractOwnerHeldItemCondition(params.baseRequirements)
+  const itemCondition = interactionItemCondition ?? baseItemCondition
+
+  const requiredItemFromCondition = resolveItemFromInteractionCondition(itemCondition)
+  if (requiredItemFromCondition) {
+    return {
+      requiredItem: requiredItemFromCondition,
+      requiredItemCondition: itemCondition,
+    }
+  }
+
+  if (params.grouping) {
+    const groupingPath = splitItemReference(params.grouping).path
+    const fallbackByGrouping = INTERACTION_GROUPING_ITEM_ALIASES[groupingPath]
+    if (fallbackByGrouping) {
+      return {
+        requiredItem: fallbackByGrouping,
+        requiredItemCondition: itemCondition,
+      }
+    }
+  }
+
+  return {
+    requiredItem: null,
+    requiredItemCondition: itemCondition,
+  }
+}
+
+function extractOwnerHeldItemCondition(requirements: unknown[]): string | null {
+  for (const requirement of requirements) {
+    if (!isRecord(requirement)) {
+      continue
+    }
+
+    if (requirement.variant !== "owner_held_item") {
+      continue
+    }
+
+    if (typeof requirement.itemCondition === "string") {
+      return requirement.itemCondition.trim().toLowerCase()
+    }
+  }
+
+  return null
+}
+
+function resolveItemFromInteractionCondition(itemCondition: string | null): string | null {
+  if (!itemCondition) {
+    return null
+  }
+
+  const normalized = itemCondition.trim().toLowerCase()
+  if (!normalized) {
+    return null
+  }
+
+  if (INTERACTION_ITEM_CONDITION_ALIASES[normalized]) {
+    return INTERACTION_ITEM_CONDITION_ALIASES[normalized]
+  }
+
+  if (normalized.startsWith("#")) {
+    return null
+  }
+
+  return normalized
+}
+
+function parseInteractionDrops(rawEffects: unknown): PokemonInteractionRecord["drops"] {
+  if (!Array.isArray(rawEffects)) {
+    return []
+  }
+
+  const drops: PokemonInteractionRecord["drops"] = []
+  const seen = new Set<string>()
+
+  for (const effect of rawEffects) {
+    if (!isRecord(effect)) {
+      continue
+    }
+
+    if (effect.variant !== "drop_item" && effect.variant !== "give_item") {
+      continue
+    }
+
+    if (typeof effect.item !== "string") {
+      continue
+    }
+
+    const item = effect.item.trim().toLowerCase()
+    if (!item) {
+      continue
+    }
+
+    const amount = formatInteractionAmount(effect.amount)
+    const dedupeKey = `${effect.variant}:${item}:${amount ?? ""}`
+    if (seen.has(dedupeKey)) {
+      continue
+    }
+
+    seen.add(dedupeKey)
+    drops.push({
+      item,
+      effectVariant: effect.variant,
+      amount,
+    })
+  }
+
+  return drops
+}
+
+function formatInteractionAmount(rawAmount: unknown): string | null {
+  if (typeof rawAmount === "number" && Number.isFinite(rawAmount)) {
+    return String(rawAmount)
+  }
+
+  if (typeof rawAmount === "string") {
+    const trimmed = rawAmount.trim()
+    return trimmed.length > 0 ? trimmed : null
+  }
+
+  return null
+}
+
+function resolveInteractionContextTokens(
+  pokemonSlug: string,
+  baseRequirements: unknown[],
+  interactionRequirements: unknown[]
+): string[] {
+  const rootTargets = extractInteractionPropertyTargets(baseRequirements)
+  const interactionTargets = extractInteractionPropertyTargets(interactionRequirements)
+
+  const rootTokens = selectInteractionTargetTokens(pokemonSlug, rootTargets)
+  const interactionTokens = selectInteractionTargetTokens(pokemonSlug, interactionTargets)
+
+  return Array.from(new Set([...rootTokens, ...interactionTokens]))
+}
+
+function extractInteractionPropertyTargets(requirements: unknown[]): string[] {
+  const targets: string[] = []
+
+  for (const requirement of requirements) {
+    if (!isRecord(requirement)) {
+      continue
+    }
+
+    if (requirement.variant !== "properties") {
+      continue
+    }
+
+    if (typeof requirement.target === "string") {
+      const target = requirement.target.trim().toLowerCase()
+      if (target) {
+        targets.push(target)
+      }
+    }
+  }
+
+  return targets
+}
+
+function selectInteractionTargetTokens(pokemonSlug: string, targets: string[]): string[] {
+  const parsedTargets = targets.map((target) => parsePokemonRef(target))
+  const exactMatch = parsedTargets.find(
+    (target) => canonicalId(target.baseId) === canonicalId(pokemonSlug)
+  )
+  if (exactMatch) {
+    return exactMatch.aspectTokens
+  }
+
+  return parsedTargets[0]?.aspectTokens ?? []
+}
+
+function formatInteractionContextLabel(tokens: string[]): string | null {
+  if (tokens.length === 0) {
+    return null
+  }
+
+  const labels = tokens.map((token) => {
+    const normalized = token.trim().toLowerCase()
+    if (!normalized) {
+      return null
+    }
+
+    if (normalized === "gender=female" || normalized === "sex=female") {
+      return "Female only"
+    }
+
+    if (normalized === "gender=male" || normalized === "sex=male") {
+      return "Male only"
+    }
+
+    if (normalized.startsWith("form=")) {
+      const formId = normalized.slice("form=".length)
+      return `Form: ${titleCaseFromId(formId)}`
+    }
+
+    const equalsIndex = normalized.indexOf("=")
+    if (equalsIndex > 0) {
+      const key = normalized.slice(0, equalsIndex)
+      const value = normalized.slice(equalsIndex + 1)
+      return `${titleCaseFromId(key)}: ${titleCaseFromId(value)}`
+    }
+
+    return titleCaseFromId(normalized)
+  })
+
+  const dedupedLabels = Array.from(
+    new Set(labels.filter((label): label is string => Boolean(label)))
+  )
+  return dedupedLabels.length > 0 ? dedupedLabels.join(", ") : null
+}
+
+function parseIntegerValue(rawValue: unknown): number | null {
+  if (typeof rawValue === "number" && Number.isFinite(rawValue)) {
+    return Math.trunc(rawValue)
+  }
+
+  if (typeof rawValue === "string") {
+    const parsed = Number.parseInt(rawValue.trim(), 10)
+    if (Number.isFinite(parsed)) {
+      return parsed
+    }
+  }
+
+  return null
+}
+
+function augmentItemIndex(
+  baseItemIndex: ItemIndex,
+  detailsBySlug: Map<string, PokemonDetailRecord>,
+  interactionIndex: PokemonInteractionIndex
+): ItemIndex {
+  const itemIndex: ItemIndex = {}
+
+  for (const [key, entry] of Object.entries(baseItemIndex)) {
+    const normalizedKey = toItemKey(key)
+    itemIndex[normalizedKey] = {
+      ...entry,
+    }
+  }
+
+  const referencedItems = new Set<string>()
+  for (const detail of detailsBySlug.values()) {
+    if (!detail.drops) {
+      continue
+    }
+
+    for (const dropEntry of detail.drops.entries) {
+      referencedItems.add(dropEntry.item)
+    }
+  }
+
+  for (const interactionEntries of Object.values(interactionIndex.byPokemon)) {
+    for (const interactionEntry of interactionEntries) {
+      if (interactionEntry.requiredItem) {
+        referencedItems.add(interactionEntry.requiredItem)
+      }
+
+      for (const drop of interactionEntry.drops) {
+        referencedItems.add(drop.item)
+      }
+    }
+  }
+
+  for (const itemRef of referencedItems) {
+    const { namespace, path } = splitItemReference(itemRef)
+    const itemKey = toItemKey(path)
+    if (!itemKey || itemIndex[itemKey]) {
+      continue
+    }
+
+    itemIndex[itemKey] = {
+      itemId: itemKey,
+      namespace,
+      resourceId: namespace ? `${namespace}:${itemKey}` : itemKey,
+      name: titleCaseFromId(itemKey),
+      description: null,
+      descriptionLines: [],
+      assetPath: null,
+    }
+  }
+
+  return itemIndex
+}
+
+function toItemKey(itemRef: string): string {
+  return splitItemReference(itemRef).path
+}
+
+function splitItemReference(itemRef: string): { namespace: string | null; path: string } {
+  const normalized = itemRef.trim().toLowerCase()
+  const separatorIndex = normalized.indexOf(":")
+
+  if (separatorIndex < 0) {
+    return {
+      namespace: null,
+      path: normalized,
+    }
+  }
+
+  return {
+    namespace: normalized.slice(0, separatorIndex) || null,
+    path: normalized.slice(separatorIndex + 1),
+  }
 }
 
 function parseAbilityList(rawAbilities: unknown): PokemonDetailRecord["abilities"] {
@@ -3367,6 +3832,7 @@ async function writeArtifacts(params: {
   abilityIndex: AbilityIndex
   biomeTagIndex: BiomeTagIndex
   itemIndex: ItemIndex
+  pokemonInteractionIndex: PokemonInteractionIndex
   rideableMons: RideableMonRecord[]
   pokemonFormSpriteIndex: PokemonFormSpriteIndex
   smogonMovesetsBySlug: Map<string, SmogonMovesetsByPokemonRecord>
@@ -3395,6 +3861,7 @@ async function writeArtifacts(params: {
   await writeSharedArtifact("ability-index.json", params.abilityIndex)
   await writeSharedArtifact("biome-tag-index.json", params.biomeTagIndex)
   await writeSharedArtifact("item-index.json", params.itemIndex)
+  await writeSharedArtifact("pokemon-interaction-index.json", params.pokemonInteractionIndex)
   await writeSharedArtifact("rideable-mons.json", params.rideableMons)
   await writeSharedArtifact("pokemon-form-sprite-index.json", params.pokemonFormSpriteIndex)
   await writeSharedArtifact("search-index.json", params.searchIndex)

@@ -61,7 +61,7 @@ export function PokemonSprite(props: PokemonSpriteProps) {
       <img
         src={spriteUrl()}
         alt={props.name}
-        class={cn("h-8 w-8 object-contain", props.imageClass)}
+        class={cn("pixelart h-8 w-8 object-contain", props.imageClass)}
         loading="lazy"
         onError={(event) => {
           const fallback = getPokemonSpriteUrl(props.dexNumber)
