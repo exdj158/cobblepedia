@@ -539,16 +539,12 @@ function PokemonDetailView(props: {
         navigateToPokemon(props.next.slug)
       }
     },
-    onFormPrevious: hasForms()
-      ? () => {
-          shiftFormSelection(-1)
-        }
-      : undefined,
-    onFormNext: hasForms()
-      ? () => {
-          shiftFormSelection(1)
-        }
-      : undefined,
+    onFormPrevious: () => {
+      shiftFormSelection(-1)
+    },
+    onFormNext: () => {
+      shiftFormSelection(1)
+    },
   })
 
   const activeEvolutionFormSlug = createMemo(() => {
@@ -1113,11 +1109,11 @@ function PokemonDetailView(props: {
           </div>
           <div class="grid grid-cols-[auto_1fr] gap-x-2 gap-y-1.5 px-3 py-3 text-xs">
             <kbd class="border border-border bg-secondary px-1.5 py-0.5 font-mono text-[10px]">
-              &gt; / .
+              &gt; or .
             </kbd>
             <span>Next Pokemon</span>
             <kbd class="border border-border bg-secondary px-1.5 py-0.5 font-mono text-[10px]">
-              &lt; / ,
+              &lt; or ,
             </kbd>
             <span>Previous Pokemon</span>
             <Show when={hasForms()}>
