@@ -72,6 +72,40 @@ type ArtworkView = "official" | "shiny" | "model3d"
 const SMOGON_LOGO_URL = "https://archives.bulbagarden.net/media/upload/3/38/Smogon_logo.png"
 const PIKALYTICS_LOGO_URL = "https://cdn.pikalytics.com/images/favicon/apple-icon.png"
 
+type NatureStatLabel = "Attack" | "Defense" | "Special Attack" | "Special Defense" | "Speed"
+type NatureStatEffect = {
+  increased: NatureStatLabel | null
+  decreased: NatureStatLabel | null
+}
+
+const NATURE_STAT_EFFECTS: Record<string, NatureStatEffect> = {
+  hardy: { increased: null, decreased: null },
+  lonely: { increased: "Attack", decreased: "Defense" },
+  brave: { increased: "Attack", decreased: "Speed" },
+  adamant: { increased: "Attack", decreased: "Special Attack" },
+  naughty: { increased: "Attack", decreased: "Special Defense" },
+  bold: { increased: "Defense", decreased: "Attack" },
+  docile: { increased: null, decreased: null },
+  relaxed: { increased: "Defense", decreased: "Speed" },
+  impish: { increased: "Defense", decreased: "Special Attack" },
+  lax: { increased: "Defense", decreased: "Special Defense" },
+  timid: { increased: "Speed", decreased: "Attack" },
+  hasty: { increased: "Speed", decreased: "Defense" },
+  serious: { increased: null, decreased: null },
+  jolly: { increased: "Speed", decreased: "Special Attack" },
+  naive: { increased: "Speed", decreased: "Special Defense" },
+  modest: { increased: "Special Attack", decreased: "Attack" },
+  mild: { increased: "Special Attack", decreased: "Defense" },
+  quiet: { increased: "Special Attack", decreased: "Speed" },
+  bashful: { increased: null, decreased: null },
+  rash: { increased: "Special Attack", decreased: "Special Defense" },
+  calm: { increased: "Special Defense", decreased: "Attack" },
+  gentle: { increased: "Special Defense", decreased: "Defense" },
+  sassy: { increased: "Special Defense", decreased: "Speed" },
+  careful: { increased: "Special Defense", decreased: "Special Attack" },
+  quirky: { increased: null, decreased: null },
+}
+
 const PokemonModelPreview = lazy(() =>
   import("@/components/pokemon-model-preview").then((module) => ({
     default: module.PokemonModelPreview,
@@ -1795,7 +1829,7 @@ function CompetitiveSection(props: {
                               EV Spread
                             </span>
                             <div class="flex flex-1 flex-wrap items-center gap-x-4 gap-y-1 text-xs">
-                              <span class="font-medium font-mono">{spread().nature}</span>
+                              <SmogonNatureLabel nature={spread().nature} class="font-medium" />
                               <span class="font-mono text-muted-foreground">
                                 {spread().evSpread}
                               </span>
@@ -1923,7 +1957,18 @@ function SmogonMovesetCard(props: { moveset: SmogonMovesetRecord }) {
         <Show when={props.moveset.natures.length > 0}>
           <span class="flex items-center gap-1">
             <span class="font-mono text-[9px] text-muted-foreground uppercase">Nat</span>
-            <span class="font-mono">{props.moveset.natures.join("/")}</span>
+            <span class="flex items-center gap-0.5 font-mono">
+              <For each={props.moveset.natures}>
+                {(nature, index) => (
+                  <>
+                    <SmogonNatureLabel nature={nature} />
+                    <Show when={index() < props.moveset.natures.length - 1}>
+                      <span aria-hidden="true">/</span>
+                    </Show>
+                  </>
+                )}
+              </For>
+            </span>
           </span>
         </Show>
         <Show when={props.moveset.teraTypes.length > 0}>
@@ -1972,6 +2017,83 @@ function SmogonMoveSlotCompact(props: { moveOptions: string[] }) {
       </For>
     </span>
   )
+}
+
+function SmogonNatureLabel(props: { nature: string; class?: string }) {
+  const tooltipLabel = createMemo(() => getNatureTooltipLabel(props.nature))
+  const natureEffect = createMemo(() => getNatureStatEffect(props.nature))
+
+  return (
+    <Show
+      when={tooltipLabel()}
+      fallback={<span class={cn("font-mono", props.class)}>{props.nature}</span>}
+    >
+      {(label) => (
+        <Tippy
+          content={<NatureTooltipContent effect={natureEffect()} />}
+          props={{
+            trigger: "mouseenter focus",
+            placement: "top",
+            arrow: false,
+            delay: [80, 40],
+            offset: [0, 8],
+            appendTo: () => document.body,
+          }}
+        >
+          <button
+            type="button"
+            class={cn(
+              "cursor-help bg-transparent p-0 font-mono text-current transition-colors hover:text-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-border",
+              props.class
+            )}
+            aria-label={`${props.nature} nature stat changes: ${label()}`}
+            title={label()}
+          >
+            {props.nature}
+          </button>
+        </Tippy>
+      )}
+    </Show>
+  )
+}
+
+function NatureTooltipContent(props: { effect: NatureStatEffect | null }) {
+  return (
+    <div class="flex items-center gap-2 font-mono text-[11px]">
+      <Show
+        when={props.effect?.increased && props.effect.decreased}
+        fallback={<span class="text-muted-foreground">No stat changes</span>}
+      >
+        <>
+          <span class="text-emerald-400">▲ {props.effect?.increased}</span>
+          <span class="text-muted-foreground/70">•</span>
+          <span class="text-rose-400">▼ {props.effect?.decreased}</span>
+        </>
+      </Show>
+    </div>
+  )
+}
+
+function getNatureStatEffect(nature: string): NatureStatEffect | null {
+  const normalizedNature = nature.trim().toLowerCase()
+  if (!normalizedNature) {
+    return null
+  }
+
+  return NATURE_STAT_EFFECTS[normalizedNature] ?? null
+}
+
+function getNatureTooltipLabel(nature: string): string | null {
+  const effect = getNatureStatEffect(nature)
+  if (!effect) {
+    return null
+  }
+
+  if (!effect.increased || !effect.decreased) {
+    return "No stat changes"
+  }
+
+  return `▲ ${effect.increased} ▼ ${effect.decreased}`
 }
 
 function formatSmogonStatSpread(spread: Record<string, number>): string | null {
