@@ -582,12 +582,33 @@ function PokemonDetailView(props: {
     )
   })
 
-  const isAddonProvided = createMemo(() => {
+  const isCobbleverseOnly = createMemo(() => {
+    if (detail().isBaseCobblemonImplemented) {
+      return false
+    }
+
     if (detail().isCobbleverseProvided) {
       return true
     }
 
     return provenanceStatus() === "addon-implemented"
+  })
+
+  const showCobbleverseOnlyFlag = createMemo(
+    () => isCobbleverseOnly() && provenanceStatus() === "addon-implemented"
+  )
+
+  const showSourceUnresolvedAlert = createMemo(
+    () => !detail().implemented && !showCobbleverseOnlyFlag()
+  )
+
+  const cobbleverseOnlyTooltip = createMemo(() => {
+    const mods = provenanceMods()
+    if (mods.length === 0) {
+      return "Cobbleverse-only species."
+    }
+
+    return `Added by Cobbleverse mod(s): ${mods.join(", ")}`
   })
 
   return (
@@ -614,40 +635,18 @@ function PokemonDetailView(props: {
         <DexNavCard pokemon={props.next} direction="next" />
       </nav>
 
-      <Show when={!detail().implemented}>
-        <Show
-          when={!detail().isBaseCobblemonImplemented && isAddonProvided()}
-          fallback={
-            <section class="mb-4 border border-destructive/35 bg-destructive/10 px-4 py-3">
-              <p class="font-semibold text-destructive text-xs uppercase tracking-wider">
-                Source unresolved
-              </p>
-              <p class="mt-1 text-muted-foreground text-sm">Not in base Cobblemon.</p>
-              <p class="mt-1 text-muted-foreground text-sm">
-                {provenanceStatus() === "addon-touched-not-implemented"
-                  ? "Cobbleverse data touches this species, but implementation is not yet deterministic."
-                  : "Cobbleverse source evidence for this species is still pending."}
-              </p>
-            </section>
-          }
-        >
-          <section class="mb-4 border border-warning/30 bg-warning/10 px-4 py-3">
-            <p class="font-semibold text-warning text-xs uppercase tracking-wider">
-              Cobbleverse data
-            </p>
-            <p class="mt-1 text-muted-foreground text-sm">Not in base Cobblemon.</p>
-            <p class="mt-1 text-muted-foreground text-sm">
-              Added by Cobbleverse mod(s):
-              <span class="font-medium text-foreground">
-                {" "}
-                {provenanceMods().join(", ") || "unknown"}
-              </span>
-            </p>
-            <p class="mt-2 text-muted-foreground text-xs">
-              Source profile: <span class="font-mono">{provenanceStatus()}</span>
-            </p>
-          </section>
-        </Show>
+      <Show when={showSourceUnresolvedAlert()}>
+        <section class="mb-4 border border-destructive/35 bg-destructive/10 px-4 py-3">
+          <p class="font-semibold text-destructive text-xs uppercase tracking-wider">
+            Source unresolved
+          </p>
+          <p class="mt-1 text-muted-foreground text-sm">Not implemented in base Cobblemon.</p>
+          <p class="mt-1 text-muted-foreground text-sm">
+            {provenanceStatus() === "addon-touched-not-implemented"
+              ? "Cobbleverse data touches this species, but implementation is not yet deterministic."
+              : "Cobbleverse source evidence for this species is still pending."}
+          </p>
+        </section>
       </Show>
 
       {/* Hero Section - Compact with view toggle */}
@@ -655,10 +654,18 @@ function PokemonDetailView(props: {
         <div class="flex flex-col gap-4 p-4 sm:flex-row sm:items-start sm:justify-between sm:p-5">
           {/* Left: Pokemon Info */}
           <div class="flex flex-col gap-3">
-            <div class="flex items-center gap-2">
+            <div class="flex flex-wrap items-center gap-2">
               <span class="font-mono text-sm" style={{ color: typeColor() }}>
                 #{String(detail().dexNumber).padStart(3, "0")}
               </span>
+              <Show when={showCobbleverseOnlyFlag()}>
+                <span
+                  class="inline-flex items-center border border-border/80 bg-secondary/45 px-2 py-0.5 font-mono text-[10px] text-muted-foreground leading-none"
+                  title={cobbleverseOnlyTooltip()}
+                >
+                  Not implemented in base Cobblemon · Cobbleverse only
+                </span>
+              </Show>
             </div>
 
             <h1 class="font-semibold text-3xl tracking-tight sm:text-4xl">{displayName()}</h1>

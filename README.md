@@ -25,6 +25,7 @@ Other wikis make you browse. Cobblepedia lets you _ask_.
 - **Smart facets** — Add `moves`, `spawn`, or `evolution` to any query
 - **Keyboard-first** — Never touch your mouse
 - **Live previews** — Sprites, artwork, and 3D models
+- **Cobbleverse support** — Complete data for community addon packs (AllTheMons, Mega Showdown, and more)
 
 ---
 
@@ -46,7 +47,8 @@ Other wikis make you browse. Cobblepedia lets you _ask_.
 
 ## Credits
 
-- **Data:** [Cobblemon](https://gitlab.com/cable-mc/cobblemon)
+- **Base Data:** [Cobblemon](https://gitlab.com/cable-mc/cobblemon)
+- **Cobbleverse Addons:** AllTheMons x Mega Showdown, Mega Showdown, COBBLEVERSE datapack, and community addons
 - **Models:** [Cobblemon Assets](https://gitlab.com/cable-mc/cobblemon-assets)
 - **Sprites:** [PokeAPI](https://pokeapi.co)
 - **Inspired by:** [Cobbledex](https://cobbledex.info)

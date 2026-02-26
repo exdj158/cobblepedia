@@ -647,6 +647,9 @@ export default function Page() {
             <h2 class="font-semibold text-3xl tracking-tight sm:text-4xl">
               Powered by official sources
             </h2>
+            <p class="mt-3 text-muted-foreground text-sm">
+              Base Cobblemon data plus full Cobbleverse addon support
+            </p>
           </div>
 
           <div class="mb-12 grid gap-8 lg:grid-cols-2">
@@ -769,6 +772,17 @@ export default function Page() {
                       })}
                     </div>
                     <div class="text-muted-foreground text-xs">Last Updated</div>
+                  </div>
+                  <div class="bg-card p-5 sm:col-span-3">
+                    <div class="flex items-center justify-center gap-2">
+                      <span class="inline-flex items-center gap-1.5 border border-border/80 bg-secondary/45 px-3 py-1 font-mono text-[10px] text-muted-foreground">
+                        <span class="h-1.5 w-1.5 rounded-full bg-success" />
+                        Cobbleverse Compatible
+                      </span>
+                      <span class="text-muted-foreground text-xs">
+                        AllTheMons · Mega Showdown · COBBLEVERSE datapack
+                      </span>
+                    </div>
                   </div>
                 </div>
               )}
@@ -950,7 +964,7 @@ export default function Page() {
             <h2 class="font-semibold text-3xl tracking-tight sm:text-4xl">Useful links</h2>
           </div>
 
-          <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+          <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-5">
             <a
               href="https://gitlab.com/cable-mc/cobblemon"
               target="_blank"
@@ -967,6 +981,28 @@ export default function Page() {
               <div class="text-center">
                 <div class="font-semibold">Cobblemon</div>
                 <div class="text-muted-foreground text-sm">Official Mod</div>
+              </div>
+            </a>
+
+            <a
+              href="https://modrinth.com/collection/vgKtV1Ao"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="group flex flex-col items-center gap-4 border border-border bg-card p-6 transition-all hover:-translate-y-1 hover:border-muted-foreground hover:shadow-lg"
+            >
+              <div class="flex h-12 w-12 items-center justify-center rounded-full border border-border bg-secondary transition-colors group-hover:bg-foreground group-hover:text-background">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                  <path
+                    d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    fill="none"
+                  />
+                </svg>
+              </div>
+              <div class="text-center">
+                <div class="font-semibold">Cobbleverse</div>
+                <div class="text-muted-foreground text-sm">Mod Collection</div>
               </div>
             </a>
 
