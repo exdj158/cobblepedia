@@ -313,6 +313,9 @@ export function TypesPageView(props: { initialType?: string }) {
 
                           <PokemonSprite
                             dexNumber={pokemon.dexNumber}
+                            slug={pokemon.slug}
+                            formSlug={pokemon.formSlug}
+                            formName={pokemon.formName}
                             name={pokemon.name}
                             class="h-8 w-8"
                             imageClass="h-6 w-6"
