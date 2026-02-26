@@ -51,3 +51,7 @@ Big feats:
 Improve the design for this new Competitive Card please. each tab looks kinda different so I kinda wanna make them uniform i.e. moves are clickable. Same fonts, for the same elements i.e. Nature, same distributions for ev spread, etc. Make it look better and less boring, but still compact.
 
 - [x] Interactable pokemon https://wiki.cobblemon.com/index.php/Pok%C3%A9mon
+
+- [ ] EV Training map. + what EVs yield for this pokemon.
+
+- [ ] Drops item search i.e. Who drops what in by-item pages.
