@@ -4,6 +4,14 @@ import type { PokemonDexNavItem, PokemonListItem } from "@/data/cobblemon-types"
 let pokemonDexNavIndex: PokemonDexNavIndex | null = null
 let indexPromise: Promise<PokemonDexNavIndex> | null = null
 
+const generatedDataBasePath = (() => {
+  const basePath = import.meta.env.BASE_URL ?? "/"
+  const normalizedBasePath = basePath.endsWith("/") ? basePath.slice(0, -1) : basePath
+  return `${normalizedBasePath}/data/generated`
+})()
+
+const GENERATED_JSON_FETCH_TIMEOUT_MS = 15000
+
 type PokemonDexNeighborsResponse = {
   current: PokemonDexNavItem | null
   previous: PokemonDexNavItem | null
@@ -16,12 +24,20 @@ type PokemonDexNavIndex = {
   byDexNumber: Map<number, number>
 }
 
-const generatedJsonLoaders: Record<string, () => Promise<{ default?: unknown }>> = {
-  "pokemon-dex-nav.json": () => import("@/data/generated/pokemon-dex-nav.json"),
-  "pokemon-list.json": () => import("@/data/generated/pokemon-list.json"),
+type GeneratedJsonLoadContext = {
+  requestUrl: string
+  assetsBinding: unknown
 }
 
-async function loadPokemonDexNavIndex(): Promise<PokemonDexNavIndex> {
+type GeneratedJsonValidator = (value: unknown) => boolean
+
+type AssetsBinding = {
+  fetch: (input: RequestInfo | URL, init?: RequestInit) => Promise<Response>
+}
+
+async function loadPokemonDexNavIndex(
+  context: GeneratedJsonLoadContext
+): Promise<PokemonDexNavIndex> {
   if (pokemonDexNavIndex) {
     return pokemonDexNavIndex
   }
@@ -31,8 +47,14 @@ async function loadPokemonDexNavIndex(): Promise<PokemonDexNavIndex> {
   }
 
   indexPromise = (async () => {
-    const pokemonDexNavArtifact = await loadGeneratedJson("pokemon-dex-nav.json")
-    const pokemonListArtifact = await loadGeneratedJson("pokemon-list.json")
+    const pokemonDexNavArtifact = await loadGeneratedJson(
+      "pokemon-dex-nav.json",
+      context,
+      (value) => Array.isArray(value)
+    )
+    const pokemonListArtifact = await loadGeneratedJson("pokemon-list.json", context, (value) =>
+      Array.isArray(value)
+    )
 
     const index = buildPokemonDexNavIndex(
       resolvePokemonDexNavItems(pokemonDexNavArtifact, pokemonListArtifact)
@@ -44,18 +66,154 @@ async function loadPokemonDexNavIndex(): Promise<PokemonDexNavIndex> {
   return indexPromise
 }
 
-async function loadGeneratedJson(relativePath: string): Promise<unknown> {
-  const loadModule = generatedJsonLoaders[relativePath]
-  if (!loadModule) {
-    return null
-  }
-
+async function loadGeneratedJson(
+  relativePath: string,
+  context: GeneratedJsonLoadContext,
+  validate: GeneratedJsonValidator = () => true
+): Promise<unknown> {
   try {
-    const dataModule = await loadModule()
-    return dataModule.default ?? dataModule
+    const assetsBinding = resolveAssetsBinding(context.assetsBinding)
+    if (assetsBinding) {
+      const jsonFromAssets = await loadGeneratedJsonFromAssets(
+        relativePath,
+        context.requestUrl,
+        assetsBinding
+      )
+      if (jsonFromAssets !== null && validate(jsonFromAssets)) {
+        return jsonFromAssets
+      }
+    }
+
+    const jsonFromFilesystem = await readGeneratedJsonFromFilesystem(relativePath)
+    return validate(jsonFromFilesystem) ? jsonFromFilesystem : null
   } catch {
     return null
   }
+}
+
+async function loadGeneratedJsonFromAssets(
+  relativePath: string,
+  requestUrl: string,
+  assetsBinding: AssetsBinding
+): Promise<unknown> {
+  const assetsRequestUrl = new URL(`${generatedDataBasePath}/${relativePath}`, requestUrl)
+  const controller = new AbortController()
+  const timeoutId = globalThis.setTimeout(() => {
+    controller.abort()
+  }, GENERATED_JSON_FETCH_TIMEOUT_MS)
+
+  try {
+    const response = await assetsBinding.fetch(
+      new Request(assetsRequestUrl.toString(), {
+        signal: controller.signal,
+      })
+    )
+    if (!response.ok) {
+      return null
+    }
+
+    return await response.json()
+  } catch {
+    return null
+  } finally {
+    globalThis.clearTimeout(timeoutId)
+  }
+}
+
+async function readGeneratedJsonFromFilesystem(relativePath: string): Promise<unknown> {
+  const fsPromisesSpecifier = "node:fs/promises"
+  const pathSpecifier = "node:path"
+  const urlSpecifier = "node:url"
+
+  const [{ readFile }, pathModule, urlModule] = await Promise.all([
+    import(/* @vite-ignore */ fsPromisesSpecifier) as Promise<typeof import("node:fs/promises")>,
+    import(/* @vite-ignore */ pathSpecifier) as Promise<typeof import("node:path")>,
+    import(/* @vite-ignore */ urlSpecifier) as Promise<typeof import("node:url")>,
+  ])
+
+  const roots = discoverServerDataRoots(pathModule, urlModule)
+  const candidateBasePaths = buildGeneratedDataBasePaths(pathModule, roots)
+
+  for (const basePath of candidateBasePaths) {
+    const filePath = pathModule.join(basePath, relativePath)
+
+    try {
+      const source = await readFile(filePath, "utf8")
+      return JSON.parse(source)
+    } catch {}
+  }
+
+  return null
+}
+
+function discoverServerDataRoots(
+  pathModule: typeof import("node:path"),
+  urlModule: typeof import("node:url")
+): string[] {
+  const roots = new Set<string>()
+
+  const pushRoot = (value: string | undefined | null) => {
+    if (!value) {
+      return
+    }
+
+    const trimmed = value.trim()
+    if (!trimmed) {
+      return
+    }
+
+    roots.add(trimmed)
+  }
+
+  pushRoot(process.cwd())
+  pushRoot(process.env.PWD)
+  pushRoot(process.env.INIT_CWD)
+  pushRoot(typeof process.argv[1] === "string" ? pathModule.dirname(process.argv[1]) : null)
+
+  try {
+    pushRoot(pathModule.dirname(urlModule.fileURLToPath(import.meta.url)))
+  } catch {}
+
+  return Array.from(roots)
+}
+
+function buildGeneratedDataBasePaths(
+  pathModule: typeof import("node:path"),
+  roots: string[]
+): string[] {
+  const candidateBasePaths = new Set<string>()
+
+  const addAncestorPaths = (root: string) => {
+    let current = pathModule.resolve(root)
+
+    for (let depth = 0; depth < 8; depth += 1) {
+      candidateBasePaths.add(pathModule.join(current, "public", "data", "generated"))
+      candidateBasePaths.add(pathModule.join(current, "dist", "client", "data", "generated"))
+      candidateBasePaths.add(pathModule.join(current, "dist", "server", "data", "generated"))
+      candidateBasePaths.add(pathModule.join(current, "data", "generated"))
+
+      const parent = pathModule.dirname(current)
+      if (parent === current) {
+        break
+      }
+
+      current = parent
+    }
+  }
+
+  for (const root of roots) {
+    addAncestorPaths(root)
+  }
+
+  return Array.from(candidateBasePaths)
+}
+
+function resolveAssetsBinding(value: unknown): AssetsBinding | null {
+  if (!isRecord(value) || typeof value.fetch !== "function") {
+    return null
+  }
+
+  return value as AssetsBinding
 }
 
 export const pokemonController = new Hono().get("/dex-neighbors", async (c) => {
@@ -69,7 +227,10 @@ export const pokemonController = new Hono().get("/dex-neighbors", async (c) => {
     return c.json({ error: "Expected a numeric dexNumber query parameter." }, 400)
   }
 
-  const navIndex = await loadPokemonDexNavIndex()
+  const navIndex = await loadPokemonDexNavIndex({
+    requestUrl: c.req.url,
+    assetsBinding: isRecord(c.env) ? c.env.ASSETS : null,
+  })
 
   if (navIndex.items.length === 0) {
     return c.json({ error: "Pokemon dex navigation data is unavailable." }, 503)

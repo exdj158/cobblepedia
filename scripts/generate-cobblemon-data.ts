@@ -175,10 +175,6 @@ const EN_US_LANG_PATH = path.join(
   "common/src/main/resources/assets/cobblemon/lang/en_us.json"
 )
 
-const GENERATED_ROOT = path.join(PROJECT_ROOT, "src/data/generated")
-const GENERATED_BY_SLUG_ROOT = path.join(GENERATED_ROOT, "pokemon-by-slug")
-const GENERATED_MOVE_LEARNER_SHARDS_ROOT = path.join(GENERATED_ROOT, "move-learners-shards")
-const GENERATED_SMOGON_MOVESETS_BY_SLUG_ROOT = path.join(GENERATED_ROOT, "smogon-movesets-by-slug")
 const PUBLIC_GENERATED_ROOT = path.join(PROJECT_ROOT, "public/data/generated")
 const PUBLIC_GENERATED_BY_SLUG_ROOT = path.join(PUBLIC_GENERATED_ROOT, "pokemon-by-slug")
 const PUBLIC_MOVE_LEARNER_SHARDS_ROOT = path.join(PUBLIC_GENERATED_ROOT, "move-learners-shards")
@@ -4085,42 +4081,34 @@ async function writeArtifacts(params: {
   searchIndex: SearchDocument[]
   detailsBySlug: Map<string, PokemonDetailRecord>
 }) {
-  await rm(GENERATED_ROOT, { recursive: true, force: true })
-  await mkdir(GENERATED_BY_SLUG_ROOT, { recursive: true })
-  await mkdir(GENERATED_MOVE_LEARNER_SHARDS_ROOT, { recursive: true })
-  await mkdir(GENERATED_SMOGON_MOVESETS_BY_SLUG_ROOT, { recursive: true })
-
   await rm(PUBLIC_GENERATED_ROOT, { recursive: true, force: true })
   await mkdir(PUBLIC_GENERATED_BY_SLUG_ROOT, { recursive: true })
   await mkdir(PUBLIC_MOVE_LEARNER_SHARDS_ROOT, { recursive: true })
   await mkdir(PUBLIC_SMOGON_MOVESETS_BY_SLUG_ROOT, { recursive: true })
 
-  const writeSharedArtifact = async (fileName: string, data: unknown) => {
-    await writeJsonFile(path.join(GENERATED_ROOT, fileName), data)
+  const writePublicArtifact = async (fileName: string, data: unknown) => {
     await writeJsonFile(path.join(PUBLIC_GENERATED_ROOT, fileName), data)
   }
 
-  await writeSharedArtifact("meta.json", params.meta)
-  await writeSharedArtifact("pokemon-list.json", params.pokemonList)
-  await writeSharedArtifact("pokemon-dex-nav.json", params.pokemonDexNav)
-  await writeSharedArtifact("pokemon-type-entries.json", params.pokemonTypeEntries)
-  await writeSharedArtifact("ability-index.json", params.abilityIndex)
-  await writeSharedArtifact("biome-tag-index.json", params.biomeTagIndex)
-  await writeSharedArtifact("item-index.json", params.itemIndex)
-  await writeSharedArtifact("pokemon-interaction-index.json", params.pokemonInteractionIndex)
-  await writeSharedArtifact("rideable-mons.json", params.rideableMons)
-  await writeSharedArtifact("pokemon-form-sprite-index.json", params.pokemonFormSpriteIndex)
-  await writeSharedArtifact("search-index.json", params.searchIndex)
+  await writePublicArtifact("meta.json", params.meta)
+  await writePublicArtifact("pokemon-list.json", params.pokemonList)
+  await writePublicArtifact("pokemon-dex-nav.json", params.pokemonDexNav)
+  await writePublicArtifact("pokemon-type-entries.json", params.pokemonTypeEntries)
+  await writePublicArtifact("ability-index.json", params.abilityIndex)
+  await writePublicArtifact("biome-tag-index.json", params.biomeTagIndex)
+  await writePublicArtifact("item-index.json", params.itemIndex)
+  await writePublicArtifact("pokemon-interaction-index.json", params.pokemonInteractionIndex)
+  await writePublicArtifact("rideable-mons.json", params.rideableMons)
+  await writePublicArtifact("pokemon-form-sprite-index.json", params.pokemonFormSpriteIndex)
+  await writePublicArtifact("search-index.json", params.searchIndex)
 
   for (const [shardId, shardData] of params.moveLearnerShards) {
     const shardFileName = `${shardId}.json`
-    await writeJsonFile(path.join(GENERATED_MOVE_LEARNER_SHARDS_ROOT, shardFileName), shardData)
     await writeJsonFile(path.join(PUBLIC_MOVE_LEARNER_SHARDS_ROOT, shardFileName), shardData)
   }
 
   for (const [slug, smogonMovesets] of params.smogonMovesetsBySlug) {
     const fileName = `${slug}.json`
-    await writeJsonFile(path.join(GENERATED_SMOGON_MOVESETS_BY_SLUG_ROOT, fileName), smogonMovesets)
     await writeJsonFile(path.join(PUBLIC_SMOGON_MOVESETS_BY_SLUG_ROOT, fileName), smogonMovesets)
   }
 
@@ -4129,7 +4117,6 @@ async function writeArtifacts(params: {
   })
 
   for (const [slug, detail] of sortedDetails) {
-    await writeJsonFile(path.join(GENERATED_BY_SLUG_ROOT, `${slug}.json`), detail)
     await writeJsonFile(path.join(PUBLIC_GENERATED_BY_SLUG_ROOT, `${slug}.json`), detail)
   }
 }
