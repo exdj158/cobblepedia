@@ -569,7 +569,100 @@
       "fromFormSlug": null
     }
   ],
-  "spawnEntries": [],
+  "spawnEntries": [
+    {
+      "id": "meltan-1",
+      "sourceFile": "0808_meltan.json",
+      "pokemon": {
+        "raw": "meltan",
+        "slug": "meltan",
+        "aspectTokens": []
+      },
+      "type": "pokemon",
+      "spawnablePositionType": "grounded",
+      "bucket": "ultra-rare",
+      "bucketWeight": 0.2,
+      "levelText": "38-48",
+      "levelMin": 38,
+      "levelMax": 48,
+      "weight": 5,
+      "presets": [],
+      "biomeHints": [
+        "Is Overworld"
+      ],
+      "condition": {
+        "canSeeSky": true,
+        "biomes": [
+          "#cobblemon:is_overworld"
+        ],
+        "neededNearbyBlocks": [
+          "minecraft:iron_block"
+        ]
+      },
+      "anticondition": null,
+      "weightMultipliers": [],
+      "raw": {
+        "id": "meltan-1",
+        "pokemon": "meltan",
+        "type": "pokemon",
+        "spawnablePositionType": "grounded",
+        "bucket": "ultra-rare",
+        "level": "38-48",
+        "weight": 5,
+        "condition": {
+          "canSeeSky": true,
+          "biomes": [
+            "#cobblemon:is_overworld"
+          ],
+          "neededNearbyBlocks": [
+            "minecraft:iron_block"
+          ]
+        }
+      }
+    },
+    {
+      "id": "meltan-2",
+      "sourceFile": "0808_meltan.json",
+      "pokemon": {
+        "raw": "meltan",
+        "slug": "meltan",
+        "aspectTokens": []
+      },
+      "type": "pokemon",
+      "spawnablePositionType": "grounded",
+      "bucket": "ultra-rare",
+      "bucketWeight": 0.2,
+      "levelText": "38-52",
+      "levelMin": 38,
+      "levelMax": 52,
+      "weight": 2,
+      "presets": [],
+      "biomeHints": [
+        "Beach"
+      ],
+      "condition": {
+        "biomes": [
+          "minecraft:beach"
+        ]
+      },
+      "anticondition": null,
+      "weightMultipliers": [],
+      "raw": {
+        "id": "meltan-2",
+        "pokemon": "meltan",
+        "type": "pokemon",
+        "spawnablePositionType": "grounded",
+        "bucket": "ultra-rare",
+        "level": "38-52",
+        "weight": 2,
+        "condition": {
+          "biomes": [
+            "minecraft:beach"
+          ]
+        }
+      }
+    }
+  ],
   "forms": [],
   "drops": {
     "amount": 0,

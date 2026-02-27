@@ -1114,7 +1114,69 @@
       "fromFormSlug": null
     }
   ],
-  "spawnEntries": [],
+  "spawnEntries": [
+    {
+      "id": "tapulele-1",
+      "sourceFile": "0786_tapulele.json",
+      "pokemon": {
+        "raw": "tapulele",
+        "slug": "tapulele",
+        "aspectTokens": []
+      },
+      "type": "pokemon",
+      "spawnablePositionType": "grounded",
+      "bucket": "ultra-rare",
+      "bucketWeight": 0.2,
+      "levelText": "50-70",
+      "levelMin": 50,
+      "levelMax": 70,
+      "weight": 1,
+      "presets": [
+        "natural"
+      ],
+      "biomeHints": [
+        "Is Floral",
+        "Cherry Grove",
+        "Flower Forest",
+        "Is Beach"
+      ],
+      "condition": {
+        "neededBaseBlocks": [
+          "#cobblemon:natural"
+        ],
+        "canSeeSky": true,
+        "biomes": [
+          "#cobblemon:is_floral",
+          "#minecraft:is_beach"
+        ]
+      },
+      "anticondition": {
+        "neededBaseBlocks": [
+          "minecraft:farmland"
+        ]
+      },
+      "weightMultipliers": [],
+      "raw": {
+        "id": "tapulele-1",
+        "pokemon": "tapulele",
+        "presets": [
+          "natural"
+        ],
+        "type": "pokemon",
+        "spawnablePositionType": "grounded",
+        "bucket": "ultra-rare",
+        "level": "50-70",
+        "weight": 1,
+        "condition": {
+          "canSeeSky": true,
+          "biomes": [
+            "#cobblemon:is_floral",
+            "#minecraft:is_beach"
+          ]
+        }
+      }
+    }
+  ],
   "forms": [],
   "drops": {
     "amount": 5,

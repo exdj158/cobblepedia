@@ -1541,7 +1541,117 @@
       "fromFormSlug": null
     }
   ],
-  "spawnEntries": [],
+  "spawnEntries": [
+    {
+      "id": "pancham-1",
+      "sourceFile": "0674_pancham.json",
+      "pokemon": {
+        "raw": "pancham",
+        "slug": "pancham",
+        "aspectTokens": []
+      },
+      "type": "pokemon",
+      "spawnablePositionType": "grounded",
+      "bucket": "common",
+      "bucketWeight": 94.3,
+      "levelText": "5-31",
+      "levelMin": 5,
+      "levelMax": 31,
+      "weight": 7.4,
+      "presets": [
+        "natural"
+      ],
+      "biomeHints": [
+        "Is Jungle"
+      ],
+      "condition": {
+        "neededBaseBlocks": [
+          "#cobblemon:natural"
+        ],
+        "biomes": [
+          "#cobblemon:is_jungle"
+        ]
+      },
+      "anticondition": {
+        "neededBaseBlocks": [
+          "minecraft:farmland"
+        ]
+      },
+      "weightMultipliers": [],
+      "raw": {
+        "id": "pancham-1",
+        "pokemon": "pancham",
+        "presets": [
+          "natural"
+        ],
+        "type": "pokemon",
+        "spawnablePositionType": "grounded",
+        "bucket": "common",
+        "level": "5-31",
+        "weight": 7.4,
+        "condition": {
+          "biomes": [
+            "#cobblemon:is_jungle"
+          ]
+        }
+      }
+    },
+    {
+      "id": "pancham-2",
+      "sourceFile": "0674_pancham.json",
+      "pokemon": {
+        "raw": "pancham",
+        "slug": "pancham",
+        "aspectTokens": []
+      },
+      "type": "pokemon",
+      "spawnablePositionType": "grounded",
+      "bucket": "rare",
+      "bucketWeight": 0.5,
+      "levelText": "20-30",
+      "levelMin": 20,
+      "levelMax": 30,
+      "weight": 5.3,
+      "presets": [
+        "natural"
+      ],
+      "biomeHints": [
+        "Is Forest",
+        "Cherry Grove"
+      ],
+      "condition": {
+        "neededBaseBlocks": [
+          "#cobblemon:natural"
+        ],
+        "biomes": [
+          "#cobblemon:is_forest"
+        ]
+      },
+      "anticondition": {
+        "neededBaseBlocks": [
+          "minecraft:farmland"
+        ]
+      },
+      "weightMultipliers": [],
+      "raw": {
+        "id": "pancham-2",
+        "pokemon": "pancham",
+        "presets": [
+          "natural"
+        ],
+        "type": "pokemon",
+        "spawnablePositionType": "grounded",
+        "bucket": "rare",
+        "level": "20-30",
+        "weight": 5.3,
+        "condition": {
+          "biomes": [
+            "#cobblemon:is_forest"
+          ]
+        }
+      }
+    }
+  ],
   "forms": [],
   "drops": {
     "amount": 0,

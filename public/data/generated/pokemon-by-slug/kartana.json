@@ -895,7 +895,52 @@
       "fromFormSlug": null
     }
   ],
-  "spawnEntries": [],
+  "spawnEntries": [
+    {
+      "id": "kartana-1",
+      "sourceFile": "0798_kartana.json",
+      "pokemon": {
+        "raw": "kartana",
+        "slug": "kartana",
+        "aspectTokens": []
+      },
+      "type": "pokemon",
+      "spawnablePositionType": "grounded",
+      "bucket": "ultra-rare",
+      "bucketWeight": 0.2,
+      "levelText": "55-70",
+      "levelMin": 55,
+      "levelMax": 70,
+      "weight": 0.4,
+      "presets": [],
+      "biomeHints": [
+        "Cherry Grove"
+      ],
+      "condition": {
+        "canSeeSky": true,
+        "biomes": [
+          "minecraft:cherry_grove"
+        ]
+      },
+      "anticondition": null,
+      "weightMultipliers": [],
+      "raw": {
+        "id": "kartana-1",
+        "pokemon": "kartana",
+        "type": "pokemon",
+        "spawnablePositionType": "grounded",
+        "bucket": "ultra-rare",
+        "level": "55-70",
+        "weight": 0.4,
+        "condition": {
+          "canSeeSky": true,
+          "biomes": [
+            "minecraft:cherry_grove"
+          ]
+        }
+      }
+    }
+  ],
   "forms": [],
   "drops": {
     "amount": 3,

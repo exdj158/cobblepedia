@@ -1802,7 +1802,68 @@
       "fromFormSlug": null
     }
   ],
-  "spawnEntries": [],
+  "spawnEntries": [
+    {
+      "id": "zangoose-1",
+      "sourceFile": "0335_zangoose.json",
+      "pokemon": {
+        "raw": "zangoose",
+        "slug": "zangoose",
+        "aspectTokens": []
+      },
+      "type": "pokemon",
+      "spawnablePositionType": "grounded",
+      "bucket": "uncommon",
+      "bucketWeight": 5,
+      "levelText": "25-58",
+      "levelMin": 25,
+      "levelMax": 58,
+      "weight": 2,
+      "presets": [
+        "natural"
+      ],
+      "biomeHints": [
+        "Is Plains",
+        "Plains",
+        "Sunflower Plains"
+      ],
+      "condition": {
+        "neededBaseBlocks": [
+          "#cobblemon:natural"
+        ],
+        "minSkyLight": 8,
+        "maxSkyLight": 15,
+        "biomes": [
+          "#cobblemon:is_plains"
+        ]
+      },
+      "anticondition": {
+        "neededBaseBlocks": [
+          "minecraft:farmland"
+        ]
+      },
+      "weightMultipliers": [],
+      "raw": {
+        "id": "zangoose-1",
+        "pokemon": "zangoose",
+        "presets": [
+          "natural"
+        ],
+        "type": "pokemon",
+        "spawnablePositionType": "grounded",
+        "bucket": "uncommon",
+        "level": "25-58",
+        "weight": 2,
+        "condition": {
+          "minSkyLight": 8,
+          "maxSkyLight": 15,
+          "biomes": [
+            "#cobblemon:is_plains"
+          ]
+        }
+      }
+    }
+  ],
   "forms": [],
   "drops": {
     "amount": 3,

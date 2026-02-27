@@ -1457,7 +1457,65 @@
       "fromFormSlug": null
     }
   ],
-  "spawnEntries": [],
+  "spawnEntries": [
+    {
+      "id": "reshiram-1",
+      "sourceFile": "0643_reshiram.json",
+      "pokemon": {
+        "raw": "reshiram",
+        "slug": "reshiram",
+        "aspectTokens": []
+      },
+      "type": "pokemon",
+      "spawnablePositionType": "grounded",
+      "bucket": "ultra-rare",
+      "bucketWeight": 0.2,
+      "levelText": "70-84",
+      "levelMin": 70,
+      "levelMax": 84,
+      "weight": 2,
+      "presets": [
+        "natural"
+      ],
+      "biomeHints": [
+        "Is Mountain",
+        "Is Hills"
+      ],
+      "condition": {
+        "neededBaseBlocks": [
+          "#cobblemon:natural"
+        ],
+        "isRaining": false,
+        "biomes": [
+          "#cobblemon:is_mountain"
+        ]
+      },
+      "anticondition": {
+        "neededBaseBlocks": [
+          "minecraft:farmland"
+        ]
+      },
+      "weightMultipliers": [],
+      "raw": {
+        "id": "reshiram-1",
+        "pokemon": "reshiram",
+        "presets": [
+          "natural"
+        ],
+        "type": "pokemon",
+        "spawnablePositionType": "grounded",
+        "bucket": "ultra-rare",
+        "level": "70-84",
+        "weight": 2,
+        "condition": {
+          "isRaining": false,
+          "biomes": [
+            "#cobblemon:is_mountain"
+          ]
+        }
+      }
+    }
+  ],
   "forms": [],
   "drops": {
     "amount": 5,

@@ -1117,7 +1117,62 @@
       "fromFormSlug": null
     }
   ],
-  "spawnEntries": [],
+  "spawnEntries": [
+    {
+      "id": "kubfu-1",
+      "sourceFile": "0891_kubfu.json",
+      "pokemon": {
+        "raw": "kubfu",
+        "slug": "kubfu",
+        "aspectTokens": []
+      },
+      "type": "pokemon",
+      "spawnablePositionType": "grounded",
+      "bucket": "ultra-rare",
+      "bucketWeight": 0.2,
+      "levelText": "30-50",
+      "levelMin": 30,
+      "levelMax": 50,
+      "weight": 3.5,
+      "presets": [
+        "natural"
+      ],
+      "biomeHints": [
+        "Cherry Grove"
+      ],
+      "condition": {
+        "neededBaseBlocks": [
+          "#cobblemon:natural"
+        ],
+        "biomes": [
+          "minecraft:cherry_grove"
+        ]
+      },
+      "anticondition": {
+        "neededBaseBlocks": [
+          "minecraft:farmland"
+        ]
+      },
+      "weightMultipliers": [],
+      "raw": {
+        "id": "kubfu-1",
+        "pokemon": "kubfu",
+        "presets": [
+          "natural"
+        ],
+        "type": "pokemon",
+        "spawnablePositionType": "grounded",
+        "bucket": "ultra-rare",
+        "level": "30-50",
+        "weight": 3.5,
+        "condition": {
+          "biomes": [
+            "minecraft:cherry_grove"
+          ]
+        }
+      }
+    }
+  ],
   "forms": [],
   "drops": {
     "amount": 5,

@@ -1833,7 +1833,50 @@
       "fromFormSlug": null
     }
   ],
-  "spawnEntries": [],
+  "spawnEntries": [
+    {
+      "id": "azelf-1",
+      "sourceFile": "0482_azelf.json",
+      "pokemon": {
+        "raw": "azelf",
+        "slug": "azelf",
+        "aspectTokens": []
+      },
+      "type": "pokemon",
+      "spawnablePositionType": "grounded",
+      "bucket": "ultra-rare",
+      "bucketWeight": 0.2,
+      "levelText": "40-65",
+      "levelMin": 40,
+      "levelMax": 65,
+      "weight": 0,
+      "presets": [],
+      "biomeHints": [
+        "Custom Spawn"
+      ],
+      "condition": {
+        "biomes": [
+          "cobbleverse:custom_spawn"
+        ]
+      },
+      "anticondition": null,
+      "weightMultipliers": [],
+      "raw": {
+        "id": "azelf-1",
+        "pokemon": "azelf",
+        "type": "pokemon",
+        "spawnablePositionType": "grounded",
+        "bucket": "ultra-rare",
+        "level": "40-65",
+        "weight": 0,
+        "condition": {
+          "biomes": [
+            "cobbleverse:custom_spawn"
+          ]
+        }
+      }
+    }
+  ],
   "forms": [],
   "drops": {
     "amount": 5,

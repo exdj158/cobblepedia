@@ -1456,7 +1456,62 @@
       "fromFormSlug": null
     }
   ],
-  "spawnEntries": [],
+  "spawnEntries": [
+    {
+      "id": "diancie-1",
+      "sourceFile": "0719_diancie.json",
+      "pokemon": {
+        "raw": "diancie",
+        "slug": "diancie",
+        "aspectTokens": []
+      },
+      "type": "pokemon",
+      "spawnablePositionType": "grounded",
+      "bucket": "ultra-rare",
+      "bucketWeight": 0.2,
+      "levelText": "45-68",
+      "levelMin": 45,
+      "levelMax": 68,
+      "weight": 2.3,
+      "presets": [
+        "natural"
+      ],
+      "biomeHints": [
+        "Lush Caves"
+      ],
+      "condition": {
+        "neededBaseBlocks": [
+          "#cobblemon:natural"
+        ],
+        "biomes": [
+          "minecraft:lush_caves"
+        ]
+      },
+      "anticondition": {
+        "neededBaseBlocks": [
+          "minecraft:farmland"
+        ]
+      },
+      "weightMultipliers": [],
+      "raw": {
+        "id": "diancie-1",
+        "pokemon": "diancie",
+        "presets": [
+          "natural"
+        ],
+        "type": "pokemon",
+        "spawnablePositionType": "grounded",
+        "bucket": "ultra-rare",
+        "level": "45-68",
+        "weight": 2.3,
+        "condition": {
+          "biomes": [
+            "minecraft:lush_caves"
+          ]
+        }
+      }
+    }
+  ],
   "forms": [
     {
       "name": "Mega",

@@ -1205,7 +1205,62 @@
       "fromFormSlug": null
     }
   ],
-  "spawnEntries": [],
+  "spawnEntries": [
+    {
+      "id": "stakataka-1",
+      "sourceFile": "0805_stakataka.json",
+      "pokemon": {
+        "raw": "stakataka",
+        "slug": "stakataka",
+        "aspectTokens": []
+      },
+      "type": "pokemon",
+      "spawnablePositionType": "grounded",
+      "bucket": "ultra-rare",
+      "bucketWeight": 0.2,
+      "levelText": "60-72",
+      "levelMin": 60,
+      "levelMax": 72,
+      "weight": 4,
+      "presets": [
+        "natural"
+      ],
+      "biomeHints": [
+        "Deep Dark"
+      ],
+      "condition": {
+        "neededBaseBlocks": [
+          "#cobblemon:natural"
+        ],
+        "biomes": [
+          "minecraft:deep_dark"
+        ]
+      },
+      "anticondition": {
+        "neededBaseBlocks": [
+          "minecraft:farmland"
+        ]
+      },
+      "weightMultipliers": [],
+      "raw": {
+        "id": "stakataka-1",
+        "pokemon": "stakataka",
+        "presets": [
+          "natural"
+        ],
+        "type": "pokemon",
+        "spawnablePositionType": "grounded",
+        "bucket": "ultra-rare",
+        "level": "60-72",
+        "weight": 4,
+        "condition": {
+          "biomes": [
+            "minecraft:deep_dark"
+          ]
+        }
+      }
+    }
+  ],
   "forms": [],
   "drops": {
     "amount": 3,

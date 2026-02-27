@@ -927,7 +927,53 @@
       "fromFormSlug": null
     }
   ],
-  "spawnEntries": [],
+  "spawnEntries": [
+    {
+      "id": "walkingwake-1",
+      "sourceFile": "1009_walkingwake.json",
+      "pokemon": {
+        "raw": "walkingwake",
+        "slug": "walkingwake",
+        "aspectTokens": []
+      },
+      "type": "pokemon",
+      "spawnablePositionType": "grounded",
+      "bucket": "ultra-rare",
+      "bucketWeight": 0.2,
+      "levelText": "60-75",
+      "levelMin": 60,
+      "levelMax": 75,
+      "weight": 3.5,
+      "presets": [],
+      "biomeHints": [
+        "Is Mountain",
+        "Is Hills"
+      ],
+      "condition": {
+        "biomes": [
+          "#cobblemon:is_mountain"
+        ],
+        "isRaining": true
+      },
+      "anticondition": null,
+      "weightMultipliers": [],
+      "raw": {
+        "id": "walkingwake-1",
+        "pokemon": "walkingwake",
+        "type": "pokemon",
+        "spawnablePositionType": "grounded",
+        "bucket": "ultra-rare",
+        "level": "60-75",
+        "weight": 3.5,
+        "condition": {
+          "biomes": [
+            "#cobblemon:is_mountain"
+          ],
+          "isRaining": true
+        }
+      }
+    }
+  ],
   "forms": [],
   "drops": null,
   "rawSpecies": {

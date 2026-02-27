@@ -5467,7 +5467,50 @@
       "fromFormSlug": null
     }
   ],
-  "spawnEntries": [],
+  "spawnEntries": [
+    {
+      "id": "mew-1",
+      "sourceFile": "0151_mew.json",
+      "pokemon": {
+        "raw": "mew",
+        "slug": "mew",
+        "aspectTokens": []
+      },
+      "type": "pokemon",
+      "spawnablePositionType": "grounded",
+      "bucket": "ultra-rare",
+      "bucketWeight": 0.2,
+      "levelText": "75-90",
+      "levelMin": 75,
+      "levelMax": 90,
+      "weight": 0,
+      "presets": [],
+      "biomeHints": [
+        "Custom Spawn/origin Temple"
+      ],
+      "condition": {
+        "biomes": [
+          "cobbleverse:custom_spawn/origin_temple"
+        ]
+      },
+      "anticondition": null,
+      "weightMultipliers": [],
+      "raw": {
+        "id": "mew-1",
+        "pokemon": "mew",
+        "type": "pokemon",
+        "spawnablePositionType": "grounded",
+        "bucket": "ultra-rare",
+        "level": "75-90",
+        "weight": 0,
+        "condition": {
+          "biomes": [
+            "cobbleverse:custom_spawn/origin_temple"
+          ]
+        }
+      }
+    }
+  ],
   "forms": [],
   "drops": {
     "amount": 5,

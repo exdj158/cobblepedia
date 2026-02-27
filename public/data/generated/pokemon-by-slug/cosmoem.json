@@ -359,7 +359,62 @@
       "fromFormSlug": null
     }
   ],
-  "spawnEntries": [],
+  "spawnEntries": [
+    {
+      "id": "cosmoem-1",
+      "sourceFile": "0790_cosmoem.json",
+      "pokemon": {
+        "raw": "cosmoem",
+        "slug": "cosmoem",
+        "aspectTokens": []
+      },
+      "type": "pokemon",
+      "spawnablePositionType": "grounded",
+      "bucket": "ultra-rare",
+      "bucketWeight": 0.2,
+      "levelText": "44-52",
+      "levelMin": 44,
+      "levelMax": 52,
+      "weight": 0.5,
+      "presets": [
+        "natural"
+      ],
+      "biomeHints": [
+        "Is End"
+      ],
+      "condition": {
+        "neededBaseBlocks": [
+          "#cobblemon:natural"
+        ],
+        "biomes": [
+          "#minecraft:is_end"
+        ]
+      },
+      "anticondition": {
+        "neededBaseBlocks": [
+          "minecraft:farmland"
+        ]
+      },
+      "weightMultipliers": [],
+      "raw": {
+        "id": "cosmoem-1",
+        "pokemon": "cosmoem",
+        "presets": [
+          "natural"
+        ],
+        "type": "pokemon",
+        "spawnablePositionType": "grounded",
+        "bucket": "ultra-rare",
+        "level": "44-52",
+        "weight": 0.5,
+        "condition": {
+          "biomes": [
+            "#minecraft:is_end"
+          ]
+        }
+      }
+    }
+  ],
   "forms": [],
   "drops": null,
   "rawSpecies": {

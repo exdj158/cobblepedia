@@ -1890,7 +1890,50 @@
       "fromFormSlug": null
     }
   ],
-  "spawnEntries": [],
+  "spawnEntries": [
+    {
+      "id": "latias-1",
+      "sourceFile": "0380_latias.json",
+      "pokemon": {
+        "raw": "latias",
+        "slug": "latias",
+        "aspectTokens": []
+      },
+      "type": "pokemon",
+      "spawnablePositionType": "grounded",
+      "bucket": "ultra-rare",
+      "bucketWeight": 0.2,
+      "levelText": "50-75",
+      "levelMin": 50,
+      "levelMax": 75,
+      "weight": 0,
+      "presets": [],
+      "biomeHints": [
+        "Custom Spawn/secrt Garden"
+      ],
+      "condition": {
+        "biomes": [
+          "cobbleverse:custom_spawn/secrt_garden"
+        ]
+      },
+      "anticondition": null,
+      "weightMultipliers": [],
+      "raw": {
+        "id": "latias-1",
+        "pokemon": "latias",
+        "type": "pokemon",
+        "spawnablePositionType": "grounded",
+        "bucket": "ultra-rare",
+        "level": "50-75",
+        "weight": 0,
+        "condition": {
+          "biomes": [
+            "cobbleverse:custom_spawn/secrt_garden"
+          ]
+        }
+      }
+    }
+  ],
   "forms": [
     {
       "name": "Mega",

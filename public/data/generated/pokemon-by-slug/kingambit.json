@@ -1320,7 +1320,62 @@
       "fromFormSlug": null
     }
   ],
-  "spawnEntries": [],
+  "spawnEntries": [
+    {
+      "id": "kingambit-1",
+      "sourceFile": "0983_kingambit.json",
+      "pokemon": {
+        "raw": "kingambit",
+        "slug": "kingambit",
+        "aspectTokens": []
+      },
+      "type": "pokemon",
+      "spawnablePositionType": "grounded",
+      "bucket": "ultra-rare",
+      "bucketWeight": 0.2,
+      "levelText": "72-85",
+      "levelMin": 72,
+      "levelMax": 85,
+      "weight": 1,
+      "presets": [
+        "natural"
+      ],
+      "biomeHints": [
+        "Bamboo Jungle"
+      ],
+      "condition": {
+        "neededBaseBlocks": [
+          "#cobblemon:natural"
+        ],
+        "biomes": [
+          "minecraft:bamboo_jungle"
+        ]
+      },
+      "anticondition": {
+        "neededBaseBlocks": [
+          "minecraft:farmland"
+        ]
+      },
+      "weightMultipliers": [],
+      "raw": {
+        "id": "kingambit-1",
+        "pokemon": "kingambit",
+        "presets": [
+          "natural"
+        ],
+        "type": "pokemon",
+        "spawnablePositionType": "grounded",
+        "bucket": "ultra-rare",
+        "level": "72-85",
+        "weight": 1,
+        "condition": {
+          "biomes": [
+            "minecraft:bamboo_jungle"
+          ]
+        }
+      }
+    }
+  ],
   "forms": [],
   "drops": {
     "amount": 2,

@@ -1720,7 +1720,50 @@
       "fromFormSlug": null
     }
   ],
-  "spawnEntries": [],
+  "spawnEntries": [
+    {
+      "id": "rayquaza-1",
+      "sourceFile": "0384_rayquaza.json",
+      "pokemon": {
+        "raw": "rayquaza",
+        "slug": "rayquaza",
+        "aspectTokens": []
+      },
+      "type": "pokemon",
+      "spawnablePositionType": "grounded",
+      "bucket": "ultra-rare",
+      "bucketWeight": 0.2,
+      "levelText": "70-80",
+      "levelMin": 70,
+      "levelMax": 80,
+      "weight": 0,
+      "presets": [],
+      "biomeHints": [
+        "Custom Spawn/sky Pillar"
+      ],
+      "condition": {
+        "biomes": [
+          "cobbleverse:custom_spawn/sky_pillar"
+        ]
+      },
+      "anticondition": null,
+      "weightMultipliers": [],
+      "raw": {
+        "id": "rayquaza-1",
+        "pokemon": "rayquaza",
+        "type": "pokemon",
+        "spawnablePositionType": "grounded",
+        "bucket": "ultra-rare",
+        "level": "70-80",
+        "weight": 0,
+        "condition": {
+          "biomes": [
+            "cobbleverse:custom_spawn/sky_pillar"
+          ]
+        }
+      }
+    }
+  ],
   "forms": [
     {
       "name": "Mega",

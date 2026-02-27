@@ -913,7 +913,62 @@
       "fromFormSlug": null
     }
   ],
-  "spawnEntries": [],
+  "spawnEntries": [
+    {
+      "id": "glastrier-1",
+      "sourceFile": "0896_glastrier.json",
+      "pokemon": {
+        "raw": "glastrier",
+        "slug": "glastrier",
+        "aspectTokens": []
+      },
+      "type": "pokemon",
+      "spawnablePositionType": "grounded",
+      "bucket": "ultra-rare",
+      "bucketWeight": 0.2,
+      "levelText": "60",
+      "levelMin": 60,
+      "levelMax": 60,
+      "weight": 0,
+      "presets": [
+        "natural"
+      ],
+      "biomeHints": [
+        "Custom Spawn/crown Spire"
+      ],
+      "condition": {
+        "neededBaseBlocks": [
+          "#cobblemon:natural"
+        ],
+        "biomes": [
+          "cobbleverse:custom_spawn/crown_spire"
+        ]
+      },
+      "anticondition": {
+        "neededBaseBlocks": [
+          "minecraft:farmland"
+        ]
+      },
+      "weightMultipliers": [],
+      "raw": {
+        "id": "glastrier-1",
+        "pokemon": "glastrier",
+        "presets": [
+          "natural"
+        ],
+        "type": "pokemon",
+        "spawnablePositionType": "grounded",
+        "bucket": "ultra-rare",
+        "level": "60",
+        "weight": 0,
+        "condition": {
+          "biomes": [
+            "cobbleverse:custom_spawn/crown_spire"
+          ]
+        }
+      }
+    }
+  ],
   "forms": [],
   "drops": {
     "amount": 5,

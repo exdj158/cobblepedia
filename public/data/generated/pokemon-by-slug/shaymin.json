@@ -1178,7 +1178,50 @@
       "fromFormSlug": null
     }
   ],
-  "spawnEntries": [],
+  "spawnEntries": [
+    {
+      "id": "shaymin-1",
+      "sourceFile": "0492_shaymin.json",
+      "pokemon": {
+        "raw": "shaymin",
+        "slug": "shaymin",
+        "aspectTokens": []
+      },
+      "type": "pokemon",
+      "spawnablePositionType": "grounded",
+      "bucket": "ultra-rare",
+      "bucketWeight": 0.2,
+      "levelText": "50-55",
+      "levelMin": 50,
+      "levelMax": 55,
+      "weight": 0,
+      "presets": [],
+      "biomeHints": [
+        "Custom Spawn/flower Paradise"
+      ],
+      "condition": {
+        "biomes": [
+          "cobbleverse:custom_spawn/flower_paradise"
+        ]
+      },
+      "anticondition": null,
+      "weightMultipliers": [],
+      "raw": {
+        "id": "shaymin-1",
+        "pokemon": "shaymin",
+        "type": "pokemon",
+        "spawnablePositionType": "grounded",
+        "bucket": "ultra-rare",
+        "level": "50-55",
+        "weight": 0,
+        "condition": {
+          "biomes": [
+            "cobbleverse:custom_spawn/flower_paradise"
+          ]
+        }
+      }
+    }
+  ],
   "forms": [
     {
       "name": "Sky",

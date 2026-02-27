@@ -1194,7 +1194,57 @@
       "fromFormSlug": null
     }
   ],
-  "spawnEntries": [],
+  "spawnEntries": [
+    {
+      "id": "nihilego-1",
+      "sourceFile": "0793_nihilego.json",
+      "pokemon": {
+        "raw": "nihilego",
+        "slug": "nihilego",
+        "aspectTokens": []
+      },
+      "type": "pokemon",
+      "spawnablePositionType": "submerged",
+      "bucket": "ultra-rare",
+      "bucketWeight": 0.2,
+      "levelText": "60-78",
+      "levelMin": 60,
+      "levelMax": 78,
+      "weight": 2,
+      "presets": [
+        "water"
+      ],
+      "biomeHints": [
+        "Is Ocean",
+        "Is Cold Ocean"
+      ],
+      "condition": {
+        "fluid": "#minecraft:water",
+        "biomes": [
+          "#cobblemon:is_ocean"
+        ]
+      },
+      "anticondition": null,
+      "weightMultipliers": [],
+      "raw": {
+        "id": "nihilego-1",
+        "pokemon": "nihilego",
+        "type": "pokemon",
+        "presets": [
+          "water"
+        ],
+        "spawnablePositionType": "submerged",
+        "bucket": "ultra-rare",
+        "level": "60-78",
+        "weight": 2,
+        "condition": {
+          "biomes": [
+            "#cobblemon:is_ocean"
+          ]
+        }
+      }
+    }
+  ],
   "forms": [],
   "drops": {
     "amount": 3,

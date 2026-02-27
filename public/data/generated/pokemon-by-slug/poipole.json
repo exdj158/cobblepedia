@@ -788,7 +788,58 @@
       "fromFormSlug": null
     }
   ],
-  "spawnEntries": [],
+  "spawnEntries": [
+    {
+      "id": "poipole-1",
+      "sourceFile": "0803_poipole.json",
+      "pokemon": {
+        "raw": "poipole",
+        "slug": "poipole",
+        "aspectTokens": []
+      },
+      "type": "pokemon",
+      "spawnablePositionType": "grounded",
+      "bucket": "ultra-rare",
+      "bucketWeight": 0.2,
+      "levelText": "40",
+      "levelMin": 40,
+      "levelMax": 40,
+      "weight": 1.5,
+      "presets": [],
+      "biomeHints": [
+        "Is End"
+      ],
+      "condition": {
+        "biomes": [
+          "#cobblemon:is_end"
+        ],
+        "structures": [
+          "cobbleverse:dawn_tower",
+          "cobbleverse:dusk_tower"
+        ]
+      },
+      "anticondition": null,
+      "weightMultipliers": [],
+      "raw": {
+        "id": "poipole-1",
+        "pokemon": "poipole",
+        "type": "pokemon",
+        "spawnablePositionType": "grounded",
+        "bucket": "ultra-rare",
+        "level": "40",
+        "weight": 1.5,
+        "condition": {
+          "biomes": [
+            "#cobblemon:is_end"
+          ],
+          "structures": [
+            "cobbleverse:dawn_tower",
+            "cobbleverse:dusk_tower"
+          ]
+        }
+      }
+    }
+  ],
   "forms": [],
   "drops": {
     "amount": 2,

@@ -1137,7 +1137,80 @@
       "fromFormSlug": null
     }
   ],
-  "spawnEntries": [],
+  "spawnEntries": [
+    {
+      "id": "rotom-1",
+      "sourceFile": "0479_rotom.json",
+      "pokemon": {
+        "raw": "rotom",
+        "slug": "rotom",
+        "aspectTokens": []
+      },
+      "type": "pokemon",
+      "spawnablePositionType": "grounded",
+      "bucket": "rare",
+      "bucketWeight": 0.5,
+      "levelText": "20-75",
+      "levelMin": 20,
+      "levelMax": 75,
+      "weight": 7,
+      "presets": [],
+      "biomeHints": [
+        "Is Overworld"
+      ],
+      "condition": {
+        "biomes": [
+          "#cobblemon:is_overworld"
+        ],
+        "neededNearbyBlocks": [
+          "minecraft:redstone_block",
+          "minecraft:repeater",
+          "minecraft:redstone_torch",
+          "minecraft:daylight_detector",
+          "minecraft:comparator",
+          "minecraft:redstone_ore",
+          "minecraft:redstone_lamp",
+          "minecraft:lightning_rod",
+          "cobblemon:pc",
+          "cobblemon:monitor",
+          "cobblemon:healing_machine",
+          "cobblemon:restoration_tank",
+          "cobblemon:fossil_analyzer"
+        ]
+      },
+      "anticondition": null,
+      "weightMultipliers": [],
+      "raw": {
+        "id": "rotom-1",
+        "pokemon": "rotom",
+        "type": "pokemon",
+        "spawnablePositionType": "grounded",
+        "bucket": "rare",
+        "level": "20-75",
+        "weight": 7,
+        "condition": {
+          "biomes": [
+            "#cobblemon:is_overworld"
+          ],
+          "neededNearbyBlocks": [
+            "minecraft:redstone_block",
+            "minecraft:repeater",
+            "minecraft:redstone_torch",
+            "minecraft:daylight_detector",
+            "minecraft:comparator",
+            "minecraft:redstone_ore",
+            "minecraft:redstone_lamp",
+            "minecraft:lightning_rod",
+            "cobblemon:pc",
+            "cobblemon:monitor",
+            "cobblemon:healing_machine",
+            "cobblemon:restoration_tank",
+            "cobblemon:fossil_analyzer"
+          ]
+        }
+      }
+    }
+  ],
   "forms": [
     {
       "name": "Heat",

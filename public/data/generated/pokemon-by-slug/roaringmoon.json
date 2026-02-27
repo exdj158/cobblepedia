@@ -1235,7 +1235,73 @@
       "fromFormSlug": null
     }
   ],
-  "spawnEntries": [],
+  "spawnEntries": [
+    {
+      "id": "roaringmoon-1",
+      "sourceFile": "1005_roaringmoon.json",
+      "pokemon": {
+        "raw": "roaringmoon",
+        "slug": "roaringmoon",
+        "aspectTokens": []
+      },
+      "type": "pokemon",
+      "spawnablePositionType": "grounded",
+      "bucket": "rare",
+      "bucketWeight": 0.5,
+      "levelText": "55-70",
+      "levelMin": 55,
+      "levelMax": 70,
+      "weight": 3,
+      "presets": [
+        "wild",
+        "natural"
+      ],
+      "biomeHints": [
+        "Is Mountain",
+        "Is Hills"
+      ],
+      "condition": {
+        "neededBaseBlocks": [
+          "#cobblemon:natural"
+        ],
+        "timeRange": "night",
+        "biomes": [
+          "#cobblemon:is_mountain"
+        ]
+      },
+      "anticondition": {
+        "structures": [
+          "#minecraft:village"
+        ],
+        "neededNearbyBlocks": [
+          "#cobblemon:concrete_blocks"
+        ],
+        "neededBaseBlocks": [
+          "minecraft:farmland"
+        ]
+      },
+      "weightMultipliers": [],
+      "raw": {
+        "id": "roaringmoon-1",
+        "pokemon": "roaringmoon",
+        "presets": [
+          "wild",
+          "natural"
+        ],
+        "type": "pokemon",
+        "spawnablePositionType": "grounded",
+        "bucket": "rare",
+        "level": "55-70",
+        "weight": 3,
+        "condition": {
+          "timeRange": "night",
+          "biomes": [
+            "#cobblemon:is_mountain"
+          ]
+        }
+      }
+    }
+  ],
   "forms": [],
   "drops": null,
   "rawSpecies": {

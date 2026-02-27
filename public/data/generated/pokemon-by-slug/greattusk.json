@@ -1065,7 +1065,66 @@
       "fromFormSlug": null
     }
   ],
-  "spawnEntries": [],
+  "spawnEntries": [
+    {
+      "id": "greattusk-1",
+      "sourceFile": "0984_greattusk.json",
+      "pokemon": {
+        "raw": "greattusk",
+        "slug": "greattusk",
+        "aspectTokens": []
+      },
+      "type": "pokemon",
+      "spawnablePositionType": "grounded",
+      "bucket": "rare",
+      "bucketWeight": 0.5,
+      "levelText": "40-65",
+      "levelMin": 40,
+      "levelMax": 65,
+      "weight": 3,
+      "presets": [
+        "natural"
+      ],
+      "biomeHints": [
+        "Is Arid",
+        "Is Badlands",
+        "Is Desert"
+      ],
+      "condition": {
+        "neededBaseBlocks": [
+          "#cobblemon:natural"
+        ],
+        "canSeeSky": true,
+        "biomes": [
+          "#cobblemon:is_arid"
+        ]
+      },
+      "anticondition": {
+        "neededBaseBlocks": [
+          "minecraft:farmland"
+        ]
+      },
+      "weightMultipliers": [],
+      "raw": {
+        "id": "greattusk-1",
+        "pokemon": "greattusk",
+        "presets": [
+          "natural"
+        ],
+        "type": "pokemon",
+        "spawnablePositionType": "grounded",
+        "bucket": "rare",
+        "level": "40-65",
+        "weight": 3,
+        "condition": {
+          "canSeeSky": true,
+          "biomes": [
+            "#cobblemon:is_arid"
+          ]
+        }
+      }
+    }
+  ],
   "forms": [],
   "drops": null,
   "rawSpecies": {

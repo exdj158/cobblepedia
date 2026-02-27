@@ -1181,7 +1181,141 @@
       "fromFormSlug": null
     }
   ],
-  "spawnEntries": [],
+  "spawnEntries": [
+    {
+      "id": "dustox-1",
+      "sourceFile": "0269_dustox.json",
+      "pokemon": {
+        "raw": "dustox",
+        "slug": "dustox",
+        "aspectTokens": []
+      },
+      "type": "pokemon",
+      "spawnablePositionType": "grounded",
+      "bucket": "uncommon",
+      "bucketWeight": 5,
+      "levelText": "10-32",
+      "levelMin": 10,
+      "levelMax": 32,
+      "weight": 1,
+      "presets": [
+        "natural"
+      ],
+      "biomeHints": [
+        "Is Forest",
+        "Cherry Grove",
+        "Is Jungle"
+      ],
+      "condition": {
+        "neededBaseBlocks": [
+          "#cobblemon:natural"
+        ],
+        "minSkyLight": 8,
+        "maxSkyLight": 15,
+        "biomes": [
+          "#cobblemon:is_forest",
+          "#cobblemon:is_jungle"
+        ]
+      },
+      "anticondition": {
+        "neededBaseBlocks": [
+          "minecraft:farmland"
+        ],
+        "biomes": [
+          "#cobblemon:is_floral",
+          "#cobblemon:is_freezing",
+          "#cobblemon:is_swamp"
+        ]
+      },
+      "weightMultipliers": [],
+      "raw": {
+        "id": "dustox-1",
+        "pokemon": "dustox",
+        "presets": [
+          "natural"
+        ],
+        "type": "pokemon",
+        "spawnablePositionType": "grounded",
+        "bucket": "uncommon",
+        "level": "10-32",
+        "weight": 1,
+        "condition": {
+          "minSkyLight": 8,
+          "maxSkyLight": 15,
+          "biomes": [
+            "#cobblemon:is_forest",
+            "#cobblemon:is_jungle"
+          ]
+        },
+        "anticondition": {
+          "biomes": [
+            "#cobblemon:is_floral",
+            "#cobblemon:is_freezing",
+            "#cobblemon:is_swamp"
+          ]
+        }
+      }
+    },
+    {
+      "id": "dustox-2",
+      "sourceFile": "0269_dustox.json",
+      "pokemon": {
+        "raw": "dustox",
+        "slug": "dustox",
+        "aspectTokens": []
+      },
+      "type": "pokemon",
+      "spawnablePositionType": "grounded",
+      "bucket": "uncommon",
+      "bucketWeight": 5,
+      "levelText": "10-40",
+      "levelMin": 10,
+      "levelMax": 40,
+      "weight": 5,
+      "presets": [
+        "natural"
+      ],
+      "biomeHints": [
+        "Is Forest",
+        "Cherry Grove"
+      ],
+      "condition": {
+        "neededBaseBlocks": [
+          "#cobblemon:natural"
+        ],
+        "minSkyLight": 8,
+        "maxSkyLight": 15,
+        "biomes": [
+          "#cobblemon:is_forest"
+        ]
+      },
+      "anticondition": {
+        "neededBaseBlocks": [
+          "minecraft:farmland"
+        ]
+      },
+      "weightMultipliers": [],
+      "raw": {
+        "id": "dustox-2",
+        "pokemon": "dustox",
+        "presets": [
+          "natural"
+        ],
+        "type": "pokemon",
+        "spawnablePositionType": "grounded",
+        "bucket": "uncommon",
+        "level": "10-40",
+        "weight": 5,
+        "condition": {
+          "minSkyLight": 8,
+          "maxSkyLight": 15,
+          "biomes": [
+            "#cobblemon:is_forest"
+          ]
+        }
+      }
+    }
+  ],
   "forms": [],
   "drops": {
     "amount": 3,

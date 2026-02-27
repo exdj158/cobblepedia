@@ -1254,7 +1254,67 @@
       "fromFormSlug": null
     }
   ],
-  "spawnEntries": [],
+  "spawnEntries": [
+    {
+      "id": "tapubulu-1",
+      "sourceFile": "0787_tapubulu.json",
+      "pokemon": {
+        "raw": "tapubulu",
+        "slug": "tapubulu",
+        "aspectTokens": []
+      },
+      "type": "pokemon",
+      "spawnablePositionType": "grounded",
+      "bucket": "ultra-rare",
+      "bucketWeight": 0.2,
+      "levelText": "50-70",
+      "levelMin": 50,
+      "levelMax": 70,
+      "weight": 1,
+      "presets": [
+        "natural"
+      ],
+      "biomeHints": [
+        "Is River",
+        "Is Jungle"
+      ],
+      "condition": {
+        "neededBaseBlocks": [
+          "#cobblemon:natural"
+        ],
+        "canSeeSky": true,
+        "biomes": [
+          "#cobblemon:is_river",
+          "#cobblemon:is_jungle"
+        ]
+      },
+      "anticondition": {
+        "neededBaseBlocks": [
+          "minecraft:farmland"
+        ]
+      },
+      "weightMultipliers": [],
+      "raw": {
+        "id": "tapubulu-1",
+        "pokemon": "tapubulu",
+        "presets": [
+          "natural"
+        ],
+        "type": "pokemon",
+        "spawnablePositionType": "grounded",
+        "bucket": "ultra-rare",
+        "level": "50-70",
+        "weight": 1,
+        "condition": {
+          "canSeeSky": true,
+          "biomes": [
+            "#cobblemon:is_river",
+            "#cobblemon:is_jungle"
+          ]
+        }
+      }
+    }
+  ],
   "forms": [],
   "drops": {
     "amount": 5,

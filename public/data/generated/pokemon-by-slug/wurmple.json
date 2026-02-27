@@ -429,7 +429,89 @@
       "fromFormSlug": null
     }
   ],
-  "spawnEntries": [],
+  "spawnEntries": [
+    {
+      "id": "wurmple-1",
+      "sourceFile": "0265_wurmple.json",
+      "pokemon": {
+        "raw": "wurmple",
+        "slug": "wurmple",
+        "aspectTokens": []
+      },
+      "type": "pokemon",
+      "spawnablePositionType": "grounded",
+      "bucket": "common",
+      "bucketWeight": 94.3,
+      "levelText": "2-6",
+      "levelMin": 2,
+      "levelMax": 6,
+      "weight": 4,
+      "presets": [
+        "natural",
+        "foliage",
+        "treetop"
+      ],
+      "biomeHints": [
+        "Is Forest",
+        "Cherry Grove",
+        "Is Jungle"
+      ],
+      "condition": {
+        "neededBaseBlocks": [
+          "#cobblemon:natural",
+          "#cobblemon:trees"
+        ],
+        "neededNearbyBlocks": [
+          "#minecraft:leaves",
+          "#c:leaves"
+        ],
+        "minSkyLight": 8,
+        "maxSkyLight": 15,
+        "biomes": [
+          "#cobblemon:is_forest",
+          "#cobblemon:is_jungle"
+        ]
+      },
+      "anticondition": {
+        "neededBaseBlocks": [
+          "minecraft:farmland"
+        ],
+        "biomes": [
+          "#cobblemon:is_freezing",
+          "#cobblemon:is_spooky"
+        ]
+      },
+      "weightMultipliers": [],
+      "raw": {
+        "id": "wurmple-1",
+        "pokemon": "wurmple",
+        "presets": [
+          "natural",
+          "foliage",
+          "treetop"
+        ],
+        "type": "pokemon",
+        "spawnablePositionType": "grounded",
+        "bucket": "common",
+        "level": "2-6",
+        "weight": 4,
+        "condition": {
+          "minSkyLight": 8,
+          "maxSkyLight": 15,
+          "biomes": [
+            "#cobblemon:is_forest",
+            "#cobblemon:is_jungle"
+          ]
+        },
+        "anticondition": {
+          "biomes": [
+            "#cobblemon:is_freezing",
+            "#cobblemon:is_spooky"
+          ]
+        }
+      }
+    }
+  ],
   "forms": [],
   "drops": {
     "amount": 2,

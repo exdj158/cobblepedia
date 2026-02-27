@@ -1581,7 +1581,50 @@
       "fromFormSlug": null
     }
   ],
-  "spawnEntries": [],
+  "spawnEntries": [
+    {
+      "id": "hooh-1",
+      "sourceFile": "0250_hooh.json",
+      "pokemon": {
+        "raw": "hooh",
+        "slug": "hooh",
+        "aspectTokens": []
+      },
+      "type": "pokemon",
+      "spawnablePositionType": "grounded",
+      "bucket": "ultra-rare",
+      "bucketWeight": 0.2,
+      "levelText": "60-70",
+      "levelMin": 60,
+      "levelMax": 70,
+      "weight": 0,
+      "presets": [],
+      "biomeHints": [
+        "Custom Spawn/bell Tower"
+      ],
+      "condition": {
+        "biomes": [
+          "cobbleverse:custom_spawn/bell_tower"
+        ]
+      },
+      "anticondition": null,
+      "weightMultipliers": [],
+      "raw": {
+        "id": "hooh-1",
+        "pokemon": "hooh",
+        "type": "pokemon",
+        "spawnablePositionType": "grounded",
+        "bucket": "ultra-rare",
+        "level": "60-70",
+        "weight": 0,
+        "condition": {
+          "biomes": [
+            "cobbleverse:custom_spawn/bell_tower"
+          ]
+        }
+      }
+    }
+  ],
   "forms": [],
   "drops": {
     "amount": 5,

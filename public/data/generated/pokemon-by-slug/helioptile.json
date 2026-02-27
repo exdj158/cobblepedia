@@ -1077,7 +1077,70 @@
       "fromFormSlug": null
     }
   ],
-  "spawnEntries": [],
+  "spawnEntries": [
+    {
+      "id": "helioptile-1",
+      "sourceFile": "0694_helioptile.json",
+      "pokemon": {
+        "raw": "helioptile",
+        "slug": "helioptile",
+        "aspectTokens": []
+      },
+      "type": "pokemon",
+      "spawnablePositionType": "grounded",
+      "bucket": "uncommon",
+      "bucketWeight": 5,
+      "levelText": "8-35",
+      "levelMin": 8,
+      "levelMax": 35,
+      "weight": 6,
+      "presets": [
+        "natural"
+      ],
+      "biomeHints": [
+        "Is Sandy",
+        "Is Badlands",
+        "Is Desert"
+      ],
+      "condition": {
+        "neededBaseBlocks": [
+          "#cobblemon:natural"
+        ],
+        "canSeeSky": true,
+        "biomes": [
+          "#cobblemon:is_sandy"
+        ],
+        "isRaining": false,
+        "timeRange": "day"
+      },
+      "anticondition": {
+        "neededBaseBlocks": [
+          "minecraft:farmland"
+        ]
+      },
+      "weightMultipliers": [],
+      "raw": {
+        "id": "helioptile-1",
+        "pokemon": "helioptile",
+        "presets": [
+          "natural"
+        ],
+        "type": "pokemon",
+        "spawnablePositionType": "grounded",
+        "bucket": "uncommon",
+        "level": "8-35",
+        "weight": 6,
+        "condition": {
+          "canSeeSky": true,
+          "biomes": [
+            "#cobblemon:is_sandy"
+          ],
+          "isRaining": false,
+          "timeRange": "day"
+        }
+      }
+    }
+  ],
   "forms": [],
   "drops": {
     "amount": 0,

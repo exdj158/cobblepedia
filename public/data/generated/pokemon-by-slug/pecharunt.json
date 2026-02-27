@@ -615,7 +615,53 @@
       "fromFormSlug": null
     }
   ],
-  "spawnEntries": [],
+  "spawnEntries": [
+    {
+      "id": "pecharunt-1",
+      "sourceFile": "1025_pecharunt.json",
+      "pokemon": {
+        "raw": "pecharunt",
+        "slug": "pecharunt",
+        "aspectTokens": []
+      },
+      "type": "pokemon",
+      "spawnablePositionType": "grounded",
+      "bucket": "ultra-rare",
+      "bucketWeight": 0.2,
+      "levelText": "60-80",
+      "levelMin": 60,
+      "levelMax": 80,
+      "weight": 1,
+      "presets": [],
+      "biomeHints": [
+        "Is Spooky",
+        "Dark Forest"
+      ],
+      "condition": {
+        "canSeeSky": true,
+        "biomes": [
+          "#cobblemon:is_spooky"
+        ]
+      },
+      "anticondition": null,
+      "weightMultipliers": [],
+      "raw": {
+        "id": "pecharunt-1",
+        "pokemon": "pecharunt",
+        "type": "pokemon",
+        "spawnablePositionType": "grounded",
+        "bucket": "ultra-rare",
+        "level": "60-80",
+        "weight": 1,
+        "condition": {
+          "canSeeSky": true,
+          "biomes": [
+            "#cobblemon:is_spooky"
+          ]
+        }
+      }
+    }
+  ],
   "forms": [],
   "drops": null,
   "rawSpecies": {

@@ -2688,7 +2688,50 @@
       "fromFormSlug": null
     }
   ],
-  "spawnEntries": [],
+  "spawnEntries": [
+    {
+      "id": "arceus-1",
+      "sourceFile": "0493_arceus.json",
+      "pokemon": {
+        "raw": "arceus",
+        "slug": "arceus",
+        "aspectTokens": []
+      },
+      "type": "pokemon",
+      "spawnablePositionType": "grounded",
+      "bucket": "ultra-rare",
+      "bucketWeight": 0.2,
+      "levelText": "70",
+      "levelMin": 70,
+      "levelMax": 70,
+      "weight": 0,
+      "presets": [],
+      "biomeHints": [
+        "Custom Spawn/sinnoh Temple"
+      ],
+      "condition": {
+        "biomes": [
+          "cobbleverse:custom_spawn/sinnoh_temple"
+        ]
+      },
+      "anticondition": null,
+      "weightMultipliers": [],
+      "raw": {
+        "id": "arceus-1",
+        "pokemon": "arceus",
+        "type": "pokemon",
+        "spawnablePositionType": "grounded",
+        "bucket": "ultra-rare",
+        "level": "70",
+        "weight": 0,
+        "condition": {
+          "biomes": [
+            "cobbleverse:custom_spawn/sinnoh_temple"
+          ]
+        }
+      }
+    }
+  ],
   "forms": [
     {
       "name": "Fighting",

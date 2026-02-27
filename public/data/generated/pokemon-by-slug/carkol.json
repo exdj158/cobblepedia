@@ -1075,7 +1075,150 @@
       "fromFormSlug": null
     }
   ],
-  "spawnEntries": [],
+  "spawnEntries": [
+    {
+      "id": "carkol-1",
+      "sourceFile": "0838_carkol.json",
+      "pokemon": {
+        "raw": "carkol",
+        "slug": "carkol",
+        "aspectTokens": []
+      },
+      "type": "pokemon",
+      "spawnablePositionType": "grounded",
+      "bucket": "common",
+      "bucketWeight": 94.3,
+      "levelText": "18-33",
+      "levelMin": 18,
+      "levelMax": 33,
+      "weight": 10,
+      "presets": [
+        "natural",
+        "wild"
+      ],
+      "biomeHints": [
+        "Is Cave",
+        "Dripstone Caves",
+        "Lush Caves",
+        "Is Mountain",
+        "Is Hills"
+      ],
+      "condition": {
+        "neededBaseBlocks": [
+          "#cobblemon:natural"
+        ],
+        "biomes": [
+          "#cobblemon:is_cave",
+          "#cobblemon:is_mountain"
+        ],
+        "neededNearbyBlocks": [
+          "minecraft:coal_ore"
+        ]
+      },
+      "anticondition": {
+        "neededBaseBlocks": [
+          "minecraft:farmland"
+        ],
+        "structures": [
+          "#minecraft:village"
+        ],
+        "neededNearbyBlocks": [
+          "#cobblemon:concrete_blocks"
+        ]
+      },
+      "weightMultipliers": [],
+      "raw": {
+        "id": "carkol-1",
+        "pokemon": "carkol",
+        "presets": [
+          "natural",
+          "wild"
+        ],
+        "type": "pokemon",
+        "spawnablePositionType": "grounded",
+        "bucket": "common",
+        "level": "18-33",
+        "weight": 10,
+        "condition": {
+          "biomes": [
+            "#cobblemon:is_cave",
+            "#cobblemon:is_mountain"
+          ],
+          "neededNearbyBlocks": [
+            "minecraft:coal_ore"
+          ]
+        }
+      }
+    },
+    {
+      "id": "carkol-2",
+      "sourceFile": "0838_carkol.json",
+      "pokemon": {
+        "raw": "carkol",
+        "slug": "carkol",
+        "aspectTokens": []
+      },
+      "type": "pokemon",
+      "spawnablePositionType": "grounded",
+      "bucket": "uncommon",
+      "bucketWeight": 5,
+      "levelText": "19-33",
+      "levelMin": 19,
+      "levelMax": 33,
+      "weight": 7.5,
+      "presets": [
+        "natural",
+        "wild"
+      ],
+      "biomeHints": [
+        "Is Cave",
+        "Dripstone Caves",
+        "Lush Caves",
+        "Is Mountain",
+        "Is Hills"
+      ],
+      "condition": {
+        "neededBaseBlocks": [
+          "#cobblemon:natural"
+        ],
+        "biomes": [
+          "#cobblemon:is_cave",
+          "#cobblemon:is_mountain"
+        ]
+      },
+      "anticondition": {
+        "neededBaseBlocks": [
+          "minecraft:farmland"
+        ],
+        "structures": [
+          "#minecraft:village"
+        ],
+        "neededNearbyBlocks": [
+          "#cobblemon:concrete_blocks"
+        ]
+      },
+      "weightMultipliers": [],
+      "raw": {
+        "id": "carkol-2",
+        "pokemon": "carkol",
+        "presets": [
+          "natural",
+          "wild"
+        ],
+        "type": "pokemon",
+        "spawnablePositionType": "grounded",
+        "bucket": "uncommon",
+        "level": "19-33",
+        "weight": 7.5,
+        "condition": {
+          "biomes": [
+            "#cobblemon:is_cave",
+            "#cobblemon:is_mountain"
+          ]
+        }
+      }
+    }
+  ],
   "forms": [],
   "drops": {
     "amount": 0,

@@ -1314,7 +1314,70 @@
       "fromFormSlug": null
     }
   ],
-  "spawnEntries": [],
+  "spawnEntries": [
+    {
+      "id": "heliolisk-1",
+      "sourceFile": "0695_heliolisk.json",
+      "pokemon": {
+        "raw": "heliolisk",
+        "slug": "heliolisk",
+        "aspectTokens": []
+      },
+      "type": "pokemon",
+      "spawnablePositionType": "grounded",
+      "bucket": "rare",
+      "bucketWeight": 0.5,
+      "levelText": "37-58",
+      "levelMin": 37,
+      "levelMax": 58,
+      "weight": 3,
+      "presets": [
+        "natural"
+      ],
+      "biomeHints": [
+        "Is Sandy",
+        "Is Badlands",
+        "Is Desert"
+      ],
+      "condition": {
+        "neededBaseBlocks": [
+          "#cobblemon:natural"
+        ],
+        "canSeeSky": true,
+        "biomes": [
+          "#cobblemon:is_sandy"
+        ],
+        "isRaining": false,
+        "timeRange": "day"
+      },
+      "anticondition": {
+        "neededBaseBlocks": [
+          "minecraft:farmland"
+        ]
+      },
+      "weightMultipliers": [],
+      "raw": {
+        "id": "heliolisk-1",
+        "pokemon": "heliolisk",
+        "presets": [
+          "natural"
+        ],
+        "type": "pokemon",
+        "spawnablePositionType": "grounded",
+        "bucket": "rare",
+        "level": "37-58",
+        "weight": 3,
+        "condition": {
+          "canSeeSky": true,
+          "biomes": [
+            "#cobblemon:is_sandy"
+          ],
+          "isRaining": false,
+          "timeRange": "day"
+        }
+      }
+    }
+  ],
   "forms": [],
   "drops": {
     "amount": 0,

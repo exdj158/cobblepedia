@@ -1050,7 +1050,270 @@
       "fromFormSlug": null
     }
   ],
-  "spawnEntries": [],
+  "spawnEntries": [
+    {
+      "id": "castform-1",
+      "sourceFile": "0351_castform.json",
+      "pokemon": {
+        "raw": "castform forecast=rainy",
+        "slug": "castform",
+        "aspectTokens": [
+          "forecast=rainy"
+        ]
+      },
+      "type": "pokemon",
+      "spawnablePositionType": "grounded",
+      "bucket": "uncommon",
+      "bucketWeight": 5,
+      "levelText": "15-65",
+      "levelMin": 15,
+      "levelMax": 65,
+      "weight": 2,
+      "presets": [
+        "natural",
+        "wild"
+      ],
+      "biomeHints": [
+        "Is Beach",
+        "Dune Beach",
+        "Is Plains",
+        "Plains",
+        "Sunflower Plains"
+      ],
+      "condition": {
+        "neededBaseBlocks": [
+          "#cobblemon:natural"
+        ],
+        "biomes": [
+          "#cobblemon:is_beach",
+          "#cobblemon:is_plains"
+        ],
+        "isRaining": true
+      },
+      "anticondition": {
+        "neededBaseBlocks": [
+          "minecraft:farmland"
+        ],
+        "structures": [
+          "#minecraft:village"
+        ],
+        "neededNearbyBlocks": [
+          "#cobblemon:concrete_blocks"
+        ]
+      },
+      "weightMultipliers": [],
+      "raw": {
+        "id": "castform-1",
+        "pokemon": "castform forecast=rainy",
+        "presets": [
+          "natural",
+          "wild"
+        ],
+        "type": "pokemon",
+        "spawnablePositionType": "grounded",
+        "bucket": "uncommon",
+        "level": "15-65",
+        "weight": 2,
+        "condition": {
+          "biomes": [
+            "#cobblemon:is_beach",
+            "#cobblemon:is_plains"
+          ],
+          "isRaining": true
+        }
+      }
+    },
+    {
+      "id": "castform-2",
+      "sourceFile": "0351_castform.json",
+      "pokemon": {
+        "raw": "castform forecast=snowy",
+        "slug": "castform",
+        "aspectTokens": [
+          "forecast=snowy"
+        ]
+      },
+      "type": "pokemon",
+      "spawnablePositionType": "grounded",
+      "bucket": "uncommon",
+      "bucketWeight": 5,
+      "levelText": "15-65",
+      "levelMin": 15,
+      "levelMax": 65,
+      "weight": 2,
+      "presets": [
+        "natural",
+        "wild"
+      ],
+      "biomeHints": [
+        "Is Freezing",
+        "Frozen River",
+        "Jagged Peaks"
+      ],
+      "condition": {
+        "neededBaseBlocks": [
+          "#cobblemon:natural"
+        ],
+        "biomes": [
+          "#cobblemon:is_freezing"
+        ],
+        "isRaining": false
+      },
+      "anticondition": {
+        "neededBaseBlocks": [
+          "minecraft:farmland"
+        ],
+        "structures": [
+          "#minecraft:village"
+        ],
+        "neededNearbyBlocks": [
+          "#cobblemon:concrete_blocks"
+        ]
+      },
+      "weightMultipliers": [],
+      "raw": {
+        "id": "castform-2",
+        "pokemon": "castform forecast=snowy",
+        "presets": [
+          "natural",
+          "wild"
+        ],
+        "type": "pokemon",
+        "spawnablePositionType": "grounded",
+        "bucket": "uncommon",
+        "level": "15-65",
+        "weight": 2,
+        "condition": {
+          "biomes": [
+            "#cobblemon:is_freezing"
+          ],
+          "isRaining": false
+        }
+      }
+    },
+    {
+      "id": "castform-3",
+      "sourceFile": "0351_castform.json",
+      "pokemon": {
+        "raw": "castform forecast=sunny",
+        "slug": "castform",
+        "aspectTokens": [
+          "forecast=sunny"
+        ]
+      },
+      "type": "pokemon",
+      "spawnablePositionType": "grounded",
+      "bucket": "uncommon",
+      "bucketWeight": 5,
+      "levelText": "15-65",
+      "levelMin": 15,
+      "levelMax": 65,
+      "weight": 2,
+      "presets": [
+        "natural",
+        "wild"
+      ],
+      "biomeHints": [
+        "Is Arid",
+        "Is Badlands",
+        "Is Desert"
+      ],
+      "condition": {
+        "neededBaseBlocks": [
+          "#cobblemon:natural"
+        ],
+        "biomes": [
+          "#cobblemon:is_arid"
+        ],
+        "timeRange": "day"
+      },
+      "anticondition": {
+        "neededBaseBlocks": [
+          "minecraft:farmland"
+        ],
+        "structures": [
+          "#minecraft:village"
+        ],
+        "neededNearbyBlocks": [
+          "#cobblemon:concrete_blocks"
+        ]
+      },
+      "weightMultipliers": [],
+      "raw": {
+        "id": "castform-3",
+        "pokemon": "castform forecast=sunny",
+        "presets": [
+          "natural",
+          "wild"
+        ],
+        "type": "pokemon",
+        "spawnablePositionType": "grounded",
+        "bucket": "uncommon",
+        "level": "15-65",
+        "weight": 2,
+        "condition": {
+          "biomes": [
+            "#cobblemon:is_arid"
+          ],
+          "timeRange": "day"
+        }
+      }
+    },
+    {
+      "id": "castform-4",
+      "sourceFile": "0351_castform.json",
+      "pokemon": {
+        "raw": "castform",
+        "slug": "castform",
+        "aspectTokens": []
+      },
+      "type": "pokemon",
+      "spawnablePositionType": "grounded",
+      "bucket": "uncommon",
+      "bucketWeight": 5,
+      "levelText": "15-65",
+      "levelMin": 15,
+      "levelMax": 65,
+      "weight": 2,
+      "presets": [
+        "natural"
+      ],
+      "biomeHints": [
+        "Is Overworld"
+      ],
+      "condition": {
+        "neededBaseBlocks": [
+          "#cobblemon:natural"
+        ],
+        "biomes": [
+          "#minecraft:is_overworld"
+        ]
+      },
+      "anticondition": {
+        "neededBaseBlocks": [
+          "minecraft:farmland"
+        ]
+      },
+      "weightMultipliers": [],
+      "raw": {
+        "id": "castform-4",
+        "pokemon": "castform",
+        "presets": [
+          "natural"
+        ],
+        "type": "pokemon",
+        "spawnablePositionType": "grounded",
+        "bucket": "uncommon",
+        "level": "15-65",
+        "weight": 2,
+        "condition": {
+          "biomes": [
+            "#minecraft:is_overworld"
+          ]
+        }
+      }
+    }
+  ],
   "forms": [
     {
       "name": "Sunny",

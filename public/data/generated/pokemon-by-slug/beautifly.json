@@ -1151,7 +1151,148 @@
       "fromFormSlug": null
     }
   ],
-  "spawnEntries": [],
+  "spawnEntries": [
+    {
+      "id": "beautifly-1",
+      "sourceFile": "0267_beautifly.json",
+      "pokemon": {
+        "raw": "beautifly",
+        "slug": "beautifly",
+        "aspectTokens": []
+      },
+      "type": "pokemon",
+      "spawnablePositionType": "grounded",
+      "bucket": "uncommon",
+      "bucketWeight": 5,
+      "levelText": "10-32",
+      "levelMin": 10,
+      "levelMax": 32,
+      "weight": 1,
+      "presets": [
+        "natural"
+      ],
+      "biomeHints": [
+        "Is Forest",
+        "Cherry Grove",
+        "Is Jungle"
+      ],
+      "condition": {
+        "neededBaseBlocks": [
+          "#cobblemon:natural"
+        ],
+        "minSkyLight": 8,
+        "maxSkyLight": 15,
+        "biomes": [
+          "#cobblemon:is_forest",
+          "#cobblemon:is_jungle"
+        ],
+        "timeRange": "day",
+        "isRaining": false
+      },
+      "anticondition": {
+        "neededBaseBlocks": [
+          "minecraft:farmland"
+        ],
+        "biomes": [
+          "#cobblemon:is_freezing",
+          "#cobblemon:is_spooky"
+        ]
+      },
+      "weightMultipliers": [],
+      "raw": {
+        "id": "beautifly-1",
+        "pokemon": "beautifly",
+        "presets": [
+          "natural"
+        ],
+        "type": "pokemon",
+        "spawnablePositionType": "grounded",
+        "bucket": "uncommon",
+        "level": "10-32",
+        "weight": 1,
+        "condition": {
+          "minSkyLight": 8,
+          "maxSkyLight": 15,
+          "biomes": [
+            "#cobblemon:is_forest",
+            "#cobblemon:is_jungle"
+          ],
+          "timeRange": "day",
+          "isRaining": false
+        },
+        "anticondition": {
+          "biomes": [
+            "#cobblemon:is_freezing",
+            "#cobblemon:is_spooky"
+          ]
+        }
+      }
+    },
+    {
+      "id": "beautifly-2",
+      "sourceFile": "0267_beautifly.json",
+      "pokemon": {
+        "raw": "beautifly",
+        "slug": "beautifly",
+        "aspectTokens": []
+      },
+      "type": "pokemon",
+      "spawnablePositionType": "unknown",
+      "bucket": "uncommon",
+      "bucketWeight": 5,
+      "levelText": "10-40",
+      "levelMin": 10,
+      "levelMax": 40,
+      "weight": 5,
+      "presets": [
+        "natural"
+      ],
+      "biomeHints": [
+        "Is Floral",
+        "Cherry Grove",
+        "Flower Forest"
+      ],
+      "condition": {
+        "neededBaseBlocks": [
+          "#cobblemon:natural"
+        ],
+        "minSkyLight": 8,
+        "maxSkyLight": 15,
+        "biomes": [
+          "#cobblemon:is_floral"
+        ],
+        "timeRange": "day",
+        "isRaining": false
+      },
+      "anticondition": {
+        "neededBaseBlocks": [
+          "minecraft:farmland"
+        ]
+      },
+      "weightMultipliers": [],
+      "raw": {
+        "id": "beautifly-2",
+        "pokemon": "beautifly",
+        "presets": [
+          "natural"
+        ],
+        "type": "pokemon",
+        "context": "grounded",
+        "bucket": "uncommon",
+        "level": "10-40",
+        "weight": 5,
+        "condition": {
+          "minSkyLight": 8,
+          "maxSkyLight": 15,
+          "biomes": [
+            "#cobblemon:is_floral"
+          ],
+          "timeRange": "day",
+          "isRaining": false
+        }
+      }
+    }
+  ],
   "forms": [],
   "drops": {
     "amount": 3,

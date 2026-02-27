@@ -1304,7 +1304,64 @@
       "fromFormSlug": null
     }
   ],
-  "spawnEntries": [],
+  "spawnEntries": [
+    {
+      "id": "volcanion-1",
+      "sourceFile": "0721_volcanion.json",
+      "pokemon": {
+        "raw": "volcanion",
+        "slug": "volcanion",
+        "aspectTokens": []
+      },
+      "type": "pokemon",
+      "spawnablePositionType": "grounded",
+      "bucket": "ultra-rare",
+      "bucketWeight": 0.2,
+      "levelText": "70",
+      "levelMin": 70,
+      "levelMax": 70,
+      "weight": 0.55,
+      "presets": [
+        "natural"
+      ],
+      "biomeHints": [
+        "Is Mountain",
+        "Is Hills"
+      ],
+      "condition": {
+        "neededBaseBlocks": [
+          "#cobblemon:natural"
+        ],
+        "biomes": [
+          "#cobblemon:is_mountain"
+        ]
+      },
+      "anticondition": {
+        "neededBaseBlocks": [
+          "minecraft:farmland"
+        ]
+      },
+      "weightMultipliers": [],
+      "raw": {
+        "id": "volcanion-1",
+        "pokemon": "volcanion",
+        "presets": [
+          "natural"
+        ],
+        "type": "pokemon",
+        "spawnablePositionType": "grounded",
+        "bucket": "ultra-rare",
+        "canSeeSky": "true",
+        "level": "70",
+        "weight": 0.55,
+        "condition": {
+          "biomes": [
+            "#cobblemon:is_mountain"
+          ]
+        }
+      }
+    }
+  ],
   "forms": [],
   "drops": {
     "amount": 5,

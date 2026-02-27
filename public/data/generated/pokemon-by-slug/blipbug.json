@@ -294,7 +294,143 @@
       "fromFormSlug": null
     }
   ],
-  "spawnEntries": [],
+  "spawnEntries": [
+    {
+      "id": "blipbug-1",
+      "sourceFile": "0824_blipbug.json",
+      "pokemon": {
+        "raw": "blipbug",
+        "slug": "blipbug",
+        "aspectTokens": []
+      },
+      "type": "pokemon",
+      "spawnablePositionType": "grounded",
+      "bucket": "common",
+      "bucketWeight": 94.3,
+      "levelText": "2-9",
+      "levelMin": 2,
+      "levelMax": 9,
+      "weight": 6,
+      "presets": [
+        "natural",
+        "treetop"
+      ],
+      "biomeHints": [
+        "Is Forest",
+        "Cherry Grove"
+      ],
+      "condition": {
+        "neededBaseBlocks": [
+          "#cobblemon:natural",
+          "#cobblemon:trees"
+        ],
+        "canSeeSky": true,
+        "biomes": [
+          "#cobblemon:is_forest"
+        ]
+      },
+      "anticondition": {
+        "neededBaseBlocks": [
+          "minecraft:farmland"
+        ],
+        "biomes": [
+          "#cobblemon:is_spooky"
+        ]
+      },
+      "weightMultipliers": [],
+      "raw": {
+        "id": "blipbug-1",
+        "pokemon": "blipbug",
+        "presets": [
+          "natural",
+          "treetop"
+        ],
+        "type": "pokemon",
+        "spawnablePositionType": "grounded",
+        "bucket": "common",
+        "level": "2-9",
+        "weight": 6,
+        "condition": {
+          "canSeeSky": true,
+          "biomes": [
+            "#cobblemon:is_forest"
+          ]
+        },
+        "anticondition": {
+          "biomes": [
+            "#cobblemon:is_spooky"
+          ]
+        }
+      }
+    },
+    {
+      "id": "blipbug-2",
+      "sourceFile": "0824_blipbug.json",
+      "pokemon": {
+        "raw": "blipbug",
+        "slug": "blipbug",
+        "aspectTokens": []
+      },
+      "type": "pokemon",
+      "spawnablePositionType": "grounded",
+      "bucket": "common",
+      "bucketWeight": 94.3,
+      "levelText": "2-9",
+      "levelMin": 2,
+      "levelMax": 9,
+      "weight": 3,
+      "presets": [
+        "natural",
+        "foliage",
+        "treetop"
+      ],
+      "biomeHints": [
+        "Is Plains",
+        "Plains",
+        "Sunflower Plains"
+      ],
+      "condition": {
+        "neededBaseBlocks": [
+          "#cobblemon:natural",
+          "#cobblemon:trees"
+        ],
+        "neededNearbyBlocks": [
+          "#minecraft:leaves",
+          "#c:leaves"
+        ],
+        "canSeeSky": true,
+        "biomes": [
+          "#cobblemon:is_plains"
+        ]
+      },
+      "anticondition": {
+        "neededBaseBlocks": [
+          "minecraft:farmland"
+        ]
+      },
+      "weightMultipliers": [],
+      "raw": {
+        "id": "blipbug-2",
+        "pokemon": "blipbug",
+        "presets": [
+          "natural",
+          "foliage",
+          "treetop"
+        ],
+        "type": "pokemon",
+        "spawnablePositionType": "grounded",
+        "bucket": "common",
+        "level": "2-9",
+        "weight": 3,
+        "condition": {
+          "canSeeSky": true,
+          "biomes": [
+            "#cobblemon:is_plains"
+          ]
+        }
+      }
+    }
+  ],
   "forms": [],
   "drops": {
     "amount": 0,

@@ -985,7 +985,91 @@
       "fromFormSlug": null
     }
   ],
-  "spawnEntries": [],
+  "spawnEntries": [
+    {
+      "id": "ragingbolt-1",
+      "sourceFile": "1021_ragingbolt.json",
+      "pokemon": {
+        "raw": "ragingbolt",
+        "slug": "ragingbolt",
+        "aspectTokens": []
+      },
+      "type": "pokemon",
+      "spawnablePositionType": "grounded",
+      "bucket": "ultra-rare",
+      "bucketWeight": 0.2,
+      "levelText": "60-75",
+      "levelMin": 60,
+      "levelMax": 75,
+      "weight": 4,
+      "presets": [
+        "natural"
+      ],
+      "biomeHints": [
+        "Is Arid",
+        "Is Badlands",
+        "Is Desert"
+      ],
+      "condition": {
+        "neededBaseBlocks": [
+          "#cobblemon:natural"
+        ],
+        "biomes": [
+          "#cobblemon:is_arid"
+        ]
+      },
+      "anticondition": {
+        "neededBaseBlocks": [
+          "minecraft:farmland"
+        ]
+      },
+      "weightMultipliers": [
+        {
+          "multiplier": 1.5,
+          "condition": {
+            "isRaining": true
+          }
+        },
+        {
+          "multiplier": 3,
+          "condition": {
+            "isThundering": true
+          }
+        }
+      ],
+      "raw": {
+        "id": "ragingbolt-1",
+        "pokemon": "ragingbolt",
+        "presets": [
+          "natural"
+        ],
+        "type": "pokemon",
+        "spawnablePositionType": "grounded",
+        "bucket": "ultra-rare",
+        "level": "60-75",
+        "weight": 4,
+        "weightMultipliers": [
+          {
+            "multiplier": 1.5,
+            "condition": {
+              "isRaining": true
+            }
+          },
+          {
+            "multiplier": 3,
+            "condition": {
+              "isThundering": true
+            }
+          }
+        ],
+        "condition": {
+          "biomes": [
+            "#cobblemon:is_arid"
+          ]
+        }
+      }
+    }
+  ],
   "forms": [],
   "drops": null,
   "rawSpecies": {

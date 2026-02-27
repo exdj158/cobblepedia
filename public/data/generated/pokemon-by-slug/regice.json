@@ -1305,7 +1305,50 @@
       "fromFormSlug": null
     }
   ],
-  "spawnEntries": [],
+  "spawnEntries": [
+    {
+      "id": "regice-1",
+      "sourceFile": "0378_regice.json",
+      "pokemon": {
+        "raw": "regice",
+        "slug": "regice",
+        "aspectTokens": []
+      },
+      "type": "pokemon",
+      "spawnablePositionType": "unknown",
+      "bucket": "ultra-rare",
+      "bucketWeight": 0.2,
+      "levelText": "40-50",
+      "levelMin": 40,
+      "levelMax": 50,
+      "weight": 0,
+      "presets": [],
+      "biomeHints": [
+        "Custom Spawn/regice Temple"
+      ],
+      "condition": {
+        "biomes": [
+          "cobbleverse:custom_spawn/regice_temple"
+        ]
+      },
+      "anticondition": null,
+      "weightMultipliers": [],
+      "raw": {
+        "id": "regice-1",
+        "pokemon": "regice",
+        "type": "pokemon",
+        "context": "grounded",
+        "bucket": "ultra-rare",
+        "level": "40-50",
+        "weight": 0,
+        "condition": {
+          "biomes": [
+            "cobbleverse:custom_spawn/regice_temple"
+          ]
+        }
+      }
+    }
+  ],
   "forms": [],
   "drops": {
     "amount": 1,

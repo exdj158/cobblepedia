@@ -1086,7 +1086,59 @@
       "fromFormSlug": null
     }
   ],
-  "spawnEntries": [],
+  "spawnEntries": [
+    {
+      "id": "hydrapple-1",
+      "sourceFile": "1019_hydrapple.json",
+      "pokemon": {
+        "raw": "hydrapple",
+        "slug": "hydrapple",
+        "aspectTokens": []
+      },
+      "type": "pokemon",
+      "spawnablePositionType": "grounded",
+      "bucket": "ultra-rare",
+      "bucketWeight": 0.2,
+      "levelText": "45-70",
+      "levelMin": 45,
+      "levelMax": 70,
+      "weight": 1.5,
+      "presets": [],
+      "biomeHints": [
+        "Is Floral",
+        "Cherry Grove",
+        "Flower Forest"
+      ],
+      "condition": {
+        "canSeeSky": true,
+        "biomes": [
+          "#cobblemon:is_floral"
+        ],
+        "isRaining": false,
+        "timeRange": "day"
+      },
+      "anticondition": null,
+      "weightMultipliers": [],
+      "raw": {
+        "id": "hydrapple-1",
+        "pokemon": "hydrapple",
+        "presets": [],
+        "type": "pokemon",
+        "spawnablePositionType": "grounded",
+        "bucket": "ultra-rare",
+        "level": "45-70",
+        "weight": 1.5,
+        "condition": {
+          "canSeeSky": true,
+          "biomes": [
+            "#cobblemon:is_floral"
+          ],
+          "isRaining": false,
+          "timeRange": "day"
+        }
+      }
+    }
+  ],
   "forms": [],
   "drops": null,
   "rawSpecies": {

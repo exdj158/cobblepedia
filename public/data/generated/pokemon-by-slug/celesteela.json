@@ -1083,7 +1083,50 @@
       "fromFormSlug": null
     }
   ],
-  "spawnEntries": [],
+  "spawnEntries": [
+    {
+      "id": "celesteela-1",
+      "sourceFile": "0797_celesteela.json",
+      "pokemon": {
+        "raw": "celesteela",
+        "slug": "celesteela",
+        "aspectTokens": []
+      },
+      "type": "pokemon",
+      "spawnablePositionType": "grounded",
+      "bucket": "ultra-rare",
+      "bucketWeight": 0.2,
+      "levelText": "65-80",
+      "levelMin": 65,
+      "levelMax": 80,
+      "weight": 0.4,
+      "presets": [],
+      "biomeHints": [
+        "Is End"
+      ],
+      "condition": {
+        "biomes": [
+          "#cobblemon:is_end"
+        ]
+      },
+      "anticondition": null,
+      "weightMultipliers": [],
+      "raw": {
+        "id": "celesteela-1",
+        "pokemon": "celesteela",
+        "type": "pokemon",
+        "spawnablePositionType": "grounded",
+        "bucket": "ultra-rare",
+        "level": "65-80",
+        "weight": 0.4,
+        "condition": {
+          "biomes": [
+            "#cobblemon:is_end"
+          ]
+        }
+      }
+    }
+  ],
   "forms": [],
   "drops": {
     "amount": 3,

@@ -965,7 +965,2150 @@
       "fromFormSlug": null
     }
   ],
-  "spawnEntries": [],
+  "spawnEntries": [
+    {
+      "id": "tympole-1",
+      "sourceFile": "0535_tympole.json",
+      "pokemon": {
+        "raw": "tympole",
+        "slug": "tympole",
+        "aspectTokens": []
+      },
+      "type": "pokemon",
+      "spawnablePositionType": "grounded",
+      "bucket": "common",
+      "bucketWeight": 94.3,
+      "levelText": "1-21",
+      "levelMin": 1,
+      "levelMax": 21,
+      "weight": 9,
+      "presets": [
+        "natural"
+      ],
+      "biomeHints": [
+        "Is Lush",
+        "Lush Caves"
+      ],
+      "condition": {
+        "neededBaseBlocks": [
+          "#cobblemon:natural"
+        ],
+        "minSkyLight": 0,
+        "maxSkyLight": 7,
+        "biomes": [
+          "#cobblemon:is_lush"
+        ]
+      },
+      "anticondition": {
+        "neededBaseBlocks": [
+          "minecraft:farmland"
+        ],
+        "structures": [
+          "cobblemon:shipwreck_coves/lush_shipwreck_cove"
+        ],
+        "minY": -41,
+        "maxY": 9
+      },
+      "weightMultipliers": [],
+      "raw": {
+        "id": "tympole-1",
+        "pokemon": "tympole",
+        "presets": [
+          "natural"
+        ],
+        "type": "pokemon",
+        "spawnablePositionType": "grounded",
+        "bucket": "common",
+        "level": "1-21",
+        "weight": 9,
+        "condition": {
+          "minSkyLight": 0,
+          "maxSkyLight": 7,
+          "biomes": [
+            "#cobblemon:is_lush"
+          ]
+        },
+        "anticondition": {
+          "structures": [
+            "cobblemon:shipwreck_coves/lush_shipwreck_cove"
+          ],
+          "minY": -41,
+          "maxY": 9
+        }
+      }
+    },
+    {
+      "id": "tympole-10",
+      "sourceFile": "0535_tympole.json",
+      "pokemon": {
+        "raw": "tympole",
+        "slug": "tympole",
+        "aspectTokens": []
+      },
+      "type": "pokemon",
+      "spawnablePositionType": "fishing",
+      "bucket": "common",
+      "bucketWeight": 94.3,
+      "levelText": "1-21",
+      "levelMin": 1,
+      "levelMax": 21,
+      "weight": 1.8,
+      "presets": [],
+      "biomeHints": [
+        "Is Mushroom",
+        "Dark Forest",
+        "Mushroom Fields",
+        "Is Swamp",
+        "Mangrove Swamp",
+        "Swamp"
+      ],
+      "condition": {
+        "canSeeSky": false,
+        "minSkyLight": 8,
+        "maxSkyLight": 15,
+        "biomes": [
+          "#cobblemon:is_mushroom",
+          "#cobblemon:is_swamp"
+        ]
+      },
+      "anticondition": {
+        "biomes": [
+          "#cobblemon:has_block/mud"
+        ]
+      },
+      "weightMultipliers": [
+        {
+          "multiplier": 3,
+          "condition": {
+            "minLureLevel": 2,
+            "maxLureLevel": 2
+          }
+        },
+        {
+          "multiplier": 5,
+          "condition": {
+            "minLureLevel": 3
+          }
+        }
+      ],
+      "raw": {
+        "id": "tympole-10",
+        "pokemon": "tympole",
+        "type": "pokemon",
+        "spawnablePositionType": "fishing",
+        "bucket": "common",
+        "level": "1-21",
+        "weight": 1.8,
+        "weightMultipliers": [
+          {
+            "multiplier": 3,
+            "condition": {
+              "minLureLevel": 2,
+              "maxLureLevel": 2
+            }
+          },
+          {
+            "multiplier": 5,
+            "condition": {
+              "minLureLevel": 3
+            }
+          }
+        ],
+        "condition": {
+          "canSeeSky": false,
+          "minSkyLight": 8,
+          "maxSkyLight": 15,
+          "biomes": [
+            "#cobblemon:is_mushroom",
+            "#cobblemon:is_swamp"
+          ]
+        },
+        "anticondition": {
+          "biomes": [
+            "#cobblemon:has_block/mud"
+          ]
+        }
+      }
+    },
+    {
+      "id": "tympole-11",
+      "sourceFile": "0535_tympole.json",
+      "pokemon": {
+        "raw": "tympole",
+        "slug": "tympole",
+        "aspectTokens": []
+      },
+      "type": "pokemon",
+      "spawnablePositionType": "grounded",
+      "bucket": "common",
+      "bucketWeight": 94.3,
+      "levelText": "1-21",
+      "levelMin": 1,
+      "levelMax": 21,
+      "weight": 9,
+      "presets": [
+        "natural"
+      ],
+      "biomeHints": [
+        "Is Overworld"
+      ],
+      "condition": {
+        "neededBaseBlocks": [
+          "#cobblemon:natural"
+        ],
+        "minSkyLight": 0,
+        "maxSkyLight": 7,
+        "biomes": [
+          "#cobblemon:is_overworld"
+        ],
+        "structures": [
+          "cobblemon:shipwreck_coves/lush_shipwreck_cove"
+        ],
+        "minY": -41,
+        "maxY": 9
+      },
+      "anticondition": {
+        "neededBaseBlocks": [
+          "minecraft:farmland"
+        ],
+        "biomes": [
+          "#cobblemon:is_lush"
+        ]
+      },
+      "weightMultipliers": [],
+      "raw": {
+        "id": "tympole-11",
+        "pokemon": "tympole",
+        "presets": [
+          "natural"
+        ],
+        "type": "pokemon",
+        "spawnablePositionType": "grounded",
+        "bucket": "common",
+        "level": "1-21",
+        "weight": 9,
+        "condition": {
+          "minSkyLight": 0,
+          "maxSkyLight": 7,
+          "biomes": [
+            "#cobblemon:is_overworld"
+          ],
+          "structures": [
+            "cobblemon:shipwreck_coves/lush_shipwreck_cove"
+          ],
+          "minY": -41,
+          "maxY": 9
+        },
+        "anticondition": {
+          "biomes": [
+            "#cobblemon:is_lush"
+          ]
+        }
+      }
+    },
+    {
+      "id": "tympole-12",
+      "sourceFile": "0535_tympole.json",
+      "pokemon": {
+        "raw": "tympole",
+        "slug": "tympole",
+        "aspectTokens": []
+      },
+      "type": "pokemon",
+      "spawnablePositionType": "submerged",
+      "bucket": "common",
+      "bucketWeight": 94.3,
+      "levelText": "1-21",
+      "levelMin": 1,
+      "levelMax": 21,
+      "weight": 9,
+      "presets": [
+        "water"
+      ],
+      "biomeHints": [
+        "Is Overworld"
+      ],
+      "condition": {
+        "fluid": "#minecraft:water",
+        "minSkyLight": 0,
+        "maxSkyLight": 7,
+        "biomes": [
+          "#cobblemon:is_overworld"
+        ],
+        "structures": [
+          "cobblemon:shipwreck_coves/lush_shipwreck_cove"
+        ],
+        "minY": -41,
+        "maxY": 9
+      },
+      "anticondition": {
+        "biomes": [
+          "#cobblemon:is_lush"
+        ]
+      },
+      "weightMultipliers": [],
+      "raw": {
+        "id": "tympole-12",
+        "pokemon": "tympole",
+        "presets": [
+          "water"
+        ],
+        "type": "pokemon",
+        "spawnablePositionType": "submerged",
+        "bucket": "common",
+        "level": "1-21",
+        "weight": 9,
+        "condition": {
+          "minSkyLight": 0,
+          "maxSkyLight": 7,
+          "biomes": [
+            "#cobblemon:is_overworld"
+          ],
+          "structures": [
+            "cobblemon:shipwreck_coves/lush_shipwreck_cove"
+          ],
+          "minY": -41,
+          "maxY": 9
+        },
+        "anticondition": {
+          "biomes": [
+            "#cobblemon:is_lush"
+          ]
+        }
+      }
+    },
+    {
+      "id": "tympole-13",
+      "sourceFile": "0535_tympole.json",
+      "pokemon": {
+        "raw": "tympole",
+        "slug": "tympole",
+        "aspectTokens": []
+      },
+      "type": "pokemon",
+      "spawnablePositionType": "grounded",
+      "bucket": "uncommon",
+      "bucketWeight": 5,
+      "levelText": "1-21",
+      "levelMin": 1,
+      "levelMax": 21,
+      "weight": 8.4,
+      "presets": [
+        "natural"
+      ],
+      "biomeHints": [
+        "Is Aether"
+      ],
+      "condition": {
+        "neededBaseBlocks": [
+          "#cobblemon:natural"
+        ],
+        "minSkyLight": 0,
+        "maxSkyLight": 7,
+        "biomes": [
+          "#aether:is_aether"
+        ],
+        "neededNearbyBlocks": [
+          "#minecraft:water"
+        ]
+      },
+      "anticondition": {
+        "neededBaseBlocks": [
+          "minecraft:farmland"
+        ]
+      },
+      "weightMultipliers": [],
+      "raw": {
+        "id": "tympole-13",
+        "pokemon": "tympole",
+        "presets": [
+          "natural"
+        ],
+        "type": "pokemon",
+        "spawnablePositionType": "grounded",
+        "bucket": "uncommon",
+        "level": "1-21",
+        "weight": 8.4,
+        "condition": {
+          "minSkyLight": 0,
+          "maxSkyLight": 7,
+          "biomes": [
+            "#aether:is_aether"
+          ],
+          "neededNearbyBlocks": [
+            "#minecraft:water"
+          ]
+        }
+      }
+    },
+    {
+      "id": "tympole-14",
+      "sourceFile": "0535_tympole.json",
+      "pokemon": {
+        "raw": "tympole",
+        "slug": "tympole",
+        "aspectTokens": []
+      },
+      "type": "pokemon",
+      "spawnablePositionType": "submerged",
+      "bucket": "uncommon",
+      "bucketWeight": 5,
+      "levelText": "1-21",
+      "levelMin": 1,
+      "levelMax": 21,
+      "weight": 8.4,
+      "presets": [
+        "water"
+      ],
+      "biomeHints": [
+        "Is Aether"
+      ],
+      "condition": {
+        "fluid": "#minecraft:water",
+        "minSkyLight": 0,
+        "maxSkyLight": 7,
+        "biomes": [
+          "#aether:is_aether"
+        ]
+      },
+      "anticondition": null,
+      "weightMultipliers": [],
+      "raw": {
+        "id": "tympole-14",
+        "pokemon": "tympole",
+        "presets": [
+          "water"
+        ],
+        "type": "pokemon",
+        "spawnablePositionType": "submerged",
+        "bucket": "uncommon",
+        "level": "1-21",
+        "weight": 8.4,
+        "condition": {
+          "minSkyLight": 0,
+          "maxSkyLight": 7,
+          "biomes": [
+            "#aether:is_aether"
+          ]
+        }
+      }
+    },
+    {
+      "id": "tympole-2",
+      "sourceFile": "0535_tympole.json",
+      "pokemon": {
+        "raw": "tympole",
+        "slug": "tympole",
+        "aspectTokens": []
+      },
+      "type": "pokemon",
+      "spawnablePositionType": "submerged",
+      "bucket": "common",
+      "bucketWeight": 94.3,
+      "levelText": "1-21",
+      "levelMin": 1,
+      "levelMax": 21,
+      "weight": 9,
+      "presets": [
+        "water"
+      ],
+      "biomeHints": [
+        "Is Lush",
+        "Lush Caves"
+      ],
+      "condition": {
+        "fluid": "#minecraft:water",
+        "minSkyLight": 0,
+        "maxSkyLight": 7,
+        "biomes": [
+          "#cobblemon:is_lush"
+        ]
+      },
+      "anticondition": {
+        "structures": [
+          "cobblemon:shipwreck_coves/lush_shipwreck_cove"
+        ],
+        "minY": -41,
+        "maxY": 9
+      },
+      "weightMultipliers": [],
+      "raw": {
+        "id": "tympole-2",
+        "pokemon": "tympole",
+        "presets": [
+          "water"
+        ],
+        "type": "pokemon",
+        "spawnablePositionType": "submerged",
+        "bucket": "common",
+        "level": "1-21",
+        "weight": 9,
+        "condition": {
+          "minSkyLight": 0,
+          "maxSkyLight": 7,
+          "biomes": [
+            "#cobblemon:is_lush"
+          ]
+        },
+        "anticondition": {
+          "structures": [
+            "cobblemon:shipwreck_coves/lush_shipwreck_cove"
+          ],
+          "minY": -41,
+          "maxY": 9
+        }
+      }
+    },
+    {
+      "id": "tympole-3",
+      "sourceFile": "0535_tympole.json",
+      "pokemon": {
+        "raw": "tympole",
+        "slug": "tympole",
+        "aspectTokens": []
+      },
+      "type": "pokemon",
+      "spawnablePositionType": "grounded",
+      "bucket": "uncommon",
+      "bucketWeight": 5,
+      "levelText": "1-21",
+      "levelMin": 1,
+      "levelMax": 21,
+      "weight": 8.4,
+      "presets": [
+        "natural"
+      ],
+      "biomeHints": [
+        "Is Overworld"
+      ],
+      "condition": {
+        "neededBaseBlocks": [
+          "#cobblemon:natural"
+        ],
+        "minSkyLight": 0,
+        "maxSkyLight": 7,
+        "biomes": [
+          "#cobblemon:is_overworld"
+        ],
+        "neededNearbyBlocks": [
+          "#minecraft:water"
+        ],
+        "maxY": 62
+      },
+      "anticondition": {
+        "neededBaseBlocks": [
+          "minecraft:farmland"
+        ],
+        "biomes": [
+          "#cobblemon:is_lush"
+        ]
+      },
+      "weightMultipliers": [],
+      "raw": {
+        "id": "tympole-3",
+        "pokemon": "tympole",
+        "presets": [
+          "natural"
+        ],
+        "type": "pokemon",
+        "spawnablePositionType": "grounded",
+        "bucket": "uncommon",
+        "level": "1-21",
+        "weight": 8.4,
+        "condition": {
+          "minSkyLight": 0,
+          "maxSkyLight": 7,
+          "biomes": [
+            "#cobblemon:is_overworld"
+          ],
+          "neededNearbyBlocks": [
+            "#minecraft:water"
+          ],
+          "maxY": 62
+        },
+        "anticondition": {
+          "biomes": [
+            "#cobblemon:is_lush"
+          ]
+        }
+      }
+    },
+    {
+      "id": "tympole-4",
+      "sourceFile": "0535_tympole.json",
+      "pokemon": {
+        "raw": "tympole",
+        "slug": "tympole",
+        "aspectTokens": []
+      },
+      "type": "pokemon",
+      "spawnablePositionType": "submerged",
+      "bucket": "uncommon",
+      "bucketWeight": 5,
+      "levelText": "1-21",
+      "levelMin": 1,
+      "levelMax": 21,
+      "weight": 8.4,
+      "presets": [
+        "water"
+      ],
+      "biomeHints": [
+        "Is Overworld"
+      ],
+      "condition": {
+        "fluid": "#minecraft:water",
+        "minSkyLight": 0,
+        "maxSkyLight": 7,
+        "biomes": [
+          "#cobblemon:is_overworld"
+        ],
+        "maxY": 62
+      },
+      "anticondition": {
+        "biomes": [
+          "#cobblemon:is_lush"
+        ]
+      },
+      "weightMultipliers": [],
+      "raw": {
+        "id": "tympole-4",
+        "pokemon": "tympole",
+        "presets": [
+          "water"
+        ],
+        "type": "pokemon",
+        "spawnablePositionType": "submerged",
+        "bucket": "uncommon",
+        "level": "1-21",
+        "weight": 8.4,
+        "condition": {
+          "minSkyLight": 0,
+          "maxSkyLight": 7,
+          "biomes": [
+            "#cobblemon:is_overworld"
+          ],
+          "maxY": 62
+        },
+        "anticondition": {
+          "biomes": [
+            "#cobblemon:is_lush"
+          ]
+        }
+      }
+    },
+    {
+      "id": "tympole-5",
+      "sourceFile": "0535_tympole.json",
+      "pokemon": {
+        "raw": "tympole",
+        "slug": "tympole",
+        "aspectTokens": []
+      },
+      "type": "pokemon",
+      "spawnablePositionType": "grounded",
+      "bucket": "common",
+      "bucketWeight": 94.3,
+      "levelText": "1-21",
+      "levelMin": 1,
+      "levelMax": 21,
+      "weight": 1.8,
+      "presets": [
+        "natural"
+      ],
+      "biomeHints": [
+        "Is Swamp",
+        "Mangrove Swamp",
+        "Swamp"
+      ],
+      "condition": {
+        "neededBaseBlocks": [
+          "#cobblemon:natural"
+        ],
+        "minSkyLight": 8,
+        "maxSkyLight": 15,
+        "biomes": [
+          "#cobblemon:is_swamp"
+        ],
+        "isRaining": true
+      },
+      "anticondition": {
+        "neededBaseBlocks": [
+          "minecraft:farmland"
+        ],
+        "biomes": [
+          "#cobblemon:has_block/mud"
+        ]
+      },
+      "weightMultipliers": [],
+      "raw": {
+        "id": "tympole-5",
+        "pokemon": "tympole",
+        "presets": [
+          "natural"
+        ],
+        "type": "pokemon",
+        "spawnablePositionType": "grounded",
+        "bucket": "common",
+        "level": "1-21",
+        "weight": 1.8,
+        "condition": {
+          "minSkyLight": 8,
+          "maxSkyLight": 15,
+          "biomes": [
+            "#cobblemon:is_swamp"
+          ],
+          "isRaining": true
+        },
+        "anticondition": {
+          "biomes": [
+            "#cobblemon:has_block/mud"
+          ]
+        }
+      }
+    },
+    {
+      "id": "tympole-6",
+      "sourceFile": "0535_tympole.json",
+      "pokemon": {
+        "raw": "tympole",
+        "slug": "tympole",
+        "aspectTokens": []
+      },
+      "type": "pokemon",
+      "spawnablePositionType": "submerged",
+      "bucket": "common",
+      "bucketWeight": 94.3,
+      "levelText": "1-21",
+      "levelMin": 1,
+      "levelMax": 21,
+      "weight": 1.8,
+      "presets": [
+        "water"
+      ],
+      "biomeHints": [
+        "Is Swamp",
+        "Mangrove Swamp",
+        "Swamp"
+      ],
+      "condition": {
+        "fluid": "#minecraft:water",
+        "canSeeSky": true,
+        "biomes": [
+          "#cobblemon:is_swamp"
+        ]
+      },
+      "anticondition": {
+        "biomes": [
+          "#cobblemon:has_block/mud"
+        ]
+      },
+      "weightMultipliers": [],
+      "raw": {
+        "id": "tympole-6",
+        "pokemon": "tympole",
+        "presets": [
+          "water"
+        ],
+        "type": "pokemon",
+        "spawnablePositionType": "submerged",
+        "bucket": "common",
+        "level": "1-21",
+        "weight": 1.8,
+        "condition": {
+          "canSeeSky": true,
+          "biomes": [
+            "#cobblemon:is_swamp"
+          ]
+        },
+        "anticondition": {
+          "biomes": [
+            "#cobblemon:has_block/mud"
+          ]
+        }
+      }
+    },
+    {
+      "id": "tympole-7",
+      "sourceFile": "0535_tympole.json",
+      "pokemon": {
+        "raw": "tympole",
+        "slug": "tympole",
+        "aspectTokens": []
+      },
+      "type": "pokemon",
+      "spawnablePositionType": "submerged",
+      "bucket": "common",
+      "bucketWeight": 94.3,
+      "levelText": "1-21",
+      "levelMin": 1,
+      "levelMax": 21,
+      "weight": 1.8,
+      "presets": [
+        "water"
+      ],
+      "biomeHints": [
+        "Is Swamp",
+        "Mangrove Swamp",
+        "Swamp"
+      ],
+      "condition": {
+        "fluid": "#minecraft:water",
+        "canSeeSky": false,
+        "minSkyLight": 8,
+        "maxSkyLight": 15,
+        "biomes": [
+          "#cobblemon:is_swamp"
+        ]
+      },
+      "anticondition": {
+        "biomes": [
+          "#cobblemon:has_block/mud"
+        ]
+      },
+      "weightMultipliers": [],
+      "raw": {
+        "id": "tympole-7",
+        "pokemon": "tympole",
+        "presets": [
+          "water"
+        ],
+        "type": "pokemon",
+        "spawnablePositionType": "submerged",
+        "bucket": "common",
+        "level": "1-21",
+        "weight": 1.8,
+        "condition": {
+          "canSeeSky": false,
+          "minSkyLight": 8,
+          "maxSkyLight": 15,
+          "biomes": [
+            "#cobblemon:is_swamp"
+          ]
+        },
+        "anticondition": {
+          "biomes": [
+            "#cobblemon:has_block/mud"
+          ]
+        }
+      }
+    },
+    {
+      "id": "tympole-8",
+      "sourceFile": "0535_tympole.json",
+      "pokemon": {
+        "raw": "tympole",
+        "slug": "tympole",
+        "aspectTokens": []
+      },
+      "type": "pokemon",
+      "spawnablePositionType": "fishing",
+      "bucket": "common",
+      "bucketWeight": 94.3,
+      "levelText": "1-21",
+      "levelMin": 1,
+      "levelMax": 21,
+      "weight": 9,
+      "presets": [],
+      "biomeHints": [
+        "Is Aether",
+        "Is Overworld"
+      ],
+      "condition": {
+        "minSkyLight": 0,
+        "maxSkyLight": 7,
+        "biomes": [
+          "#aether:is_aether",
+          "#cobblemon:is_overworld"
+        ]
+      },
+      "anticondition": null,
+      "weightMultipliers": [],
+      "raw": {
+        "id": "tympole-8",
+        "pokemon": "tympole",
+        "type": "pokemon",
+        "spawnablePositionType": "fishing",
+        "bucket": "common",
+        "level": "1-21",
+        "weight": 9,
+        "condition": {
+          "minSkyLight": 0,
+          "maxSkyLight": 7,
+          "biomes": [
+            "#aether:is_aether",
+            "#cobblemon:is_overworld"
+          ]
+        }
+      }
+    },
+    {
+      "id": "tympole-9",
+      "sourceFile": "0535_tympole.json",
+      "pokemon": {
+        "raw": "tympole",
+        "slug": "tympole",
+        "aspectTokens": []
+      },
+      "type": "pokemon",
+      "spawnablePositionType": "fishing",
+      "bucket": "common",
+      "bucketWeight": 94.3,
+      "levelText": "1-21",
+      "levelMin": 1,
+      "levelMax": 21,
+      "weight": 1.8,
+      "presets": [],
+      "biomeHints": [
+        "Is Mushroom",
+        "Dark Forest",
+        "Mushroom Fields",
+        "Is Swamp",
+        "Mangrove Swamp",
+        "Swamp"
+      ],
+      "condition": {
+        "canSeeSky": true,
+        "biomes": [
+          "#cobblemon:is_mushroom",
+          "#cobblemon:is_swamp"
+        ]
+      },
+      "anticondition": {
+        "biomes": [
+          "#cobblemon:has_block/mud"
+        ]
+      },
+      "weightMultipliers": [
+        {
+          "multiplier": 3,
+          "condition": {
+            "minLureLevel": 2,
+            "maxLureLevel": 2
+          }
+        },
+        {
+          "multiplier": 5,
+          "condition": {
+            "minLureLevel": 3
+          }
+        }
+      ],
+      "raw": {
+        "id": "tympole-9",
+        "pokemon": "tympole",
+        "type": "pokemon",
+        "spawnablePositionType": "fishing",
+        "bucket": "common",
+        "level": "1-21",
+        "weight": 1.8,
+        "weightMultipliers": [
+          {
+            "multiplier": 3,
+            "condition": {
+              "minLureLevel": 2,
+              "maxLureLevel": 2
+            }
+          },
+          {
+            "multiplier": 5,
+            "condition": {
+              "minLureLevel": 3
+            }
+          }
+        ],
+        "condition": {
+          "canSeeSky": true,
+          "biomes": [
+            "#cobblemon:is_mushroom",
+            "#cobblemon:is_swamp"
+          ]
+        },
+        "anticondition": {
+          "biomes": [
+            "#cobblemon:has_block/mud"
+          ]
+        }
+      }
+    },
+    {
+      "id": "tympole-heart-15",
+      "sourceFile": "0535_tympole.json",
+      "pokemon": {
+        "raw": "tympole tympole_pattern=heart",
+        "slug": "tympole",
+        "aspectTokens": [
+          "tympole_pattern=heart"
+        ]
+      },
+      "type": "pokemon",
+      "spawnablePositionType": "fishing",
+      "bucket": "uncommon",
+      "bucketWeight": 5,
+      "levelText": "1-21",
+      "levelMin": 1,
+      "levelMax": 21,
+      "weight": 10,
+      "presets": [],
+      "biomeHints": [
+        "Is Aether",
+        "Is Overworld"
+      ],
+      "condition": {
+        "minSkyLight": 0,
+        "maxSkyLight": 7,
+        "biomes": [
+          "#aether:is_aether",
+          "#cobblemon:is_overworld"
+        ],
+        "bobber": "cobblemon:love_ball"
+      },
+      "anticondition": null,
+      "weightMultipliers": [],
+      "raw": {
+        "id": "tympole-heart-15",
+        "pokemon": "tympole tympole_pattern=heart",
+        "type": "pokemon",
+        "spawnablePositionType": "fishing",
+        "bucket": "uncommon",
+        "level": "1-21",
+        "weight": 10,
+        "condition": {
+          "minSkyLight": 0,
+          "maxSkyLight": 7,
+          "biomes": [
+            "#aether:is_aether",
+            "#cobblemon:is_overworld"
+          ],
+          "bobber": "cobblemon:love_ball"
+        }
+      }
+    },
+    {
+      "id": "tympole-heart-16",
+      "sourceFile": "0535_tympole.json",
+      "pokemon": {
+        "raw": "tympole tympole_pattern=heart",
+        "slug": "tympole",
+        "aspectTokens": [
+          "tympole_pattern=heart"
+        ]
+      },
+      "type": "pokemon",
+      "spawnablePositionType": "fishing",
+      "bucket": "uncommon",
+      "bucketWeight": 5,
+      "levelText": "1-21",
+      "levelMin": 1,
+      "levelMax": 21,
+      "weight": 2,
+      "presets": [],
+      "biomeHints": [
+        "Is Mushroom",
+        "Dark Forest",
+        "Mushroom Fields",
+        "Is Swamp",
+        "Mangrove Swamp",
+        "Swamp"
+      ],
+      "condition": {
+        "canSeeSky": true,
+        "biomes": [
+          "#cobblemon:is_mushroom",
+          "#cobblemon:is_swamp"
+        ],
+        "bobber": "cobblemon:love_ball"
+      },
+      "anticondition": {
+        "biomes": [
+          "#cobblemon:has_block/mud"
+        ]
+      },
+      "weightMultipliers": [
+        {
+          "multiplier": 3,
+          "condition": {
+            "minLureLevel": 2,
+            "maxLureLevel": 2
+          }
+        },
+        {
+          "multiplier": 5,
+          "condition": {
+            "minLureLevel": 3
+          }
+        }
+      ],
+      "raw": {
+        "id": "tympole-heart-16",
+        "pokemon": "tympole tympole_pattern=heart",
+        "type": "pokemon",
+        "spawnablePositionType": "fishing",
+        "bucket": "uncommon",
+        "level": "1-21",
+        "weight": 2,
+        "weightMultipliers": [
+          {
+            "multiplier": 3,
+            "condition": {
+              "minLureLevel": 2,
+              "maxLureLevel": 2
+            }
+          },
+          {
+            "multiplier": 5,
+            "condition": {
+              "minLureLevel": 3
+            }
+          }
+        ],
+        "condition": {
+          "canSeeSky": true,
+          "biomes": [
+            "#cobblemon:is_mushroom",
+            "#cobblemon:is_swamp"
+          ],
+          "bobber": "cobblemon:love_ball"
+        },
+        "anticondition": {
+          "biomes": [
+            "#cobblemon:has_block/mud"
+          ]
+        }
+      }
+    },
+    {
+      "id": "tympole-heart-17",
+      "sourceFile": "0535_tympole.json",
+      "pokemon": {
+        "raw": "tympole tympole_pattern=heart",
+        "slug": "tympole",
+        "aspectTokens": [
+          "tympole_pattern=heart"
+        ]
+      },
+      "type": "pokemon",
+      "spawnablePositionType": "fishing",
+      "bucket": "common",
+      "bucketWeight": 94.3,
+      "levelText": "1-21",
+      "levelMin": 1,
+      "levelMax": 21,
+      "weight": 20,
+      "presets": [],
+      "biomeHints": [
+        "Is Aether",
+        "Is Overworld"
+      ],
+      "condition": {
+        "minSkyLight": 0,
+        "maxSkyLight": 7,
+        "biomes": [
+          "#aether:is_aether",
+          "#cobblemon:is_overworld"
+        ],
+        "bait": "cobblemon:love_sweet"
+      },
+      "anticondition": null,
+      "weightMultipliers": [],
+      "raw": {
+        "id": "tympole-heart-17",
+        "pokemon": "tympole tympole_pattern=heart",
+        "type": "pokemon",
+        "spawnablePositionType": "fishing",
+        "bucket": "common",
+        "level": "1-21",
+        "weight": 20,
+        "condition": {
+          "minSkyLight": 0,
+          "maxSkyLight": 7,
+          "biomes": [
+            "#aether:is_aether",
+            "#cobblemon:is_overworld"
+          ],
+          "bait": "cobblemon:love_sweet"
+        }
+      }
+    },
+    {
+      "id": "tympole-heart-18",
+      "sourceFile": "0535_tympole.json",
+      "pokemon": {
+        "raw": "tympole tympole_pattern=heart",
+        "slug": "tympole",
+        "aspectTokens": [
+          "tympole_pattern=heart"
+        ]
+      },
+      "type": "pokemon",
+      "spawnablePositionType": "fishing",
+      "bucket": "common",
+      "bucketWeight": 94.3,
+      "levelText": "1-21",
+      "levelMin": 1,
+      "levelMax": 21,
+      "weight": 20,
+      "presets": [],
+      "biomeHints": [
+        "Is Mushroom",
+        "Dark Forest",
+        "Mushroom Fields",
+        "Is Swamp",
+        "Mangrove Swamp",
+        "Swamp"
+      ],
+      "condition": {
+        "canSeeSky": true,
+        "biomes": [
+          "#cobblemon:is_mushroom",
+          "#cobblemon:is_swamp"
+        ],
+        "bait": "cobblemon:love_sweet"
+      },
+      "anticondition": {
+        "biomes": [
+          "#cobblemon:has_block/mud"
+        ]
+      },
+      "weightMultipliers": [
+        {
+          "multiplier": 3,
+          "condition": {
+            "minLureLevel": 2,
+            "maxLureLevel": 2
+          }
+        },
+        {
+          "multiplier": 5,
+          "condition": {
+            "minLureLevel": 3
+          }
+        }
+      ],
+      "raw": {
+        "id": "tympole-heart-18",
+        "pokemon": "tympole tympole_pattern=heart",
+        "type": "pokemon",
+        "spawnablePositionType": "fishing",
+        "bucket": "common",
+        "level": "1-21",
+        "weight": 20,
+        "weightMultipliers": [
+          {
+            "multiplier": 3,
+            "condition": {
+              "minLureLevel": 2,
+              "maxLureLevel": 2
+            }
+          },
+          {
+            "multiplier": 5,
+            "condition": {
+              "minLureLevel": 3
+            }
+          }
+        ],
+        "condition": {
+          "canSeeSky": true,
+          "biomes": [
+            "#cobblemon:is_mushroom",
+            "#cobblemon:is_swamp"
+          ],
+          "bait": "cobblemon:love_sweet"
+        },
+        "anticondition": {
+          "biomes": [
+            "#cobblemon:has_block/mud"
+          ]
+        }
+      }
+    },
+    {
+      "id": "tympole-heart-19",
+      "sourceFile": "0535_tympole.json",
+      "pokemon": {
+        "raw": "tympole tympole_pattern=heart",
+        "slug": "tympole",
+        "aspectTokens": [
+          "tympole_pattern=heart"
+        ]
+      },
+      "type": "pokemon",
+      "spawnablePositionType": "fishing",
+      "bucket": "uncommon",
+      "bucketWeight": 5,
+      "levelText": "1-21",
+      "levelMin": 1,
+      "levelMax": 21,
+      "weight": 2,
+      "presets": [],
+      "biomeHints": [
+        "Is Mushroom",
+        "Dark Forest",
+        "Mushroom Fields",
+        "Is Swamp",
+        "Mangrove Swamp",
+        "Swamp"
+      ],
+      "condition": {
+        "canSeeSky": false,
+        "minSkyLight": 8,
+        "maxSkyLight": 15,
+        "biomes": [
+          "#cobblemon:is_mushroom",
+          "#cobblemon:is_swamp"
+        ],
+        "bobber": "cobblemon:love_ball"
+      },
+      "anticondition": {
+        "biomes": [
+          "#cobblemon:has_block/mud"
+        ]
+      },
+      "weightMultipliers": [
+        {
+          "multiplier": 3,
+          "condition": {
+            "minLureLevel": 2,
+            "maxLureLevel": 2
+          }
+        },
+        {
+          "multiplier": 5,
+          "condition": {
+            "minLureLevel": 3
+          }
+        }
+      ],
+      "raw": {
+        "id": "tympole-heart-19",
+        "pokemon": "tympole tympole_pattern=heart",
+        "type": "pokemon",
+        "spawnablePositionType": "fishing",
+        "bucket": "uncommon",
+        "level": "1-21",
+        "weight": 2,
+        "weightMultipliers": [
+          {
+            "multiplier": 3,
+            "condition": {
+              "minLureLevel": 2,
+              "maxLureLevel": 2
+            }
+          },
+          {
+            "multiplier": 5,
+            "condition": {
+              "minLureLevel": 3
+            }
+          }
+        ],
+        "condition": {
+          "canSeeSky": false,
+          "minSkyLight": 8,
+          "maxSkyLight": 15,
+          "biomes": [
+            "#cobblemon:is_mushroom",
+            "#cobblemon:is_swamp"
+          ],
+          "bobber": "cobblemon:love_ball"
+        },
+        "anticondition": {
+          "biomes": [
+            "#cobblemon:has_block/mud"
+          ]
+        }
+      }
+    },
+    {
+      "id": "tympole-heart-20",
+      "sourceFile": "0535_tympole.json",
+      "pokemon": {
+        "raw": "tympole tympole_pattern=heart",
+        "slug": "tympole",
+        "aspectTokens": [
+          "tympole_pattern=heart"
+        ]
+      },
+      "type": "pokemon",
+      "spawnablePositionType": "fishing",
+      "bucket": "common",
+      "bucketWeight": 94.3,
+      "levelText": "1-21",
+      "levelMin": 1,
+      "levelMax": 21,
+      "weight": 20,
+      "presets": [],
+      "biomeHints": [
+        "Is Mushroom",
+        "Dark Forest",
+        "Mushroom Fields",
+        "Is Swamp",
+        "Mangrove Swamp",
+        "Swamp"
+      ],
+      "condition": {
+        "canSeeSky": false,
+        "minSkyLight": 8,
+        "maxSkyLight": 15,
+        "biomes": [
+          "#cobblemon:is_mushroom",
+          "#cobblemon:is_swamp"
+        ],
+        "bait": "cobblemon:love_sweet"
+      },
+      "anticondition": {
+        "biomes": [
+          "#cobblemon:has_block/mud"
+        ]
+      },
+      "weightMultipliers": [
+        {
+          "multiplier": 3,
+          "condition": {
+            "minLureLevel": 2,
+            "maxLureLevel": 2
+          }
+        },
+        {
+          "multiplier": 5,
+          "condition": {
+            "minLureLevel": 3
+          }
+        }
+      ],
+      "raw": {
+        "id": "tympole-heart-20",
+        "pokemon": "tympole tympole_pattern=heart",
+        "type": "pokemon",
+        "spawnablePositionType": "fishing",
+        "bucket": "common",
+        "level": "1-21",
+        "weight": 20,
+        "weightMultipliers": [
+          {
+            "multiplier": 3,
+            "condition": {
+              "minLureLevel": 2,
+              "maxLureLevel": 2
+            }
+          },
+          {
+            "multiplier": 5,
+            "condition": {
+              "minLureLevel": 3
+            }
+          }
+        ],
+        "condition": {
+          "canSeeSky": false,
+          "minSkyLight": 8,
+          "maxSkyLight": 15,
+          "biomes": [
+            "#cobblemon:is_mushroom",
+            "#cobblemon:is_swamp"
+          ],
+          "bait": "cobblemon:love_sweet"
+        },
+        "anticondition": {
+          "biomes": [
+            "#cobblemon:has_block/mud"
+          ]
+        }
+      }
+    },
+    {
+      "id": "tympole-paldean-21",
+      "sourceFile": "0535_tympole.json",
+      "pokemon": {
+        "raw": "tympole paldean",
+        "slug": "tympole",
+        "aspectTokens": [
+          "paldean"
+        ]
+      },
+      "type": "pokemon",
+      "spawnablePositionType": "grounded",
+      "bucket": "common",
+      "bucketWeight": 94.3,
+      "levelText": "1-21",
+      "levelMin": 1,
+      "levelMax": 21,
+      "weight": 9,
+      "presets": [
+        "natural"
+      ],
+      "biomeHints": [
+        "Has Block/mud",
+        "Mangrove Swamp",
+        "Marsh"
+      ],
+      "condition": {
+        "neededBaseBlocks": [
+          "#cobblemon:natural"
+        ],
+        "minSkyLight": 8,
+        "maxSkyLight": 15,
+        "biomes": [
+          "#cobblemon:has_block/mud"
+        ]
+      },
+      "anticondition": {
+        "neededBaseBlocks": [
+          "minecraft:farmland"
+        ]
+      },
+      "weightMultipliers": [],
+      "raw": {
+        "id": "tympole-paldean-21",
+        "pokemon": "tympole paldean",
+        "presets": [
+          "natural"
+        ],
+        "type": "pokemon",
+        "spawnablePositionType": "grounded",
+        "bucket": "common",
+        "level": "1-21",
+        "weight": 9,
+        "condition": {
+          "minSkyLight": 8,
+          "maxSkyLight": 15,
+          "biomes": [
+            "#cobblemon:has_block/mud"
+          ]
+        }
+      }
+    },
+    {
+      "id": "tympole-paldean-22",
+      "sourceFile": "0535_tympole.json",
+      "pokemon": {
+        "raw": "tympole paldean",
+        "slug": "tympole",
+        "aspectTokens": [
+          "paldean"
+        ]
+      },
+      "type": "pokemon",
+      "spawnablePositionType": "submerged",
+      "bucket": "common",
+      "bucketWeight": 94.3,
+      "levelText": "1-21",
+      "levelMin": 1,
+      "levelMax": 21,
+      "weight": 9,
+      "presets": [
+        "water"
+      ],
+      "biomeHints": [
+        "Has Block/mud",
+        "Mangrove Swamp",
+        "Marsh"
+      ],
+      "condition": {
+        "fluid": "#minecraft:water",
+        "canSeeSky": true,
+        "biomes": [
+          "#cobblemon:has_block/mud"
+        ]
+      },
+      "anticondition": null,
+      "weightMultipliers": [],
+      "raw": {
+        "id": "tympole-paldean-22",
+        "pokemon": "tympole paldean",
+        "presets": [
+          "water"
+        ],
+        "type": "pokemon",
+        "spawnablePositionType": "submerged",
+        "bucket": "common",
+        "level": "1-21",
+        "weight": 9,
+        "condition": {
+          "canSeeSky": true,
+          "biomes": [
+            "#cobblemon:has_block/mud"
+          ]
+        }
+      }
+    },
+    {
+      "id": "tympole-paldean-23",
+      "sourceFile": "0535_tympole.json",
+      "pokemon": {
+        "raw": "tympole paldean",
+        "slug": "tympole",
+        "aspectTokens": [
+          "paldean"
+        ]
+      },
+      "type": "pokemon",
+      "spawnablePositionType": "grounded",
+      "bucket": "uncommon",
+      "bucketWeight": 5,
+      "levelText": "1-21",
+      "levelMin": 1,
+      "levelMax": 21,
+      "weight": 8.4,
+      "presets": [
+        "natural"
+      ],
+      "biomeHints": [
+        "Is Savanna"
+      ],
+      "condition": {
+        "neededBaseBlocks": [
+          "#cobblemon:natural"
+        ],
+        "minSkyLight": 8,
+        "maxSkyLight": 15,
+        "biomes": [
+          "#cobblemon:is_savanna"
+        ],
+        "neededNearbyBlocks": [
+          "#minecraft:water"
+        ]
+      },
+      "anticondition": {
+        "neededBaseBlocks": [
+          "minecraft:farmland"
+        ]
+      },
+      "weightMultipliers": [],
+      "raw": {
+        "id": "tympole-paldean-23",
+        "pokemon": "tympole paldean",
+        "presets": [
+          "natural"
+        ],
+        "type": "pokemon",
+        "spawnablePositionType": "grounded",
+        "bucket": "uncommon",
+        "level": "1-21",
+        "weight": 8.4,
+        "condition": {
+          "minSkyLight": 8,
+          "maxSkyLight": 15,
+          "biomes": [
+            "#cobblemon:is_savanna"
+          ],
+          "neededNearbyBlocks": [
+            "#minecraft:water"
+          ]
+        }
+      }
+    },
+    {
+      "id": "tympole-paldean-24",
+      "sourceFile": "0535_tympole.json",
+      "pokemon": {
+        "raw": "tympole paldean",
+        "slug": "tympole",
+        "aspectTokens": [
+          "paldean"
+        ]
+      },
+      "type": "pokemon",
+      "spawnablePositionType": "submerged",
+      "bucket": "uncommon",
+      "bucketWeight": 5,
+      "levelText": "1-21",
+      "levelMin": 1,
+      "levelMax": 21,
+      "weight": 8.4,
+      "presets": [
+        "water"
+      ],
+      "biomeHints": [
+        "Is Savanna"
+      ],
+      "condition": {
+        "fluid": "#minecraft:water",
+        "canSeeSky": true,
+        "biomes": [
+          "#cobblemon:is_savanna"
+        ]
+      },
+      "anticondition": null,
+      "weightMultipliers": [],
+      "raw": {
+        "id": "tympole-paldean-24",
+        "pokemon": "tympole paldean",
+        "presets": [
+          "water"
+        ],
+        "type": "pokemon",
+        "spawnablePositionType": "submerged",
+        "bucket": "uncommon",
+        "level": "1-21",
+        "weight": 8.4,
+        "condition": {
+          "canSeeSky": true,
+          "biomes": [
+            "#cobblemon:is_savanna"
+          ]
+        }
+      }
+    },
+    {
+      "id": "tympole-paldean-25",
+      "sourceFile": "0535_tympole.json",
+      "pokemon": {
+        "raw": "tympole paldean",
+        "slug": "tympole",
+        "aspectTokens": [
+          "paldean"
+        ]
+      },
+      "type": "pokemon",
+      "spawnablePositionType": "fishing",
+      "bucket": "common",
+      "bucketWeight": 94.3,
+      "levelText": "1-21",
+      "levelMin": 1,
+      "levelMax": 21,
+      "weight": 9,
+      "presets": [],
+      "biomeHints": [
+        "Has Block/mud",
+        "Mangrove Swamp",
+        "Marsh"
+      ],
+      "condition": {
+        "canSeeSky": true,
+        "biomes": [
+          "#cobblemon:has_block/mud"
+        ]
+      },
+      "anticondition": null,
+      "weightMultipliers": [],
+      "raw": {
+        "id": "tympole-paldean-25",
+        "pokemon": "tympole paldean",
+        "type": "pokemon",
+        "spawnablePositionType": "fishing",
+        "bucket": "common",
+        "level": "1-21",
+        "weight": 9,
+        "condition": {
+          "canSeeSky": true,
+          "biomes": [
+            "#cobblemon:has_block/mud"
+          ]
+        }
+      }
+    },
+    {
+      "id": "tympole-paldean-26",
+      "sourceFile": "0535_tympole.json",
+      "pokemon": {
+        "raw": "tympole paldean",
+        "slug": "tympole",
+        "aspectTokens": [
+          "paldean"
+        ]
+      },
+      "type": "pokemon",
+      "spawnablePositionType": "fishing",
+      "bucket": "uncommon",
+      "bucketWeight": 5,
+      "levelText": "1-21",
+      "levelMin": 1,
+      "levelMax": 21,
+      "weight": 8.4,
+      "presets": [],
+      "biomeHints": [
+        "Is Arid",
+        "Is Badlands",
+        "Is Desert"
+      ],
+      "condition": {
+        "canSeeSky": true,
+        "biomes": [
+          "#cobblemon:is_arid"
+        ]
+      },
+      "anticondition": {
+        "minLureLevel": 1
+      },
+      "weightMultipliers": [],
+      "raw": {
+        "id": "tympole-paldean-26",
+        "pokemon": "tympole paldean",
+        "type": "pokemon",
+        "spawnablePositionType": "fishing",
+        "bucket": "uncommon",
+        "level": "1-21",
+        "weight": 8.4,
+        "condition": {
+          "canSeeSky": true,
+          "biomes": [
+            "#cobblemon:is_arid"
+          ]
+        },
+        "anticondition": {
+          "minLureLevel": 1
+        }
+      }
+    },
+    {
+      "id": "tympole-paldean-27",
+      "sourceFile": "0535_tympole.json",
+      "pokemon": {
+        "raw": "tympole paldean",
+        "slug": "tympole",
+        "aspectTokens": [
+          "paldean"
+        ]
+      },
+      "type": "pokemon",
+      "spawnablePositionType": "fishing",
+      "bucket": "common",
+      "bucketWeight": 94.3,
+      "levelText": "1-21",
+      "levelMin": 1,
+      "levelMax": 21,
+      "weight": 9,
+      "presets": [],
+      "biomeHints": [
+        "Is Arid",
+        "Is Badlands",
+        "Is Desert"
+      ],
+      "condition": {
+        "canSeeSky": true,
+        "biomes": [
+          "#cobblemon:is_arid"
+        ],
+        "minLureLevel": 1
+      },
+      "anticondition": null,
+      "weightMultipliers": [
+        {
+          "multiplier": 0.6,
+          "condition": {
+            "minLureLevel": 1,
+            "maxLureLevel": 2
+          }
+        }
+      ],
+      "raw": {
+        "id": "tympole-paldean-27",
+        "pokemon": "tympole paldean",
+        "type": "pokemon",
+        "spawnablePositionType": "fishing",
+        "bucket": "common",
+        "level": "1-21",
+        "weight": 9,
+        "weightMultiplier": {
+          "multiplier": 0.6,
+          "condition": {
+            "minLureLevel": 1,
+            "maxLureLevel": 2
+          }
+        },
+        "condition": {
+          "canSeeSky": true,
+          "biomes": [
+            "#cobblemon:is_arid"
+          ],
+          "minLureLevel": 1
+        }
+      }
+    },
+    {
+      "id": "tympole-paldean-28",
+      "sourceFile": "0535_tympole.json",
+      "pokemon": {
+        "raw": "tympole paldean",
+        "slug": "tympole",
+        "aspectTokens": [
+          "paldean"
+        ]
+      },
+      "type": "pokemon",
+      "spawnablePositionType": "submerged",
+      "bucket": "common",
+      "bucketWeight": 94.3,
+      "levelText": "1-21",
+      "levelMin": 1,
+      "levelMax": 21,
+      "weight": 9,
+      "presets": [
+        "water"
+      ],
+      "biomeHints": [
+        "Has Block/mud",
+        "Mangrove Swamp",
+        "Marsh"
+      ],
+      "condition": {
+        "fluid": "#minecraft:water",
+        "canSeeSky": false,
+        "minSkyLight": 8,
+        "maxSkyLight": 15,
+        "biomes": [
+          "#cobblemon:has_block/mud"
+        ]
+      },
+      "anticondition": null,
+      "weightMultipliers": [],
+      "raw": {
+        "id": "tympole-paldean-28",
+        "pokemon": "tympole paldean",
+        "presets": [
+          "water"
+        ],
+        "type": "pokemon",
+        "spawnablePositionType": "submerged",
+        "bucket": "common",
+        "level": "1-21",
+        "weight": 9,
+        "condition": {
+          "canSeeSky": false,
+          "minSkyLight": 8,
+          "maxSkyLight": 15,
+          "biomes": [
+            "#cobblemon:has_block/mud"
+          ]
+        }
+      }
+    },
+    {
+      "id": "tympole-paldean-29",
+      "sourceFile": "0535_tympole.json",
+      "pokemon": {
+        "raw": "tympole paldean",
+        "slug": "tympole",
+        "aspectTokens": [
+          "paldean"
+        ]
+      },
+      "type": "pokemon",
+      "spawnablePositionType": "submerged",
+      "bucket": "uncommon",
+      "bucketWeight": 5,
+      "levelText": "1-21",
+      "levelMin": 1,
+      "levelMax": 21,
+      "weight": 8.4,
+      "presets": [
+        "water"
+      ],
+      "biomeHints": [
+        "Is Savanna"
+      ],
+      "condition": {
+        "fluid": "#minecraft:water",
+        "canSeeSky": false,
+        "minSkyLight": 8,
+        "maxSkyLight": 15,
+        "biomes": [
+          "#cobblemon:is_savanna"
+        ]
+      },
+      "anticondition": null,
+      "weightMultipliers": [],
+      "raw": {
+        "id": "tympole-paldean-29",
+        "pokemon": "tympole paldean",
+        "presets": [
+          "water"
+        ],
+        "type": "pokemon",
+        "spawnablePositionType": "submerged",
+        "bucket": "uncommon",
+        "level": "1-21",
+        "weight": 8.4,
+        "condition": {
+          "canSeeSky": false,
+          "minSkyLight": 8,
+          "maxSkyLight": 15,
+          "biomes": [
+            "#cobblemon:is_savanna"
+          ]
+        }
+      }
+    },
+    {
+      "id": "tympole-paldean-30",
+      "sourceFile": "0535_tympole.json",
+      "pokemon": {
+        "raw": "tympole paldean",
+        "slug": "tympole",
+        "aspectTokens": [
+          "paldean"
+        ]
+      },
+      "type": "pokemon",
+      "spawnablePositionType": "fishing",
+      "bucket": "common",
+      "bucketWeight": 94.3,
+      "levelText": "1-21",
+      "levelMin": 1,
+      "levelMax": 21,
+      "weight": 9,
+      "presets": [],
+      "biomeHints": [
+        "Has Block/mud",
+        "Mangrove Swamp",
+        "Marsh"
+      ],
+      "condition": {
+        "canSeeSky": false,
+        "minSkyLight": 8,
+        "maxSkyLight": 15,
+        "biomes": [
+          "#cobblemon:has_block/mud"
+        ]
+      },
+      "anticondition": null,
+      "weightMultipliers": [],
+      "raw": {
+        "id": "tympole-paldean-30",
+        "pokemon": "tympole paldean",
+        "type": "pokemon",
+        "spawnablePositionType": "fishing",
+        "bucket": "common",
+        "level": "1-21",
+        "weight": 9,
+        "condition": {
+          "canSeeSky": false,
+          "minSkyLight": 8,
+          "maxSkyLight": 15,
+          "biomes": [
+            "#cobblemon:has_block/mud"
+          ]
+        }
+      }
+    },
+    {
+      "id": "tympole-paldean-31",
+      "sourceFile": "0535_tympole.json",
+      "pokemon": {
+        "raw": "tympole paldean",
+        "slug": "tympole",
+        "aspectTokens": [
+          "paldean"
+        ]
+      },
+      "type": "pokemon",
+      "spawnablePositionType": "fishing",
+      "bucket": "uncommon",
+      "bucketWeight": 5,
+      "levelText": "1-21",
+      "levelMin": 1,
+      "levelMax": 21,
+      "weight": 8.4,
+      "presets": [],
+      "biomeHints": [
+        "Is Arid",
+        "Is Badlands",
+        "Is Desert"
+      ],
+      "condition": {
+        "canSeeSky": false,
+        "minSkyLight": 8,
+        "maxSkyLight": 15,
+        "biomes": [
+          "#cobblemon:is_arid"
+        ]
+      },
+      "anticondition": {
+        "minLureLevel": 1
+      },
+      "weightMultipliers": [],
+      "raw": {
+        "id": "tympole-paldean-31",
+        "pokemon": "tympole paldean",
+        "type": "pokemon",
+        "spawnablePositionType": "fishing",
+        "bucket": "uncommon",
+        "level": "1-21",
+        "weight": 8.4,
+        "condition": {
+          "canSeeSky": false,
+          "minSkyLight": 8,
+          "maxSkyLight": 15,
+          "biomes": [
+            "#cobblemon:is_arid"
+          ]
+        },
+        "anticondition": {
+          "minLureLevel": 1
+        }
+      }
+    },
+    {
+      "id": "tympole-paldean-32",
+      "sourceFile": "0535_tympole.json",
+      "pokemon": {
+        "raw": "tympole paldean",
+        "slug": "tympole",
+        "aspectTokens": [
+          "paldean"
+        ]
+      },
+      "type": "pokemon",
+      "spawnablePositionType": "fishing",
+      "bucket": "common",
+      "bucketWeight": 94.3,
+      "levelText": "1-21",
+      "levelMin": 1,
+      "levelMax": 21,
+      "weight": 9,
+      "presets": [],
+      "biomeHints": [
+        "Is Arid",
+        "Is Badlands",
+        "Is Desert"
+      ],
+      "condition": {
+        "canSeeSky": false,
+        "minSkyLight": 8,
+        "maxSkyLight": 15,
+        "biomes": [
+          "#cobblemon:is_arid"
+        ],
+        "minLureLevel": 1
+      },
+      "anticondition": null,
+      "weightMultipliers": [
+        {
+          "multiplier": 0.6,
+          "condition": {
+            "minLureLevel": 1,
+            "maxLureLevel": 2
+          }
+        }
+      ],
+      "raw": {
+        "id": "tympole-paldean-32",
+        "pokemon": "tympole paldean",
+        "type": "pokemon",
+        "spawnablePositionType": "fishing",
+        "bucket": "common",
+        "level": "1-21",
+        "weight": 9,
+        "weightMultiplier": {
+          "multiplier": 0.6,
+          "condition": {
+            "minLureLevel": 1,
+            "maxLureLevel": 2
+          }
+        },
+        "condition": {
+          "canSeeSky": false,
+          "minSkyLight": 8,
+          "maxSkyLight": 15,
+          "biomes": [
+            "#cobblemon:is_arid"
+          ],
+          "minLureLevel": 1
+        }
+      }
+    }
+  ],
   "forms": [],
   "drops": {
     "amount": 2,

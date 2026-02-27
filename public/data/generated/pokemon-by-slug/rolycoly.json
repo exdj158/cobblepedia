@@ -880,7 +880,150 @@
       "fromFormSlug": null
     }
   ],
-  "spawnEntries": [],
+  "spawnEntries": [
+    {
+      "id": "rolycoly-1",
+      "sourceFile": "0837_rolycoly.json",
+      "pokemon": {
+        "raw": "rolycoly",
+        "slug": "rolycoly",
+        "aspectTokens": []
+      },
+      "type": "pokemon",
+      "spawnablePositionType": "grounded",
+      "bucket": "common",
+      "bucketWeight": 94.3,
+      "levelText": "6-17",
+      "levelMin": 6,
+      "levelMax": 17,
+      "weight": 25,
+      "presets": [
+        "natural",
+        "wild"
+      ],
+      "biomeHints": [
+        "Is Cave",
+        "Dripstone Caves",
+        "Lush Caves",
+        "Is Mountain",
+        "Is Hills"
+      ],
+      "condition": {
+        "neededBaseBlocks": [
+          "#cobblemon:natural"
+        ],
+        "biomes": [
+          "#cobblemon:is_cave",
+          "#cobblemon:is_mountain"
+        ],
+        "neededNearbyBlocks": [
+          "minecraft:coal_ore"
+        ]
+      },
+      "anticondition": {
+        "neededBaseBlocks": [
+          "minecraft:farmland"
+        ],
+        "structures": [
+          "#minecraft:village"
+        ],
+        "neededNearbyBlocks": [
+          "#cobblemon:concrete_blocks"
+        ]
+      },
+      "weightMultipliers": [],
+      "raw": {
+        "id": "rolycoly-1",
+        "pokemon": "rolycoly",
+        "presets": [
+          "natural",
+          "wild"
+        ],
+        "type": "pokemon",
+        "spawnablePositionType": "grounded",
+        "bucket": "common",
+        "level": "6-17",
+        "weight": 25,
+        "condition": {
+          "biomes": [
+            "#cobblemon:is_cave",
+            "#cobblemon:is_mountain"
+          ],
+          "neededNearbyBlocks": [
+            "minecraft:coal_ore"
+          ]
+        }
+      }
+    },
+    {
+      "id": "rolycoly-2",
+      "sourceFile": "0837_rolycoly.json",
+      "pokemon": {
+        "raw": "rolycoly",
+        "slug": "rolycoly",
+        "aspectTokens": []
+      },
+      "type": "pokemon",
+      "spawnablePositionType": "grounded",
+      "bucket": "uncommon",
+      "bucketWeight": 5,
+      "levelText": "5-16",
+      "levelMin": 5,
+      "levelMax": 16,
+      "weight": 12,
+      "presets": [
+        "natural",
+        "wild"
+      ],
+      "biomeHints": [
+        "Is Cave",
+        "Dripstone Caves",
+        "Lush Caves",
+        "Is Mountain",
+        "Is Hills"
+      ],
+      "condition": {
+        "neededBaseBlocks": [
+          "#cobblemon:natural"
+        ],
+        "biomes": [
+          "#cobblemon:is_cave",
+          "#cobblemon:is_mountain"
+        ]
+      },
+      "anticondition": {
+        "neededBaseBlocks": [
+          "minecraft:farmland"
+        ],
+        "structures": [
+          "#minecraft:village"
+        ],
+        "neededNearbyBlocks": [
+          "#cobblemon:concrete_blocks"
+        ]
+      },
+      "weightMultipliers": [],
+      "raw": {
+        "id": "rolycoly-2",
+        "pokemon": "rolycoly",
+        "presets": [
+          "natural",
+          "wild"
+        ],
+        "type": "pokemon",
+        "spawnablePositionType": "grounded",
+        "bucket": "uncommon",
+        "level": "5-16",
+        "weight": 12,
+        "condition": {
+          "biomes": [
+            "#cobblemon:is_cave",
+            "#cobblemon:is_mountain"
+          ]
+        }
+      }
+    }
+  ],
   "forms": [],
   "drops": {
     "amount": 0,

@@ -1536,7 +1536,64 @@
       "fromFormSlug": null
     }
   ],
-  "spawnEntries": [],
+  "spawnEntries": [
+    {
+      "id": "kyurem-1",
+      "sourceFile": "0646_kyurem.json",
+      "pokemon": {
+        "raw": "kyurem",
+        "slug": "kyurem",
+        "aspectTokens": []
+      },
+      "type": "pokemon",
+      "spawnablePositionType": "grounded",
+      "bucket": "ultra-rare",
+      "bucketWeight": 0.2,
+      "levelText": "66-78",
+      "levelMin": 66,
+      "levelMax": 78,
+      "weight": 2,
+      "presets": [
+        "natural"
+      ],
+      "biomeHints": [
+        "Ice Spikes"
+      ],
+      "condition": {
+        "neededBaseBlocks": [
+          "#cobblemon:natural"
+        ],
+        "isRaining": true,
+        "biomes": [
+          "minecraft:ice_spikes"
+        ]
+      },
+      "anticondition": {
+        "neededBaseBlocks": [
+          "minecraft:farmland"
+        ]
+      },
+      "weightMultipliers": [],
+      "raw": {
+        "id": "kyurem-1",
+        "pokemon": "kyurem",
+        "presets": [
+          "natural"
+        ],
+        "type": "pokemon",
+        "spawnablePositionType": "grounded",
+        "bucket": "ultra-rare",
+        "level": "66-78",
+        "weight": 2,
+        "condition": {
+          "isRaining": true,
+          "biomes": [
+            "minecraft:ice_spikes"
+          ]
+        }
+      }
+    }
+  ],
   "forms": [
     {
       "name": "White",

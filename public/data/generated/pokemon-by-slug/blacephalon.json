@@ -1155,7 +1155,53 @@
       "fromFormSlug": null
     }
   ],
-  "spawnEntries": [],
+  "spawnEntries": [
+    {
+      "id": "blacephalon-1",
+      "sourceFile": "0806_blacephalon.json",
+      "pokemon": {
+        "raw": "blacephalon",
+        "slug": "blacephalon",
+        "aspectTokens": []
+      },
+      "type": "pokemon",
+      "spawnablePositionType": "grounded",
+      "bucket": "ultra-rare",
+      "bucketWeight": 0.2,
+      "levelText": "55-62",
+      "levelMin": 55,
+      "levelMax": 62,
+      "weight": 3.5,
+      "presets": [],
+      "biomeHints": [
+        "Is Spooky",
+        "Dark Forest"
+      ],
+      "condition": {
+        "canSeeSky": true,
+        "biomes": [
+          "#cobblemon:is_spooky"
+        ]
+      },
+      "anticondition": null,
+      "weightMultipliers": [],
+      "raw": {
+        "id": "blacephalon-1",
+        "pokemon": "blacephalon",
+        "type": "pokemon",
+        "spawnablePositionType": "grounded",
+        "bucket": "ultra-rare",
+        "level": "55-62",
+        "weight": 3.5,
+        "condition": {
+          "canSeeSky": true,
+          "biomes": [
+            "#cobblemon:is_spooky"
+          ]
+        }
+      }
+    }
+  ],
   "forms": [],
   "drops": {
     "amount": 3,

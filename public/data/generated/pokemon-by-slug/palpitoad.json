@@ -1086,7 +1086,981 @@
       "fromFormSlug": null
     }
   ],
-  "spawnEntries": [],
+  "spawnEntries": [
+    {
+      "id": "palpitoad-1",
+      "sourceFile": "0536_palpitoad.json",
+      "pokemon": {
+        "raw": "palpitoad",
+        "slug": "palpitoad",
+        "aspectTokens": []
+      },
+      "type": "pokemon",
+      "spawnablePositionType": "grounded",
+      "bucket": "common",
+      "bucketWeight": 94.3,
+      "levelText": "20-43",
+      "levelMin": 20,
+      "levelMax": 43,
+      "weight": 1,
+      "presets": [
+        "natural"
+      ],
+      "biomeHints": [
+        "Is Lush",
+        "Lush Caves"
+      ],
+      "condition": {
+        "neededBaseBlocks": [
+          "#cobblemon:natural"
+        ],
+        "minSkyLight": 0,
+        "maxSkyLight": 7,
+        "biomes": [
+          "#cobblemon:is_lush"
+        ]
+      },
+      "anticondition": {
+        "neededBaseBlocks": [
+          "minecraft:farmland"
+        ],
+        "structures": [
+          "cobblemon:shipwreck_coves/lush_shipwreck_cove"
+        ],
+        "minY": -41,
+        "maxY": 9
+      },
+      "weightMultipliers": [],
+      "raw": {
+        "id": "palpitoad-1",
+        "pokemon": "palpitoad",
+        "presets": [
+          "natural"
+        ],
+        "type": "pokemon",
+        "spawnablePositionType": "grounded",
+        "bucket": "common",
+        "level": "20-43",
+        "weight": 1,
+        "condition": {
+          "minSkyLight": 0,
+          "maxSkyLight": 7,
+          "biomes": [
+            "#cobblemon:is_lush"
+          ]
+        },
+        "anticondition": {
+          "structures": [
+            "cobblemon:shipwreck_coves/lush_shipwreck_cove"
+          ],
+          "minY": -41,
+          "maxY": 9
+        }
+      }
+    },
+    {
+      "id": "palpitoad-10",
+      "sourceFile": "0536_palpitoad.json",
+      "pokemon": {
+        "raw": "palpitoad",
+        "slug": "palpitoad",
+        "aspectTokens": []
+      },
+      "type": "pokemon",
+      "spawnablePositionType": "fishing",
+      "bucket": "common",
+      "bucketWeight": 94.3,
+      "levelText": "20-43",
+      "levelMin": 20,
+      "levelMax": 43,
+      "weight": 0.2,
+      "presets": [],
+      "biomeHints": [
+        "Is Mushroom",
+        "Dark Forest",
+        "Mushroom Fields",
+        "Is Swamp",
+        "Mangrove Swamp",
+        "Swamp"
+      ],
+      "condition": {
+        "canSeeSky": false,
+        "minSkyLight": 8,
+        "maxSkyLight": 15,
+        "biomes": [
+          "#cobblemon:is_mushroom",
+          "#cobblemon:is_swamp"
+        ]
+      },
+      "anticondition": {
+        "biomes": [
+          "#cobblemon:has_block/mud"
+        ]
+      },
+      "weightMultipliers": [
+        {
+          "multiplier": 3,
+          "condition": {
+            "minLureLevel": 2,
+            "maxLureLevel": 2
+          }
+        },
+        {
+          "multiplier": 5,
+          "condition": {
+            "minLureLevel": 3
+          }
+        }
+      ],
+      "raw": {
+        "id": "palpitoad-10",
+        "pokemon": "palpitoad",
+        "type": "pokemon",
+        "spawnablePositionType": "fishing",
+        "bucket": "common",
+        "level": "20-43",
+        "weight": 0.2,
+        "weightMultipliers": [
+          {
+            "multiplier": 3,
+            "condition": {
+              "minLureLevel": 2,
+              "maxLureLevel": 2
+            }
+          },
+          {
+            "multiplier": 5,
+            "condition": {
+              "minLureLevel": 3
+            }
+          }
+        ],
+        "condition": {
+          "canSeeSky": false,
+          "minSkyLight": 8,
+          "maxSkyLight": 15,
+          "biomes": [
+            "#cobblemon:is_mushroom",
+            "#cobblemon:is_swamp"
+          ]
+        },
+        "anticondition": {
+          "biomes": [
+            "#cobblemon:has_block/mud"
+          ]
+        }
+      }
+    },
+    {
+      "id": "palpitoad-11",
+      "sourceFile": "0536_palpitoad.json",
+      "pokemon": {
+        "raw": "palpitoad",
+        "slug": "palpitoad",
+        "aspectTokens": []
+      },
+      "type": "pokemon",
+      "spawnablePositionType": "grounded",
+      "bucket": "common",
+      "bucketWeight": 94.3,
+      "levelText": "20-43",
+      "levelMin": 20,
+      "levelMax": 43,
+      "weight": 1,
+      "presets": [
+        "natural"
+      ],
+      "biomeHints": [
+        "Is Overworld"
+      ],
+      "condition": {
+        "neededBaseBlocks": [
+          "#cobblemon:natural"
+        ],
+        "minSkyLight": 0,
+        "maxSkyLight": 7,
+        "biomes": [
+          "#cobblemon:is_overworld"
+        ],
+        "structures": [
+          "cobblemon:shipwreck_coves/lush_shipwreck_cove"
+        ],
+        "minY": -41,
+        "maxY": 9
+      },
+      "anticondition": {
+        "neededBaseBlocks": [
+          "minecraft:farmland"
+        ],
+        "biomes": [
+          "#cobblemon:is_lush"
+        ]
+      },
+      "weightMultipliers": [],
+      "raw": {
+        "id": "palpitoad-11",
+        "pokemon": "palpitoad",
+        "presets": [
+          "natural"
+        ],
+        "type": "pokemon",
+        "spawnablePositionType": "grounded",
+        "bucket": "common",
+        "level": "20-43",
+        "weight": 1,
+        "condition": {
+          "minSkyLight": 0,
+          "maxSkyLight": 7,
+          "biomes": [
+            "#cobblemon:is_overworld"
+          ],
+          "structures": [
+            "cobblemon:shipwreck_coves/lush_shipwreck_cove"
+          ],
+          "minY": -41,
+          "maxY": 9
+        },
+        "anticondition": {
+          "biomes": [
+            "#cobblemon:is_lush"
+          ]
+        }
+      }
+    },
+    {
+      "id": "palpitoad-12",
+      "sourceFile": "0536_palpitoad.json",
+      "pokemon": {
+        "raw": "palpitoad",
+        "slug": "palpitoad",
+        "aspectTokens": []
+      },
+      "type": "pokemon",
+      "spawnablePositionType": "submerged",
+      "bucket": "common",
+      "bucketWeight": 94.3,
+      "levelText": "20-43",
+      "levelMin": 20,
+      "levelMax": 43,
+      "weight": 1,
+      "presets": [
+        "water"
+      ],
+      "biomeHints": [
+        "Is Overworld"
+      ],
+      "condition": {
+        "fluid": "#minecraft:water",
+        "minSkyLight": 0,
+        "maxSkyLight": 7,
+        "biomes": [
+          "#cobblemon:is_overworld"
+        ],
+        "structures": [
+          "cobblemon:shipwreck_coves/lush_shipwreck_cove"
+        ],
+        "minY": -41,
+        "maxY": 9
+      },
+      "anticondition": {
+        "biomes": [
+          "#cobblemon:is_lush"
+        ]
+      },
+      "weightMultipliers": [],
+      "raw": {
+        "id": "palpitoad-12",
+        "pokemon": "palpitoad",
+        "presets": [
+          "water"
+        ],
+        "type": "pokemon",
+        "spawnablePositionType": "submerged",
+        "bucket": "common",
+        "level": "20-43",
+        "weight": 1,
+        "condition": {
+          "minSkyLight": 0,
+          "maxSkyLight": 7,
+          "biomes": [
+            "#cobblemon:is_overworld"
+          ],
+          "structures": [
+            "cobblemon:shipwreck_coves/lush_shipwreck_cove"
+          ],
+          "minY": -41,
+          "maxY": 9
+        },
+        "anticondition": {
+          "biomes": [
+            "#cobblemon:is_lush"
+          ]
+        }
+      }
+    },
+    {
+      "id": "palpitoad-13",
+      "sourceFile": "0536_palpitoad.json",
+      "pokemon": {
+        "raw": "palpitoad",
+        "slug": "palpitoad",
+        "aspectTokens": []
+      },
+      "type": "pokemon",
+      "spawnablePositionType": "grounded",
+      "bucket": "uncommon",
+      "bucketWeight": 5,
+      "levelText": "20-43",
+      "levelMin": 20,
+      "levelMax": 43,
+      "weight": 1.6,
+      "presets": [
+        "natural"
+      ],
+      "biomeHints": [
+        "Is Aether"
+      ],
+      "condition": {
+        "neededBaseBlocks": [
+          "#cobblemon:natural"
+        ],
+        "minSkyLight": 0,
+        "maxSkyLight": 7,
+        "biomes": [
+          "#aether:is_aether"
+        ],
+        "neededNearbyBlocks": [
+          "#minecraft:water"
+        ]
+      },
+      "anticondition": {
+        "neededBaseBlocks": [
+          "minecraft:farmland"
+        ]
+      },
+      "weightMultipliers": [],
+      "raw": {
+        "id": "palpitoad-13",
+        "pokemon": "palpitoad",
+        "presets": [
+          "natural"
+        ],
+        "type": "pokemon",
+        "spawnablePositionType": "grounded",
+        "bucket": "uncommon",
+        "level": "20-43",
+        "weight": 1.6,
+        "condition": {
+          "minSkyLight": 0,
+          "maxSkyLight": 7,
+          "biomes": [
+            "#aether:is_aether"
+          ],
+          "neededNearbyBlocks": [
+            "#minecraft:water"
+          ]
+        }
+      }
+    },
+    {
+      "id": "palpitoad-14",
+      "sourceFile": "0536_palpitoad.json",
+      "pokemon": {
+        "raw": "palpitoad",
+        "slug": "palpitoad",
+        "aspectTokens": []
+      },
+      "type": "pokemon",
+      "spawnablePositionType": "submerged",
+      "bucket": "uncommon",
+      "bucketWeight": 5,
+      "levelText": "20-43",
+      "levelMin": 20,
+      "levelMax": 43,
+      "weight": 1.6,
+      "presets": [
+        "water"
+      ],
+      "biomeHints": [
+        "Is Aether"
+      ],
+      "condition": {
+        "fluid": "#minecraft:water",
+        "minSkyLight": 0,
+        "maxSkyLight": 7,
+        "biomes": [
+          "#aether:is_aether"
+        ]
+      },
+      "anticondition": null,
+      "weightMultipliers": [],
+      "raw": {
+        "id": "palpitoad-14",
+        "pokemon": "palpitoad",
+        "presets": [
+          "water"
+        ],
+        "type": "pokemon",
+        "spawnablePositionType": "submerged",
+        "bucket": "uncommon",
+        "level": "20-43",
+        "weight": 1.6,
+        "condition": {
+          "minSkyLight": 0,
+          "maxSkyLight": 7,
+          "biomes": [
+            "#aether:is_aether"
+          ]
+        }
+      }
+    },
+    {
+      "id": "palpitoad-2",
+      "sourceFile": "0536_palpitoad.json",
+      "pokemon": {
+        "raw": "palpitoad",
+        "slug": "palpitoad",
+        "aspectTokens": []
+      },
+      "type": "pokemon",
+      "spawnablePositionType": "submerged",
+      "bucket": "common",
+      "bucketWeight": 94.3,
+      "levelText": "20-43",
+      "levelMin": 20,
+      "levelMax": 43,
+      "weight": 1,
+      "presets": [
+        "water"
+      ],
+      "biomeHints": [
+        "Is Lush",
+        "Lush Caves"
+      ],
+      "condition": {
+        "fluid": "#minecraft:water",
+        "minSkyLight": 0,
+        "maxSkyLight": 7,
+        "biomes": [
+          "#cobblemon:is_lush"
+        ]
+      },
+      "anticondition": {
+        "structures": [
+          "cobblemon:shipwreck_coves/lush_shipwreck_cove"
+        ],
+        "minY": -41,
+        "maxY": 9
+      },
+      "weightMultipliers": [],
+      "raw": {
+        "id": "palpitoad-2",
+        "pokemon": "palpitoad",
+        "presets": [
+          "water"
+        ],
+        "type": "pokemon",
+        "spawnablePositionType": "submerged",
+        "bucket": "common",
+        "level": "20-43",
+        "weight": 1,
+        "condition": {
+          "minSkyLight": 0,
+          "maxSkyLight": 7,
+          "biomes": [
+            "#cobblemon:is_lush"
+          ]
+        },
+        "anticondition": {
+          "structures": [
+            "cobblemon:shipwreck_coves/lush_shipwreck_cove"
+          ],
+          "minY": -41,
+          "maxY": 9
+        }
+      }
+    },
+    {
+      "id": "palpitoad-3",
+      "sourceFile": "0536_palpitoad.json",
+      "pokemon": {
+        "raw": "palpitoad",
+        "slug": "palpitoad",
+        "aspectTokens": []
+      },
+      "type": "pokemon",
+      "spawnablePositionType": "grounded",
+      "bucket": "uncommon",
+      "bucketWeight": 5,
+      "levelText": "20-43",
+      "levelMin": 20,
+      "levelMax": 43,
+      "weight": 1.6,
+      "presets": [
+        "natural"
+      ],
+      "biomeHints": [
+        "Is Overworld"
+      ],
+      "condition": {
+        "neededBaseBlocks": [
+          "#cobblemon:natural"
+        ],
+        "minSkyLight": 0,
+        "maxSkyLight": 7,
+        "biomes": [
+          "#cobblemon:is_overworld"
+        ],
+        "neededNearbyBlocks": [
+          "#minecraft:water"
+        ],
+        "maxY": 62
+      },
+      "anticondition": {
+        "neededBaseBlocks": [
+          "minecraft:farmland"
+        ],
+        "biomes": [
+          "#cobblemon:is_lush"
+        ]
+      },
+      "weightMultipliers": [],
+      "raw": {
+        "id": "palpitoad-3",
+        "pokemon": "palpitoad",
+        "presets": [
+          "natural"
+        ],
+        "type": "pokemon",
+        "spawnablePositionType": "grounded",
+        "bucket": "uncommon",
+        "level": "20-43",
+        "weight": 1.6,
+        "condition": {
+          "minSkyLight": 0,
+          "maxSkyLight": 7,
+          "biomes": [
+            "#cobblemon:is_overworld"
+          ],
+          "neededNearbyBlocks": [
+            "#minecraft:water"
+          ],
+          "maxY": 62
+        },
+        "anticondition": {
+          "biomes": [
+            "#cobblemon:is_lush"
+          ]
+        }
+      }
+    },
+    {
+      "id": "palpitoad-4",
+      "sourceFile": "0536_palpitoad.json",
+      "pokemon": {
+        "raw": "palpitoad",
+        "slug": "palpitoad",
+        "aspectTokens": []
+      },
+      "type": "pokemon",
+      "spawnablePositionType": "submerged",
+      "bucket": "uncommon",
+      "bucketWeight": 5,
+      "levelText": "20-43",
+      "levelMin": 20,
+      "levelMax": 43,
+      "weight": 1.6,
+      "presets": [
+        "water"
+      ],
+      "biomeHints": [
+        "Is Overworld"
+      ],
+      "condition": {
+        "fluid": "#minecraft:water",
+        "minSkyLight": 0,
+        "maxSkyLight": 7,
+        "biomes": [
+          "#cobblemon:is_overworld"
+        ],
+        "maxY": 62
+      },
+      "anticondition": {
+        "biomes": [
+          "#cobblemon:is_lush"
+        ]
+      },
+      "weightMultipliers": [],
+      "raw": {
+        "id": "palpitoad-4",
+        "pokemon": "palpitoad",
+        "presets": [
+          "water"
+        ],
+        "type": "pokemon",
+        "spawnablePositionType": "submerged",
+        "bucket": "uncommon",
+        "level": "20-43",
+        "weight": 1.6,
+        "condition": {
+          "minSkyLight": 0,
+          "maxSkyLight": 7,
+          "biomes": [
+            "#cobblemon:is_overworld"
+          ],
+          "maxY": 62
+        },
+        "anticondition": {
+          "biomes": [
+            "#cobblemon:is_lush"
+          ]
+        }
+      }
+    },
+    {
+      "id": "palpitoad-5",
+      "sourceFile": "0536_palpitoad.json",
+      "pokemon": {
+        "raw": "palpitoad",
+        "slug": "palpitoad",
+        "aspectTokens": []
+      },
+      "type": "pokemon",
+      "spawnablePositionType": "grounded",
+      "bucket": "common",
+      "bucketWeight": 94.3,
+      "levelText": "20-43",
+      "levelMin": 20,
+      "levelMax": 43,
+      "weight": 0.2,
+      "presets": [
+        "natural"
+      ],
+      "biomeHints": [
+        "Is Swamp",
+        "Mangrove Swamp",
+        "Swamp"
+      ],
+      "condition": {
+        "neededBaseBlocks": [
+          "#cobblemon:natural"
+        ],
+        "minSkyLight": 8,
+        "maxSkyLight": 15,
+        "biomes": [
+          "#cobblemon:is_swamp"
+        ],
+        "isRaining": true
+      },
+      "anticondition": {
+        "neededBaseBlocks": [
+          "minecraft:farmland"
+        ],
+        "biomes": [
+          "#cobblemon:has_block/mud"
+        ]
+      },
+      "weightMultipliers": [],
+      "raw": {
+        "id": "palpitoad-5",
+        "pokemon": "palpitoad",
+        "presets": [
+          "natural"
+        ],
+        "type": "pokemon",
+        "spawnablePositionType": "grounded",
+        "bucket": "common",
+        "level": "20-43",
+        "weight": 0.2,
+        "condition": {
+          "minSkyLight": 8,
+          "maxSkyLight": 15,
+          "biomes": [
+            "#cobblemon:is_swamp"
+          ],
+          "isRaining": true
+        },
+        "anticondition": {
+          "biomes": [
+            "#cobblemon:has_block/mud"
+          ]
+        }
+      }
+    },
+    {
+      "id": "palpitoad-6",
+      "sourceFile": "0536_palpitoad.json",
+      "pokemon": {
+        "raw": "palpitoad",
+        "slug": "palpitoad",
+        "aspectTokens": []
+      },
+      "type": "pokemon",
+      "spawnablePositionType": "submerged",
+      "bucket": "common",
+      "bucketWeight": 94.3,
+      "levelText": "20-43",
+      "levelMin": 20,
+      "levelMax": 43,
+      "weight": 0.2,
+      "presets": [
+        "water"
+      ],
+      "biomeHints": [
+        "Is Swamp",
+        "Mangrove Swamp",
+        "Swamp"
+      ],
+      "condition": {
+        "fluid": "#minecraft:water",
+        "canSeeSky": true,
+        "biomes": [
+          "#cobblemon:is_swamp"
+        ]
+      },
+      "anticondition": {
+        "biomes": [
+          "#cobblemon:has_block/mud"
+        ]
+      },
+      "weightMultipliers": [],
+      "raw": {
+        "id": "palpitoad-6",
+        "pokemon": "palpitoad",
+        "presets": [
+          "water"
+        ],
+        "type": "pokemon",
+        "spawnablePositionType": "submerged",
+        "bucket": "common",
+        "level": "20-43",
+        "weight": 0.2,
+        "condition": {
+          "canSeeSky": true,
+          "biomes": [
+            "#cobblemon:is_swamp"
+          ]
+        },
+        "anticondition": {
+          "biomes": [
+            "#cobblemon:has_block/mud"
+          ]
+        }
+      }
+    },
+    {
+      "id": "palpitoad-7",
+      "sourceFile": "0536_palpitoad.json",
+      "pokemon": {
+        "raw": "palpitoad",
+        "slug": "palpitoad",
+        "aspectTokens": []
+      },
+      "type": "pokemon",
+      "spawnablePositionType": "fishing",
+      "bucket": "common",
+      "bucketWeight": 94.3,
+      "levelText": "20-43",
+      "levelMin": 20,
+      "levelMax": 43,
+      "weight": 1,
+      "presets": [],
+      "biomeHints": [
+        "Is Aether",
+        "Is Overworld"
+      ],
+      "condition": {
+        "minSkyLight": 0,
+        "maxSkyLight": 7,
+        "biomes": [
+          "#aether:is_aether",
+          "#cobblemon:is_overworld"
+        ]
+      },
+      "anticondition": {
+        "biomes": [
+          "#cobblemon:is_lush"
+        ]
+      },
+      "weightMultipliers": [],
+      "raw": {
+        "id": "palpitoad-7",
+        "pokemon": "palpitoad",
+        "type": "pokemon",
+        "spawnablePositionType": "fishing",
+        "bucket": "common",
+        "level": "20-43",
+        "weight": 1,
+        "condition": {
+          "minSkyLight": 0,
+          "maxSkyLight": 7,
+          "biomes": [
+            "#aether:is_aether",
+            "#cobblemon:is_overworld"
+          ]
+        },
+        "anticondition": {
+          "biomes": [
+            "#cobblemon:is_lush"
+          ]
+        }
+      }
+    },
+    {
+      "id": "palpitoad-8",
+      "sourceFile": "0536_palpitoad.json",
+      "pokemon": {
+        "raw": "palpitoad",
+        "slug": "palpitoad",
+        "aspectTokens": []
+      },
+      "type": "pokemon",
+      "spawnablePositionType": "fishing",
+      "bucket": "common",
+      "bucketWeight": 94.3,
+      "levelText": "20-43",
+      "levelMin": 20,
+      "levelMax": 43,
+      "weight": 0.2,
+      "presets": [],
+      "biomeHints": [
+        "Is Mushroom",
+        "Dark Forest",
+        "Mushroom Fields",
+        "Is Swamp",
+        "Mangrove Swamp",
+        "Swamp"
+      ],
+      "condition": {
+        "canSeeSky": true,
+        "biomes": [
+          "#cobblemon:is_mushroom",
+          "#cobblemon:is_swamp"
+        ]
+      },
+      "anticondition": {
+        "biomes": [
+          "#cobblemon:has_block/mud"
+        ]
+      },
+      "weightMultipliers": [
+        {
+          "multiplier": 3,
+          "condition": {
+            "minLureLevel": 2,
+            "maxLureLevel": 2
+          }
+        },
+        {
+          "multiplier": 5,
+          "condition": {
+            "minLureLevel": 3
+          }
+        }
+      ],
+      "raw": {
+        "id": "palpitoad-8",
+        "pokemon": "palpitoad",
+        "type": "pokemon",
+        "spawnablePositionType": "fishing",
+        "bucket": "common",
+        "level": "20-43",
+        "weight": 0.2,
+        "weightMultipliers": [
+          {
+            "multiplier": 3,
+            "condition": {
+              "minLureLevel": 2,
+              "maxLureLevel": 2
+            }
+          },
+          {
+            "multiplier": 5,
+            "condition": {
+              "minLureLevel": 3
+            }
+          }
+        ],
+        "condition": {
+          "canSeeSky": true,
+          "biomes": [
+            "#cobblemon:is_mushroom",
+            "#cobblemon:is_swamp"
+          ]
+        },
+        "anticondition": {
+          "biomes": [
+            "#cobblemon:has_block/mud"
+          ]
+        }
+      }
+    },
+    {
+      "id": "palpitoad-9",
+      "sourceFile": "0536_palpitoad.json",
+      "pokemon": {
+        "raw": "palpitoad",
+        "slug": "palpitoad",
+        "aspectTokens": []
+      },
+      "type": "pokemon",
+      "spawnablePositionType": "submerged",
+      "bucket": "common",
+      "bucketWeight": 94.3,
+      "levelText": "20-43",
+      "levelMin": 20,
+      "levelMax": 43,
+      "weight": 0.2,
+      "presets": [
+        "water"
+      ],
+      "biomeHints": [
+        "Is Swamp",
+        "Mangrove Swamp",
+        "Swamp"
+      ],
+      "condition": {
+        "fluid": "#minecraft:water",
+        "canSeeSky": false,
+        "minSkyLight": 8,
+        "maxSkyLight": 15,
+        "biomes": [
+          "#cobblemon:is_swamp"
+        ]
+      },
+      "anticondition": {
+        "biomes": [
+          "#cobblemon:has_block/mud"
+        ]
+      },
+      "weightMultipliers": [],
+      "raw": {
+        "id": "palpitoad-9",
+        "pokemon": "palpitoad",
+        "presets": [
+          "water"
+        ],
+        "type": "pokemon",
+        "spawnablePositionType": "submerged",
+        "bucket": "common",
+        "level": "20-43",
+        "weight": 0.2,
+        "condition": {
+          "canSeeSky": false,
+          "minSkyLight": 8,
+          "maxSkyLight": 15,
+          "biomes": [
+            "#cobblemon:is_swamp"
+          ]
+        },
+        "anticondition": {
+          "biomes": [
+            "#cobblemon:has_block/mud"
+          ]
+        }
+      }
+    }
+  ],
   "forms": [],
   "drops": {
     "amount": 3,

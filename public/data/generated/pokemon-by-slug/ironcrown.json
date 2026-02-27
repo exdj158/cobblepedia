@@ -875,7 +875,65 @@
       "fromFormSlug": null
     }
   ],
-  "spawnEntries": [],
+  "spawnEntries": [
+    {
+      "id": "ironcrown-1",
+      "sourceFile": "1023_ironcrown.json",
+      "pokemon": {
+        "raw": "ironcrown",
+        "slug": "ironcrown",
+        "aspectTokens": []
+      },
+      "type": "pokemon",
+      "spawnablePositionType": "grounded",
+      "bucket": "ultra-rare",
+      "bucketWeight": 0.2,
+      "levelText": "50-75",
+      "levelMin": 50,
+      "levelMax": 75,
+      "weight": 5.5,
+      "presets": [
+        "natural"
+      ],
+      "biomeHints": [
+        "Is Lush",
+        "Lush Caves"
+      ],
+      "condition": {
+        "neededBaseBlocks": [
+          "#cobblemon:natural"
+        ],
+        "biomes": [
+          "#cobblemon:is_lush"
+        ],
+        "timeRange": "night"
+      },
+      "anticondition": {
+        "neededBaseBlocks": [
+          "minecraft:farmland"
+        ]
+      },
+      "weightMultipliers": [],
+      "raw": {
+        "id": "ironcrown-1",
+        "pokemon": "ironcrown",
+        "presets": [
+          "natural"
+        ],
+        "type": "pokemon",
+        "spawnablePositionType": "grounded",
+        "bucket": "ultra-rare",
+        "level": "50-75",
+        "weight": 5.5,
+        "condition": {
+          "biomes": [
+            "#cobblemon:is_lush"
+          ],
+          "timeRange": "night"
+        }
+      }
+    }
+  ],
   "forms": [],
   "drops": null,
   "rawSpecies": {

@@ -1113,7 +1113,74 @@
       "fromFormSlug": null
     }
   ],
-  "spawnEntries": [],
+  "spawnEntries": [
+    {
+      "id": "orbeetle-1",
+      "sourceFile": "0826_orbeetle.json",
+      "pokemon": {
+        "raw": "orbeetle",
+        "slug": "orbeetle",
+        "aspectTokens": []
+      },
+      "type": "pokemon",
+      "spawnablePositionType": "grounded",
+      "bucket": "rare",
+      "bucketWeight": 0.5,
+      "levelText": "32-47",
+      "levelMin": 32,
+      "levelMax": 47,
+      "weight": 1,
+      "presets": [
+        "natural"
+      ],
+      "biomeHints": [
+        "Is Plains",
+        "Plains",
+        "Sunflower Plains"
+      ],
+      "condition": {
+        "neededBaseBlocks": [
+          "#cobblemon:natural"
+        ],
+        "canSeeSky": true,
+        "biomes": [
+          "#cobblemon:is_plains"
+        ]
+      },
+      "anticondition": {
+        "neededBaseBlocks": [
+          "minecraft:farmland"
+        ],
+        "biomes": [
+          "#cobblemon:is_spooky"
+        ]
+      },
+      "weightMultipliers": [],
+      "raw": {
+        "id": "orbeetle-1",
+        "pokemon": "orbeetle",
+        "presets": [
+          "natural"
+        ],
+        "type": "pokemon",
+        "spawnablePositionType": "grounded",
+        "bucket": "rare",
+        "level": "32-47",
+        "weight": 1,
+        "condition": {
+          "canSeeSky": true,
+          "biomes": [
+            "#cobblemon:is_plains"
+          ]
+        },
+        "anticondition": {
+          "biomes": [
+            "#cobblemon:is_spooky"
+          ]
+        }
+      }
+    }
+  ],
   "forms": [
     {
       "name": "Gmax",

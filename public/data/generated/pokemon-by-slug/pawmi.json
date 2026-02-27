@@ -880,7 +880,65 @@
       "fromFormSlug": null
     }
   ],
-  "spawnEntries": [],
+  "spawnEntries": [
+    {
+      "id": "pawmi-1",
+      "sourceFile": "0921_pawmi.json",
+      "pokemon": {
+        "raw": "pawmi",
+        "slug": "pawmi",
+        "aspectTokens": []
+      },
+      "type": "pokemon",
+      "spawnablePositionType": "grounded",
+      "bucket": "uncommon",
+      "bucketWeight": 5,
+      "levelText": "5-17",
+      "levelMin": 5,
+      "levelMax": 17,
+      "weight": 7,
+      "presets": [
+        "natural"
+      ],
+      "biomeHints": [
+        "Is Plains",
+        "Plains",
+        "Sunflower Plains"
+      ],
+      "condition": {
+        "neededBaseBlocks": [
+          "#cobblemon:natural"
+        ],
+        "biomes": [
+          "#cobblemon:is_plains"
+        ]
+      },
+      "anticondition": {
+        "neededBaseBlocks": [
+          "minecraft:farmland"
+        ]
+      },
+      "weightMultipliers": [],
+      "raw": {
+        "id": "pawmi-1",
+        "pokemon": "pawmi",
+        "presets": [
+          "natural"
+        ],
+        "type": "pokemon",
+        "spawnablePositionType": "grounded",
+        "bucket": "uncommon",
+        "level": "5-17",
+        "weight": 7,
+        "canSeeSky": true,
+        "condition": {
+          "biomes": [
+            "#cobblemon:is_plains"
+          ]
+        }
+      }
+    }
+  ],
   "forms": [],
   "drops": {
     "amount": 1,

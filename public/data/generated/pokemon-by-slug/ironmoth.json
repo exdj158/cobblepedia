@@ -895,7 +895,66 @@
       "fromFormSlug": null
     }
   ],
-  "spawnEntries": [],
+  "spawnEntries": [
+    {
+      "id": "ironmoth-1",
+      "sourceFile": "0994_ironmoth.json",
+      "pokemon": {
+        "raw": "ironmoth",
+        "slug": "ironmoth",
+        "aspectTokens": []
+      },
+      "type": "pokemon",
+      "spawnablePositionType": "grounded",
+      "bucket": "rare",
+      "bucketWeight": 0.5,
+      "levelText": "40-65",
+      "levelMin": 40,
+      "levelMax": 65,
+      "weight": 3,
+      "presets": [
+        "natural"
+      ],
+      "biomeHints": [
+        "Is Hills",
+        "Is Hill",
+        "Is Highlands"
+      ],
+      "condition": {
+        "neededBaseBlocks": [
+          "#cobblemon:natural"
+        ],
+        "biomes": [
+          "#cobblemon:is_hills"
+        ],
+        "timeRange": "day"
+      },
+      "anticondition": {
+        "neededBaseBlocks": [
+          "minecraft:farmland"
+        ]
+      },
+      "weightMultipliers": [],
+      "raw": {
+        "id": "ironmoth-1",
+        "pokemon": "ironmoth",
+        "presets": [
+          "natural"
+        ],
+        "type": "pokemon",
+        "spawnablePositionType": "grounded",
+        "bucket": "rare",
+        "level": "40-65",
+        "weight": 3,
+        "condition": {
+          "biomes": [
+            "#cobblemon:is_hills"
+          ],
+          "timeRange": "day"
+        }
+      }
+    }
+  ],
   "forms": [],
   "drops": null,
   "rawSpecies": {

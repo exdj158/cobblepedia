@@ -1171,7 +1171,66 @@
       "fromFormSlug": null
     }
   ],
-  "spawnEntries": [],
+  "spawnEntries": [
+    {
+      "id": "xerneas-1",
+      "sourceFile": "0716_xerneas.json",
+      "pokemon": {
+        "raw": "xerneas",
+        "slug": "xerneas",
+        "aspectTokens": []
+      },
+      "type": "pokemon",
+      "spawnablePositionType": "grounded",
+      "bucket": "ultra-rare",
+      "bucketWeight": 0.2,
+      "levelText": "65-75",
+      "levelMin": 65,
+      "levelMax": 75,
+      "weight": 0.24,
+      "presets": [
+        "natural"
+      ],
+      "biomeHints": [
+        "Is Floral",
+        "Cherry Grove",
+        "Flower Forest"
+      ],
+      "condition": {
+        "neededBaseBlocks": [
+          "#cobblemon:natural"
+        ],
+        "timeRange": "day",
+        "biomes": [
+          "#cobblemon:is_floral"
+        ]
+      },
+      "anticondition": {
+        "neededBaseBlocks": [
+          "minecraft:farmland"
+        ]
+      },
+      "weightMultipliers": [],
+      "raw": {
+        "id": "xerneas-1",
+        "pokemon": "xerneas",
+        "presets": [
+          "natural"
+        ],
+        "type": "pokemon",
+        "spawnablePositionType": "grounded",
+        "bucket": "ultra-rare",
+        "level": "65-75",
+        "weight": 0.24,
+        "condition": {
+          "timeRange": "day",
+          "biomes": [
+            "#cobblemon:is_floral"
+          ]
+        }
+      }
+    }
+  ],
   "forms": [
     {
       "name": "Active",

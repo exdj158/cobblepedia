@@ -836,7 +836,50 @@
       "fromFormSlug": null
     }
   ],
-  "spawnEntries": [],
+  "spawnEntries": [
+    {
+      "id": "chiyu-1",
+      "sourceFile": "1004_chiyu.json",
+      "pokemon": {
+        "raw": "chiyu",
+        "slug": "chiyu",
+        "aspectTokens": []
+      },
+      "type": "pokemon",
+      "spawnablePositionType": "grounded",
+      "bucket": "ultra-rare",
+      "bucketWeight": 0.2,
+      "levelText": "65-70",
+      "levelMin": 65,
+      "levelMax": 70,
+      "weight": 0,
+      "presets": [],
+      "biomeHints": [
+        "Custom Spawn/firescoruge Shrine"
+      ],
+      "condition": {
+        "biomes": [
+          "cobbleverse:custom_spawn/firescoruge_shrine"
+        ]
+      },
+      "anticondition": null,
+      "weightMultipliers": [],
+      "raw": {
+        "id": "chiyu-1",
+        "pokemon": "chiyu",
+        "type": "pokemon",
+        "spawnablePositionType": "grounded",
+        "bucket": "ultra-rare",
+        "level": "65-70",
+        "weight": 0,
+        "condition": {
+          "biomes": [
+            "cobbleverse:custom_spawn/firescoruge_shrine"
+          ]
+        }
+      }
+    }
+  ],
   "forms": [],
   "drops": {
     "amount": 5,

@@ -1616,7 +1616,70 @@
       "fromFormSlug": null
     }
   ],
-  "spawnEntries": [],
+  "spawnEntries": [
+    {
+      "id": "victini-1",
+      "sourceFile": "0494_victini.json",
+      "pokemon": {
+        "raw": "victini",
+        "slug": "victini",
+        "aspectTokens": []
+      },
+      "type": "pokemon",
+      "spawnablePositionType": "grounded",
+      "bucket": "ultra-rare",
+      "bucketWeight": 0.2,
+      "levelText": "50",
+      "levelMin": 50,
+      "levelMax": 50,
+      "weight": 0.6,
+      "presets": [
+        "natural",
+        "wild"
+      ],
+      "biomeHints": [
+        "Crimson Forest"
+      ],
+      "condition": {
+        "neededBaseBlocks": [
+          "#cobblemon:natural"
+        ],
+        "biomes": [
+          "minecraft:crimson_forest"
+        ]
+      },
+      "anticondition": {
+        "neededBaseBlocks": [
+          "minecraft:farmland"
+        ],
+        "structures": [
+          "#minecraft:village"
+        ],
+        "neededNearbyBlocks": [
+          "#cobblemon:concrete_blocks"
+        ]
+      },
+      "weightMultipliers": [],
+      "raw": {
+        "id": "victini-1",
+        "pokemon": "victini",
+        "presets": [
+          "natural",
+          "wild"
+        ],
+        "type": "pokemon",
+        "spawnablePositionType": "grounded",
+        "bucket": "ultra-rare",
+        "level": "50",
+        "weight": 0.6,
+        "condition": {
+          "biomes": [
+            "minecraft:crimson_forest"
+          ]
+        }
+      }
+    }
+  ],
   "forms": [],
   "drops": {
     "amount": 5,

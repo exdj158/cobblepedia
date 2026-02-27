@@ -995,7 +995,62 @@
       "fromFormSlug": null
     }
   ],
-  "spawnEntries": [],
+  "spawnEntries": [
+    {
+      "id": "gougingfire-1",
+      "sourceFile": "1020_gougingfire.json",
+      "pokemon": {
+        "raw": "gougingfire",
+        "slug": "gougingfire",
+        "aspectTokens": []
+      },
+      "type": "pokemon",
+      "spawnablePositionType": "grounded",
+      "bucket": "ultra-rare",
+      "bucketWeight": 0.2,
+      "levelText": "70-75",
+      "levelMin": 70,
+      "levelMax": 75,
+      "weight": 3.5,
+      "presets": [
+        "natural"
+      ],
+      "biomeHints": [
+        "Basalt Deltas"
+      ],
+      "condition": {
+        "neededBaseBlocks": [
+          "#cobblemon:natural"
+        ],
+        "biomes": [
+          "minecraft:basalt_deltas"
+        ]
+      },
+      "anticondition": {
+        "neededBaseBlocks": [
+          "minecraft:farmland"
+        ]
+      },
+      "weightMultipliers": [],
+      "raw": {
+        "id": "gougingfire-1",
+        "pokemon": "gougingfire",
+        "presets": [
+          "natural"
+        ],
+        "type": "pokemon",
+        "spawnablePositionType": "grounded",
+        "bucket": "ultra-rare",
+        "level": "70-75",
+        "weight": 3.5,
+        "condition": {
+          "biomes": [
+            "minecraft:basalt_deltas"
+          ]
+        }
+      }
+    }
+  ],
   "forms": [],
   "drops": null,
   "rawSpecies": {

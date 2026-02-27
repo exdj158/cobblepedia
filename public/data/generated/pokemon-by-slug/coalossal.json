@@ -1164,7 +1164,150 @@
       "fromFormSlug": null
     }
   ],
-  "spawnEntries": [],
+  "spawnEntries": [
+    {
+      "id": "coalossal-1",
+      "sourceFile": "0839_coalossal.json",
+      "pokemon": {
+        "raw": "coalossal",
+        "slug": "coalossal",
+        "aspectTokens": []
+      },
+      "type": "pokemon",
+      "spawnablePositionType": "grounded",
+      "bucket": "rare",
+      "bucketWeight": 0.5,
+      "levelText": "36-65",
+      "levelMin": 36,
+      "levelMax": 65,
+      "weight": 8,
+      "presets": [
+        "natural",
+        "wild"
+      ],
+      "biomeHints": [
+        "Is Cave",
+        "Dripstone Caves",
+        "Lush Caves",
+        "Is Mountain",
+        "Is Hills"
+      ],
+      "condition": {
+        "neededBaseBlocks": [
+          "#cobblemon:natural"
+        ],
+        "biomes": [
+          "#cobblemon:is_cave",
+          "#cobblemon:is_mountain"
+        ],
+        "neededNearbyBlocks": [
+          "minecraft:coal_ore"
+        ]
+      },
+      "anticondition": {
+        "neededBaseBlocks": [
+          "minecraft:farmland"
+        ],
+        "structures": [
+          "#minecraft:village"
+        ],
+        "neededNearbyBlocks": [
+          "#cobblemon:concrete_blocks"
+        ]
+      },
+      "weightMultipliers": [],
+      "raw": {
+        "id": "coalossal-1",
+        "pokemon": "coalossal",
+        "presets": [
+          "natural",
+          "wild"
+        ],
+        "type": "pokemon",
+        "spawnablePositionType": "grounded",
+        "bucket": "rare",
+        "level": "36-65",
+        "weight": 8,
+        "condition": {
+          "biomes": [
+            "#cobblemon:is_cave",
+            "#cobblemon:is_mountain"
+          ],
+          "neededNearbyBlocks": [
+            "minecraft:coal_ore"
+          ]
+        }
+      }
+    },
+    {
+      "id": "coalossal-2",
+      "sourceFile": "0839_coalossal.json",
+      "pokemon": {
+        "raw": "coalossal",
+        "slug": "coalossal",
+        "aspectTokens": []
+      },
+      "type": "pokemon",
+      "spawnablePositionType": "grounded",
+      "bucket": "ultra-rare",
+      "bucketWeight": 0.2,
+      "levelText": "35-47",
+      "levelMin": 35,
+      "levelMax": 47,
+      "weight": 1.5,
+      "presets": [
+        "natural",
+        "wild"
+      ],
+      "biomeHints": [
+        "Is Cave",
+        "Dripstone Caves",
+        "Lush Caves",
+        "Is Mountain",
+        "Is Hills"
+      ],
+      "condition": {
+        "neededBaseBlocks": [
+          "#cobblemon:natural"
+        ],
+        "biomes": [
+          "#cobblemon:is_cave",
+          "#cobblemon:is_mountain"
+        ]
+      },
+      "anticondition": {
+        "neededBaseBlocks": [
+          "minecraft:farmland"
+        ],
+        "structures": [
+          "#minecraft:village"
+        ],
+        "neededNearbyBlocks": [
+          "#cobblemon:concrete_blocks"
+        ]
+      },
+      "weightMultipliers": [],
+      "raw": {
+        "id": "coalossal-2",
+        "pokemon": "coalossal",
+        "presets": [
+          "natural",
+          "wild"
+        ],
+        "type": "pokemon",
+        "spawnablePositionType": "grounded",
+        "bucket": "ultra-rare",
+        "level": "35-47",
+        "weight": 1.5,
+        "condition": {
+          "biomes": [
+            "#cobblemon:is_cave",
+            "#cobblemon:is_mountain"
+          ]
+        }
+      }
+    }
+  ],
   "forms": [
     {
       "name": "Gmax",

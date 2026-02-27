@@ -1992,7 +1992,50 @@
       "fromFormSlug": null
     }
   ],
-  "spawnEntries": [],
+  "spawnEntries": [
+    {
+      "id": "deoxys-1",
+      "sourceFile": "0386_deoxys.json",
+      "pokemon": {
+        "raw": "deoxys",
+        "slug": "deoxys",
+        "aspectTokens": []
+      },
+      "type": "pokemon",
+      "spawnablePositionType": "grounded",
+      "bucket": "ultra-rare",
+      "bucketWeight": 0.2,
+      "levelText": "75-80",
+      "levelMin": 75,
+      "levelMax": 80,
+      "weight": 0,
+      "presets": [],
+      "biomeHints": [
+        "Custom Spawn/deoxys Meteorite"
+      ],
+      "condition": {
+        "biomes": [
+          "cobbleverse:custom_spawn/deoxys_meteorite"
+        ]
+      },
+      "anticondition": null,
+      "weightMultipliers": [],
+      "raw": {
+        "id": "deoxys-1",
+        "pokemon": "deoxys",
+        "type": "pokemon",
+        "spawnablePositionType": "grounded",
+        "bucket": "ultra-rare",
+        "level": "75-80",
+        "weight": 0,
+        "condition": {
+          "biomes": [
+            "cobbleverse:custom_spawn/deoxys_meteorite"
+          ]
+        }
+      }
+    }
+  ],
   "forms": [
     {
       "name": "Attack",

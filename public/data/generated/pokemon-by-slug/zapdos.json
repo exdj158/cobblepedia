@@ -1332,7 +1332,118 @@
       "fromFormSlug": null
     }
   ],
-  "spawnEntries": [],
+  "spawnEntries": [
+    {
+      "id": "zapdos",
+      "sourceFile": "0145_zapdos.json",
+      "pokemon": {
+        "raw": "zapdos",
+        "slug": "zapdos",
+        "aspectTokens": []
+      },
+      "type": "pokemon",
+      "spawnablePositionType": "grounded",
+      "bucket": "ultra-rare",
+      "bucketWeight": 0.2,
+      "levelText": "50-60",
+      "levelMin": 50,
+      "levelMax": 60,
+      "weight": 0,
+      "presets": [
+        "natural"
+      ],
+      "biomeHints": [
+        "Custom Spawn/zapdos Tower"
+      ],
+      "condition": {
+        "neededBaseBlocks": [
+          "#cobblemon:natural"
+        ],
+        "biomes": [
+          "cobbleverse:custom_spawn/zapdos_tower"
+        ]
+      },
+      "anticondition": {
+        "neededBaseBlocks": [
+          "minecraft:farmland"
+        ]
+      },
+      "weightMultipliers": [],
+      "raw": {
+        "id": "zapdos",
+        "pokemon": "zapdos",
+        "presets": [
+          "natural"
+        ],
+        "type": "pokemon",
+        "spawnablePositionType": "grounded",
+        "bucket": "ultra-rare",
+        "level": "50-60",
+        "weight": 0,
+        "condition": {
+          "biomes": [
+            "cobbleverse:custom_spawn/zapdos_tower"
+          ]
+        }
+      }
+    },
+    {
+      "id": "zapdos-2",
+      "sourceFile": "0145_zapdos.json",
+      "pokemon": {
+        "raw": "zapdos galarian",
+        "slug": "zapdos",
+        "aspectTokens": [
+          "galarian"
+        ]
+      },
+      "type": "pokemon",
+      "spawnablePositionType": "grounded",
+      "bucket": "ultra-rare",
+      "bucketWeight": 0.2,
+      "levelText": "60",
+      "levelMin": 60,
+      "levelMax": 60,
+      "weight": 4,
+      "presets": [
+        "natural"
+      ],
+      "biomeHints": [],
+      "condition": {
+        "neededBaseBlocks": [
+          "#cobblemon:natural"
+        ],
+        "structures": [
+          "cobbleverse:dyna_tree"
+        ],
+        "isThundering": true
+      },
+      "anticondition": {
+        "neededBaseBlocks": [
+          "minecraft:farmland"
+        ]
+      },
+      "weightMultipliers": [],
+      "raw": {
+        "id": "zapdos-2",
+        "pokemon": "zapdos galarian",
+        "presets": [
+          "natural"
+        ],
+        "type": "pokemon",
+        "spawnablePositionType": "grounded",
+        "bucket": "ultra-rare",
+        "level": "60",
+        "weight": 4,
+        "condition": {
+          "structures": [
+            "cobbleverse:dyna_tree"
+          ],
+          "isThundering": true
+        }
+      }
+    }
+  ],
   "forms": [
     {
       "name": "Galar",

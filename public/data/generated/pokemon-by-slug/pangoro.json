@@ -1865,7 +1865,117 @@
       "fromFormSlug": null
     }
   ],
-  "spawnEntries": [],
+  "spawnEntries": [
+    {
+      "id": "pangoro-1",
+      "sourceFile": "0675_pangoro.json",
+      "pokemon": {
+        "raw": "pangoro",
+        "slug": "pangoro",
+        "aspectTokens": []
+      },
+      "type": "pokemon",
+      "spawnablePositionType": "grounded",
+      "bucket": "uncommon",
+      "bucketWeight": 5,
+      "levelText": "32-68",
+      "levelMin": 32,
+      "levelMax": 68,
+      "weight": 4.7,
+      "presets": [
+        "natural"
+      ],
+      "biomeHints": [
+        "Is Jungle"
+      ],
+      "condition": {
+        "neededBaseBlocks": [
+          "#cobblemon:natural"
+        ],
+        "biomes": [
+          "#cobblemon:is_jungle"
+        ]
+      },
+      "anticondition": {
+        "neededBaseBlocks": [
+          "minecraft:farmland"
+        ]
+      },
+      "weightMultipliers": [],
+      "raw": {
+        "id": "pangoro-1",
+        "pokemon": "pangoro",
+        "presets": [
+          "natural"
+        ],
+        "type": "pokemon",
+        "spawnablePositionType": "grounded",
+        "bucket": "uncommon",
+        "level": "32-68",
+        "weight": 4.7,
+        "condition": {
+          "biomes": [
+            "#cobblemon:is_jungle"
+          ]
+        }
+      }
+    },
+    {
+      "id": "pangoro-2",
+      "sourceFile": "0675_pangoro.json",
+      "pokemon": {
+        "raw": "pangoro",
+        "slug": "pangoro",
+        "aspectTokens": []
+      },
+      "type": "pokemon",
+      "spawnablePositionType": "grounded",
+      "bucket": "rare",
+      "bucketWeight": 0.5,
+      "levelText": "38-56",
+      "levelMin": 38,
+      "levelMax": 56,
+      "weight": 1.2,
+      "presets": [
+        "natural"
+      ],
+      "biomeHints": [
+        "Is Forest",
+        "Cherry Grove"
+      ],
+      "condition": {
+        "neededBaseBlocks": [
+          "#cobblemon:natural"
+        ],
+        "biomes": [
+          "#cobblemon:is_forest"
+        ]
+      },
+      "anticondition": {
+        "neededBaseBlocks": [
+          "minecraft:farmland"
+        ]
+      },
+      "weightMultipliers": [],
+      "raw": {
+        "id": "pangoro-2",
+        "pokemon": "pangoro",
+        "presets": [
+          "natural"
+        ],
+        "type": "pokemon",
+        "spawnablePositionType": "grounded",
+        "bucket": "rare",
+        "level": "38-56",
+        "weight": 1.2,
+        "condition": {
+          "biomes": [
+            "#cobblemon:is_forest"
+          ]
+        }
+      }
+    }
+  ],
   "forms": [],
   "drops": {
     "amount": 0,

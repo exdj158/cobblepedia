@@ -1053,7 +1053,126 @@
       "fromFormSlug": null
     }
   ],
-  "spawnEntries": [],
+  "spawnEntries": [
+    {
+      "id": "indeedee-1",
+      "sourceFile": "0876_indeedee.json",
+      "pokemon": {
+        "raw": "indeedee gender=female",
+        "slug": "indeedee",
+        "aspectTokens": [
+          "gender=female"
+        ]
+      },
+      "type": "pokemon",
+      "spawnablePositionType": "grounded",
+      "bucket": "rare",
+      "bucketWeight": 0.5,
+      "levelText": "35-67",
+      "levelMin": 35,
+      "levelMax": 67,
+      "weight": 1.5,
+      "presets": [
+        "natural"
+      ],
+      "biomeHints": [
+        "Is Magical",
+        "Dark Forest"
+      ],
+      "condition": {
+        "neededBaseBlocks": [
+          "#cobblemon:natural"
+        ],
+        "canSeeSky": true,
+        "biomes": [
+          "#cobblemon:is_magical"
+        ]
+      },
+      "anticondition": {
+        "neededBaseBlocks": [
+          "minecraft:farmland"
+        ]
+      },
+      "weightMultipliers": [],
+      "raw": {
+        "id": "indeedee-1",
+        "pokemon": "indeedee gender=female",
+        "presets": [
+          "natural"
+        ],
+        "type": "pokemon",
+        "spawnablePositionType": "grounded",
+        "bucket": "rare",
+        "level": "35-67",
+        "weight": 1.5,
+        "condition": {
+          "canSeeSky": true,
+          "biomes": [
+            "#cobblemon:is_magical"
+          ]
+        }
+      }
+    },
+    {
+      "id": "indeedee-1",
+      "sourceFile": "0876_indeedee.json",
+      "pokemon": {
+        "raw": "indeedee gender=male",
+        "slug": "indeedee",
+        "aspectTokens": [
+          "gender=male"
+        ]
+      },
+      "type": "pokemon",
+      "spawnablePositionType": "grounded",
+      "bucket": "rare",
+      "bucketWeight": 0.5,
+      "levelText": "35-67",
+      "levelMin": 35,
+      "levelMax": 67,
+      "weight": 1.5,
+      "presets": [
+        "natural"
+      ],
+      "biomeHints": [
+        "Is Magical",
+        "Dark Forest"
+      ],
+      "condition": {
+        "neededBaseBlocks": [
+          "#cobblemon:natural"
+        ],
+        "canSeeSky": true,
+        "biomes": [
+          "#cobblemon:is_magical"
+        ]
+      },
+      "anticondition": {
+        "neededBaseBlocks": [
+          "minecraft:farmland"
+        ]
+      },
+      "weightMultipliers": [],
+      "raw": {
+        "id": "indeedee-1",
+        "pokemon": "indeedee gender=male",
+        "presets": [
+          "natural"
+        ],
+        "type": "pokemon",
+        "spawnablePositionType": "grounded",
+        "bucket": "rare",
+        "level": "35-67",
+        "weight": 1.5,
+        "condition": {
+          "canSeeSky": true,
+          "biomes": [
+            "#cobblemon:is_magical"
+          ]
+        }
+      }
+    }
+  ],
   "forms": [
     {
       "name": "F",

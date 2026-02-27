@@ -1028,7 +1028,65 @@
       "fromFormSlug": null
     }
   ],
-  "spawnEntries": [],
+  "spawnEntries": [
+    {
+      "id": "ironleaves-1",
+      "sourceFile": "1010_ironleaves.json",
+      "pokemon": {
+        "raw": "ironleaves",
+        "slug": "ironleaves",
+        "aspectTokens": []
+      },
+      "type": "pokemon",
+      "spawnablePositionType": "grounded",
+      "bucket": "ultra-rare",
+      "bucketWeight": 0.2,
+      "levelText": "50-75",
+      "levelMin": 50,
+      "levelMax": 75,
+      "weight": 3.5,
+      "presets": [
+        "natural"
+      ],
+      "biomeHints": [
+        "Is Forest",
+        "Cherry Grove"
+      ],
+      "condition": {
+        "neededBaseBlocks": [
+          "#cobblemon:natural"
+        ],
+        "biomes": [
+          "#cobblemon:is_forest"
+        ],
+        "timeRange": "night"
+      },
+      "anticondition": {
+        "neededBaseBlocks": [
+          "minecraft:farmland"
+        ]
+      },
+      "weightMultipliers": [],
+      "raw": {
+        "id": "ironleaves-1",
+        "pokemon": "ironleaves",
+        "presets": [
+          "natural"
+        ],
+        "type": "pokemon",
+        "spawnablePositionType": "grounded",
+        "bucket": "ultra-rare",
+        "level": "50-75",
+        "weight": 3.5,
+        "condition": {
+          "biomes": [
+            "#cobblemon:is_forest"
+          ],
+          "timeRange": "night"
+        }
+      }
+    }
+  ],
   "forms": [],
   "drops": {
     "amount": 0,

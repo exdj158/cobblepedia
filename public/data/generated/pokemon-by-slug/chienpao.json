@@ -806,7 +806,52 @@
       "fromFormSlug": null
     }
   ],
-  "spawnEntries": [],
+  "spawnEntries": [
+    {
+      "id": "chienpao-1",
+      "sourceFile": "1002_chienpao.json",
+      "pokemon": {
+        "raw": "chienpao",
+        "slug": "chienpao",
+        "aspectTokens": []
+      },
+      "type": "pokemon",
+      "spawnablePositionType": "grounded",
+      "bucket": "ultra-rare",
+      "bucketWeight": 0.2,
+      "levelText": "75-80",
+      "levelMin": 75,
+      "levelMax": 80,
+      "weight": 0,
+      "presets": [],
+      "biomeHints": [
+        "Custom Spawn/icerend Shrine"
+      ],
+      "condition": {
+        "canSeeSky": true,
+        "biomes": [
+          "cobbleverse:custom_spawn/icerend_shrine"
+        ]
+      },
+      "anticondition": null,
+      "weightMultipliers": [],
+      "raw": {
+        "id": "chienpao-1",
+        "pokemon": "chienpao",
+        "type": "pokemon",
+        "spawnablePositionType": "grounded",
+        "bucket": "ultra-rare",
+        "level": "75-80",
+        "weight": 0,
+        "condition": {
+          "canSeeSky": true,
+          "biomes": [
+            "cobbleverse:custom_spawn/icerend_shrine"
+          ]
+        }
+      }
+    }
+  ],
   "forms": [],
   "drops": {
     "amount": 5,

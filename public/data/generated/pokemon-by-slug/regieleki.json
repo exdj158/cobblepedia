@@ -816,7 +816,62 @@
       "fromFormSlug": null
     }
   ],
-  "spawnEntries": [],
+  "spawnEntries": [
+    {
+      "id": "regieleki-1",
+      "sourceFile": "0894_regieleki.json",
+      "pokemon": {
+        "raw": "regieleki",
+        "slug": "regieleki",
+        "aspectTokens": []
+      },
+      "type": "pokemon",
+      "spawnablePositionType": "grounded",
+      "bucket": "ultra-rare",
+      "bucketWeight": 0.2,
+      "levelText": "70-80",
+      "levelMin": 70,
+      "levelMax": 80,
+      "weight": 0,
+      "presets": [
+        "natural"
+      ],
+      "biomeHints": [
+        "Custom Spawn/split Decision Temple"
+      ],
+      "condition": {
+        "neededBaseBlocks": [
+          "#cobblemon:natural"
+        ],
+        "biomes": [
+          "cobbleverse:custom_spawn/split_decision_temple"
+        ]
+      },
+      "anticondition": {
+        "neededBaseBlocks": [
+          "minecraft:farmland"
+        ]
+      },
+      "weightMultipliers": [],
+      "raw": {
+        "id": "regieleki-1",
+        "pokemon": "regieleki",
+        "presets": [
+          "natural"
+        ],
+        "type": "pokemon",
+        "spawnablePositionType": "grounded",
+        "bucket": "ultra-rare",
+        "level": "70-80",
+        "weight": 0,
+        "condition": {
+          "biomes": [
+            "cobbleverse:custom_spawn/split_decision_temple"
+          ]
+        }
+      }
+    }
+  ],
   "forms": [],
   "drops": null,
   "rawSpecies": {

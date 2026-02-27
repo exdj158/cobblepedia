@@ -470,7 +470,66 @@
       "fromFormSlug": null
     }
   ],
-  "spawnEntries": [],
+  "spawnEntries": [
+    {
+      "id": "snom-1",
+      "sourceFile": "0872_snom.json",
+      "pokemon": {
+        "raw": "snom",
+        "slug": "snom",
+        "aspectTokens": []
+      },
+      "type": "pokemon",
+      "spawnablePositionType": "grounded",
+      "bucket": "common",
+      "bucketWeight": 94.3,
+      "levelText": "15-36",
+      "levelMin": 15,
+      "levelMax": 36,
+      "weight": 4.4,
+      "presets": [
+        "natural"
+      ],
+      "biomeHints": [
+        "Is Freezing",
+        "Frozen River",
+        "Jagged Peaks"
+      ],
+      "condition": {
+        "neededBaseBlocks": [
+          "#cobblemon:natural"
+        ],
+        "timeRange": "night",
+        "biomes": [
+          "#cobblemon:is_freezing"
+        ]
+      },
+      "anticondition": {
+        "neededBaseBlocks": [
+          "minecraft:farmland"
+        ]
+      },
+      "weightMultipliers": [],
+      "raw": {
+        "id": "snom-1",
+        "pokemon": "snom",
+        "presets": [
+          "natural"
+        ],
+        "type": "pokemon",
+        "spawnablePositionType": "grounded",
+        "bucket": "common",
+        "level": "15-36",
+        "weight": 4.4,
+        "condition": {
+          "timeRange": "night",
+          "biomes": [
+            "#cobblemon:is_freezing"
+          ]
+        }
+      }
+    }
+  ],
   "forms": [],
   "drops": {
     "amount": 3,

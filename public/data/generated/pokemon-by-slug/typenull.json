@@ -1304,7 +1304,64 @@
       "fromFormSlug": null
     }
   ],
-  "spawnEntries": [],
+  "spawnEntries": [
+    {
+      "id": "typenull-1",
+      "sourceFile": "typenull.json",
+      "pokemon": {
+        "raw": "typenull",
+        "slug": "typenull",
+        "aspectTokens": []
+      },
+      "type": "pokemon",
+      "spawnablePositionType": "unknown",
+      "bucket": "ultra-rare",
+      "bucketWeight": 0.2,
+      "levelText": "70-100",
+      "levelMin": 70,
+      "levelMax": 100,
+      "weight": 1,
+      "presets": [
+        "natural"
+      ],
+      "biomeHints": [
+        "Is Plains",
+        "Plains",
+        "Sunflower Plains"
+      ],
+      "condition": {
+        "neededBaseBlocks": [
+          "#cobblemon:natural"
+        ],
+        "biomes": [
+          "#cobblemon:is_plains"
+        ]
+      },
+      "anticondition": {
+        "neededBaseBlocks": [
+          "minecraft:farmland"
+        ]
+      },
+      "weightMultipliers": [],
+      "raw": {
+        "id": "typenull-1",
+        "pokemon": "typenull",
+        "presets": [
+          "natural"
+        ],
+        "type": "pokemon",
+        "context": "grounded",
+        "bucket": "ultra-rare",
+        "level": "70-100",
+        "weight": 1,
+        "condition": {
+          "biomes": [
+            "#cobblemon:is_plains"
+          ]
+        }
+      }
+    }
+  ],
   "forms": [],
   "drops": null,
   "rawSpecies": {

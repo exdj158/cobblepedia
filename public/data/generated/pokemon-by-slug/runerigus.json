@@ -1201,7 +1201,123 @@
       "fromFormSlug": null
     }
   ],
-  "spawnEntries": [],
+  "spawnEntries": [
+    {
+      "id": "runerigus-1",
+      "sourceFile": "0867_runerigus.json",
+      "pokemon": {
+        "raw": "runerigus",
+        "slug": "runerigus",
+        "aspectTokens": []
+      },
+      "type": "pokemon",
+      "spawnablePositionType": "grounded",
+      "bucket": "uncommon",
+      "bucketWeight": 5,
+      "levelText": "34-53",
+      "levelMin": 34,
+      "levelMax": 53,
+      "weight": 1,
+      "presets": [
+        "wild"
+      ],
+      "biomeHints": [
+        "Is Spooky",
+        "Dark Forest"
+      ],
+      "condition": {
+        "timeRange": "night",
+        "biomes": [
+          "#cobblemon:is_spooky"
+        ],
+        "maxY": 60
+      },
+      "anticondition": {
+        "structures": [
+          "#minecraft:village"
+        ],
+        "neededNearbyBlocks": [
+          "#cobblemon:concrete_blocks"
+        ]
+      },
+      "weightMultipliers": [],
+      "raw": {
+        "id": "runerigus-1",
+        "pokemon": "runerigus",
+        "presets": [
+          "wild"
+        ],
+        "type": "pokemon",
+        "spawnablePositionType": "grounded",
+        "bucket": "uncommon",
+        "level": "34-53",
+        "weight": 1,
+        "condition": {
+          "timeRange": "night",
+          "biomes": [
+            "#cobblemon:is_spooky"
+          ],
+          "maxY": 60
+        }
+      }
+    },
+    {
+      "id": "runerigus-2",
+      "sourceFile": "0867_runerigus.json",
+      "pokemon": {
+        "raw": "runerigus",
+        "slug": "runerigus",
+        "aspectTokens": []
+      },
+      "type": "pokemon",
+      "spawnablePositionType": "grounded",
+      "bucket": "rare",
+      "bucketWeight": 0.5,
+      "levelText": "34-63",
+      "levelMin": 34,
+      "levelMax": 63,
+      "weight": 0.4,
+      "presets": [
+        "ancient_city"
+      ],
+      "biomeHints": [
+        "Is Overworld"
+      ],
+      "condition": {
+        "structures": [
+          "minecraft:ancient_city"
+        ],
+        "maxY": 62,
+        "neededNearbyBlocks": [
+          "#cobblemon:ancient_city_blocks"
+        ],
+        "timeRange": "night",
+        "biomes": [
+          "#cobblemon:is_overworld"
+        ]
+      },
+      "anticondition": null,
+      "weightMultipliers": [],
+      "raw": {
+        "id": "runerigus-2",
+        "pokemon": "runerigus",
+        "presets": [
+          "ancient_city"
+        ],
+        "type": "pokemon",
+        "spawnablePositionType": "grounded",
+        "bucket": "rare",
+        "level": "34-63",
+        "weight": 0.4,
+        "condition": {
+          "timeRange": "night",
+          "biomes": [
+            "#cobblemon:is_overworld"
+          ]
+        }
+      }
+    }
+  ],
   "forms": [],
   "drops": {
     "amount": 0,

@@ -1385,7 +1385,55 @@
       "fromFormSlug": null
     }
   ],
-  "spawnEntries": [],
+  "spawnEntries": [
+    {
+      "id": "ironvaliant",
+      "sourceFile": "1006_ironvaliant.json",
+      "pokemon": {
+        "raw": "ironvaliant",
+        "slug": "ironvaliant",
+        "aspectTokens": []
+      },
+      "type": "pokemon",
+      "spawnablePositionType": "unknown",
+      "bucket": "rare",
+      "bucketWeight": 0.5,
+      "levelText": "55-70",
+      "levelMin": 55,
+      "levelMax": 70,
+      "weight": 3,
+      "presets": [],
+      "biomeHints": [
+        "Is Plains",
+        "Plains",
+        "Sunflower Plains"
+      ],
+      "condition": {
+        "isThundering": true,
+        "biomes": [
+          "#cobblemon:is_plains"
+        ]
+      },
+      "anticondition": null,
+      "weightMultipliers": [],
+      "raw": {
+        "id": "ironvaliant",
+        "pokemon": "ironvaliant",
+        "presets": [],
+        "type": "pokemon",
+        "context": "grounded",
+        "bucket": "rare",
+        "level": "55-70",
+        "weight": 3,
+        "condition": {
+          "isThundering": true,
+          "biomes": [
+            "#cobblemon:is_plains"
+          ]
+        }
+      }
+    }
+  ],
   "forms": [],
   "drops": null,
   "rawSpecies": {

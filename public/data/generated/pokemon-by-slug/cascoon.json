@@ -376,7 +376,89 @@
       "fromFormSlug": null
     }
   ],
-  "spawnEntries": [],
+  "spawnEntries": [
+    {
+      "id": "cascoon-1",
+      "sourceFile": "0268_cascoon.json",
+      "pokemon": {
+        "raw": "cascoon",
+        "slug": "cascoon",
+        "aspectTokens": []
+      },
+      "type": "pokemon",
+      "spawnablePositionType": "unknown",
+      "bucket": "uncommon",
+      "bucketWeight": 5,
+      "levelText": "7-9",
+      "levelMin": 7,
+      "levelMax": 9,
+      "weight": 2,
+      "presets": [
+        "natural",
+        "foliage",
+        "treetop"
+      ],
+      "biomeHints": [
+        "Is Forest",
+        "Cherry Grove",
+        "Is Jungle"
+      ],
+      "condition": {
+        "neededBaseBlocks": [
+          "#cobblemon:natural",
+          "#cobblemon:trees"
+        ],
+        "neededNearbyBlocks": [
+          "#minecraft:leaves",
+          "#c:leaves"
+        ],
+        "minSkyLight": 8,
+        "maxSkyLight": 15,
+        "biomes": [
+          "#cobblemon:is_forest",
+          "#cobblemon:is_jungle"
+        ]
+      },
+      "anticondition": {
+        "neededBaseBlocks": [
+          "minecraft:farmland"
+        ],
+        "biomes": [
+          "#cobblemon:is_freezing",
+          "#cobblemon:is_spooky"
+        ]
+      },
+      "weightMultipliers": [],
+      "raw": {
+        "id": "cascoon-1",
+        "pokemon": "cascoon",
+        "presets": [
+          "natural",
+          "foliage",
+          "treetop"
+        ],
+        "type": "pokemon",
+        "context": "grounded",
+        "bucket": "uncommon",
+        "level": "7-9",
+        "weight": 2,
+        "condition": {
+          "minSkyLight": 8,
+          "maxSkyLight": 15,
+          "biomes": [
+            "#cobblemon:is_forest",
+            "#cobblemon:is_jungle"
+          ]
+        },
+        "anticondition": {
+          "biomes": [
+            "#cobblemon:is_freezing",
+            "#cobblemon:is_spooky"
+          ]
+        }
+      }
+    }
+  ],
   "forms": [],
   "drops": {
     "amount": 3,

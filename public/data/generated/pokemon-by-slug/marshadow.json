@@ -1465,7 +1465,54 @@
       "fromFormSlug": null
     }
   ],
-  "spawnEntries": [],
+  "spawnEntries": [
+    {
+      "id": "marshadow-1",
+      "sourceFile": "0802_marshadow.json",
+      "pokemon": {
+        "raw": "marshadow",
+        "slug": "marshadow",
+        "aspectTokens": []
+      },
+      "type": "pokemon",
+      "spawnablePositionType": "grounded",
+      "bucket": "ultra-rare",
+      "bucketWeight": 0.2,
+      "levelText": "45-68",
+      "levelMin": 45,
+      "levelMax": 68,
+      "weight": 2.1,
+      "presets": [],
+      "biomeHints": [
+        "Is Deep Dark",
+        "Deep Dark",
+        "Cave/crystal Caves"
+      ],
+      "condition": {
+        "canSeeSky": false,
+        "biomes": [
+          "#cobblemon:is_deep_dark"
+        ]
+      },
+      "anticondition": null,
+      "weightMultipliers": [],
+      "raw": {
+        "id": "marshadow-1",
+        "pokemon": "marshadow",
+        "type": "pokemon",
+        "spawnablePositionType": "grounded",
+        "bucket": "ultra-rare",
+        "level": "45-68",
+        "weight": 2.1,
+        "condition": {
+          "canSeeSky": false,
+          "biomes": [
+            "#cobblemon:is_deep_dark"
+          ]
+        }
+      }
+    }
+  ],
   "forms": [],
   "drops": {
     "amount": 5,

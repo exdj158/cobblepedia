@@ -75,6 +75,12 @@ This spec is intentionally about requirements (what), not implementation steps (
 - `cobbleverse` profile must fail fast if required MRPack/lockfile artifacts cannot be resolved or verified.
 - For rights-sensitive addon media, `cobbleverse` profile may emit `null` media URLs while still emitting full provenance evidence.
 
+### 2.6 Addon spawn preset compatibility (Required)
+
+- Cobbleverse lockfile addon archives can reference spawn preset names that are not present in base Cobblemon `data/cobblemon/spawn_detail_presets/*.json` (including casing/style variants like `Natural` vs `natural`).
+- Cobbleverse spawn ingestion must not fail the data build solely due to missing addon preset names.
+- When preset references are missing, parsing should continue using available explicit spawn fields in the same payload and treat unresolved preset references as warning-level diagnostics.
+
 ## 3) Findings Snapshot (Current)
 
 ### 3.1 Base Cobblemon snapshot

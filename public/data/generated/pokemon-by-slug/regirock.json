@@ -1375,7 +1375,50 @@
       "fromFormSlug": null
     }
   ],
-  "spawnEntries": [],
+  "spawnEntries": [
+    {
+      "id": "regirock-1",
+      "sourceFile": "0377_regirock.json",
+      "pokemon": {
+        "raw": "regirock",
+        "slug": "regirock",
+        "aspectTokens": []
+      },
+      "type": "pokemon",
+      "spawnablePositionType": "unknown",
+      "bucket": "ultra-rare",
+      "bucketWeight": 0.2,
+      "levelText": "40-50",
+      "levelMin": 40,
+      "levelMax": 50,
+      "weight": 0,
+      "presets": [],
+      "biomeHints": [
+        "Custom Spawn/regirock Temple"
+      ],
+      "condition": {
+        "biomes": [
+          "cobbleverse:custom_spawn/regirock_temple"
+        ]
+      },
+      "anticondition": null,
+      "weightMultipliers": [],
+      "raw": {
+        "id": "regirock-1",
+        "pokemon": "regirock",
+        "type": "pokemon",
+        "context": "grounded",
+        "bucket": "ultra-rare",
+        "level": "40-50",
+        "weight": 0,
+        "condition": {
+          "biomes": [
+            "cobbleverse:custom_spawn/regirock_temple"
+          ]
+        }
+      }
+    }
+  ],
   "forms": [],
   "drops": {
     "amount": 1,

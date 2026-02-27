@@ -935,7 +935,67 @@
       "fromFormSlug": null
     }
   ],
-  "spawnEntries": [],
+  "spawnEntries": [
+    {
+      "id": "fluttermane-1",
+      "sourceFile": "0987_fluttermane.json",
+      "pokemon": {
+        "raw": "fluttermane",
+        "slug": "fluttermane",
+        "aspectTokens": []
+      },
+      "type": "pokemon",
+      "spawnablePositionType": "grounded",
+      "bucket": "rare",
+      "bucketWeight": 0.5,
+      "levelText": "45-60",
+      "levelMin": 45,
+      "levelMax": 60,
+      "weight": 1.5,
+      "presets": [
+        "natural"
+      ],
+      "biomeHints": [
+        "Is Spooky",
+        "Dark Forest",
+        "Deep Dark"
+      ],
+      "condition": {
+        "neededBaseBlocks": [
+          "#cobblemon:natural"
+        ],
+        "biomes": [
+          "#cobblemon:is_spooky",
+          "minecraft:deep_dark"
+        ]
+      },
+      "anticondition": {
+        "neededBaseBlocks": [
+          "minecraft:farmland"
+        ]
+      },
+      "weightMultipliers": [],
+      "raw": {
+        "id": "fluttermane-1",
+        "pokemon": "fluttermane",
+        "presets": [
+          "natural"
+        ],
+        "type": "pokemon",
+        "spawnablePositionType": "grounded",
+        "bucket": "rare",
+        "level": "45-60",
+        "weight": 1.5,
+        "condition": {
+          "biomes": [
+            "#cobblemon:is_spooky",
+            "minecraft:deep_dark"
+          ]
+        },
+        "timeRange": "night"
+      }
+    }
+  ],
   "forms": [],
   "drops": {
     "amount": 4,

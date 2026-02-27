@@ -502,7 +502,99 @@
       "fromFormSlug": null
     }
   ],
-  "spawnEntries": [],
+  "spawnEntries": [
+    {
+      "id": "burmy-1",
+      "sourceFile": "0412_burmy_sandy.json",
+      "pokemon": {
+        "raw": "burmy bagworm_cloak=sandy",
+        "slug": "burmy",
+        "aspectTokens": [
+          "bagworm_cloak=sandy"
+        ]
+      },
+      "type": "pokemon",
+      "spawnablePositionType": "grounded",
+      "bucket": "common",
+      "bucketWeight": 94.3,
+      "levelText": "17-19",
+      "levelMin": 17,
+      "levelMax": 19,
+      "weight": 3,
+      "presets": [],
+      "biomeHints": [
+        "Is Sandy",
+        "Is Badlands",
+        "Is Desert"
+      ],
+      "condition": {
+        "biomes": [
+          "#cobblemon:is_sandy"
+        ]
+      },
+      "anticondition": null,
+      "weightMultipliers": [],
+      "raw": {
+        "id": "burmy-1",
+        "pokemon": "burmy bagworm_cloak=sandy",
+        "type": "pokemon",
+        "spawnablePositionType": "grounded",
+        "bucket": "common",
+        "level": "17-19",
+        "weight": 3,
+        "condition": {
+          "biomes": [
+            "#cobblemon:is_sandy"
+          ]
+        }
+      }
+    },
+    {
+      "id": "burmy-2",
+      "sourceFile": "0412_burmy_sandy.json",
+      "pokemon": {
+        "raw": "burmy bagworm_cloak=sandy",
+        "slug": "burmy",
+        "aspectTokens": [
+          "bagworm_cloak=sandy"
+        ]
+      },
+      "type": "pokemon",
+      "spawnablePositionType": "grounded",
+      "bucket": "common",
+      "bucketWeight": 94.3,
+      "levelText": "5-19",
+      "levelMin": 5,
+      "levelMax": 19,
+      "weight": 2,
+      "presets": [],
+      "biomeHints": [
+        "Is Desert",
+        "Desert"
+      ],
+      "condition": {
+        "biomes": [
+          "#cobblemon:is_desert"
+        ]
+      },
+      "anticondition": null,
+      "weightMultipliers": [],
+      "raw": {
+        "id": "burmy-2",
+        "pokemon": "burmy bagworm_cloak=sandy",
+        "type": "pokemon",
+        "spawnablePositionType": "grounded",
+        "bucket": "common",
+        "level": "5-19",
+        "weight": 2,
+        "condition": {
+          "biomes": [
+            "#cobblemon:is_desert"
+          ]
+        }
+      }
+    }
+  ],
   "forms": [
     {
       "name": "Sandy",

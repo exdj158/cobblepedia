@@ -1164,7 +1164,52 @@
       "fromFormSlug": null
     }
   ],
-  "spawnEntries": [],
+  "spawnEntries": [
+    {
+      "id": "buzzwole-1",
+      "sourceFile": "0794_buzzwole.json",
+      "pokemon": {
+        "raw": "buzzwole",
+        "slug": "buzzwole",
+        "aspectTokens": []
+      },
+      "type": "pokemon",
+      "spawnablePositionType": "grounded",
+      "bucket": "ultra-rare",
+      "bucketWeight": 0.2,
+      "levelText": "60-70",
+      "levelMin": 60,
+      "levelMax": 70,
+      "weight": 0.5,
+      "presets": [],
+      "biomeHints": [
+        "Is Jungle"
+      ],
+      "condition": {
+        "canSeeSky": true,
+        "biomes": [
+          "#cobblemon:is_jungle"
+        ]
+      },
+      "anticondition": null,
+      "weightMultipliers": [],
+      "raw": {
+        "id": "buzzwole-1",
+        "pokemon": "buzzwole",
+        "type": "pokemon",
+        "spawnablePositionType": "grounded",
+        "bucket": "ultra-rare",
+        "level": "60-70",
+        "weight": 0.5,
+        "condition": {
+          "canSeeSky": true,
+          "biomes": [
+            "#cobblemon:is_jungle"
+          ]
+        }
+      }
+    }
+  ],
   "forms": [],
   "drops": {
     "amount": 3,

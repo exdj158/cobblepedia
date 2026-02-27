@@ -1325,7 +1325,52 @@
       "fromFormSlug": null
     }
   ],
-  "spawnEntries": [],
+  "spawnEntries": [
+    {
+      "id": "ironthorns",
+      "sourceFile": "0995_ironthorns.json",
+      "pokemon": {
+        "raw": "ironthorns",
+        "slug": "ironthorns",
+        "aspectTokens": []
+      },
+      "type": "pokemon",
+      "spawnablePositionType": "grounded",
+      "bucket": "rare",
+      "bucketWeight": 0.5,
+      "levelText": "40-65",
+      "levelMin": 40,
+      "levelMax": 65,
+      "weight": 3,
+      "presets": [],
+      "biomeHints": [
+        "Is Mountain",
+        "Is Hills"
+      ],
+      "condition": {
+        "biomes": [
+          "#cobblemon:is_mountain"
+        ]
+      },
+      "anticondition": null,
+      "weightMultipliers": [],
+      "raw": {
+        "id": "ironthorns",
+        "pokemon": "ironthorns",
+        "presets": [],
+        "type": "pokemon",
+        "spawnablePositionType": "grounded",
+        "bucket": "rare",
+        "level": "40-65",
+        "weight": 3,
+        "condition": {
+          "biomes": [
+            "#cobblemon:is_mountain"
+          ]
+        }
+      }
+    }
+  ],
   "forms": [],
   "drops": null,
   "rawSpecies": {

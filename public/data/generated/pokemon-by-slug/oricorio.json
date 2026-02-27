@@ -1061,7 +1061,243 @@
       "fromFormSlug": null
     }
   ],
-  "spawnEntries": [],
+  "spawnEntries": [
+    {
+      "id": "oricorio-1",
+      "sourceFile": "0741_oricorio.json",
+      "pokemon": {
+        "raw": "oricorio dance_style=baile",
+        "slug": "oricorio",
+        "aspectTokens": [
+          "dance_style=baile"
+        ]
+      },
+      "type": "pokemon",
+      "spawnablePositionType": "grounded",
+      "bucket": "uncommon",
+      "bucketWeight": 5,
+      "levelText": "18-33",
+      "levelMin": 18,
+      "levelMax": 33,
+      "weight": 3,
+      "presets": [
+        "natural"
+      ],
+      "biomeHints": [
+        "Is Plains",
+        "Plains",
+        "Sunflower Plains",
+        "Is Hills",
+        "Is Hill",
+        "Is Highlands"
+      ],
+      "condition": {
+        "neededBaseBlocks": [
+          "#cobblemon:natural"
+        ],
+        "canSeeSky": true,
+        "biomes": [
+          "#cobblemon:is_plains",
+          "#cobblemon:is_hills"
+        ]
+      },
+      "anticondition": {
+        "neededBaseBlocks": [
+          "minecraft:farmland"
+        ]
+      },
+      "weightMultipliers": [],
+      "raw": {
+        "id": "oricorio-1",
+        "pokemon": "oricorio dance_style=baile",
+        "presets": [
+          "natural"
+        ],
+        "type": "pokemon",
+        "spawnablePositionType": "grounded",
+        "bucket": "uncommon",
+        "level": "18-33",
+        "weight": 3,
+        "condition": {
+          "canSeeSky": true,
+          "biomes": [
+            "#cobblemon:is_plains",
+            "#cobblemon:is_hills"
+          ]
+        }
+      }
+    },
+    {
+      "id": "oricorio-2",
+      "sourceFile": "0741_oricorio.json",
+      "pokemon": {
+        "raw": "oricorio dance_style=pom-pom",
+        "slug": "oricorio",
+        "aspectTokens": [
+          "dance_style=pom-pom"
+        ]
+      },
+      "type": "pokemon",
+      "spawnablePositionType": "grounded",
+      "bucket": "uncommon",
+      "bucketWeight": 5,
+      "levelText": "18-33",
+      "levelMin": 18,
+      "levelMax": 33,
+      "weight": 3,
+      "presets": [
+        "natural"
+      ],
+      "biomeHints": [
+        "Is Mountain",
+        "Is Hills",
+        "Is Jungle"
+      ],
+      "condition": {
+        "neededBaseBlocks": [
+          "#cobblemon:natural"
+        ],
+        "canSeeSky": true,
+        "biomes": [
+          "#cobblemon:is_mountain",
+          "#cobblemon:is_jungle"
+        ]
+      },
+      "anticondition": {
+        "neededBaseBlocks": [
+          "minecraft:farmland"
+        ]
+      },
+      "weightMultipliers": [],
+      "raw": {
+        "id": "oricorio-2",
+        "pokemon": "oricorio dance_style=pom-pom",
+        "presets": [
+          "natural"
+        ],
+        "type": "pokemon",
+        "spawnablePositionType": "grounded",
+        "bucket": "uncommon",
+        "level": "18-33",
+        "weight": 3,
+        "condition": {
+          "canSeeSky": true,
+          "biomes": [
+            "#cobblemon:is_mountain",
+            "#cobblemon:is_jungle"
+          ]
+        }
+      }
+    },
+    {
+      "id": "oricorio-3",
+      "sourceFile": "0741_oricorio.json",
+      "pokemon": {
+        "raw": "oricorio dance_style=pau",
+        "slug": "oricorio",
+        "aspectTokens": [
+          "dance_style=pau"
+        ]
+      },
+      "type": "pokemon",
+      "spawnablePositionType": "grounded",
+      "bucket": "uncommon",
+      "bucketWeight": 5,
+      "levelText": "18-33",
+      "levelMin": 18,
+      "levelMax": 33,
+      "weight": 3,
+      "presets": [
+        "natural"
+      ],
+      "biomeHints": [
+        "Is Floral",
+        "Cherry Grove",
+        "Flower Forest"
+      ],
+      "condition": {
+        "neededBaseBlocks": [
+          "#cobblemon:natural"
+        ],
+        "canSeeSky": true,
+        "biomes": [
+          "#cobblemon:is_floral"
+        ]
+      },
+      "anticondition": {
+        "neededBaseBlocks": [
+          "minecraft:farmland"
+        ]
+      },
+      "weightMultipliers": [],
+      "raw": {
+        "id": "oricorio-3",
+        "pokemon": "oricorio dance_style=pau",
+        "presets": [
+          "natural"
+        ],
+        "type": "pokemon",
+        "spawnablePositionType": "grounded",
+        "bucket": "uncommon",
+        "level": "18-33",
+        "weight": 3,
+        "condition": {
+          "canSeeSky": true,
+          "biomes": [
+            "#cobblemon:is_floral"
+          ]
+        }
+      }
+    },
+    {
+      "id": "oricorio-4",
+      "sourceFile": "0741_oricorio.json",
+      "pokemon": {
+        "raw": "oricorio dance_style=sensu",
+        "slug": "oricorio",
+        "aspectTokens": [
+          "dance_style=sensu"
+        ]
+      },
+      "type": "pokemon",
+      "spawnablePositionType": "grounded",
+      "bucket": "uncommon",
+      "bucketWeight": 5,
+      "levelText": "18-33",
+      "levelMin": 18,
+      "levelMax": 33,
+      "weight": 3,
+      "presets": [],
+      "biomeHints": [
+        "Is Forest",
+        "Cherry Grove"
+      ],
+      "condition": {
+        "canSeeSky": true,
+        "biomes": [
+          "#cobblemon:is_forest"
+        ]
+      },
+      "anticondition": null,
+      "weightMultipliers": [],
+      "raw": {
+        "id": "oricorio-4",
+        "pokemon": "oricorio dance_style=sensu",
+        "presets": [],
+        "type": "pokemon",
+        "spawnablePositionType": "grounded",
+        "bucket": "uncommon",
+        "level": "18-33",
+        "weight": 3,
+        "condition": {
+          "canSeeSky": true,
+          "biomes": [
+            "#cobblemon:is_forest"
+          ]
+        }
+      }
+    }
+  ],
   "forms": [
     {
       "name": "Pom-Pom",

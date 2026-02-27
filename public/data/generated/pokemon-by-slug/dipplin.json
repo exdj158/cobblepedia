@@ -980,7 +980,58 @@
       "fromFormSlug": null
     }
   ],
-  "spawnEntries": [],
+  "spawnEntries": [
+    {
+      "id": "dipplin-1",
+      "sourceFile": "1011_dipplin.json",
+      "pokemon": {
+        "raw": "dipplin",
+        "slug": "dipplin",
+        "aspectTokens": []
+      },
+      "type": "pokemon",
+      "spawnablePositionType": "grounded",
+      "bucket": "rare",
+      "bucketWeight": 0.5,
+      "levelText": "20-35",
+      "levelMin": 20,
+      "levelMax": 35,
+      "weight": 3,
+      "presets": [],
+      "biomeHints": [
+        "Is Floral",
+        "Cherry Grove",
+        "Flower Forest"
+      ],
+      "condition": {
+        "canSeeSky": true,
+        "biomes": [
+          "#cobblemon:is_floral"
+        ],
+        "isRaining": false,
+        "timeRange": "day"
+      },
+      "anticondition": null,
+      "weightMultipliers": [],
+      "raw": {
+        "id": "dipplin-1",
+        "pokemon": "dipplin",
+        "type": "pokemon",
+        "spawnablePositionType": "grounded",
+        "bucket": "rare",
+        "level": "20-35",
+        "weight": 3,
+        "condition": {
+          "canSeeSky": true,
+          "biomes": [
+            "#cobblemon:is_floral"
+          ],
+          "isRaining": false,
+          "timeRange": "day"
+        }
+      }
+    }
+  ],
   "forms": [],
   "drops": {
     "amount": 0,

@@ -1214,7 +1214,51 @@
       "fromFormSlug": null
     }
   ],
-  "spawnEntries": [],
+  "spawnEntries": [
+    {
+      "id": "mothim-2",
+      "sourceFile": "0414_mothim.json",
+      "pokemon": {
+        "raw": "mothim",
+        "slug": "mothim",
+        "aspectTokens": []
+      },
+      "type": "pokemon",
+      "spawnablePositionType": "grounded",
+      "bucket": "rare",
+      "bucketWeight": 0.5,
+      "levelText": "28-45",
+      "levelMin": 28,
+      "levelMax": 45,
+      "weight": 2,
+      "presets": [],
+      "biomeHints": [
+        "Is Forest",
+        "Cherry Grove"
+      ],
+      "condition": {
+        "biomes": [
+          "#cobblemon:is_forest"
+        ]
+      },
+      "anticondition": null,
+      "weightMultipliers": [],
+      "raw": {
+        "id": "mothim-2",
+        "pokemon": "mothim",
+        "type": "pokemon",
+        "spawnablePositionType": "grounded",
+        "bucket": "rare",
+        "level": "28-45",
+        "weight": 2,
+        "condition": {
+          "biomes": [
+            "#cobblemon:is_forest"
+          ]
+        }
+      }
+    }
+  ],
   "forms": [],
   "drops": {
     "amount": 2,

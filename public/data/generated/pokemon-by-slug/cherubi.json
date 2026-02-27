@@ -969,7 +969,60 @@
       "fromFormSlug": null
     }
   ],
-  "spawnEntries": [],
+  "spawnEntries": [
+    {
+      "id": "cherubi-1",
+      "sourceFile": "0420_cherubi.json",
+      "pokemon": {
+        "raw": "cherubi",
+        "slug": "cherubi",
+        "aspectTokens": []
+      },
+      "type": "pokemon",
+      "spawnablePositionType": "grounded",
+      "bucket": "common",
+      "bucketWeight": 94.3,
+      "levelText": "4-25",
+      "levelMin": 4,
+      "levelMax": 25,
+      "weight": 2,
+      "presets": [],
+      "biomeHints": [
+        "Is Forest",
+        "Cherry Grove",
+        "Is Jungle",
+        "Is Taiga",
+        "Is Snowy Taiga"
+      ],
+      "condition": {
+        "canSeeSky": true,
+        "biomes": [
+          "#cobblemon:is_forest",
+          "#cobblemon:is_jungle",
+          "#cobblemon:is_taiga"
+        ]
+      },
+      "anticondition": null,
+      "weightMultipliers": [],
+      "raw": {
+        "id": "cherubi-1",
+        "pokemon": "cherubi",
+        "type": "pokemon",
+        "spawnablePositionType": "grounded",
+        "bucket": "common",
+        "level": "4-25",
+        "weight": 2,
+        "condition": {
+          "canSeeSky": true,
+          "biomes": [
+            "#cobblemon:is_forest",
+            "#cobblemon:is_jungle",
+            "#cobblemon:is_taiga"
+          ]
+        }
+      }
+    }
+  ],
   "forms": [],
   "drops": {
     "amount": 5,

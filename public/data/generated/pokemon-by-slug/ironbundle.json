@@ -765,7 +765,71 @@
       "fromFormSlug": null
     }
   ],
-  "spawnEntries": [],
+  "spawnEntries": [
+    {
+      "id": "ironbundle-1",
+      "sourceFile": "0991_ironbundle.json",
+      "pokemon": {
+        "raw": "ironbundle",
+        "slug": "ironbundle",
+        "aspectTokens": []
+      },
+      "type": "pokemon",
+      "spawnablePositionType": "grounded",
+      "bucket": "rare",
+      "bucketWeight": 0.5,
+      "levelText": "50-70",
+      "levelMin": 50,
+      "levelMax": 70,
+      "weight": 3,
+      "presets": [
+        "natural"
+      ],
+      "biomeHints": [
+        "Is Freezing",
+        "Frozen River",
+        "Jagged Peaks",
+        "Is Glacial",
+        "Frozen Peaks",
+        "Ice Spikes"
+      ],
+      "condition": {
+        "neededBaseBlocks": [
+          "#cobblemon:natural"
+        ],
+        "biomes": [
+          "#cobblemon:is_freezing",
+          "#cobblemon:is_glacial",
+          "#cobblemon:is_tundra"
+        ]
+      },
+      "anticondition": {
+        "neededBaseBlocks": [
+          "minecraft:farmland"
+        ]
+      },
+      "weightMultipliers": [],
+      "raw": {
+        "id": "ironbundle-1",
+        "pokemon": "ironbundle",
+        "presets": [
+          "natural"
+        ],
+        "type": "pokemon",
+        "spawnablePositionType": "grounded",
+        "bucket": "rare",
+        "level": "50-70",
+        "weight": 3,
+        "condition": {
+          "biomes": [
+            "#cobblemon:is_freezing",
+            "#cobblemon:is_glacial",
+            "#cobblemon:is_tundra"
+          ]
+        }
+      }
+    }
+  ],
   "forms": [],
   "drops": {
     "amount": 3,

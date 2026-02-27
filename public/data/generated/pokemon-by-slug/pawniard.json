@@ -1468,7 +1468,77 @@
       "fromFormSlug": null
     }
   ],
-  "spawnEntries": [],
+  "spawnEntries": [
+    {
+      "id": "pawniard-1",
+      "sourceFile": "0624_pawniard.json",
+      "pokemon": {
+        "raw": "pawniard",
+        "slug": "pawniard",
+        "aspectTokens": []
+      },
+      "type": "pokemon",
+      "spawnablePositionType": "grounded",
+      "bucket": "uncommon",
+      "bucketWeight": 5,
+      "levelText": "10-38",
+      "levelMin": 10,
+      "levelMax": 38,
+      "weight": 4.4,
+      "presets": [
+        "natural"
+      ],
+      "biomeHints": [
+        "Bamboo Jungle"
+      ],
+      "condition": {
+        "neededBaseBlocks": [
+          "#cobblemon:natural"
+        ],
+        "biomes": [
+          "minecraft:bamboo_jungle"
+        ]
+      },
+      "anticondition": {
+        "neededBaseBlocks": [
+          "minecraft:farmland"
+        ]
+      },
+      "weightMultipliers": [
+        {
+          "multiplier": 2.5,
+          "condition": {
+            "timeRange": "night"
+          }
+        }
+      ],
+      "raw": {
+        "id": "pawniard-1",
+        "pokemon": "pawniard",
+        "presets": [
+          "natural"
+        ],
+        "type": "pokemon",
+        "spawnablePositionType": "grounded",
+        "bucket": "uncommon",
+        "level": "10-38",
+        "weight": 4.4,
+        "condition": {
+          "biomes": [
+            "minecraft:bamboo_jungle"
+          ]
+        },
+        "weightMultipliers": [
+          {
+            "multiplier": 2.5,
+            "condition": {
+              "timeRange": "night"
+            }
+          }
+        ]
+      }
+    }
+  ],
   "forms": [],
   "drops": {
     "amount": 2,

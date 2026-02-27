@@ -1059,7 +1059,116 @@
       "fromFormSlug": null
     }
   ],
-  "spawnEntries": [],
+  "spawnEntries": [
+    {
+      "id": "cherrim-1",
+      "sourceFile": "0421_cherrim.json",
+      "pokemon": {
+        "raw": "cherrim blossom_form=overcast",
+        "slug": "cherrim",
+        "aspectTokens": [
+          "blossom_form=overcast"
+        ]
+      },
+      "type": "pokemon",
+      "spawnablePositionType": "grounded",
+      "bucket": "uncommon",
+      "bucketWeight": 5,
+      "levelText": "25-36",
+      "levelMin": 25,
+      "levelMax": 36,
+      "weight": 1,
+      "presets": [],
+      "biomeHints": [
+        "Is Forest",
+        "Cherry Grove",
+        "Is Jungle",
+        "Is Taiga",
+        "Is Snowy Taiga"
+      ],
+      "condition": {
+        "canSeeSky": true,
+        "biomes": [
+          "#cobblemon:is_forest",
+          "#cobblemon:is_jungle",
+          "#cobblemon:is_taiga"
+        ]
+      },
+      "anticondition": null,
+      "weightMultipliers": [],
+      "raw": {
+        "id": "cherrim-1",
+        "pokemon": "cherrim blossom_form=overcast",
+        "type": "pokemon",
+        "spawnablePositionType": "grounded",
+        "bucket": "uncommon",
+        "level": "25-36",
+        "weight": 1,
+        "condition": {
+          "canSeeSky": true,
+          "biomes": [
+            "#cobblemon:is_forest",
+            "#cobblemon:is_jungle",
+            "#cobblemon:is_taiga"
+          ]
+        }
+      }
+    },
+    {
+      "id": "cherrim-2",
+      "sourceFile": "0421_cherrim.json",
+      "pokemon": {
+        "raw": "cherrim blossom_form=sunshine",
+        "slug": "cherrim",
+        "aspectTokens": [
+          "blossom_form=sunshine"
+        ]
+      },
+      "type": "pokemon",
+      "spawnablePositionType": "grounded",
+      "bucket": "uncommon",
+      "bucketWeight": 5,
+      "levelText": "25-36",
+      "levelMin": 25,
+      "levelMax": 36,
+      "weight": 1,
+      "presets": [],
+      "biomeHints": [
+        "Is Forest",
+        "Cherry Grove",
+        "Is Jungle",
+        "Is Taiga",
+        "Is Snowy Taiga"
+      ],
+      "condition": {
+        "canSeeSky": true,
+        "biomes": [
+          "#cobblemon:is_forest",
+          "#cobblemon:is_jungle",
+          "#cobblemon:is_taiga"
+        ]
+      },
+      "anticondition": null,
+      "weightMultipliers": [],
+      "raw": {
+        "id": "cherrim-2",
+        "pokemon": "cherrim blossom_form=sunshine",
+        "type": "pokemon",
+        "spawnablePositionType": "grounded",
+        "bucket": "uncommon",
+        "level": "25-36",
+        "weight": 1,
+        "condition": {
+          "canSeeSky": true,
+          "biomes": [
+            "#cobblemon:is_forest",
+            "#cobblemon:is_jungle",
+            "#cobblemon:is_taiga"
+          ]
+        }
+      }
+    }
+  ],
   "forms": [
     {
       "name": "Sunshine",

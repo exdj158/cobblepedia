@@ -993,7 +993,50 @@
       "fromFormSlug": null
     }
   ],
-  "spawnEntries": [],
+  "spawnEntries": [
+    {
+      "id": "xurkitree-1",
+      "sourceFile": "0796_xurkitree.json",
+      "pokemon": {
+        "raw": "xurkitree",
+        "slug": "xurkitree",
+        "aspectTokens": []
+      },
+      "type": "pokemon",
+      "spawnablePositionType": "grounded",
+      "bucket": "ultra-rare",
+      "bucketWeight": 0.2,
+      "levelText": "58-72",
+      "levelMin": 58,
+      "levelMax": 72,
+      "weight": 1.5,
+      "presets": [],
+      "biomeHints": [
+        "Is End"
+      ],
+      "condition": {
+        "biomes": [
+          "#cobblemon:is_end"
+        ]
+      },
+      "anticondition": null,
+      "weightMultipliers": [],
+      "raw": {
+        "id": "xurkitree-1",
+        "pokemon": "xurkitree",
+        "type": "pokemon",
+        "spawnablePositionType": "grounded",
+        "bucket": "ultra-rare",
+        "level": "58-72",
+        "weight": 1.5,
+        "condition": {
+          "biomes": [
+            "#cobblemon:is_end"
+          ]
+        }
+      }
+    }
+  ],
   "forms": [],
   "drops": {
     "amount": 0,

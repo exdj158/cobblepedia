@@ -1685,7 +1685,50 @@
       "fromFormSlug": null
     }
   ],
-  "spawnEntries": [],
+  "spawnEntries": [
+    {
+      "id": "celebi-1",
+      "sourceFile": "0251_celebi.json",
+      "pokemon": {
+        "raw": "celebi",
+        "slug": "celebi",
+        "aspectTokens": []
+      },
+      "type": "pokemon",
+      "spawnablePositionType": "grounded",
+      "bucket": "ultra-rare",
+      "bucketWeight": 0.2,
+      "levelText": "75-80",
+      "levelMin": 75,
+      "levelMax": 80,
+      "weight": 0,
+      "presets": [],
+      "biomeHints": [
+        "Custom Spawn/ilex Shrine"
+      ],
+      "condition": {
+        "biomes": [
+          "cobbleverse:custom_spawn/ilex_shrine"
+        ]
+      },
+      "anticondition": null,
+      "weightMultipliers": [],
+      "raw": {
+        "id": "celebi-1",
+        "pokemon": "celebi",
+        "type": "pokemon",
+        "spawnablePositionType": "grounded",
+        "bucket": "ultra-rare",
+        "level": "75-80",
+        "weight": 0,
+        "condition": {
+          "biomes": [
+            "cobbleverse:custom_spawn/ilex_shrine"
+          ]
+        }
+      }
+    }
+  ],
   "forms": [],
   "drops": {
     "amount": 5,

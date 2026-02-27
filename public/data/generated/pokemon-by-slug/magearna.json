@@ -1650,7 +1650,100 @@
       "fromFormSlug": null
     }
   ],
-  "spawnEntries": [],
+  "spawnEntries": [
+    {
+      "id": "magearna-1",
+      "sourceFile": "0801_magearna.json",
+      "pokemon": {
+        "raw": "magearna",
+        "slug": "magearna",
+        "aspectTokens": []
+      },
+      "type": "pokemon",
+      "spawnablePositionType": "grounded",
+      "bucket": "ultra-rare",
+      "bucketWeight": 0.2,
+      "levelText": "50-70",
+      "levelMin": 50,
+      "levelMax": 70,
+      "weight": 2,
+      "presets": [],
+      "biomeHints": [
+        "Is Taiga",
+        "Is Snowy Taiga"
+      ],
+      "condition": {
+        "canSeeSky": true,
+        "biomes": [
+          "#cobblemon:is_taiga"
+        ]
+      },
+      "anticondition": null,
+      "weightMultipliers": [],
+      "raw": {
+        "id": "magearna-1",
+        "pokemon": "magearna",
+        "type": "pokemon",
+        "spawnablePositionType": "grounded",
+        "bucket": "ultra-rare",
+        "level": "50-70",
+        "weight": 2,
+        "condition": {
+          "canSeeSky": true,
+          "biomes": [
+            "#cobblemon:is_taiga"
+          ]
+        }
+      }
+    },
+    {
+      "id": "magearna-2",
+      "sourceFile": "0801_magearna.json",
+      "pokemon": {
+        "raw": "magearna paint_color=original",
+        "slug": "magearna",
+        "aspectTokens": [
+          "paint_color=original"
+        ]
+      },
+      "type": "pokemon",
+      "spawnablePositionType": "grounded",
+      "bucket": "ultra-rare",
+      "bucketWeight": 0.2,
+      "levelText": "70-85",
+      "levelMin": 70,
+      "levelMax": 85,
+      "weight": 0.4,
+      "presets": [],
+      "biomeHints": [
+        "Is Taiga",
+        "Is Snowy Taiga"
+      ],
+      "condition": {
+        "canSeeSky": true,
+        "biomes": [
+          "#cobblemon:is_taiga"
+        ]
+      },
+      "anticondition": null,
+      "weightMultipliers": [],
+      "raw": {
+        "id": "magearna-2",
+        "pokemon": "magearna paint_color=original",
+        "type": "pokemon",
+        "spawnablePositionType": "grounded",
+        "bucket": "ultra-rare",
+        "level": "70-85",
+        "weight": 0.4,
+        "condition": {
+          "canSeeSky": true,
+          "biomes": [
+            "#cobblemon:is_taiga"
+          ]
+        }
+      }
+    }
+  ],
   "forms": [
     {
       "name": "Original",

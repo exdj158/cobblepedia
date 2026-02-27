@@ -1756,7 +1756,50 @@
       "fromFormSlug": null
     }
   ],
-  "spawnEntries": [],
+  "spawnEntries": [
+    {
+      "id": "meloetta-1",
+      "sourceFile": "0648_meloetta.json",
+      "pokemon": {
+        "raw": "meloetta",
+        "slug": "meloetta",
+        "aspectTokens": []
+      },
+      "type": "pokemon",
+      "spawnablePositionType": "grounded",
+      "bucket": "rare",
+      "bucketWeight": 0.5,
+      "levelText": "50-55",
+      "levelMin": 50,
+      "levelMax": 55,
+      "weight": 1,
+      "presets": [],
+      "biomeHints": [
+        "Sunflower Plains"
+      ],
+      "condition": {
+        "biomes": [
+          "minecraft:sunflower_plains"
+        ]
+      },
+      "anticondition": null,
+      "weightMultipliers": [],
+      "raw": {
+        "id": "meloetta-1",
+        "pokemon": "meloetta",
+        "type": "pokemon",
+        "spawnablePositionType": "grounded",
+        "bucket": "rare",
+        "level": "50-55",
+        "weight": 1,
+        "condition": {
+          "biomes": [
+            "minecraft:sunflower_plains"
+          ]
+        }
+      }
+    }
+  ],
   "forms": [
     {
       "name": "Pirouette",

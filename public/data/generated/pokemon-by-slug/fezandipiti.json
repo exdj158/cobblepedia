@@ -1064,7 +1064,54 @@
       "fromFormSlug": null
     }
   ],
-  "spawnEntries": [],
+  "spawnEntries": [
+    {
+      "id": "fezandipiti-1",
+      "sourceFile": "1016_fezandipiti.json",
+      "pokemon": {
+        "raw": "fezandipiti",
+        "slug": "fezandipiti",
+        "aspectTokens": []
+      },
+      "type": "pokemon",
+      "spawnablePositionType": "grounded",
+      "bucket": "ultra-rare",
+      "bucketWeight": 0.2,
+      "levelText": "70",
+      "levelMin": 70,
+      "levelMax": 70,
+      "weight": 1,
+      "presets": [],
+      "biomeHints": [
+        "Is Peak",
+        "Frozen Peaks",
+        "Jagged Peaks"
+      ],
+      "condition": {
+        "canSeeSky": true,
+        "biomes": [
+          "#cobblemon:is_peak"
+        ]
+      },
+      "anticondition": null,
+      "weightMultipliers": [],
+      "raw": {
+        "id": "fezandipiti-1",
+        "pokemon": "fezandipiti",
+        "type": "pokemon",
+        "spawnablePositionType": "grounded",
+        "bucket": "ultra-rare",
+        "level": "70",
+        "weight": 1,
+        "condition": {
+          "canSeeSky": true,
+          "biomes": [
+            "#cobblemon:is_peak"
+          ]
+        }
+      }
+    }
+  ],
   "forms": [],
   "drops": {
     "amount": 5,

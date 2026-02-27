@@ -1048,7 +1048,51 @@
       "fromFormSlug": null
     }
   ],
-  "spawnEntries": [],
+  "spawnEntries": [
+    {
+      "id": "ogerpon-1",
+      "sourceFile": "1017_ogerpon.json",
+      "pokemon": {
+        "raw": "ogerpon",
+        "slug": "ogerpon",
+        "aspectTokens": []
+      },
+      "type": "pokemon",
+      "spawnablePositionType": "grounded",
+      "bucket": "ultra-rare",
+      "bucketWeight": 0.2,
+      "levelText": "50-75",
+      "levelMin": 50,
+      "levelMax": 75,
+      "weight": 2,
+      "presets": [],
+      "biomeHints": [
+        "Is Lush",
+        "Lush Caves"
+      ],
+      "condition": {
+        "biomes": [
+          "#cobblemon:is_lush"
+        ]
+      },
+      "anticondition": null,
+      "weightMultipliers": [],
+      "raw": {
+        "id": "ogerpon-1",
+        "pokemon": "ogerpon",
+        "type": "pokemon",
+        "spawnablePositionType": "grounded",
+        "bucket": "ultra-rare",
+        "level": "50-75",
+        "weight": 2,
+        "condition": {
+          "biomes": [
+            "#cobblemon:is_lush"
+          ]
+        }
+      }
+    }
+  ],
   "forms": [
     {
       "name": "Wellspring",

@@ -1486,7 +1486,50 @@
       "fromFormSlug": null
     }
   ],
-  "spawnEntries": [],
+  "spawnEntries": [
+    {
+      "id": "darkrai-1",
+      "sourceFile": "0491_darkrai.json",
+      "pokemon": {
+        "raw": "darkrai",
+        "slug": "darkrai",
+        "aspectTokens": []
+      },
+      "type": "pokemon",
+      "spawnablePositionType": "grounded",
+      "bucket": "ultra-rare",
+      "bucketWeight": 0.2,
+      "levelText": "40-65",
+      "levelMin": 40,
+      "levelMax": 65,
+      "weight": 0,
+      "presets": [],
+      "biomeHints": [
+        "Custom Spawn/newmoon Island"
+      ],
+      "condition": {
+        "biomes": [
+          "cobbleverse:custom_spawn/newmoon_island"
+        ]
+      },
+      "anticondition": null,
+      "weightMultipliers": [],
+      "raw": {
+        "id": "darkrai-1",
+        "pokemon": "darkrai",
+        "type": "pokemon",
+        "spawnablePositionType": "grounded",
+        "bucket": "ultra-rare",
+        "level": "40-65",
+        "weight": 0,
+        "condition": {
+          "biomes": [
+            "cobbleverse:custom_spawn/newmoon_island"
+          ]
+        }
+      }
+    }
+  ],
   "forms": [
     {
       "name": "Mega",

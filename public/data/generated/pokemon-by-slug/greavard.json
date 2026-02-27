@@ -999,7 +999,129 @@
       "fromFormSlug": null
     }
   ],
-  "spawnEntries": [],
+  "spawnEntries": [
+    {
+      "id": "greavard-1",
+      "sourceFile": "0971_greavard.json",
+      "pokemon": {
+        "raw": "greavard",
+        "slug": "greavard",
+        "aspectTokens": []
+      },
+      "type": "pokemon",
+      "spawnablePositionType": "grounded",
+      "bucket": "rare",
+      "bucketWeight": 0.5,
+      "levelText": "3-29",
+      "levelMin": 3,
+      "levelMax": 29,
+      "weight": 9,
+      "presets": [
+        "natural"
+      ],
+      "biomeHints": [
+        "Is Spooky",
+        "Dark Forest"
+      ],
+      "condition": {
+        "neededBaseBlocks": [
+          "#cobblemon:natural"
+        ],
+        "canSeeSky": true,
+        "biomes": [
+          "#cobblemon:is_spooky"
+        ],
+        "timeRange": "night"
+      },
+      "anticondition": {
+        "neededBaseBlocks": [
+          "minecraft:farmland"
+        ]
+      },
+      "weightMultipliers": [],
+      "raw": {
+        "id": "greavard-1",
+        "pokemon": "greavard",
+        "presets": [
+          "natural"
+        ],
+        "type": "pokemon",
+        "spawnablePositionType": "grounded",
+        "bucket": "rare",
+        "level": "3-29",
+        "weight": 9,
+        "condition": {
+          "canSeeSky": true,
+          "biomes": [
+            "#cobblemon:is_spooky"
+          ],
+          "timeRange": "night"
+        }
+      }
+    },
+    {
+      "id": "greavard-2",
+      "sourceFile": "0971_greavard.json",
+      "pokemon": {
+        "raw": "greavard",
+        "slug": "greavard",
+        "aspectTokens": []
+      },
+      "type": "pokemon",
+      "spawnablePositionType": "grounded",
+      "bucket": "rare",
+      "bucketWeight": 0.5,
+      "levelText": "3-29",
+      "levelMin": 3,
+      "levelMax": 29,
+      "weight": 12,
+      "presets": [
+        "natural"
+      ],
+      "biomeHints": [
+        "Dark Forest"
+      ],
+      "condition": {
+        "neededBaseBlocks": [
+          "#cobblemon:natural"
+        ],
+        "biomes": [
+          "minecraft:dark_forest"
+        ],
+        "structures": [
+          "cobbleverse:crown_cemetery"
+        ],
+        "timeRange": "night"
+      },
+      "anticondition": {
+        "neededBaseBlocks": [
+          "minecraft:farmland"
+        ]
+      },
+      "weightMultipliers": [],
+      "raw": {
+        "id": "greavard-2",
+        "pokemon": "greavard",
+        "presets": [
+          "natural"
+        ],
+        "type": "pokemon",
+        "spawnablePositionType": "grounded",
+        "bucket": "rare",
+        "level": "3-29",
+        "weight": 12,
+        "condition": {
+          "biomes": [
+            "minecraft:dark_forest"
+          ],
+          "structures": [
+            "cobbleverse:crown_cemetery"
+          ],
+          "timeRange": "night"
+        }
+      }
+    }
+  ],
   "forms": [],
   "drops": {
     "amount": 5,

@@ -1130,7 +1130,62 @@
       "fromFormSlug": null
     }
   ],
-  "spawnEntries": [],
+  "spawnEntries": [
+    {
+      "id": "zacian-1",
+      "sourceFile": "0888_zacian.json",
+      "pokemon": {
+        "raw": "zacian",
+        "slug": "zacian",
+        "aspectTokens": []
+      },
+      "type": "pokemon",
+      "spawnablePositionType": "grounded",
+      "bucket": "ultra-rare",
+      "bucketWeight": 0.2,
+      "levelText": "65-80",
+      "levelMin": 65,
+      "levelMax": 80,
+      "weight": 1,
+      "presets": [
+        "natural"
+      ],
+      "biomeHints": [
+        "Dark Forest"
+      ],
+      "condition": {
+        "neededBaseBlocks": [
+          "#cobblemon:natural"
+        ],
+        "biomes": [
+          "minecraft:dark_forest"
+        ]
+      },
+      "anticondition": {
+        "neededBaseBlocks": [
+          "minecraft:farmland"
+        ]
+      },
+      "weightMultipliers": [],
+      "raw": {
+        "id": "zacian-1",
+        "pokemon": "zacian",
+        "presets": [
+          "natural"
+        ],
+        "type": "pokemon",
+        "spawnablePositionType": "grounded",
+        "bucket": "ultra-rare",
+        "level": "65-80",
+        "weight": 1,
+        "condition": {
+          "biomes": [
+            "minecraft:dark_forest"
+          ]
+        }
+      }
+    }
+  ],
   "forms": [
     {
       "name": "Crowned",

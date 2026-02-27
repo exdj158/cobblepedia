@@ -255,6 +255,11 @@ type ArtifactEvidenceAccumulator = {
   evidenceFiles: Set<string>
 }
 
+type AddonSpawnPoolPayload = {
+  sourcePath: string
+  data: Record<string, unknown>
+}
+
 type CobbleverseEvidenceContext = {
   versionId: string | null
   dependencyFiles: number
@@ -262,6 +267,7 @@ type CobbleverseEvidenceContext = {
   artifactEvidence: ArtifactEvidenceAccumulator[]
   speciesSignalsBySlug: Map<string, SpeciesAddonSignals>
   speciesAdditionsBySlug: SpeciesAdditionsBySlug
+  spawnPoolPayloads: AddonSpawnPoolPayload[]
 }
 
 type ProvenanceResolution = {
@@ -437,6 +443,26 @@ async function main() {
     biomeTagMap,
     warnings: spawnWarnings,
   })
+
+  if (cobbleverseEvidence) {
+    const addonSpawnBySlug = loadAddonSpawnEntriesBySlug({
+      spawnPoolPayloads: cobbleverseEvidence.spawnPoolPayloads,
+      speciesLookup,
+      spawnPresets,
+      bucketWeights,
+      biomeTagMap,
+      warnings: spawnWarnings,
+    })
+
+    for (const [slug, entries] of addonSpawnBySlug) {
+      const existingEntries = spawnBySlug.get(slug)
+      if (existingEntries && existingEntries.length > 0) {
+        continue
+      }
+
+      spawnBySlug.set(slug, entries)
+    }
+  }
 
   const moveLearnersBuild: MoveLearnersBuildMap = new Map()
 
@@ -911,6 +937,7 @@ async function loadCobbleverseEvidenceContext(
 
   const speciesSignalsBySlug = new Map<string, SpeciesAddonSignals>()
   const speciesAdditionsBySlug = new Map<string, Record<string, unknown>[]>()
+  const spawnPoolPayloads: AddonSpawnPoolPayload[] = []
   const artifactEvidence: ArtifactEvidenceAccumulator[] = []
 
   for (const overridePath of overrideArchivePaths) {
@@ -929,6 +956,7 @@ async function loadCobbleverseEvidenceContext(
         speciesLookup,
         speciesSignalsBySlug,
         speciesAdditionsBySlug,
+        spawnPoolPayloads,
       })
     }
 
@@ -951,6 +979,7 @@ async function loadCobbleverseEvidenceContext(
         speciesLookup,
         speciesSignalsBySlug,
         speciesAdditionsBySlug,
+        spawnPoolPayloads,
       })
     }
 
@@ -964,6 +993,7 @@ async function loadCobbleverseEvidenceContext(
     artifactEvidence,
     speciesSignalsBySlug,
     speciesAdditionsBySlug,
+    spawnPoolPayloads,
   }
 }
 
@@ -1070,6 +1100,7 @@ async function collectSpeciesSignalsFromArchive(params: {
   speciesLookup: Map<string, string>
   speciesSignalsBySlug: Map<string, SpeciesAddonSignals>
   speciesAdditionsBySlug: SpeciesAdditionsBySlug
+  spawnPoolPayloads: AddonSpawnPoolPayload[]
 }) {
   const archive = await JSZip.loadAsync(params.archiveBytes)
   const entryPaths = Object.values(archive.files)
@@ -1133,6 +1164,11 @@ async function collectSpeciesSignalsFromArchive(params: {
     if (!isRecord(parsed)) {
       continue
     }
+
+    params.spawnPoolPayloads.push({
+      sourcePath: `${params.artifact.mrpackPath}::${entryPath}`,
+      data: cloneJsonRecord(parsed),
+    })
 
     const speciesSlugs = extractSpawnSpeciesSlugsFromArchivePayload(parsed, params.speciesLookup)
     for (const speciesSlug of speciesSlugs) {
@@ -1828,64 +1864,153 @@ async function loadSpawnEntriesBySlug(params: {
   const spawnBySlug = new Map<string, SpawnEntryRecord[]>()
 
   for (const filePath of files) {
-    const data = await readJson(filePath)
-    const spawns = Array.isArray(data.spawns) ? data.spawns : []
+    appendSpawnEntriesFromSpawnPool({
+      spawnPoolData: await readJson(filePath),
+      sourcePath: filePath,
+      speciesLookup: params.speciesLookup,
+      spawnPresets: params.spawnPresets,
+      bucketWeights: params.bucketWeights,
+      biomeTagMap: params.biomeTagMap,
+      warnings: params.warnings,
+      allowMissingPresets: false,
+      target: spawnBySlug,
+    })
+  }
 
-    for (const [spawnIndex, rawSpawn] of spawns.entries()) {
-      if (!isRecord(rawSpawn)) {
-        continue
+  for (const entries of spawnBySlug.values()) {
+    entries.sort((left, right) => left.id.localeCompare(right.id))
+  }
+
+  return spawnBySlug
+}
+
+function loadAddonSpawnEntriesBySlug(params: {
+  spawnPoolPayloads: AddonSpawnPoolPayload[]
+  speciesLookup: Map<string, string>
+  spawnPresets: Map<string, Record<string, unknown>>
+  bucketWeights: Map<string, number>
+  biomeTagMap: Map<string, string[]>
+  warnings: SpawnWarnings
+}): Map<string, SpawnEntryRecord[]> {
+  const spawnBySlug = new Map<string, SpawnEntryRecord[]>()
+
+  for (const payload of params.spawnPoolPayloads) {
+    const entriesFromSource = new Map<string, SpawnEntryRecord[]>()
+    appendSpawnEntriesFromSpawnPool({
+      spawnPoolData: payload.data,
+      sourcePath: payload.sourcePath,
+      speciesLookup: params.speciesLookup,
+      spawnPresets: params.spawnPresets,
+      bucketWeights: params.bucketWeights,
+      biomeTagMap: params.biomeTagMap,
+      warnings: params.warnings,
+      allowMissingPresets: true,
+      target: entriesFromSource,
+    })
+
+    for (const [slug, entries] of entriesFromSource) {
+      if (!spawnBySlug.has(slug)) {
+        spawnBySlug.set(slug, entries)
       }
+    }
+  }
 
-      const pokemonRaw = typeof rawSpawn.pokemon === "string" ? rawSpawn.pokemon : ""
-      if (!pokemonRaw) {
-        continue
+  for (const entries of spawnBySlug.values()) {
+    entries.sort((left, right) => left.id.localeCompare(right.id))
+  }
+
+  return spawnBySlug
+}
+
+function appendSpawnEntriesFromSpawnPool(params: {
+  spawnPoolData: Record<string, unknown>
+  sourcePath: string
+  speciesLookup: Map<string, string>
+  spawnPresets: Map<string, Record<string, unknown>>
+  bucketWeights: Map<string, number>
+  biomeTagMap: Map<string, string[]>
+  warnings: SpawnWarnings
+  allowMissingPresets: boolean
+  target: Map<string, SpawnEntryRecord[]>
+}) {
+  const spawns = Array.isArray(params.spawnPoolData.spawns) ? params.spawnPoolData.spawns : []
+
+  for (const [spawnIndex, rawSpawn] of spawns.entries()) {
+    if (!isRecord(rawSpawn)) {
+      continue
+    }
+
+    const pokemonValues: string[] = []
+    if (typeof rawSpawn.pokemon === "string") {
+      pokemonValues.push(rawSpawn.pokemon)
+    } else if (Array.isArray(rawSpawn.pokemon)) {
+      for (const pokemonValue of rawSpawn.pokemon) {
+        if (typeof pokemonValue === "string") {
+          pokemonValues.push(pokemonValue)
+        }
       }
+    }
 
-      const parsedPokemon = parsePokemonRef(pokemonRaw)
-      const slug =
-        resolvePokemonSlug(parsedPokemon.baseId, params.speciesLookup) ?? parsedPokemon.baseId
+    if (pokemonValues.length === 0) {
+      continue
+    }
 
-      const mergedCondition = mergePresetBlock(
+    let mergedCondition: Record<string, unknown> | null = null
+    let mergedAnticondition: Record<string, unknown> | null = null
+    try {
+      mergedCondition = mergePresetBlock(
         rawSpawn,
         "condition",
         params.spawnPresets,
-        filePath,
+        params.sourcePath,
         String(rawSpawn.id ?? "unknown")
       )
-      const mergedAnticondition = mergePresetBlock(
+      mergedAnticondition = mergePresetBlock(
         rawSpawn,
         "anticondition",
         params.spawnPresets,
-        filePath,
+        params.sourcePath,
         String(rawSpawn.id ?? "unknown")
       )
+    } catch (error) {
+      const isMissingPresetError =
+        error instanceof Error && error.message.startsWith("Referenced spawn preset is missing:")
 
-      collectBiomeWarnings(mergedCondition, params.warnings)
-      collectBiomeWarnings(mergedAnticondition, params.warnings)
+      if (params.allowMissingPresets && isMissingPresetError) {
+        continue
+      }
 
-      const biomeHints = collectBiomeHints(mergedCondition, params.biomeTagMap)
+      throw error
+    }
 
-      const levelText = (() => {
-        if (typeof rawSpawn.level === "string") return rawSpawn.level
-        if (typeof rawSpawn.level === "number") return String(rawSpawn.level)
-        if (typeof rawSpawn.levelRange === "string") return rawSpawn.levelRange
-        if (typeof rawSpawn.levelRange === "number") return String(rawSpawn.levelRange)
-        return null
-      })()
+    collectBiomeWarnings(mergedCondition, params.warnings)
+    collectBiomeWarnings(mergedAnticondition, params.warnings)
 
-      const levelRange = parseLevelRange(levelText)
-      const presets = Array.isArray(rawSpawn.presets)
-        ? rawSpawn.presets.map((value) => String(value))
-        : []
+    const biomeHints = collectBiomeHints(mergedCondition, params.biomeTagMap)
+    const levelText = (() => {
+      if (typeof rawSpawn.level === "string") return rawSpawn.level
+      if (typeof rawSpawn.level === "number") return String(rawSpawn.level)
+      if (typeof rawSpawn.levelRange === "string") return rawSpawn.levelRange
+      if (typeof rawSpawn.levelRange === "number") return String(rawSpawn.levelRange)
+      return null
+    })()
+    const levelRange = parseLevelRange(levelText)
+    const presets = Array.isArray(rawSpawn.presets)
+      ? rawSpawn.presets.map((value) => String(value))
+      : []
+    const weightMultipliers = parseWeightMultipliers(rawSpawn)
 
-      const weightMultipliers = parseWeightMultipliers(rawSpawn)
+    for (const [pokemonIndex, pokemonRaw] of pokemonValues.entries()) {
+      const parsedPokemon = parsePokemonRef(pokemonRaw)
+      const slug =
+        resolvePokemonSlug(parsedPokemon.baseId, params.speciesLookup) ?? parsedPokemon.baseId
 
       const entry: SpawnEntryRecord = {
         id:
           typeof rawSpawn.id === "string"
             ? rawSpawn.id
-            : `${slug}-${path.basename(filePath, ".json")}-${spawnIndex + 1}`,
-        sourceFile: path.basename(filePath),
+            : `${slug}-${path.basename(params.sourcePath, ".json")}-${spawnIndex + 1}-${pokemonIndex + 1}`,
+        sourceFile: path.basename(params.sourcePath),
         pokemon: {
           raw: pokemonRaw,
           slug,
@@ -1913,17 +2038,11 @@ async function loadSpawnEntriesBySlug(params: {
         raw: rawSpawn,
       }
 
-      const list = spawnBySlug.get(slug) ?? []
+      const list = params.target.get(slug) ?? []
       list.push(entry)
-      spawnBySlug.set(slug, list)
+      params.target.set(slug, list)
     }
   }
-
-  for (const entries of spawnBySlug.values()) {
-    entries.sort((left, right) => left.id.localeCompare(right.id))
-  }
-
-  return spawnBySlug
 }
 
 function buildPokemonDetailRecord(params: {

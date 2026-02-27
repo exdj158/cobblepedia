@@ -1396,7 +1396,167 @@
       "fromFormSlug": null
     }
   ],
-  "spawnEntries": [],
+  "spawnEntries": [
+    {
+      "id": "lycanroc-dusk",
+      "sourceFile": "0745_lycanroc.json",
+      "pokemon": {
+        "raw": "lycanroc wolf_form=dusk",
+        "slug": "lycanroc",
+        "aspectTokens": [
+          "wolf_form=dusk"
+        ]
+      },
+      "type": "pokemon",
+      "spawnablePositionType": "grounded",
+      "bucket": "uncommon",
+      "bucketWeight": 5,
+      "levelText": "29-45",
+      "levelMin": 29,
+      "levelMax": 45,
+      "weight": 1.5,
+      "presets": [],
+      "biomeHints": [
+        "Is Mountain",
+        "Is Hills",
+        "Is Hill",
+        "Is Highlands"
+      ],
+      "condition": {
+        "timeRange": "dusk",
+        "canSeeSky": true,
+        "biomes": [
+          "#cobblemon:is_mountain",
+          "#cobblemon:is_hills"
+        ]
+      },
+      "anticondition": null,
+      "weightMultipliers": [],
+      "raw": {
+        "id": "lycanroc-dusk",
+        "pokemon": "lycanroc wolf_form=dusk",
+        "type": "pokemon",
+        "spawnablePositionType": "grounded",
+        "bucket": "uncommon",
+        "level": "29-45",
+        "weight": 1.5,
+        "condition": {
+          "timeRange": "dusk",
+          "canSeeSky": true,
+          "biomes": [
+            "#cobblemon:is_mountain",
+            "#cobblemon:is_hills"
+          ]
+        }
+      }
+    },
+    {
+      "id": "lycanroc-midday",
+      "sourceFile": "0745_lycanroc.json",
+      "pokemon": {
+        "raw": "lycanroc wolf_form=midday",
+        "slug": "lycanroc",
+        "aspectTokens": [
+          "wolf_form=midday"
+        ]
+      },
+      "type": "pokemon",
+      "spawnablePositionType": "grounded",
+      "bucket": "uncommon",
+      "bucketWeight": 5,
+      "levelText": "29-45",
+      "levelMin": 29,
+      "levelMax": 45,
+      "weight": 1.5,
+      "presets": [],
+      "biomeHints": [
+        "Is Mountain",
+        "Is Hills",
+        "Is Hill",
+        "Is Highlands"
+      ],
+      "condition": {
+        "timeRange": "day",
+        "canSeeSky": true,
+        "biomes": [
+          "#cobblemon:is_mountain",
+          "#cobblemon:is_hills"
+        ]
+      },
+      "anticondition": null,
+      "weightMultipliers": [],
+      "raw": {
+        "id": "lycanroc-midday",
+        "pokemon": "lycanroc wolf_form=midday",
+        "type": "pokemon",
+        "spawnablePositionType": "grounded",
+        "bucket": "uncommon",
+        "level": "29-45",
+        "weight": 1.5,
+        "condition": {
+          "timeRange": "day",
+          "canSeeSky": true,
+          "biomes": [
+            "#cobblemon:is_mountain",
+            "#cobblemon:is_hills"
+          ]
+        }
+      }
+    },
+    {
+      "id": "lycanroc-midnight",
+      "sourceFile": "0745_lycanroc.json",
+      "pokemon": {
+        "raw": "lycanroc wolf_form=midnight",
+        "slug": "lycanroc",
+        "aspectTokens": [
+          "wolf_form=midnight"
+        ]
+      },
+      "type": "pokemon",
+      "spawnablePositionType": "grounded",
+      "bucket": "uncommon",
+      "bucketWeight": 5,
+      "levelText": "29-45",
+      "levelMin": 29,
+      "levelMax": 45,
+      "weight": 1.5,
+      "presets": [],
+      "biomeHints": [
+        "Is Mountain",
+        "Is Hills",
+        "Is Hill",
+        "Is Highlands"
+      ],
+      "condition": {
+        "timeRange": "night",
+        "canSeeSky": true,
+        "biomes": [
+          "#cobblemon:is_mountain",
+          "#cobblemon:is_hills"
+        ]
+      },
+      "anticondition": null,
+      "weightMultipliers": [],
+      "raw": {
+        "id": "lycanroc-midnight",
+        "pokemon": "lycanroc wolf_form=midnight",
+        "type": "pokemon",
+        "spawnablePositionType": "grounded",
+        "bucket": "uncommon",
+        "level": "29-45",
+        "weight": 1.5,
+        "condition": {
+          "timeRange": "night",
+          "canSeeSky": true,
+          "biomes": [
+            "#cobblemon:is_mountain",
+            "#cobblemon:is_hills"
+          ]
+        }
+      }
+    }
+  ],
   "forms": [
     {
       "name": "Midnight",

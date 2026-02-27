@@ -1283,7 +1283,75 @@
       "fromFormSlug": null
     }
   ],
-  "spawnEntries": [],
+  "spawnEntries": [
+    {
+      "id": "suicune-1",
+      "sourceFile": "0245_suicune.json",
+      "pokemon": {
+        "raw": "suicune",
+        "slug": "suicune",
+        "aspectTokens": []
+      },
+      "type": "pokemon",
+      "spawnablePositionType": "grounded",
+      "bucket": "ultra-rare",
+      "bucketWeight": 0.2,
+      "levelText": "60",
+      "levelMin": 60,
+      "levelMax": 60,
+      "weight": 33.33,
+      "presets": [
+        "natural"
+      ],
+      "biomeHints": [],
+      "condition": {
+        "neededBaseBlocks": [
+          "#cobblemon:natural"
+        ],
+        "structures": [
+          "cobbleverse:burned_tower"
+        ]
+      },
+      "anticondition": {
+        "neededBaseBlocks": [
+          "minecraft:farmland"
+        ]
+      },
+      "weightMultipliers": [
+        {
+          "multiplier": 3,
+          "condition": {
+            "isRaining": true
+          }
+        }
+      ],
+      "raw": {
+        "id": "suicune-1",
+        "pokemon": "suicune",
+        "presets": [
+          "natural"
+        ],
+        "type": "pokemon",
+        "spawnablePositionType": "grounded",
+        "bucket": "ultra-rare",
+        "level": "60",
+        "weight": 33.33,
+        "weightMultipliers": [
+          {
+            "multiplier": 3,
+            "condition": {
+              "isRaining": true
+            }
+          }
+        ],
+        "condition": {
+          "structures": [
+            "cobbleverse:burned_tower"
+          ]
+        }
+      }
+    }
+  ],
   "forms": [],
   "drops": {
     "amount": 5,

@@ -1624,7 +1624,77 @@
       "fromFormSlug": null
     }
   ],
-  "spawnEntries": [],
+  "spawnEntries": [
+    {
+      "id": "bisharp-1",
+      "sourceFile": "0625_bisharp.json",
+      "pokemon": {
+        "raw": "bisharp",
+        "slug": "bisharp",
+        "aspectTokens": []
+      },
+      "type": "pokemon",
+      "spawnablePositionType": "grounded",
+      "bucket": "rare",
+      "bucketWeight": 0.5,
+      "levelText": "52-78",
+      "levelMin": 52,
+      "levelMax": 78,
+      "weight": 4,
+      "presets": [
+        "natural"
+      ],
+      "biomeHints": [
+        "Bamboo Jungle"
+      ],
+      "condition": {
+        "neededBaseBlocks": [
+          "#cobblemon:natural"
+        ],
+        "biomes": [
+          "minecraft:bamboo_jungle"
+        ]
+      },
+      "anticondition": {
+        "neededBaseBlocks": [
+          "minecraft:farmland"
+        ]
+      },
+      "weightMultipliers": [
+        {
+          "multiplier": 2.5,
+          "condition": {
+            "timeRange": "night"
+          }
+        }
+      ],
+      "raw": {
+        "id": "bisharp-1",
+        "pokemon": "bisharp",
+        "presets": [
+          "natural"
+        ],
+        "type": "pokemon",
+        "spawnablePositionType": "grounded",
+        "bucket": "rare",
+        "level": "52-78",
+        "weight": 4,
+        "condition": {
+          "biomes": [
+            "minecraft:bamboo_jungle"
+          ]
+        },
+        "weightMultipliers": [
+          {
+            "multiplier": 2.5,
+            "condition": {
+              "timeRange": "night"
+            }
+          }
+        ]
+      }
+    }
+  ],
   "forms": [],
   "drops": {
     "amount": 2,

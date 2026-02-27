@@ -955,7 +955,118 @@
       "fromFormSlug": null
     }
   ],
-  "spawnEntries": [],
+  "spawnEntries": [
+    {
+      "id": "slitherwing-1",
+      "sourceFile": "0988_slitherwing.json",
+      "pokemon": {
+        "raw": "slitherwing",
+        "slug": "slitherwing",
+        "aspectTokens": []
+      },
+      "type": "pokemon",
+      "spawnablePositionType": "grounded",
+      "bucket": "ultra-rare",
+      "bucketWeight": 0.2,
+      "levelText": "47-62",
+      "levelMin": 47,
+      "levelMax": 62,
+      "weight": 1.8,
+      "presets": [
+        "natural"
+      ],
+      "biomeHints": [
+        "Is Jungle"
+      ],
+      "condition": {
+        "neededBaseBlocks": [
+          "#cobblemon:natural"
+        ],
+        "canSeeSky": true,
+        "biomes": [
+          "#cobblemon:is_jungle"
+        ]
+      },
+      "anticondition": {
+        "neededBaseBlocks": [
+          "minecraft:farmland"
+        ]
+      },
+      "weightMultipliers": [],
+      "raw": {
+        "id": "slitherwing-1",
+        "pokemon": "slitherwing",
+        "presets": [
+          "natural"
+        ],
+        "type": "pokemon",
+        "spawnablePositionType": "grounded",
+        "bucket": "ultra-rare",
+        "level": "47-62",
+        "weight": 1.8,
+        "condition": {
+          "canSeeSky": true,
+          "biomes": [
+            "#cobblemon:is_jungle"
+          ]
+        }
+      }
+    },
+    {
+      "id": "slitherwing-2",
+      "sourceFile": "0988_slitherwing.json",
+      "pokemon": {
+        "raw": "slitherwing",
+        "slug": "slitherwing",
+        "aspectTokens": []
+      },
+      "type": "pokemon",
+      "spawnablePositionType": "grounded",
+      "bucket": "rare",
+      "bucketWeight": 0.5,
+      "levelText": "66-76",
+      "levelMin": 66,
+      "levelMax": 76,
+      "weight": 1.4,
+      "presets": [
+        "natural"
+      ],
+      "biomeHints": [
+        "Crimson Forest"
+      ],
+      "condition": {
+        "neededBaseBlocks": [
+          "#cobblemon:natural"
+        ],
+        "biomes": [
+          "minecraft:crimson_forest"
+        ]
+      },
+      "anticondition": {
+        "neededBaseBlocks": [
+          "minecraft:farmland"
+        ]
+      },
+      "weightMultipliers": [],
+      "raw": {
+        "id": "slitherwing-2",
+        "pokemon": "slitherwing",
+        "presets": [
+          "natural"
+        ],
+        "type": "pokemon",
+        "spawnablePositionType": "grounded",
+        "bucket": "rare",
+        "level": "66-76",
+        "weight": 1.4,
+        "condition": {
+          "biomes": [
+            "minecraft:crimson_forest"
+          ]
+        }
+      }
+    }
+  ],
   "forms": [],
   "drops": null,
   "rawSpecies": {

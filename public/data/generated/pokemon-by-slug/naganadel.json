@@ -1400,7 +1400,62 @@
       "fromFormSlug": null
     }
   ],
-  "spawnEntries": [],
+  "spawnEntries": [
+    {
+      "id": "naganadel-1",
+      "sourceFile": "0804_naganadel.json",
+      "pokemon": {
+        "raw": "naganadel",
+        "slug": "naganadel",
+        "aspectTokens": []
+      },
+      "type": "pokemon",
+      "spawnablePositionType": "grounded",
+      "bucket": "ultra-rare",
+      "bucketWeight": 0.2,
+      "levelText": "48-62",
+      "levelMin": 48,
+      "levelMax": 62,
+      "weight": 0.5,
+      "presets": [
+        "natural"
+      ],
+      "biomeHints": [
+        "Is End"
+      ],
+      "condition": {
+        "neededBaseBlocks": [
+          "#cobblemon:natural"
+        ],
+        "biomes": [
+          "#minecraft:is_end"
+        ]
+      },
+      "anticondition": {
+        "neededBaseBlocks": [
+          "minecraft:farmland"
+        ]
+      },
+      "weightMultipliers": [],
+      "raw": {
+        "id": "naganadel-1",
+        "pokemon": "naganadel",
+        "presets": [
+          "natural"
+        ],
+        "type": "pokemon",
+        "spawnablePositionType": "grounded",
+        "bucket": "ultra-rare",
+        "level": "48-62",
+        "weight": 0.5,
+        "condition": {
+          "biomes": [
+            "#minecraft:is_end"
+          ]
+        }
+      }
+    }
+  ],
   "forms": [],
   "drops": {
     "amount": 3,

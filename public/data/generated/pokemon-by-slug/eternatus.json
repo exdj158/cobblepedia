@@ -1019,7 +1019,62 @@
       "fromFormSlug": null
     }
   ],
-  "spawnEntries": [],
+  "spawnEntries": [
+    {
+      "id": "eternatus-1",
+      "sourceFile": "0890_eternatus.json",
+      "pokemon": {
+        "raw": "eternatus",
+        "slug": "eternatus",
+        "aspectTokens": []
+      },
+      "type": "pokemon",
+      "spawnablePositionType": "grounded",
+      "bucket": "ultra-rare",
+      "bucketWeight": 0.2,
+      "levelText": "70-90",
+      "levelMin": 70,
+      "levelMax": 90,
+      "weight": 5,
+      "presets": [
+        "natural"
+      ],
+      "biomeHints": [
+        "End Highlands"
+      ],
+      "condition": {
+        "neededBaseBlocks": [
+          "#cobblemon:natural"
+        ],
+        "biomes": [
+          "minecraft:end_highlands"
+        ]
+      },
+      "anticondition": {
+        "neededBaseBlocks": [
+          "minecraft:farmland"
+        ]
+      },
+      "weightMultipliers": [],
+      "raw": {
+        "id": "eternatus-1",
+        "pokemon": "eternatus",
+        "type": "pokemon",
+        "presets": [
+          "natural"
+        ],
+        "spawnablePositionType": "grounded",
+        "bucket": "ultra-rare",
+        "level": "70-90",
+        "weight": 5,
+        "condition": {
+          "biomes": [
+            "minecraft:end_highlands"
+          ]
+        }
+      }
+    }
+  ],
   "forms": [
     {
       "name": "Eternamax",

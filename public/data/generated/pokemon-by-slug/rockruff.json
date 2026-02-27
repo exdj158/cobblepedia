@@ -1306,7 +1306,54 @@
       "fromFormSlug": null
     }
   ],
-  "spawnEntries": [],
+  "spawnEntries": [
+    {
+      "id": "rockruff-1",
+      "sourceFile": "0744_rockruff.json",
+      "pokemon": {
+        "raw": "rockruff",
+        "slug": "rockruff",
+        "aspectTokens": []
+      },
+      "type": "pokemon",
+      "spawnablePositionType": "grounded",
+      "bucket": "uncommon",
+      "bucketWeight": 5,
+      "levelText": "5-20",
+      "levelMin": 5,
+      "levelMax": 20,
+      "weight": 5.8,
+      "presets": [],
+      "biomeHints": [
+        "Is Hills",
+        "Is Hill",
+        "Is Highlands"
+      ],
+      "condition": {
+        "canSeeSky": true,
+        "biomes": [
+          "#cobblemon:is_hills"
+        ]
+      },
+      "anticondition": null,
+      "weightMultipliers": [],
+      "raw": {
+        "id": "rockruff-1",
+        "pokemon": "rockruff",
+        "type": "pokemon",
+        "spawnablePositionType": "grounded",
+        "bucket": "uncommon",
+        "level": "5-20",
+        "weight": 5.8,
+        "condition": {
+          "canSeeSky": true,
+          "biomes": [
+            "#cobblemon:is_hills"
+          ]
+        }
+      }
+    }
+  ],
   "forms": [
     {
       "name": "Dusk",

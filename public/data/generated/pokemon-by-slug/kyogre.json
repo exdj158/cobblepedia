@@ -1178,7 +1178,50 @@
       "fromFormSlug": null
     }
   ],
-  "spawnEntries": [],
+  "spawnEntries": [
+    {
+      "id": "kyogre-1",
+      "sourceFile": "0382_kyogre.json",
+      "pokemon": {
+        "raw": "kyogre",
+        "slug": "kyogre",
+        "aspectTokens": []
+      },
+      "type": "pokemon",
+      "spawnablePositionType": "grounded",
+      "bucket": "ultra-rare",
+      "bucketWeight": 0.2,
+      "levelText": "60-70",
+      "levelMin": 60,
+      "levelMax": 70,
+      "weight": 0,
+      "presets": [],
+      "biomeHints": [
+        "Custom Spawn/kyogre Temple"
+      ],
+      "condition": {
+        "biomes": [
+          "cobbleverse:custom_spawn/kyogre_temple"
+        ]
+      },
+      "anticondition": null,
+      "weightMultipliers": [],
+      "raw": {
+        "id": "kyogre-1",
+        "pokemon": "kyogre",
+        "type": "pokemon",
+        "spawnablePositionType": "grounded",
+        "bucket": "ultra-rare",
+        "level": "60-70",
+        "weight": 0,
+        "condition": {
+          "biomes": [
+            "cobbleverse:custom_spawn/kyogre_temple"
+          ]
+        }
+      }
+    }
+  ],
   "forms": [
     {
       "name": "Primal",

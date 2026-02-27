@@ -1703,7 +1703,50 @@
       "fromFormSlug": null
     }
   ],
-  "spawnEntries": [],
+  "spawnEntries": [
+    {
+      "id": "mesprit-1",
+      "sourceFile": "0481_mesprit.json",
+      "pokemon": {
+        "raw": "mesprit",
+        "slug": "mesprit",
+        "aspectTokens": []
+      },
+      "type": "pokemon",
+      "spawnablePositionType": "grounded",
+      "bucket": "ultra-rare",
+      "bucketWeight": 0.2,
+      "levelText": "40-65",
+      "levelMin": 40,
+      "levelMax": 65,
+      "weight": 0,
+      "presets": [],
+      "biomeHints": [
+        "Custom Spawn"
+      ],
+      "condition": {
+        "biomes": [
+          "cobbleverse:custom_spawn"
+        ]
+      },
+      "anticondition": null,
+      "weightMultipliers": [],
+      "raw": {
+        "id": "mesprit-1",
+        "pokemon": "mesprit",
+        "type": "pokemon",
+        "spawnablePositionType": "grounded",
+        "bucket": "ultra-rare",
+        "level": "40-65",
+        "weight": 0,
+        "condition": {
+          "biomes": [
+            "cobbleverse:custom_spawn"
+          ]
+        }
+      }
+    }
+  ],
   "forms": [],
   "drops": {
     "amount": 5,

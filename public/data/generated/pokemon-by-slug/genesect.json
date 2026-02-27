@@ -1400,7 +1400,52 @@
       "fromFormSlug": null
     }
   ],
-  "spawnEntries": [],
+  "spawnEntries": [
+    {
+      "id": "genesect-1",
+      "sourceFile": "0649_genesect.json",
+      "pokemon": {
+        "raw": "genesect",
+        "slug": "genesect",
+        "aspectTokens": []
+      },
+      "type": "pokemon",
+      "spawnablePositionType": "grounded",
+      "bucket": "ultra-rare",
+      "bucketWeight": 0.2,
+      "levelText": "48-68",
+      "levelMin": 48,
+      "levelMax": 68,
+      "weight": 4,
+      "presets": [],
+      "biomeHints": [
+        "Is Dripstone",
+        "Dripstone Caves",
+        "Fractured Savanna"
+      ],
+      "condition": {
+        "biomes": [
+          "#cobblemon:is_dripstone"
+        ]
+      },
+      "anticondition": null,
+      "weightMultipliers": [],
+      "raw": {
+        "id": "genesect-1",
+        "pokemon": "genesect",
+        "type": "pokemon",
+        "spawnablePositionType": "grounded",
+        "bucket": "ultra-rare",
+        "level": "48-68",
+        "weight": 4,
+        "condition": {
+          "biomes": [
+            "#cobblemon:is_dripstone"
+          ]
+        }
+      }
+    }
+  ],
   "forms": [
     {
       "name": "Douse",

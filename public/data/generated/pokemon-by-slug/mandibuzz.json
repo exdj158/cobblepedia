@@ -1372,7 +1372,68 @@
       "fromFormSlug": null
     }
   ],
-  "spawnEntries": [],
+  "spawnEntries": [
+    {
+      "id": "mandibuzz-1",
+      "sourceFile": "0630_mandibuzz.json",
+      "pokemon": {
+        "raw": "mandibuzz",
+        "slug": "mandibuzz",
+        "aspectTokens": []
+      },
+      "type": "pokemon",
+      "spawnablePositionType": "grounded",
+      "bucket": "uncommon",
+      "bucketWeight": 5,
+      "levelText": "54-72",
+      "levelMin": 54,
+      "levelMax": 72,
+      "weight": 1.7,
+      "presets": [
+        "natural"
+      ],
+      "biomeHints": [
+        "Is Badlands",
+        "Is Desert",
+        "Desert"
+      ],
+      "condition": {
+        "neededBaseBlocks": [
+          "#cobblemon:natural"
+        ],
+        "canSeeSky": true,
+        "biomes": [
+          "#cobblemon:is_badlands",
+          "#cobblemon:is_desert"
+        ]
+      },
+      "anticondition": {
+        "neededBaseBlocks": [
+          "minecraft:farmland"
+        ]
+      },
+      "weightMultipliers": [],
+      "raw": {
+        "id": "mandibuzz-1",
+        "pokemon": "mandibuzz",
+        "presets": [
+          "natural"
+        ],
+        "type": "pokemon",
+        "spawnablePositionType": "grounded",
+        "bucket": "uncommon",
+        "level": "54-72",
+        "weight": 1.7,
+        "condition": {
+          "canSeeSky": true,
+          "biomes": [
+            "#cobblemon:is_badlands",
+            "#cobblemon:is_desert"
+          ]
+        }
+      }
+    }
+  ],
   "forms": [],
   "drops": {
     "amount": 7,

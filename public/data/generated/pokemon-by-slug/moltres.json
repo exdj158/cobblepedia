@@ -1302,7 +1302,118 @@
       "fromFormSlug": null
     }
   ],
-  "spawnEntries": [],
+  "spawnEntries": [
+    {
+      "id": "moltres-1",
+      "sourceFile": "0146_moltres.json",
+      "pokemon": {
+        "raw": "moltres",
+        "slug": "moltres",
+        "aspectTokens": []
+      },
+      "type": "pokemon",
+      "spawnablePositionType": "grounded",
+      "bucket": "ultra-rare",
+      "bucketWeight": 0.2,
+      "levelText": "50-60",
+      "levelMin": 50,
+      "levelMax": 60,
+      "weight": 0,
+      "presets": [
+        "natural"
+      ],
+      "biomeHints": [
+        "Custom Spawn/moltres Tower"
+      ],
+      "condition": {
+        "neededBaseBlocks": [
+          "#cobblemon:natural"
+        ],
+        "biomes": [
+          "cobbleverse:custom_spawn/moltres_tower"
+        ]
+      },
+      "anticondition": {
+        "neededBaseBlocks": [
+          "minecraft:farmland"
+        ]
+      },
+      "weightMultipliers": [],
+      "raw": {
+        "id": "moltres-1",
+        "pokemon": "moltres",
+        "presets": [
+          "natural"
+        ],
+        "type": "pokemon",
+        "spawnablePositionType": "grounded",
+        "bucket": "ultra-rare",
+        "level": "50-60",
+        "weight": 0,
+        "condition": {
+          "biomes": [
+            "cobbleverse:custom_spawn/moltres_tower"
+          ]
+        }
+      }
+    },
+    {
+      "id": "moltres-2",
+      "sourceFile": "0146_moltres.json",
+      "pokemon": {
+        "raw": "moltres galarian",
+        "slug": "moltres",
+        "aspectTokens": [
+          "galarian"
+        ]
+      },
+      "type": "pokemon",
+      "spawnablePositionType": "grounded",
+      "bucket": "ultra-rare",
+      "bucketWeight": 0.2,
+      "levelText": "60",
+      "levelMin": 60,
+      "levelMax": 60,
+      "weight": 4,
+      "presets": [
+        "natural"
+      ],
+      "biomeHints": [],
+      "condition": {
+        "neededBaseBlocks": [
+          "#cobblemon:natural"
+        ],
+        "structures": [
+          "cobbleverse:dyna_tree"
+        ],
+        "timeRange": "day"
+      },
+      "anticondition": {
+        "neededBaseBlocks": [
+          "minecraft:farmland"
+        ]
+      },
+      "weightMultipliers": [],
+      "raw": {
+        "id": "moltres-2",
+        "pokemon": "moltres galarian",
+        "presets": [
+          "natural"
+        ],
+        "type": "pokemon",
+        "spawnablePositionType": "grounded",
+        "bucket": "ultra-rare",
+        "level": "60",
+        "weight": 4,
+        "condition": {
+          "structures": [
+            "cobbleverse:dyna_tree"
+          ],
+          "timeRange": "day"
+        }
+      }
+    }
+  ],
   "forms": [
     {
       "name": "Galar",

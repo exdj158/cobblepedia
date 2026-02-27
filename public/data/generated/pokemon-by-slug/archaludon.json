@@ -1113,7 +1113,52 @@
       "fromFormSlug": null
     }
   ],
-  "spawnEntries": [],
+  "spawnEntries": [
+    {
+      "id": "archaludon-1",
+      "sourceFile": "1018_archaludon.json",
+      "pokemon": {
+        "raw": "archaludon",
+        "slug": "archaludon",
+        "aspectTokens": []
+      },
+      "type": "pokemon",
+      "spawnablePositionType": "grounded",
+      "bucket": "ultra-rare",
+      "bucketWeight": 0.2,
+      "levelText": "70-80",
+      "levelMin": 70,
+      "levelMax": 80,
+      "weight": 4,
+      "presets": [],
+      "biomeHints": [
+        "Is Glacial",
+        "Frozen Peaks",
+        "Ice Spikes"
+      ],
+      "condition": {
+        "biomes": [
+          "#cobblemon:is_glacial"
+        ]
+      },
+      "anticondition": null,
+      "weightMultipliers": [],
+      "raw": {
+        "id": "archaludon-1",
+        "pokemon": "archaludon",
+        "type": "pokemon",
+        "spawnablePositionType": "grounded",
+        "bucket": "ultra-rare",
+        "level": "70-80",
+        "weight": 4,
+        "condition": {
+          "biomes": [
+            "#cobblemon:is_glacial"
+          ]
+        }
+      }
+    }
+  ],
   "forms": [],
   "drops": {
     "amount": 0,

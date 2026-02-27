@@ -830,7 +830,66 @@
       "fromFormSlug": null
     }
   ],
-  "spawnEntries": [],
+  "spawnEntries": [
+    {
+      "id": "arctibax-1",
+      "sourceFile": "0997_arctibax.json",
+      "pokemon": {
+        "raw": "arctibax",
+        "slug": "arctibax",
+        "aspectTokens": []
+      },
+      "type": "pokemon",
+      "spawnablePositionType": "grounded",
+      "bucket": "rare",
+      "bucketWeight": 0.5,
+      "levelText": "38-57",
+      "levelMin": 38,
+      "levelMax": 57,
+      "weight": 2.5,
+      "presets": [
+        "natural"
+      ],
+      "biomeHints": [
+        "Is Glacial",
+        "Frozen Peaks",
+        "Ice Spikes"
+      ],
+      "condition": {
+        "neededBaseBlocks": [
+          "#cobblemon:natural"
+        ],
+        "canSeeSky": true,
+        "biomes": [
+          "#cobblemon:is_glacial"
+        ]
+      },
+      "anticondition": {
+        "neededBaseBlocks": [
+          "minecraft:farmland"
+        ]
+      },
+      "weightMultipliers": [],
+      "raw": {
+        "id": "arctibax-1",
+        "pokemon": "arctibax",
+        "presets": [
+          "natural"
+        ],
+        "type": "pokemon",
+        "spawnablePositionType": "grounded",
+        "bucket": "rare",
+        "level": "38-57",
+        "weight": 2.5,
+        "condition": {
+          "canSeeSky": true,
+          "biomes": [
+            "#cobblemon:is_glacial"
+          ]
+        }
+      }
+    }
+  ],
   "forms": [],
   "drops": {
     "amount": 1,

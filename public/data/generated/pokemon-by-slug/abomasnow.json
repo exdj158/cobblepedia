@@ -1478,7 +1478,69 @@
       "fromFormSlug": null
     }
   ],
-  "spawnEntries": [],
+  "spawnEntries": [
+    {
+      "id": "abomasnow-1",
+      "sourceFile": "0460_abomasnow.json",
+      "pokemon": {
+        "raw": "abomasnow",
+        "slug": "abomasnow",
+        "aspectTokens": []
+      },
+      "type": "pokemon",
+      "spawnablePositionType": "grounded",
+      "bucket": "uncommon",
+      "bucketWeight": 5,
+      "levelText": "42-55",
+      "levelMin": 42,
+      "levelMax": 55,
+      "weight": 7,
+      "presets": [
+        "natural"
+      ],
+      "biomeHints": [
+        "Is Snowy Taiga",
+        "Grove",
+        "Snowy Taiga",
+        "Is Snowy Forest",
+        "Auroral Garden",
+        "Muskeg"
+      ],
+      "condition": {
+        "neededBaseBlocks": [
+          "#cobblemon:natural"
+        ],
+        "biomes": [
+          "#cobblemon:is_snowy_taiga",
+          "#cobblemon:is_snowy_forest"
+        ]
+      },
+      "anticondition": {
+        "neededBaseBlocks": [
+          "minecraft:farmland"
+        ]
+      },
+      "weightMultipliers": [],
+      "raw": {
+        "id": "abomasnow-1",
+        "pokemon": "abomasnow",
+        "presets": [
+          "natural"
+        ],
+        "type": "pokemon",
+        "spawnablePositionType": "grounded",
+        "bucket": "uncommon",
+        "level": "42-55",
+        "weight": 7,
+        "condition": {
+          "biomes": [
+            "#cobblemon:is_snowy_taiga",
+            "#cobblemon:is_snowy_forest"
+          ]
+        }
+      }
+    }
+  ],
   "forms": [
     {
       "name": "Mega",

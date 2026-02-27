@@ -1810,7 +1810,50 @@
       "fromFormSlug": null
     }
   ],
-  "spawnEntries": [],
+  "spawnEntries": [
+    {
+      "id": "latios-1",
+      "sourceFile": "0381_latios.json",
+      "pokemon": {
+        "raw": "latios",
+        "slug": "latios",
+        "aspectTokens": []
+      },
+      "type": "pokemon",
+      "spawnablePositionType": "grounded",
+      "bucket": "ultra-rare",
+      "bucketWeight": 0.2,
+      "levelText": "50-75",
+      "levelMin": 50,
+      "levelMax": 75,
+      "weight": 0,
+      "presets": [],
+      "biomeHints": [
+        "Custom Spawn/secret Garden"
+      ],
+      "condition": {
+        "biomes": [
+          "cobbleverse:custom_spawn/secret_garden"
+        ]
+      },
+      "anticondition": null,
+      "weightMultipliers": [],
+      "raw": {
+        "id": "latios-1",
+        "pokemon": "latios",
+        "type": "pokemon",
+        "spawnablePositionType": "grounded",
+        "bucket": "ultra-rare",
+        "level": "50-75",
+        "weight": 0,
+        "condition": {
+          "biomes": [
+            "cobbleverse:custom_spawn/secret_garden"
+          ]
+        }
+      }
+    }
+  ],
   "forms": [
     {
       "name": "Mega",

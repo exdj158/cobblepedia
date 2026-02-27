@@ -885,7 +885,50 @@
       "fromFormSlug": null
     }
   ],
-  "spawnEntries": [],
+  "spawnEntries": [
+    {
+      "id": "wochien-1",
+      "sourceFile": "1001_wochien.json",
+      "pokemon": {
+        "raw": "wochien",
+        "slug": "wochien",
+        "aspectTokens": []
+      },
+      "type": "pokemon",
+      "spawnablePositionType": "grounded",
+      "bucket": "ultra-rare",
+      "bucketWeight": 0.2,
+      "levelText": "65-70",
+      "levelMin": 65,
+      "levelMax": 70,
+      "weight": 0,
+      "presets": [],
+      "biomeHints": [
+        "Custom Spawn/grasswither Shrine"
+      ],
+      "condition": {
+        "biomes": [
+          "cobbleverse:custom_spawn/grasswither_shrine"
+        ]
+      },
+      "anticondition": null,
+      "weightMultipliers": [],
+      "raw": {
+        "id": "wochien-1",
+        "pokemon": "wochien",
+        "type": "pokemon",
+        "spawnablePositionType": "grounded",
+        "bucket": "ultra-rare",
+        "level": "65-70",
+        "weight": 0,
+        "condition": {
+          "biomes": [
+            "cobbleverse:custom_spawn/grasswither_shrine"
+          ]
+        }
+      }
+    }
+  ],
   "forms": [],
   "drops": null,
   "rawSpecies": {

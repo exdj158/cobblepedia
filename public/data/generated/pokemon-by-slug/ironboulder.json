@@ -854,7 +854,66 @@
       "fromFormSlug": null
     }
   ],
-  "spawnEntries": [],
+  "spawnEntries": [
+    {
+      "id": "ironboulder-1",
+      "sourceFile": "1022_ironboulder.json",
+      "pokemon": {
+        "raw": "ironboulder",
+        "slug": "ironboulder",
+        "aspectTokens": []
+      },
+      "type": "pokemon",
+      "spawnablePositionType": "grounded",
+      "bucket": "ultra-rare",
+      "bucketWeight": 0.2,
+      "levelText": "45-60",
+      "levelMin": 45,
+      "levelMax": 60,
+      "weight": 3.5,
+      "presets": [
+        "natural"
+      ],
+      "biomeHints": [
+        "Dark Forest"
+      ],
+      "condition": {
+        "neededBaseBlocks": [
+          "#cobblemon:natural"
+        ],
+        "canSeeSky": true,
+        "biomes": [
+          "minecraft:dark_forest"
+        ],
+        "timeRange": "night"
+      },
+      "anticondition": {
+        "neededBaseBlocks": [
+          "minecraft:farmland"
+        ]
+      },
+      "weightMultipliers": [],
+      "raw": {
+        "id": "ironboulder-1",
+        "pokemon": "ironboulder",
+        "presets": [
+          "natural"
+        ],
+        "type": "pokemon",
+        "spawnablePositionType": "grounded",
+        "bucket": "ultra-rare",
+        "level": "45-60",
+        "weight": 3.5,
+        "condition": {
+          "canSeeSky": true,
+          "biomes": [
+            "minecraft:dark_forest"
+          ],
+          "timeRange": "night"
+        }
+      }
+    }
+  ],
   "forms": [],
   "drops": null,
   "rawSpecies": {

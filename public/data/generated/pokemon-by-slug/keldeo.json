@@ -1380,7 +1380,134 @@
       "fromFormSlug": null
     }
   ],
-  "spawnEntries": [],
+  "spawnEntries": [
+    {
+      "id": "keldeo-1",
+      "sourceFile": "0647_keldeo.json",
+      "pokemon": {
+        "raw": "keldeo sword_form=ordinary",
+        "slug": "keldeo",
+        "aspectTokens": [
+          "sword_form=ordinary"
+        ]
+      },
+      "type": "pokemon",
+      "spawnablePositionType": "grounded",
+      "bucket": "ultra-rare",
+      "bucketWeight": 0.2,
+      "levelText": "60",
+      "levelMin": 60,
+      "levelMax": 60,
+      "weight": 3.3,
+      "presets": [
+        "natural"
+      ],
+      "biomeHints": [
+        "Sakura Grove",
+        "Sakura Valley"
+      ],
+      "condition": {
+        "neededBaseBlocks": [
+          "#cobblemon:natural"
+        ],
+        "minSkyLight": 8,
+        "maxSkyLight": 15,
+        "biomes": [
+          "terralith:sakura_grove",
+          "terralith:sakura_valley"
+        ]
+      },
+      "anticondition": {
+        "neededBaseBlocks": [
+          "minecraft:farmland"
+        ]
+      },
+      "weightMultipliers": [],
+      "raw": {
+        "id": "keldeo-1",
+        "pokemon": "keldeo sword_form=ordinary",
+        "presets": [
+          "natural"
+        ],
+        "type": "pokemon",
+        "spawnablePositionType": "grounded",
+        "bucket": "ultra-rare",
+        "level": "60",
+        "weight": 3.3,
+        "condition": {
+          "minSkyLight": 8,
+          "maxSkyLight": 15,
+          "biomes": [
+            "terralith:sakura_grove",
+            "terralith:sakura_valley"
+          ]
+        }
+      }
+    },
+    {
+      "id": "keldeo-1",
+      "sourceFile": "0647_keldeo.json",
+      "pokemon": {
+        "raw": "keldeo sword_form=resolute",
+        "slug": "keldeo",
+        "aspectTokens": [
+          "sword_form=resolute"
+        ]
+      },
+      "type": "pokemon",
+      "spawnablePositionType": "grounded",
+      "bucket": "ultra-rare",
+      "bucketWeight": 0.2,
+      "levelText": "80",
+      "levelMin": 80,
+      "levelMax": 80,
+      "weight": 0.3,
+      "presets": [
+        "natural"
+      ],
+      "biomeHints": [
+        "Sakura Grove",
+        "Sakura Valley"
+      ],
+      "condition": {
+        "neededBaseBlocks": [
+          "#cobblemon:natural"
+        ],
+        "minSkyLight": 8,
+        "maxSkyLight": 15,
+        "biomes": [
+          "terralith:sakura_grove",
+          "terralith:sakura_valley"
+        ]
+      },
+      "anticondition": {
+        "neededBaseBlocks": [
+          "minecraft:farmland"
+        ]
+      },
+      "weightMultipliers": [],
+      "raw": {
+        "id": "keldeo-1",
+        "pokemon": "keldeo sword_form=resolute",
+        "presets": [
+          "natural"
+        ],
+        "type": "pokemon",
+        "spawnablePositionType": "grounded",
+        "bucket": "ultra-rare",
+        "level": "80",
+        "weight": 0.3,
+        "condition": {
+          "minSkyLight": 8,
+          "maxSkyLight": 15,
+          "biomes": [
+            "terralith:sakura_grove",
+            "terralith:sakura_valley"
+          ]
+        }
+      }
+    }
+  ],
   "forms": [
     {
       "name": "Resolute",

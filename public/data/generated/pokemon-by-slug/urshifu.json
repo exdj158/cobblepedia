@@ -1371,7 +1371,62 @@
       "fromFormSlug": null
     }
   ],
-  "spawnEntries": [],
+  "spawnEntries": [
+    {
+      "id": "urshifu-1",
+      "sourceFile": "0892_urshifu.json",
+      "pokemon": {
+        "raw": "urshifu",
+        "slug": "urshifu",
+        "aspectTokens": []
+      },
+      "type": "pokemon",
+      "spawnablePositionType": "grounded",
+      "bucket": "ultra-rare",
+      "bucketWeight": 0.2,
+      "levelText": "60-80",
+      "levelMin": 60,
+      "levelMax": 80,
+      "weight": 3.5,
+      "presets": [
+        "natural"
+      ],
+      "biomeHints": [
+        "Cherry Grove"
+      ],
+      "condition": {
+        "neededBaseBlocks": [
+          "#cobblemon:natural"
+        ],
+        "biomes": [
+          "minecraft:cherry_grove"
+        ]
+      },
+      "anticondition": {
+        "neededBaseBlocks": [
+          "minecraft:farmland"
+        ]
+      },
+      "weightMultipliers": [],
+      "raw": {
+        "id": "urshifu-1",
+        "pokemon": "urshifu",
+        "presets": [
+          "natural"
+        ],
+        "type": "pokemon",
+        "spawnablePositionType": "grounded",
+        "bucket": "ultra-rare",
+        "level": "60-80",
+        "weight": 3.5,
+        "condition": {
+          "biomes": [
+            "minecraft:cherry_grove"
+          ]
+        }
+      }
+    }
+  ],
   "forms": [
     {
       "name": "Rapid-Strike",

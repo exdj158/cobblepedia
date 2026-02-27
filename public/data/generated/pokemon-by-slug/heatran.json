@@ -1336,7 +1336,52 @@
       "fromFormSlug": null
     }
   ],
-  "spawnEntries": [],
+  "spawnEntries": [
+    {
+      "id": "heatran-1",
+      "sourceFile": "0485_heatran.json",
+      "pokemon": {
+        "raw": "heatran",
+        "slug": "heatran",
+        "aspectTokens": []
+      },
+      "type": "pokemon",
+      "spawnablePositionType": "grounded",
+      "bucket": "ultra-rare",
+      "bucketWeight": 0.2,
+      "levelText": "50-65",
+      "levelMin": 50,
+      "levelMax": 65,
+      "weight": 0,
+      "presets": [],
+      "biomeHints": [
+        "Custom Spawn"
+      ],
+      "condition": {
+        "canSeeSky": false,
+        "biomes": [
+          "cobbleverse:custom_spawn"
+        ]
+      },
+      "anticondition": null,
+      "weightMultipliers": [],
+      "raw": {
+        "id": "heatran-1",
+        "pokemon": "heatran",
+        "type": "pokemon",
+        "spawnablePositionType": "grounded",
+        "bucket": "ultra-rare",
+        "level": "50-65",
+        "weight": 0,
+        "condition": {
+          "canSeeSky": false,
+          "biomes": [
+            "cobbleverse:custom_spawn"
+          ]
+        }
+      }
+    }
+  ],
   "forms": [
     {
       "name": "Mega",

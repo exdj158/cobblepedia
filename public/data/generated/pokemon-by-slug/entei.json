@@ -1243,7 +1243,75 @@
       "fromFormSlug": null
     }
   ],
-  "spawnEntries": [],
+  "spawnEntries": [
+    {
+      "id": "entei-1",
+      "sourceFile": "0244_entei.json",
+      "pokemon": {
+        "raw": "entei",
+        "slug": "entei",
+        "aspectTokens": []
+      },
+      "type": "pokemon",
+      "spawnablePositionType": "grounded",
+      "bucket": "ultra-rare",
+      "bucketWeight": 0.2,
+      "levelText": "60",
+      "levelMin": 60,
+      "levelMax": 60,
+      "weight": 33.33,
+      "presets": [
+        "natural"
+      ],
+      "biomeHints": [],
+      "condition": {
+        "neededBaseBlocks": [
+          "#cobblemon:natural"
+        ],
+        "structures": [
+          "cobbleverse:burned_tower"
+        ]
+      },
+      "anticondition": {
+        "neededBaseBlocks": [
+          "minecraft:farmland"
+        ]
+      },
+      "weightMultipliers": [
+        {
+          "multiplier": 3,
+          "condition": {
+            "timeRange": "day"
+          }
+        }
+      ],
+      "raw": {
+        "id": "entei-1",
+        "pokemon": "entei",
+        "presets": [
+          "natural"
+        ],
+        "type": "pokemon",
+        "spawnablePositionType": "grounded",
+        "bucket": "ultra-rare",
+        "level": "60",
+        "weight": 33.33,
+        "weightMultipliers": [
+          {
+            "multiplier": 3,
+            "condition": {
+              "timeRange": "day"
+            }
+          }
+        ],
+        "condition": {
+          "structures": [
+            "cobbleverse:burned_tower"
+          ]
+        }
+      }
+    }
+  ],
   "forms": [],
   "drops": {
     "amount": 5,

@@ -2474,7 +2474,50 @@
       "fromFormSlug": null
     }
   ],
-  "spawnEntries": [],
+  "spawnEntries": [
+    {
+      "id": "mewtwo-1",
+      "sourceFile": "0150_mewtwo.json",
+      "pokemon": {
+        "raw": "mewtwo",
+        "slug": "mewtwo",
+        "aspectTokens": []
+      },
+      "type": "pokemon",
+      "spawnablePositionType": "grounded",
+      "bucket": "ultra-rare",
+      "bucketWeight": 0.2,
+      "levelText": "1-10",
+      "levelMin": 1,
+      "levelMax": 10,
+      "weight": 0,
+      "presets": [],
+      "biomeHints": [
+        "Custom Spawn/team Rocket Radio"
+      ],
+      "condition": {
+        "biomes": [
+          "cobbleverse:custom_spawn/team_rocket_radio"
+        ]
+      },
+      "anticondition": null,
+      "weightMultipliers": [],
+      "raw": {
+        "id": "mewtwo-1",
+        "pokemon": "mewtwo",
+        "type": "pokemon",
+        "spawnablePositionType": "grounded",
+        "bucket": "ultra-rare",
+        "level": "1-10",
+        "weight": 0,
+        "condition": {
+          "biomes": [
+            "cobbleverse:custom_spawn/team_rocket_radio"
+          ]
+        }
+      }
+    }
+  ],
   "forms": [
     {
       "name": "Mega-X",

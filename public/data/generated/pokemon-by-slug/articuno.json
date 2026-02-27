@@ -1352,7 +1352,118 @@
       "fromFormSlug": null
     }
   ],
-  "spawnEntries": [],
+  "spawnEntries": [
+    {
+      "id": "articuno-1",
+      "sourceFile": "0144_articuno.json",
+      "pokemon": {
+        "raw": "articuno",
+        "slug": "articuno",
+        "aspectTokens": []
+      },
+      "type": "pokemon",
+      "spawnablePositionType": "grounded",
+      "bucket": "ultra-rare",
+      "bucketWeight": 0.2,
+      "levelText": "50",
+      "levelMin": 50,
+      "levelMax": 50,
+      "weight": 0,
+      "presets": [
+        "natural"
+      ],
+      "biomeHints": [
+        "Custom Spawn/articuno Tower"
+      ],
+      "condition": {
+        "neededBaseBlocks": [
+          "#cobblemon:natural"
+        ],
+        "biomes": [
+          "cobbleverse:custom_spawn/articuno_tower"
+        ]
+      },
+      "anticondition": {
+        "neededBaseBlocks": [
+          "minecraft:farmland"
+        ]
+      },
+      "weightMultipliers": [],
+      "raw": {
+        "id": "articuno-1",
+        "pokemon": "articuno",
+        "presets": [
+          "natural"
+        ],
+        "type": "pokemon",
+        "spawnablePositionType": "grounded",
+        "bucket": "ultra-rare",
+        "level": "50",
+        "weight": 0,
+        "condition": {
+          "biomes": [
+            "cobbleverse:custom_spawn/articuno_tower"
+          ]
+        }
+      }
+    },
+    {
+      "id": "articuno-2",
+      "sourceFile": "0144_articuno.json",
+      "pokemon": {
+        "raw": "articuno galarian",
+        "slug": "articuno",
+        "aspectTokens": [
+          "galarian"
+        ]
+      },
+      "type": "pokemon",
+      "spawnablePositionType": "grounded",
+      "bucket": "ultra-rare",
+      "bucketWeight": 0.2,
+      "levelText": "60",
+      "levelMin": 60,
+      "levelMax": 60,
+      "weight": 4,
+      "presets": [
+        "natural"
+      ],
+      "biomeHints": [],
+      "condition": {
+        "neededBaseBlocks": [
+          "#cobblemon:natural"
+        ],
+        "structures": [
+          "cobbleverse:dyna_tree"
+        ],
+        "timeRange": "night"
+      },
+      "anticondition": {
+        "neededBaseBlocks": [
+          "minecraft:farmland"
+        ]
+      },
+      "weightMultipliers": [],
+      "raw": {
+        "id": "articuno-2",
+        "pokemon": "articuno galarian",
+        "presets": [
+          "natural"
+        ],
+        "type": "pokemon",
+        "spawnablePositionType": "grounded",
+        "bucket": "ultra-rare",
+        "level": "60",
+        "weight": 4,
+        "condition": {
+          "structures": [
+            "cobbleverse:dyna_tree"
+          ],
+          "timeRange": "night"
+        }
+      }
+    }
+  ],
   "forms": [
     {
       "name": "Galar",

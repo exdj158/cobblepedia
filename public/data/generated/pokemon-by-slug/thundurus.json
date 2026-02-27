@@ -1479,7 +1479,78 @@
       "fromFormSlug": null
     }
   ],
-  "spawnEntries": [],
+  "spawnEntries": [
+    {
+      "id": "thundurus-1",
+      "sourceFile": "0642_thundurus.json",
+      "pokemon": {
+        "raw": "thundurus",
+        "slug": "thundurus",
+        "aspectTokens": []
+      },
+      "type": "pokemon",
+      "spawnablePositionType": "grounded",
+      "bucket": "ultra-rare",
+      "bucketWeight": 0.2,
+      "levelText": "50-60",
+      "levelMin": 50,
+      "levelMax": 60,
+      "weight": 1,
+      "presets": [
+        "natural"
+      ],
+      "biomeHints": [
+        "Is Mountain",
+        "Is Hills"
+      ],
+      "condition": {
+        "neededBaseBlocks": [
+          "#cobblemon:natural"
+        ],
+        "biomes": [
+          "#cobblemon:is_mountain"
+        ]
+      },
+      "anticondition": {
+        "neededBaseBlocks": [
+          "minecraft:farmland"
+        ]
+      },
+      "weightMultipliers": [
+        {
+          "multiplier": 3,
+          "condition": {
+            "isThundering": true
+          }
+        }
+      ],
+      "raw": {
+        "id": "thundurus-1",
+        "pokemon": "thundurus",
+        "presets": [
+          "natural"
+        ],
+        "type": "pokemon",
+        "spawnablePositionType": "grounded",
+        "bucket": "ultra-rare",
+        "level": "50-60",
+        "weight": 1,
+        "weightMultipliers": [
+          {
+            "multiplier": 3,
+            "condition": {
+              "isThundering": true
+            }
+          }
+        ],
+        "condition": {
+          "biomes": [
+            "#cobblemon:is_mountain"
+          ]
+        }
+      }
+    }
+  ],
   "forms": [
     {
       "name": "Therian",

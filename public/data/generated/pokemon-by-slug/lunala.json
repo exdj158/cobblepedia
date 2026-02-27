@@ -1486,7 +1486,97 @@
       "fromFormSlug": null
     }
   ],
-  "spawnEntries": [],
+  "spawnEntries": [
+    {
+      "id": "lunala-1",
+      "sourceFile": "0792_lunala.json",
+      "pokemon": {
+        "raw": "lunala",
+        "slug": "lunala",
+        "aspectTokens": []
+      },
+      "type": "pokemon",
+      "spawnablePositionType": "grounded",
+      "bucket": "ultra-rare",
+      "bucketWeight": 0.2,
+      "levelText": "70",
+      "levelMin": 70,
+      "levelMax": 70,
+      "weight": 0.2,
+      "presets": [],
+      "biomeHints": [
+        "Is Spooky",
+        "Dark Forest"
+      ],
+      "condition": {
+        "canSeeSky": true,
+        "biomes": [
+          "#cobblemon:is_spooky"
+        ],
+        "timeRange": "night"
+      },
+      "anticondition": null,
+      "weightMultipliers": [],
+      "raw": {
+        "id": "lunala-1",
+        "pokemon": "lunala",
+        "type": "pokemon",
+        "spawnablePositionType": "grounded",
+        "bucket": "ultra-rare",
+        "level": "70",
+        "weight": 0.2,
+        "condition": {
+          "canSeeSky": true,
+          "biomes": [
+            "#cobblemon:is_spooky"
+          ],
+          "timeRange": "night"
+        }
+      }
+    },
+    {
+      "id": "lunala-2",
+      "sourceFile": "0792_lunala.json",
+      "pokemon": {
+        "raw": "lunala",
+        "slug": "lunala",
+        "aspectTokens": []
+      },
+      "type": "pokemon",
+      "spawnablePositionType": "grounded",
+      "bucket": "ultra-rare",
+      "bucketWeight": 0.2,
+      "levelText": "70",
+      "levelMin": 70,
+      "levelMax": 70,
+      "weight": 0.4,
+      "presets": [],
+      "biomeHints": [
+        "Is End"
+      ],
+      "condition": {
+        "biomes": [
+          "#minecraft:is_end"
+        ]
+      },
+      "anticondition": null,
+      "weightMultipliers": [],
+      "raw": {
+        "id": "lunala-2",
+        "pokemon": "lunala",
+        "type": "pokemon",
+        "spawnablePositionType": "grounded",
+        "bucket": "ultra-rare",
+        "level": "70",
+        "weight": 0.4,
+        "condition": {
+          "biomes": [
+            "#minecraft:is_end"
+          ]
+        }
+      }
+    }
+  ],
   "forms": [],
   "drops": {
     "amount": 5,

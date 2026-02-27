@@ -1492,7 +1492,62 @@
       "fromFormSlug": null
     }
   ],
-  "spawnEntries": [],
+  "spawnEntries": [
+    {
+      "id": "necrozma-1",
+      "sourceFile": "0800_necrozma.json",
+      "pokemon": {
+        "raw": "necrozma",
+        "slug": "necrozma",
+        "aspectTokens": []
+      },
+      "type": "pokemon",
+      "spawnablePositionType": "grounded",
+      "bucket": "ultra-rare",
+      "bucketWeight": 0.2,
+      "levelText": "70-75",
+      "levelMin": 70,
+      "levelMax": 75,
+      "weight": 0.5,
+      "presets": [
+        "natural"
+      ],
+      "biomeHints": [
+        "Is End"
+      ],
+      "condition": {
+        "neededBaseBlocks": [
+          "#cobblemon:natural"
+        ],
+        "biomes": [
+          "#cobblemon:is_end"
+        ]
+      },
+      "anticondition": {
+        "neededBaseBlocks": [
+          "minecraft:farmland"
+        ]
+      },
+      "weightMultipliers": [],
+      "raw": {
+        "id": "necrozma-1",
+        "pokemon": "necrozma",
+        "presets": [
+          "natural"
+        ],
+        "type": "pokemon",
+        "spawnablePositionType": "grounded",
+        "bucket": "ultra-rare",
+        "level": "70-75",
+        "weight": 0.5,
+        "condition": {
+          "biomes": [
+            "#cobblemon:is_end"
+          ]
+        }
+      }
+    }
+  ],
   "forms": [
     {
       "name": "Dusk-Mane",

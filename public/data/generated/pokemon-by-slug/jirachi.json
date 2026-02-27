@@ -1776,7 +1776,50 @@
       "fromFormSlug": null
     }
   ],
-  "spawnEntries": [],
+  "spawnEntries": [
+    {
+      "id": "jirachi-1",
+      "sourceFile": "0385_jirachi.json",
+      "pokemon": {
+        "raw": "jirachi",
+        "slug": "jirachi",
+        "aspectTokens": []
+      },
+      "type": "pokemon",
+      "spawnablePositionType": "grounded",
+      "bucket": "ultra-rare",
+      "bucketWeight": 0.2,
+      "levelText": "75-80",
+      "levelMin": 75,
+      "levelMax": 80,
+      "weight": 0,
+      "presets": [],
+      "biomeHints": [
+        "Custom Spawn/jirachi Structure"
+      ],
+      "condition": {
+        "biomes": [
+          "cobbleverse:custom_spawn/jirachi_structure"
+        ]
+      },
+      "anticondition": null,
+      "weightMultipliers": [],
+      "raw": {
+        "id": "jirachi-1",
+        "pokemon": "jirachi",
+        "type": "pokemon",
+        "spawnablePositionType": "grounded",
+        "bucket": "ultra-rare",
+        "level": "75-80",
+        "weight": 0,
+        "condition": {
+          "biomes": [
+            "cobbleverse:custom_spawn/jirachi_structure"
+          ]
+        }
+      }
+    }
+  ],
   "forms": [],
   "drops": {
     "amount": 5,

@@ -1089,7 +1089,66 @@
       "fromFormSlug": null
     }
   ],
-  "spawnEntries": [],
+  "spawnEntries": [
+    {
+      "id": "baxcalibur-1",
+      "sourceFile": "0998_baxcalibur.json",
+      "pokemon": {
+        "raw": "baxcalibur",
+        "slug": "baxcalibur",
+        "aspectTokens": []
+      },
+      "type": "pokemon",
+      "spawnablePositionType": "grounded",
+      "bucket": "ultra-rare",
+      "bucketWeight": 0.2,
+      "levelText": "58-67",
+      "levelMin": 58,
+      "levelMax": 67,
+      "weight": 5,
+      "presets": [
+        "natural"
+      ],
+      "biomeHints": [
+        "Is Glacial",
+        "Frozen Peaks",
+        "Ice Spikes"
+      ],
+      "condition": {
+        "neededBaseBlocks": [
+          "#cobblemon:natural"
+        ],
+        "canSeeSky": true,
+        "biomes": [
+          "#cobblemon:is_glacial"
+        ]
+      },
+      "anticondition": {
+        "neededBaseBlocks": [
+          "minecraft:farmland"
+        ]
+      },
+      "weightMultipliers": [],
+      "raw": {
+        "id": "baxcalibur-1",
+        "pokemon": "baxcalibur",
+        "presets": [
+          "natural"
+        ],
+        "type": "pokemon",
+        "spawnablePositionType": "grounded",
+        "bucket": "ultra-rare",
+        "level": "58-67",
+        "weight": 5,
+        "condition": {
+          "canSeeSky": true,
+          "biomes": [
+            "#cobblemon:is_glacial"
+          ]
+        }
+      }
+    }
+  ],
   "forms": [
     {
       "name": "Mega",

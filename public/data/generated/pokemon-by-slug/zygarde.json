@@ -1280,7 +1280,69 @@
       "fromFormSlug": null
     }
   ],
-  "spawnEntries": [],
+  "spawnEntries": [
+    {
+      "id": "zygarde-1",
+      "sourceFile": "0718_zygarde.json",
+      "pokemon": {
+        "raw": "zygarde percent_cells=core",
+        "slug": "zygarde",
+        "aspectTokens": [
+          "percent_cells=core"
+        ]
+      },
+      "type": "pokemon",
+      "spawnablePositionType": "grounded",
+      "bucket": "ultra-rare",
+      "bucketWeight": 0.2,
+      "levelText": "1-10",
+      "levelMin": 1,
+      "levelMax": 10,
+      "weight": 3.3,
+      "presets": [
+        "natural"
+      ],
+      "biomeHints": [
+        "Dripstone Caves",
+        "Lush Caves"
+      ],
+      "condition": {
+        "neededBaseBlocks": [
+          "#cobblemon:natural"
+        ],
+        "canSeeSky": false,
+        "biomes": [
+          "minecraft:dripstone_caves",
+          "minecraft:lush_caves"
+        ]
+      },
+      "anticondition": {
+        "neededBaseBlocks": [
+          "minecraft:farmland"
+        ]
+      },
+      "weightMultipliers": [],
+      "raw": {
+        "id": "zygarde-1",
+        "pokemon": "zygarde percent_cells=core",
+        "presets": [
+          "natural"
+        ],
+        "type": "pokemon",
+        "spawnablePositionType": "grounded",
+        "bucket": "ultra-rare",
+        "level": "1-10",
+        "weight": 3.3,
+        "condition": {
+          "canSeeSky": false,
+          "biomes": [
+            "minecraft:dripstone_caves",
+            "minecraft:lush_caves"
+          ]
+        }
+      }
+    }
+  ],
   "forms": [
     {
       "name": "10%",

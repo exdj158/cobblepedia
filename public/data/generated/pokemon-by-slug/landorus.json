@@ -1359,7 +1359,64 @@
       "fromFormSlug": null
     }
   ],
-  "spawnEntries": [],
+  "spawnEntries": [
+    {
+      "id": "landorus-1",
+      "sourceFile": "0645_landorus.json",
+      "pokemon": {
+        "raw": "landorus",
+        "slug": "landorus",
+        "aspectTokens": []
+      },
+      "type": "pokemon",
+      "spawnablePositionType": "grounded",
+      "bucket": "ultra-rare",
+      "bucketWeight": 0.2,
+      "levelText": "50-60",
+      "levelMin": 50,
+      "levelMax": 60,
+      "weight": 1.5,
+      "presets": [
+        "natural"
+      ],
+      "biomeHints": [
+        "Is Badlands"
+      ],
+      "condition": {
+        "neededBaseBlocks": [
+          "#cobblemon:natural"
+        ],
+        "isRaining": false,
+        "biomes": [
+          "#cobblemon:is_badlands"
+        ]
+      },
+      "anticondition": {
+        "neededBaseBlocks": [
+          "minecraft:farmland"
+        ]
+      },
+      "weightMultipliers": [],
+      "raw": {
+        "id": "landorus-1",
+        "pokemon": "landorus",
+        "presets": [
+          "natural"
+        ],
+        "type": "pokemon",
+        "spawnablePositionType": "grounded",
+        "bucket": "ultra-rare",
+        "level": "50-60",
+        "weight": 1.5,
+        "condition": {
+          "isRaining": false,
+          "biomes": [
+            "#cobblemon:is_badlands"
+          ]
+        }
+      }
+    }
+  ],
   "forms": [
     {
       "name": "Therian",
